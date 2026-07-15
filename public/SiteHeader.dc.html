@@ -90,15 +90,23 @@
 
     <a href="contacto.dc.html" onClick="{{ closeDrawer }}" style="display:block; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; text-decoration:none; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">Contacto</a>
 
-    <span style="display:block; padding:18px 24px 4px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15;">COLECCIÓN VIRTUAL - NUMISMÁTICA</span>
-    <div style="display:flex; flex-direction:column; padding:4px 24px 18px; border-bottom:1px solid rgba(10,10,9,0.08);">
-      <a href="moneda-colombia-2-escudos-felipe-v.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Felipe V — Doblón de 2 Escudos, Bogotá</a>
-      <a href="moneda-colombia-2-escudos-carlos-iv-1791.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 2 Escudos, Bogotá 1791</a>
-      <a href="moneda-colombia-1-escudo-fernando-vii-1820.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1820</a>
-      <a href="moneda-colombia-1-escudo-carlos-iii-1774.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1774</a>
-      <a href="moneda-colombia-1-escudo-carlos-iii-1787.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1787</a>
-      <a href="moneda-colombia-1-escudo-carlos-iv-1802.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 1 Escudo, Bogotá 1802</a>
-      <a href="moneda-colombia-1-escudo-fernando-vii-1811.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1811</a>
+    <div>
+      <button onClick="{{ toggleNumismatica }}" aria-expanded="{{ numismaticaExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">
+        <span>COLECCIÓN VIRTUAL - NUMISMÁTICA</span>
+        <span style="font-size:13px; color:#b7ab8a; transform:{{ numismaticaCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+      </button>
+
+      <sc-if value="{{ numismaticaExpanded }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; padding:4px 24px 18px; border-bottom:1px solid rgba(10,10,9,0.08);">
+          <a href="moneda-colombia-2-escudos-felipe-v.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Felipe V — Doblón de 2 Escudos, Bogotá</a>
+          <a href="moneda-colombia-2-escudos-carlos-iv-1791.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 2 Escudos, Bogotá 1791</a>
+          <a href="moneda-colombia-1-escudo-fernando-vii-1820.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1820</a>
+          <a href="moneda-colombia-1-escudo-carlos-iii-1774.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1774</a>
+          <a href="moneda-colombia-1-escudo-carlos-iii-1787.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1787</a>
+          <a href="moneda-colombia-1-escudo-carlos-iv-1802.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 1 Escudo, Bogotá 1802</a>
+          <a href="moneda-colombia-1-escudo-fernando-vii-1811.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1811</a>
+        </div>
+      </sc-if>
     </div>
 
     <div>
@@ -361,6 +369,7 @@ class Component extends DCLogic {
   state = {
     scrollProgress: 0,
     menuOpen: false,
+    numismaticaExpanded: false,
     collectionExpanded: false,
     perfilExpanded: false,
     searchOpen: false,
@@ -587,6 +596,7 @@ class Component extends DCLogic {
     });
   };
 
+  toggleNumismatica = () => this.setState(s => ({ numismaticaExpanded: !s.numismaticaExpanded }));
   toggleCollection = () => this.setState(s => ({ collectionExpanded: !s.collectionExpanded }));
   togglePerfil = () => this.setState(s => ({ perfilExpanded: !s.perfilExpanded }));
   onQueryChange = (e) => this.setState({ query: e.target.value });
@@ -604,7 +614,7 @@ class Component extends DCLogic {
   renderVals() {
     const lang = this.props.lang === "en" ? "en" : "es";
     const t = this.texts[lang];
-    const { scrollProgress, menuOpen, collectionExpanded, perfilExpanded, searchOpen, query } = this.state;
+    const { scrollProgress, menuOpen, numismaticaExpanded, collectionExpanded, perfilExpanded, searchOpen, query } = this.state;
 
     const navBarStyle = `position:sticky; top:0; z-index:100; height:68px; background:rgba(10,10,9,${(0.55 + scrollProgress * 0.35).toFixed(2)}); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border-bottom:1px solid rgba(231,222,201,0.14); box-sizing:border-box; transition:background 0.2s ease;`;
 
@@ -636,6 +646,9 @@ class Component extends DCLogic {
       menuOpen,
       openDrawer: this.openDrawer,
       closeDrawer: this.closeDrawer,
+      numismaticaExpanded,
+      toggleNumismatica: this.toggleNumismatica,
+      numismaticaCaret: numismaticaExpanded ? "rotate(180deg)" : "rotate(0deg)",
       collectionExpanded,
       toggleCollection: this.toggleCollection,
       collectionCaret: collectionExpanded ? "rotate(180deg)" : "rotate(0deg)",
