@@ -1,0 +1,282 @@
+---
+// Server-rendered homepage (replaces the client-rendered public/index.html).
+// The content — hero, intro, news, stats, footer — is baked into the HTML at
+// build time (no {{ }} placeholders in the served markup), with small vanilla
+// scripts for the interactive bits: hero crossfade, ES/EN language toggle, and
+// the cookie banner. Spanish is the server-rendered default; the toggle swaps
+// the translatable strings to English client-side (option 1).
+import fs from 'node:fs';
+import { getCollection } from 'astro:content';
+
+// --- News: newest 4 from the Markdown collection (same source as /noticias/) ---
+const monthsEs = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const fmt = (d: Date) => `${d.getUTCDate()} de ${monthsEs[d.getUTCMonth()]}. de ${d.getUTCFullYear()}`;
+const posts = (await getCollection('noticias', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 4)
+  .map((p) => ({
+    url: `/noticias/${p.slug}/`,
+    title: p.data.title,
+    source: p.data.source ?? 'Notofilia',
+    iso: p.data.publishedAt.toISOString().slice(0, 10),
+    dateLabel: fmt(p.data.publishedAt),
+    cover: p.data.cover,
+    coverAlt: p.data.coverAlt ?? '',
+  }));
+
+// --- Stats: computed at build from sitemap.xml (mirrors the old runtime logic) ---
+function computeStats() {
+  try {
+    const xml = fs.readFileSync('public/sitemap.xml', 'utf-8');
+    const paths = [...xml.matchAll(/<loc>\s*(.*?)\s*<\/loc>/g)].map((m) => {
+      const p = m[1].replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+      return p === '' ? '/' : p + '/';
+    });
+    const ROOTS = new Set(['/', '/coleccion/', '/coleccion/reserva-federal/', '/coleccion/departamento-del-tesoro-de-ee-uu/', '/coleccion/moneda-colonial/', '/coleccion/colombia/', '/coleccion/colombia/banca-libre/', '/coleccion/puerto-rico/', '/coleccion/ecuador/', '/coleccion/moneda-colonial-espanola/']);
+    const CF: Record<string, boolean> = { colombia: true, 'puerto-rico': true, ecuador: true };
+    const total = paths.length;
+    const profile = paths.filter((p) => p.includes('/perfil-')).length;
+    const rootc = paths.filter((p) => ROOTS.has(p)).length;
+    const coins = paths.filter((p) => p.startsWith('/coleccion/moneda-colonial-espanola/') && !ROOTS.has(p)).length;
+    const banknotes = Math.max(0, total - profile - rootc - coins);
+    let hasUS = false; const cs = new Set<string>();
+    for (const p of paths) {
+      if (ROOTS.has(p)) continue;
+      const segs = p.split('/').filter(Boolean);
+      if (segs[0] !== 'coleccion') continue;
+      const second = segs[1];
+      if (second === 'polimero-mundial') { if (segs.length > 2) { const mm = segs[2].match(/^([a-z-]+?)-\d/); cs.add(mm ? mm[1] : segs[2]); } continue; }
+      if (CF[second]) cs.add(second); else hasUS = true;
+    }
+    return { banknotes, coins, countries: cs.size + (hasUS ? 1 : 0) || 1, pages: total };
+  } catch {
+    return { banknotes: 63, coins: 7, countries: 8, pages: 76 };
+  }
+}
+const s = computeStats();
+const statsEs = `${s.banknotes} billetes · ${s.coins} monedas · ${s.countries} países · ${s.pages} páginas`;
+const statsEn = `${s.banknotes} banknotes · ${s.coins} coins · ${s.countries} countries · ${s.pages} pages`;
+
+const SITE = 'https://www.notofilia.com';
+const heroImg = SITE + '/uploads/hero-engraving-01.jpg';
+const heroes = [
+  { base: 'hero-slide-guatemala-quetzal', alt: 'Primer plano de un billete de 5 quetzales de Guatemala, con el ave quetzal, estilo numismática y notafilia' },
+  { base: 'hero-slide-oman-sultan', alt: 'Primer plano de un billete de 5 riales de Omán, con el retrato del sultán, estilo numismática y notafilia' },
+  { base: 'hero-slide-brasil-10', alt: 'Primer plano de un billete de 10 de Brasil, con un retrato grabado y veleros, estilo numismática y notafilia' },
+  { base: 'hero-slide-mexico-tren', alt: 'Primer plano de un billete de 100 pesos mexicanos, con la viñeta de un tren de vapor, estilo numismática y notafilia' },
+];
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <script src="/support.js" is:inline></script>
+    <title>Notofilia: Coleccionismo de Billetes y Numismática | Catálogo y Guías</title>
+    <meta name="description" content="Descubre el mundo de la notafilia y numismática. Colecciona billetes históricos, aprende sobre su diseño y valor. Catálogos, guías y comunidad para coleccionistas en español." />
+    <meta name="keywords" content="numismática, notafilia, coleccionismo de monedas, coleccionismo de billetes, billetes antiguos, monedas de colección, catálogo billetes antiguos, notafilia billetes Colombia, notafilia billetes Estados Unidos, notafilia billetes Polimero Mundial" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Notofilia" />
+    <link rel="canonical" href="https://www.notofilia.com/" />
+    <link rel="alternate" hreflang="es" href="https://www.notofilia.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.notofilia.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.notofilia.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Notofilia" />
+    <meta property="og:title" content="Notofilia — Numismática y coleccionismo de billetes" />
+    <meta property="og:description" content="Colección privada de billetes históricos de Colombia, Estados Unidos y Ecuador: specimens, errores de imprenta y piezas raras de numismática y notafilia." />
+    <meta property="og:url" content="https://www.notofilia.com/" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content={heroImg} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Notofilia — Numismática y coleccionismo de billetes" />
+    <meta name="twitter:description" content="Colección privada de billetes históricos de Colombia, Estados Unidos y Ecuador: specimens, errores de imprenta y piezas raras de numismática y notafilia." />
+    <meta name="twitter:image" content={heroImg} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'Organization', '@id': SITE + '/#organization', name: 'Notofilia', url: SITE + '/', logo: SITE + '/favicon.png', description: 'Colección privada de billetes históricos dedicada al coleccionismo de monedas y billetes (numismática y notafilia) en español.' },
+        { '@type': 'WebSite', '@id': SITE + '/#website', name: 'Notofilia', url: SITE + '/', publisher: { '@id': SITE + '/#organization' }, inLanguage: ['es', 'en'] },
+        { '@type': 'WebPage', '@id': SITE + '/#webpage', url: SITE + '/', name: 'Notofilia — Numismática y Notafilia', isPartOf: { '@id': SITE + '/#website' }, primaryImageOfPage: heroImg, inLanguage: 'es' },
+      ],
+    })} />
+    <style is:global>
+      @font-face { font-family: 'Montenegrin Gothic One'; src: url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+      @font-face { font-family: 'Cormorant Garamond'; src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations'); font-weight: 300 700; font-display: swap; }
+      @font-face { font-family: 'Cormorant Garamond'; src: url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations'); font-weight: 300 700; font-style: italic; font-display: swap; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #0a0a09; font-family: 'Cormorant Garamond', serif; }
+      /* dc-runtime header mounts here; overlay it on the hero */
+      x-dc { display: none; }
+      #dc-root { position: absolute; top: 0; left: 0; right: 0; z-index: 6; height: auto !important; }
+      html, body { height: auto !important; }
+      .hero-slide { transition: opacity 1.6s ease; }
+      .noticias-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-bottom: 32px; }
+      @media (max-width: 768px) {
+        .noticias-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-inline: 4px; margin-bottom: 32px; -webkit-overflow-scrolling: touch; }
+        .noticia-card { flex: 0 0 85%; scroll-snap-align: center; }
+      }
+      ::selection { background: rgba(231, 222, 201, 0.3); }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" style="position:absolute; top:-60px; left:16px; z-index:20; background:#d8d2cd; color:#0a0a09; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:15px; letter-spacing:0.05em; padding:12px 20px; border-radius:2px; text-decoration:none; transition:top 0.15s ease;" onfocus="this.style.top='16px'" onblur="this.style.top='-60px'">Saltar al contenido principal / Skip to main content</a>
+
+    <x-dc><dc-import name="SiteHeader" lang="es"></dc-import></x-dc>
+
+    <div style="position:relative; width:100%; background:#0a0a09;">
+      <div style="position:relative; width:100%; min-height:100vh;">
+        {heroes.map((h, i) => (
+          <picture>
+            <source srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`} sizes="100vw" type="image/webp" />
+            <img class="hero-slide" data-hero={i} src={`/uploads/${h.base}.jpg`} alt={i === 0 ? h.alt : ''} width="972" height="360" fetchpriority={i === 0 ? 'high' : 'low'} decoding="async" style={`position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 40%; filter:contrast(1.2) brightness(0.85) saturate(1.1); opacity:${i === 0 ? 1 : 0};`} />
+          </picture>
+        ))}
+        <div style="position:absolute; inset:0; background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"></div>
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 22%, rgba(6,6,5,0.15) 78%, rgba(6,6,5,0.6) 100%);"></div>
+
+        <div role="group" aria-label="Selector de idioma / Language selector" style="position:absolute; top:78px; right:28px; z-index:7; display:flex; align-items:center; background:rgba(10,10,9,0.35); border:1px solid rgba(231,222,201,0.35); border-radius:999px; padding:3px;">
+          <button id="lang-es" aria-pressed="true" aria-label="Ver sitio en español" style="border:none; background:rgba(231,222,201,0.92); color:#0a0a09; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:13px; letter-spacing:0.14em; padding:11px 18px; border-radius:999px; cursor:pointer;">ES</button>
+          <button id="lang-en" aria-pressed="false" aria-label="View site in English" style="border:none; background:transparent; color:#e7ddc4; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:13px; letter-spacing:0.14em; padding:11px 18px; border-radius:999px; cursor:pointer;">EN</button>
+        </div>
+
+        <main id="main-content" tabindex="-1" style="position:relative; z-index:1; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:64px 24px; outline:none;">
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:36px;">
+            <span style="width:56px; height:1px; background:rgba(231,222,201,0.55);"></span>
+            <span style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:17px; letter-spacing:0.28em; text-transform:uppercase; color:#d8d2cd;">Notofilia.com</span>
+            <span style="width:56px; height:1px; background:rgba(231,222,201,0.55);"></span>
+          </div>
+          <h1 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(56px, 11vw, 148px); line-height:0.95; letter-spacing:0.04em; color:#d8d2cd; margin:0; text-shadow:0 2px 24px rgba(0,0,0,0.55);">NOTOFILIA</h1>
+          <div style="display:flex; align-items:center; gap:14px; margin:30px 0;">
+            <span style="width:34px; height:1px; background:rgba(231,222,201,0.45);"></span>
+            <span style="width:7px; height:7px; background:#d8d2cd; transform:rotate(45deg);"></span>
+            <span style="width:34px; height:1px; background:rgba(231,222,201,0.45);"></span>
+          </div>
+          <p data-i18n data-en="Numismatics and Collectible Banknotes" style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:clamp(22px, 2.6vw, 32px); color:#e7ddc4; margin:0; max-width:720px;">Numismática y Notafilia</p>
+        </main>
+      </div>
+
+      <section style="max-width:1180px; margin:0 auto; padding:88px 24px 56px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:48px;">
+        <div>
+          <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 16px;">Numismática</h2>
+          <p style="font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
+        </div>
+        <div>
+          <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 16px;">Notafilia</h2>
+          <p style="font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="news-heading" style="background:#d8d2cd; padding:72px 24px;">
+        <div style="max-width:1180px; margin:0 auto;">
+          <h2 id="news-heading" style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#1c1a15; margin:0 0 32px; text-align:center;">Noticias de Numismática y Notafilia</h2>
+          {posts.length > 0 ? (
+            <div class="noticias-grid">
+              {posts.map((it) => (
+                <article class="noticia-card" style="border-top:2px solid #1c1a15; padding-top:16px;">
+                  {it.cover && (
+                    <picture>
+                      <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
+                      <img src={`/uploads/${it.cover}-640.jpg`} alt={it.coverAlt} loading="lazy" decoding="async" width="220" height="140" style="display:block; width:100%; height:140px; object-fit:cover; border-radius:3px; margin-bottom:12px;" />
+                    </picture>
+                  )}
+                  <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px;">
+                    <time datetime={it.iso} style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#6b521f;">{it.dateLabel}</time>
+                    <span style="font-size:13px; color:#5c4e33;">&middot; {it.source}</span>
+                  </div>
+                  <h3 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(17.6px, 1.1rem + 0.3vw, 19px); letter-spacing:0.02em; color:#1c1a15; margin:0 0 6px; text-wrap:balance; overflow-wrap:break-word;">{it.title}</h3>
+                  <a href={it.url} style="font-size:15px; color:#6b521f; text-decoration-color:rgba(107,82,31,0.4);">Leer más &rarr;</a>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p style="font-size:18px; line-height:1.6; color:#332e22; text-align:center; margin:0 0 32px;">Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos.</p>
+          )}
+          <p style="text-align:center; margin:0;">
+            <a href="/noticias/" style="display:inline-flex; align-items:center; min-height:44px; border:1px solid #1c1a15; color:#1c1a15; text-decoration:none; font-size:15px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; padding:12px 28px; border-radius:999px;">Ver todas las noticias</a>
+          </p>
+        </div>
+      </section>
+
+      <footer style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:8px; max-width:1180px; margin:0 auto; padding:72px 24px 36px;">
+        <span data-i18n data-en="Copyright 2026 Notofilia. All Rights Reserved." style="font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#b7ab8a;">Copyright 2026 Notofilia. Todos los derechos reservados.</span>
+        <span data-i18n data-en="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world." style="font-family:'Cormorant Garamond', serif; font-style:italic; font-size:14px; color:rgba(216,207,184,0.72); max-width:100%; text-align:center;">Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo.</span>
+      </footer>
+
+      <p style="position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.1em; color:#b7ab8a; text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 40px;"><strong data-i18n data-en="With the entire Virtual Collection:" style="font-weight:700; color:#cbbf9d;">Colección Virtual:</strong> <span data-i18n set:html={statsEs} data-en={statsEn}></span></p>
+    </div>
+
+    <div id="cookie-banner" role="dialog" aria-modal="false" aria-label="Aviso de cookies" hidden style="position:fixed; left:0; right:0; bottom:0; z-index:80; display:flex; justify-content:center; padding:16px;">
+      <div style="width:100%; max-width:720px; background:#1c1a15; border:1px solid rgba(231,222,201,0.18); border-radius:8px; box-shadow:0 24px 60px rgba(0,0,0,0.55); padding:22px 24px; display:flex; flex-direction:column; gap:16px;">
+        <p style="font-family:'Cormorant Garamond', serif; font-size:16px; line-height:1.6; color:#d8d2cd; margin:0;">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" style="color:#e7ddc4; text-decoration-color:rgba(231,222,201,0.4);">Política de Privacidad y Cookies</a>.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
+          <button id="cookie-reject" type="button" style="min-height:44px; padding:11px 22px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#d8d2cd; background:transparent; border:1px solid rgba(231,222,201,0.35); border-radius:999px; cursor:pointer;">Rechazar no esenciales</button>
+          <button id="cookie-accept" type="button" style="min-height:44px; padding:11px 26px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#0a0a09; background:#e7ddc4; border:1px solid #e7ddc4; border-radius:999px; cursor:pointer;">Aceptar todas</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      // --- Hero crossfade rotation ---
+      (function () {
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+        if (slides.length < 2) return;
+        var order = slides.map(function (_, i) { return i; });
+        function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+        var active = 0;
+        order = shuffle(order.slice());
+        function show(idx) { slides.forEach(function (el, i) { el.style.opacity = i === idx ? '1' : '0'; }); }
+        show(order[0]);
+        setInterval(function () {
+          active++;
+          if (active >= order.length) { order = shuffle([0, 1, 2, 3].slice(0, slides.length)); active = 0; }
+          show(order[active]);
+        }, 6000);
+      })();
+
+      // --- ES/EN language toggle (swaps translatable strings + <html lang>) ---
+      (function () {
+        var es = document.getElementById('lang-es');
+        var en = document.getElementById('lang-en');
+        if (!es || !en) return;
+        var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+        nodes.forEach(function (n) { n.setAttribute('data-es', n.innerHTML); });
+        function setLang(lang) {
+          document.documentElement.lang = lang;
+          nodes.forEach(function (n) {
+            var v = lang === 'en' ? n.getAttribute('data-en') : n.getAttribute('data-es');
+            if (v != null) n.innerHTML = v;
+          });
+          var isEs = lang === 'es';
+          es.setAttribute('aria-pressed', String(isEs));
+          en.setAttribute('aria-pressed', String(!isEs));
+          es.style.background = isEs ? 'rgba(231,222,201,0.92)' : 'transparent';
+          es.style.color = isEs ? '#0a0a09' : '#e7ddc4';
+          en.style.background = !isEs ? 'rgba(231,222,201,0.92)' : 'transparent';
+          en.style.color = !isEs ? '#0a0a09' : '#e7ddc4';
+        }
+        es.addEventListener('click', function () { setLang('es'); });
+        en.addEventListener('click', function () { setLang('en'); });
+      })();
+
+      // --- Cookie consent banner ---
+      (function () {
+        var KEY = 'notofilia_cookie_consent';
+        var banner = document.getElementById('cookie-banner');
+        if (!banner) return;
+        var stored;
+        try { stored = localStorage.getItem(KEY); } catch (e) {}
+        if (stored !== 'accepted' && stored !== 'rejected') banner.hidden = false;
+        function choose(v) { try { localStorage.setItem(KEY, v); } catch (e) {} banner.hidden = true; if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted')); }
+        var a = document.getElementById('cookie-accept');
+        var r = document.getElementById('cookie-reject');
+        if (a) a.addEventListener('click', function () { choose('accepted'); });
+        if (r) r.addEventListener('click', function () { choose('rejected'); });
+      })();
+    </script>
+  </body>
+</html>
