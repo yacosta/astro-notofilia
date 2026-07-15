@@ -421,7 +421,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.notofilia.com/coleccion/polimero-mundial/chile-2000-pesos-2009/</loc>
+    <loc>https://www.notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -589,7 +589,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.notofilia.com/coleccion/colombia/departamento-de-antioquia-10-centavos-1961/</loc>
+    <loc>https://www.notofilia.com/coleccion/colombia/departamento-de-antioquia-centavos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -772,5 +772,17 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/contacto/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/politica-privacidad-cookies/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
