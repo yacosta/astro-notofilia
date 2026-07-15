@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import Cover from '../../components/Cover.astro';
+
+const posts = (await getCollection('noticias', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const SITE = 'https://www.notofilia.com';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Noticias de Numismática y Notafilia',
+  url: `${SITE}/noticias/`,
+  description:
+    'Noticias y artículos sobre numismática y notafilia: subastas, emisiones y hallazgos para coleccionistas.',
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Noticias', item: `${SITE}/noticias/` },
+    ],
+  },
+};
+---
+<BlogLayout
+  title="Noticias de Numismática y Notafilia · Notofilia"
+  description="Noticias y artículos sobre numismática y notafilia: subastas, emisiones y hallazgos de interés para coleccionistas de monedas y billetes."
+  path="/noticias/"
+  jsonLd={jsonLd}
+>
+  <div class="wrap page">
+    <nav class="crumbs" aria-label="Migas de pan">
+      <a href="/">Inicio</a> <span aria-hidden="true">/</span> <span>Noticias</span>
+    </nav>
+    <h1>Noticias de Numismática y Notafilia</h1>
+    <p class="lede">
+      Una selección de noticias, hallazgos y notas sobre monedas y billetes históricos.
+    </p>
+
+    {posts.length === 0 ? (
+      <p class="empty">Muy pronto publicaremos las primeras noticias.</p>
+    ) : (
+      <ul class="grid" role="list">
+        {posts.map((post) => (
+          <li class="card">
+            <a class="card-link" href={`/noticias/${post.slug}/`}>
+              {post.data.cover && (
+                <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
+              )}
+              <div class="card-body">
+                <div class="meta">
+                  <time datetime={post.data.publishedAt.toISOString().slice(0, 10)}>
+                    {fmt(post.data.publishedAt)}
+                  </time>
+                  {post.data.source && <span aria-hidden="true">·</span>}
+                  {post.data.source && <span class="src">{post.data.source}</span>}
+                </div>
+                <h2>{post.data.title}</h2>
+                <p class="excerpt">{post.data.excerpt}</p>
+                <span class="more">Leer más &rarr;</span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BlogLayout>
+
+<style>
+  .page { padding-top: 56px; padding-bottom: 24px; }
+  .crumbs { font-size: 14px; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 20px; }
+  .crumbs a { color: var(--muted); text-decoration-color: rgba(183, 171, 138, 0.4); }
+  h1 {
+    font-family: 'Montenegrin Gothic One', serif; font-weight: 400;
+    font-size: clamp(30px, 5vw, 46px); color: var(--cream); margin: 0 0 14px;
+    line-height: 1.1;
+  }
+  .lede { font-size: clamp(18px, 2.4vw, 22px); color: var(--cream-dim); margin: 0 0 44px; max-width: 60ch; }
+  .empty { color: var(--muted); }
+  .grid {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px 32px;
+  }
+  .card-link { display: block; text-decoration: none; color: inherit; height: 100%; }
+  .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }
+  .card :global(img) { transition: transform 0.4s ease; }
+  .card-link:hover :global(img) { transform: scale(1.03); }
+  .card-body { padding-top: 16px; border-top: 1px solid var(--line); margin-top: 16px; }
+  .card:first-child .card-body,
+  .card .card-body { border-top: 2px solid var(--muted); }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+    font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  }
+  .card h2 {
+    font-family: 'Montenegrin Gothic One', serif; font-weight: 400;
+    font-size: clamp(19px, 2vw, 22px); color: var(--cream); margin: 0 0 8px; line-height: 1.25;
+  }
+  .card-link:hover h2 { color: #fff; }
+  .excerpt { font-size: 16px; color: var(--cream-dim); margin: 0 0 12px; }
+  .more { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+</style>

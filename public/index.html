@@ -232,7 +232,7 @@
                 <span style="font-size:13px; color:#7d7360;">&middot; {{ item.source }}</span>
               </div>
               <h3 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(17.6px, 1.1rem + 0.3vw, 19px); letter-spacing:0.02em; color:#1c1a15; margin:0 0 6px; text-wrap:balance; overflow-wrap:break-word;">{{ item.title }}</h3>
-              <a href="noticias.dc.html" style="font-size:15px; color:#8a6d3b; text-decoration-color:rgba(138,109,59,0.35);">Leer en {{ item.source }} &rarr;</a>
+              <a href="{{ item.url }}" style="font-size:15px; color:#8a6d3b; text-decoration-color:rgba(138,109,59,0.35);">Leer más &rarr;</a>
             </article>
           </sc-for>
         </div>
@@ -243,7 +243,7 @@
       </sc-if>
 
       <p style="text-align:center; margin:0;">
-        <a href="noticias.dc.html" style="display:inline-flex; align-items:center; min-height:44px; box-sizing:border-box; border:1px solid #1c1a15; color:#1c1a15; text-decoration:none; font-size:15px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; padding:12px 28px; border-radius:999px;">Ver todas las noticias</a>
+        <a href="/noticias/" style="display:inline-flex; align-items:center; min-height:44px; box-sizing:border-box; border:1px solid #1c1a15; color:#1c1a15; text-decoration:none; font-size:15px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; padding:12px 28px; border-radius:999px;">Ver todas las noticias</a>
       </p>
     </div>
   </section>
