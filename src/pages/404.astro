@@ -1,0 +1,107 @@
+---
+// Custom 404 page — a genuine Astro-rendered route.
+// The original static site had no styled not-found page (the Cloudflare
+// function only logged 404s). This matches the site's dark, warm palette and
+// display typography, and links back into the collection.
+const title = 'Página no encontrada · Notofilia';
+const description = 'La página que buscas no existe o fue movida. Vuelve a la colección de billetes y monedas históricas de Notofilia.';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="canonical" href="https://www.notofilia.com/404" />
+    <style is:global>
+      @font-face {
+        font-family: 'Montenegrin Gothic One';
+        src: url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Cormorant Garamond';
+        src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype');
+        font-weight: 300 700;
+        font-display: swap;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; }
+      body {
+        background: radial-gradient(120% 100% at 50% 0%, #1c1a15 0%, #0a0a09 70%);
+        color: #d8d2cd;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        -webkit-font-smoothing: antialiased;
+      }
+      main { max-width: 40rem; }
+      .code {
+        font-family: 'Montenegrin Gothic One', 'Cormorant Garamond', serif;
+        font-size: clamp(72px, 18vw, 180px);
+        line-height: 0.9;
+        letter-spacing: 0.04em;
+        color: #e7ddc4;
+        margin: 0;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
+      }
+      h1 {
+        font-family: 'Montenegrin Gothic One', 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: clamp(22px, 4vw, 34px);
+        letter-spacing: 0.02em;
+        margin: 0.5rem 0 1rem;
+        color: #d8d2cd;
+      }
+      p {
+        font-size: clamp(17px, 2.4vw, 20px);
+        line-height: 1.5;
+        color: #b7ab8a;
+        margin: 0 auto 2rem;
+        max-width: 32rem;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        justify-content: center;
+      }
+      a.btn {
+        display: inline-block;
+        padding: 0.7rem 1.4rem;
+        min-height: 44px;
+        border: 1px solid #8a6d3b;
+        border-radius: 2px;
+        color: #e7ddc4;
+        text-decoration: none;
+        font-size: 1.05rem;
+        letter-spacing: 0.03em;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      a.btn:hover,
+      a.btn:focus-visible { background: #8a6d3b; color: #0a0a09; }
+      a.btn:focus-visible { outline: 2px solid #e7ddc4; outline-offset: 3px; }
+      a.plain { color: #b7ab8a; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Página no encontrada</h1>
+      <p>La página que buscas no existe o fue movida. Explora la colección de billetes y monedas históricas.</p>
+      <div class="actions">
+        <a class="btn" href="/">Ir al inicio</a>
+        <a class="btn" href="/coleccion/">Ver la colección</a>
+      </div>
+    </main>
+  </body>
+</html>

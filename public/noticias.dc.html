@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <title>Noticias de Numismática y Notafilia | Notofilia</title>
+  <meta name="description" content="Noticias curadas sobre numismática y notafilia: subastas, nuevas emisiones y hallazgos relevantes para coleccionistas de monedas y billetes.">
+  <meta name="keywords" content="noticias numismatica, noticias notafilia, subastas de billetes, coleccionismo de monedas, notofilia">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Notofilia">
+  <link rel="canonical" href="https://www.notofilia.com/noticias/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Notofilia">
+  <meta property="og:title" content="Noticias de Numismática y Notafilia | Notofilia">
+  <meta property="og:description" content="Una selección curada de noticias sobre subastas, emisiones y hallazgos de interés para coleccionistas de monedas y billetes.">
+  <meta property="og:url" content="https://www.notofilia.com/noticias/">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Noticias de Numismática y Notafilia — Notofilia">
+  <meta name="twitter:description" content="Una selección curada de noticias sobre subastas, emisiones y hallazgos de interés para coleccionistas.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Notofilia", "item": "https://www.notofilia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Noticias", "item": "https://www.notofilia.com/noticias/" }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "Noticias de Numismática y Notafilia",
+        "url": "https://www.notofilia.com/noticias/",
+        "inLanguage": "es",
+        "isPartOf": { "@type": "WebSite", "name": "Notofilia", "url": "https://www.notofilia.com/" }
+      }
+    ]
+  }
+  </script>
+  <style>
+    @font-face {
+      font-family: "Montenegrin Gothic One";
+      src: url("uploads/fonts/MontenegrinGothicOne-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("uploads/fonts/CormorantGaramond-Variable.ttf") format("truetype-variations");
+      font-weight: 300 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("uploads/fonts/CormorantGaramond-Italic-Variable.ttf") format("truetype-variations");
+      font-weight: 300 700;
+      font-style: italic;
+      font-display: swap;
+    }
+    body { margin: 0; }
+    a { color: #8a6d3b; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }
+    a:hover { color: #5c4826; }
+    ::selection { background: rgba(138,109,59,0.25); }
+  </style>
+</helmet>
+
+<div style="width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;">
+
+  <a
+    href="#main-content"
+    style="position:absolute; top:-60px; left:16px; z-index:20; background:#d8d2cd; color:#0a0a09; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:15px; letter-spacing:0.05em; padding:12px 20px; border-radius:2px; text-decoration:none; transition:top 0.15s ease;"
+    style-focus="top:16px;"
+  >Saltar al contenido principal</a>
+
+  <script async="{{ true }}" src="https://www.instagram.com/embed.js"></script>
+
+  <dc-import name="SiteHeader" hint-size="100%,60px"></dc-import>
+
+  <main id="main-content" style="max-width:840px; margin:0 auto; padding:64px 20px 40px;">
+
+    <nav aria-label="Miga de pan" style="margin-bottom:20px;">
+      <a href="index.html" style="font-size:14px; color:#b7ab8a;">Notofilia</a>
+      <span style="font-size:14px; color:#5c4e33; margin:0 8px;">/</span>
+      <span style="font-size:14px; color:#e7ddc4;">Noticias</span>
+    </nav>
+
+    <h1 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,42px); color:#e7ddc4; margin:0 0 14px;">Noticias de Numismática y Notafilia</h1>
+    <p style="font-size:19px; line-height:1.6; color:#b7ab8a; margin:0 0 48px;">Una selección curada de subastas, nuevas emisiones y hallazgos que puedan interesar a coleccionistas de monedas y billetes. Cada entrada enlaza a la fuente original.</p>
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <sc-for list="{{ items }}" as="item" hint-placeholder-count="4">
+        <article style="background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:26px clamp(20px,4vw,36px);">
+          <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:8px;">
+            <time datetime="{{ item.isoDate }}" style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#8a6d3b;">{{ item.dateLabel }}</time>
+            <span style="font-size:13px; color:#7d7360;">&middot; {{ item.source }}</span>
+          </div>
+          <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:21px; color:#1c1a15; margin:0 0 8px;">{{ item.title }}</h2>
+          <sc-if value="{{ item.hasImage }}" hint-placeholder-val="{{ false }}">
+            <picture>
+              <source srcset="{{ item.imageSmallWebp }}" media="(max-width: 640px)" type="image/webp" />
+              <source srcset="{{ item.imageWebp }}" type="image/webp" />
+              <img src="{{ item.image }}" alt="{{ item.imageAlt }}" loading="lazy" decoding="async" style="display:block; width:100%; max-width:100%; height:auto; border-radius:3px; margin:0 0 12px;" />
+            </picture>
+          </sc-if>
+          <p style="font-size:17px; line-height:1.6; color:#332e22; margin:0 0 12px;">{{ item.summary }}</p>
+          <sc-if value="{{ item.hasEmbed }}" hint-placeholder-val="{{ false }}">
+            <div data-ig-embed="{{ item.igEmbedId }}" style="margin:0 0 14px; display:flex; justify-content:center;"></div>
+          </sc-if>
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" style="font-size:15px; color:#8a6d3b; text-decoration-color:rgba(138,109,59,0.35);">Leer en {{ item.source }} &rarr;</a>
+        </article>
+      </sc-for>
+    </div>
+
+    <p style="font-size:14px; line-height:1.6; color:#7d7360; text-align:center; margin:36px 0 0;">¿Vio una noticia que debería estar aquí? Escríbanos y la evaluamos para incluirla.</p>
+
+  </main>
+
+  <dc-import name="SiteFooter" disclaimer="Esta sección enlaza a fuentes externas seleccionadas manualmente; Notofilia no reproduce artículos completos de terceros." hint-size="100%,140px"></dc-import>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 900, &quot;height&quot;: 1200}}">
+class Component extends DCLogic {
+  state = { rawItems: [] };
+
+  monthsEs = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+
+  formatDate(iso) {
+    const [y, m, d] = iso.split("-").map(Number);
+    return `${d} de ${this.monthsEs[m - 1]}. de ${y}`;
+  }
+
+  embedHtmlById = {};
+
+  componentDidMount() {
+    import("./news-items.js").then((m) => {
+      const items = m.NEWS_ITEMS || [];
+      items.forEach((it) => { if (it.igEmbedId && it.igEmbedHtml) this.embedHtmlById[it.igEmbedId] = it.igEmbedHtml; });
+      this.setState({ rawItems: items });
+    });
+  }
+
+  componentDidUpdate() {
+    this.mountEmbeds();
+  }
+
+  mountEmbeds() {
+    if (typeof document === "undefined") return;
+    document.querySelectorAll("[data-ig-embed]").forEach((el) => {
+      const id = el.getAttribute("data-ig-embed");
+      if (id && this.embedHtmlById[id] && !el.dataset.igMounted) {
+        el.innerHTML = this.embedHtmlById[id];
+        el.dataset.igMounted = "1";
+      }
+    });
+    if (typeof window !== "undefined" && window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
+  }
+
+  renderVals() {
+    const items = this.state.rawItems
+      .slice()
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .map((it) => ({ ...it, isoDate: it.date, dateLabel: this.formatDate(it.date), hasEmbed: !!(it.igEmbedId && it.igEmbedHtml), hasImage: !!it.image }));
+    return { items };
+  }
+}
+
+</script>
+</body>
+</html>

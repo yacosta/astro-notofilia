@@ -1,0 +1,20 @@
+{
+  "name": "notofilia",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Astro build of notofilia.com — digital catalog and virtual collection of historical banknotes and coins.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "engines": {
+    "node": ">=20.3.0"
+  },
+  "dependencies": {
+    "astro": "^4.16.19"
+  }
+}

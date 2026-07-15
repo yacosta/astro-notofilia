@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "notofilia",
+  "compatibility_date": "2026-07-06",
+  // Astro builds the static site into dist/; Cloudflare Pages serves it.
+  "pages_build_output_dir": "dist"
+}

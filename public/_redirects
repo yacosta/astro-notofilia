@@ -1,0 +1,71 @@
+# Cloudflare Pages rewrites: pretty URL -> actual .dc.html file (200 = rewrite, keeps URL in address bar)
+
+# Legacy URLs from the old Notofilia content portal -> revived as a new profile page
+/j-s-g-boggs/  /perfil-j-s-g-boggs.dc.html  200
+/j-s-g-boggs  /perfil-j-s-g-boggs.dc.html  200
+
+/glosario/  /glosario-numismatico.dc.html  200
+/politica-privacidad-cookies/  /politica-privacidad-cookies.dc.html  200
+/contacto/  /contacto.dc.html  200
+
+/coleccion/  /catalogo.dc.html  200
+/coleccion/reserva-federal/  /catalogo-reserva-federal.dc.html  200
+/coleccion/departamento-del-tesoro-de-ee-uu/  /departamento-del-tesoro-de-ee-uu.dc.html  200
+/coleccion/moneda-colonial/  /catalogo-moneda-colonial.dc.html  200
+/coleccion/moneda-colonial-espanola/  /catalogo-moneda-colonial-espanola.dc.html  200
+/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/  /moneda-colombia-2-escudos-felipe-v.dc.html  200
+/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/  /moneda-colombia-2-escudos-carlos-iv-1791.dc.html  200
+/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/  /moneda-colombia-1-escudo-fernando-vii-1820.dc.html  200
+/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/  /moneda-colombia-1-escudo-carlos-iii-1774.dc.html  200
+/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/  /moneda-colombia-1-escudo-carlos-iii-1787.dc.html  200
+/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/  /moneda-colombia-1-escudo-carlos-iv-1802.dc.html  200
+/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/  /moneda-colombia-1-escudo-fernando-vii-1811.dc.html  200
+/coleccion/colombia/  /catalogo-colombia.dc.html  200
+/coleccion/colombia/banca-libre/  /catalogo-banca-libre.dc.html  200
+/coleccion/puerto-rico/  /catalogo-puerto-rico.dc.html  200
+/coleccion/ecuador/  /catalogo-ecuador.dc.html  200
+
+/coleccion/state-bank-new-brunswick/1-dolar/  /billete-state-bank-new-brunswick.dc.html  200
+/coleccion/citizens-bank-of-louisiana/5-dolares/  /billete-citizens-bank-of-louisiana.dc.html  200
+/coleccion/city-bank-new-haven/5-dolares/  /billete-city-bank-new-haven.dc.html  200
+/coleccion/hagerstown-bank-maryland/  /billete-hagerstown-bank-maryland.dc.html  200
+/coleccion/adrian-insurance-michigan/2-dolares/  /billete-adrian-insurance-company-michigan.dc.html  200
+/coleccion/certificado-de-oro-10-dolares-1928/  /billete-certificado-de-oro-10-dolares-1928.dc.html  200
+/coleccion/un-dolar-sello-rojo-1928/  /billete-un-dolar-sello-rojo-1928.dc.html  200
+/coleccion/cien-dolares-sello-rojo-1966/  /billete-cien-dolares-sello-rojo-1966.dc.html  200
+/coleccion/giori-press-test-note/  /billete-giori-press-test-note.dc.html  200
+/coleccion/diez-dolares-1934-distritos/  /billete-diez-dolares-1934-distritos.dc.html  200
+/coleccion/veinte-dolares-hawaii-1934/  /billete-veinte-dolares-hawaii-1934.dc.html  200
+/coleccion/cien-dolares-minneapolis-1929/  /billete-federal-reserve-bank-note-100-dolares-minneapolis-1929.dc.html  200
+/coleccion/un-dolar-norte-africa-1935a/  /billete-plata-1-dolar-norte-africa-1935a.dc.html  200
+
+/coleccion/moneda-colonial/provincia-de-pensilvania/  /billete-provincia-de-pensilvania-colonial.dc.html  200
+
+/coleccion/colombia/cartagena-1-real-1813/  /billete-colombia-cartagena-1-real-1813.dc.html  200
+/coleccion/colombia/nueva-granada-1-peso-1861/  /billete-colombia-nueva-granada-1-peso-1861.dc.html  200
+/coleccion/colombia/banco-de-caldas-1-peso-1919/  /billete-colombia-banco-de-caldas-1-peso-1919.dc.html  200
+/coleccion/colombia/banco-de-la-republica-100-pesos-oro/  /billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html  200
+/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/  /billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html  200
+/coleccion/colombia/banco-de-la-republica-10-pesos-oro/  /billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html  200
+/coleccion/colombia/banco-de-la-republica-50000-pesos/  /billete-colombia-banco-de-la-republica-50000-pesos.dc.html  200
+/coleccion/colombia/2000-pesos-error-mariposa/  /billete-colombia-2000-pesos-error-mariposa.dc.html  200
+/coleccion/colombia/2000-pesos-error-corte-descentrado/  /billete-colombia-2000-pesos-error-corte-descentrado.dc.html  200
+/coleccion/colombia/perfil-german-gutierrez-de-pineres/  /perfil-german-gutierrez-de-pineres.dc.html  200
+/coleccion/colombia/perfil-rafael-nunez/  /perfil-rafael-nunez.dc.html  200
+/coleccion/colombia/vicente-villa-e-hijos-5-pesos/  /billete-colombia-vicente-villa-e-hijos-5-pesos-1880s.dc.html  200
+/coleccion/colombia/banco-de-pamplona-10-pesos-1884/  /billete-colombia-banco-de-pamplona-10-pesos-1884.dc.html  200
+/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/  /billete-colombia-banco-de-barranquilla-50-centavos-1900.dc.html  200
+/coleccion/colombia/banco-de-medellin-50-centavos/  /billete-colombia-banco-de-medellin-50-centavos.dc.html  200
+/coleccion/colombia/banco-de-oriente-5-pesos-1888/  /billete-colombia-banco-de-oriente-5-pesos-1888.dc.html  200
+/coleccion/colombia/banco-internacional-1-peso-1884/  /billete-colombia-banco-internacional-1-peso-1884.dc.html  200
+/coleccion/colombia/banco-nacional-25-pesos-1895/  /billete-colombia-banco-nacional-25-pesos-1895.dc.html  200
+/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/  /billete-colombia-banco-de-antioquia-libranza-10-centavos-1900.dc.html  200
+
+/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/  /billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html  200
+/coleccion/puerto-rico/perfil-alejandro-ramirez/  /perfil-alejandro-ramirez.dc.html  200
+/coleccion/puerto-rico/billete-de-canje-1-peso-1895/  /billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html  200
+/coleccion/puerto-rico/junta-central-cuba-1869/  /billete-puerto-rico-junta-central-cuba-1869.dc.html  200
+/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/  /billete-puerto-rico-republica-de-cuba-1-peso-1869.dc.html  200
+/coleccion/puerto-rico/perfil-jose-morales-lemus/  /perfil-jose-morales-lemus.dc.html  200
+
+/coleccion/ecuador/100-sucres-1993/  /billete-ecuador-100-sucres-1993.dc.html  200
