@@ -16,18 +16,16 @@ const SITE = 'https://www.notofilia.com';
 const { title, description, path, ogType = 'website', ogImage, jsonLd } = Astro.props;
 const canonical = SITE + path;
 const image = ogImage ? SITE + ogImage : SITE + '/favicon.png';
-const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/glosario/', label: 'Glosario' },
-  { href: '/noticias/', label: 'Noticias' },
-  { href: '/contacto/', label: 'Contacto' },
-];
 ---
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Blog pages live at nested /noticias/ URLs; <base> makes the shared
+         dc-runtime header's relative links + component fetch resolve from root. -->
+    <base href="/" />
+    <script src="/support.js" is:inline></script>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Notofilia" />
@@ -62,6 +60,12 @@ const nav = [
         --muted: #b7ab8a; --line: rgba(231, 222, 201, 0.14);
       }
       * { box-sizing: border-box; }
+      /* The dc-runtime header mounts into an <x-dc> block; hide raw template
+         pre-boot and neutralize the runtime's full-page height CSS so the
+         header sits in normal flow above the article. */
+      x-dc { display: none; }
+      #dc-root { height: auto !important; }
+      html, body { height: auto !important; }
       html { -webkit-text-size-adjust: 100%; }
       body {
         margin: 0; background: var(--bg); color: var(--cream-dim);
@@ -78,37 +82,7 @@ const nav = [
       }
       .skip:focus { left: 0; }
       .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-      /* header */
-      .site-header {
-        border-bottom: 1px solid var(--line);
-        background: rgba(10, 10, 9, 0.85);
-        position: sticky; top: 0; z-index: 100;
-        backdrop-filter: blur(12px);
-      }
-      .site-header .wrap {
-        display: flex; align-items: center; justify-content: space-between;
-        gap: 16px; min-height: 68px; flex-wrap: wrap;
-      }
-      .brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
-      .brand b {
-        font-family: 'Montenegrin Gothic One', serif; font-weight: 400;
-        letter-spacing: 0.16em; font-size: 22px; color: var(--cream);
-      }
-      .brand span {
-        font-style: italic; font-size: 13px; letter-spacing: 0.06em;
-        color: var(--cream-dim); margin-top: 3px;
-      }
-      .site-nav { display: flex; gap: 6px; flex-wrap: wrap; }
-      .site-nav a {
-        display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px;
-        text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px;
-        font-weight: 600; color: var(--cream-dim); text-decoration: none; border-radius: 4px;
-      }
-      .site-nav a:hover { color: var(--cream); }
-      .site-nav a[aria-current='page'] { color: var(--cream); }
-      .site-nav a:focus-visible, .brand:focus-visible, .site-footer a:focus-visible {
-        outline: 2px solid var(--cream); outline-offset: 3px;
-      }
+      .site-footer a:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
       main { min-height: 60vh; }
       /* footer */
       .site-footer {
@@ -128,20 +102,10 @@ const nav = [
     </style>
   </head>
   <body>
-    <a class="skip" href="#main-content">Saltar al contenido</a>
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="/">
-          <b>NOTOFILIA</b>
-          <span>Numismática y Notafilia</span>
-        </a>
-        <nav class="site-nav" aria-label="Navegación principal">
-          {nav.map((n) => (
-            <a href={n.href} aria-current={n.href === path ? 'page' : undefined}>{n.label}</a>
-          ))}
-        </nav>
-      </div>
-    </header>
+    <a class="skip" href={`${path}#main-content`}>Saltar al contenido</a>
+    <!-- Reuse the site's exact SiteHeader (nav + search + full collection
+         mega-menu), rendered by the shared dc-runtime. -->
+    <x-dc><dc-import name="SiteHeader" lang="es"></dc-import></x-dc>
     <main id="main-content">
       <slot />
     </main>
