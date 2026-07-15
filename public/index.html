@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -228,11 +228,11 @@
                 </picture>
               </sc-if>
               <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px;">
-                <time datetime="{{ item.isoDate }}" style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#8a6d3b;">{{ item.dateLabel }}</time>
-                <span style="font-size:13px; color:#7d7360;">&middot; {{ item.source }}</span>
+                <time datetime="{{ item.isoDate }}" style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#6b521f;">{{ item.dateLabel }}</time>
+                <span style="font-size:13px; color:#5c4e33;">&middot; {{ item.source }}</span>
               </div>
               <h3 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(17.6px, 1.1rem + 0.3vw, 19px); letter-spacing:0.02em; color:#1c1a15; margin:0 0 6px; text-wrap:balance; overflow-wrap:break-word;">{{ item.title }}</h3>
-              <a href="{{ item.url }}" style="font-size:15px; color:#8a6d3b; text-decoration-color:rgba(138,109,59,0.35);">Leer más &rarr;</a>
+              <a href="{{ item.url }}" style="font-size:15px; color:#6b521f; text-decoration-color:rgba(138,109,59,0.35);">Leer más &rarr;</a>
             </article>
           </sc-for>
         </div>
@@ -282,7 +282,7 @@
     </div>
   </sc-if>
 
-  <p style="position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.1em; color:#7d7360; text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 40px; box-sizing:border-box;"><strong style="font-weight:700; color:#b7ab8a;">{{ siteStatsLabel }}</strong> {{ siteStats }}</p>
+  <p style="position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.1em; color:#b7ab8a; text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 40px; box-sizing:border-box;"><strong style="font-weight:700; color:#cbbf9d;">{{ siteStatsLabel }}</strong> {{ siteStats }}</p>
 
   
 

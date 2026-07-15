@@ -85,7 +85,7 @@
       font-display: swap;
     }
     body { margin: 0; }
-    a { color: #8a6d3b; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }
+    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }
     a:hover { color: #5c4826; }
     ::selection { background: rgba(138,109,59,0.25); }
   </style>
@@ -113,8 +113,8 @@
       <label for="glossary-search" style="display:block; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#b7ab8a; margin-bottom:10px; text-align:center;">Buscar en el glosario</label>
       <div style="position:relative;">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" style="position:absolute; top:50%; left:20px; transform:translateY(-50%); pointer-events:none;">
-          <circle cx="11" cy="11" r="7" stroke="#8a6d3b" stroke-width="2"></circle>
-          <line x1="16.4" y1="16.4" x2="21" y2="21" stroke="#8a6d3b" stroke-width="2" stroke-linecap="round"></line>
+          <circle cx="11" cy="11" r="7" stroke="#6b521f" stroke-width="2"></circle>
+          <line x1="16.4" y1="16.4" x2="21" y2="21" stroke="#6b521f" stroke-width="2" stroke-linecap="round"></line>
         </svg>
         <input
           id="glossary-search"
@@ -124,7 +124,7 @@
           aria-describedby="glossary-search-status"
           style="width:100%; box-sizing:border-box; min-height:56px; font-family:'Cormorant Garamond', serif; font-size:19px; color:#1c1a15; background:#f2ede2; border:2px solid rgba(10,10,9,0.12); border-radius:999px; padding:14px 52px 14px 54px; outline:none; box-shadow:0 10px 26px rgba(0,0,0,0.28); transition:border-color 0.15s ease, box-shadow 0.15s ease;"
           style-hover="border-color:rgba(138,109,59,0.5);"
-          style-focus="border-color:#8a6d3b; box-shadow:0 10px 26px rgba(0,0,0,0.28), 0 0 0 4px rgba(138,109,59,0.22);"
+          style-focus="border-color:#6b521f; box-shadow:0 10px 26px rgba(0,0,0,0.28), 0 0 0 4px rgba(138,109,59,0.22);"
         />
         <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
           <button
@@ -133,7 +133,7 @@
             aria-label="Borrar búsqueda"
             style="position:absolute; top:50%; right:10px; transform:translateY(-50%); width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(10,10,9,0.08); border:none; color:#5c4e33; font-size:20px; line-height:1; cursor:pointer; border-radius:50%;"
             style-hover="background:rgba(10,10,9,0.15); color:#1c1a15;"
-            style-focus="outline:2px solid #8a6d3b; outline-offset:1px;"
+            style-focus="outline:2px solid #6b521f; outline-offset:1px;"
           >×</button>
         </sc-if>
       </div>
@@ -152,29 +152,29 @@
           <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:10px;">
             <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:22px; color:#1c1a15; margin:0;">{{ entry.term_es }}</h2>
             <span style="font-size:17px; font-style:italic; color:#5c4e33;">{{ entry.term_en }}</span>
-            <span style="margin-left:auto; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8a6d3b; border:1px solid rgba(138,109,59,0.35); border-radius:999px; padding:3px 10px;">{{ entry.category }}</span>
+            <span style="margin-left:auto; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#6b521f; border:1px solid rgba(138,109,59,0.35); border-radius:999px; padding:3px 10px;">{{ entry.category }}</span>
           </div>
           <p style="font-size:18px; line-height:1.6; color:#332e22; margin:0 0 6px;">{{ entry.definition_es }}</p>
           <p style="font-size:15px; line-height:1.55; color:#5c4e33; margin:0; font-style:italic;">{{ entry.definition_en }}</p>
           <sc-if value="{{ entry.hasSeeAlso }}" hint-placeholder-val="{{ false }}">
-            <p style="font-size:14px; color:#7d7360; margin:10px 0 0;">Ver también: {{ entry.seeAlsoText }}</p>
+            <p style="font-size:14px; color:#5c4e33; margin:10px 0 0;">Ver también: {{ entry.seeAlsoText }}</p>
           </sc-if>
         </div>
       </sc-for>
       <sc-if value="{{ hasNoResults }}" hint-placeholder-val="{{ false }}">
-        <div style="text-align:center; padding:32px 20px; color:#7d7360;">
+        <div style="text-align:center; padding:32px 20px; color:#5c4e33;">
           <p style="font-size:18px; margin:0 0 12px;">No encontramos términos para «{{ query }}».</p>
           <button
             type="button"
             onClick="{{ clearSearch }}"
             style="min-height:44px; padding:10px 22px; font-family:'Cormorant Garamond', serif; font-size:16px; color:#1c1a15; background:#d8d2cd; border:1px solid rgba(10,10,9,0.15); border-radius:4px; cursor:pointer;"
-            style-focus="outline:2px solid #8a6d3b; outline-offset:2px;"
+            style-focus="outline:2px solid #6b521f; outline-offset:2px;"
           >Ver todo el glosario</button>
         </div>
       </sc-if>
     </div>
 
-    <p style="font-size:14px; line-height:1.6; color:#7d7360; text-align:center; margin:32px 0 0;">Términos marcados como sugeridos complementan el vocabulario ya usado en el catálogo con vocablos estándar del coleccionismo internacional.</p>
+    <p style="font-size:14px; line-height:1.6; color:#b7ab8a; text-align:center; margin:32px 0 0;">Términos marcados como sugeridos complementan el vocabulario ya usado en el catálogo con vocablos estándar del coleccionismo internacional.</p>
 
   </main>
 
