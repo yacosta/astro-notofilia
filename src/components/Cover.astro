@@ -1,0 +1,23 @@
+---
+// Renders a cover image as WebP + JPEG fallback via <picture>, using the
+// conventional variant suffixes already present in public/uploads/:
+//   <base>.jpg  <base>.webp  <base>-640.webp
+export interface Props {
+  base: string;       // image base name under /uploads (no extension)
+  alt: string;
+  eager?: boolean;    // load eagerly (above-the-fold hero)
+  ratio?: string;     // CSS aspect-ratio, default 16/10
+}
+const { base, alt, eager = false, ratio = '16 / 10' } = Astro.props;
+const u = (s: string) => `/uploads/${base}${s}`;
+---
+<picture>
+  <source type="image/webp" srcset={`${u('-640.webp')} 640w, ${u('.webp')} 1200w`} sizes="(max-width: 720px) 100vw, 720px" />
+  <img
+    src={u('.jpg')}
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    style={`display:block; width:100%; height:auto; aspect-ratio:${ratio}; object-fit:cover; background:#1c1a15;`}
+  />
+</picture>
