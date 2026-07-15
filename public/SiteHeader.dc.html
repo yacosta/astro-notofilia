@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<nav aria-label="Navegación principal" ref="{{ navRef }}" style="{{ navBarStyle }}">
+  <div style="max-width:1400px; margin:0 auto; padding:0 20px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:100%; box-sizing:border-box;">
+
+    <a href="index.html" style="display:flex; flex-direction:column; justify-content:center; text-decoration:none; justify-self:start; line-height:1;" style-hover="opacity:0.8;" style-focus="outline:2px solid #e7ddc4; outline-offset:4px;">
+      <span style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:34px; letter-spacing:0.1em; color:#d8d2cd;">NOTOFILIA</span>
+      <span style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:14px; letter-spacing:0.1em; color:#d8d2cd; margin-top:2px;">Numismática y Notafilia</span>
+    </a>
+
+    <div style="justify-self:center; position:relative;">
+      <div style="{{ searchPillStyle }}">
+        <button
+          ref="{{ searchButtonRef }}"
+          onClick="{{ toggleSearch }}"
+          aria-label="Buscar"
+          aria-expanded="{{ searchOpen }}"
+          aria-controls="site-search-input"
+          style="display:flex; align-items:center; justify-content:center; width:34px; height:34px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0; color:#e7ddc4;"
+          style-focus="outline:2px solid #e7ddc4; outline-offset:2px; border-radius:17px;"
+        >
+          <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.3"></circle>
+            <line x1="11.6" y1="11.6" x2="16" y2="16" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></line>
+          </svg>
+        </button>
+        <input
+          id="site-search-input"
+          ref="{{ searchInputRef }}"
+          type="text"
+          value="{{ query }}"
+          onChange="{{ onQueryChange }}"
+          placeholder="Buscar billetes, perfiles…"
+          aria-label="Buscar en el sitio"
+          style="{{ searchInputStyle }}"
+        />
+      </div>
+
+      <sc-if value="{{ showResults }}" hint-placeholder-val="{{ false }}">
+        <div role="listbox" aria-label="Resultados de búsqueda" style="position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); width:min(360px, 88vw); max-height:360px; overflow-y:auto; background:rgba(10,10,9,0.96); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(231,222,201,0.15); border-radius:8px; box-shadow:0 24px 48px rgba(0,0,0,0.5); padding:6px; z-index:110;">
+          <sc-for list="{{ results }}" as="item" hint-placeholder-count="3">
+            <a href="{{ item.href }}" onClick="{{ closeSearch }}" role="option" style="display:block; padding:11px 14px; font-family:'Cormorant Garamond', serif; font-size:15px; color:#e7ddc4; text-decoration:none; border-radius:5px;" style-hover="background:rgba(231,222,201,0.12); color:#ffffff;">{{ item.title }}</a>
+          </sc-for>
+          <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+            <span style="display:block; padding:14px; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:14px; color:#a89b7c;">Sin resultados para &ldquo;{{ query }}&rdquo;.</span>
+          </sc-if>
+        </div>
+      </sc-if>
+    </div>
+
+    <button
+      ref="{{ menuButtonRef }}"
+      onClick="{{ openDrawer }}"
+      aria-haspopup="true"
+      aria-expanded="{{ menuOpen }}"
+      aria-label="Abrir menú"
+      style="justify-self:end; display:flex; flex-direction:column; justify-content:center; gap:5px; width:26px; height:34px; background:none; border:none; cursor:pointer; padding:8px 0;"
+      style-focus="outline:2px solid #e7ddc4; outline-offset:3px;"
+    >
+      <span style="display:block; width:100%; height:1.5px; background:#e7ddc4;"></span>
+      <span style="display:block; width:100%; height:1.5px; background:#e7ddc4;"></span>
+      <span style="display:block; width:70%; height:1.5px; background:#e7ddc4; align-self:flex-end;"></span>
+    </button>
+
+  </div>
+</nav>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; inset:0; z-index:118; background:rgba(10,10,9,0.55); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);" onClick="{{ closeDrawer }}"></div>
+  <div role="dialog" aria-modal="true" aria-label="{{ collectionLabel }}" style="position:fixed; top:0; right:0; bottom:0; z-index:119; width:min(420px, 92vw); background:#d8d2cd; box-shadow:-24px 0 60px rgba(0,0,0,0.5); overflow-y:auto; font-family:'Cormorant Garamond', serif; box-sizing:border-box;">
+
+    <div style="position:sticky; top:0; z-index:1; display:flex; align-items:center; justify-content:space-between; padding:20px 24px; background:#d8d2cd; border-bottom:1px solid rgba(10,10,9,0.1);">
+      <span style="font-family:'Montenegrin Gothic One', serif; font-size:18px; letter-spacing:0.1em; color:#1c1a15;">NOTOFILIA</span>
+      <button ref="{{ drawerCloseRef }}" onClick="{{ closeDrawer }}" aria-label="Cerrar menú" style="all:unset; cursor:pointer; width:32px; height:32px; display:flex; align-items:center; justify-content:center; color:#5c4e33; font-size:24px; line-height:1;" style-hover="color:#1c1a15;" style-focus="outline:2px solid #5c4e33; outline-offset:2px;">&times;</button>
+    </div>
+
+    <a href="index.html" onClick="{{ closeDrawer }}" style="display:block; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; text-decoration:none; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">{{ homeLabel }}</a>
+
+    <a href="glosario/" onClick="{{ closeDrawer }}" style="display:block; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; text-decoration:none; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">{{ glossaryLabel }}</a>
+
+    <a href="noticias.dc.html" onClick="{{ closeDrawer }}" style="display:block; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; text-decoration:none; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">Noticias</a>
+
+    <a href="contacto.dc.html" onClick="{{ closeDrawer }}" style="display:block; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; text-decoration:none; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">Contacto</a>
+
+    <span style="display:block; padding:18px 24px 4px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15;">COLECCIÓN VIRTUAL - NUMISMÁTICA</span>
+    <div style="display:flex; flex-direction:column; padding:4px 24px 18px; border-bottom:1px solid rgba(10,10,9,0.08);">
+      <a href="moneda-colombia-2-escudos-felipe-v.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Felipe V — Doblón de 2 Escudos, Bogotá</a>
+      <a href="moneda-colombia-2-escudos-carlos-iv-1791.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 2 Escudos, Bogotá 1791</a>
+      <a href="moneda-colombia-1-escudo-fernando-vii-1820.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1820</a>
+      <a href="moneda-colombia-1-escudo-carlos-iii-1774.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1774</a>
+      <a href="moneda-colombia-1-escudo-carlos-iii-1787.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos III — 1 Escudo, Bogotá 1787</a>
+      <a href="moneda-colombia-1-escudo-carlos-iv-1802.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 1 Escudo, Bogotá 1802</a>
+      <a href="moneda-colombia-1-escudo-fernando-vii-1811.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Fernando VII — 1 Escudo, Bogotá 1811</a>
+    </div>
+
+    <div>
+      <button onClick="{{ toggleCollection }}" aria-expanded="{{ collectionExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">
+        <span>{{ collectionLabel }}</span>
+        <span style="font-size:13px; color:#b7ab8a; transform:{{ collectionCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+      </button>
+
+      <sc-if value="{{ collectionExpanded }}" hint-placeholder-val="{{ false }}">
+        <div>
+
+          <div style="padding:16px 24px 4px; border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Colombia</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:22px; padding:12px 24px 22px;">
+            <div>
+              <a href="catalogo-colombia.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ sigloPasadoLabel }}</a>
+              <a href="billete-colombia-cartagena-1-real-1813.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ cartagenaLabel }}</a>
+              <a href="billete-colombia-nueva-granada-1-peso-1861.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Estados Unidos de Nueva Granada (1861)</a>
+              <a href="billete-colombia-estado-soberano-panama-3-pesos-1865.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Estado Soberano de Panamá (1865)</a>
+              <a href="billete-colombia-estado-soberano-cauca-5-pesos-1882.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Estado Soberano del Cauca (1882)</a>
+              <a href="billete-colombia-estado-soberano-cundinamarca-1-peso-1870.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Estado Soberano de Cundinamarca (1870)</a>
+              <a href="billete-colombia-republica-bolivar-1-2-pesos-1882.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">República Bolívar de Colombia (1882)</a>
+              <a href="billete-colombia-republica-1904-serie.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">República de Colombia (1904)</a>
+              <a href="billete-colombia-republica-1910-1915-emisiones.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">República de Colombia (1910&ndash;1915)</a>
+            </div>
+
+            <div>
+              <a href="catalogo-banca-libre.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Banca Libre</a>
+              <a href="billete-colombia-vicente-villa-e-hijos-5-pesos-1880s.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Vicente B. Villa é Hijos (188X)</a>
+              <a href="billete-colombia-banco-de-pamplona-10-pesos-1884.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Pamplona (1883&ndash;1884)</a>
+              <a href="billete-colombia-banco-de-caldas-1-peso-1919.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Caldas (1919)</a>
+              <a href="billete-colombia-banco-de-barranquilla-50-centavos-1900.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Barranquilla (1900)</a>
+              <a href="billete-colombia-banco-de-medellin-50-centavos.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Medellín (188X)</a>
+              <a href="billete-colombia-banco-de-oriente-5-pesos-1888.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Oriente (1888)</a>
+              <a href="billete-colombia-banco-internacional-1-peso-1884.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco Internacional (1884)</a>
+              <a href="billete-colombia-banco-de-antioquia-libranza-10-centavos-1900.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Banco de Antioquia, Libranza (1900)</a>
+              <a href="billete-colombia-departamento-de-antioquia-10-centavos-1961.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Departamento de Antioquia, Vales (1901, 1961)</a>
+              <a href="billete-colombia-banco-de-la-union-5-10-pesos-1883.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de la Unión (1883)</a>
+              <a href="billete-colombia-banco-del-cauca-1-5-pesos-1888.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco del Cauca (1888)</a>
+              <a href="billete-colombia-banco-union-cartagena-1-peso-1880s.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco Unión (Cartagena, 188X)</a>
+              <a href="billete-colombia-banco-de-panama-1-5-pesos.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Panamá (188X)</a>
+              <a href="billete-colombia-banco-del-norte-5-pesos-1882.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco del Norte (1882)</a>
+              <a href="billete-colombia-banco-de-colombia-1-peso-oro-1919.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco de Colombia (1919)</a>
+            </div>
+
+            <div>
+              <a href="catalogo-emisiones-extranjero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Emisiones en el Extranjero</a>
+              <a href="billete-guatemala-banco-colombiano-1-peso-1900.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">El Banco Colombiano, Guatemala (1900)</a>
+            </div>
+
+            <div>
+              <a href="billete-colombia-banco-nacional-25-pesos-1895.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo del Banco Nacional</a>
+              <a href="billete-colombia-banco-nacional-25-pesos-1895.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">25 Pesos (1895) &middot; 10 Centavos (1893)</a>
+            </div>
+
+            <div>
+              <a href="billete-colombia-banco-de-la-republica-medio-peso-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de la Banco de la Republica</a>
+              <a href="billete-colombia-banco-de-la-republica-medio-peso-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Medio Peso Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-1-peso-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Un Peso Oro/Plata</a>
+              <a href="billete-colombia-banco-de-la-republica-2-pesos-oro.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Dos Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-5-pesos-plata-1941.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cinco Pesos Plata</a>
+              <a href="billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Diez Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-50-pesos-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cincuenta Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cien Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-200-pesos-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Doscientos Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-500-pesos-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Quinientos Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-1000-pesos.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Mil Pesos — Bolívar y Gaitán</a>
+              <a href="billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Dos Mil Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-5000-pesos-oro-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cinco Mil Pesos Oro</a>
+              <a href="billete-colombia-banco-de-la-republica-10000-pesos-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Diez Mil Pesos</a>
+            </div>
+
+            <div>
+              <span style="display:block; font-size:17px; font-weight:600; color:#1c1a15; margin-bottom:8px;">Error de Impresión</span>
+              <a href="billete-colombia-banco-de-la-republica-50000-pesos.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">50 Mil Pesos (2016)</a>
+              <a href="billete-colombia-2000-pesos-error-mariposa.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Dos Mil Pesos, Mariposa (2009)</a>
+              <a href="billete-colombia-2000-pesos-error-corte-descentrado.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Dos Mil Pesos, Corte Descentrado (2009)</a>
+            </div>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">{{ unitedStatesLabel }}</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:22px; padding:12px 24px 22px;">
+            <div>
+              <a href="catalogo-moneda-colonial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Moneda Colonial</a>
+              <a href="billete-provincia-de-pensilvania-colonial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Provincia de Pensilvania (1773)</a>
+              <a href="billete-nueva-jersey-6-chelines-1776-colonial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Colonia de Nueva Jersey (1776)</a>
+            </div>
+
+            <div>
+              <a href="catalogo-moneda-colonial-espanola.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Moneda Colonial Española</a>
+              <a href="moneda-colombia-2-escudos-felipe-v.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Felipe V — Doblón de 2 Escudos, Bogotá</a>
+              <a href="moneda-colombia-2-escudos-carlos-iv-1791.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Carlos IV — 2 Escudos, Bogotá 1791</a>
+            </div>
+
+            <div>
+              <a href="catalogo.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ obsoleteLabel }}</a>
+              <a href="billete-state-bank-new-brunswick.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">The State Bank at New Brunswick</a>
+              <a href="billete-citizens-bank-of-louisiana.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Citizens' Bank of Louisiana</a>
+              <a href="billete-hagerstown-bank-maryland.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">The Hagerstown Bank</a>
+              <a href="billete-adrian-insurance-company-michigan.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">The Adrian Insurance Company</a>
+              <a href="billete-city-bank-new-haven.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">City Bank of New Haven</a>
+            </div>
+
+            <div>
+              <a href="departamento-del-tesoro-de-ee-uu.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ treasuryLabel }}</a>
+              <a href="billete-certificado-de-oro-10-dolares-1928.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ goldCertLabel }}</a>
+              <a href="billete-un-dolar-sello-rojo-1928.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ redSealLabel }}</a>
+              <a href="billete-cien-dolares-sello-rojo-1966.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ redSeal100Label }}</a>
+            </div>
+
+            <div>
+              <a href="catalogo-reserva-federal.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ fedLabel }}</a>
+              <a href="billete-federal-reserve-bank-note-100-dolares-minneapolis-1929.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ minneapolisLabel }}</a>
+              <a href="billete-federal-reserve-note-100-dolares-1990-cleveland.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cien Dólares — Cleveland (1990)</a>
+              <a href="billete-diez-dolares-1934-distritos.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ districtsLabel }}</a>
+              <a href="billete-veinte-dolares-hawaii-1934.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ hawaiiLabel }}</a>
+              <a href="billete-plata-1-dolar-norte-africa-1935a.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ northAfricaLabel }}</a>
+            </div>
+
+            <div>
+              <span style="display:block; font-size:17px; font-weight:600; color:#1c1a15; margin-bottom:8px;">{{ miscLabel }}</span>
+              <a href="billete-giori-press-test-note.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ goriTestLabel }}</a>
+              <a href="catalogo-emisiones-promocionales.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ ringlingLabel }}</a>
+            </div>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Puerto Rico</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="catalogo-puerto-rico.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Billetes de Puerto Rico</a>
+            <a href="billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">25 Pesos &mdash; Tesorería Nacional</a>
+            <a href="billete-puerto-rico-junta-central-cuba-1869.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Junta Central de Cuba y Puerto Rico (1869)</a>
+            <a href="billete-puerto-rico-republica-de-cuba-1-peso-1869.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">La República de Cuba &mdash; Un Peso (1869)</a>
+            <a href="billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Billete de Canje &mdash; Un Peso (1895)</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Ecuador</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="catalogo-ecuador.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Billetes de Ecuador</a>
+            <a href="billete-ecuador-100-sucres-1993.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cien Sucres, Par de Serie Baja (1993)</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Billetes de Polímero Mundial</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="catalogo-polimero-mundial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Polímero Mundial</a>
+            <a href="billete-bangladesh-10-taka-2000-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Bangladés</a>
+            <a href="billete-brazil-10-reais-2000-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Brasil</a>
+            <a href="billete-brunei-ringgit-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Brunéi</a>
+            <a href="billete-bulgaria-20-leva-2005-hibrido-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Bulgaria</a>
+            <a href="billete-qatar-100-riyals-hibrido-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Catar</a>
+            <a href="billete-costarica-20-1000-colones-tyvek-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Costa Rica</a>
+            <a href="billete-guatemala-1-5-quetzales-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Guatemala</a>
+            <a href="billete-haiti-1-2-50-gourdes-tyvek.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Haití</a>
+            <a href="billete-mexico-20-50-100-pesos-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">México</a>
+            <a href="billete-mozambique-20-50-100-meticais-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Mozambique</a>
+            <a href="billete-nicaragua-10-20-cordobas-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Nicaragua</a>
+            <a href="billete-oman-5-rials-2010-hibrido.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Omán</a>
+            <a href="billete-papua-nueva-guinea-2-5-10-50-100-kina-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Papúa Nueva Guinea</a>
+            <a href="billete-romania-1-5-10-2000-lei-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Rumanía</a>
+            <a href="billete-samoa-2-tala-1990-polimero-specimen.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Samoa</a>
+            <a href="billete-swaziland-10-20-50-100-200-emalangeni-hibrido.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Suazilandia</a>
+            <a href="billete-taiwan-50-dolares-1999-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Taiwán</a>
+            <a href="billete-zambia-500-1000-kwacha-2003-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Zambia</a>
+            <a href="billete-chile-2000-pesos-2009-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Chile</a>
+            <a href="billete-hongkong-10-dolares-2007-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Hong Kong</a>
+            <a href="billete-kazajistan-1000-tenge-2010-hibrido.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Kazajistán</a>
+            <a href="billete-malaysia-ringgit-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Malasia</a>
+            <a href="billete-nepal-10-rupias-2005-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Nepal</a>
+            <a href="billete-nigeria-naira-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Nigeria</a>
+            <a href="billete-dominicana-20-pesos-2009-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">República Dominicana</a>
+            <a href="billete-solomon-islands-2-dolares-2001-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Islas Salomón</a>
+            <a href="billete-sri-lanka-200-rupias-1998-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Sri Lanka</a>
+            <a href="billete-honduras-20-lempiras-2008-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Honduras</a>
+          </div>
+
+        </div>
+      </sc-if>
+    </div>
+
+    <div>
+      <button onClick="{{ togglePerfil }}" aria-expanded="{{ perfilExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:18px 24px; font-size:15px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:#1c1a15; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="color:#5c4e33;">
+        <span>{{ perfilLabel }}</span>
+        <span style="font-size:13px; color:#b7ab8a; transform:{{ perfilCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+      </button>
+
+      <sc-if value="{{ perfilExpanded }}" hint-placeholder-val="{{ false }}">
+        <div>
+
+          <div style="padding:16px 24px 4px; border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Colombia</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="perfil-german-gutierrez-de-pineres.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">José Germán Gutiérrez de Piñeres y Cárcamo</a>
+            <a href="perfil-rafael-nunez.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Rafael Núñez Moledo</a>
+            <a href="perfil-simon-bolivar.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Simón Bolívar</a>
+            <a href="perfil-francisco-de-paula-santander.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Francisco de Paula Santander</a>
+            <a href="perfil-antonio-narino.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Antonio Nariño</a>
+            <a href="perfil-aristides-fernandez.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Arístides Fernández</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Puerto Rico</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="perfil-alejandro-ramirez.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Alejandro Ramírez y Blanco</a>
+            <a href="perfil-jose-morales-lemus.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">José Morales Lemus</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Chile</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="perfil-manuel-rodriguez.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Manuel Rodríguez Erdoíza</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Estados Unidos</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="perfil-benjamin-franklin.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Benjamin Franklin</a>
+            <a href="perfil-george-washington.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">George Washington</a>
+            <a href="perfil-andrew-jackson.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Andrew Jackson</a>
+          </div>
+
+          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Samoa</span>
+          </div>
+
+          <div style="padding:12px 24px 22px;">
+            <a href="perfil-malietoa-tanumafili-ii.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Malietoa Tanumafili II</a>
+          </div>
+
+        </div>
+      </sc-if>
+    </div>
+
+  </div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 480, &quot;height&quot;: 70}, &quot;lang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;es&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;es&quot;, &quot;en&quot;]}}">
+class Component extends DCLogic {
+  state = {
+    scrollProgress: 0,
+    menuOpen: false,
+    collectionExpanded: false,
+    perfilExpanded: false,
+    searchOpen: false,
+    query: ""
+  };
+
+  navRef = React.createRef();
+  menuButtonRef = React.createRef();
+  drawerCloseRef = React.createRef();
+  searchButtonRef = React.createRef();
+  searchInputRef = React.createRef();
+
+  texts = {
+    es: {
+      home: "Home",
+      glossary: "Glosario",
+      collection: "COLECCIÓN VIRTUAL - NOTAFILIA",
+      obsolete: "Catálogo de Billetes Obsoletos",
+      treasury: "Catálogo del Departamento del Tesoro de EE. UU.",
+      goldCert: "Certificado de Oro — Serie de 1928",
+      redSeal: "Un Dólar — \u201cSello Rojo\u201d (1928)",
+      redSeal100: "Cien Dólares — \u201cSello Rojo\u201d (1966)",
+      goriTest: "Nota de Prueba de la Prensa Giori",
+      ringling: "Scrip Ringling Bros. — Baraboo (1933)",
+      misc: "Misceláneos",
+      northAfrica: "Un Dólar — \u201cNorte de África\u201d (1935-A)",
+      fed: "Catálogo de la Reserva Federal",
+      hawaii: "Veinte Dólares — Emisión \u201cHawái\u201d (1934-A)",
+      minneapolis: "Cien Dólares — Minneapolis (1929)",
+      districts: "Diez Dólares — Cuatro Distritos (1934)",
+      unitedStates: "Estados Unidos",
+      sigloPasado: "Catálogo de Billetes del Siglo Pasado",
+      cartagena: "Cartagena de Indias (1811–1815)",
+      perfilHistorico: "Perfil Histórico"
+    },
+    en: {
+      home: "Home",
+      collection: "Virtual Collection",
+      obsolete: "Obsolete Banknotes",
+      glossary: "Glossary",
+      unitedStates: "United States",
+      treasury: "United States Treasury Department",
+      goldCert: "Gold Certificate — 1928 Series",
+      redSeal: "One Dollar — \u201cRed Seal\u201d (1928)",
+      redSeal100: "One Hundred Dollars — \u201cRed Seal\u201d (1966)",
+      goriTest: "Giori Press Test Note",
+      ringling: "Ringling Bros. Scrip — Baraboo (1933)",
+      misc: "Misc",
+      northAfrica: "One Dollar — \u201cNorth Africa\u201d (1935-A)",
+      fed: "Federal Reserve System",
+      hawaii: "Twenty Dollars — \u201cHawaii\u201d Overprint (1934-A)",
+      minneapolis: "One Hundred Dollars — Minneapolis (1929)",
+      districts: "Ten Dollars — Four Districts (1934)",
+      sigloPasado: "Last Century",
+      cartagena: "Cartagena de Indias (1811–1815)",
+      perfilHistorico: "Historical Profile"
+    }
+  };
+
+  // Search index: title text mirrors the visible menu labels so results match what users see.
+  SEARCH_INDEX = [
+    { title: "Colección Virtual — Catálogo General", href: "catalogo.dc.html" },
+    { title: "J.S.G. Boggs — Perfil del Artista", href: "perfil-j-s-g-boggs.dc.html" },
+    { title: "Glosario de Numismática y Notafilia", href: "glosario/" },
+    { title: "Cartagena de Indias (1811–1815)", href: "billete-colombia-cartagena-1-real-1813.dc.html" },
+    { title: "Estados Unidos de Nueva Granada (1861)", href: "billete-colombia-nueva-granada-1-peso-1861.dc.html" },
+    { title: "Estado Soberano de Panamá (1865)", href: "billete-colombia-estado-soberano-panama-3-pesos-1865.dc.html" },
+    { title: "Estado Soberano del Cauca (1882)", href: "billete-colombia-estado-soberano-cauca-5-pesos-1882.dc.html" },
+    { title: "Estado Soberano de Cundinamarca (1870)", href: "billete-colombia-estado-soberano-cundinamarca-1-peso-1870.dc.html" },
+    { title: "República Bolívar de Colombia (1882)", href: "billete-colombia-republica-bolivar-1-2-pesos-1882.dc.html" },
+    { title: "República de Colombia (1904)", href: "billete-colombia-republica-1904-serie.dc.html" },
+    { title: "República de Colombia (1910–1915)", href: "billete-colombia-republica-1910-1915-emisiones.dc.html" },
+    { title: "Banca Libre — Catálogo", href: "catalogo-banca-libre.dc.html" },
+    { title: "Vicente B. Villa é Hijos (188X)", href: "billete-colombia-vicente-villa-e-hijos-5-pesos-1880s.dc.html" },
+    { title: "El Banco de Pamplona (1883–1884)", href: "billete-colombia-banco-de-pamplona-10-pesos-1884.dc.html" },
+    { title: "El Banco de Caldas (1919)", href: "billete-colombia-banco-de-caldas-1-peso-1919.dc.html" },
+    { title: "El Banco de Barranquilla (1900)", href: "billete-colombia-banco-de-barranquilla-50-centavos-1900.dc.html" },
+    { title: "El Banco de Medellín (188X)", href: "billete-colombia-banco-de-medellin-50-centavos.dc.html" },
+    { title: "El Banco de Oriente (1888)", href: "billete-colombia-banco-de-oriente-5-pesos-1888.dc.html" },
+    { title: "El Banco Internacional (1884)", href: "billete-colombia-banco-internacional-1-peso-1884.dc.html" },
+    { title: "Banco de Antioquia, Libranza (1900)", href: "billete-colombia-banco-de-antioquia-libranza-10-centavos-1900.dc.html" },
+    { title: "Departamento de Antioquia, Vales (1901, 1961)", href: "billete-colombia-departamento-de-antioquia-10-centavos-1961.dc.html" },
+    { title: "El Banco de la Unión (1883)", href: "billete-colombia-banco-de-la-union-5-10-pesos-1883.dc.html" },
+    { title: "El Banco del Cauca (1888)", href: "billete-colombia-banco-del-cauca-1-5-pesos-1888.dc.html" },
+    { title: "El Banco Unión (Cartagena, 188X)", href: "billete-colombia-banco-union-cartagena-1-peso-1880s.dc.html" },
+    { title: "El Banco de Panamá (188X)", href: "billete-colombia-banco-de-panama-1-5-pesos.dc.html" },
+    { title: "El Banco del Norte (1882)", href: "billete-colombia-banco-del-norte-5-pesos-1882.dc.html" },
+    { title: "El Banco de Colombia — Cédula 1 Peso Oro (1919)", href: "billete-colombia-banco-de-colombia-1-peso-oro-1919.dc.html" },
+    { title: "Emisiones en el Extranjero — Catálogo", href: "catalogo-emisiones-extranjero.dc.html" },
+    { title: "El Banco Colombiano, Guatemala (1900)", href: "billete-guatemala-banco-colombiano-1-peso-1900.dc.html" },
+    { title: "El Banco Nacional — 25 Pesos (1895) / 10 Centavos (1885, 1893)", href: "billete-colombia-banco-nacional-25-pesos-1895.dc.html" },
+    { title: "Banco de la República — Medio Peso Oro (1948)", href: "billete-colombia-banco-de-la-republica-medio-peso-oro-specimen.dc.html" },
+    { title: "Banco de la República — Un Peso Oro/Plata (1929–1932)", href: "billete-colombia-banco-de-la-republica-1-peso-specimen.dc.html" },
+    { title: "Banco de la República — Dos Pesos Oro (1947, 1972)", href: "billete-colombia-banco-de-la-republica-2-pesos-oro.dc.html" },
+    { title: "Banco de la República — Cinco Pesos Plata (1941)", href: "billete-colombia-banco-de-la-republica-5-pesos-plata-1941.dc.html" },
+    { title: "Banco de la República — Diez Pesos Oro (1949–1961)", href: "billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html" },
+    { title: "Banco de la República — Cincuenta Pesos Oro (1964, 1985)", href: "billete-colombia-banco-de-la-republica-50-pesos-oro-specimen.dc.html" },
+    { title: "Banco de la República — Cien Pesos Oro (1947, 1980, 1983)", href: "billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html" },
+    { title: "Banco de la República — Doscientos Pesos Oro (1982, 1983, 1992)", href: "billete-colombia-banco-de-la-republica-200-pesos-oro-specimen.dc.html" },
+    { title: "Banco de la República — Quinientos Pesos Oro (1947, 1984, 1989, 1993)", href: "billete-colombia-banco-de-la-republica-500-pesos-oro-specimen.dc.html" },
+    { title: "Banco de la República — Mil Pesos, Bolívar y Gaitán (1990–2006)", href: "billete-colombia-banco-de-la-republica-1000-pesos.dc.html" },
+    { title: "Banco de la República — Dos Mil Pesos Oro (1983)", href: "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html" },
+    { title: "Banco de la República — Cinco Mil Pesos Oro (1986, 1987)", href: "billete-colombia-banco-de-la-republica-5000-pesos-oro-specimen.dc.html" },
+    { title: "Banco de la República — Diez Mil Pesos (1994, 1995)", href: "billete-colombia-banco-de-la-republica-10000-pesos-specimen.dc.html" },
+    { title: "Error de Impresión — 50 Mil Pesos (2016)", href: "billete-colombia-banco-de-la-republica-50000-pesos.dc.html" },
+    { title: "Error de Impresión — Dos Mil Pesos, Mariposa (2009)", href: "billete-colombia-2000-pesos-error-mariposa.dc.html" },
+    { title: "Error de Impresión — Dos Mil Pesos, Corte Descentrado (2009)", href: "billete-colombia-2000-pesos-error-corte-descentrado.dc.html" },
+    { title: "Moneda Colonial — Catálogo", href: "catalogo-moneda-colonial.dc.html" },
+    { title: "Provincia de Pensilvania (1773)", href: "billete-provincia-de-pensilvania-colonial.dc.html" },
+    { title: "Colonia de Nueva Jersey (1776)", href: "billete-nueva-jersey-6-chelines-1776-colonial.dc.html" },
+    { title: "Moneda Colonial Española — Catálogo", href: "catalogo-moneda-colonial-espanola.dc.html" },
+    { title: "Felipe V — Doblón de 2 Escudos, Bogotá", href: "moneda-colombia-2-escudos-felipe-v.dc.html" },
+    { title: "Carlos IV — 2 Escudos, Bogotá 1791", href: "moneda-colombia-2-escudos-carlos-iv-1791.dc.html" },
+    { title: "Fernando VII — 1 Escudo, Bogotá 1820", href: "moneda-colombia-1-escudo-fernando-vii-1820.dc.html" },
+    { title: "Carlos III — 1 Escudo, Bogotá 1774", href: "moneda-colombia-1-escudo-carlos-iii-1774.dc.html" },
+    { title: "Carlos III — 1 Escudo, Bogotá 1787", href: "moneda-colombia-1-escudo-carlos-iii-1787.dc.html" },
+    { title: "Carlos IV — 1 Escudo, Bogotá 1802", href: "moneda-colombia-1-escudo-carlos-iv-1802.dc.html" },
+    { title: "Fernando VII — 1 Escudo, Bogotá 1811", href: "moneda-colombia-1-escudo-fernando-vii-1811.dc.html" },
+    { title: "Billete Obsoleto — Catálogo", href: "catalogo.dc.html" },
+    { title: "The State Bank at New Brunswick", href: "billete-state-bank-new-brunswick.dc.html" },
+    { title: "Citizens' Bank of Louisiana", href: "billete-citizens-bank-of-louisiana.dc.html" },
+    { title: "The Hagerstown Bank", href: "billete-hagerstown-bank-maryland.dc.html" },
+    { title: "The Adrian Insurance Company", href: "billete-adrian-insurance-company-michigan.dc.html" },
+    { title: "City Bank of New Haven", href: "billete-city-bank-new-haven.dc.html" },
+    { title: "Departamento del Tesoro de EE. UU. — Catálogo", href: "departamento-del-tesoro-de-ee-uu.dc.html" },
+    { title: "Certificado de Oro — Serie de 1928", href: "billete-certificado-de-oro-10-dolares-1928.dc.html" },
+    { title: "Un Dólar — Sello Rojo (1928)", href: "billete-un-dolar-sello-rojo-1928.dc.html" },
+    { title: "Cien Dólares — Sello Rojo (1966)", href: "billete-cien-dolares-sello-rojo-1966.dc.html" },
+    { title: "Sistema de la Reserva Federal — Catálogo", href: "catalogo-reserva-federal.dc.html" },
+    { title: "Cien Dólares — Minneapolis (1929)", href: "billete-federal-reserve-bank-note-100-dolares-minneapolis-1929.dc.html" },
+    { title: "Cien Dólares — Cleveland, Serie 1990", href: "billete-federal-reserve-note-100-dolares-1990-cleveland.dc.html" },
+    { title: "Diez Dólares — Cuatro Distritos (1934)", href: "billete-diez-dolares-1934-distritos.dc.html" },
+    { title: "Veinte Dólares — Emisión Hawái (1934-A)", href: "billete-veinte-dolares-hawaii-1934.dc.html" },
+    { title: "Un Dólar — Norte de África (1935-A)", href: "billete-plata-1-dolar-norte-africa-1935a.dc.html" },
+    { title: "Nota de Prueba de la Prensa Giori", href: "billete-giori-press-test-note.dc.html" },
+    { title: "Scrip Ringling Bros. — Baraboo (1933)", href: "catalogo-emisiones-promocionales.dc.html" },
+    { title: "Catálogo de Billetes de Puerto Rico", href: "catalogo-puerto-rico.dc.html" },
+    { title: "25 Pesos — Tesorería Nacional (Puerto Rico, 1813)", href: "billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html" },
+    { title: "Junta Central de Cuba y Puerto Rico (1869)", href: "billete-puerto-rico-junta-central-cuba-1869.dc.html" },
+    { title: "La República de Cuba — Un Peso (1869)", href: "billete-puerto-rico-republica-de-cuba-1-peso-1869.dc.html" },
+    { title: "Billete de Canje — Un Peso (1895)", href: "billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html" },
+    { title: "Catálogo de Billetes de Ecuador", href: "catalogo-ecuador.dc.html" },
+    { title: "Cien Sucres, Par de Serie Baja (1993)", href: "billete-ecuador-100-sucres-1993.dc.html" },
+    { title: "Catálogo de Polímero Mundial", href: "catalogo-polimero-mundial.dc.html" },
+    { title: "Bangladesh Bank — 10 Taka de Polímero (2000)", href: "billete-bangladesh-10-taka-2000-polimero.dc.html" },
+    { title: "Banco Central do Brasil — 10 Reais de Polímero (2000)", href: "billete-brazil-10-reais-2000-polimero.dc.html" },
+    { title: "Negara Brunei Darussalam — 1, 5, 10, 50 y 100 Ringgit de Polímero (2004)", href: "billete-brunei-ringgit-polimero.dc.html" },
+    { title: "Banco Nacional de Bulgaria — 20 Leva Híbrido/Polímero (2005)", href: "billete-bulgaria-20-leva-2005-hibrido-polimero.dc.html" },
+    { title: "Qatar Central Bank — 100 Riyals Híbrido/Polímero", href: "billete-qatar-100-riyals-hibrido-polimero.dc.html" },
+    { title: "Banco Central de Costa Rica — 20 Colones (Tyvek) y 1.000 Colones (Polímero)", href: "billete-costarica-20-1000-colones-tyvek-polimero.dc.html" },
+    { title: "Banco de Guatemala — 1 y 5 Quetzales de Polímero", href: "billete-guatemala-1-5-quetzales-polimero.dc.html" },
+    { title: "Banque de la République d'Haïti — 1, 2 y 50 Gourdes (Tyvek)", href: "billete-haiti-1-2-50-gourdes-tyvek.dc.html" },
+    { title: "Banco de México — 20, 50 y 100 Pesos", href: "billete-mexico-20-50-100-pesos-polimero.dc.html" },
+    { title: "Banco de Moçambique — 20, 50 y 100 Meticais", href: "billete-mozambique-20-50-100-meticais-polimero.dc.html" },
+    { title: "Banco Central de Nicaragua — 10 y 20 Córdobas", href: "billete-nicaragua-10-20-cordobas-polimero.dc.html" },
+    { title: "Banco Central de Omán — 5 Rials Conmemorativo (2010)", href: "billete-oman-5-rials-2010-hibrido.dc.html" },
+    { title: "Bank of Papua New Guinea — 2, 5, 10, 50 y 100 Kina", href: "billete-papua-nueva-guinea-2-5-10-50-100-kina-polimero.dc.html" },
+    { title: "Banca Națională a României — 2.000, 1, 5 y 10 Lei", href: "billete-romania-1-5-10-2000-lei-polimero.dc.html" },
+    { title: "Central Bank of Samoa — 2 Tala de Polímero (Specimen)", href: "billete-samoa-2-tala-1990-polimero-specimen.dc.html" },
+    { title: "Central Bank of Swaziland — 10, 20, 50, 100 y 200 Emalangeni (Híbrido)", href: "billete-swaziland-10-20-50-100-200-emalangeni-hibrido.dc.html" },
+    { title: "Bank of Taiwan — 50 Dólares Conmemorativo de Polímero (1999)", href: "billete-taiwan-50-dolares-1999-polimero.dc.html" },
+    { title: "Bank of Zambia — 500 y 1.000 Kwacha de Polímero (2003)", href: "billete-zambia-500-1000-kwacha-2003-polimero.dc.html" },
+    { title: "Banco Central de Chile — 1.000, 2.000 y 5.000 Pesos de Polímero", href: "billete-chile-2000-pesos-2009-polimero.dc.html" },
+    { title: "Gobierno de Hong Kong — 10 Dólares de Polímero (2007)", href: "billete-hongkong-10-dolares-2007-polimero.dc.html" },
+    { title: "Kazakhstan National Bank — 1.000 Tenge Conmemorativo (2010)", href: "billete-kazajistan-1000-tenge-2010-hibrido.dc.html" },
+    { title: "Bank Negara Malaysia — 5 y 50 Ringgit de Polímero", href: "billete-malaysia-ringgit-polimero.dc.html" },
+    { title: "Nepal Rastra Bank — 10 Rupias de Polímero (2005)", href: "billete-nepal-10-rupias-2005-polimero.dc.html" },
+    { title: "Central Bank of Nigeria — 5, 10 y 50 Naira de Polímero (2009)", href: "billete-nigeria-naira-polimero.dc.html" },
+    { title: "Banco Central de la República Dominicana — 20 Pesos Oro de Polímero (2009)", href: "billete-dominicana-20-pesos-2009-polimero.dc.html" },
+    { title: "Central Bank of Solomon Islands — 2 Dólares de Polímero (2001)", href: "billete-solomon-islands-2-dolares-2001-polimero.dc.html" },
+    { title: "Central Bank of Sri Lanka — 200 Rupias de Polímero (1998)", href: "billete-sri-lanka-200-rupias-1998-polimero.dc.html" },
+    { title: "Banco Central de Honduras — 20 Lempiras de Polímero (2008)", href: "billete-honduras-20-lempiras-2008-polimero.dc.html" },
+    { title: "José Germán Gutiérrez de Piñeres y Cárcamo", href: "perfil-german-gutierrez-de-pineres.dc.html" },
+    { title: "Rafael Núñez Moledo", href: "perfil-rafael-nunez.dc.html" },
+    { title: "Simón Bolívar", href: "perfil-simon-bolivar.dc.html" },
+    { title: "Francisco de Paula Santander", href: "perfil-francisco-de-paula-santander.dc.html" },
+    { title: "Antonio Nariño", href: "perfil-antonio-narino.dc.html" },
+    { title: "Arístides Fernández", href: "perfil-aristides-fernandez.dc.html" },
+    { title: "Manuel Rodríguez Erdoíza", href: "perfil-manuel-rodriguez.dc.html" },
+    { title: "Benjamin Franklin", href: "perfil-benjamin-franklin.dc.html" },
+    { title: "Malietoa Tanumafili II", href: "perfil-malietoa-tanumafili-ii.dc.html" },
+    { title: "Alejandro Ramírez y Blanco", href: "perfil-alejandro-ramirez.dc.html" },
+    { title: "José Morales Lemus", href: "perfil-jose-morales-lemus.dc.html" }
+  ];
+
+  normalize(str) {
+    return String(str).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  onScroll = () => {
+    const p = Math.max(0, Math.min(1, window.scrollY / 400));
+    this.setState({ scrollProgress: p });
+  };
+
+  onKeyDown = (e) => {
+    if (e.key !== "Escape") return;
+    if (this.state.searchOpen) this.closeSearch();
+    else if (this.state.menuOpen) this.closeDrawer();
+  };
+
+  toggleSearch = () => {
+    this.setState(s => ({ searchOpen: !s.searchOpen, menuOpen: false }), () => {
+      if (this.state.searchOpen && this.searchInputRef.current) {
+        setTimeout(() => this.searchInputRef.current && this.searchInputRef.current.focus(), 20);
+      }
+    });
+  };
+
+  closeSearch = () => {
+    this.setState({ searchOpen: false, query: "" }, () => {
+      if (this.searchButtonRef.current) this.searchButtonRef.current.focus();
+    });
+  };
+
+  openDrawer = () => {
+    this.setState({ menuOpen: true, searchOpen: false }, () => {
+      setTimeout(() => this.drawerCloseRef.current && this.drawerCloseRef.current.focus(), 20);
+    });
+  };
+
+  closeDrawer = () => {
+    this.setState({ menuOpen: false }, () => {
+      if (this.menuButtonRef.current) this.menuButtonRef.current.focus();
+    });
+  };
+
+  toggleCollection = () => this.setState(s => ({ collectionExpanded: !s.collectionExpanded }));
+  togglePerfil = () => this.setState(s => ({ perfilExpanded: !s.perfilExpanded }));
+  onQueryChange = (e) => this.setState({ query: e.target.value });
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    document.addEventListener("keydown", this.onKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+    document.removeEventListener("keydown", this.onKeyDown);
+  }
+
+  renderVals() {
+    const lang = this.props.lang === "en" ? "en" : "es";
+    const t = this.texts[lang];
+    const { scrollProgress, menuOpen, collectionExpanded, perfilExpanded, searchOpen, query } = this.state;
+
+    const navBarStyle = `position:sticky; top:0; z-index:100; height:68px; background:rgba(10,10,9,${(0.55 + scrollProgress * 0.35).toFixed(2)}); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border-bottom:1px solid rgba(231,222,201,0.14); box-sizing:border-box; transition:background 0.2s ease;`;
+
+    const searchPillStyle = `display:flex; align-items:center; height:38px; border-radius:19px; background:${searchOpen ? "rgba(255,255,255,0.1)" : "transparent"}; padding:0 2px; transition:background 0.2s ease;`;
+    const searchInputStyle = `background:none; border:none; outline:none; color:#e7ddc4; font-family:'Cormorant Garamond', serif; font-size:15px; width:${searchOpen ? "200px" : "0px"}; padding:${searchOpen ? "0 10px 0 4px" : "0"}; opacity:${searchOpen ? 1 : 0}; transition:width 0.25s ease, opacity 0.2s ease;`;
+
+    const q = this.normalize(query.trim());
+    const results = q.length > 0 ? this.SEARCH_INDEX.filter(it => this.normalize(it.title).includes(q)).slice(0, 8) : [];
+    const showResults = searchOpen && q.length > 0;
+    const noResults = showResults && results.length === 0;
+
+    return {
+      navRef: this.navRef,
+      navBarStyle,
+      menuButtonRef: this.menuButtonRef,
+      drawerCloseRef: this.drawerCloseRef,
+      searchButtonRef: this.searchButtonRef,
+      searchInputRef: this.searchInputRef,
+      searchPillStyle,
+      searchInputStyle,
+      searchOpen,
+      toggleSearch: this.toggleSearch,
+      closeSearch: this.closeSearch,
+      query,
+      onQueryChange: this.onQueryChange,
+      results,
+      showResults,
+      noResults,
+      menuOpen,
+      openDrawer: this.openDrawer,
+      closeDrawer: this.closeDrawer,
+      collectionExpanded,
+      toggleCollection: this.toggleCollection,
+      collectionCaret: collectionExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      perfilExpanded,
+      togglePerfil: this.togglePerfil,
+      perfilCaret: perfilExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      homeLabel: t.home,
+      glossaryLabel: t.glossary,
+      collectionLabel: t.collection,
+      perfilLabel: t.perfilHistorico,
+      obsoleteLabel: t.obsolete,
+      treasuryLabel: t.treasury,
+      goldCertLabel: t.goldCert,
+      redSealLabel: t.redSeal,
+      redSeal100Label: t.redSeal100,
+      goriTestLabel: t.goriTest,
+      ringlingLabel: t.ringling,
+      miscLabel: t.misc,
+      northAfricaLabel: t.northAfrica,
+      fedLabel: t.fed,
+      hawaiiLabel: t.hawaii,
+      minneapolisLabel: t.minneapolis,
+      districtsLabel: t.districts,
+      unitedStatesLabel: t.unitedStates,
+      sigloPasadoLabel: t.sigloPasado,
+      cartagenaLabel: t.cartagena
+    };
+  }
+}
+
+</script>
+</body>
+</html>
