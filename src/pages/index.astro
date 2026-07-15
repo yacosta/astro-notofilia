@@ -210,7 +210,7 @@ const heroes = [
       <p style="position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.1em; color:#b7ab8a; text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 40px;"><strong data-i18n data-en="With the entire Virtual Collection:" style="font-weight:700; color:#cbbf9d;">Colección Virtual:</strong> <span data-i18n set:html={statsEs} data-en={statsEn}></span></p>
     </div>
 
-    <div id="cookie-banner" role="dialog" aria-modal="false" aria-label="Aviso de cookies" hidden style="position:fixed; left:0; right:0; bottom:0; z-index:80; display:flex; justify-content:center; padding:16px;">
+    <div id="cookie-banner" role="dialog" aria-modal="false" aria-label="Aviso de cookies" style="position:fixed; left:0; right:0; bottom:0; z-index:80; display:none; justify-content:center; padding:16px;">
       <div style="width:100%; max-width:720px; background:#1c1a15; border:1px solid rgba(231,222,201,0.18); border-radius:8px; box-shadow:0 24px 60px rgba(0,0,0,0.55); padding:22px 24px; display:flex; flex-direction:column; gap:16px;">
         <p style="font-family:'Cormorant Garamond', serif; font-size:16px; line-height:1.6; color:#d8d2cd; margin:0;">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" style="color:#e7ddc4; text-decoration-color:rgba(231,222,201,0.4);">Política de Privacidad y Cookies</a>.</p>
         <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
@@ -270,8 +270,8 @@ const heroes = [
         if (!banner) return;
         var stored;
         try { stored = localStorage.getItem(KEY); } catch (e) {}
-        if (stored !== 'accepted' && stored !== 'rejected') banner.hidden = false;
-        function choose(v) { try { localStorage.setItem(KEY, v); } catch (e) {} banner.hidden = true; if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted')); }
+        if (stored !== 'accepted' && stored !== 'rejected') banner.style.display = 'flex';
+        function choose(v) { try { localStorage.setItem(KEY, v); } catch (e) {} banner.style.display = 'none'; if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted')); }
         var a = document.getElementById('cookie-accept');
         var r = document.getElementById('cookie-reject');
         if (a) a.addEventListener('click', function () { choose('accepted'); });
