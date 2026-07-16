@@ -18,6 +18,7 @@ const u = (s: string) => `/uploads/${base}${s}`;
     alt={alt}
     loading={eager ? 'eager' : 'lazy'}
     decoding="async"
-    style={`display:block; width:100%; height:auto; aspect-ratio:${ratio}; object-fit:cover; background:#1c1a15;`}
+    class="block w-full h-auto object-cover bg-panel"
+    style={`aspect-ratio:${ratio};`}
   />
 </picture>

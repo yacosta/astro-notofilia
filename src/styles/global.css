@@ -22,8 +22,15 @@
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype');
+  src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations');
   font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: italic;
   font-display: swap;
 }
 

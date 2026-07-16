@@ -7,6 +7,7 @@
 // the translatable strings to English client-side (option 1).
 import fs from 'node:fs';
 import { getCollection } from 'astro:content';
+import '../styles/global.css';
 
 // --- News: newest 4 from the Markdown collection (same source as /noticias/) ---
 const monthsEs = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
@@ -105,16 +106,13 @@ const heroes = [
       ],
     })} />
     <style is:global>
-      @font-face { font-family: 'Montenegrin Gothic One'; src: url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-      @font-face { font-family: 'Cormorant Garamond'; src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations'); font-weight: 300 700; font-display: swap; }
-      @font-face { font-family: 'Cormorant Garamond'; src: url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations'); font-weight: 300 700; font-style: italic; font-display: swap; }
       * { box-sizing: border-box; }
-      body { margin: 0; background: #0a0a09; font-family: 'Cormorant Garamond', serif; }
       /* dc-runtime header mounts here; overlay it on the hero */
       x-dc { display: none; }
       #dc-root { position: absolute; top: 0; left: 0; right: 0; z-index: 6; height: auto !important; }
       html, body { height: auto !important; }
       .hero-slide { transition: opacity 1.6s ease; }
+      /* News strip: 4-up grid on desktop, horizontal snap-scroll on mobile. */
       .noticias-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-bottom: 32px; }
       @media (max-width: 768px) {
         .noticias-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-inline: 4px; margin-bottom: 32px; -webkit-overflow-scrolling: touch; }
@@ -123,99 +121,99 @@ const heroes = [
       ::selection { background: rgba(231, 222, 201, 0.3); }
     </style>
   </head>
-  <body>
-    <a href="#main-content" style="position:absolute; top:-60px; left:16px; z-index:20; background:#d8d2cd; color:#0a0a09; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:15px; letter-spacing:0.05em; padding:12px 20px; border-radius:2px; text-decoration:none; transition:top 0.15s ease;" onfocus="this.style.top='16px'" onblur="this.style.top='-60px'">Saltar al contenido principal / Skip to main content</a>
+  <body class="m-0 bg-bg font-serif">
+    <a href="#main-content" class="absolute top-[-60px] left-4 z-20 bg-cream-dim text-bg font-serif font-semibold text-[15px] tracking-[0.05em] px-5 py-3 rounded-[2px] no-underline transition-[top] duration-150 focus:top-4">Saltar al contenido principal / Skip to main content</a>
 
     <x-dc><dc-import name="SiteHeader" lang="es"></dc-import></x-dc>
 
-    <div style="position:relative; width:100%; background:#0a0a09;">
-      <div style="position:relative; width:100%; min-height:100vh;">
+    <div class="relative w-full bg-bg">
+      <div class="relative w-full min-h-screen">
         {heroes.map((h, i) => (
           <picture>
             <source srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`} sizes="100vw" type="image/webp" />
-            <img class="hero-slide" data-hero={i} src={`/uploads/${h.base}.jpg`} alt={i === 0 ? h.alt : ''} width="972" height="360" fetchpriority={i === 0 ? 'high' : 'low'} decoding="async" style={`position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 40%; filter:contrast(1.2) brightness(0.85) saturate(1.1); opacity:${i === 0 ? 1 : 0};`} />
+            <img class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]" data-hero={i} src={`/uploads/${h.base}.jpg`} alt={i === 0 ? h.alt : ''} width="972" height="360" fetchpriority={i === 0 ? 'high' : 'low'} decoding="async" style={`opacity:${i === 0 ? 1 : 0};`} />
           </picture>
         ))}
-        <div style="position:absolute; inset:0; background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"></div>
-        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 22%, rgba(6,6,5,0.15) 78%, rgba(6,6,5,0.6) 100%);"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"></div>
+        <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 22%, rgba(6,6,5,0.15) 78%, rgba(6,6,5,0.6) 100%);"></div>
 
-        <div role="group" aria-label="Selector de idioma / Language selector" style="position:absolute; top:78px; right:28px; z-index:2; display:flex; align-items:center; background:rgba(10,10,9,0.35); border:1px solid rgba(231,222,201,0.35); border-radius:999px; padding:3px;">
-          <button id="lang-es" aria-pressed="true" aria-label="Ver sitio en español" style="border:none; background:rgba(231,222,201,0.92); color:#0a0a09; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:13px; letter-spacing:0.14em; padding:11px 18px; border-radius:999px; cursor:pointer;">ES</button>
-          <button id="lang-en" aria-pressed="false" aria-label="View site in English" style="border:none; background:transparent; color:#e7ddc4; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:13px; letter-spacing:0.14em; padding:11px 18px; border-radius:999px; cursor:pointer;">EN</button>
+        <div role="group" aria-label="Selector de idioma / Language selector" class="absolute top-[78px] right-7 z-[2] flex items-center bg-[rgba(10,10,9,0.35)] border border-[rgba(231,222,201,0.35)] rounded-full p-[3px]">
+          <button id="lang-es" aria-pressed="true" aria-label="Ver sitio en español" class="border-none bg-[rgba(231,222,201,0.92)] text-bg font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer">ES</button>
+          <button id="lang-en" aria-pressed="false" aria-label="View site in English" class="border-none bg-transparent text-cream font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer">EN</button>
         </div>
 
-        <main id="main-content" tabindex="-1" style="position:relative; z-index:1; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:64px 24px; outline:none;">
-          <div style="display:flex; align-items:center; gap:16px; margin-bottom:36px;">
-            <span style="width:56px; height:1px; background:rgba(231,222,201,0.55);"></span>
-            <span style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:17px; letter-spacing:0.28em; text-transform:uppercase; color:#d8d2cd;">Notofilia.com</span>
-            <span style="width:56px; height:1px; background:rgba(231,222,201,0.55);"></span>
+        <main id="main-content" tabindex="-1" class="relative z-[1] min-h-screen flex flex-col items-center justify-center text-center px-6 py-16 outline-none">
+          <div class="flex items-center gap-4 mb-9">
+            <span class="w-14 h-px bg-[rgba(231,222,201,0.55)]"></span>
+            <span class="font-serif italic font-medium text-[17px] tracking-[0.28em] uppercase text-cream-dim">Notofilia.com</span>
+            <span class="w-14 h-px bg-[rgba(231,222,201,0.55)]"></span>
           </div>
-          <h1 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(56px, 11vw, 148px); line-height:0.95; letter-spacing:0.04em; color:#d8d2cd; margin:0; text-shadow:0 2px 24px rgba(0,0,0,0.55);">NOTOFILIA</h1>
-          <div style="display:flex; align-items:center; gap:14px; margin:30px 0;">
-            <span style="width:34px; height:1px; background:rgba(231,222,201,0.45);"></span>
-            <span style="width:7px; height:7px; background:#d8d2cd; transform:rotate(45deg);"></span>
-            <span style="width:34px; height:1px; background:rgba(231,222,201,0.45);"></span>
+          <h1 class="font-display font-normal text-[clamp(56px,11vw,148px)] leading-[0.95] tracking-[0.04em] text-cream-dim m-0 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">NOTOFILIA</h1>
+          <div class="flex items-center gap-[14px] my-[30px]">
+            <span class="w-[34px] h-px bg-[rgba(231,222,201,0.45)]"></span>
+            <span class="w-[7px] h-[7px] bg-cream-dim rotate-45"></span>
+            <span class="w-[34px] h-px bg-[rgba(231,222,201,0.45)]"></span>
           </div>
-          <p data-i18n data-en="Numismatics and Collectible Banknotes" style="font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:clamp(22px, 2.6vw, 32px); color:#e7ddc4; margin:0; max-width:720px;">Numismática y Notafilia</p>
+          <p data-i18n data-en="Numismatics and Collectible Banknotes" class="font-serif italic font-medium text-[clamp(22px,2.6vw,32px)] text-cream m-0 max-w-[720px]">Numismática y Notafilia</p>
         </main>
       </div>
 
-      <section style="max-width:1180px; margin:0 auto; padding:88px 24px 56px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:48px;">
+      <section class="max-w-[1180px] mx-auto pt-[88px] px-6 pb-14 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-12">
         <div>
-          <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 16px;">Numismática</h2>
-          <p style="font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
+          <h2 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismática</h2>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
         </div>
         <div>
-          <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 16px;">Notafilia</h2>
-          <p style="font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
+          <h2 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notafilia</h2>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
         </div>
       </section>
 
-      <section aria-labelledby="news-heading" style="background:#d8d2cd; padding:72px 24px;">
-        <div style="max-width:1180px; margin:0 auto;">
-          <h2 id="news-heading" style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#1c1a15; margin:0 0 32px; text-align:center;">Noticias de Numismática y Notafilia</h2>
+      <section aria-labelledby="news-heading" class="bg-cream-dim py-[72px] px-6">
+        <div class="max-w-[1180px] mx-auto">
+          <h2 id="news-heading" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">Noticias de Numismática y Notafilia</h2>
           {posts.length > 0 ? (
             <div class="noticias-grid">
               {posts.map((it) => (
-                <article class="noticia-card" style="border-top:2px solid #1c1a15; padding-top:16px;">
+                <article class="noticia-card border-t-2 border-panel pt-4">
                   {it.cover && (
                     <picture>
                       <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
-                      <img src={`/uploads/${it.cover}-640.jpg`} alt={it.coverAlt} loading="lazy" decoding="async" width="220" height="140" style="display:block; width:100%; height:140px; object-fit:cover; border-radius:3px; margin-bottom:12px;" />
+                      <img src={`/uploads/${it.cover}-640.jpg`} alt={it.coverAlt} loading="lazy" decoding="async" width="220" height="140" class="block w-full h-[140px] object-cover rounded-[3px] mb-3" />
                     </picture>
                   )}
-                  <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px;">
-                    <time datetime={it.iso} style="font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#6b521f;">{it.dateLabel}</time>
-                    <span style="font-size:13px; color:#5c4e33;">&middot; {it.source}</span>
+                  <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
+                    <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep">{it.dateLabel}</time>
+                    <span class="text-[13px] text-gold-dark">&middot; {it.source}</span>
                   </div>
-                  <h3 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(17.6px, 1.1rem + 0.3vw, 19px); letter-spacing:0.02em; color:#1c1a15; margin:0 0 6px; text-wrap:balance; overflow-wrap:break-word;">{it.title}</h3>
-                  <a href={it.url} style="font-size:15px; color:#6b521f; text-decoration-color:rgba(107,82,31,0.4);">Leer más &rarr;</a>
+                  <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem_+_0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 [text-wrap:balance] break-words">{it.title}</h3>
+                  <a href={it.url} class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
                 </article>
               ))}
             </div>
           ) : (
-            <p style="font-size:18px; line-height:1.6; color:#332e22; text-align:center; margin:0 0 32px;">Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos.</p>
+            <p class="text-[18px] leading-[1.6] text-[#332e22] text-center mt-0 mb-8">Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos.</p>
           )}
-          <p style="text-align:center; margin:0;">
-            <a href="/noticias/" style="display:inline-flex; align-items:center; min-height:44px; border:1px solid #1c1a15; color:#1c1a15; text-decoration:none; font-size:15px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; padding:12px 28px; border-radius:999px;">Ver todas las noticias</a>
+          <p class="text-center m-0">
+            <a href="/noticias/" class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full">Ver todas las noticias</a>
           </p>
         </div>
       </section>
 
-      <footer style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:8px; max-width:1180px; margin:0 auto; padding:72px 24px 36px;">
-        <span data-i18n data-en="Copyright 2026 Notofilia. All Rights Reserved." style="font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#b7ab8a;">Copyright 2026 Notofilia. Todos los derechos reservados.</span>
-        <span data-i18n data-en="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world." style="font-family:'Cormorant Garamond', serif; font-style:italic; font-size:14px; color:rgba(216,207,184,0.72); max-width:100%; text-align:center;">Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo.</span>
+      <footer class="relative z-[1] flex flex-col items-center gap-2 max-w-[1180px] mx-auto pt-[72px] px-6 pb-9">
+        <span data-i18n data-en="Copyright 2026 Notofilia. All Rights Reserved." class="font-serif text-[13px] tracking-[0.18em] uppercase text-muted">Copyright 2026 Notofilia. Todos los derechos reservados.</span>
+        <span data-i18n data-en="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world." class="font-serif italic text-[14px] text-[rgba(216,207,184,0.72)] max-w-full text-center">Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo.</span>
       </footer>
 
-      <p style="position:relative; z-index:1; font-family:'Cormorant Garamond', serif; font-size:13px; letter-spacing:0.1em; color:#b7ab8a; text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 40px;"><strong data-i18n data-en="With the entire Virtual Collection:" style="font-weight:700; color:#cbbf9d;">Colección Virtual:</strong> <span data-i18n set:html={statsEs} data-en={statsEn}></span></p>
+      <p class="relative z-[1] font-serif text-[13px] tracking-[0.1em] text-muted text-center max-w-[1180px] mx-auto pt-0 px-6 pb-10"><strong data-i18n data-en="With the entire Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong> <span data-i18n set:html={statsEs} data-en={statsEn}></span></p>
     </div>
 
-    <div id="cookie-banner" role="dialog" aria-modal="false" aria-label="Aviso de cookies" style="position:fixed; left:0; right:0; bottom:0; z-index:80; display:none; justify-content:center; padding:16px;">
-      <div style="width:100%; max-width:720px; background:#1c1a15; border:1px solid rgba(231,222,201,0.18); border-radius:8px; box-shadow:0 24px 60px rgba(0,0,0,0.55); padding:22px 24px; display:flex; flex-direction:column; gap:16px;">
-        <p style="font-family:'Cormorant Garamond', serif; font-size:16px; line-height:1.6; color:#d8d2cd; margin:0;">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" style="color:#e7ddc4; text-decoration-color:rgba(231,222,201,0.4);">Política de Privacidad y Cookies</a>.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
-          <button id="cookie-reject" type="button" style="min-height:44px; padding:11px 22px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#d8d2cd; background:transparent; border:1px solid rgba(231,222,201,0.35); border-radius:999px; cursor:pointer;">Rechazar no esenciales</button>
-          <button id="cookie-accept" type="button" style="min-height:44px; padding:11px 26px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#0a0a09; background:#e7ddc4; border:1px solid #e7ddc4; border-radius:999px; cursor:pointer;">Aceptar todas</button>
+    <div id="cookie-banner" role="dialog" aria-modal="false" aria-label="Aviso de cookies" class="fixed left-0 right-0 bottom-0 z-[80] justify-center p-4" style="display:none;">
+      <div class="w-full max-w-[720px] bg-panel border border-[rgba(231,222,201,0.18)] rounded-lg [box-shadow:0_24px_60px_rgba(0,0,0,0.55)] px-6 py-[22px] flex flex-col gap-4">
+        <p class="font-serif text-[16px] leading-[1.6] text-cream-dim m-0">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]">Política de Privacidad y Cookies</a>.</p>
+        <div class="flex flex-wrap gap-[10px] justify-end">
+          <button id="cookie-reject" type="button" class="min-h-[44px] px-[22px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-cream-dim bg-transparent border border-[rgba(231,222,201,0.35)] rounded-full cursor-pointer">Rechazar no esenciales</button>
+          <button id="cookie-accept" type="button" class="min-h-[44px] px-[26px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-bg bg-cream border border-cream rounded-full cursor-pointer">Aceptar todas</button>
         </div>
       </div>
     </div>
