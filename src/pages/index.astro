@@ -26,6 +26,20 @@ const posts = (await getCollection('noticias', ({ data }) => !data.draft))
     coverAlt: p.data.coverAlt ?? '',
   }));
 
+// --- Blog: newest 4 evergreen guides from the Markdown collection ---
+const blogPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 4)
+  .map((p) => ({
+    url: `/blog/${p.slug}/`,
+    title: p.data.title,
+    source: p.data.source ?? 'Notofilia',
+    iso: p.data.publishedAt.toISOString().slice(0, 10),
+    dateLabel: fmt(p.data.publishedAt),
+    cover: p.data.cover,
+    coverAlt: p.data.coverAlt ?? '',
+  }));
+
 // --- Stats: computed at build from sitemap.xml (mirrors the old runtime logic) ---
 function computeStats() {
   try {
@@ -197,6 +211,37 @@ const heroes = [
           )}
           <p class="text-center m-0">
             <a href="/noticias/" class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full">Ver todas las noticias</a>
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="blog-heading" class="bg-cream-dim border-t border-[rgba(10,10,9,0.12)] py-[72px] px-6">
+        <div class="max-w-[1180px] mx-auto">
+          <h2 id="blog-heading" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">Blog de Notofilia.com</h2>
+          {blogPosts.length > 0 ? (
+            <div class="noticias-grid">
+              {blogPosts.map((it) => (
+                <article class="noticia-card border-t-2 border-panel pt-4">
+                  {it.cover && (
+                    <picture>
+                      <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
+                      <img src={`/uploads/${it.cover}-640.jpg`} alt={it.coverAlt} loading="lazy" decoding="async" width="220" height="140" class="block w-full h-[140px] object-cover rounded-[3px] mb-3" />
+                    </picture>
+                  )}
+                  <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
+                    <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep">{it.dateLabel}</time>
+                    <span class="text-[13px] text-gold-dark">&middot; {it.source}</span>
+                  </div>
+                  <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem_+_0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 [text-wrap:balance] break-words">{it.title}</h3>
+                  <a href={it.url} class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p class="text-[18px] leading-[1.6] text-[#332e22] text-center mt-0 mb-8">Muy pronto publicaremos las primeras guías del blog.</p>
+          )}
+          <p class="text-center m-0">
+            <a href="/blog/" class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full">Ver todo el blog</a>
           </p>
         </div>
       </section>
