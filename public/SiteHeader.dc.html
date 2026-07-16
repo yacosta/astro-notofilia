@@ -72,6 +72,11 @@
 
   </div>
 </nav>
+<!-- Spacer reserves the fixed nav's 68px so page content is not hidden beneath
+     it. On the homepage the header mounts into an absolutely-positioned overlay,
+     so this spacer has no effect there and the hero stays full-bleed; on
+     in-flow mounts (blog + catalog pages) it provides the offset. -->
+<div aria-hidden="true" style="height:68px; flex:none;"></div>
 
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed; inset:0; z-index:118; background:rgba(10,10,9,0.55); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);" onClick="{{ closeDrawer }}"></div>
@@ -616,7 +621,7 @@ class Component extends DCLogic {
     const t = this.texts[lang];
     const { scrollProgress, menuOpen, numismaticaExpanded, collectionExpanded, perfilExpanded, searchOpen, query } = this.state;
 
-    const navBarStyle = `position:sticky; top:0; z-index:100; height:68px; background:rgba(10,10,9,${(0.55 + scrollProgress * 0.35).toFixed(2)}); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border-bottom:1px solid rgba(231,222,201,0.14); box-sizing:border-box; transition:background 0.2s ease;`;
+    const navBarStyle = `position:fixed; top:0; left:0; right:0; z-index:100; height:68px; background:rgba(10,10,9,${(0.55 + scrollProgress * 0.35).toFixed(2)}); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border-bottom:1px solid rgba(231,222,201,0.14); box-sizing:border-box; transition:background 0.2s ease;`;
 
     const searchPillStyle = `display:flex; align-items:center; height:38px; border-radius:19px; background:${searchOpen ? "rgba(255,255,255,0.1)" : "transparent"}; padding:0 2px; transition:background 0.2s ease;`;
     const searchInputStyle = `background:none; border:none; outline:none; color:#e7ddc4; font-family:'Cormorant Garamond', serif; font-size:15px; width:${searchOpen ? "200px" : "0px"}; padding:${searchOpen ? "0 10px 0 4px" : "0"}; opacity:${searchOpen ? 1 : 0}; transition:width 0.25s ease, opacity 0.2s ease;`;
