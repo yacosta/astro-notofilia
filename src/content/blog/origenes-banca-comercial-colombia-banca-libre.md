@@ -2,6 +2,8 @@
 title: "Orígenes de la banca comercial en Colombia: la banca libre, 1870-1886"
 publishedAt: 2026-07-16
 excerpt: "Antes de que existiera un banco central, decenas de bancos privados colombianos emitían sus propios billetes. Así funcionó —y por qué terminó— la banca libre."
+cover: "colombia-banco-de-medellin-50-centavos"
+coverAlt: "Billete de 50 centavos del Banco de Medellín, emisión privada de la banca libre en Colombia, anverso y reverso, de la colección de Notofilia"
 keywords:
   - "banca libre colombia"
   - "orígenes banca comercial colombia"
@@ -53,8 +55,10 @@ la era de la banca libre había llegado a su fin.
 ## Legado para el coleccionista
 
 Aquellos billetes son piezas clave de la historia económica colombiana y de
-cualquier colección seria de papel moneda del país. En Notofilia puedes explorar
-ejemplares de este periodo en nuestro
+cualquier colección seria de papel moneda del país. Un buen ejemplo es el
+[billete de 50 centavos del Banco de Medellín](/coleccion/colombia/banco-de-medellin-50-centavos/),
+una emisión privada característica de la época. En Notofilia puedes explorar más
+ejemplares en nuestro
 [catálogo de billetes de la banca libre de Colombia](/coleccion/colombia/banca-libre/),
 con emisiones de distintos bancos regionales y sus característicos diseños del
 siglo XIX.

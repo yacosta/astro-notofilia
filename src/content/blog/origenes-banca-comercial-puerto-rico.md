@@ -2,6 +2,8 @@
 title: "Orígenes de la banca comercial en Puerto Rico"
 publishedAt: 2026-07-16
 excerpt: "Del peso español al dólar: cómo nació la banca emisora en Puerto Rico con el Banco Español de Puerto Rico y qué cambió tras 1898."
+cover: "puerto-rico-billete-de-canje-1-peso-1895"
+coverAlt: "Billete de canje de un peso de 1895 del Ministerio de Ultramar de Puerto Rico, anverso y reverso, de la colección de Notofilia"
 keywords:
   - "banca comercial puerto rico"
   - "banco español de puerto rico"
@@ -58,8 +60,11 @@ notafilia caribeña.
 ## Para el coleccionista
 
 Los billetes y monedas de este periodo son testimonios tangibles del paso de
-Puerto Rico de colonia española a territorio estadounidense. Puedes explorar
-ejemplares relacionados en nuestro
+Puerto Rico de colonia española a territorio estadounidense. Un ejemplo
+emblemático es el
+[billete de canje de 1 peso de 1895](/coleccion/puerto-rico/billete-de-canje-1-peso-1895/),
+emitido por el Ministerio de Ultramar en los últimos años de la soberanía
+española. Puedes explorar más ejemplares en nuestro
 [catálogo de billetes de Puerto Rico](/coleccion/puerto-rico/).
 
 ## Fuentes
