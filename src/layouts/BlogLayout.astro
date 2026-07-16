@@ -6,6 +6,7 @@
 // (supplied by the page), semantic landmarks, skip link, canonical, Open Graph
 // + Twitter, JSON-LD.
 import '../styles/global.css';
+import PreFooter from '../components/PreFooter.astro';
 
 export interface Props {
   title: string;          // <title> — keep <= 60 chars
@@ -73,6 +74,7 @@ const image = ogImage ? SITE + ogImage : SITE + '/favicon.png';
     <main id="main-content" class="min-h-[60vh]">
       <slot />
     </main>
+    <PreFooter />
     <footer class="border-t border-line mt-24 pt-14 pb-10 text-center">
       <div class="max-w-[1180px] mx-auto px-6 flex flex-col gap-2">
         <span class="text-[13px] tracking-[0.18em] uppercase text-muted">

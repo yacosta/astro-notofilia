@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import { getCollection } from 'astro:content';
 import '../styles/global.css';
+import PreFooter from '../components/PreFooter.astro';
 
 // --- News: newest 4 from the Markdown collection (same source as /noticias/) ---
 const monthsEs = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
@@ -200,122 +201,7 @@ const heroes = [
         </div>
       </section>
 
-      <!-- Pre-footer band: dark background matching the footer. Three columns,
-           intentionally blank for now (content to come):
-             Col 1 — reserved
-             Col 2 — social media links
-             Col 3 — Mailchimp newsletter signup -->
-      <section class="relative z-[1] bg-bg px-6 py-16">
-        <div class="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div class="min-h-[120px]"><!-- Col 1 — reserved --></div>
-          <div class="min-h-[120px] flex items-center justify-center">
-            <!-- Col 2 — social media -->
-            <ul role="list" class="flex items-center justify-center gap-4 list-none m-0 p-0">
-              <li>
-                <a
-                  href="https://www.facebook.com/NOTOFILIA/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Notofilia en Facebook"
-                  class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[rgba(231,222,201,0.25)] text-cream-dim transition-colors duration-200 hover:text-bg hover:bg-cream hover:border-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                >
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true" focusable="false">
-                    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/notofilia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Notofilia en X"
-                  class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[rgba(231,222,201,0.25)] text-cream-dim transition-colors duration-200 hover:text-bg hover:bg-cream hover:border-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                >
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
-                    <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23 5.46-6.23zm-1.16 17.52h1.83L7.01 4.13H5.05l12.03 15.64z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/notofilia2026/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Notofilia en Instagram"
-                  class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[rgba(231,222,201,0.25)] text-cream-dim transition-colors duration-200 hover:text-bg hover:bg-cream hover:border-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                >
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false">
-                    <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.25 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.16 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.25 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.25-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.16-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 100 10.92 5.46 5.46 0 000-10.92zm0 9a3.54 3.54 0 110-7.08 3.54 3.54 0 010 7.08zm5.69-9.19a1.28 1.28 0 11-2.55 0 1.28 1.28 0 012.55 0z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/notofilia/about/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Notofilia en LinkedIn"
-                  class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[rgba(231,222,201,0.25)] text-cream-dim transition-colors duration-200 hover:text-bg hover:bg-cream hover:border-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                >
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false">
-                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.01-4.13 2.06 2.06 0 01-.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Col 3 — newsletter. Self-styled form posting to the Notofilia
-               Mailchimp audience (same u/id/f_id + honeypot as the classic
-               embed), with no external Mailchimp CSS/JS or jQuery. Submitting
-               opens Mailchimp's hosted confirmation in a new tab. -->
-          <div class="min-h-[120px]">
-            <h3 class="font-display font-normal text-[clamp(20px,2.4vw,26px)] text-cream-dim mt-0 mb-2" data-i18n data-en="Newsletter">Boletín</h3>
-            <p class="text-[14px] leading-[1.5] text-muted mt-0 mb-4" data-i18n data-en="Subscribe for numismatics and notaphily news.">Suscríbete para recibir noticias de numismática y notafilia.</p>
-            <form
-              action="https://notofilia.us11.list-manage.com/subscribe/post?u=d039ececd8f9d1edb2a60f524&amp;id=f8827fa42f&amp;f_id=00b2ece1f0"
-              method="post"
-              target="_blank"
-              class="flex flex-col gap-3 max-w-[360px]"
-            >
-              <div>
-                <label for="mce-EMAIL" class="block text-[13px] tracking-[0.04em] text-muted mb-1">
-                  <span data-i18n data-en="Email">Correo electrónico</span> <span class="text-gold-light" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="EMAIL"
-                  id="mce-EMAIL"
-                  required
-                  autocomplete="email"
-                  class="w-full min-h-[44px] px-4 bg-transparent border border-[rgba(231,222,201,0.35)] rounded-full text-cream font-serif text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                />
-              </div>
-              <div>
-                <label for="mce-FNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1" data-i18n data-en="First name">Nombre</label>
-                <input
-                  type="text"
-                  name="FNAME"
-                  id="mce-FNAME"
-                  autocomplete="given-name"
-                  class="w-full min-h-[44px] px-4 bg-transparent border border-[rgba(231,222,201,0.35)] rounded-full text-cream font-serif text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
-                />
-              </div>
-              <!-- Honeypot (bot prevention) — do not remove -->
-              <div aria-hidden="true" class="absolute left-[-5000px]">
-                <input type="text" name="b_d039ececd8f9d1edb2a60f524_f8827fa42f" tabindex="-1" value="" />
-              </div>
-              <button
-                type="submit"
-                name="subscribe"
-                class="min-h-[44px] px-6 py-3 bg-cream text-bg border border-cream rounded-full font-serif font-semibold text-[14px] tracking-[0.1em] uppercase cursor-pointer transition-colors duration-200 hover:bg-cream-dim hover:border-cream-dim"
-                data-i18n
-                data-en="Subscribe"
-              >Suscribirse</button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <PreFooter />
 
       <footer class="relative z-[1] flex flex-col items-center gap-2 max-w-[1180px] mx-auto pt-[72px] px-6 pb-9">
         <span data-i18n data-en="Copyright 2026 Notofilia. All Rights Reserved." class="font-serif text-[13px] tracking-[0.18em] uppercase text-muted">Copyright 2026 Notofilia. Todos los derechos reservados.</span>
