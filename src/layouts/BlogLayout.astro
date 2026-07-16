@@ -15,11 +15,21 @@ export interface Props {
   ogType?: 'website' | 'article';
   ogImage?: string;       // absolute path under /uploads, optional
   jsonLd?: unknown;       // structured data object(s)
+  keywords?: string[];    // <meta name="keywords"> terms for this page
 }
 const SITE = 'https://www.notofilia.com';
-const { title, description, path, ogType = 'website', ogImage, jsonLd } = Astro.props;
+const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords } = Astro.props;
 const canonical = SITE + path;
 const image = ogImage ? SITE + ogImage : SITE + '/favicon.png';
+
+// Site-wide fitting terms, always included; page-specific `keywords` are
+// prepended and de-duplicated.
+const BASE_KEYWORDS = [
+  'notafilia', 'numismática', 'billetes antiguos', 'billetes de colección',
+  'colección de billetes', 'papel moneda', 'monedas antiguas', 'monedas de colección',
+  'billetes de colombia', 'billetes colombianos', 'notafilia colombia', 'numismática colombia',
+];
+const keywordsContent = [...new Set([...(keywords ?? []), ...BASE_KEYWORDS])].join(', ');
 ---
 <!doctype html>
 <html lang="es">
@@ -32,6 +42,7 @@ const image = ogImage ? SITE + ogImage : SITE + '/favicon.png';
     <script src="/support.js" is:inline></script>
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywordsContent} />
     <meta name="author" content="Notofilia" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />

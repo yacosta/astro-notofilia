@@ -19,6 +19,8 @@ const noticias = defineCollection({
     sourceUrl: z.string().url().optional(),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
+    // Optional SEO keyword list for this post's <meta name="keywords">.
+    keywords: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),
 });
