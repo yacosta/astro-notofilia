@@ -1,0 +1,69 @@
+/*
+ * Notofilia — shared Tailwind v4 stylesheet for the natively-Astro layer.
+ *
+ * Preflight (Tailwind's global base reset) is intentionally NOT imported: some
+ * Astro pages mount the dc-runtime mega-menu into the same document, and a
+ * global element reset would restyle that injected markup. We load only the
+ * theme (design tokens) and the utilities, and let each page keep its own
+ * minimal reset. Layers are declared explicitly so utilities win the cascade.
+ */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Display + body faces, self-hosted from /uploads/fonts (shared across the
+   Astro layer; previously redeclared in every page's inline <style>). */
+@font-face {
+  font-family: 'Montenegrin Gothic One';
+  src: url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations');
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*
+ * Design tokens — the site's dark/warm palette. These mirror the hand-tuned,
+ * WCAG-AA-verified values previously defined per page as CSS custom properties.
+ * Under @theme, each token generates both a CSS variable (e.g. --color-cream)
+ * and matching utilities (bg-cream, text-cream, border-line, font-display …).
+ */
+@theme {
+  /* Surfaces */
+  --color-bg: #0a0a09; /* page background (near-black) */
+  --color-panel: #1c1a15; /* raised panel */
+
+  /* Text */
+  --color-cream: #e7ddc4; /* primary display / links on dark */
+  --color-cream-dim: #d8d2cd; /* body text on dark */
+  --color-muted: #b7ab8a; /* muted / secondary text on dark (AA-verified) */
+
+  /* Gold accents — deliberately distinct shades for different backgrounds.
+     gold        : decorative borders + hover fills on dark
+     gold-deep   : AA-safe gold text on LIGHT panels
+     gold-dark   : AA-safe deep gold text on light
+     gold-light  : gold text/label on DARK backgrounds */
+  --color-gold: #8a6d3b;
+  --color-gold-deep: #6b521f;
+  --color-gold-dark: #5c4e33;
+  --color-gold-light: #cbbf9d;
+
+  /* Hairline border (cream at low alpha) */
+  --color-line: rgba(231, 222, 201, 0.14);
+
+  /* Type families */
+  --font-display: 'Montenegrin Gothic One', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+}
