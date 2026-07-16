@@ -6,6 +6,11 @@ source: "Meganoticias"
 sourceUrl: "https://www.meganoticias.cl/nacional/526832-moneda-10-pesos-octogonal-ano-1992-valor-500-mil-pesos-chile-13-07-2026.html"
 cover: "moneda-10-pesos-octogonal-chile-1992"
 coverAlt: "Moneda octogonal chilena de $10 pesos de 1992 con el busto de Bernardo O'Higgins"
+keywords:
+  - "monedas raras"
+  - "monedas de colección"
+  - "moneda octogonal chile 1992"
+  - "numismática"
 ---
 
 En 1992 la Casa de Moneda de Chile probó un prototipo octogonal de $10 pesos,

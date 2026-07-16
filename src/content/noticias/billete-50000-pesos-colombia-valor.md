@@ -6,6 +6,11 @@ source: "Yahoo Noticias"
 sourceUrl: "https://es-us.noticias.yahoo.com/billete-50-000-billetera-pagar-214500352.html"
 cover: "billete-50000-pesos-colombia"
 coverAlt: "Billete de 50.000 pesos colombianos"
+keywords:
+  - "billete 50000 pesos colombia valor"
+  - "valor de billetes de colección colombia"
+  - "billetes colombianos"
+  - "billetes de la república de colombia"
 ---
 
 Llevar y pagar con un billete de $50.000 en el día a día trae inconvenientes

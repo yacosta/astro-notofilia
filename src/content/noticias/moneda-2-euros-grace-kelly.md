@@ -6,6 +6,11 @@ source: "OKDiario"
 sourceUrl: "https://okdiario.com/economia/estan-pagando-1-000-euros-esta-moneda-2-que-puedes-tener-tu-casa-asi-puedes-identificarla-18981175"
 cover: "moneda-2-euros-grace-kelly"
 coverAlt: "Primer plano de una moneda de 2 euros sobre una superficie de madera"
+keywords:
+  - "monedas de colección"
+  - "monedas raras"
+  - "moneda 2 euros grace kelly"
+  - "numismática"
 ---
 
 Circulan titulares sobre monedas de 2 euros que valdrían fortunas, pero los
