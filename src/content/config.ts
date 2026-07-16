@@ -9,6 +9,9 @@ const postSchema = z.object({
   sourceUrl: z.string().url().optional(),
   cover: z.string().optional(),
   coverAlt: z.string().optional(),
+  // How the cover is fitted: 'cover' (default, crops to a 16:9 band) or
+  // 'contain' (shows the whole image at natural size — for banknote scans).
+  coverFit: z.enum(['cover', 'contain']).optional(),
   // Optional SEO keyword list for this post's <meta name="keywords">.
   keywords: z.array(z.string()).optional(),
   draft: z.boolean().default(false),

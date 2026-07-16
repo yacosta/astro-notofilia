@@ -2,23 +2,45 @@
 // Renders a cover image as WebP + JPEG fallback via <picture>, using the
 // conventional variant suffixes already present in public/uploads/:
 //   <base>.jpg  <base>.webp  <base>-640.webp
+//
+// fit="cover" (default): fills a fixed aspect-ratio box, cropping as needed —
+//   good for wide illustrations/photos.
+// fit="contain": shows the whole image at its natural size, centered, capped so
+//   it never upscales — good for banknote scans (which are ~square and would be
+//   cropped and blurred by a 16:9 crop).
 export interface Props {
   base: string;       // image base name under /uploads (no extension)
   alt: string;
   eager?: boolean;    // load eagerly (above-the-fold hero)
-  ratio?: string;     // CSS aspect-ratio, default 16/10
+  ratio?: string;     // CSS aspect-ratio for fit="cover", default 16/10
+  fit?: 'cover' | 'contain';
 }
-const { base, alt, eager = false, ratio = '16 / 10' } = Astro.props;
+const { base, alt, eager = false, ratio = '16 / 10', fit = 'cover' } = Astro.props;
 const u = (s: string) => `/uploads/${base}${s}`;
 ---
 <picture>
-  <source type="image/webp" srcset={`${u('-640.webp')} 640w, ${u('.webp')} 1200w`} sizes="(max-width: 720px) 100vw, 720px" />
-  <img
-    src={u('.jpg')}
-    alt={alt}
-    loading={eager ? 'eager' : 'lazy'}
-    decoding="async"
-    class="block w-full h-auto object-cover bg-panel"
-    style={`aspect-ratio:${ratio};`}
+  <source
+    type="image/webp"
+    srcset={`${u('-640.webp')} 640w, ${u('.webp')} 1200w`}
+    sizes={fit === 'contain' ? '1128px' : '(max-width: 720px) 100vw, 720px'}
   />
+  {fit === 'contain' ? (
+    <img
+      src={u('.jpg')}
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      class="block w-full h-auto mx-auto rounded-[4px] bg-panel"
+      style="max-width: min(100%, 1128px);"
+    />
+  ) : (
+    <img
+      src={u('.jpg')}
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      class="block w-full h-auto object-cover bg-panel"
+      style={`aspect-ratio:${ratio};`}
+    />
+  )}
 </picture>
