@@ -49,79 +49,60 @@ const jsonLd = {
   ogImage={d.cover ? `/uploads/${d.cover}.jpg` : undefined}
   jsonLd={jsonLd}
 >
-  <article class="wrap post">
-    <nav class="crumbs" aria-label="Migas de pan">
-      <a href="/">Inicio</a> <span aria-hidden="true">/</span>
-      <a href="/noticias/">Noticias</a> <span aria-hidden="true">/</span>
+  <article class="max-w-[760px] mx-auto px-6 pt-12">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
+      <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
+      <a class="text-muted" href="/noticias/">Noticias</a> <span aria-hidden="true">/</span>
       <span>{d.title}</span>
     </nav>
 
-    <header class="post-head">
-      <div class="meta">
+    <header>
+      <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
         <time datetime={iso}>{fmt}</time>
         {d.source && <span aria-hidden="true">·</span>}
-        {d.source && <span class="src">{d.source}</span>}
+        {d.source && <span>{d.source}</span>}
       </div>
-      <h1>{d.title}</h1>
-      <p class="excerpt">{d.excerpt}</p>
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        {d.title}
+      </h1>
+      <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-9 leading-[1.5]">{d.excerpt}</p>
     </header>
 
     {d.cover && (
-      <figure class="cover">
+      <figure class="cover mt-0 mb-10">
         <Cover base={d.cover} alt={d.coverAlt ?? d.title} eager ratio="16 / 9" />
-        {d.coverAlt && <figcaption>{d.coverAlt}</figcaption>}
+        {d.coverAlt && (
+          <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">{d.coverAlt}</figcaption>
+        )}
       </figure>
     )}
 
-    <div class="prose">
+    <div class="prose text-[20px] leading-[1.75] text-cream-dim">
       <Content />
     </div>
 
     {d.sourceUrl && (
-      <p class="source-out">
-        <a href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
+      <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
+        <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
           Leer la nota original{d.source ? ` en ${d.source}` : ''} &rarr;
         </a>
       </p>
     )}
 
-    <p class="back"><a href="/noticias/">&larr; Volver a Noticias</a></p>
+    <p class="mt-10"><a class="text-muted" href="/noticias/">&larr; Volver a Noticias</a></p>
   </article>
 </BlogLayout>
 
 <style>
-  .post { padding-top: 48px; max-width: 760px; }
-  .crumbs { font-size: 14px; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 24px; }
-  .crumbs a { color: var(--muted); }
-  .meta {
-    display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
-    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
-  }
-  h1 {
-    font-family: 'Montenegrin Gothic One', serif; font-weight: 400;
-    font-size: clamp(28px, 4.5vw, 42px); color: var(--cream); margin: 0 0 16px; line-height: 1.12;
-  }
-  .post-head .excerpt {
-    font-style: italic; font-size: clamp(19px, 2.4vw, 23px); color: var(--cream-dim);
-    margin: 0 0 36px; line-height: 1.5;
-  }
-  .cover { margin: 0 0 40px; }
+  /* Cover image + rendered-markdown prose reach into generated/child markup
+     (the <Cover> component and <Content />), so these stay as scoped :global
+     CSS. Colors/fonts use the shared Tailwind @theme tokens. */
   .cover :global(picture) { display: block; border-radius: 4px; overflow: hidden; }
-  .cover figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; text-align: center; font-style: italic; }
-  .prose { font-size: 20px; line-height: 1.75; color: var(--cream-dim); }
   .prose :global(p) { margin: 0 0 22px; }
-  .prose :global(strong) { color: var(--cream); font-weight: 600; }
-  .prose :global(a) { color: var(--cream); }
+  .prose :global(strong) { color: var(--color-cream); font-weight: 600; }
+  .prose :global(a) { color: var(--color-cream); }
   .prose :global(h2) {
-    font-family: 'Montenegrin Gothic One', serif; font-weight: 400;
-    font-size: clamp(22px, 3vw, 28px); color: var(--cream); margin: 40px 0 16px;
+    font-family: var(--font-display); font-weight: 400;
+    font-size: clamp(22px, 3vw, 28px); color: var(--color-cream); margin: 40px 0 16px;
   }
-  .source-out {
-    margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line);
-    font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase;
-  }
-  .source-out a { color: var(--muted); font-weight: 600; }
-  .source-out a:hover { color: var(--cream); }
-  .back { margin: 40px 0 0; }
-  .back a { color: var(--muted); }
 </style>
