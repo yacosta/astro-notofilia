@@ -4,17 +4,17 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import Cover from '../../components/Cover.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('noticias', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
 
-type Props = { post: CollectionEntry<'noticias'> };
+type Props = { post: CollectionEntry<'blog'> };
 const { post } = Astro.props;
 const { Content } = await post.render();
 const d = post.data;
 
 const SITE = 'https://www.notofilia.com';
-const path = `/noticias/${post.slug}/`;
+const path = `/blog/${post.slug}/`;
 const iso = d.publishedAt.toISOString().slice(0, 10);
 const fmt = d.publishedAt.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
 const desc = d.excerpt.length > 150 ? d.excerpt.slice(0, 147) + '…' : d.excerpt;
@@ -35,7 +35,7 @@ const jsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
-      { '@type': 'ListItem', position: 2, name: 'Noticias', item: `${SITE}/noticias/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
       { '@type': 'ListItem', position: 3, name: d.title, item: SITE + path },
     ],
   },
@@ -53,7 +53,7 @@ const jsonLd = {
   <article class="max-w-[1180px] mx-auto px-6 pt-12">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
       <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
-      <a class="text-muted" href="/noticias/">Noticias</a> <span aria-hidden="true">/</span>
+      <a class="text-muted" href="/blog/">Blog</a> <span aria-hidden="true">/</span>
       <span>{d.title}</span>
     </nav>
 
@@ -85,12 +85,12 @@ const jsonLd = {
     {d.sourceUrl && (
       <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
         <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
-          Leer la nota original{d.source ? ` en ${d.source}` : ''} &rarr;
+          Leer la fuente original{d.source ? ` en ${d.source}` : ''} &rarr;
         </a>
       </p>
     )}
 
-    <p class="mt-10"><a class="text-muted" href="/noticias/">&larr; Volver a Noticias</a></p>
+    <p class="mt-10"><a class="text-muted" href="/blog/">&larr; Volver al Blog</a></p>
   </article>
 </BlogLayout>
 

@@ -1,28 +1,27 @@
 import { defineCollection, z } from 'astro:content';
 
-// Blog / "Noticias" content collection.
-// Each post is a Markdown file in src/content/noticias/. The filename (minus
-// .md) becomes the URL slug: /noticias/<slug>/.
-//
-// A post can be a full original article (write the body in Markdown) and/or a
-// curated pointer to an external source (set `source` + `sourceUrl` — the
-// template then shows a "read the original" link). `cover` is the base name of
-// an image in public/uploads/ WITHOUT extension; the template builds the
-// WebP + responsive <picture> from the conventional variant suffixes.
-const noticias = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    publishedAt: z.coerce.date(),
-    excerpt: z.string(),
-    source: z.string().optional(),
-    sourceUrl: z.string().url().optional(),
-    cover: z.string().optional(),
-    coverAlt: z.string().optional(),
-    // Optional SEO keyword list for this post's <meta name="keywords">.
-    keywords: z.array(z.string()).optional(),
-    draft: z.boolean().default(false),
-  }),
+// Shared schema for the two editorial collections.
+const postSchema = z.object({
+  title: z.string(),
+  publishedAt: z.coerce.date(),
+  excerpt: z.string(),
+  source: z.string().optional(),
+  sourceUrl: z.string().url().optional(),
+  cover: z.string().optional(),
+  coverAlt: z.string().optional(),
+  // Optional SEO keyword list for this post's <meta name="keywords">.
+  keywords: z.array(z.string()).optional(),
+  draft: z.boolean().default(false),
 });
 
-export const collections = { noticias };
+// "Noticias" — curated news. Each post is a Markdown file in
+// src/content/noticias/ → /noticias/<slug>/. Typically a short summary that
+// points to an external source (set `source` + `sourceUrl`).
+const noticias = defineCollection({ type: 'content', schema: postSchema });
+
+// "Blog" — original evergreen guides. Each post is a Markdown file in
+// src/content/blog/ → /blog/<slug>/. Full long-form articles (with a body
+// "Fuentes" section), not external pointers.
+const blog = defineCollection({ type: 'content', schema: postSchema });
+
+export const collections = { noticias, blog };
