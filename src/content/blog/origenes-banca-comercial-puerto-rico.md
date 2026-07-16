@@ -2,8 +2,8 @@
 title: "Orígenes de la banca comercial en Puerto Rico"
 publishedAt: 2026-07-16
 excerpt: "Del peso español al dólar: cómo nació la banca emisora en Puerto Rico con el Banco Español de Puerto Rico y qué cambió tras 1898."
-cover: "puerto-rico-billete-de-canje-1-peso-1895"
-coverAlt: "Billete de canje de un peso de 1895 del Ministerio de Ultramar de Puerto Rico, anverso y reverso, de la colección de Notofilia"
+cover: "origenes-banca-comercial-puerto-rico"
+coverAlt: "Ilustración de época de una calle colonial de Puerto Rico del siglo XIX frente al Banco de San Juan, con dos hombres intercambiando un billete"
 keywords:
   - "banca comercial puerto rico"
   - "banco español de puerto rico"
@@ -66,6 +66,11 @@ emblemático es el
 emitido por el Ministerio de Ultramar en los últimos años de la soberanía
 española. Puedes explorar más ejemplares en nuestro
 [catálogo de billetes de Puerto Rico](/coleccion/puerto-rico/).
+
+<figure style="margin:32px 0; max-width:480px;">
+  <img src="/uploads/puerto-rico-billete-de-canje-1-peso-1895.webp" alt="Billete de canje de 1 peso de 1895 del Ministerio de Ultramar, anverso y reverso" loading="lazy" style="display:block; width:100%; height:auto; border-radius:4px;" />
+  <figcaption style="font-size:14px; color:#b7ab8a; font-style:italic; margin-top:8px;">Billete de canje de 1 peso de 1895 (Ministerio de Ultramar). Colección de Notofilia.</figcaption>
+</figure>
 
 ## Fuentes
 

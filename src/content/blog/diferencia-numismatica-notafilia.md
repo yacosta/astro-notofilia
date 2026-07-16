@@ -2,6 +2,8 @@
 title: "Diferencia entre numismática y notafilia"
 publishedAt: 2026-07-16
 excerpt: "Numismática y notafilia se confunden a menudo. Explicamos qué estudia cada una, cómo se relacionan y por qué la distinción importa al coleccionista."
+cover: "diferencia-numismatica-notafilia"
+coverAlt: "Billetes antiguos apilados junto a monedas de colección dispuestas sobre una mesa de madera"
 keywords:
   - "diferencia entre numismática y notafilia"
   - "numismática"
