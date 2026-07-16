@@ -22,7 +22,7 @@ const u = (s: string) => `/uploads/${base}${s}`;
   <source
     type="image/webp"
     srcset={`${u('-640.webp')} 640w, ${u('.webp')} 1200w`}
-    sizes={fit === 'contain' ? '564px' : '(max-width: 720px) 100vw, 720px'}
+    sizes={fit === 'contain' ? '1128px' : '(max-width: 720px) 100vw, 720px'}
   />
   {fit === 'contain' ? (
     <img
@@ -30,8 +30,8 @@ const u = (s: string) => `/uploads/${base}${s}`;
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
-      class="block h-auto mx-auto rounded-[4px] bg-panel"
-      style="max-width: min(100%, 564px);"
+      class="block w-full h-auto mx-auto rounded-[4px] bg-panel"
+      style="max-width: min(100%, 1128px);"
     />
   ) : (
     <img
