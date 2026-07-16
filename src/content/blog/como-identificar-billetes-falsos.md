@@ -4,6 +4,7 @@ publishedAt: 2026-07-16
 excerpt: "Marca de agua, hilo de seguridad, microimpresión, tintas que cambian de color: los elementos que distinguen un billete auténtico de uno falso."
 cover: "nicaragua-bcn-10-cordobas-2007-polimero"
 coverAlt: "Billete de 10 córdobas de Nicaragua de 2007 impreso en polímero, con ventana transparente y elementos de seguridad"
+coverFit: contain
 keywords:
   - "cómo identificar billetes falsos colombia"
   - "elementos de seguridad billetes nuevos colombia"

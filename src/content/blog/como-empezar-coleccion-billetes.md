@@ -4,6 +4,7 @@ publishedAt: 2026-07-16
 excerpt: "Guía para principiantes: cómo elegir un enfoque, dónde conseguir piezas, y cómo cuidar y clasificar tus primeros billetes de colección."
 cover: "colombia-banco-de-la-republica-2000-pesos-oro-1985-specimen"
 coverAlt: "Billete specimen de 2.000 pesos oro de 1985 del Banco de la República de Colombia, con el retrato de Simón Bolívar y numeración de muestra"
+coverFit: contain
 keywords:
   - "cómo empezar una colección de billetes"
   - "guía para principiantes colección billetes colombia"

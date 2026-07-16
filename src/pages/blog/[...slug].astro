@@ -71,7 +71,7 @@ const jsonLd = {
 
     {d.cover && (
       <figure class="cover mt-0 mb-10">
-        <Cover base={d.cover} alt={d.coverAlt ?? d.title} eager ratio="16 / 9" />
+        <Cover base={d.cover} alt={d.coverAlt ?? d.title} eager ratio="16 / 9" fit={d.coverFit ?? 'cover'} />
         {d.coverAlt && (
           <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">{d.coverAlt}</figcaption>
         )}

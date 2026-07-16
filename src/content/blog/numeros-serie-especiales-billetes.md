@@ -4,6 +4,7 @@ publishedAt: 2026-07-16
 excerpt: "Series bajas, radares, sólidos, escaleras: por qué ciertos números de serie disparan el valor de un billete entre coleccionistas."
 cover: "ecuador-banco-central-100-sucres-1993-serial-00000003"
 coverAlt: "Billete de 100 sucres de Ecuador de 1993 con el número de serie especialmente bajo 00000003"
+coverFit: contain
 keywords:
   - "números seriales especiales billetes colombia"
   - "billetes colombianos raros seriales especiales"

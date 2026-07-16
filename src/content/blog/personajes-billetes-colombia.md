@@ -4,6 +4,7 @@ publishedAt: 2026-07-16
 excerpt: "De Bolívar y Policarpa a García Márquez y Débora Arango: los rostros que han protagonizado el papel moneda colombiano y lo que representan."
 cover: "colombia-banco-de-la-republica-1000-pesos-1995"
 coverAlt: "Billete de 1.000 pesos de 1995 del Banco de la República de Colombia con el retrato de Simón Bolívar"
+coverFit: contain
 keywords:
   - "personajes en los billetes de colombia"
   - "billetes de colombia"
