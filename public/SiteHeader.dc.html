@@ -124,10 +124,12 @@
       <sc-if value="{{ collectionExpanded }}" hint-placeholder-val="{{ false }}">
         <div>
 
-          <div style="padding:16px 24px 4px; border-bottom:1px solid rgba(10,10,9,0.08);">
+          <button onClick="{{ toggleSecColombia }}" aria-expanded="{{ secColombiaExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="background:rgba(10,10,9,0.03);" style-focus="outline:2px solid #5c4e33; outline-offset:-2px;">
             <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Colombia</span>
-          </div>
+            <span style="font-size:13px; color:#b7ab8a; transform:{{ secColombiaCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+          </button>
 
+          <sc-if value="{{ secColombiaExpanded }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex; flex-direction:column; gap:22px; padding:12px 24px 22px;">
             <div>
               <a href="catalogo-colombia.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ sigloPasadoLabel }}</a>
@@ -201,10 +203,14 @@
             </div>
           </div>
 
-          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
-            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">{{ unitedStatesLabel }}</span>
-          </div>
+          </sc-if>
 
+          <button onClick="{{ toggleSecEstadosUnidos }}" aria-expanded="{{ secEstadosUnidosExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="background:rgba(10,10,9,0.03);" style-focus="outline:2px solid #5c4e33; outline-offset:-2px;">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">{{ unitedStatesLabel }}</span>
+            <span style="font-size:13px; color:#b7ab8a; transform:{{ secEstadosUnidosCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+          </button>
+
+          <sc-if value="{{ secEstadosUnidosExpanded }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex; flex-direction:column; gap:22px; padding:12px 24px 22px;">
             <div>
               <a href="catalogo-moneda-colonial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Moneda Colonial</a>
@@ -250,10 +256,14 @@
             </div>
           </div>
 
-          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
-            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Puerto Rico</span>
-          </div>
+          </sc-if>
 
+          <button onClick="{{ toggleSecPuertoRico }}" aria-expanded="{{ secPuertoRicoExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="background:rgba(10,10,9,0.03);" style-focus="outline:2px solid #5c4e33; outline-offset:-2px;">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Puerto Rico</span>
+            <span style="font-size:13px; color:#b7ab8a; transform:{{ secPuertoRicoCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+          </button>
+
+          <sc-if value="{{ secPuertoRicoExpanded }}" hint-placeholder-val="{{ false }}">
           <div style="padding:12px 24px 22px;">
             <a href="catalogo-puerto-rico.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Billetes de Puerto Rico</a>
             <a href="billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">25 Pesos &mdash; Tesorería Nacional</a>
@@ -262,19 +272,27 @@
             <a href="billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Billete de Canje &mdash; Un Peso (1895)</a>
           </div>
 
-          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
-            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Ecuador</span>
-          </div>
+          </sc-if>
 
+          <button onClick="{{ toggleSecEcuador }}" aria-expanded="{{ secEcuadorExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="background:rgba(10,10,9,0.03);" style-focus="outline:2px solid #5c4e33; outline-offset:-2px;">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Ecuador</span>
+            <span style="font-size:13px; color:#b7ab8a; transform:{{ secEcuadorCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+          </button>
+
+          <sc-if value="{{ secEcuadorExpanded }}" hint-placeholder-val="{{ false }}">
           <div style="padding:12px 24px 22px;">
             <a href="catalogo-ecuador.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Billetes de Ecuador</a>
             <a href="billete-ecuador-100-sucres-1993.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Cien Sucres, Par de Serie Baja (1993)</a>
           </div>
 
-          <div style="padding:16px 24px 4px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);">
-            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Billetes de Polímero Mundial</span>
-          </div>
+          </sc-if>
 
+          <button onClick="{{ toggleSecPolimero }}" aria-expanded="{{ secPolimeroExpanded }}" style="all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-top:1px solid rgba(10,10,9,0.08); border-bottom:1px solid rgba(10,10,9,0.08);" style-hover="background:rgba(10,10,9,0.03);" style-focus="outline:2px solid #5c4e33; outline-offset:-2px;">
+            <span style="display:block; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600;">Billetes de Polímero Mundial</span>
+            <span style="font-size:13px; color:#b7ab8a; transform:{{ secPolimeroCaret }}; transition:transform 0.15s ease;">&#9662;</span>
+          </button>
+
+          <sc-if value="{{ secPolimeroExpanded }}" hint-placeholder-val="{{ false }}">
           <div style="padding:12px 24px 22px;">
             <a href="catalogo-polimero-mundial.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">Catálogo de Polímero Mundial</a>
             <a href="billete-bangladesh-10-taka-2000-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Bangladés</a>
@@ -306,6 +324,7 @@
             <a href="billete-taiwan-50-dolares-1999-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Taiwán</a>
             <a href="billete-zambia-500-1000-kwacha-2003-polimero.dc.html" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">Zambia</a>
           </div>
+          </sc-if>
 
         </div>
       </sc-if>
@@ -383,6 +402,11 @@ class Component extends DCLogic {
     menuOpen: false,
     numismaticaExpanded: false,
     collectionExpanded: false,
+    secColombiaExpanded: false,
+    secEstadosUnidosExpanded: false,
+    secPuertoRicoExpanded: false,
+    secEcuadorExpanded: false,
+    secPolimeroExpanded: false,
     perfilExpanded: false,
     searchOpen: false,
     query: ""
@@ -610,6 +634,11 @@ class Component extends DCLogic {
 
   toggleNumismatica = () => this.setState(s => ({ numismaticaExpanded: !s.numismaticaExpanded }));
   toggleCollection = () => this.setState(s => ({ collectionExpanded: !s.collectionExpanded }));
+  toggleSecColombia = () => this.setState(s => ({ secColombiaExpanded: !s.secColombiaExpanded }));
+  toggleSecEstadosUnidos = () => this.setState(s => ({ secEstadosUnidosExpanded: !s.secEstadosUnidosExpanded }));
+  toggleSecPuertoRico = () => this.setState(s => ({ secPuertoRicoExpanded: !s.secPuertoRicoExpanded }));
+  toggleSecEcuador = () => this.setState(s => ({ secEcuadorExpanded: !s.secEcuadorExpanded }));
+  toggleSecPolimero = () => this.setState(s => ({ secPolimeroExpanded: !s.secPolimeroExpanded }));
   togglePerfil = () => this.setState(s => ({ perfilExpanded: !s.perfilExpanded }));
   onQueryChange = (e) => this.setState({ query: e.target.value });
 
@@ -626,7 +655,7 @@ class Component extends DCLogic {
   renderVals() {
     const lang = this.props.lang === "en" ? "en" : "es";
     const t = this.texts[lang];
-    const { scrollProgress, menuOpen, numismaticaExpanded, collectionExpanded, perfilExpanded, searchOpen, query } = this.state;
+    const { scrollProgress, menuOpen, numismaticaExpanded, collectionExpanded, secColombiaExpanded, secEstadosUnidosExpanded, secPuertoRicoExpanded, secEcuadorExpanded, secPolimeroExpanded, perfilExpanded, searchOpen, query } = this.state;
 
     const navBarStyle = `position:fixed; top:0; left:0; right:0; z-index:100; height:68px; background:rgba(10,10,9,${(0.55 + scrollProgress * 0.35).toFixed(2)}); backdrop-filter:blur(16px) saturate(160%); -webkit-backdrop-filter:blur(16px) saturate(160%); border-bottom:1px solid rgba(231,222,201,0.14); box-sizing:border-box; transition:background 0.2s ease;`;
 
@@ -664,6 +693,21 @@ class Component extends DCLogic {
       collectionExpanded,
       toggleCollection: this.toggleCollection,
       collectionCaret: collectionExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      secColombiaExpanded,
+      toggleSecColombia: this.toggleSecColombia,
+      secColombiaCaret: secColombiaExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      secEstadosUnidosExpanded,
+      toggleSecEstadosUnidos: this.toggleSecEstadosUnidos,
+      secEstadosUnidosCaret: secEstadosUnidosExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      secPuertoRicoExpanded,
+      toggleSecPuertoRico: this.toggleSecPuertoRico,
+      secPuertoRicoCaret: secPuertoRicoExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      secEcuadorExpanded,
+      toggleSecEcuador: this.toggleSecEcuador,
+      secEcuadorCaret: secEcuadorExpanded ? "rotate(180deg)" : "rotate(0deg)",
+      secPolimeroExpanded,
+      toggleSecPolimero: this.toggleSecPolimero,
+      secPolimeroCaret: secPolimeroExpanded ? "rotate(180deg)" : "rotate(0deg)",
       perfilExpanded,
       togglePerfil: this.togglePerfil,
       perfilCaret: perfilExpanded ? "rotate(180deg)" : "rotate(0deg)",
