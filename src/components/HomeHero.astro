@@ -1,0 +1,90 @@
+---
+/**
+ * Full-bleed homepage hero: rotating banknote slides, brand lockup, language toggle.
+ * Interactive crossfade + i18n live in the homepage inline script.
+ */
+export interface HeroSlide {
+  base: string;
+  alt: string;
+}
+
+export interface Props {
+  slides: HeroSlide[];
+}
+
+const { slides } = Astro.props;
+---
+<div class="relative w-full min-h-screen">
+  {slides.map((h, i) => (
+    <picture>
+      <source
+        srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`}
+        sizes="100vw"
+        type="image/webp"
+      />
+      <img
+        class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]"
+        data-hero={i}
+        src={`/uploads/${h.base}.jpg`}
+        alt={i === 0 ? h.alt : ''}
+        width="972"
+        height="360"
+        fetchpriority={i === 0 ? 'high' : 'low'}
+        decoding="async"
+        style={`opacity:${i === 0 ? 1 : 0};`}
+      />
+    </picture>
+  ))}
+  <div
+    class="absolute inset-0"
+    style="background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"
+  ></div>
+  <div
+    class="absolute inset-0"
+    style="background:linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 22%, rgba(6,6,5,0.15) 78%, rgba(6,6,5,0.6) 100%);"
+  ></div>
+
+  <div
+    role="group"
+    aria-label="Selector de idioma / Language selector"
+    class="absolute top-[78px] right-7 z-[2] flex items-center bg-bg/35 border border-line-input rounded-full p-[3px]"
+  >
+    <button
+      id="lang-es"
+      aria-pressed="true"
+      aria-label="Ver sitio en español"
+      class="border-none bg-cream/92 text-bg font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer"
+    >ES</button>
+    <button
+      id="lang-en"
+      aria-pressed="false"
+      aria-label="View site in English"
+      class="border-none bg-transparent text-cream font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer"
+    >EN</button>
+  </div>
+
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="relative z-[1] min-h-screen flex flex-col items-center justify-center text-center px-6 py-16 outline-none"
+  >
+    <div class="flex items-center gap-4 mb-9">
+      <span class="w-14 h-px bg-cream-faint"></span>
+      <span class="font-serif italic font-medium text-[17px] tracking-[0.28em] uppercase text-cream-dim">Notofilia.com</span>
+      <span class="w-14 h-px bg-cream-faint"></span>
+    </div>
+    <h1 class="font-display font-normal text-[clamp(56px,11vw,148px)] leading-[0.95] tracking-[0.04em] text-cream-dim m-0 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
+      NOTOFILIA
+    </h1>
+    <div class="flex items-center gap-[14px] my-[30px]">
+      <span class="w-[34px] h-px bg-cream-faint/80"></span>
+      <span class="w-[7px] h-[7px] bg-cream-dim rotate-45"></span>
+      <span class="w-[34px] h-px bg-cream-faint/80"></span>
+    </div>
+    <p
+      data-i18n
+      data-en="Numismatics and Collectible Banknotes"
+      class="font-serif italic font-medium text-[clamp(22px,2.6vw,32px)] text-cream m-0 max-w-[720px]"
+    >Numismática y Notafilia</p>
+  </main>
+</div>

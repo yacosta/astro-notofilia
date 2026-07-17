@@ -1,13 +1,12 @@
 ---
 // Custom 404 page — a genuine Astro-rendered route.
-// Styled with Tailwind utilities against the site's dark/warm palette tokens
-// (see src/styles/global.css). Links back into the collection.
 import '../styles/global.css';
+import { absoluteUrl } from '../lib/site';
 
 const title = 'Página no encontrada · Notofilia';
 const description = 'La página que buscas no existe o fue movida. Vuelve a la colección de billetes y monedas históricas de Notofilia.';
+const canonical = absoluteUrl('/404');
 ---
-
 <!doctype html>
 <html lang="es">
   <head>
@@ -17,7 +16,7 @@ const description = 'La página que buscas no existe o fue movida. Vuelve a la c
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, follow" />
     <link rel="icon" href="/favicon.png" />
-    <link rel="canonical" href="https://www.notofilia.com/404" />
+    <link rel="canonical" href={canonical} />
     <style is:global>
       * { box-sizing: border-box; }
       html, body { margin: 0; height: 100%; }

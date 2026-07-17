@@ -1,64 +1,35 @@
 ---
-// Base layout for the natively-Astro "Noticias" section.
-// Server-rendered static HTML (no client runtime), styled with Tailwind
-// utilities against the shared palette tokens (src/styles/global.css), and
-// carrying the standing SEO + accessibility requirements: single <h1> per page
-// (supplied by the page), semantic landmarks, skip link, canonical, Open Graph
-// + Twitter, JSON-LD.
-import '../styles/global.css';
+// Base layout for the natively-Astro editorial section (Noticias + Blog).
+// Server-rendered static HTML, styled with Tailwind utilities against the
+// shared palette tokens, carrying SEO + accessibility requirements.
+import BaseHead from '../components/BaseHead.astro';
 import PreFooter from '../components/PreFooter.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 export interface Props {
-  title: string;          // <title> — keep <= 60 chars
-  description: string;    // meta description — keep <= 150 chars
-  path: string;           // canonical path, e.g. "/noticias/"
+  title: string;
+  description: string;
+  path: string;
   ogType?: 'website' | 'article';
-  ogImage?: string;       // absolute path under /uploads, optional
-  jsonLd?: unknown;       // structured data object(s)
-  keywords?: string[];    // <meta name="keywords"> terms for this page
+  ogImage?: string;
+  jsonLd?: unknown;
+  keywords?: string[];
 }
-const SITE = 'https://www.notofilia.com';
-const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords } = Astro.props;
-const canonical = SITE + path;
-const image = ogImage ? SITE + ogImage : SITE + '/favicon.png';
 
-// Site-wide fitting terms, always included; page-specific `keywords` are
-// prepended and de-duplicated.
-const BASE_KEYWORDS = [
-  'notafilia', 'numismática', 'billetes antiguos', 'billetes de colección',
-  'colección de billetes', 'papel moneda', 'monedas antiguas', 'monedas de colección',
-  'billetes de colombia', 'billetes colombianos', 'notafilia colombia', 'numismática colombia',
-];
-const keywordsContent = [...new Set([...(keywords ?? []), ...BASE_KEYWORDS])].join(', ');
+const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords } = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Blog pages live at nested /noticias/ URLs; <base> makes the shared
-         dc-runtime header's relative links + component fetch resolve from root. -->
-    <base href="/" />
-    <script src="/support.js" is:inline></script>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywordsContent} />
-    <meta name="author" content="Notofilia" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.png" />
-    <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content="Notofilia" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={image} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <BaseHead
+      title={title}
+      description={description}
+      path={path}
+      ogType={ogType}
+      ogImage={ogImage}
+      jsonLd={jsonLd}
+      keywords={keywords}
+    />
     <style is:global>
       * { box-sizing: border-box; }
       html { -webkit-text-size-adjust: 100%; }
@@ -68,8 +39,6 @@ const keywordsContent = [...new Set([...(keywords ?? []), ...BASE_KEYWORDS])].jo
          header sits in normal flow above the article. */
       x-dc { display: none; }
       #dc-root { height: auto !important; }
-      /* Element defaults (kept as CSS since utilities can't set bare-tag
-         fallbacks). Tokens come from Tailwind @theme. */
       a { color: var(--color-cream); }
       img { max-width: 100%; height: auto; }
     </style>
@@ -77,28 +46,13 @@ const keywordsContent = [...new Set([...(keywords ?? []), ...BASE_KEYWORDS])].jo
   <body class="m-0 bg-bg text-cream-dim font-serif text-[19px] leading-[1.7] antialiased max-[640px]:text-[18px]">
     <a
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
-      href={`${path}#main-content`}
+      href="#main-content"
     >Saltar al contenido</a>
-    <!-- Reuse the site's exact SiteHeader (nav + search + full collection
-         mega-menu), rendered by the shared dc-runtime. -->
     <x-dc><dc-import name="SiteHeader" lang="es"></dc-import></x-dc>
     <main id="main-content" class="min-h-[60vh]">
       <slot />
     </main>
     <PreFooter />
-    <footer class="border-t border-line mt-24 pt-14 pb-10 text-center">
-      <div class="max-w-[1180px] mx-auto px-6 flex flex-col gap-2">
-        <span class="text-[13px] tracking-[0.18em] uppercase text-muted">
-          Copyright 2026 Notofilia. Todos los derechos reservados.
-        </span>
-        <span class="italic text-[14px] [color:rgba(216,207,184,0.65)]">
-          Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.
-        </span>
-        <a
-          class="text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-          href="/politica-privacidad-cookies/"
-        >Política de Privacidad y Cookies</a>
-      </div>
-    </footer>
+    <SiteFooter variant="editorial" />
   </body>
 </html>

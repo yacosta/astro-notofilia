@@ -1,0 +1,33 @@
+---
+/**
+ * Cookie consent banner. Shown until the visitor accepts or rejects analytics.
+ * Escape rejects non-essential cookies; focus moves to the accept button on open.
+ */
+---
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-modal="false"
+  aria-label="Aviso de cookies"
+  class="fixed left-0 right-0 bottom-0 z-[80] justify-center p-4"
+  style="display:none;"
+>
+  <div class="w-full max-w-[720px] bg-panel border border-line rounded-lg shadow-[0_24px_60px_rgba(0,0,0,0.55)] px-6 py-[22px] flex flex-col gap-4">
+    <p class="font-serif text-[16px] leading-[1.6] text-cream-dim m-0">
+      Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra
+      <a href="/politica-privacidad-cookies/" class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]">Política de Privacidad y Cookies</a>.
+    </p>
+    <div class="flex flex-wrap gap-[10px] justify-end">
+      <button
+        id="cookie-reject"
+        type="button"
+        class="min-h-[44px] px-[22px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-cream-dim bg-transparent border border-line-input rounded-full cursor-pointer"
+      >Rechazar no esenciales</button>
+      <button
+        id="cookie-accept"
+        type="button"
+        class="min-h-[44px] px-[26px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-bg bg-cream border border-cream rounded-full cursor-pointer"
+      >Aceptar todas</button>
+    </div>
+  </div>
+</div>

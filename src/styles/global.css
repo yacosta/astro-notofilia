@@ -13,22 +13,29 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 
 /* Display + body faces, self-hosted from /uploads/fonts (shared across the
-   Astro layer; previously redeclared in every page's inline <style>). */
+   Astro layer; previously redeclared in every page's inline <style>). Prefer
+   WOFF2 with TTF fallback for broader support. */
 @font-face {
   font-family: 'Montenegrin Gothic One';
-  src: url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype');
+  src:
+    url('/uploads/fonts/MontenegrinGothicOne-Regular.woff2') format('woff2'),
+    url('/uploads/fonts/MontenegrinGothicOne-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations');
+  src:
+    url('/uploads/fonts/CormorantGaramond-Variable.woff2') format('woff2'),
+    url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations');
   font-weight: 300 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations');
+  src:
+    url('/uploads/fonts/CormorantGaramond-Italic-Variable.woff2') format('woff2'),
+    url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations');
   font-weight: 300 700;
   font-style: italic;
   font-display: swap;
@@ -41,14 +48,20 @@
  * and matching utilities (bg-cream, text-cream, border-line, font-display …).
  */
 @theme {
+  /* Layout */
+  --max-width-content: 1180px;
+
   /* Surfaces */
   --color-bg: #0a0a09; /* page background (near-black) */
   --color-panel: #1c1a15; /* raised panel */
+  --color-ink: #332e22; /* body text on cream bands */
 
   /* Text */
   --color-cream: #e7ddc4; /* primary display / links on dark */
   --color-cream-dim: #d8d2cd; /* body text on dark */
   --color-muted: #b7ab8a; /* muted / secondary text on dark (AA-verified) */
+  --color-cream-soft: rgba(216, 207, 184, 0.65); /* soft tagline on dark */
+  --color-cream-faint: rgba(231, 222, 201, 0.55); /* decorative rules */
 
   /* Gold accents — deliberately distinct shades for different backgrounds.
      gold        : decorative borders + hover fills on dark
@@ -60,10 +73,33 @@
   --color-gold-dark: #5c4e33;
   --color-gold-light: #cbbf9d;
 
-  /* Hairline border (cream at low alpha) */
+  /* Hairline borders (cream at low alpha) */
   --color-line: rgba(231, 222, 201, 0.14);
+  --color-line-strong: rgba(231, 222, 201, 0.25);
+  --color-line-input: rgba(231, 222, 201, 0.35);
 
   /* Type families */
   --font-display: 'Montenegrin Gothic One', 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+@layer components {
+  /* Markdown article body (blog + noticias). */
+  .prose-notofilia p {
+    margin: 0 0 22px;
+  }
+  .prose-notofilia strong {
+    color: var(--color-cream);
+    font-weight: 600;
+  }
+  .prose-notofilia a {
+    color: var(--color-cream);
+  }
+  .prose-notofilia h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 3vw, 28px);
+    color: var(--color-cream);
+    margin: 40px 0 16px;
+  }
 }

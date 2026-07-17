@@ -1,16 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
+import { SITE } from '../../lib/site';
+import { getPublishedPosts } from '../../lib/posts';
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import Cover from '../../components/Cover.astro';
+import PostCollectionIndex from '../../components/PostCollectionIndex.astro';
 
-const posts = (await getCollection('noticias', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
-);
+const posts = await getPublishedPosts('noticias');
 
-const fmt = (d: Date) =>
-  d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
-
-const SITE = 'https://www.notofilia.com';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -39,57 +34,12 @@ const jsonLd = {
     'personajes en los billetes de colombia', 'cómo identificar billetes falsos colombia',
   ]}
 >
-  <div class="max-w-[1180px] mx-auto px-6 pt-14 pb-6">
-    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
-      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/">Inicio</a>
-      <span aria-hidden="true">/</span> <span>Noticias</span>
-    </nav>
-    <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]">
-      Noticias de Numismática y Notafilia
-    </h1>
-    <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]">
-      Una selección de noticias, hallazgos y notas sobre monedas y billetes históricos.
-    </p>
-
-    {posts.length === 0 ? (
-      <p class="text-muted">Muy pronto publicaremos las primeras noticias.</p>
-    ) : (
-      <ul
-        class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10"
-        role="list"
-      >
-        {posts.map((post) => (
-          <li class="card">
-            <a class="group block no-underline text-inherit h-full" href={`/noticias/${post.slug}/`}>
-              {post.data.cover && (
-                <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
-              )}
-              <div class="pt-4 mt-4 border-t-2 border-muted">
-                <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
-                  <time datetime={post.data.publishedAt.toISOString().slice(0, 10)}>
-                    {fmt(post.data.publishedAt)}
-                  </time>
-                  {post.data.source && <span aria-hidden="true">·</span>}
-                  {post.data.source && <span>{post.data.source}</span>}
-                </div>
-                <h2 class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white">
-                  {post.data.title}
-                </h2>
-                <p class="text-[16px] text-cream-dim mt-0 mb-3">{post.data.excerpt}</p>
-                <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold">Leer más &rarr;</span>
-              </div>
-            </a>
-          </li>
-        ))}
-      </ul>
-    )}
-  </div>
+  <PostCollectionIndex
+    collection="noticias"
+    heading="Noticias de Numismática y Notafilia"
+    intro="Una selección de noticias, hallazgos y notas sobre monedas y billetes históricos."
+    emptyMessage="Muy pronto publicaremos las primeras noticias."
+    posts={posts}
+    showSource
+  />
 </BlogLayout>
-
-<style>
-  /* Image styling reaches into the <Cover> component (picture > img), so it
-     stays as scoped :global CSS rather than utilities. */
-  .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }
-  .card :global(img) { transition: transform 0.4s ease; }
-  .card:hover :global(img) { transform: scale(1.03); }
-</style>
