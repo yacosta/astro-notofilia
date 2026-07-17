@@ -1,0 +1,54 @@
+---
+import {
+  COLLECTIONS,
+  articleJsonLd,
+  isPostCollection,
+  type CollectionMeta,
+} from '../../lib/collections';
+import { getPublishedPosts, metaDescription, titleTag, type PublishedPost } from '../../lib/posts';
+import { toIsoDate } from '../../lib/dates';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import PostArticle from '../../components/PostArticle.astro';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const section of Object.keys(COLLECTIONS) as Array<keyof typeof COLLECTIONS>) {
+    const posts = await getPublishedPosts(section);
+    for (const post of posts) {
+      paths.push({
+        params: { section, slug: post.slug },
+        props: { meta: COLLECTIONS[section], post },
+      });
+    }
+  }
+  return paths;
+}
+
+type Props = {
+  meta: CollectionMeta;
+  post: PublishedPost;
+};
+const { meta, post } = Astro.props;
+if (!isPostCollection(meta.id)) throw new Error(`Unknown section: ${meta.id}`);
+
+const d = post.data;
+const path = `/${meta.id}/${post.slug}/`;
+const iso = toIsoDate(d.publishedAt);
+const jsonLd = articleJsonLd(meta, post, iso);
+---
+<BlogLayout
+  title={titleTag(d.title)}
+  description={metaDescription(d.excerpt)}
+  path={path}
+  ogType="article"
+  ogImage={d.cover ? `/uploads/${d.cover}.jpg` : undefined}
+  jsonLd={jsonLd}
+  keywords={d.keywords}
+>
+  <PostArticle
+    collection={meta.id}
+    post={post}
+    sourceLinkLabel={meta.sourceLinkLabel}
+    backLabel={meta.backLabel}
+  />
+</BlogLayout>
