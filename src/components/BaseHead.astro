@@ -1,0 +1,69 @@
+---
+/**
+ * Shared <head> SEO block for natively-Astro pages.
+ * Import once per document; callers pass page-specific metadata.
+ */
+import '../styles/global.css';
+import { absoluteUrl, keywordsContent } from '../lib/site';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  /** Override Open Graph / Twitter title when it should differ from <title>. */
+  ogTitle?: string;
+  ogDescription?: string;
+  jsonLd?: unknown;
+  keywords?: string[];
+  robots?: string;
+  /** Extra <link rel="alternate" hreflang> etc. via default slot. */
+  author?: string;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogType = 'website',
+  ogImage,
+  ogTitle,
+  ogDescription,
+  jsonLd,
+  keywords,
+  robots = 'index, follow',
+  author = 'Notofilia',
+} = Astro.props;
+
+const canonical = absoluteUrl(path);
+const image = absoluteUrl(ogImage ?? '/favicon.png');
+const kw = keywordsContent(keywords);
+const shareTitle = ogTitle ?? title;
+const shareDescription = ogDescription ?? description;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Nested routes: <base> makes the shared dc-runtime header's relative links resolve from root. -->
+<base href="/" />
+<script src="/support.js" is:inline></script>
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={kw} />
+<meta name="author" content={author} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" href="/favicon.png" />
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Notofilia" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:title" content={shareTitle} />
+<meta property="og:description" content={shareDescription} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={shareTitle} />
+<meta name="twitter:description" content={shareDescription} />
+<meta name="twitter:image" content={image} />
+{jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
+<slot />

@@ -1,0 +1,76 @@
+---
+/**
+ * Homepage cream-band post strip (noticias or blog). Uses a 4-up grid on
+ * desktop and horizontal snap-scroll on mobile — pure Tailwind utilities.
+ */
+export interface StripItem {
+  url: string;
+  title: string;
+  source: string;
+  iso: string;
+  dateLabel: string;
+  cover?: string;
+  coverAlt: string;
+}
+
+export interface Props {
+  headingId: string;
+  heading: string;
+  items: StripItem[];
+  emptyMessage: string;
+  moreHref: string;
+  moreLabel: string;
+  /** Top border between stacked cream bands. */
+  bordered?: boolean;
+}
+
+const { headingId, heading, items, emptyMessage, moreHref, moreLabel, bordered = false } = Astro.props;
+---
+<section
+  aria-labelledby={headingId}
+  class:list={['bg-cream-dim py-[72px] px-6', bordered && 'border-t border-ink/12']}
+>
+  <div class="max-w-content mx-auto">
+    <h2 id={headingId} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
+      {heading}
+    </h2>
+    {items.length > 0 ? (
+      <div class="mb-8 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-4 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
+        {items.map((it) => (
+          <article class="w-[85%] shrink-0 snap-center border-t-2 border-panel pt-4 md:w-auto md:shrink">
+            {it.cover && (
+              <picture>
+                <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
+                <img
+                  src={`/uploads/${it.cover}-640.jpg`}
+                  alt={it.coverAlt}
+                  loading="lazy"
+                  decoding="async"
+                  width="220"
+                  height="140"
+                  class="block w-full h-[140px] object-cover rounded-[3px] mb-3"
+                />
+              </picture>
+            )}
+            <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
+              <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep">{it.dateLabel}</time>
+              <span class="text-[13px] text-gold-dark">&middot; {it.source}</span>
+            </div>
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words">
+              {it.title}
+            </h3>
+            <a href={it.url} class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8">{emptyMessage}</p>
+    )}
+    <p class="text-center m-0">
+      <a
+        href={moreHref}
+        class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"
+      >{moreLabel}</a>
+    </p>
+  </div>
+</section>

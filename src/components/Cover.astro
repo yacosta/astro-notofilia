@@ -14,8 +14,18 @@ export interface Props {
   eager?: boolean;    // load eagerly (above-the-fold hero)
   ratio?: string;     // CSS aspect-ratio for fit="cover", default 16/10
   fit?: 'cover' | 'contain';
+  width?: number;     // intrinsic width hint (reduces CLS)
+  height?: number;    // intrinsic height hint (reduces CLS)
 }
-const { base, alt, eager = false, ratio = '16 / 10', fit = 'cover' } = Astro.props;
+const {
+  base,
+  alt,
+  eager = false,
+  ratio = '16 / 10',
+  fit = 'cover',
+  width,
+  height,
+} = Astro.props;
 const u = (s: string) => `/uploads/${base}${s}`;
 ---
 <picture>
@@ -30,6 +40,8 @@ const u = (s: string) => `/uploads/${base}${s}`;
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
+      width={width}
+      height={height}
       class="block w-full h-auto mx-auto rounded-[4px] bg-panel"
       style="max-width: min(100%, 1128px);"
     />
@@ -39,6 +51,8 @@ const u = (s: string) => `/uploads/${base}${s}`;
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
+      width={width}
+      height={height}
       class="block w-full h-auto object-cover bg-panel"
       style={`aspect-ratio:${ratio};`}
     />

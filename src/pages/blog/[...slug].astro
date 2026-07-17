@@ -1,24 +1,20 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getPublishedPosts, metaDescription, titleTag, type PublishedPost } from '../../lib/posts';
+import { SITE } from '../../lib/site';
+import { toIsoDate } from '../../lib/dates';
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import Cover from '../../components/Cover.astro';
+import PostArticle from '../../components/PostArticle.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getPublishedPosts('blog');
   return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
 
-type Props = { post: CollectionEntry<'blog'> };
+type Props = { post: PublishedPost<'blog'> };
 const { post } = Astro.props;
-const { Content } = await post.render();
 const d = post.data;
-
-const SITE = 'https://www.notofilia.com';
 const path = `/blog/${post.slug}/`;
-const iso = d.publishedAt.toISOString().slice(0, 10);
-const fmt = d.publishedAt.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
-const desc = d.excerpt.length > 150 ? d.excerpt.slice(0, 147) + '…' : d.excerpt;
-const titleTag = (d.title.length > 48 ? d.title.slice(0, 48) + '…' : d.title) + ' · Notofilia';
+const iso = toIsoDate(d.publishedAt);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +24,11 @@ const jsonLd = {
   datePublished: iso,
   ...(d.cover ? { image: `${SITE}/uploads/${d.cover}.jpg` } : {}),
   author: { '@type': 'Organization', name: 'Notofilia' },
-  publisher: { '@type': 'Organization', name: 'Notofilia', logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` } },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Notofilia',
+    logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` },
+  },
   mainEntityOfPage: { '@type': 'WebPage', '@id': SITE + path },
   ...(d.sourceUrl ? { isBasedOn: d.sourceUrl } : {}),
   breadcrumb: {
@@ -42,68 +42,18 @@ const jsonLd = {
 };
 ---
 <BlogLayout
-  title={titleTag}
-  description={desc}
+  title={titleTag(d.title)}
+  description={metaDescription(d.excerpt)}
   path={path}
   ogType="article"
   ogImage={d.cover ? `/uploads/${d.cover}.jpg` : undefined}
   jsonLd={jsonLd}
   keywords={d.keywords}
 >
-  <article class="max-w-[1180px] mx-auto px-6 pt-12">
-    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
-      <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
-      <a class="text-muted" href="/blog/">Blog</a> <span aria-hidden="true">/</span>
-      <span>{d.title}</span>
-    </nav>
-
-    <header>
-      <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
-        <time datetime={iso}>{fmt}</time>
-        {d.source && <span aria-hidden="true">·</span>}
-        {d.source && <span>{d.source}</span>}
-      </div>
-      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
-        {d.title}
-      </h1>
-      <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-9 leading-[1.5]">{d.excerpt}</p>
-    </header>
-
-    {d.cover && (
-      <figure class="cover mt-0 mb-10">
-        <Cover base={d.cover} alt={d.coverAlt ?? d.title} eager ratio="16 / 9" fit={d.coverFit ?? 'cover'} />
-        {d.coverAlt && (
-          <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">{d.coverAlt}</figcaption>
-        )}
-      </figure>
-    )}
-
-    <div class="prose text-[20px] leading-[1.75] text-cream-dim">
-      <Content />
-    </div>
-
-    {d.sourceUrl && (
-      <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
-        <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
-          Leer la fuente original{d.source ? ` en ${d.source}` : ''} &rarr;
-        </a>
-      </p>
-    )}
-
-    <p class="mt-10"><a class="text-muted" href="/blog/">&larr; Volver al Blog</a></p>
-  </article>
+  <PostArticle
+    collection="blog"
+    post={post}
+    sourceLinkLabel="Leer la fuente original"
+    backLabel="Volver al Blog"
+  />
 </BlogLayout>
-
-<style>
-  /* Cover image + rendered-markdown prose reach into generated/child markup
-     (the <Cover> component and <Content />), so these stay as scoped :global
-     CSS. Colors/fonts use the shared Tailwind @theme tokens. */
-  .cover :global(picture) { display: block; border-radius: 4px; overflow: hidden; }
-  .prose :global(p) { margin: 0 0 22px; }
-  .prose :global(strong) { color: var(--color-cream); font-weight: 600; }
-  .prose :global(a) { color: var(--color-cream); }
-  .prose :global(h2) {
-    font-family: var(--font-display); font-weight: 400;
-    font-size: clamp(22px, 3vw, 28px); color: var(--color-cream); margin: 40px 0 16px;
-  }
-</style>

@@ -1,0 +1,55 @@
+---
+/**
+ * Shared site footer for natively-Astro pages (homepage + BlogLayout).
+ * Catalog (.dc.html) pages keep the inline equivalent in public/SiteFooter.dc.html.
+ */
+export interface Props {
+  /** Extra tagline under the copyright line. */
+  taglineEs?: string;
+  taglineEn?: string;
+  /** Compact centered layout (BlogLayout) vs homepage spacing. */
+  variant?: 'home' | 'editorial';
+}
+const {
+  taglineEs = 'Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.',
+  taglineEn,
+  variant = 'editorial',
+} = Astro.props;
+
+const isHome = variant === 'home';
+---
+<footer
+  class:list={[
+    isHome
+      ? 'relative z-[1] flex flex-col items-center gap-2 max-w-content mx-auto pt-[72px] px-6 pb-9'
+      : 'border-t border-line mt-24 pt-14 pb-10 text-center',
+  ]}
+>
+  <div class:list={[!isHome && 'max-w-content mx-auto px-6 flex flex-col gap-2']}>
+    <span
+      data-i18n
+      data-en="Copyright 2026 Notofilia. All Rights Reserved."
+      class:list={['text-[13px] tracking-[0.18em] uppercase text-muted', isHome && 'font-serif']}
+    >Copyright 2026 Notofilia. Todos los derechos reservados.</span>
+    {taglineEn ? (
+      <span
+        data-i18n
+        data-en={taglineEn}
+        class:list={['italic text-[14px] text-cream-soft', isHome && 'font-serif max-w-full text-center']}
+      >{taglineEs}</span>
+    ) : (
+      <span class:list={['italic text-[14px] text-cream-soft', isHome && 'font-serif max-w-full text-center']}>
+        {taglineEs}
+      </span>
+    )}
+    <a
+      href="/politica-privacidad-cookies/"
+      data-i18n
+      data-en="Privacy &amp; Cookie Policy"
+      class:list={[
+        'text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
+        isHome && 'font-serif text-[13px] underline [text-decoration-color:rgba(183,171,138,0.4)] mt-1',
+      ]}
+    >Política de Privacidad y Cookies</a>
+  </div>
+</footer>
