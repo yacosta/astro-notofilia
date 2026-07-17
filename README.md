@@ -50,8 +50,8 @@ top for the pages that benefit most from content collections and shared layouts.
 | Route | Source |
 |---|---|
 | `/` | `src/pages/index.astro` |
-| `/noticias/`, `/noticias/<slug>/` | content collection `noticias` |
-| `/blog/`, `/blog/<slug>/` | content collection `blog` |
+| `/noticias/`, `/noticias/<slug>/` | `src/pages/[section]/*` + collection `noticias` |
+| `/blog/`, `/blog/<slug>/` | `src/pages/[section]/*` + collection `blog` |
 | `/404` | `src/pages/404.astro` |
 
 Editorial posts live as Markdown in `src/content/{noticias,blog}/` with a shared
@@ -72,15 +72,16 @@ design tokens and utilities under `src/styles/global.css` (Tailwind v4
 │   ├── content/            # Markdown collections (blog, noticias)
 │   ├── layouts/            # BlogLayout (editorial shell)
 │   ├── lib/                # site URL, dates, posts helpers, sitemap stats
-│   ├── pages/              # native Astro routes
+│   ├── pages/              # native Astro routes ([section] = blog|noticias)
 │   └── styles/global.css   # Tailwind v4 theme + fonts + prose
 ├── public/                 # catalog site, served verbatim
 │   ├── billete-*.dc.html   # individual banknote pages (~90)
 │   ├── perfil-*.dc.html    # historical figure profiles (~14)
 │   ├── catalogo*.dc.html   # catalog / collection pages (~11)
 │   ├── moneda-*.dc.html    # colonial coin pages
+│   ├── catalog-fonts.css   # shared @font-face for catalog pages
 │   ├── support.js          # client runtime (dc-runtime)
-│   ├── uploads/            # photography, fonts (WOFF2 + TTF), PDFs
+│   ├── uploads/            # photography, fonts (WOFF2 + TTF)
 │   ├── favicon.png, robots.txt, sitemap.xml
 │   └── _redirects, _headers
 └── reference/              # design-time sources, NOT web-served

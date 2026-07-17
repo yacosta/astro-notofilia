@@ -1,0 +1,41 @@
+---
+import {
+  COLLECTIONS,
+  collectionIndexJsonLd,
+  isPostCollection,
+  type CollectionMeta,
+} from '../../lib/collections';
+import { getPublishedPosts } from '../../lib/posts';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import PostCollectionIndex from '../../components/PostCollectionIndex.astro';
+
+export function getStaticPaths() {
+  return (Object.keys(COLLECTIONS) as Array<keyof typeof COLLECTIONS>).map((section) => ({
+    params: { section },
+    props: { meta: COLLECTIONS[section] },
+  }));
+}
+
+type Props = { meta: CollectionMeta };
+const { meta } = Astro.props;
+if (!isPostCollection(meta.id)) throw new Error(`Unknown section: ${meta.id}`);
+
+const posts = await getPublishedPosts(meta.id);
+const jsonLd = collectionIndexJsonLd(meta);
+---
+<BlogLayout
+  title={meta.title}
+  description={meta.description}
+  path={`/${meta.id}/`}
+  jsonLd={jsonLd}
+  keywords={meta.keywords}
+>
+  <PostCollectionIndex
+    collection={meta.id}
+    heading={meta.heading}
+    intro={meta.intro}
+    emptyMessage={meta.emptyMessage}
+    posts={posts}
+    showSource={meta.showSource}
+  />
+</BlogLayout>
