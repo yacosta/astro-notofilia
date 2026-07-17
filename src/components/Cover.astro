@@ -1,13 +1,14 @@
 ---
-// Renders a cover image as WebP + JPEG fallback via <picture>, using the
-// conventional variant suffixes already present in public/uploads/:
-//   <base>.jpg  <base>.webp  <base>-640.webp
+// Renders a cover image via Cloudflare Image Transformations (see src/lib/img.ts):
+// a single responsive <img> whose URLs negotiate AVIF/WebP (format=auto) and
+// resize per screen (width=). Source is the <base>.jpg master in public/uploads/.
 //
 // fit="cover" (default): fills a fixed aspect-ratio box, cropping as needed —
 //   good for wide illustrations/photos.
 // fit="contain": shows the whole image at its natural size, centered, capped so
 //   it never upscales — good for banknote scans (which are ~square and would be
 //   cropped and blurred by a 16:9 crop).
+import { cdnImg, cdnSrcset } from '../lib/img';
 export interface Props {
   base: string;       // image base name under /uploads (no extension)
   alt: string;
@@ -26,35 +27,35 @@ const {
   width,
   height,
 } = Astro.props;
-const u = (s: string) => `/uploads/${base}${s}`;
+const src = `/uploads/${base}.jpg`;
+const quality = fit === 'contain' ? 82 : 78;
+const widths = fit === 'contain' ? [400, 640, 1024, 2000] : [400, 640, 1024];
+const sizes = fit === 'contain' ? '(max-width: 1128px) 100vw, 1128px' : '(max-width: 720px) 100vw, 720px';
 ---
-<picture>
-  <source
-    type="image/webp"
-    srcset={`${u('-640.webp')} 640w, ${u('.webp')} 1200w`}
-    sizes={fit === 'contain' ? '1128px' : '(max-width: 720px) 100vw, 720px'}
+{fit === 'contain' ? (
+  <img
+    src={cdnImg(src, { width: 1024, quality })}
+    srcset={cdnSrcset(src, widths, quality)}
+    sizes={sizes}
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    width={width}
+    height={height}
+    class="block w-full h-auto mx-auto rounded-[4px] bg-panel"
+    style="max-width: min(100%, 1128px);"
   />
-  {fit === 'contain' ? (
-    <img
-      src={u('.jpg')}
-      alt={alt}
-      loading={eager ? 'eager' : 'lazy'}
-      decoding="async"
-      width={width}
-      height={height}
-      class="block w-full h-auto mx-auto rounded-[4px] bg-panel"
-      style="max-width: min(100%, 1128px);"
-    />
-  ) : (
-    <img
-      src={u('.jpg')}
-      alt={alt}
-      loading={eager ? 'eager' : 'lazy'}
-      decoding="async"
-      width={width}
-      height={height}
-      class="block w-full h-auto object-cover bg-panel"
-      style={`aspect-ratio:${ratio};`}
-    />
-  )}
-</picture>
+) : (
+  <img
+    src={cdnImg(src, { width: 1024, quality })}
+    srcset={cdnSrcset(src, widths, quality)}
+    sizes={sizes}
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding="async"
+    width={width}
+    height={height}
+    class="block w-full h-auto object-cover bg-panel"
+    style={`aspect-ratio:${ratio};`}
+  />
+)}

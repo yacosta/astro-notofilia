@@ -3,6 +3,7 @@
  * Full-bleed homepage hero: rotating banknote slides, brand lockup, language toggle.
  * Interactive crossfade + i18n live in the homepage inline script.
  */
+import { cdnImg, cdnSrcset } from '../lib/img';
 export interface HeroSlide {
   base: string;
   alt: string;
@@ -15,26 +16,34 @@ export interface Props {
 const { slides } = Astro.props;
 ---
 <div class="relative w-full min-h-screen">
-  {slides.map((h, i) => (
-    <picture>
-      <source
-        srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`}
-        sizes="100vw"
-        type="image/webp"
-      />
+  {slides.map((h, i) => {
+    // Cloudflare-transformed (format=auto -> AVIF/WebP, width= per screen).
+    // Only the first slide loads eagerly; slides 2–4 are never visible at load
+    // (opacity:0), so their URLs are parked in data-* and hydrated after
+    // load/idle by the homepage hero script — keeps ~3/4 of hero image weight
+    // off the initial critical path without changing total bytes.
+    const jpg = `/uploads/${h.base}.jpg`;
+    const eager = i === 0;
+    const srcset = cdnSrcset(jpg, [480, 768, 1080], 78);
+    const src = cdnImg(jpg, { width: 1080, quality: 78 });
+    return (
       <img
         class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]"
         data-hero={i}
-        src={`/uploads/${h.base}.jpg`}
-        alt={i === 0 ? h.alt : ''}
+        src={eager ? src : undefined}
+        data-src={eager ? undefined : src}
+        srcset={eager ? srcset : undefined}
+        data-srcset={eager ? undefined : srcset}
+        sizes="100vw"
+        alt={h.alt}
         width="972"
         height="360"
-        fetchpriority={i === 0 ? 'high' : 'low'}
+        fetchpriority={eager ? 'high' : 'low'}
         decoding="async"
-        style={`opacity:${i === 0 ? 1 : 0};`}
+        style={`opacity:${eager ? 1 : 0};`}
       />
-    </picture>
-  ))}
+    );
+  })}
   <div
     class="absolute inset-0"
     style="background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"

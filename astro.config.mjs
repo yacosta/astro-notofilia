@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import cdnImages from './src/integrations/cdn-images.mjs';
 
 // Notofilia.com — Astro static build.
 //
@@ -23,6 +24,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://www.notofilia.com',
   trailingSlash: 'ignore',
+  // Post-build: rewrite catalogue/static image URLs to Cloudflare transformations
+  // in dist/ only (source files keep plain /uploads/ paths for local dev).
+  integrations: [cdnImages()],
   build: {
     format: 'directory',
   },

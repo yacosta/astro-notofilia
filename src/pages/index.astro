@@ -168,20 +168,35 @@ const jsonLd = {
     <CookieBanner />
 
     <script is:inline>
-      // --- Hero crossfade rotation ---
+      // --- Hero: hydrate deferred slides, then crossfade rotation ---
       (function () {
         var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
-        if (slides.length < 2) return;
-        var order = slides.map(function (_, i) { return i; });
         function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-        var active = 0;
-        order = shuffle(order.slice());
+
+        // Load slides 2–4 after the page has loaded (past LCP), during idle time.
+        function hydrate() {
+          var deferred = document.querySelectorAll('.hero-slide[data-src]');
+          for (var k = 0; k < deferred.length; k++) {
+            var img = deferred[k];
+            if (img.getAttribute('data-srcset')) { img.srcset = img.getAttribute('data-srcset'); img.removeAttribute('data-srcset'); }
+            img.src = img.getAttribute('data-src'); img.removeAttribute('data-src');
+          }
+        }
+        function scheduleHydrate() { (window.requestIdleCallback || function (f) { return setTimeout(f, 1); })(hydrate, { timeout: 2500 }); }
+        if (document.readyState === 'complete') scheduleHydrate();
+        else window.addEventListener('load', scheduleHydrate);
+
+        if (slides.length < 2) return;
         function show(idx) { slides.forEach(function (el, i) { el.style.opacity = i === idx ? '1' : '0'; }); }
-        show(order[0]);
+        // Always paint the eagerly-loaded first slide first (matches fetchpriority=high),
+        // then rotate through a reshuffled cycle so no unloaded slide is revealed early.
+        show(0);
+        var cycle = slides.map(function (_, i) { return i; });
+        var pos = 0;
         setInterval(function () {
-          active++;
-          if (active >= order.length) { order = shuffle([0, 1, 2, 3].slice(0, slides.length)); active = 0; }
-          show(order[active]);
+          pos++;
+          if (pos >= cycle.length) { shuffle(cycle); pos = 0; }
+          show(cycle[pos]);
         }, 6000);
       })();
 

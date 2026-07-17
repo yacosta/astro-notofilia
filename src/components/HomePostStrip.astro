@@ -3,6 +3,7 @@
  * Homepage cream-band post strip (noticias or blog). Uses a 4-up grid on
  * desktop and horizontal snap-scroll on mobile — pure Tailwind utilities.
  */
+import { cdnImg, cdnSrcset } from '../lib/img';
 export interface StripItem {
   url: string;
   title: string;
@@ -39,18 +40,17 @@ const { headingId, heading, items, emptyMessage, moreHref, moreLabel, bordered =
         {items.map((it) => (
           <article class="w-[85%] shrink-0 snap-center border-t-2 border-panel pt-4 md:w-auto md:shrink">
             {it.cover && (
-              <picture>
-                <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
-                <img
-                  src={`/uploads/${it.cover}-640.jpg`}
-                  alt={it.coverAlt}
-                  loading="lazy"
-                  decoding="async"
-                  width="220"
-                  height="140"
-                  class="block w-full h-[140px] object-cover rounded-[3px] mb-3"
-                />
-              </picture>
+              <img
+                src={cdnImg(`/uploads/${it.cover}.jpg`, { width: 512, quality: 78 })}
+                srcset={cdnSrcset(`/uploads/${it.cover}.jpg`, [256, 512], 78)}
+                sizes="(max-width: 768px) 85vw, 272px"
+                alt={it.coverAlt}
+                loading="lazy"
+                decoding="async"
+                width="220"
+                height="140"
+                class="block w-full h-[140px] object-cover rounded-[3px] mb-3"
+              />
             )}
             <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
               <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep">{it.dateLabel}</time>
