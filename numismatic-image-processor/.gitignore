@@ -1,0 +1,26 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# macOS
+.DS_Store
+
+# AI models (large binaries — provided separately, see docs/BUILD.md)
+Models/*.mlmodel
+Models/*.mlmodelc
+Models/*.mlpackage
+
+# Build / distribution artifacts
+dist/
+*.dmg
+*.app
+
+# Logs & scratch output produced by test/preview runs
+*.log
