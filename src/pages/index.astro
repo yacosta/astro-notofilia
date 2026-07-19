@@ -120,31 +120,37 @@ const jsonLd = {
 
       <section class="max-w-content mx-auto pt-[88px] px-6 pb-14 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-12">
         <div>
-          <h2 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismática</h2>
-          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
+          <h2 data-i18n data-en="Numismatics" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismática</h2>
+          <p data-i18n data-en="A discipline dedicated to the study and collection of coins, medals, and, in its broadest sense, any object used as a means of payment throughout history. It covers the historical, artistic, and technical analysis of minted pieces." class="text-[19px] leading-[1.75] text-cream-dim m-0">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
         </div>
         <div>
-          <h2 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notafilia</h2>
-          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
+          <h2 data-i18n data-en="Notaphily" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notafilia</h2>
+          <p data-i18n data-en="A specialized branch of numismatics focused specifically on the study and collection of banknotes and paper money, including their history, design, engraving, and issues from both public and private entities." class="text-[19px] leading-[1.75] text-cream-dim m-0">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
         </div>
       </section>
 
       <HomePostStrip
         headingId="news-heading"
         heading="Noticias de Numismática y Notafilia"
+        headingEn="Numismatics and Notaphily News"
         items={posts}
         emptyMessage="Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos."
+        emptyMessageEn="Coming soon: the latest news on auctions, new issues, and numismatic discoveries."
         moreHref="/noticias/"
         moreLabel="Ver todas las noticias"
+        moreLabelEn="See all news"
       />
 
       <HomePostStrip
         headingId="blog-heading"
         heading="Blog de Notofilia.com"
+        headingEn="The Notofilia.com Blog"
         items={blogPosts}
         emptyMessage="Muy pronto publicaremos las primeras guías del blog."
+        emptyMessageEn="Coming soon: our first blog guides."
         moreHref="/blog/"
         moreLabel="Ver todo el blog"
+        moreLabelEn="See the full blog"
         bordered
       />
 
@@ -211,7 +217,10 @@ const jsonLd = {
       })();
 
       // --- ES/EN language toggle (swaps [data-i18n] strings + <html lang>) ---
-      // Scope: hero tagline, pre-footer, footer, stats. Editorial strips stay Spanish.
+      // Scope: hero tagline, pre-footer, footer, stats, section headings/CTAs,
+      // and the Numismática/Notafilia definitions. Individual article titles,
+      // dates, and sources in the news/blog strips stay Spanish (those are
+      // full editorial content, not UI chrome, and aren't translated yet).
       (function () {
         var es = document.getElementById('lang-es');
         var en = document.getElementById('lang-en');
