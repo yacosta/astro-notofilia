@@ -53,8 +53,10 @@ const coverFit = d.coverFit ?? 'cover';
         ratio="16 / 9"
         fit={coverFit}
       />
-      {d.coverAlt && (
-        <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">{d.coverAlt}</figcaption>
+      {(d.coverCaption || d.coverAlt) && (
+        <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">
+          {d.coverCaption ?? d.coverAlt}
+        </figcaption>
       )}
     </figure>
   )}
