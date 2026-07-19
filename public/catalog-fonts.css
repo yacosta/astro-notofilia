@@ -14,17 +14,17 @@
 }
 @font-face {
   /* Legacy catalog markup still uses this internal family name. Point it to
-     Urbanist so all catalog bodies switch without rewriting 130 documents. */
+     Source Sans 3 so all catalog bodies switch without rewriting 130 documents. */
   font-family: "Cormorant Garamond";
-  src: url("/uploads/fonts/Urbanist-Variable-Latin.woff2") format("woff2");
-  font-weight: 100 900;
+  src: url("/uploads/fonts/SourceSans3-Variable-Latin.woff2") format("woff2");
+  font-weight: 200 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/uploads/fonts/Urbanist-Italic-Variable-Latin.woff2") format("woff2");
-  font-weight: 100 900;
+  src: url("/uploads/fonts/SourceSans3-Italic-Variable-Latin.woff2") format("woff2");
+  font-weight: 200 900;
   font-style: italic;
   font-display: swap;
 }
