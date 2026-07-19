@@ -66,7 +66,7 @@ Compara siempre con un billete que sepas auténtico y, si tienes sospechas sobre
 un billete en circulación, consúltalo con tu entidad bancaria o banco central.
 Este artículo es orientativo y no sustituye una verificación oficial. Para
 familiarizarte con la terminología, consulta nuestro
-[glosario de numismática y notafilia](/glosario-numismatico/).
+[glosario de numismática y notafilia](/glosario/).
 
 ## Fuentes
 
