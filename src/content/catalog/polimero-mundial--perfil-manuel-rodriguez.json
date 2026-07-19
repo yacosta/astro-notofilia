@@ -1,0 +1,69 @@
+{
+  "path": "/coleccion/polimero-mundial/perfil-manuel-rodriguez/",
+  "title": "Manuel Rodríguez Erdoíza — Notofilia",
+  "description": "Perfil histórico de Manuel Rodríguez, guerrillero de la independencia chilena, retratado en el billete de 2.000 pesos de polímero del Banco Central de Chile.",
+  "keywords": [
+    "manuel rodríguez",
+    "guerrillero chileno",
+    "independencia de chile",
+    "banco central de chile",
+    "notafilia chilena",
+    "billetes con manuel rodríguez"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "profile",
+  "ogTitle": "Manuel Rodríguez — Perfil Histórico",
+  "ogDescription": "Guerrillero y símbolo popular de la independencia de Chile, retratado en el billete de 2.000 pesos de polímero.",
+  "ogImage": "/favicon.png",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://www.notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Billetes de Polímero Mundial",
+            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Manuel Rodríguez",
+            "item": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Manuel Javier Antonio Rodríguez Erdoíza",
+        "url": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/",
+        "birthDate": "1785-02-25",
+        "deathDate": "1818-05-26",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Santiago de Chile, Capitanía General de Chile"
+        },
+        "deathPlace": {
+          "@type": "Place",
+          "name": "Til Til, Chile"
+        },
+        "jobTitle": "Abogado y Guerrillero",
+        "description": "Guerrillero y agente secreto durante la Patria Vieja y la Reconquista, símbolo popular de la resistencia a la restauración realista en Chile.",
+        "nationality": "Chilena"
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Ruta de navegación\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/coleccion/polimero-mundial/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Catálogo de Billetes de Polímero Mundial</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/coleccion/polimero-mundial/perfil-manuel-rodriguez/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Perfil Histórico &middot; Chile</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Manuel Rodríguez Erdoíza</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Santiago, 1785 &mdash; Til Til, 1818</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:340/326; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture>\n              <source srcset=\"uploads/manuel-rodriguez-retrato.webp\" type=\"image/webp\" />\n              <img src=\"uploads/manuel-rodriguez-retrato.jpg\" alt=\"Grabado de Manuel Rodríguez Erdoíza en uniforme militar con charreteras, brazos cruzados\" width=\"340\" height=\"326\" decoding=\"async\" style=\"width:100%; height:100%; object-fit:cover; display:block;\" />\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Manuel Rodríguez, guerrillero de la independencia</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Nacimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">25 de febrero de 1785 &mdash; Santiago de Chile</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Fallecimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">26 de mayo de 1818 &mdash; Til Til, Chile</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Profesión</span>\n              <span style=\"font-size:19px; color:#221f19;\">Abogado y Guerrillero</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rol Clave</span>\n              <span style=\"font-size:19px; color:#221f19;\">Líder de la resistencia guerrillera contra la Reconquista española (1814&ndash;1817); símbolo popular de la independencia chilena</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. Abogado y Patriota</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Nacido en Santiago, Manuel Rodríguez se graduó como abogado y se unió tempranamente a la causa independentista durante la <strong style=\"color:#1c1a15;\">Patria Vieja</strong> (1810&ndash;1814), ocupando cargos administrativos en el gobierno patriota.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Tras la derrota patriota en la Batalla de Rancagua (1814), que dio paso al período de la <strong style=\"color:#1c1a15;\">Reconquista</strong> española, Rodríguez optó por permanecer en Chile en lugar de exiliarse, organizando una red clandestina de resistencia.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. El Guerrillero de Mil Disfraces</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Durante los tres años de dominio realista, Rodríguez se convirtió en una leyenda popular por su habilidad para el disfraz y el engaño, evadiendo capturas mediante disfraces de mendigo, fraile o incluso oficial realista, mientras coordinaba el hostigamiento guerrillero y mantenía comunicación con José de San Martín en Mendoza.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Tras la victoria patriota en la Batalla de Chacabuco (1817), que restauró la independencia, Rodríguez organizó los llamados <strong style=\"color:#1c1a15;\">Húsares de la Muerte</strong>, un cuerpo de caballería irregular.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Muerte y Legado</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Sus tensiones con Bernardo O&rsquo;Higgins y con los planes de San Martín para la futura campaña al Perú lo llevaron a ser detenido bajo sospecha de conspiración. Fue asesinado en circunstancias nunca esclarecidas del todo en Til Til, en mayo de 1818, a los 33 años.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Su muerte prematura y su carácter aventurero lo convirtieron en una de las figuras más queridas y mitificadas de la independencia chilena, objeto de numerosas obras literarias y representaciones populares.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">4. Legado Numismático</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">El retrato de Manuel Rodríguez figura en el <a href=\"/coleccion/polimero-mundial/chile-1000-2000-pesos/\">billete de 2.000 pesos de polímero</a> del Banco Central de Chile, en circulación desde 2004, con la Nalcas National Reserve al reverso.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notas</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biografía basada en fuentes históricas estándar sobre la independencia de Chile y la Reconquista española (1814&ndash;1817).</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "legacyFile": "perfil-manuel-rodriguez.dc.html",
+  "sourceHash": "05c4d7ab50850125"
+}

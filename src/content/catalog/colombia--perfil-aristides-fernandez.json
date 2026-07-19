@@ -1,0 +1,59 @@
+{
+  "path": "/coleccion/colombia/perfil-aristides-fernandez/",
+  "title": "Arístides Fernández — Notofilia",
+  "description": "Perfil histórico de Arístides Fernández, Ministro de Hacienda y de Guerra durante la Guerra de los Mil Días, firmante de billetes de El Banco Nacional de Colombia.",
+  "keywords": [
+    "arístides fernández",
+    "guerra de los mil días",
+    "banco nacional colombia",
+    "ministro de guerra",
+    "notafilia colombiana",
+    "billetes con arístides fernández"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "profile",
+  "ogTitle": "Arístides Fernández — Perfil Histórico",
+  "ogDescription": "Ministro de Hacienda y de Guerra durante la Guerra de los Mil Días, firmante de varias emisiones de El Banco Nacional.",
+  "ogImage": "/favicon.png",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://www.notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Colombia",
+            "item": "https://www.notofilia.com/coleccion/colombia/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Arístides Fernández",
+            "item": "https://www.notofilia.com/coleccion/colombia/perfil-aristides-fernandez/"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Arístides Fernández",
+        "url": "https://www.notofilia.com/coleccion/colombia/perfil-aristides-fernandez/",
+        "jobTitle": "Militar y Estadista",
+        "description": "Ministro de Hacienda y de Guerra de Colombia durante la Guerra de los Mil Días, firmante de varias emisiones de emergencia de El Banco Nacional.",
+        "nationality": "Colombiana"
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Ruta de navegación\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/coleccion/colombia/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Colección Colombia</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/coleccion/colombia/perfil-aristides-fernandez/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Perfil Histórico &middot; Guerra de los Mil Días</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Arístides Fernández</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Ministro de Hacienda y de Guerra, 1899&ndash;1900</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:643/914; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture>\n              <source srcset=\"uploads/aristides-fernandez-retrato.webp\" type=\"image/webp\" />\n              <img src=\"uploads/aristides-fernandez-retrato.jpg\" alt=\"Retrato fotográfico en blanco y negro de Arístides Fernández, con bigote y traje oscuro\" width=\"643\" height=\"914\" decoding=\"async\" style=\"width:100%; height:100%; object-fit:cover; display:block;\" />\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Arístides Fernández</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Profesión</span>\n              <span style=\"font-size:19px; color:#221f19;\">Militar y Estadista</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rol Clave</span>\n              <span style=\"font-size:19px; color:#221f19;\">Ministro de Hacienda y luego de Guerra durante la Guerra de los Mil Días (1899&ndash;1902), bajo los gobiernos de Manuel Antonio Sanclemente y José Manuel Marroquín</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. Ministro en Plena Guerra Civil</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Arístides Fernández ocupó carteras ministeriales clave durante uno de los períodos más convulsos de la historia colombiana: la <strong style=\"color:#1c1a15;\">Guerra de los Mil Días</strong> (1899&ndash;1902), el conflicto civil más sangriento entre liberales y conservadores tras la Regeneración.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Como Ministro de Hacienda, su firma respaldó la emisión acelerada de billetes de El Banco Nacional que el gobierno requería para financiar el esfuerzo bélico, en un contexto de expansión monetaria descontrolada que llevaría la inflación a más del 100% anual entre 1900 y 1903.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. Ministro de Guerra y Represión</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Posteriormente, como Ministro de Guerra, Fernández se hizo tristemente célebre por la dura represión de prisioneros políticos liberales recluidos en el Panóptico de Bogotá, entre ellos el poeta Julio Flórez, episodio que marcó de forma negativa su legado histórico.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Su gestión encarna las contradicciones de una guerra que combinó la necesidad fiscal de mantener el papel moneda en circulación con la represión política de los adversarios del régimen conservador.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Legado Numismático</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Su firma aparece en varias de las emisiones de emergencia de <a href=\"/coleccion/colombia/banco-nacional-25-pesos-1895/\">El Banco Nacional</a> circuladas durante la Guerra de los Mil Días, entre ellas los billetes de Un Peso (Series O y P) y Cinco Pesos (Serie D), piezas que documentan de primera mano la crisis fiscal y monetaria del país en el cambio de siglo.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notas</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Contexto histórico basado en el Banco de la República, &ldquo;La guerra de los mil días&rdquo;, <em>Credencial Historia</em> n.&deg; 173, y en el Museo Nacional de Colombia, &ldquo;Piezas en Diálogo&rdquo; (2017&ndash;2018), sobre la expansión monetaria e inflación del período.</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "legacyFile": "perfil-aristides-fernandez.dc.html",
+  "sourceHash": "1ab0342abc0c842f"
+}

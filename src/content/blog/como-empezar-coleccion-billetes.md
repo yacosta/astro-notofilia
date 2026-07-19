@@ -10,6 +10,11 @@ keywords:
   - "guía para principiantes colección billetes colombia"
   - "colección de billetes"
   - "notafilia"
+relatedLinks:
+  - { href: "/coleccion/", title: "Explorar la colección virtual" }
+  - { href: "/glosario/", title: "Glosario de numismática y notafilia" }
+  - { href: "/blog/como-identificar-billetes-falsos/", title: "Cómo identificar billetes falsos" }
+  - { href: "/blog/diferencia-numismatica-notafilia/", title: "Numismática y notafilia: diferencias" }
 ---
 
 Empezar una colección de billetes es más sencillo —y más económico— de lo que

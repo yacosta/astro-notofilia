@@ -66,6 +66,20 @@ const coverFit = d.coverFit ?? 'cover';
     <Content />
   </div>
 
+  {d.relatedLinks && d.relatedLinks.length > 0 && (
+    <aside class="mt-12 border border-line rounded-[4px] px-6 py-6" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4">Sigue explorando</h2>
+      <ul class="grid gap-4 list-none p-0 m-0 sm:grid-cols-2">
+        {d.relatedLinks.map((link) => (
+          <li>
+            <a class="text-cream font-semibold" href={link.href}>{link.title}</a>
+            {link.description && <p class="text-[16px] leading-[1.5] text-muted mt-1 mb-0">{link.description}</p>}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
+
   {d.sourceUrl && (
     <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
       <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">

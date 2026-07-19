@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -76,11 +77,11 @@
 
   <header>
     <nav aria-label="Ruta de navegación" style="max-width:1180px; margin:0 auto; padding:56px 24px 0;">
-      <a href="catalogo.dc.html" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Colección Virtual — Catálogo General</a>
+      <a href="/coleccion/" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Colección Virtual — Catálogo General</a>
     </nav>
   </header>
 
-  <main id="main-content" tabindex="-1" data-screen-label="J.S.G. Boggs" style="max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;">
+  <main data-pagefind-meta="url:/j-s-g-boggs/" id="main-content" tabindex="-1" data-screen-label="J.S.G. Boggs" style="max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;">
 
     <div style="background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);">
 
@@ -102,7 +103,7 @@
             style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in;"
           >
             <picture>
-              <source srcset="uploads/jsg-boggs.webp" type="image/webp" />
+              <source srcset="uploads/jsg-boggs-480.webp 480w, uploads/jsg-boggs.webp 1140w" sizes="(max-width: 448px) calc(100vw - 48px), 400px" type="image/webp" />
               <img
                 src="uploads/jsg-boggs.jpg"
                 alt="J.S.G. Boggs de pie frente a una versión ampliada de su dibujo de un billete de 100 dólares, en blanco y negro"

@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 
 const publicDir = new URL('../public/', import.meta.url);
+const catalogDir = new URL('../src/content/catalog/', import.meta.url);
 const sitemapPath = new URL('../public/sitemap.xml', import.meta.url);
 const site = 'https://www.notofilia.com';
 const today = new Date().toISOString().slice(0, 10);
@@ -14,14 +15,16 @@ const escapeXml = (value) => value
   .replaceAll("'", '&apos;');
 
 const entries = new Map();
+const previousMetadata = new Map();
 
 function add(url, options = {}) {
   const normalized = url.endsWith('/') ? url : `${url}/`;
+  const previous = previousMetadata.get(normalized) ?? {};
   entries.set(normalized, {
     loc: normalized,
-    lastmod: options.lastmod ?? today,
-    changefreq: options.changefreq ?? 'monthly',
-    priority: options.priority ?? '0.7',
+    lastmod: options.lastmod ?? previous.lastmod ?? today,
+    changefreq: options.changefreq ?? previous.changefreq ?? 'monthly',
+    priority: options.priority ?? previous.priority ?? '0.7',
   });
 }
 
@@ -32,7 +35,7 @@ try {
   for (const block of previous.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
     const loc = block[1].match(/<loc>(.*?)<\/loc>/)?.[1];
     if (!loc) continue;
-    add(loc, {
+    previousMetadata.set(loc.endsWith('/') ? loc : `${loc}/`, {
       lastmod: block[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1],
       changefreq: block[1].match(/<changefreq>(.*?)<\/changefreq>/)?.[1],
       priority: block[1].match(/<priority>(.*?)<\/priority>/)?.[1],
@@ -40,6 +43,13 @@ try {
   }
 } catch {
   // First generation: all dates safely fall back to today.
+}
+
+// Catalog routes are first-class Astro collection entries.
+for (const file of await readdir(catalogDir)) {
+  if (!file.endsWith('.json')) continue;
+  const page = JSON.parse(await readFile(join(catalogDir.pathname, file), 'utf8'));
+  add(`${site}${page.path}`);
 }
 
 // Every hand-authored catalog/profile page declares its public canonical URL.

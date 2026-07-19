@@ -1,6 +1,6 @@
 ---
 // Server-rendered homepage. Content is baked into HTML at build time; small
-// vanilla scripts handle hero crossfade, ES/EN toggle, and the cookie banner.
+// Vanilla scripts handle the hero crossfade and ES/EN toggle.
 // Spanish is the server-rendered default; the toggle swaps [data-i18n] strings.
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEs, toIsoDate } from '../lib/dates';
@@ -96,9 +96,7 @@ const jsonLd = {
     >
       <link rel="apple-touch-icon" href="/favicon.png" />
       <link rel="alternate" hreflang="es" href={`${SITE}/`} />
-      <link rel="alternate" hreflang="en" href={`${SITE}/`} />
       <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
-      <meta property="og:locale:alternate" content="en_US" />
     </BaseHead>
     <style is:global>
       * { box-sizing: border-box; }
@@ -238,31 +236,6 @@ const jsonLd = {
         en.addEventListener('click', function () { setLang('en'); });
       })();
 
-      // --- Cookie consent banner ---
-      (function () {
-        var KEY = 'notofilia_cookie_consent';
-        var banner = document.getElementById('cookie-banner');
-        if (!banner) return;
-        var accept = document.getElementById('cookie-accept');
-        var reject = document.getElementById('cookie-reject');
-        var stored;
-        try { stored = localStorage.getItem(KEY); } catch (e) {}
-        function choose(v) {
-          try { localStorage.setItem(KEY, v); } catch (e) {}
-          banner.style.display = 'none';
-          if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted'));
-        }
-        function openBanner() {
-          banner.style.display = 'flex';
-          if (accept) accept.focus();
-        }
-        if (stored !== 'accepted' && stored !== 'rejected') openBanner();
-        if (accept) accept.addEventListener('click', function () { choose('accepted'); });
-        if (reject) reject.addEventListener('click', function () { choose('rejected'); });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && banner.style.display === 'flex') choose('rejected');
-        });
-      })();
     </script>
   </body>
 </html>

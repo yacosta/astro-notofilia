@@ -10,6 +10,11 @@ keywords:
   - "notafilia"
   - "colección de billetes"
   - "colección de monedas"
+relatedLinks:
+  - { href: "/coleccion/", title: "Colección virtual de billetes" }
+  - { href: "/coleccion/moneda-colonial-espanola/", title: "Colección de moneda colonial española" }
+  - { href: "/glosario/#notafilia", title: "Glosario: notafilia" }
+  - { href: "/glosario/#numismatica", title: "Glosario: numismática" }
 ---
 
 "Numismática" y "notafilia" suelen usarse como sinónimos, pero designan

@@ -3,6 +3,7 @@
 // Server-rendered static HTML, styled with Tailwind utilities against the
 // shared palette tokens, carrying SEO + accessibility requirements.
 import BaseHead from '../components/BaseHead.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
@@ -54,5 +55,6 @@ const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords 
     </main>
     <PreFooter />
     <SiteFooter variant="editorial" />
+    <CookieBanner />
   </body>
 </html>

@@ -77,6 +77,23 @@
   --font-serif: 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+:root {
+  /* Semantic tokens shared by editorial and catalog surfaces. */
+  --surface-page: var(--color-bg);
+  --surface-raised: var(--color-panel);
+  --surface-artifact: #15130f;
+  --surface-artifact-soft: #201d17;
+  --text-primary: var(--color-cream);
+  --text-secondary: var(--color-cream-dim);
+  --text-muted: var(--color-muted);
+  --accent-metal: var(--color-gold-light);
+  --rule-subtle: var(--color-line);
+  --rule-artifact: rgba(203, 191, 157, 0.34);
+  --shadow-artifact: 0 28px 72px rgba(0, 0, 0, 0.42);
+  --radius-surface: 4px;
+  --page-gutter: clamp(18px, 4vw, 32px);
+}
+
 @layer components {
   /* Markdown article body (blog + noticias). */
   .prose-notofilia p {

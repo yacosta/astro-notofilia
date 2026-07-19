@@ -3,13 +3,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Notofilia.com — Astro static build.
 //
-// The site's *catalog* pages are hand-authored, self-contained HTML documents
-// that rely on a client-side "dc-runtime" (public/support.js) using `{{ … }}`
-// mustache placeholders and inline `${ … }` script template literals. That
-// syntax is incompatible with Astro's build-time component/JSX parser, so those
-// pages are served verbatim from `public/` rather than being re-authored as
-// `.astro` components. Astro provides the toolchain and hosts the natively-built
-// pages (homepage, 404, Noticias).
+// Catalog records live in an Astro data collection and render through one
+// shared route/layout. Their preserved interactive note-viewer templates are
+// passed to the dc-runtime as data, keeping mustache expressions out of Astro's
+// component parser while centralizing SEO, accessibility, header, and footer.
 //
 // Styling: the natively-Astro layer uses Tailwind v4 via the `@tailwindcss/vite`
 // plugin. The shared token/utility stylesheet (src/styles/global.css) is

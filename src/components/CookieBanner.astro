@@ -31,3 +31,31 @@
     </div>
   </div>
 </div>
+
+<script is:inline>
+  (function () {
+    var KEY = 'notofilia_cookie_consent';
+    var banner = document.getElementById('cookie-banner');
+    if (!banner || banner.dataset.initialized === 'true') return;
+    banner.dataset.initialized = 'true';
+    var accept = document.getElementById('cookie-accept');
+    var reject = document.getElementById('cookie-reject');
+    var stored;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    function choose(v) {
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+      banner.style.display = 'none';
+      if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted'));
+    }
+    function openBanner() {
+      banner.style.display = 'flex';
+      if (accept) accept.focus();
+    }
+    if (stored !== 'accepted' && stored !== 'rejected') openBanner();
+    if (accept) accept.addEventListener('click', function () { choose('accepted'); });
+    if (reject) reject.addEventListener('click', function () { choose('rejected'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && banner.style.display === 'flex') choose('rejected');
+    });
+  })();
+</script>

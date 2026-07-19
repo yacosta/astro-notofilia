@@ -1,0 +1,29 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import CatalogLayout from '../../layouts/CatalogLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('catalog');
+  return pages.map((page) => ({
+    params: { slug: page.data.path === '/coleccion/' ? undefined : page.data.path.slice('/coleccion/'.length, -1) },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props as { page: CollectionEntry<'catalog'> };
+---
+<CatalogLayout
+  title={page.data.title!}
+  description={page.data.description!}
+  path={page.data.path!}
+  keywords={page.data.keywords}
+  robots={page.data.robots}
+  ogType={page.data.ogType}
+  ogTitle={page.data.ogTitle}
+  ogDescription={page.data.ogDescription}
+  ogImage={page.data.ogImage}
+  jsonLd={page.data.jsonLd}
+  styles={page.data.styles}
+  template={page.data.template!}
+  logic={page.data.logic}
+/>

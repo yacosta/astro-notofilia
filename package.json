@@ -7,22 +7,29 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "node scripts/generate-sitemap.mjs",
-    "build": "astro build",
+    "migrate:catalog": "node scripts/migrate-catalog-to-astro.mjs",
+    "migrate:catalog:finalize": "node scripts/finalize-catalog-migration.mjs",
+    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/build-client-runtime.mjs",
+    "build": "astro build && node scripts/minify-client-runtime.mjs && pagefind --site dist --root-selector main",
     "preview": "astro preview",
     "check": "astro check",
+    "check:drift": "node scripts/check-site-drift.mjs",
+    "check:ci": "npm run check && npm run build && npm run check:drift",
     "astro": "astro"
   },
   "engines": {
     "node": ">=20.3.0"
   },
   "dependencies": {
-    "astro": "^4.16.19"
+    "astro": "^4.16.19",
+    "preact": "^10.29.7"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
+    "esbuild": "^0.28.1",
+    "pagefind": "^1.5.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }

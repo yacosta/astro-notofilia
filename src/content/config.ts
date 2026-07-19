@@ -15,6 +15,12 @@ const postSchema = z.object({
   coverFit: z.enum(['cover', 'contain']).optional(),
   // Optional SEO keyword list for this post's <meta name="keywords">.
   keywords: z.array(z.string()).optional(),
+  // Contextual paths into related editorial, catalog, profile, or glossary pages.
+  relatedLinks: z.array(z.object({
+    href: z.string().startsWith('/'),
+    title: z.string(),
+    description: z.string().optional(),
+  })).max(4).optional(),
   draft: z.boolean().default(false),
 });
 
@@ -28,4 +34,27 @@ const noticias = defineCollection({ type: 'content', schema: postSchema });
 // "Fuentes" section), not external pointers.
 const blog = defineCollection({ type: 'content', schema: postSchema });
 
-export const collections = { noticias, blog };
+// Catalog pages share one Astro route/layout. Their preserved dc-runtime body
+// and interaction logic are imported once from the former standalone pages.
+const catalog = defineCollection({
+  type: 'data',
+  schema: z.object({
+    path: z.string().startsWith('/coleccion/').endsWith('/'),
+    title: z.string(),
+    description: z.string(),
+    keywords: z.array(z.string()).default([]),
+    robots: z.string().default('index, follow'),
+    ogType: z.enum(['website', 'article', 'profile']).default('article'),
+    ogTitle: z.string().optional(),
+    ogDescription: z.string().optional(),
+    ogImage: z.string().startsWith('/').optional(),
+    jsonLd: z.unknown().optional(),
+    styles: z.string().default(''),
+    template: z.string(),
+    logic: z.string().default(''),
+    legacyFile: z.string(),
+    sourceHash: z.string(),
+  }),
+});
+
+export const collections = { noticias, blog, catalog };
