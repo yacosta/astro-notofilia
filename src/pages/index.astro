@@ -172,15 +172,42 @@ const jsonLd = {
       (function () {
         var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
         if (slides.length < 2) return;
-        var order = slides.map(function (_, i) { return i; });
+        var secondaryIndexes = slides.slice(1).map(function (_, i) { return i + 1; });
         function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+        var order = [0].concat(shuffle(secondaryIndexes.slice()));
         var active = 0;
-        order = shuffle(order.slice());
         function show(idx) { slides.forEach(function (el, i) { el.style.opacity = i === idx ? '1' : '0'; }); }
-        show(order[0]);
+        function loadDeferredSlides() {
+          document.querySelectorAll('[data-deferred-hero]').forEach(function (picture) {
+            var source = picture.querySelector('source[data-srcset]');
+            var image = picture.querySelector('img[data-src]');
+            if (source) {
+              source.srcset = source.getAttribute('data-srcset');
+              source.removeAttribute('data-srcset');
+            }
+            if (image) {
+              image.src = image.getAttribute('data-src');
+              image.removeAttribute('data-src');
+            }
+            picture.removeAttribute('data-deferred-hero');
+          });
+        }
+        function scheduleDeferredSlides() {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadDeferredSlides, { timeout: 2000 });
+          } else {
+            setTimeout(loadDeferredSlides, 500);
+          }
+        }
+        show(0);
+        if (document.readyState === 'complete') scheduleDeferredSlides();
+        else window.addEventListener('load', scheduleDeferredSlides, { once: true });
         setInterval(function () {
           active++;
-          if (active >= order.length) { order = shuffle([0, 1, 2, 3].slice(0, slides.length)); active = 0; }
+          if (active >= order.length) {
+            order = [0].concat(shuffle(secondaryIndexes.slice()));
+            active = 0;
+          }
           show(order[active]);
         }, 6000);
       })();

@@ -13,28 +13,36 @@ export interface Props {
 }
 
 const { slides } = Astro.props;
+const transparentPixel =
+  'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ---
 <div class="relative w-full min-h-screen">
-  {slides.map((h, i) => (
-    <picture>
-      <source
-        srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`}
-        sizes="100vw"
-        type="image/webp"
-      />
-      <img
-        class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]"
-        data-hero={i}
-        src={`/uploads/${h.base}.jpg`}
-        alt={i === 0 ? h.alt : ''}
-        width="972"
-        height="360"
-        fetchpriority={i === 0 ? 'high' : 'low'}
-        decoding="async"
-        style={`opacity:${i === 0 ? 1 : 0};`}
-      />
-    </picture>
-  ))}
+  {slides.map((h, i) => {
+    const responsiveSrcset = `/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`;
+    const imageSrc = `/uploads/${h.base}.jpg`;
+    return (
+      <picture data-deferred-hero={i > 0 ? '' : undefined}>
+        <source
+          srcset={i === 0 ? responsiveSrcset : undefined}
+          data-srcset={i > 0 ? responsiveSrcset : undefined}
+          sizes="100vw"
+          type="image/webp"
+        />
+        <img
+          class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]"
+          data-hero={i}
+          src={i === 0 ? imageSrc : transparentPixel}
+          data-src={i > 0 ? imageSrc : undefined}
+          alt={i === 0 ? h.alt : ''}
+          width="972"
+          height="360"
+          fetchpriority={i === 0 ? 'high' : 'low'}
+          decoding="async"
+          style={`opacity:${i === 0 ? 1 : 0};`}
+        />
+      </picture>
+    );
+  })}
   <div
     class="absolute inset-0"
     style="background:radial-gradient(ellipse 90% 75% at 50% 42%, rgba(10,10,9,0.35) 0%, rgba(10,10,9,0.72) 60%, rgba(6,6,5,0.94) 100%);"
