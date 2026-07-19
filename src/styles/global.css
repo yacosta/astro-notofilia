@@ -12,9 +12,7 @@
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 
-/* Display + body faces, self-hosted from /uploads/fonts (shared across the
-   Astro layer; previously redeclared in every page's inline <style>). Prefer
-   WOFF2 with TTF fallback for broader support. */
+/* Display + body faces, self-hosted from /uploads/fonts. */
 @font-face {
   font-family: 'Montenegrin Gothic One';
   src:
@@ -24,19 +22,15 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src:
-    url('/uploads/fonts/CormorantGaramond-Variable.woff2') format('woff2'),
-    url('/uploads/fonts/CormorantGaramond-Variable.ttf') format('truetype-variations');
-  font-weight: 300 700;
+  font-family: 'Urbanist';
+  src: url('/uploads/fonts/Urbanist-Variable-Latin.woff2') format('woff2');
+  font-weight: 100 900;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src:
-    url('/uploads/fonts/CormorantGaramond-Italic-Variable.woff2') format('woff2'),
-    url('/uploads/fonts/CormorantGaramond-Italic-Variable.ttf') format('truetype-variations');
-  font-weight: 300 700;
+  font-family: 'Urbanist';
+  src: url('/uploads/fonts/Urbanist-Italic-Variable-Latin.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
@@ -79,8 +73,8 @@
   --color-line-input: rgba(231, 222, 201, 0.35);
 
   /* Type families */
-  --font-display: 'Montenegrin Gothic One', 'Cormorant Garamond', Georgia, serif;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Montenegrin Gothic One', Georgia, serif;
+  --font-serif: 'Urbanist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @layer components {
