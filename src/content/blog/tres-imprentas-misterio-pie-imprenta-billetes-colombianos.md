@@ -1,5 +1,5 @@
 ---
-title: "¿Tres imprentas o una sola? El pie de imprenta en los billetes colombianos"
+title: "¿Tres imprentas? Pies de imprenta colombianos"
 publishedAt: 2026-07-19
 excerpt: "IBB, IBSFB y Banco de la República parecen tres impresores distintos, pero cuentan otra historia: la de una misma imprenta y una ciudad que cambió de nombre."
 cover: "colombia-banco-de-la-republica-2000-pesos-oro-1993-specimen"
