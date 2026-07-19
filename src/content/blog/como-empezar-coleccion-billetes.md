@@ -65,7 +65,7 @@ verdadera colección.
 Si aún dudas entre monedas y billetes, te ayudará leer
 [la diferencia entre numismática y notafilia](/blog/diferencia-numismatica-notafilia/).
 Y para inspirarte, explora nuestra [colección virtual](/coleccion/) y el
-[glosario de términos](/glosario-numismatico/), pensado justo para quien empieza.
+[glosario de términos](/glosario/), pensado justo para quien empieza.
 
 ## Fuentes
 
