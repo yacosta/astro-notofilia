@@ -69,7 +69,7 @@ En Notofilia conviven ambas disciplinas: nuestra [colección virtual](/coleccion
 reúne billetes históricos de Colombia, Estados Unidos y otros países —el terreno
 de la notafilia— junto con piezas de moneda colonial, propias de la numismática
 clásica. Si quieres profundizar en la terminología, nuestro
-[glosario de numismática y notafilia](/glosario-numismatico/) define más de
+[glosario de numismática y notafilia](/glosario/) define más de
 noventa términos esenciales para el coleccionista.
 
 ## Fuentes
