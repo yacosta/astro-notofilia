@@ -59,6 +59,11 @@ Zod schema (`src/content/config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
 
+News articles include a Turnstile-protected comment form backed by Cloudflare
+D1. New comments remain pending until approved. See
+[`docs/comments-moderation.md`](docs/comments-moderation.md) for the moderation
+workflow and required Cloudflare bindings.
+
 ## Project structure
 
 ```

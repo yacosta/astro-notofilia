@@ -4,6 +4,7 @@
  */
 import type { CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
+import Comments from './Comments.astro';
 import { formatDateLongEs, toIsoDate } from '../lib/dates';
 import type { PostCollection } from '../lib/posts';
 
@@ -72,6 +73,8 @@ const coverFit = d.coverFit ?? 'cover';
       </a>
     </p>
   )}
+
+  {collection === 'noticias' && <Comments slug={post.slug} />}
 
   <p class="mt-10"><a class="text-muted" href={basePath}>&larr; {backLabel}</a></p>
 </article>
