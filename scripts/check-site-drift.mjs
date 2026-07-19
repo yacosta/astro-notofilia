@@ -107,6 +107,19 @@ if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared header is 
 if (/href:\s*["'][^"']+\.dc\.html/i.test(header)) fail('Shared search/navigation contains a legacy .dc.html target');
 if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertises unavailable catalog entries');
 
+const publicFiles = await readdir(path.join(root, 'public'));
+const standalonePages = publicFiles.filter((file) => file.endsWith('.dc.html') && file === file.toLowerCase());
+for (const file of standalonePages) {
+  const html = await readFile(path.join(root, 'public', file), 'utf8');
+  if (!/^<!doctype html>/i.test(html.trimStart())) continue;
+  if (/<style\b[^>]*>[\s\S]*?<link\b[^>]*catalog-fonts\.css/i.test(html)) {
+    fail(`${file} places the catalog font stylesheet inside a <style> block`);
+  }
+  if (!/<link\s+rel="stylesheet"\s+href="\/catalog-fonts\.css">/i.test(html)) {
+    fail(`${file} does not load the shared catalog font stylesheet`);
+  }
+}
+
 for (const entry of catalogEntries) {
   const cardCount = (entry.template.match(/<dc-import\s+name="BanknoteCard"/g) ?? []).length;
   if (cardCount < 1 || cardCount > 2) continue;
