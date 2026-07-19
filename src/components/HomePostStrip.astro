@@ -16,22 +16,29 @@ export interface StripItem {
 export interface Props {
   headingId: string;
   heading: string;
+  /** English string for the ES/EN chrome toggle. Article cards stay Spanish-only. */
+  headingEn?: string;
   items: StripItem[];
   emptyMessage: string;
+  emptyMessageEn?: string;
   moreHref: string;
   moreLabel: string;
+  moreLabelEn?: string;
   /** Top border between stacked cream bands. */
   bordered?: boolean;
 }
 
-const { headingId, heading, items, emptyMessage, moreHref, moreLabel, bordered = false } = Astro.props;
+const {
+  headingId, heading, headingEn, items, emptyMessage, emptyMessageEn,
+  moreHref, moreLabel, moreLabelEn, bordered = false,
+} = Astro.props;
 ---
 <section
   aria-labelledby={headingId}
   class:list={['bg-cream-dim py-[72px] px-6', bordered && 'border-t border-ink/12']}
 >
   <div class="max-w-content mx-auto">
-    <h2 id={headingId} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
+    <h2 id={headingId} data-i18n={headingEn ? true : undefined} data-en={headingEn} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
       {heading}
     </h2>
     {items.length > 0 ? (
@@ -59,16 +66,18 @@ const { headingId, heading, items, emptyMessage, moreHref, moreLabel, bordered =
             <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words">
               {it.title}
             </h3>
-            <a href={it.url} class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
+            <a href={it.url} data-i18n data-en="Read more &rarr;" class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
           </article>
         ))}
       </div>
     ) : (
-      <p class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8">{emptyMessage}</p>
+      <p data-i18n={emptyMessageEn ? true : undefined} data-en={emptyMessageEn} class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8">{emptyMessage}</p>
     )}
     <p class="text-center m-0">
       <a
         href={moreHref}
+        data-i18n={moreLabelEn ? true : undefined}
+        data-en={moreLabelEn}
         class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"
       >{moreLabel}</a>
     </p>
