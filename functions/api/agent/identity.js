@@ -88,8 +88,8 @@ export async function onRequestPost(context) {
       claim_token: claimToken,
       claim: {
         user_code: userCode,
-        verification_uri: 'https://www.notofilia.com/oauth/claim',
-        verification_uri_complete: `https://www.notofilia.com/oauth/claim?user_code=${userCode}`,
+        verification_uri: 'https://www.notofilia.com/oauth/claim/',
+        verification_uri_complete: `https://www.notofilia.com/oauth/claim/?user_code=${userCode}`,
         expires_in: 1800,
         interval: 5,
       },

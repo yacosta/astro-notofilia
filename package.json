@@ -10,7 +10,7 @@
     "migrate:catalog": "node scripts/migrate-catalog-to-astro.mjs",
     "migrate:catalog:finalize": "node scripts/finalize-catalog-migration.mjs",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-catalog-index.mjs && node scripts/build-client-runtime.mjs",
-    "build": "astro build && node scripts/minify-client-runtime.mjs && pagefind --site dist --root-selector main",
+    "build": "astro build && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:drift": "node scripts/check-site-drift.mjs",

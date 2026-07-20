@@ -1,6 +1,6 @@
 {
   "issuer": "https://www.notofilia.com",
-  "authorization_endpoint": "https://www.notofilia.com/oauth/authorize",
+  "authorization_endpoint": "https://www.notofilia.com/oauth/authorize/",
   "token_endpoint": "https://www.notofilia.com/api/oauth/token",
   "revocation_endpoint": "https://www.notofilia.com/api/oauth/revoke",
   "jwks_uri": "https://www.notofilia.com/.well-known/jwks.json",

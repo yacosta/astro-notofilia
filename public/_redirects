@@ -1,9 +1,3 @@
-# Agent / OAuth discovery pretty URLs
-/oauth/authorize/  /oauth/authorize.html  200
-/oauth/authorize  /oauth/authorize.html  200
-/oauth/claim/  /oauth/claim.html  200
-/oauth/claim  /oauth/claim.html  200
-
 # Cloudflare Pages rewrites: pretty URL -> actual .dc.html file (200 = rewrite, keeps URL in address bar)
 # Legacy URLs from the old Notofilia content portal -> revived as a new profile page
 /j-s-g-boggs/  /perfil-j-s-g-boggs.dc.html  200
