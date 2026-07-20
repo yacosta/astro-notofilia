@@ -2,7 +2,35 @@
  * Shared catalog fonts for .dc.html pages.
  * Linked once instead of inlining @font-face in every catalog document.
  * Absolute /uploads paths so pretty Cloudflare rewrite URLs resolve correctly.
+ *
+ * Metric-matched local fallbacks keep font-display: swap from shifting layout
+ * while critical fonts are preloaded from each page <head>.
  */
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  src: local("Arial");
+  size-adjust: 93.76%;
+  ascent-override: 109.21%;
+  descent-override: 42.66%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  src: local("Arial Italic"), local("Arial-ItalicMT");
+  font-style: italic;
+  size-adjust: 91.52%;
+  ascent-override: 111.89%;
+  descent-override: 43.71%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Montenegrin Gothic One Fallback";
+  src: local("Georgia");
+  size-adjust: 115.75%;
+  ascent-override: 82.08%;
+  descent-override: 30.24%;
+  line-gap-override: 0%;
+}
 @font-face {
   font-family: "Montenegrin Gothic One";
   src:
@@ -27,4 +55,16 @@
   font-weight: 200 900;
   font-style: italic;
   font-display: swap;
+}
+
+/*
+ * Inline style attributes in catalog/dc markup often list only the webfont
+ * (e.g. font-family:'Cormorant Garamond', serif). Force the metric-matched
+ * fallback into those stacks so swap cannot reflow layout.
+ */
+[style*="Cormorant Garamond"] {
+  font-family: "Cormorant Garamond", "Source Sans 3 Fallback", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+[style*="Montenegrin Gothic One"] {
+  font-family: "Montenegrin Gothic One", "Montenegrin Gothic One Fallback", Georgia, serif !important;
 }

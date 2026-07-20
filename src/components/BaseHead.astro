@@ -46,6 +46,29 @@ const shareDescription = ogDescription ?? description;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- Nested routes: <base> makes the shared dc-runtime header's relative links resolve from root. -->
 <base href="/" />
+<!-- Critical self-hosted fonts: preload so they arrive before first paint and
+     reduce fallback→webfont swap (and the italic hero subtitle jump). -->
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/uploads/fonts/SourceSans3-Variable-Latin.woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/uploads/fonts/SourceSans3-Italic-Variable-Latin.woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href="/uploads/fonts/MontenegrinGothicOne-Regular.woff2"
+  crossorigin
+/>
 <script src="/support.js" is:inline></script>
 <title>{title}</title>
 <meta name="description" content={description} />
