@@ -1,5 +1,7 @@
 # build output
 dist/
+.oauth-pagefind-park/
+.pagefind-staging/
 
 # generated types
 .astro/
