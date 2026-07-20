@@ -1,0 +1,73 @@
+name: Publish DNS-AID
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/publish-dns-aid.mjs'
+      - 'docs/dns-aid.md'
+      - '.github/workflows/publish-dns-aid.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-dns-aid
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Publish DNS-AID SVCB records
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_ZONE_NAME: notofilia.com
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN secret is not set."
+            echo "Add a Cloudflare API token with Zone.DNS Edit + Zone.Read for notofilia.com"
+            echo "as repository secret CLOUDFLARE_API_TOKEN, then re-run this workflow."
+            echo "Optional: CLOUDFLARE_ZONE_ID (otherwise resolved from the zone name)."
+            echo "See docs/dns-aid.md"
+            exit 1
+          fi
+          node scripts/publish-dns-aid.mjs
+
+      - name: Validate DNS-AID via DoH
+        run: |
+          sleep 8
+          python3 - <<'PY'
+          import json, sys, urllib.request
+
+          names = (
+              "_index._agents.notofilia.com",
+              "_mcp._agents.notofilia.com",
+          )
+          ok = True
+          for name in names:
+              req = urllib.request.Request(
+                  f"https://cloudflare-dns.com/dns-query?name={name}&type=SVCB&do=1",
+                  headers={"Accept": "application/dns-json"},
+              )
+              with urllib.request.urlopen(req, timeout=30) as res:
+                  data = json.load(res)
+              answers = data.get("Answer") or []
+              print(f"{name}: Status={data.get('Status')} AD={data.get('AD')} answers={len(answers)}")
+              for ans in answers:
+                  print(" ", ans.get("data"))
+              if not answers:
+                  ok = False
+          sys.exit(0 if ok else 1)
+          PY
