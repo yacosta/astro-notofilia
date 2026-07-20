@@ -47,23 +47,26 @@ jobs:
 
       - name: Validate DNS-AID via DoH
         run: |
-          sleep 5
-          for name in _index._agents.notofilia.com _mcp._agents.notofilia.com; do
-            echo "=== $name ==="
-            curl -sS "https://cloudflare-dns.com/dns-query?name=$name&type=SVCB&do=1" \
-              -H 'accept: application/dns-json' | tee "/tmp/$name.json"
-            python3 - <<'PY'
-          import json,sys
-          # filename passed via env
-          PY
-          done
+          sleep 8
           python3 - <<'PY'
-          import json, pathlib, sys
+          import json, sys, urllib.request
+
+          names = (
+              "_index._agents.notofilia.com",
+              "_mcp._agents.notofilia.com",
+          )
           ok = True
-          for name in ("_index._agents.notofilia.com", "_mcp._agents.notofilia.com"):
-              data = json.loads(pathlib.Path(f"/tmp/{name}.json").read_text())
+          for name in names:
+              req = urllib.request.Request(
+                  f"https://cloudflare-dns.com/dns-query?name={name}&type=SVCB&do=1",
+                  headers={"Accept": "application/dns-json"},
+              )
+              with urllib.request.urlopen(req, timeout=30) as res:
+                  data = json.load(res)
               answers = data.get("Answer") or []
-              print(name, "AD=", data.get("AD"), "answers=", len(answers))
+              print(f"{name}: Status={data.get('Status')} AD={data.get('AD')} answers={len(answers)}")
+              for ans in answers:
+                  print(" ", ans.get("data"))
               if not answers:
                   ok = False
           sys.exit(0 if ok else 1)
