@@ -76,43 +76,67 @@
   </svg>
 </button>
 
-<sc-if value="{{ showCookieBanner }}" hint-placeholder-val="{{ false }}">
-  <div
-    role="dialog"
-    aria-modal="false"
-    aria-label="Aviso de cookies"
-    style="position:fixed; left:0; right:0; bottom:0; z-index:80; display:flex; justify-content:center; padding:16px; box-sizing:border-box;"
-  >
-    <div style="width:100%; max-width:720px; background:#1c1a15; border:1px solid rgba(231,222,201,0.18); border-radius:8px; box-shadow:0 24px 60px rgba(0,0,0,0.55); padding:22px 24px; box-sizing:border-box; display:flex; flex-direction:column; gap:16px;">
-      <div>
-        <p style="font-family:'Cormorant Garamond', serif; font-size:16px; line-height:1.6; color:#d8d2cd; margin:0;">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" style="color:#e7ddc4; text-decoration-color:rgba(231,222,201,0.4);">Política de Privacidad y Cookies</a>.</p>
-      </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
-        <button
-          type="button"
-          onClick="{{ rejectCookies }}"
-          style="min-height:44px; padding:11px 22px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#d8d2cd; background:transparent; border:1px solid rgba(231,222,201,0.35); border-radius:999px; cursor:pointer;"
-          style-hover="border-color:#e7ddc4;"
-          style-focus="outline:2px solid #e7ddc4; outline-offset:2px;"
-        >Rechazar no esenciales</button>
-        <button
-          type="button"
-          onClick="{{ acceptCookies }}"
-          style="min-height:44px; padding:11px 26px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#0a0a09; background:#e7ddc4; border:1px solid #e7ddc4; border-radius:999px; cursor:pointer;"
-          style-hover="background:transparent; color:#e7ddc4;"
-          style-focus="outline:2px solid #e7ddc4; outline-offset:3px;"
-        >Aceptar todas</button>
-      </div>
+<!-- Always in the tree as a position:fixed overlay; only `display` toggles.
+     Never insert into normal flow — that was the main CLS contributor.
+     position:fixed is literal in the attribute so the element stays out of
+     flow even before {{ cookieBannerDisplay }} is interpolated. -->
+<div
+  role="dialog"
+  aria-modal="false"
+  aria-label="Aviso de cookies"
+  style="position:fixed; left:0; right:0; bottom:0; z-index:80; justify-content:center; padding:16px; box-sizing:border-box; display:{{ cookieBannerDisplay }};"
+>
+  <div style="width:100%; max-width:720px; background:#1c1a15; border:1px solid rgba(231,222,201,0.18); border-radius:8px; box-shadow:0 24px 60px rgba(0,0,0,0.55); padding:22px 24px; box-sizing:border-box; display:flex; flex-direction:column; gap:16px;">
+    <div>
+      <p style="font-family:'Cormorant Garamond', serif; font-size:16px; line-height:1.6; color:#d8d2cd; margin:0;">Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra <a href="/politica-privacidad-cookies/" style="color:#e7ddc4; text-decoration-color:rgba(231,222,201,0.4);">Política de Privacidad y Cookies</a>.</p>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;">
+      <button
+        type="button"
+        onClick="{{ rejectCookies }}"
+        style="min-height:44px; padding:11px 22px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#d8d2cd; background:transparent; border:1px solid rgba(231,222,201,0.35); border-radius:999px; cursor:pointer;"
+        style-hover="border-color:#e7ddc4;"
+        style-focus="outline:2px solid #e7ddc4; outline-offset:2px;"
+      >Rechazar no esenciales</button>
+      <button
+        type="button"
+        onClick="{{ acceptCookies }}"
+        style="min-height:44px; padding:11px 26px; font-family:'Cormorant Garamond', serif; font-weight:600; font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#0a0a09; background:#e7ddc4; border:1px solid #e7ddc4; border-radius:999px; cursor:pointer;"
+        style-hover="background:transparent; color:#e7ddc4;"
+        style-focus="outline:2px solid #e7ddc4; outline-offset:3px;"
+      >Aceptar todas</button>
     </div>
   </div>
-</sc-if>
+</div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 700, &quot;height&quot;: 140}, &quot;disclaimer&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo.&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { stats: { banknotes: 63, countries: 8, pages: 76 }, showScrollTop: false, cookieChoice: null };
-
   COOKIE_CONSENT_KEY = "notofilia_cookie_consent";
+
+  // Read consent synchronously so the fixed banner never mounts as display:flex
+  // for returning visitors (avoids a one-frame overlay flash).
+  readStoredConsent() {
+    try {
+      if (typeof window === "undefined") return "none";
+      const stored = window.localStorage.getItem(this.COOKIE_CONSENT_KEY);
+      if (stored === "accepted" || stored === "rejected") return stored;
+    } catch (e) {}
+    return null;
+  }
+
+  state = {
+    stats: { banknotes: 63, countries: 8, pages: 76 },
+    showScrollTop: false,
+    cookieChoice: (() => {
+      try {
+        if (typeof window === "undefined") return "none";
+        const stored = window.localStorage.getItem("notofilia_cookie_consent");
+        if (stored === "accepted" || stored === "rejected") return stored;
+      } catch (e) {}
+      return null;
+    })()
+  };
 
   applyConsent = (choice) => {
     try { window.localStorage.setItem(this.COOKIE_CONSENT_KEY, choice); } catch (e) {}
@@ -199,10 +223,9 @@ class Component extends DCLogic {
     this.loadStats();
     window.addEventListener("scroll", this.onScroll, { passive: true });
     this.onScroll();
-    try {
-      const stored = window.localStorage.getItem(this.COOKIE_CONSENT_KEY);
-      if (stored === "accepted" || stored === "rejected") this.setState({ cookieChoice: stored });
-    } catch (e) {}
+    // Re-sync in case state was initialized before localStorage was available.
+    const stored = this.readStoredConsent();
+    if (stored !== this.state.cookieChoice) this.setState({ cookieChoice: stored });
   }
 
   componentWillUnmount() {
@@ -217,7 +240,7 @@ class Component extends DCLogic {
       statsLine: s.banknotes + " billetes \u00b7 " + s.countries + " pa\u00edses \u00b7 " + s.pages + " p\u00e1ginas",
       scrollToTop: this.scrollToTop,
       scrollTopStyle: `position:fixed; right:24px; bottom:24px; z-index:60; width:48px; height:48px; min-width:44px; min-height:44px; border-radius:50%; background:#0a0a09; border:1px solid rgba(231,222,201,0.3); box-shadow:0 10px 28px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:${visible ? 1 : 0}; visibility:${visible ? "visible" : "hidden"}; transform:translateY(${visible ? "0" : "8px"}); transition:opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;`,
-      showCookieBanner: this.state.cookieChoice === null,
+      cookieBannerDisplay: this.state.cookieChoice === null ? "flex" : "none",
       acceptCookies: this.acceptCookies,
       rejectCookies: this.rejectCookies
     };

@@ -2,6 +2,11 @@
 /**
  * Cookie consent banner. Shown until the visitor accepts or rejects analytics.
  * Escape rejects non-essential cookies; focus moves to the accept button on open.
+ *
+ * Position is fixed via an inline style (not only a Tailwind class) so the
+ * banner stays out of document flow even before the stylesheet applies —
+ * preventing the CLS spike from a late-styled overlay pushing content.
+ * Markup is server-rendered into the initial HTML; JS only toggles visibility.
  */
 ---
 <div
@@ -9,8 +14,8 @@
   role="dialog"
   aria-modal="false"
   aria-label="Aviso de cookies"
-  class="fixed left-0 right-0 bottom-0 z-[80] justify-center p-4"
-  style="display:none;"
+  class="fixed left-0 right-0 bottom-0 z-[80] flex justify-center p-4"
+  style="position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;justify-content:center;padding:16px;box-sizing:border-box;"
 >
   <div class="w-full max-w-[720px] bg-panel border border-line rounded-lg shadow-[0_24px_60px_rgba(0,0,0,0.55)] px-6 py-[22px] flex flex-col gap-4">
     <p class="font-serif text-[16px] leading-[1.6] text-cream-dim m-0">
@@ -48,6 +53,8 @@
       if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted'));
     }
     function openBanner() {
+      // Keep position:fixed (and the rest of the overlay box model) intact —
+      // only toggle display so neighbors never reflow.
       banner.style.display = 'flex';
       if (accept) accept.focus();
     }
