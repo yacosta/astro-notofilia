@@ -1,0 +1,43 @@
+{
+  "issuer": "https://www.notofilia.com",
+  "authorization_endpoint": "https://www.notofilia.com/oauth/authorize",
+  "token_endpoint": "https://www.notofilia.com/api/oauth/token",
+  "revocation_endpoint": "https://www.notofilia.com/api/oauth/revoke",
+  "jwks_uri": "https://www.notofilia.com/.well-known/jwks.json",
+  "registration_endpoint": "https://www.notofilia.com/api/agent/identity",
+  "response_types_supported": [
+    "token",
+    "code",
+    "id_token"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "EdDSA"
+  ],
+  "grant_types_supported": [
+    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:workos:agent-auth:grant-type:claim",
+    "client_credentials"
+  ],
+  "scopes_supported": [
+    "openid",
+    "catalog:read",
+    "comments:read",
+    "comments:write",
+    "mcp:tools"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "none",
+    "private_key_jwt"
+  ],
+  "claims_supported": [
+    "sub",
+    "iss",
+    "aud",
+    "exp",
+    "iat",
+    "scope"
+  ]
+}

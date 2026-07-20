@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reclamar registro de agente · Notofilia</title>
+    <meta name="description" content="Página de claim para registro agentic (auth.md) en Notofilia." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.notofilia.com/oauth/claim" />
+    <link rel="icon" href="/favicon.png" />
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        background:
+          radial-gradient(circle at 50% -10%, rgba(138, 109, 59, 0.18), transparent 40rem),
+          #0a0a09;
+        color: #e7ddc4;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+      main { max-width: 40rem; line-height: 1.6; }
+      h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 0 0 1rem;
+      }
+      label { display: block; margin: 1rem 0 0.35rem; }
+      input, button {
+        font: inherit;
+        padding: 0.7rem 0.9rem;
+        border-radius: 6px;
+        border: 1px solid rgba(231, 221, 196, 0.25);
+        background: #161513;
+        color: #e7ddc4;
+        min-height: 44px;
+      }
+      button {
+        margin-top: 1rem;
+        background: #8a6d3b;
+        border-color: #8a6d3b;
+        color: #0a0a09;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      a { color: #d8c087; }
+      #status { margin-top: 1rem; min-height: 1.5em; }
+    </style>
+  </head>
+  <body>
+    <main id="main-content">
+      <h1>Reclamar registro de agente</h1>
+      <p>
+        Introduzca el código que le mostró su agente y el correo a vincular.
+        Detalles del protocolo en <a href="/auth.md">auth.md</a>.
+      </p>
+      <form id="claim-form">
+        <label for="user_code">Código</label>
+        <input id="user_code" name="user_code" autocomplete="one-time-code" required />
+        <label for="email">Correo</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+        <label for="claim_token">Claim token (del agente)</label>
+        <input id="claim_token" name="claim_token" required />
+        <button type="submit">Confirmar reclamo</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <p><a href="/">Volver a Notofilia</a></p>
+    </main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      if (params.get('user_code')) document.getElementById('user_code').value = params.get('user_code');
+      document.getElementById('claim-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const status = document.getElementById('status');
+        status.textContent = 'Enviando…';
+        try {
+          const res = await fetch('/api/agent/identity/claim', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              user_code: document.getElementById('user_code').value.trim(),
+              email: document.getElementById('email').value.trim(),
+              claim_token: document.getElementById('claim_token').value.trim(),
+              complete: true,
+              claimed: true,
+            }),
+          });
+          const data = await res.json();
+          status.textContent = res.ok
+            ? 'Reclamo registrado. El agente puede canjear el token.'
+            : (data.error_description || data.error || 'No se pudo completar el reclamo.');
+        } catch {
+          status.textContent = 'Error de red al completar el reclamo.';
+        }
+      });
+    </script>
+  </body>
+</html>

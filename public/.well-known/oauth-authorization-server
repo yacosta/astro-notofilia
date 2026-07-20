@@ -1,0 +1,60 @@
+{
+  "issuer": "https://www.notofilia.com",
+  "authorization_endpoint": "https://www.notofilia.com/oauth/authorize",
+  "token_endpoint": "https://www.notofilia.com/api/oauth/token",
+  "revocation_endpoint": "https://www.notofilia.com/api/oauth/revoke",
+  "jwks_uri": "https://www.notofilia.com/.well-known/jwks.json",
+  "registration_endpoint": "https://www.notofilia.com/api/agent/identity",
+  "grant_types_supported": [
+    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:workos:agent-auth:grant-type:claim",
+    "client_credentials"
+  ],
+  "response_types_supported": [
+    "token",
+    "code"
+  ],
+  "scopes_supported": [
+    "catalog:read",
+    "comments:read",
+    "comments:write",
+    "mcp:tools"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "none",
+    "private_key_jwt"
+  ],
+  "service_documentation": "https://www.notofilia.com/auth.md",
+  "agent_auth": {
+    "skill": "https://www.notofilia.com/auth.md",
+    "register_uri": "https://www.notofilia.com/api/agent/identity",
+    "identity_endpoint": "https://www.notofilia.com/api/agent/identity",
+    "claim_endpoint": "https://www.notofilia.com/api/agent/identity/claim",
+    "claim_uri": "https://www.notofilia.com/api/agent/identity/claim",
+    "revocation_uri": "https://www.notofilia.com/api/oauth/revoke",
+    "events_endpoint": "https://www.notofilia.com/api/agent/events",
+    "identity_types_supported": [
+      "anonymous",
+      "identity_assertion"
+    ],
+    "anonymous": {
+      "credential_types_supported": [
+        "access_token"
+      ],
+      "claim_uri": "https://www.notofilia.com/api/agent/identity/claim"
+    },
+    "identity_assertion": {
+      "assertion_types_supported": [
+        "urn:ietf:params:oauth:token-type:id-jag",
+        "verified_email"
+      ],
+      "credential_types_supported": [
+        "access_token"
+      ],
+      "claim_uri": "https://www.notofilia.com/api/agent/identity/claim"
+    },
+    "events_supported": [
+      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
+    ]
+  }
+}
