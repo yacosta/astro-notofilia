@@ -1,7 +1,67 @@
 # Cloudflare Pages custom response headers.
 # Link headers for agent/machine discovery on the homepage (RFC 8288 / RFC 9727 §3).
 /
-  Link: </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby"
+  Link: </.well-known/api-catalog>; rel="api-catalog", </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
 
 /index.html
-  Link: </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby"
+  Link: </.well-known/api-catalog>; rel="api-catalog", </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/oauth-authorization-server
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/openid-configuration
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/http-message-signatures-directory
+  Content-Type: application/http-message-signatures-directory+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+
+/.well-known/jwks.json
+  Content-Type: application/jwk-set+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/mcp.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/.well-known/agent-index.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/openapi.json
+  Content-Type: application/vnd.oai.openapi+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
+
+/data/catalog-index.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300

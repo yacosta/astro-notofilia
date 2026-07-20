@@ -1,0 +1,17 @@
+{
+  "resource": "https://www.notofilia.com/",
+  "resource_name": "Notofilia",
+  "resource_documentation": "https://www.notofilia.com/auth.md",
+  "authorization_servers": [
+    "https://www.notofilia.com"
+  ],
+  "scopes_supported": [
+    "catalog:read",
+    "comments:read",
+    "comments:write",
+    "mcp:tools"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

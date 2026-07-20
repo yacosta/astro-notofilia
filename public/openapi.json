@@ -1,0 +1,152 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Notofilia Agent API",
+    "version": "1.0.0",
+    "description": "Public catalog, health, comments, and agent registration APIs for Notofilia.com.",
+    "contact": {
+      "name": "Notofilia",
+      "url": "https://www.notofilia.com/contacto/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.notofilia.com"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "enum": ["ok"] },
+                    "service": { "type": "string" },
+                    "time": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/catalog": {
+      "get": {
+        "summary": "List catalog pages",
+        "operationId": "listCatalog",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string" },
+            "description": "Optional case-insensitive search over title/path/keywords"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 25 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Catalog entries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": { "type": "integer" },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "path": { "type": "string" },
+                          "title": { "type": "string" },
+                          "description": { "type": "string" },
+                          "url": { "type": "string", "format": "uri" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/comments/{slug}": {
+      "get": {
+        "summary": "List approved comments for a noticias article",
+        "operationId": "listComments",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Approved comments"
+          }
+        }
+      },
+      "post": {
+        "summary": "Submit a comment (Turnstile-protected)",
+        "operationId": "createComment",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Comment accepted for moderation" },
+          "400": { "description": "Validation error" }
+        }
+      }
+    },
+    "/api/agent/identity": {
+      "post": {
+        "summary": "Register an agent identity",
+        "operationId": "registerAgentIdentity",
+        "responses": {
+          "200": { "description": "Identity assertion issued" }
+        }
+      }
+    },
+    "/api/oauth/token": {
+      "post": {
+        "summary": "OAuth token endpoint",
+        "operationId": "issueToken",
+        "responses": {
+          "200": { "description": "Access token issued" }
+        }
+      }
+    },
+    "/mcp": {
+      "post": {
+        "summary": "MCP Streamable HTTP endpoint",
+        "operationId": "mcp",
+        "responses": {
+          "200": { "description": "JSON-RPC MCP response" }
+        }
+      }
+    }
+  }
+}
