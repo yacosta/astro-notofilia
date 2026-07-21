@@ -506,5 +506,25 @@
   {
     "route": "/coleccion/pop-art-rency/",
     "legacyFile": "catalogo-pop-art-rency.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/pele-bicycle-kick-the-king/",
+    "legacyFile": "billete-rency-pele-bicycle-kick-the-king.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/lionel-messi-leo/",
+    "legacyFile": "billete-rency-lionel-messi-leo.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/donald-trump-mugshot/",
+    "legacyFile": "billete-rency-donald-trump-mugshot.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/warhol-basquiat/",
+    "legacyFile": "billete-rency-warhol-basquiat.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/life-is-beautiful-spray-cans/",
+    "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
   }
 ]
