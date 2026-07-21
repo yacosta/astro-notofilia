@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T14:18:23.683Z",
+  "generatedAt": "2026-07-21T14:19:21.903Z",
   "count": 132,
   "items": [
     {
@@ -1888,8 +1888,8 @@
       "url": "https://www.notofilia.com/coleccion/polimero-mundial/"
     },
     {
-      "id": "pop-art-rency--donald-trump-mugshot",
-      "path": "/coleccion/pop-art-rency/donald-trump-mugshot/",
+      "id": "pop-art--donald-trump-mugshot",
+      "path": "/coleccion/pop-art/donald-trump-mugshot/",
       "title": "Donald Trump Mugshot — Rency Art $2 | Notofilia",
       "description": "Donald Trump Mugshot Rency Art: giclée pop art sobre billete de dos dólares del 45.º presidente, firmado por Rency. Colección Notofilia.",
       "keywords": [
@@ -1900,11 +1900,11 @@
         "pop art",
         "notafilia"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/donald-trump-mugshot/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/donald-trump-mugshot/"
     },
     {
-      "id": "pop-art-rency--life-is-beautiful-spray-cans",
-      "path": "/coleccion/pop-art-rency/life-is-beautiful-spray-cans/",
+      "id": "pop-art--life-is-beautiful-spray-cans",
+      "path": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
       "title": "Life Is Beautiful Spray Cans — Rency Art $2 | Notofilia",
       "description": "Life Is Beautiful Life Spray Cans: giclée Rency Art sobre billete de dos dólares, firmado y numerado (S/N 200). Colección Notofilia.",
       "keywords": [
@@ -1915,11 +1915,11 @@
         "pop art",
         "notafilia"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/life-is-beautiful-spray-cans/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/life-is-beautiful-spray-cans/"
     },
     {
-      "id": "pop-art-rency--lionel-messi-leo",
-      "path": "/coleccion/pop-art-rency/lionel-messi-leo/",
+      "id": "pop-art--lionel-messi-leo",
+      "path": "/coleccion/pop-art/lionel-messi-leo/",
       "title": "Lionel Messi Leo — Rency Art $2 | Notofilia",
       "description": "Lionel Messi Rency Art $2: giclée pop art firmado y numerado (S/N 222), inscripción “Leo 2022” al reverso. Colección Notofilia.",
       "keywords": [
@@ -1931,11 +1931,11 @@
         "life is beautiful",
         "notafilia"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/lionel-messi-leo/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/lionel-messi-leo/"
     },
     {
-      "id": "pop-art-rency--pele-bicycle-kick-the-king",
-      "path": "/coleccion/pop-art-rency/pele-bicycle-kick-the-king/",
+      "id": "pop-art--pele-bicycle-kick-the-king",
+      "path": "/coleccion/pop-art/pele-bicycle-kick-the-king/",
       "title": "Pelé Bicycle Kick — Rency Art $2 | Notofilia",
       "description": "Pelé Bicycle Kick “The King”: giclée pop art de Rency sobre billete genuino de dos dólares, firmado a mano. Colección Notofilia.",
       "keywords": [
@@ -1946,11 +1946,11 @@
         "pop art",
         "notafilia"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/pele-bicycle-kick-the-king/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/"
     },
     {
-      "id": "pop-art-rency--warhol-basquiat",
-      "path": "/coleccion/pop-art-rency/warhol-basquiat/",
+      "id": "pop-art--warhol-basquiat",
+      "path": "/coleccion/pop-art/warhol-basquiat/",
       "title": "Warhol Basquiat — Rency Art $2 | Notofilia",
       "description": "Warhol Basquiat Rency Art: homenaje pop art a dos iconos en billete de dos dólares genuino, firmado por Rency. Colección Notofilia.",
       "keywords": [
@@ -1961,30 +1961,24 @@
         "pop art",
         "notafilia"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/warhol-basquiat/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/warhol-basquiat/"
     },
     {
-      "id": "pop-art-rency",
-      "path": "/coleccion/pop-art-rency/",
-      "title": "Pop Art — Rency | Notofilia",
-      "description": "Catálogo Pop Art de Rency: billetes de dos dólares alterados con giclee, street art anónimo y exonumia contemporánea de EE. UU.",
+      "id": "pop-art",
+      "path": "/coleccion/pop-art/",
+      "title": "Pop Art | Notofilia",
+      "description": "Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.",
       "keywords": [
         "pop art",
-        "rency",
-        "rency art",
         "billetes alterados",
-        "dos dolares",
-        "street art",
+        "arte pop en billetes",
         "giclee currency art",
+        "street art",
         "exonumia",
         "notafilia",
-        "pele",
-        "lionel messi",
-        "donald trump",
-        "warhol basquiat",
-        "life is beautiful"
+        "rency art"
       ],
-      "url": "https://www.notofilia.com/coleccion/pop-art-rency/"
+      "url": "https://www.notofilia.com/coleccion/pop-art/"
     },
     {
       "id": "puerto-rico--billete-de-canje-1-peso-1895",
