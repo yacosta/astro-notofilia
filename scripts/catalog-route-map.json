@@ -502,5 +502,9 @@
   {
     "route": "/coleccion/ringling-bros-50-aniversario-baraboo/",
     "legacyFile": "billete-ringling-bros-50-aniversario-baraboo.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art-rency/",
+    "legacyFile": "catalogo-pop-art-rency.dc.html"
   }
 ]
