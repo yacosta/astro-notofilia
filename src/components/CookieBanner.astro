@@ -1,12 +1,14 @@
 ---
 /**
  * Cookie consent banner. Shown until the visitor accepts or rejects analytics.
- * Escape rejects non-essential cookies; focus moves to the accept button on open.
+ * Escape rejects non-essential cookies; focus moves to the accept button on open
+ * (deferred one frame after display so focus does not force a sync reflow).
  *
  * Position is fixed via an inline style (not only a Tailwind class) so the
  * banner stays out of document flow even before the stylesheet applies —
  * preventing the CLS spike from a late-styled overlay pushing content.
- * Markup is server-rendered into the initial HTML; JS only toggles visibility.
+ * Markup is server-rendered into the initial HTML; JS only toggles visibility,
+ * and opening is deferred until after `load` + idle so it stays off the LCP path.
  */
 ---
 <div
