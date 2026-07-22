@@ -7,12 +7,17 @@ export interface Props {
   /** Extra tagline under the copyright line. */
   taglineEs?: string;
   taglineEn?: string;
+  /** Optional Colección Virtual stats line (homepage). */
+  statsLineEs?: string;
+  statsLineEn?: string;
   /** Compact centered layout (BlogLayout) vs homepage spacing. */
   variant?: 'home' | 'editorial';
 }
 const {
   taglineEs = 'Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.',
   taglineEn,
+  statsLineEs,
+  statsLineEn,
   variant = 'editorial',
 } = Astro.props;
 
@@ -21,11 +26,11 @@ const isHome = variant === 'home';
 <footer
   class:list={[
     isHome
-      ? 'relative z-[1] flex flex-col items-center gap-2 max-w-content mx-auto pt-[72px] px-6 pb-9'
+      ? 'relative z-[1] flex flex-col items-center gap-2 max-w-content mx-auto pt-[72px] px-6 pb-10'
       : 'border-t border-line mt-24 pt-14 pb-10 text-center',
   ]}
 >
-  <div class:list={[!isHome && 'max-w-content mx-auto px-6 flex flex-col gap-2']}>
+  <div class:list={[!isHome && 'max-w-content mx-auto px-6 flex flex-col gap-2 items-center']}>
     <span
       data-i18n
       data-en="Copyright 2026 Notofilia. All Rights Reserved."
@@ -51,5 +56,31 @@ const isHome = variant === 'home';
         isHome && 'font-serif text-[13px] underline [text-decoration-color:rgba(183,171,138,0.4)] mt-1',
       ]}
     >Política de Privacidad y Cookies</a>
+    {statsLineEs && (
+      <p class:list={['font-serif text-[13px] tracking-[0.1em] text-muted text-center m-0 mt-2', isHome && 'max-w-full']}>
+        <strong data-i18n data-en="With the entire Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong>
+        {' '}
+        <span data-i18n set:html={statsLineEs} data-en={statsLineEn}></span>
+      </p>
+    )}
+    <p
+      class:list={[
+        'm-0 mt-2 text-center text-[13px] tracking-[0.04em] text-muted',
+        isHome && 'font-serif',
+      ]}
+    >
+      <span data-i18n data-en="Page designed by">Página diseñada por</span>
+      {' '}
+      <a
+        href="https://cybercon-solutions.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-cream underline [text-decoration-color:rgba(231,222,201,0.35)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      >CYBERCON SOLUTIONS</a>
+      {' '}
+      <span data-i18n data-en="with much">con mucho</span>
+      {' '}
+      <span class="footer-heart" role="img" aria-label="amor">&#10084;</span>
+    </p>
   </div>
 </footer>
