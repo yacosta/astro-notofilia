@@ -1,12 +1,14 @@
 ---
 /**
  * Cookie consent banner. Shown until the visitor accepts or rejects analytics.
- * Escape rejects non-essential cookies; focus moves to the accept button on open.
+ * Escape rejects non-essential cookies; focus moves to the accept button on open
+ * (deferred one frame after display so focus does not force a sync reflow).
  *
  * Position is fixed via an inline style (not only a Tailwind class) so the
  * banner stays out of document flow even before the stylesheet applies —
  * preventing the CLS spike from a late-styled overlay pushing content.
- * Markup is server-rendered into the initial HTML; JS only toggles visibility.
+ * Markup is server-rendered into the initial HTML; JS only toggles visibility,
+ * and opening is deferred until after `load` + idle so it stays off the LCP path.
  */
 ---
 <div
@@ -52,13 +54,33 @@
       banner.style.display = 'none';
       if (v === 'accepted') window.dispatchEvent(new CustomEvent('notofilia:cookies-accepted'));
     }
+    function focusAccept() {
+      // Focus after the display change has been committed in a prior frame so
+      // focus() does not force a synchronous layout (PageSpeed "forced reflow").
+      if (!accept) return;
+      try { accept.focus({ preventScroll: true }); }
+      catch (e) { accept.focus(); }
+    }
     function openBanner() {
       // Keep position:fixed (and the rest of the overlay box model) intact —
       // only toggle display so neighbors never reflow.
       banner.style.display = 'flex';
-      if (accept) accept.focus();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(focusAccept);
+      });
     }
-    if (stored !== 'accepted' && stored !== 'rejected') openBanner();
+    function scheduleOpen() {
+      // Defer past first paint / LCP so the banner script is not on the critical path.
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(openBanner, { timeout: 1500 });
+      } else {
+        window.setTimeout(openBanner, 0);
+      }
+    }
+    if (stored !== 'accepted' && stored !== 'rejected') {
+      if (document.readyState === 'complete') scheduleOpen();
+      else window.addEventListener('load', scheduleOpen, { once: true });
+    }
     if (accept) accept.addEventListener('click', function () { choose('accepted'); });
     if (reject) reject.addEventListener('click', function () { choose('rejected'); });
     document.addEventListener('keydown', function (e) {
