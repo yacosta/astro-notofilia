@@ -22,6 +22,9 @@ export default defineConfig({
   trailingSlash: 'ignore',
   build: {
     format: 'directory',
+    // Shared Tailwind bundle is ~23 KiB — inline it to remove the render-blocking
+    // `/_astro/*.css` round-trip that PageSpeed flags on mobile.
+    inlineStylesheets: 'always',
   },
   vite: {
     plugins: [tailwindcss()],

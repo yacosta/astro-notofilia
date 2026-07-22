@@ -69,8 +69,29 @@ const shareDescription = ogDescription ?? description;
   href="/uploads/fonts/MontenegrinGothicOne-Regular.woff2"
   crossorigin
 />
-<script src="/support.js" is:inline></script>
-<script src="/webmcp.js" is:inline></script>
+<!-- dc-runtime is needed for the imported SiteHeader, but not for first paint.
+     Defer so it downloads in parallel and runs after HTML parse. -->
+<script src="/support.js" defer is:inline></script>
+<!-- WebMCP is agent-only — keep it entirely off the critical request chain. -->
+<script is:inline>
+  (function () {
+    function loadWebmcp() {
+      var s = document.createElement('script');
+      s.src = '/webmcp.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    function schedule() {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadWebmcp, { timeout: 4000 });
+      } else {
+        window.setTimeout(loadWebmcp, 2000);
+      }
+    }
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule, { once: true });
+  })();
+</script>
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={kw} />

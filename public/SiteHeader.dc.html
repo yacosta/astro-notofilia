@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="/">
 <script src="./support.js"></script>
-<script src="/webmcp.js"></script>
+<!-- webmcp.js is idle-loaded from Astro BaseHead on site pages; omit here so
+     the dc-import of this header does not reintroduce a critical-chain script. -->
 </head>
 <body>
 <x-dc>
