@@ -47,14 +47,18 @@ const {
           <article class="w-[85%] shrink-0 snap-center border-t-2 border-panel pt-4 md:w-auto md:shrink">
             {it.cover && (
               <picture>
-                <source srcset={`/uploads/${it.cover}-640.webp`} type="image/webp" />
+                <source
+                  srcset={`/uploads/${it.cover}-card.webp 440w, /uploads/${it.cover}-card-2x.webp 660w`}
+                  sizes="(max-width: 767px) 85vw, 220px"
+                  type="image/webp"
+                />
                 <img
-                  src={`/uploads/${it.cover}-640.jpg`}
+                  src={`/uploads/${it.cover}-card.jpg`}
                   alt={it.coverAlt}
                   loading="lazy"
                   decoding="async"
-                  width="220"
-                  height="140"
+                  width="440"
+                  height="280"
                   class="block w-full h-[140px] object-cover rounded-[3px] mb-3"
                 />
               </picture>
