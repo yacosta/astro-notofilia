@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.notofilia.com/sitemap_index.xml
 Sitemap: https://www.notofilia.com/sitemap.xml
+Sitemap: https://www.notofilia.com/news-sitemap.xml

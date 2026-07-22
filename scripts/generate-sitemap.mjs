@@ -4,8 +4,13 @@ import { basename, join } from 'node:path';
 const publicDir = new URL('../public/', import.meta.url);
 const catalogDir = new URL('../src/content/catalog/', import.meta.url);
 const sitemapPath = new URL('../public/sitemap.xml', import.meta.url);
+const sitemapIndexPath = new URL('../public/sitemap_index.xml', import.meta.url);
+const newsSitemapPath = new URL('../public/news-sitemap.xml', import.meta.url);
 const site = 'https://www.notofilia.com';
+const publicationName = 'Notofilia';
 const today = new Date().toISOString().slice(0, 10);
+// Google News only uses articles from roughly the last two days.
+const newsMaxAgeMs = 48 * 60 * 60 * 1000;
 
 const escapeXml = (value) => value
   .replaceAll('&', '&amp;')
@@ -16,6 +21,7 @@ const escapeXml = (value) => value
 
 const entries = new Map();
 const previousMetadata = new Map();
+const newsEntries = [];
 
 function add(url, options = {}) {
   const normalized = url.endsWith('/') ? url : `${url}/`;
@@ -26,6 +32,32 @@ function add(url, options = {}) {
     changefreq: options.changefreq ?? previous.changefreq ?? 'monthly',
     priority: options.priority ?? previous.priority ?? '0.7',
   });
+}
+
+function parseFrontmatter(source) {
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return {};
+  const fields = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const kv = line.match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+    if (!kv) continue;
+    let value = kv[2].trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    fields[kv[1]] = value;
+  }
+  return fields;
+}
+
+function isWithinNewsWindow(publishedAt) {
+  const published = new Date(`${publishedAt}T00:00:00.000Z`);
+  if (Number.isNaN(published.getTime())) return false;
+  const ageMs = Date.now() - published.getTime();
+  return ageMs >= 0 && ageMs <= newsMaxAgeMs;
 }
 
 // Preserve useful dates and priorities from the previous sitemap while making
@@ -68,12 +100,23 @@ for (const section of ['blog', 'noticias']) {
     if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
     const source = await readFile(join(sectionDir.pathname, file), 'utf8');
     if (/^draft:\s*true\s*$/m.test(source)) continue;
-    const publishedAt = source.match(/^publishedAt:\s*([^\s]+)\s*$/m)?.[1] ?? today;
-    add(`${site}/${section}/${basename(file).replace(/\.mdx?$/, '')}/`, {
+    const frontmatter = parseFrontmatter(source);
+    const publishedAt = frontmatter.publishedAt ?? today;
+    const slug = basename(file).replace(/\.mdx?$/, '');
+    const loc = `${site}/${section}/${slug}/`;
+    add(loc, {
       lastmod: publishedAt,
       changefreq: 'monthly',
       priority: '0.7',
     });
+
+    if (section === 'noticias' && frontmatter.title && isWithinNewsWindow(publishedAt)) {
+      newsEntries.push({
+        loc,
+        title: frontmatter.title,
+        publishedAt,
+      });
+    }
   }
 }
 
@@ -84,6 +127,8 @@ const ordered = [...entries.values()].sort((a, b) => {
   if (b.loc === `${site}/`) return 1;
   return a.loc.localeCompare(b.loc, 'es');
 });
+
+newsEntries.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.loc.localeCompare(b.loc, 'es'));
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -96,5 +141,40 @@ ${ordered.map((entry) => `  <url>
 </urlset>
 `;
 
+const newsXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${newsEntries.map((entry) => `  <url>
+    <loc>${escapeXml(entry.loc)}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>${escapeXml(publicationName)}</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>${entry.publishedAt}</news:publication_date>
+      <news:title>${escapeXml(entry.title)}</news:title>
+    </news:news>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+const childSitemaps = [
+  { loc: `${site}/sitemap.xml`, lastmod: today },
+  { loc: `${site}/news-sitemap.xml`, lastmod: today },
+];
+
+const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${childSitemaps.map((entry) => `  <sitemap>
+    <loc>${escapeXml(entry.loc)}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
+  </sitemap>`).join('\n')}
+</sitemapindex>
+`;
+
 await writeFile(sitemapPath, xml, 'utf8');
-console.log(`Generated sitemap.xml with ${ordered.length} canonical pages.`);
+await writeFile(newsSitemapPath, newsXml, 'utf8');
+await writeFile(sitemapIndexPath, indexXml, 'utf8');
+console.log(
+  `Generated sitemap.xml (${ordered.length} pages), news-sitemap.xml (${newsEntries.length} recent noticias), sitemap_index.xml.`,
+);

@@ -87,7 +87,7 @@ workflow and required Cloudflare bindings.
 │   ├── catalog-fonts.css   # shared @font-face for catalog pages
 │   ├── support.js          # client runtime (dc-runtime)
 │   ├── uploads/            # photography, fonts (WOFF2 + TTF)
-│   ├── favicon.png, robots.txt, sitemap.xml
+│   ├── favicon.png, robots.txt, sitemap.xml, sitemap_index.xml, news-sitemap.xml
 │   └── _redirects, _headers
 └── reference/              # design-time sources, NOT web-served
 ```
@@ -98,6 +98,13 @@ Catalog URLs are unchanged (`.dc.html` paths + Cloudflare `_redirects` pretty
 URLs). Astro editorial routes use directory URLs (`/blog/<slug>/`,
 `/noticias/<slug>/`).
 
+`scripts/generate-sitemap.mjs` (run via `prebuild`) writes:
+
+- `sitemap.xml` — all canonical pages
+- `news-sitemap.xml` — noticias from the last ~48 hours (Google News schema)
+- `sitemap_index.xml` — index pointing at both
+
+Legacy `/sitemap-news.xml` 301s to `/news-sitemap.xml` for old Search Console submissions.
 ## Deploying (Cloudflare Pages)
 
 - Framework preset: **Astro**
