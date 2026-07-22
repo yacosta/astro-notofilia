@@ -18,14 +18,18 @@ const transparentPixel =
 ---
 <div class="relative w-full min-h-screen">
   {slides.map((h, i) => {
-    const responsiveSrcset = `/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`;
-    const imageSrc = `/uploads/${h.base}.jpg`;
+    // LCP slide: full responsive ladder. Deferred slides stay at 480w — they sit
+    // under dark overlays + CSS filters, so larger variants never earn their bytes.
+    const lcpSrcset = `/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w, /uploads/${h.base}.webp 972w`;
+    const deferredSrcset = `/uploads/${h.base}-480.webp`;
+    const imageSrc = i === 0 ? `/uploads/${h.base}-768.jpg` : `/uploads/${h.base}-480.jpg`;
+    const srcset = i === 0 ? lcpSrcset : deferredSrcset;
     return (
       <picture data-deferred-hero={i > 0 ? '' : undefined}>
         <source
-          srcset={i === 0 ? responsiveSrcset : undefined}
-          data-srcset={i > 0 ? responsiveSrcset : undefined}
-          sizes="100vw"
+          srcset={i === 0 ? srcset : undefined}
+          data-srcset={i > 0 ? srcset : undefined}
+          sizes={i === 0 ? '100vw' : undefined}
           type="image/webp"
         />
         <img
