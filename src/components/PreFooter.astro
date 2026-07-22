@@ -4,10 +4,14 @@
 //   Col 1 — reserved (blank)
 //   Col 2 — social media links
 //   Col 3 — Mailchimp newsletter signup (self-styled, no external Mailchimp
-//           CSS/JS or jQuery; posts to the Notofilia audience).
+//           CSS/JS or jQuery; posts to the Notofilia audience with the
+//           embedded form field map: FNAME, LNAME, EMAIL + tag 156761).
 // The catalog (.dc.html) pages carry an inline-styled equivalent in
 // public/SiteFooter.dc.html.
 import SocialLink from './SocialLink.astro';
+
+const inputClass =
+  'w-full min-h-[44px] px-4 bg-transparent border border-line-input rounded-full text-cream font-serif text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2';
 ---
 <section class="relative z-[1] bg-bg px-6 py-16">
   <div class="max-w-content mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -36,26 +40,45 @@ import SocialLink from './SocialLink.astro';
         </li>
       </ul>
     </div>
-    <div class="min-h-[120px]">
+    <div class="min-h-[120px]" id="mc_embed_signup">
       <h3 class="font-display font-normal text-[clamp(20px,2.4vw,26px)] text-cream-dim mt-0 mb-2" data-i18n data-en="Newsletter">Boletín</h3>
       <p class="text-[14px] leading-[1.5] text-muted mt-0 mb-4" data-i18n data-en="Subscribe for numismatics and notaphily news.">Suscríbete para recibir noticias de numismática y notafilia.</p>
       <form
-        action="https://notofilia.us11.list-manage.com/subscribe/post?u=d039ececd8f9d1edb2a60f524&amp;id=f8827fa42f&amp;f_id=00b2ece1f0"
+        action="https://notofilia.us11.list-manage.com/subscribe/post?u=d039ececd8f9d1edb2a60f524&amp;id=f8827fa42f&amp;f_id=00b3ece1f0"
         method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
         target="_blank"
-        class="flex flex-col gap-3 max-w-[360px]"
+        novalidate
+        class="validate flex flex-col gap-3 max-w-[360px] relative"
       >
-        <div>
-          <label for="mce-FNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1" data-i18n data-en="First name">Nombre</label>
+        <div class="mc-field-group">
+          <label for="mce-FNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1">
+            <span data-i18n data-en="First name">Nombre</span> <span class="text-gold-light" aria-hidden="true">*</span>
+          </label>
           <input
             type="text"
             name="FNAME"
             id="mce-FNAME"
+            class={`required text ${inputClass}`}
+            required
             autocomplete="given-name"
-            class="w-full min-h-[44px] px-4 bg-transparent border border-line-input rounded-full text-cream font-serif text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
           />
         </div>
-        <div>
+        <div class="mc-field-group">
+          <label for="mce-LNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1">
+            <span data-i18n data-en="Last name">Apellido</span> <span class="text-gold-light" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="text"
+            name="LNAME"
+            id="mce-LNAME"
+            class={`required text ${inputClass}`}
+            required
+            autocomplete="family-name"
+          />
+        </div>
+        <div class="mc-field-group">
           <label for="mce-EMAIL" class="block text-[13px] tracking-[0.04em] text-muted mb-1">
             <span data-i18n data-en="Email">Correo electrónico</span> <span class="text-gold-light" aria-hidden="true">*</span>
           </label>
@@ -63,10 +86,13 @@ import SocialLink from './SocialLink.astro';
             type="email"
             name="EMAIL"
             id="mce-EMAIL"
+            class={`required email ${inputClass}`}
             required
             autocomplete="email"
-            class="w-full min-h-[44px] px-4 bg-transparent border border-line-input rounded-full text-cream font-serif text-[15px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
           />
+        </div>
+        <div hidden>
+          <input type="hidden" name="tags" value="156761" />
         </div>
         <div aria-hidden="true" class="absolute left-[-5000px]">
           <input type="text" name="b_d039ececd8f9d1edb2a60f524_f8827fa42f" tabindex="-1" value="" />
@@ -74,7 +100,8 @@ import SocialLink from './SocialLink.astro';
         <button
           type="submit"
           name="subscribe"
-          class="min-h-[44px] px-6 py-3 bg-cream text-bg border border-cream rounded-full font-serif font-semibold text-[14px] tracking-[0.1em] uppercase cursor-pointer transition-colors duration-200 hover:bg-cream-dim hover:border-cream-dim"
+          id="mc-embedded-subscribe"
+          class="button min-h-[44px] px-6 py-3 bg-cream text-bg border border-cream rounded-full font-serif font-semibold text-[14px] tracking-[0.1em] uppercase cursor-pointer transition-colors duration-200 hover:bg-cream-dim hover:border-cream-dim"
           data-i18n
           data-en="Subscribe"
         >Suscribirse</button>
