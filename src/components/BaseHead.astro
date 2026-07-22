@@ -69,8 +69,10 @@ const shareDescription = ogDescription ?? description;
   href="/uploads/fonts/MontenegrinGothicOne-Regular.woff2"
   crossorigin
 />
-<script src="/support.js" is:inline></script>
-<script src="/webmcp.js" is:inline></script>
+<!-- dc-runtime + WebMCP are not needed for first paint. Defer so they download
+     in parallel with HTML/CSS and run after parsing (keeps header boot intact). -->
+<script src="/support.js" defer is:inline></script>
+<script src="/webmcp.js" defer is:inline></script>
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={kw} />
