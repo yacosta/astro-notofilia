@@ -18,21 +18,31 @@ const transparentPixel =
 ---
 <div class="relative w-full min-h-screen">
   {slides.map((h, i) => {
-    // Cap the LCP ladder at 768w: under the dark overlay + CSS filter a 972w
-    // download never earns its bytes on desktop (PageSpeed "Improve image delivery").
-    // Deferred slides stay at 480w only.
-    const lcpSrcset = `/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w`;
+    // Mobile DPR×100vw otherwise picks 768w for LCP — force 480w under 768px.
+    // Desktop keeps a short 480/768 ladder (no 972w). Deferred slides: 480w only.
     const deferredSrcset = `/uploads/${h.base}-480.webp`;
-    const imageSrc = i === 0 ? `/uploads/${h.base}-768.jpg` : `/uploads/${h.base}-480.jpg`;
-    const srcset = i === 0 ? lcpSrcset : deferredSrcset;
+    const imageSrc = `/uploads/${h.base}-480.jpg`;
     return (
       <picture data-deferred-hero={i > 0 ? '' : undefined}>
-        <source
-          srcset={i === 0 ? srcset : undefined}
-          data-srcset={i > 0 ? srcset : undefined}
-          sizes={i === 0 ? '100vw' : undefined}
-          type="image/webp"
-        />
+        {i === 0 ? (
+          <>
+            <source
+              media="(max-width: 767px)"
+              srcset={`/uploads/${h.base}-480.webp`}
+              type="image/webp"
+            />
+            <source
+              srcset={`/uploads/${h.base}-480.webp 480w, /uploads/${h.base}-768.webp 768w`}
+              sizes="100vw"
+              type="image/webp"
+            />
+          </>
+        ) : (
+          <source
+            data-srcset={deferredSrcset}
+            type="image/webp"
+          />
+        )}
         <img
           class="hero-slide absolute inset-0 w-full h-full object-cover object-[50%_40%] [filter:contrast(1.2)_brightness(0.85)_saturate(1.1)]"
           data-hero={i}

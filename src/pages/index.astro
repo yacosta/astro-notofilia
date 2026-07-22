@@ -196,17 +196,18 @@ const jsonLd = {
             picture.removeAttribute('data-deferred-hero');
           });
         }
+        // Wait until just before the first crossfade so mobile LCP/FCP audits
+        // are not charged for three off-screen 480w heroes.
+        var deferredLoaded = false;
         function scheduleDeferredSlides() {
-          if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(loadDeferredSlides, { timeout: 2000 });
-          } else {
-            setTimeout(loadDeferredSlides, 500);
-          }
+          if (deferredLoaded) return;
+          deferredLoaded = true;
+          loadDeferredSlides();
         }
         show(0);
-        if (document.readyState === 'complete') scheduleDeferredSlides();
-        else window.addEventListener('load', scheduleDeferredSlides, { once: true });
+        setTimeout(scheduleDeferredSlides, 5200);
         setInterval(function () {
+          if (!deferredLoaded) scheduleDeferredSlides();
           active++;
           if (active >= order.length) {
             order = [0].concat(shuffle(secondaryIndexes.slice()));

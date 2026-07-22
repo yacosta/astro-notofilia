@@ -47,9 +47,16 @@ const {
           <article class="w-[85%] shrink-0 snap-center border-t-2 border-panel pt-4 md:w-auto md:shrink">
             {it.cover && (
               <picture>
+                {/* Mobile strip cards are ~85vw × 140px; 2x DPR was pulling 660w
+                    card-2x (~40 KiB). Serve the 440w crop on small viewports. */}
+                <source
+                  media="(max-width: 767px)"
+                  srcset={`/uploads/${it.cover}-card.webp`}
+                  type="image/webp"
+                />
                 <source
                   srcset={`/uploads/${it.cover}-card.webp 440w, /uploads/${it.cover}-card-2x.webp 660w`}
-                  sizes="(max-width: 767px) 85vw, 220px"
+                  sizes="220px"
                   type="image/webp"
                 />
                 <img
