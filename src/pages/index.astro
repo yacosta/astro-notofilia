@@ -160,13 +160,9 @@ const jsonLd = {
         variant="home"
         taglineEs="Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo."
         taglineEn="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world."
+        statsLineEs={statsEs}
+        statsLineEn={statsEn}
       />
-
-      <p class="relative z-[1] font-serif text-[13px] tracking-[0.1em] text-muted text-center max-w-content mx-auto pt-0 px-6 pb-10">
-        <strong data-i18n data-en="With the entire Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong>
-        {' '}
-        <span data-i18n set:html={statsEs} data-en={statsEn}></span>
-      </p>
     </div>
 
     <CookieBanner />
