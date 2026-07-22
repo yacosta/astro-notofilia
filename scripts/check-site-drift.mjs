@@ -16,6 +16,26 @@ const sitemapPaths = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match
 const sitemap = new Set(sitemapPaths);
 if (sitemap.size !== sitemapPaths.length) fail('sitemap.xml contains duplicate <loc> entries');
 
+const sitemapIndexXml = await readFile(path.join(root, 'public/sitemap_index.xml'), 'utf8');
+if (!sitemapIndexXml.includes('<sitemapindex')) fail('sitemap_index.xml is missing <sitemapindex>');
+for (const required of [`${'https://www.notofilia.com'}/sitemap.xml`, `${'https://www.notofilia.com'}/news-sitemap.xml`]) {
+  if (!sitemapIndexXml.includes(`<loc>${required}</loc>`)) fail(`sitemap_index.xml does not reference ${required}`);
+}
+
+const newsSitemapXml = await readFile(path.join(root, 'public/news-sitemap.xml'), 'utf8');
+if (!newsSitemapXml.includes('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"')) {
+  fail('news-sitemap.xml is missing the Google News namespace');
+}
+for (const block of newsSitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const loc = block[1].match(/<loc>(.*?)<\/loc>/)?.[1];
+  if (!loc) {
+    fail('news-sitemap.xml has a <url> without <loc>');
+    continue;
+  }
+  if (!sitemap.has(normalizePath(loc))) fail(`news-sitemap.xml lists non-sitemap URL ${loc}`);
+  if (!block[1].includes('<news:news>')) fail(`news-sitemap.xml entry ${loc} is missing <news:news>`);
+}
+
 const redirectLines = (await readFile(path.join(root, 'public/_redirects'), 'utf8'))
   .split(/\r?\n/)
   .map((line) => line.trim())
@@ -75,7 +95,11 @@ for (const route of sitemap) {
 
 for (const rule of redirects) {
   const targetPath = normalizePath(rule.to);
-  if (rule.status === '301' && !sitemap.has(targetPath)) fail(`${rule.from} redirects to non-sitemap URL ${targetPath}`);
+  // Page redirects must land on indexed HTML routes. Asset/sitemap endpoints are allowed.
+  const targetIsPage = !/\.(xml|txt|json|js|css|png|jpe?g|webp|svg|ico|woff2?|ttf|map)$/i.test(rule.to.split('?')[0]);
+  if (rule.status === '301' && targetIsPage && !sitemap.has(targetPath)) {
+    fail(`${rule.from} redirects to non-sitemap URL ${targetPath}`);
+  }
   if (rule.status === '200') {
     const sourcePath = normalizePath(rule.from);
     if (!sitemap.has(sourcePath)) fail(`${rule.from} rewrite is missing from sitemap.xml`);

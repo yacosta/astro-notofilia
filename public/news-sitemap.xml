@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-100-pesos-estado-mexico-primera-fase/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21</news:publication_date>
+      <news:title>Tras aumento de la plata, ¿cuánto vale la moneda de $100 del Estado de México, primera fase?</news:title>
+    </news:news>
+  </url>
+</urlset>
