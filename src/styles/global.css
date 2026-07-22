@@ -147,29 +147,34 @@
     margin: 40px 0 16px;
   }
 
-  /* Beating heart — matches CYBERCON SOLUTIONS footer credit. */
+  /* Soft heartbeat pulse on the designer-credit heart SVG (CSS only). */
   .footer-heart {
-    color: #e07a6a;
-    vertical-align: -0.05em;
-    transform-origin: 50%;
-    font-size: 1.35em;
-    line-height: 1;
-    animation: 1.5s ease-in infinite alternate heart-pulse;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: -0.35em;
+    margin-inline: 0.15em;
+  }
+  .footer-heart svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    transform-origin: 50% 50%;
+    animation: heart-pulse 1.5s alternate infinite ease-in;
   }
 }
 
 @keyframes heart-pulse {
   0% {
-    transform: scale(0.55);
+    transform: scale(0.5);
   }
-  to {
-    transform: scale(1);
+  100% {
+    transform: scale(0.8);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .footer-heart {
+  .footer-heart svg {
     animation: none;
+    transform: scale(0.7);
   }
 }
