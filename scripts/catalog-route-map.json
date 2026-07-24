@@ -502,5 +502,29 @@
   {
     "route": "/coleccion/ringling-bros-50-aniversario-baraboo/",
     "legacyFile": "billete-ringling-bros-50-aniversario-baraboo.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/",
+    "legacyFile": "catalogo-pop-art.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/pele-bicycle-kick-the-king/",
+    "legacyFile": "billete-rency-pele-bicycle-kick-the-king.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/lionel-messi-leo/",
+    "legacyFile": "billete-rency-lionel-messi-leo.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/donald-trump-mugshot/",
+    "legacyFile": "billete-rency-donald-trump-mugshot.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/warhol-basquiat/",
+    "legacyFile": "billete-rency-warhol-basquiat.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
+    "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
   }
 ]
