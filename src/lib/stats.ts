@@ -8,10 +8,10 @@ export type CollectionStats = {
 };
 
 const FALLBACK: CollectionStats = {
-  banknotes: 63,
+  banknotes: 125,
   coins: 7,
-  countries: 8,
-  pages: 76,
+  countries: 34,
+  pages: 155,
 };
 
 /**
