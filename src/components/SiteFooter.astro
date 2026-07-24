@@ -1,18 +1,27 @@
 ---
 /**
- * Shared site footer for natively-Astro pages (homepage + BlogLayout).
+ * Shared site footer for natively-Astro pages (homepage + BlogLayout + CatalogLayout).
  * Catalog (.dc.html) pages keep the inline equivalent in public/SiteFooter.dc.html.
+ *
+ * Always shows the Colección Virtual stats line (build-time from sitemap.xml).
  */
+import {
+  computeCollectionStats,
+  formatStatsEn,
+  formatStatsEs,
+} from '../lib/stats';
+
 export interface Props {
   /** Extra tagline under the copyright line. */
   taglineEs?: string;
   taglineEn?: string;
-  /** Optional Colección Virtual stats line (homepage). */
+  /** Optional override for the Colección Virtual stats line. */
   statsLineEs?: string;
   statsLineEn?: string;
   /** Compact centered layout (BlogLayout) vs homepage spacing. */
   variant?: 'home' | 'editorial';
 }
+
 const {
   taglineEs = 'Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.',
   taglineEn,
@@ -20,6 +29,10 @@ const {
   statsLineEn,
   variant = 'editorial',
 } = Astro.props;
+
+const computed = computeCollectionStats();
+const statsEs = statsLineEs ?? formatStatsEs(computed);
+const statsEn = statsLineEn ?? formatStatsEn(computed);
 
 const isHome = variant === 'home';
 ---
@@ -56,13 +69,11 @@ const isHome = variant === 'home';
         isHome && 'font-serif text-[13px] underline [text-decoration-color:rgba(183,171,138,0.4)] mt-1',
       ]}
     >Política de Privacidad y Cookies</a>
-    {statsLineEs && (
-      <p class:list={['font-serif text-[13px] tracking-[0.1em] text-muted text-center m-0 mt-2', isHome && 'max-w-full']}>
-        <strong data-i18n data-en="With the entire Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong>
-        {' '}
-        <span data-i18n set:html={statsLineEs} data-en={statsLineEn}></span>
-      </p>
-    )}
+    <p class:list={['font-serif text-[13px] tracking-[0.1em] text-muted text-center m-0 mt-2', isHome && 'max-w-full']}>
+      <strong data-i18n data-en="Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong>
+      {' '}
+      <span data-i18n data-en={statsEn}>{statsEs}</span>
+    </p>
     <p
       class:list={[
         'm-0 mt-2 text-center text-[13px] tracking-[0.04em] text-muted',

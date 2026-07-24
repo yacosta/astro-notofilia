@@ -131,7 +131,7 @@ class Component extends DCLogic {
   }
 
   state = {
-    stats: { banknotes: 63, countries: 8, pages: 76 },
+    stats: { banknotes: 125, coins: 7, countries: 34, pages: 155 },
     showScrollTop: false,
     cookieChoice: (() => {
       try {
@@ -176,7 +176,10 @@ class Component extends DCLogic {
     const total = paths.length;
     const profileCount = paths.filter((p) => p.includes("/perfil-")).length;
     const rootCount = paths.filter((p) => roots.has(p)).length;
-    const banknotes = Math.max(0, total - profileCount - rootCount);
+    const coins = paths.filter(
+      (p) => p.startsWith("/coleccion/moneda-colonial-espanola/") && !roots.has(p)
+    ).length;
+    const banknotes = Math.max(0, total - profileCount - rootCount - coins);
 
     let hasUS = false;
     const countrySet = new Set();
@@ -200,7 +203,7 @@ class Component extends DCLogic {
     });
     const countries = countrySet.size + (hasUS ? 1 : 0);
 
-    return { banknotes, countries: countries || 1, pages: total };
+    return { banknotes, coins, countries: countries || 1, pages: total };
   }
 
   loadStats = async () => {
@@ -242,7 +245,7 @@ class Component extends DCLogic {
     const visible = this.state.showScrollTop;
     return {
       disclaimerText: this.props.disclaimer ?? "Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo.",
-      statsLine: s.banknotes + " billetes \u00b7 " + s.countries + " pa\u00edses \u00b7 " + s.pages + " p\u00e1ginas",
+      statsLine: s.banknotes + " billetes \u00b7 " + (s.coins ?? 0) + " monedas \u00b7 " + s.countries + " pa\u00edses \u00b7 " + s.pages + " p\u00e1ginas",
       scrollToTop: this.scrollToTop,
       scrollTopStyle: `position:fixed; right:24px; bottom:24px; z-index:60; width:48px; height:48px; min-width:44px; min-height:44px; border-radius:50%; background:#0a0a09; border:1px solid rgba(231,222,201,0.3); box-shadow:0 10px 28px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:${visible ? 1 : 0}; visibility:${visible ? "visible" : "hidden"}; transform:translateY(${visible ? "0" : "8px"}); transition:opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;`,
       cookieBannerDisplay: this.state.cookieChoice === null ? "flex" : "none",

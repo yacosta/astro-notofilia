@@ -5,7 +5,6 @@
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
-import { computeCollectionStats, formatStatsEn, formatStatsEs } from '../lib/stats';
 import BaseHead from '../components/BaseHead.astro';
 import HomeHero from '../components/HomeHero.astro';
 import HomePostStrip from '../components/HomePostStrip.astro';
@@ -31,10 +30,6 @@ function toStripItems(
 
 const posts = toStripItems(await getPublishedPosts('noticias'), 'noticias');
 const blogPosts = toStripItems(await getPublishedPosts('blog'), 'blog');
-
-const s = computeCollectionStats();
-const statsEs = formatStatsEs(s);
-const statsEn = formatStatsEn(s);
 
 const heroImg = `${SITE}/uploads/hero-engraving-01.jpg`;
 const heroes = [
@@ -160,8 +155,6 @@ const jsonLd = {
         variant="home"
         taglineEs="Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo."
         taglineEn="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world."
-        statsLineEs={statsEs}
-        statsLineEn={statsEn}
       />
     </div>
 
