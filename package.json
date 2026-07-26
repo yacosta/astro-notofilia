@@ -3,20 +3,21 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "Astro build of notofilia.com — digital catalog and virtual collection of historical banknotes and coins.",
+  "description": "Astro build of notofilia.com \u2014 digital catalog and virtual collection of historical banknotes and coins.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "migrate:catalog": "node scripts/migrate-catalog-to-astro.mjs",
     "migrate:catalog:finalize": "node scripts/finalize-catalog-migration.mjs",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-catalog-index.mjs && node scripts/build-client-runtime.mjs",
-    "build": "astro build && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs",
+    "build": "astro build && node scripts/purge-css.mjs && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:drift": "node scripts/check-site-drift.mjs",
     "check:ci": "npm run check && npm run build && npm run check:drift",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "purge:css": "node scripts/purge-css.mjs"
   },
   "engines": {
     "node": ">=20.3.0"
@@ -31,6 +32,7 @@
     "@types/node": "^26.1.1",
     "esbuild": "^0.28.1",
     "pagefind": "^1.5.2",
+    "purgecss": "^8.0.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   }
