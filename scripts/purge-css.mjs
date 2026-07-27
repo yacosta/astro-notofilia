@@ -1,7 +1,11 @@
 /**
  * Post-build CSS purge for dist/ (inlined <style> blocks + external .css).
- * Tailwind already tree-shakes utilities; this strips leftover unused rules
- * while keeping JS-toggled classes and @font-face rules.
+ *
+ * Tailwind already tree-shakes utilities at build time. PurgeCSS cannot match
+ * Tailwind v4 arbitrary-value class names in HTML (e.g. text-[clamp(...)]) to
+ * their escaped CSS selectors, so it incorrectly strips homepage/editorial
+ * utilities and catalog [style*="…"] skins. Those blocks are left intact;
+ * remaining plain CSS may still be purged.
  */
 import { PurgeCSS } from "purgecss";
 import { readdir, readFile, writeFile } from "node:fs/promises";
@@ -17,11 +21,45 @@ const SAFELIST = {
     "sr-only",
     "skip-link",
     "sc-dc-streaming",
+    "sc-host",
+    "hero-slide",
+    "footer-heart",
     /^astro-/,
     /^data-astro-/,
   ],
-  deep: [/focus-visible/, /focus\b/, /hover/, /prefers-reduced-motion/, /group-hover/],
-  variables: [/^--tw-/, /^--color-/, /^--font-/, /^--header-/, /^--spacing/, /^--text-/],
+  // Keep catalog skin + editorial helpers. Catalog rules heavily use
+  // [style*="…"] attribute selectors that PurgeCSS cannot mark as used.
+  deep: [
+    /focus-visible/,
+    /focus\b/,
+    /hover/,
+    /prefers-reduced-motion/,
+    /group-hover/,
+    /catalog-shell/,
+    /catalog-inventory/,
+    /prose-notofilia/,
+    /footer-heart/,
+    /heart-pulse/,
+    /dc-root/,
+    /sc-host/,
+    /^x-dc$/,
+  ],
+  greedy: [/catalog-shell/, /catalog-inventory/, /prose-notofilia/, /dc-root/, /sc-host/],
+  variables: [
+    /^--tw-/,
+    /^--color-/,
+    /^--font-/,
+    /^--header-/,
+    /^--spacing/,
+    /^--text-/,
+    /^--surface-/,
+    /^--rule-/,
+    /^--accent-/,
+    /^--page-/,
+    /^--radius-/,
+    /^--shadow-/,
+    /^--max-width-/,
+  ],
 };
 
 async function walk(dir, pred) {
@@ -74,7 +112,16 @@ async function purgeHtmlFile(file) {
     const attrs = match[1];
     const css = match[2];
     before += css.length;
-    const next = await purgeRaw(css, [{ raw: contentHtml, extension: "html" }]);
+    // Leave intact:
+    // - Catalog skins ([style*="…"] attribute selectors PurgeCSS can't see)
+    // - Tailwind layers/utilities (arbitrary values like text-[clamp(...)] /
+    //   bg-cream/92 are escaped in CSS and get false-negative purged)
+    const skipPurge =
+      /\.catalog-shell\b|\.catalog-inventory-status\b/.test(css) ||
+      /@layer\b|@theme\b|--tw-/.test(css);
+    const next = skipPurge
+      ? css
+      : await purgeRaw(css, [{ raw: contentHtml, extension: "html" }]);
     after += next.length;
     const start = match.index + offset;
     const replacement = `<style${attrs}>${next}</style>`;
