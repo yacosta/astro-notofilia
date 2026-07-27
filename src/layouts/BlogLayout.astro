@@ -35,9 +35,8 @@ const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords 
       * { box-sizing: border-box; }
       html { -webkit-text-size-adjust: 100%; }
       html, body { height: auto !important; }
-      /* The dc-runtime header mounts into an <x-dc> block; hide raw template
-         pre-boot and neutralize the runtime's full-page height CSS so the
-         header sits in normal flow above the article. */
+      /* Hide the dc-runtime header host pre-boot and neutralize the runtime's
+         full-page height CSS so the header sits in normal flow above the article. */
       x-dc { display: none; }
       #dc-root { height: auto !important; }
       a { color: var(--color-cream); }
