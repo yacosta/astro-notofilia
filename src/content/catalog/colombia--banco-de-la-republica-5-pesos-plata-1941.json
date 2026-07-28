@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Cinco Pesos Plata (1941)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Cinco Pesos, Certificado de Plata, 1 de enero de 1941",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.jpg",
         "description": "Certificado de Plata de Cinco Pesos emitido el 1 de enero de 1941 por El Banco de la República, Colombia, con el retrato de Simón Bolívar en el anverso y un busto alegórico de Colombia en el reverso. Impreso por American Bank Note Company.",
         "dateCreated": "1941",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

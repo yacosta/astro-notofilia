@@ -6,12 +6,12 @@
     "description": "Public catalog, health, comments, and agent registration APIs for Notofilia.com.",
     "contact": {
       "name": "Notofilia",
-      "url": "https://www.notofilia.com/contacto/"
+      "url": "https://notofilia.com/contacto/"
     }
   },
   "servers": [
     {
-      "url": "https://www.notofilia.com"
+      "url": "https://notofilia.com"
     }
   ],
   "paths": {

@@ -27,48 +27,48 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Pop Art",
-            "item": "https://www.notofilia.com/coleccion/pop-art/"
+            "item": "https://notofilia.com/coleccion/pop-art/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/pop-art/#page",
+        "@id": "https://notofilia.com/coleccion/pop-art/#page",
         "name": "Pop Art",
-        "url": "https://www.notofilia.com/coleccion/pop-art/",
+        "url": "https://notofilia.com/coleccion/pop-art/",
         "description": "Catálogo de billetes y moneda alterados con estética pop art en la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "The King Pelé — “The Beautiful Game” — Dos Dólares (Rency)",
-            "url": "https://www.notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/"
+            "url": "https://notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/"
           },
           {
             "@type": "CreativeWork",
             "name": "Lionel Messi — Leo — Dos Dólares (Rency)",
-            "url": "https://www.notofilia.com/coleccion/pop-art/lionel-messi-leo/"
+            "url": "https://notofilia.com/coleccion/pop-art/lionel-messi-leo/"
           },
           {
             "@type": "CreativeWork",
             "name": "Donald Trump — Mugshot — Dos Dólares (Rency)",
-            "url": "https://www.notofilia.com/coleccion/pop-art/donald-trump-mugshot/"
+            "url": "https://notofilia.com/coleccion/pop-art/donald-trump-mugshot/"
           },
           {
             "@type": "CreativeWork",
             "name": "Warhol — Basquiat — Dos Dólares (Rency)",
-            "url": "https://www.notofilia.com/coleccion/pop-art/warhol-basquiat/"
+            "url": "https://notofilia.com/coleccion/pop-art/warhol-basquiat/"
           },
           {
             "@type": "CreativeWork",
             "name": "Life Is Beautiful — Life Spray Cans — Dos Dólares (Rency)",
-            "url": "https://www.notofilia.com/coleccion/pop-art/life-is-beautiful-spray-cans/"
+            "url": "https://notofilia.com/coleccion/pop-art/life-is-beautiful-spray-cans/"
           }
         ]
       }

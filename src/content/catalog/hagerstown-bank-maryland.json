@@ -26,44 +26,44 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billete Obsoleto",
-            "item": "https://www.notofilia.com/coleccion/"
+            "item": "https://notofilia.com/coleccion/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "The Hagerstown Bank",
-            "item": "https://www.notofilia.com/coleccion/hagerstown-bank-maryland/"
+            "item": "https://notofilia.com/coleccion/hagerstown-bank-maryland/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "The Hagerstown Bank — Billete de $5",
-        "url": "https://www.notofilia.com/coleccion/hagerstown-bank-maryland/#5-dolares",
-        "image": "https://www.notofilia.com/uploads/hagerstown-bank-maryland-5-dollars.jpg",
+        "url": "https://notofilia.com/coleccion/hagerstown-bank-maryland/#5-dolares",
+        "image": "https://notofilia.com/uploads/hagerstown-bank-maryland-5-dollars.jpg",
         "description": "Billete obsoleto de cinco dólares emitido por The Hagerstown Bank, Maryland, hacia 1850-1860. Referencia Haxby MD-240-G40b.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "The Hagerstown Bank — Billete de $10",
-        "url": "https://www.notofilia.com/coleccion/hagerstown-bank-maryland/#10-dolares",
-        "image": "https://www.notofilia.com/uploads/hagerstown-bank-maryland-10-dollars.jpg",
+        "url": "https://notofilia.com/coleccion/hagerstown-bank-maryland/#10-dolares",
+        "image": "https://notofilia.com/uploads/hagerstown-bank-maryland-10-dollars.jpg",
         "description": "Billete obsoleto de diez dólares emitido por The Hagerstown Bank, Maryland, hacia 1850-1860. Referencia Haxby MD-240-G46b.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

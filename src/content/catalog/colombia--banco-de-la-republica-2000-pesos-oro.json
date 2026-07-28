@@ -28,32 +28,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Dos Mil Pesos Oro",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Dos Mil Pesos Oro, 1984–1993",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.jpg",
         "description": "Especímenes de Dos Mil Pesos Oro de El Banco de la República, Colombia, fechados 1984, 1985 y 1986, junto con un ejemplar circulado de la misma emisión de 1986, todos con el retrato de Simón Bolívar y la Batalla del Pantano de Vargas en el reverso.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

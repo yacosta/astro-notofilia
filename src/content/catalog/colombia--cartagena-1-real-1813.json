@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia — Cartagena de Indias",
-            "item": "https://www.notofilia.com/coleccion/colombia/cartagena-de-indias/"
+            "item": "https://notofilia.com/coleccion/colombia/cartagena-de-indias/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Un Real (1813)",
-            "item": "https://www.notofilia.com/coleccion/colombia/cartagena-1-real-1813/"
+            "item": "https://notofilia.com/coleccion/colombia/cartagena-1-real-1813/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Un Real — Estado de Cartagena, 1813",
-        "url": "https://www.notofilia.com/coleccion/colombia/cartagena-1-real-1813/",
-        "image": "https://www.notofilia.com/uploads/colombia-cartagena-1-real-1813.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/cartagena-1-real-1813/",
+        "image": "https://notofilia.com/uploads/colombia-cartagena-1-real-1813.jpg",
         "description": "Billete de Un Real emitido por el Estado de Cartagena en 1813 durante la guerra de independencia de la Nueva Granada, firmado por Germán Gutiérrez de Piñeres.",
         "dateCreated": "1813",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

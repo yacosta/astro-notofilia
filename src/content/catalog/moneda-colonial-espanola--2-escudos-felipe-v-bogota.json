@@ -28,32 +28,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial Española",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Felipe V — 2 Escudos, Bogotá",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Colombia, Felipe V — Doblón de Oro de 2 Escudos (Santa Fe de Bogotá)",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/",
-        "image": "https://www.notofilia.com/uploads/colombia-2-escudos-felipe-v-santa-fe-bogota.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/",
+        "image": "https://notofilia.com/uploads/colombia-2-escudos-felipe-v-santa-fe-bogota.jpg",
         "description": "Macuquina de oro de 2 escudos acuñada a mano en la ceca de Santa Fe de Bogotá durante el reinado de Felipe V (1700–1746).",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

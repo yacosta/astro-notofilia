@@ -25,39 +25,39 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Emisiones Colombianas en el Extranjero",
-            "item": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
+            "item": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "El Banco Colombiano — Un Peso (Guatemala, 1900)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco Colombiano — Billete de Un Peso, Guatemala",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/",
-        "image": "https://www.notofilia.com/uploads/guatemala-banco-colombiano-1-peso-1900.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/",
+        "image": "https://notofilia.com/uploads/guatemala-banco-colombiano-1-peso-1900.jpg",
         "description": "Billete de Un Peso emitido por El Banco Colombiano en la Ciudad de Guatemala el 17 de abril de 1900, Serie 1ª, N.° 15833.",
         "identifier": "Pick S101",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

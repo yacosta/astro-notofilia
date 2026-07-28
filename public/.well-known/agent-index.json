@@ -1,13 +1,13 @@
 {
   "name": "Notofilia agent index",
   "version": "1.0.0",
-  "publisher": "https://www.notofilia.com",
+  "publisher": "https://notofilia.com",
   "agents": [
     {
       "name": "notofilia-mcp",
       "protocols": ["mcp"],
-      "endpoint": "https://www.notofilia.com/mcp",
-      "wellKnown": "https://www.notofilia.com/.well-known/mcp/server-card.json",
+      "endpoint": "https://notofilia.com/mcp",
+      "wellKnown": "https://notofilia.com/.well-known/mcp/server-card.json",
       "capabilities": [
         "catalog.search",
         "site.info",

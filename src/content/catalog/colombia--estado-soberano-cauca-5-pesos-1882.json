@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Estado Soberano del Cauca — Cinco Pesos (1882)",
-            "item": "https://www.notofilia.com/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/"
+            "item": "https://notofilia.com/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Estado Soberano del Cauca — Vale al Portador de Cinco Pesos",
-        "url": "https://www.notofilia.com/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/",
-        "image": "https://www.notofilia.com/uploads/colombia-estado-soberano-cauca-5-pesos-1882.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/",
+        "image": "https://notofilia.com/uploads/colombia-estado-soberano-cauca-5-pesos-1882.jpg",
         "description": "Vale al portador de 5 pesos emitido por El Estado Soberano del Cauca, uno de los estados federales de los Estados Unidos de Colombia, en Popayán, 1882, admisible para el pago de rentas y contribuciones estatales.",
         "dateCreated": "1882",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/#page"
         }
       }
     ]

@@ -26,56 +26,56 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Scrip Promocional de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/emisiones-promocionales/"
+            "item": "https://notofilia.com/coleccion/emisiones-promocionales/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Ringling Bros. 50º Aniversario",
-            "item": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/"
+            "item": "https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Ringling Bros. 50º Aniversario — Scrip de 5 Centavos",
-        "url": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#5-centavos",
-        "image": "https://www.notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
+        "url": "https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#5-centavos",
+        "image": "https://notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
         "description": "Scrip conmemorativo de 5 centavos, Golden Jubilee de Ringling Bros., Baraboo, Wisconsin, 1933. Referencia Shafer WI-100-.05a.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "Ringling Bros. 50º Aniversario — Scrip de 10 Centavos",
-        "url": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#10-centavos",
-        "image": "https://www.notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-10-cents.jpg",
+        "url": "https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#10-centavos",
+        "image": "https://notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-10-cents.jpg",
         "description": "Scrip conmemorativo de 10 centavos, Golden Jubilee de Ringling Bros., Baraboo, Wisconsin, 1933. Referencia Shafer WI-100-.10a.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "Ringling Bros. 50º Aniversario — Scrip de 15 Centavos",
-        "url": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#15-centavos",
-        "image": "https://www.notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-15-cents.jpg",
+        "url": "https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/#15-centavos",
+        "image": "https://notofilia.com/uploads/ringling-bros-50th-anniversary-baraboo-15-cents.jpg",
         "description": "Scrip conmemorativo de 15 centavos, denominación poco común, Golden Jubilee de Ringling Bros., Baraboo, Wisconsin, 1933. Referencia Shafer WI-100-.15a.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Un Peso (1861)",
-            "item": "https://www.notofilia.com/coleccion/colombia/nueva-granada-1-peso-1861/"
+            "item": "https://notofilia.com/coleccion/colombia/nueva-granada-1-peso-1861/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Un Peso — Estados Unidos de Nueva Granada, 1861",
-        "url": "https://www.notofilia.com/coleccion/colombia/nueva-granada-1-peso-1861/",
-        "image": "https://www.notofilia.com/uploads/colombia-nueva-granada-1-peso-1861.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/nueva-granada-1-peso-1861/",
+        "image": "https://notofilia.com/uploads/colombia-nueva-granada-1-peso-1861.jpg",
         "description": "Billete de Un Peso emitido en 1861 por la Tesorería Jeneral de los Estados Unidos de Nueva Granada, bajo el gobierno provisorio del general Tomás Cipriano de Mosquera.",
         "dateCreated": "1861",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

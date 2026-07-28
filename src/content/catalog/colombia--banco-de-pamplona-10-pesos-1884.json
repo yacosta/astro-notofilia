@@ -26,46 +26,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de Pamplona — Un Peso y Diez Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Pamplona — Billete de Un Peso, 1883",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-pamplona-1-peso-1883.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-pamplona-1-peso-1883.jpg",
         "description": "Billete de Un Peso emitido por El Banco de Pamplona, Colombia, el 9 de julio de 1883, impreso por Bradbury, Wilkinson & Co., Londres.",
         "dateCreated": "1883-07-09",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Pamplona — Billete de Diez Pesos, 1884",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-pamplona-10-pesos-1884.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-pamplona-10-pesos-1884.jpg",
         "description": "Billete de Diez Pesos emitido por El Banco de Pamplona, Colombia, el 19 de mayo de 1884, impreso por Bradbury, Wilkinson & Co., Londres.",
         "dateCreated": "1884-05-19",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

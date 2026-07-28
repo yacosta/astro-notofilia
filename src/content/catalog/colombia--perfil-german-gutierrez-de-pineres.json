@@ -25,27 +25,27 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia — Cartagena de Indias",
-            "item": "https://www.notofilia.com/coleccion/colombia/cartagena-de-indias/"
+            "item": "https://notofilia.com/coleccion/colombia/cartagena-de-indias/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "José Germán Gutiérrez de Piñeres",
-            "item": "https://www.notofilia.com/coleccion/colombia/perfil-german-gutierrez-de-pineres/"
+            "item": "https://notofilia.com/coleccion/colombia/perfil-german-gutierrez-de-pineres/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "José Germán Gutiérrez de Piñeres y Cárcamo",
-        "url": "https://www.notofilia.com/coleccion/colombia/perfil-german-gutierrez-de-pineres/",
-        "image": "https://www.notofilia.com/uploads/jose-german-gutierrez-de-pineres.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/perfil-german-gutierrez-de-pineres/",
+        "image": "https://notofilia.com/uploads/jose-german-gutierrez-de-pineres.jpg",
         "birthDate": "1776-10-22",
         "birthPlace": {
           "@type": "Place",
@@ -62,7 +62,7 @@
       {
         "@type": "ImageObject",
         "name": "Retrato de José Germán Gutiérrez de Piñeres",
-        "contentUrl": "https://www.notofilia.com/uploads/jose-german-gutierrez-de-pineres.jpg",
+        "contentUrl": "https://notofilia.com/uploads/jose-german-gutierrez-de-pineres.jpg",
         "creator": {
           "@type": "Person",
           "name": "Anónimo"

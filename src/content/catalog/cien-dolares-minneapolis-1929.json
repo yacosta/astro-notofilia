@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Sistema de la Reserva Federal",
-            "item": "https://www.notofilia.com/coleccion/reserva-federal/"
+            "item": "https://notofilia.com/coleccion/reserva-federal/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "$100 Minneapolis (1929)",
-            "item": "https://www.notofilia.com/coleccion/cien-dolares-minneapolis-1929/"
+            "item": "https://notofilia.com/coleccion/cien-dolares-minneapolis-1929/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Billete de $100 — Federal Reserve Bank Note, Minneapolis, Serie de 1929",
-        "url": "https://www.notofilia.com/coleccion/cien-dolares-minneapolis-1929/",
-        "image": "https://www.notofilia.com/uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.jpg",
+        "url": "https://notofilia.com/coleccion/cien-dolares-minneapolis-1929/",
+        "image": "https://notofilia.com/uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.jpg",
         "description": "Billete de $100 emitido por el Banco de la Reserva Federal de Minneapolis, serie de 1929, sello marrón. Referencia Friedberg FR-1890-I.",
         "dateCreated": "1929",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

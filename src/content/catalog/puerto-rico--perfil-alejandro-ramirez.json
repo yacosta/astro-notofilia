@@ -26,27 +26,27 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Puerto Rico",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Alejandro Ramírez",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/perfil-alejandro-ramirez/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/perfil-alejandro-ramirez/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Alejandro Ramírez y Blanco",
-        "url": "https://www.notofilia.com/coleccion/puerto-rico/perfil-alejandro-ramirez/",
-        "image": "https://www.notofilia.com/uploads/alejandro-ramirez.jpg",
+        "url": "https://notofilia.com/coleccion/puerto-rico/perfil-alejandro-ramirez/",
+        "image": "https://notofilia.com/uploads/alejandro-ramirez.jpg",
         "birthDate": "1777-02-25",
         "deathDate": "1821-05-20",
         "birthPlace": {
@@ -64,7 +64,7 @@
       {
         "@type": "ImageObject",
         "name": "Retrato de Alejandro Ramírez",
-        "contentUrl": "https://www.notofilia.com/uploads/alejandro-ramirez.jpg",
+        "contentUrl": "https://notofilia.com/uploads/alejandro-ramirez.jpg",
         "creator": {
           "@type": "Person",
           "name": "Isidoro Salcedo"

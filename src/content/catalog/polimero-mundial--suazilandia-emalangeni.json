@@ -33,39 +33,39 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Central Bank of Swaziland — 10 a 200 Emalangeni",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/suazilandia-emalangeni/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/suazilandia-emalangeni/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Central Bank of Swaziland — Billetes Híbridos (10, 20, 50, 100 y 200 Emalangeni)",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/suazilandia-emalangeni/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/suazilandia-emalangeni/",
         "image": [
-          "https://www.notofilia.com/uploads/swaziland-cbs-10-emalangeni-2010-hibrido.jpg",
-          "https://www.notofilia.com/uploads/swaziland-cbs-20-emalangeni-2010-hibrido.jpg",
-          "https://www.notofilia.com/uploads/swaziland-cbs-50-emalangeni-2010-hibrido.jpg",
-          "https://www.notofilia.com/uploads/swaziland-cbs-100-emalangeni-2010-hibrido.jpg",
-          "https://www.notofilia.com/uploads/swaziland-cbs-200-emalangeni-2010-hibrido.jpg"
+          "https://notofilia.com/uploads/swaziland-cbs-10-emalangeni-2010-hibrido.jpg",
+          "https://notofilia.com/uploads/swaziland-cbs-20-emalangeni-2010-hibrido.jpg",
+          "https://notofilia.com/uploads/swaziland-cbs-50-emalangeni-2010-hibrido.jpg",
+          "https://notofilia.com/uploads/swaziland-cbs-100-emalangeni-2010-hibrido.jpg",
+          "https://notofilia.com/uploads/swaziland-cbs-200-emalangeni-2010-hibrido.jpg"
         ],
         "description": "Cinco billetes de sustrato híbrido (núcleo de polímero recubierto de papel) del Central Bank of Swaziland: 10, 20, 50, 100 y 200 Emalangeni, emitidos el 6 de septiembre de 2010 con el retrato del Rey Mswati III, impresos por Giesecke+Devrient.",
         "dateCreated": "2010",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

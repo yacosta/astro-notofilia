@@ -27,32 +27,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Doscientos Pesos Oro (Specimen)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Doscientos Pesos Oro, especímenes de 1982, 1983 y 1992",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.jpg",
         "description": "Especímenes de Doscientos Pesos Oro emitidos por El Banco de la República, Colombia: uno fechado 1 de enero de 1982 con el retrato de Simón Bolívar y una recolectora de café en el reverso, y dos (1983 y 1992) con el retrato de José Celestino Mutis y el Claustro de Nuestra Señora del Rosario.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

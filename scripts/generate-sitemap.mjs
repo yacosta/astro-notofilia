@@ -6,7 +6,7 @@ const catalogDir = new URL('../src/content/catalog/', import.meta.url);
 const sitemapPath = new URL('../public/sitemap.xml', import.meta.url);
 const sitemapIndexPath = new URL('../public/sitemap_index.xml', import.meta.url);
 const newsSitemapPath = new URL('../public/news-sitemap.xml', import.meta.url);
-const site = 'https://www.notofilia.com';
+const site = 'https://notofilia.com';
 const publicationName = 'Notofilia';
 const today = new Date().toISOString().slice(0, 10);
 // Google News only uses articles from roughly the last two days.

@@ -26,32 +26,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Diez Pesos Oro",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Diez Pesos Oro",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
-        "image": "https://www.notofilia.com/uploads/colombia-10-pesos-oro-1953.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
+        "image": "https://notofilia.com/uploads/colombia-10-pesos-oro-1953.jpg",
         "description": "Billetes de Diez Pesos Oro emitidos por El Banco de la República, Colombia, con el retrato de Antonio Nariño, de 1949 a 1961.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

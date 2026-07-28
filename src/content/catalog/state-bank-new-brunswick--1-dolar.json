@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "The State Bank at New Brunswick",
-            "item": "https://www.notofilia.com/coleccion/state-bank-new-brunswick/"
+            "item": "https://notofilia.com/coleccion/state-bank-new-brunswick/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Billete de $1",
-            "item": "https://www.notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/"
+            "item": "https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "The State Bank at New Brunswick — Billete de $1",
-        "url": "https://www.notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/",
-        "image": "https://www.notofilia.com/uploads/state-bank-new-brunswick-1-dollar.jpg",
+        "url": "https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/",
+        "image": "https://notofilia.com/uploads/state-bank-new-brunswick-1-dollar.jpg",
         "description": "Billete obsoleto de un dólar emitido por The State Bank at New Brunswick, Nueva Jersey, hacia 1860. Referencia Haxby NJ-350-G14a.",
         "dateCreated": "1860",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

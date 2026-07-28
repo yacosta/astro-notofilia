@@ -25,39 +25,39 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banca Libre",
-            "item": "https://www.notofilia.com/coleccion/colombia/banca-libre/"
+            "item": "https://notofilia.com/coleccion/colombia/banca-libre/"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "El Banco del Norte — Cinco Pesos (1882)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco del Norte — Billete de Cinco Pesos",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-del-norte-5-pesos-1882.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/",
+        "image": "https://notofilia.com/uploads/colombia-banco-del-norte-5-pesos-1882.jpg",
         "description": "Billete de 5 pesos de El Banco del Norte, banco privado establecido en Socorro, Santander, emitido el 1 de enero de 1882.",
         "dateCreated": "1882-01-01",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/banca-libre/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/banca-libre/#page"
         }
       }
     ]

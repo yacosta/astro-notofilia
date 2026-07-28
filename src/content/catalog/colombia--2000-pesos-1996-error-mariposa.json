@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Dos Mil Pesos «Mariposa» — Error de Corte",
-            "item": "https://www.notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/"
+            "item": "https://notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Dos Mil Pesos «Mariposa», Ejemplar con Error de Corte Descentrado",
-        "url": "https://www.notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.jpg",
         "description": "Billete de Dos Mil Pesos de El Banco de la República, Colombia, conocido popularmente como «el de la mariposa», fechado 2 de abril de 1996, con el retrato de Francisco de Paula Santander y la Casa de la Moneda de Bogotá, presentando un error de corte descentrado que recorta en diagonal dos esquinas opuestas de cada cara.",
         "dateCreated": "1996",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

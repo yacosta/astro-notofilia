@@ -29,36 +29,36 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banco Central de Nicaragua — 10 y 20 Córdobas",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/nicaragua-10-20-cordobas/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/nicaragua-10-20-cordobas/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco Central de Nicaragua — 10 y 20 Córdobas",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/nicaragua-10-20-cordobas/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/nicaragua-10-20-cordobas/",
         "image": [
-          "https://www.notofilia.com/uploads/nicaragua-bcn-10-cordobas-2007-polimero.jpg",
-          "https://www.notofilia.com/uploads/nicaragua-bcn-20-cordobas-2007-polimero.jpg"
+          "https://notofilia.com/uploads/nicaragua-bcn-10-cordobas-2007-polimero.jpg",
+          "https://notofilia.com/uploads/nicaragua-bcn-20-cordobas-2007-polimero.jpg"
         ],
         "description": "Dos billetes de polímero del Banco Central de Nicaragua, decreto del 12 de septiembre de 2007 y circulación desde mayo de 2009: 10 Córdobas con el Castillo de la Inmaculada Concepción, y 20 Córdobas con motivos de la Costa Caribe, impresos por De La Rue.",
         "dateCreated": "2009",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

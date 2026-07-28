@@ -24,26 +24,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Estados Unidos",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Andrew Jackson",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Andrew Jackson",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/",
         "birthDate": "1767-03-15",
         "deathDate": "1845-06-08",
         "birthPlace": {

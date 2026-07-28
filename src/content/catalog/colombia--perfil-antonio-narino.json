@@ -25,26 +25,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Antonio Nariño",
-            "item": "https://www.notofilia.com/coleccion/colombia/perfil-antonio-narino/"
+            "item": "https://notofilia.com/coleccion/colombia/perfil-antonio-narino/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Antonio Amador José Nariño y Álvarez del Casal",
-        "url": "https://www.notofilia.com/coleccion/colombia/perfil-antonio-narino/",
+        "url": "https://notofilia.com/coleccion/colombia/perfil-antonio-narino/",
         "birthDate": "1765-04-09",
         "deathDate": "1823-12-13",
         "birthPlace": {

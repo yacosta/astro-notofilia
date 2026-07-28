@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Sistema de la Reserva Federal",
-            "item": "https://www.notofilia.com/coleccion/reserva-federal/"
+            "item": "https://notofilia.com/coleccion/reserva-federal/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "$1 Norte de África (1935-A)",
-            "item": "https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/"
+            "item": "https://notofilia.com/coleccion/un-dolar-norte-africa-1935a/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Certificado de Plata $1 — Emisión de Emergencia Norte de África, Serie 1935-A",
-        "url": "https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/",
-        "image": "https://www.notofilia.com/uploads/us-silver-certificate-1-dollar-north-africa-1935a.jpg",
+        "url": "https://notofilia.com/coleccion/un-dolar-norte-africa-1935a/",
+        "image": "https://notofilia.com/uploads/us-silver-certificate-1-dollar-north-africa-1935a.jpg",
         "description": "Certificado de plata de un dólar con sello amarillo de emergencia, emitido para la Operación Torch en el Norte de África durante la Segunda Guerra Mundial. Referencia Friedberg FR-2306.",
         "dateCreated": "1935",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

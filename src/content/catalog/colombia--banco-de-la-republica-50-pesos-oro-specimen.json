@@ -26,32 +26,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Cincuenta Pesos Oro (Specimen)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Cincuenta Pesos Oro, especímenes de 1964 y 1985",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.jpg",
         "description": "Especímenes de Cincuenta Pesos Oro emitidos por El Banco de la República, Colombia: uno fechado 1 de enero de 1964 con el retrato de Simón Bolívar, y otro fechado 1 de enero de 1985 con el retrato de Camilo Torres.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

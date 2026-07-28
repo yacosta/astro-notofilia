@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Diez Mil Pesos (Specimen)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Diez Mil Pesos, especímenes de 1994 y 1995",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg",
         "description": "Especímenes de Diez Mil Pesos emitidos por El Banco de la República, Colombia, en 1994 y 1995: uno con el retrato de una mujer emberá y un collage de biodiversidad en el reverso, y otro con el retrato de Policarpa Salavarrieta, 'La Pola', y una escena rural en el reverso.",
         "dateCreated": "1994/1995",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

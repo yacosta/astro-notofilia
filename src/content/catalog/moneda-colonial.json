@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/moneda-colonial/#page",
+        "@id": "https://notofilia.com/coleccion/moneda-colonial/#page",
         "name": "Catálogo de Moneda Colonial Americana",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/",
         "description": "Catálogo de moneda colonial americana previa a la independencia de Estados Unidos, de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "Pensilvania — Cinco Chelines (1773)",
-            "url": "https://www.notofilia.com/coleccion/moneda-colonial/pensilvania-5-chelines-1773/"
+            "url": "https://notofilia.com/coleccion/moneda-colonial/pensilvania-5-chelines-1773/"
           },
           {
             "@type": "CreativeWork",
             "name": "Nueva Jersey — Seis Chelines (1776)",
-            "url": "https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
+            "url": "https://notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
           }
         ]
       }

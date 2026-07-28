@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Colonia de Nueva Jersey — Seis Chelines (1776)",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Colonia de Nueva Jersey — Seis Chelines (1776)",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
-        "image": "https://www.notofilia.com/uploads/newjersey-6-shillings-1776-colonial.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
+        "image": "https://notofilia.com/uploads/newjersey-6-shillings-1776-colonial.jpg",
         "description": "Billete colonial de 6 chelines de la Colonia de Nueva Jersey, emitido el 25 de marzo de 1776 bajo el reinado de Jorge III, impreso por Isaac Collins en Burlington, con la hoja anti-falsificación desarrollada por Benjamin Franklin.",
         "dateCreated": "1776-03-25",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/moneda-colonial/#page"
+          "@id": "https://notofilia.com/coleccion/moneda-colonial/#page"
         }
       }
     ]

@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Estado Soberano de Cundinamarca — Un Peso (1870)",
-            "item": "https://www.notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/"
+            "item": "https://notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Estado Soberano de Cundinamarca — Vale de Deuda Flotante de Un Peso",
-        "url": "https://www.notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/",
-        "image": "https://www.notofilia.com/uploads/colombia-estado-soberano-cundinamarca-1-peso-1870.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/",
+        "image": "https://notofilia.com/uploads/colombia-estado-soberano-cundinamarca-1-peso-1870.jpg",
         "description": "Vale de deuda flotante sin interés de 1 peso emitido por El Estado Soberano de Cundinamarca, Bogotá, 19 de enero de 1870, resultante de la conversión de documentos de créditos líquidos contra el Estado.",
         "dateCreated": "1870-01-19",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/#page"
         }
       }
     ]

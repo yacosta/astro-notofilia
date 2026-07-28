@@ -25,26 +25,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Arístides Fernández",
-            "item": "https://www.notofilia.com/coleccion/colombia/perfil-aristides-fernandez/"
+            "item": "https://notofilia.com/coleccion/colombia/perfil-aristides-fernandez/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Arístides Fernández",
-        "url": "https://www.notofilia.com/coleccion/colombia/perfil-aristides-fernandez/",
+        "url": "https://notofilia.com/coleccion/colombia/perfil-aristides-fernandez/",
         "jobTitle": "Militar y Estadista",
         "description": "Ministro de Hacienda y de Guerra de Colombia durante la Guerra de los Mil Días, firmante de varias emisiones de emergencia de El Banco Nacional.",
         "nationality": "Colombiana"

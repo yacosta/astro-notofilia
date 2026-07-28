@@ -28,33 +28,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Estado de Boyacá — Libranza de 500 Pesos (1883)",
-            "item": "https://www.notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/"
+            "item": "https://notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Estado de Boyacá — Libranza de 500 Pesos (1883)",
-        "url": "https://www.notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/",
-        "image": "https://www.notofilia.com/uploads/colombia-boyaca-libranza-500-pesos-1883.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/",
+        "image": "https://notofilia.com/uploads/colombia-boyaca-libranza-500-pesos-1883.jpg",
         "description": "Libranza fiscal de 500 pesos emitida por el Estado de Boyacá en 1883, respaldada por el 20 por ciento de la renta de salinas, destinada a financiar el camino de Chiquinquirá al Magdalena; reutilizada como pieza de evidencia judicial en 1940.",
         "dateCreated": "1883-11-02",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/#page"
         }
       }
     ]

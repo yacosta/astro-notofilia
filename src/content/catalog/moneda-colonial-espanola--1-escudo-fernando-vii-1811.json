@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial Española",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Fernando VII — 1 Escudo, Bogotá 1811",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Colombia, Fernando VII — 1 Escudo de Oro (Santa Fe de Bogotá, 1811)",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/",
-        "image": "https://www.notofilia.com/uploads/colombia-1-escudo-fernando-vii-1811-bogota.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/",
+        "image": "https://notofilia.com/uploads/colombia-1-escudo-fernando-vii-1811-bogota.jpg",
         "description": "1 escudo de oro acuñado en la ceca de Santa Fe de Bogotá en 1811, al inicio de la guerra de independencia colombiana, con el busto de Carlos IV y la leyenda de Fernando VII.",
         "dateCreated": "1811",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

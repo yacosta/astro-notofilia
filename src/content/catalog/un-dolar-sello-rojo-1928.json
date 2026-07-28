@@ -28,33 +28,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Departamento del Tesoro de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
+            "item": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "$1 Sello Rojo (1928)",
-            "item": "https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
+            "item": "https://notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "United States Note $1 — Sello Rojo, Serie de 1928",
-        "url": "https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/",
-        "image": "https://www.notofilia.com/uploads/us-legal-tender-note-1-dollar-red-seal-1928.jpg",
+        "url": "https://notofilia.com/coleccion/un-dolar-sello-rojo-1928/",
+        "image": "https://notofilia.com/uploads/us-legal-tender-note-1-dollar-red-seal-1928.jpg",
         "description": "Billete de un dólar de curso legal (United States Note) con sello rojo, serie de 1928, reverso conocido como 'funny back'. Referencia Friedberg FR-1500.",
         "dateCreated": "1928",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

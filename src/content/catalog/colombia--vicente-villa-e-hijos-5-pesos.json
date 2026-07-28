@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Vicente B. Villa é Hijos — Cinco Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/"
+            "item": "https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Vicente B. Villa é Hijos — Billete de Cinco Pesos, Medellín",
-        "url": "https://www.notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/",
-        "image": "https://www.notofilia.com/uploads/colombia-vicente-villa-e-hijos-5-pesos.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/",
+        "image": "https://notofilia.com/uploads/colombia-vicente-villa-e-hijos-5-pesos.jpg",
         "description": "Billete de Cinco Pesos emitido por la casa comercial familiar Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.",
         "dateCreated": "1880s",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

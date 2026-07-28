@@ -5,11 +5,11 @@
     "version": "1.0.0"
   },
   "description": "Read-only MCP tools for Notofilia's historical banknote and coin catalog, noticias, and blog.",
-  "url": "https://www.notofilia.com/mcp",
-  "endpoint": "https://www.notofilia.com/mcp",
+  "url": "https://notofilia.com/mcp",
+  "endpoint": "https://notofilia.com/mcp",
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://www.notofilia.com/mcp"
+    "endpoint": "https://notofilia.com/mcp"
   },
   "capabilities": {
     "tools": true,
@@ -19,10 +19,10 @@
   "authentication": {
     "required": false
   },
-  "documentationUrl": "https://www.notofilia.com/auth.md",
+  "documentationUrl": "https://notofilia.com/auth.md",
   "icons": [
     {
-      "src": "https://www.notofilia.com/favicon.png",
+      "src": "https://notofilia.com/favicon.png",
       "mimeType": "image/png"
     }
   ]

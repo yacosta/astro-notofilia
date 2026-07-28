@@ -1,6 +1,6 @@
 # Notofilia.com — Astro build
 
-Astro 4 build of [notofilia.com](https://www.notofilia.com): a digital catalog
+Astro 4 build of [notofilia.com](https://notofilia.com): a digital catalog
 and virtual collection of historical banknotes and coins — Colombia, Puerto
 Rico, Ecuador, U.S. currency, colonial issues, and world polymer notes — plus
 historical profiles of figures tied to Colombian monetary history.
@@ -94,9 +94,14 @@ workflow and required Cloudflare bindings.
 
 ## URLs & redirects
 
-Catalog URLs are unchanged (`.dc.html` paths + Cloudflare `_redirects` pretty
-URLs). Astro editorial routes use directory URLs (`/blog/<slug>/`,
-`/noticias/<slug>/`).
+**Preferred host is the apex domain** (`https://notofilia.com`). Cloudflare
+redirects `www.notofilia.com` → `notofilia.com`; canonical tags, sitemaps,
+`robots.txt`, and Open Graph URLs must stay on the apex so Google does not see
+a redirect loop away from the declared canonical.
+
+Catalog URLs use Cloudflare `_redirects` for legacy `.dc.html` → pretty
+`/coleccion/...` paths (301). Astro editorial routes use directory URLs
+(`/blog/<slug>/`, `/noticias/<slug>/`).
 
 `scripts/generate-sitemap.mjs` (run via `prebuild`) writes:
 

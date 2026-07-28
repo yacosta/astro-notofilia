@@ -1,6 +1,17 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.notofilia.com/sitemap_index.xml
-Sitemap: https://www.notofilia.com/sitemap.xml
-Sitemap: https://www.notofilia.com/news-sitemap.xml
+# Auth / machine endpoints — not for search indexing
+Disallow: /oauth/
+Disallow: /api/
+Disallow: /mcp
+Disallow: /mcp/
+
+# Shared template fragments (not standalone pages)
+Disallow: /BanknoteCard.dc.html
+Disallow: /SiteHeader.dc.html
+Disallow: /SiteFooter.dc.html
+
+Sitemap: https://notofilia.com/sitemap_index.xml
+Sitemap: https://notofilia.com/sitemap.xml
+Sitemap: https://notofilia.com/news-sitemap.xml

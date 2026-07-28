@@ -25,21 +25,21 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Departamento del Tesoro de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
+            "item": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/#page",
+        "@id": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/#page",
         "name": "Departamento del Tesoro de EE. UU.",
-        "url": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/",
+        "url": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/",
         "description": "Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos.",
         "inLanguage": "es",
         "about": {
@@ -50,22 +50,22 @@
           {
             "@type": "CreativeWork",
             "name": "Certificado de Oro $10 — Serie de 1928",
-            "url": "https://www.notofilia.com/coleccion/certificado-de-oro-10-dolares-1928/"
+            "url": "https://notofilia.com/coleccion/certificado-de-oro-10-dolares-1928/"
           },
           {
             "@type": "CreativeWork",
             "name": "United States Note $1 — Sello Rojo, Serie de 1928",
-            "url": "https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
+            "url": "https://notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
           },
           {
             "@type": "CreativeWork",
             "name": "Nota de Prueba de la Prensa Giori",
-            "url": "https://www.notofilia.com/coleccion/giori-press-test-note/"
+            "url": "https://notofilia.com/coleccion/giori-press-test-note/"
           },
           {
             "@type": "CreativeWork",
             "name": "United States Note $100 — Sello Rojo, Serie de 1966",
-            "url": "https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
+            "url": "https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
           }
         ]
       }

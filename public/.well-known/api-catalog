@@ -1,66 +1,66 @@
 {
   "linkset": [
     {
-      "anchor": "https://www.notofilia.com/api/catalog",
+      "anchor": "https://notofilia.com/api/catalog",
       "service-desc": [
         {
-          "href": "https://www.notofilia.com/openapi.json",
+          "href": "https://notofilia.com/openapi.json",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://www.notofilia.com/auth.md",
+          "href": "https://notofilia.com/auth.md",
           "type": "text/markdown"
         },
         {
-          "href": "https://www.notofilia.com/glosario-numismatico.dc.html",
+          "href": "https://notofilia.com/glosario-numismatico.dc.html",
           "type": "text/html"
         }
       ],
       "status": [
         {
-          "href": "https://www.notofilia.com/api/health"
+          "href": "https://notofilia.com/api/health"
         }
       ]
     },
     {
-      "anchor": "https://www.notofilia.com/api/comments/{slug}",
+      "anchor": "https://notofilia.com/api/comments/{slug}",
       "service-desc": [
         {
-          "href": "https://www.notofilia.com/openapi.json#/paths/~1api~1comments~1%7Bslug%7D",
+          "href": "https://notofilia.com/openapi.json#/paths/~1api~1comments~1%7Bslug%7D",
           "type": "application/vnd.oai.openapi+json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://www.notofilia.com/auth.md",
+          "href": "https://notofilia.com/auth.md",
           "type": "text/markdown"
         }
       ],
       "status": [
         {
-          "href": "https://www.notofilia.com/api/health"
+          "href": "https://notofilia.com/api/health"
         }
       ]
     },
     {
-      "anchor": "https://www.notofilia.com/mcp",
+      "anchor": "https://notofilia.com/mcp",
       "service-desc": [
         {
-          "href": "https://www.notofilia.com/.well-known/mcp/server-card.json",
+          "href": "https://notofilia.com/.well-known/mcp/server-card.json",
           "type": "application/json"
         }
       ],
       "service-doc": [
         {
-          "href": "https://www.notofilia.com/auth.md",
+          "href": "https://notofilia.com/auth.md",
           "type": "text/markdown"
         }
       ],
       "status": [
         {
-          "href": "https://www.notofilia.com/api/health"
+          "href": "https://notofilia.com/api/health"
         }
       ]
     }

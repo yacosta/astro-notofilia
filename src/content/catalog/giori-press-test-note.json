@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Departamento del Tesoro de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
+            "item": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Nota de Prueba de la Prensa Giori",
-            "item": "https://www.notofilia.com/coleccion/giori-press-test-note/"
+            "item": "https://notofilia.com/coleccion/giori-press-test-note/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Nota de Prueba de la Prensa Giori, Estados Unidos",
-        "url": "https://www.notofilia.com/coleccion/giori-press-test-note/",
-        "image": "https://www.notofilia.com/uploads/us-giori-press-test-note.jpg",
+        "url": "https://notofilia.com/coleccion/giori-press-test-note/",
+        "image": "https://notofilia.com/uploads/us-giori-press-test-note.jpg",
         "description": "Nota de prueba de impresión creada para calibrar la prensa intaglio Giori, combinando elementos de diseño de varios billetes de Estados Unidos, sin denominación ni curso legal.",
         "dateCreated": "c. 1970s",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

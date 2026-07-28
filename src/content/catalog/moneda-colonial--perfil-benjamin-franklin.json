@@ -26,26 +26,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Benjamin Franklin",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-benjamin-franklin/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/perfil-benjamin-franklin/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Benjamin Franklin",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-benjamin-franklin/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/perfil-benjamin-franklin/",
         "birthDate": "1706-01-17",
         "deathDate": "1790-04-17",
         "birthPlace": {

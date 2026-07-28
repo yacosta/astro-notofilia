@@ -18,7 +18,7 @@ import tailwindcss from '@tailwindcss/vite';
 // `site` is set so canonical/absolute URLs resolve correctly. Output is the
 // default `static`; deployment target is Cloudflare Pages (dist/ + functions/).
 export default defineConfig({
-  site: 'https://www.notofilia.com',
+  site: 'https://notofilia.com',
   trailingSlash: 'ignore',
   build: {
     format: 'directory',
