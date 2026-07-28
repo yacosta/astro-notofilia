@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# LLM / agent context (llmstxt.org)
+# https://www.notofilia.com/llms.txt
+# https://www.notofilia.com/llms-full.txt
+
 Sitemap: https://www.notofilia.com/sitemap_index.xml
 Sitemap: https://www.notofilia.com/sitemap.xml
 Sitemap: https://www.notofilia.com/news-sitemap.xml

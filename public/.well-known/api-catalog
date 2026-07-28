@@ -14,6 +14,14 @@
           "type": "text/markdown"
         },
         {
+          "href": "https://www.notofilia.com/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://www.notofilia.com/llms-full.txt",
+          "type": "text/plain"
+        },
+        {
           "href": "https://www.notofilia.com/glosario-numismatico.dc.html",
           "type": "text/html"
         }

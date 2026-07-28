@@ -9,7 +9,7 @@
     "start": "astro dev",
     "migrate:catalog": "node scripts/migrate-catalog-to-astro.mjs",
     "migrate:catalog:finalize": "node scripts/finalize-catalog-migration.mjs",
-    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-catalog-index.mjs && node scripts/build-client-runtime.mjs",
+    "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-catalog-index.mjs && node scripts/generate-llms-txt.mjs && node scripts/build-client-runtime.mjs",
     "build": "astro build && node scripts/purge-css.mjs && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs",
     "preview": "astro preview",
     "check": "astro check",

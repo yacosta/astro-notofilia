@@ -1,0 +1,106 @@
+# Notofilia
+
+> Private virtual catalog of historical banknotes and coins (numismatics & notaphily). Spanish-first. Pieces are **not for sale**. Illustrated catalog, guides, news, and glossary for collectors and researchers.
+>
+> Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
+
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero de ~30 países— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia.
+
+**Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe (+90 términos) y perfiles históricos ligados a emisiones.
+
+**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*
+
+**Idioma:** contenido principal en español (`lang=es`). La home tiene toggle ES/EN. Citar en el idioma de la página fuente.
+
+**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://www.notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).
+
+**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
+
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 9 noticias · glosario · perfiles.
+
+Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
+
+## Sitio principal
+
+- [Inicio](https://www.notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
+- [Catálogo (índice)](https://www.notofilia.com/coleccion/): Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.
+- [Blog](https://www.notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
+- [Noticias](https://www.notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
+- [Glosario](https://www.notofilia.com/glosario/): Más de 90 términos de numismática y notafilia (ES/EN).
+- [Contacto](https://www.notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
+- [J.S.G. Boggs](https://www.notofilia.com/j-s-g-boggs/): Perfil del artista de los «Boggs bills» dibujados a mano.
+
+## Catálogo — secciones
+
+- [Catálogo de Billete Obsoleto EE. UU.](https://www.notofilia.com/coleccion/): Catálogo numismático de billetes obsoletos de la colección Notofilia: The State Bank at New Brunswick, Citizens' Bank of Louisiana y más.
+- [Catálogo de Billetes de Colombia](https://www.notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
+- [Catálogo de la Banca Libre Colombiana](https://www.notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
+- [Emisiones Colombianas en el Extranjero](https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/): Billetes emitidos en el extranjero por bancos y capital colombianos, como El Banco Colombiano en Guatemala (1900). Colección Notofilia.
+- [Catálogo de Billetes de Puerto Rico](https://www.notofilia.com/coleccion/puerto-rico/): Catálogo de billetes y vales históricos de Puerto Rico: la Tesorería Nacional y la emisión de papeletas de 1813. Colección Notofilia.
+- [Catálogo de Billetes de Ecuador](https://www.notofilia.com/coleccion/ecuador/): Catálogo de billetes del Banco Central del Ecuador: el sucre ecuatoriano, moneda nacional entre 1884 y 2000. Colección Notofilia.
+- [Catálogo de Billetes de Polímero Mundial](https://www.notofilia.com/coleccion/polimero-mundial/): Catálogo de billetes de polímero de distintos países del mundo, de la colección numismática de Notofilia.
+- [Catálogo de Moneda Colonial Americana](https://www.notofilia.com/coleccion/moneda-colonial/): Catálogo de moneda colonial americana previa a la independencia de Estados Unidos: billetes de las trece colonias británicas. Colección…
+- [Catálogo de Moneda Colonial Española](https://www.notofilia.com/coleccion/moneda-colonial-espanola/): Catálogo de moneda colonial española acuñada en las cecas americanas: macuquinas de oro y plata del Imperio español. Colección Notofilia.
+- [Sistema de la Reserva Federal](https://www.notofilia.com/coleccion/reserva-federal/): Catálogo de billetes emitidos por el Sistema de la Reserva Federal de EE. UU., incluyendo emisiones de emergencia de la Segunda Guerra…
+- [Departamento del Tesoro de EE. UU.](https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/): Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos: certificados de oro y más. Colección Notofilia.
+- [Pop Art](https://www.notofilia.com/coleccion/pop-art/): Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.
+- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional y emisiones efímeras de Estados Unidos: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin…
+
+## Catálogo — piezas destacadas
+
+- [50.000 Pesos: Error de Impresión](https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/): Ficha de catálogo numismático: billete de 50 Mil Pesos de El Banco de la República, Colombia, con el retrato de Gabriel…
+- [Dos Mil Pesos, Error “Mariposa”](https://www.notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/): Ficha de catálogo numismático: billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte…
+- [Billete de Canje 1895, Un Peso](https://www.notofilia.com/coleccion/puerto-rico/billete-de-canje-1-peso-1895/): Ficha de catálogo numismático: Billete de Canje de Un Peso del Ministerio de Ultramar, Puerto Rico, 1895. Retrato de…
+- [100 Sucres, Banco Central del Ecuador (1993)](https://www.notofilia.com/coleccion/ecuador/100-sucres-1993/): Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de…
+- [$20 Reserva Federal, Emisión Hawái 1934](https://www.notofilia.com/coleccion/veinte-dolares-hawaii-1934/): Ficha de catálogo numismático: Billete de Reserva Federal de $20, serie de 1934-A, con sobreimpresión de emergencia…
+- [$1 Certificado de Plata “Norte de África” 1935-A](https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/): Ficha de catálogo numismático: Certificado de Plata de $1, serie de 1935-A, sello amarillo de emergencia “North…
+- [2 Tala, Central Bank of Samoa, Polímero (Specimen)](https://www.notofilia.com/coleccion/polimero-mundial/samoa-2-tala/): Ficha de catálogo numismático: billete specimen de 2 Tala de polímero del Central Bank of Samoa (1990/91), primer…
+- [The King Pelé — Rency Art $2](https://www.notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/): The King Pelé “The Beautiful Game”: giclée pop art de Rency sobre billete de dos dólares (2024), chilena icónica,…
+
+Listado completo de 132 fichas: [llms-full.txt](https://www.notofilia.com/llms-full.txt) · API: [GET /api/catalog](https://www.notofilia.com/api/catalog) · índice JSON: [https://www.notofilia.com/data/catalog-index.json](https://www.notofilia.com/data/catalog-index.json).
+
+## Guías del blog
+
+- [¿Tres imprentas? Pies de imprenta colombianos](https://www.notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/): IBB, IBSFB y Banco de la República parecen tres impresores distintos, pero cuentan otra historia: la de una misma imprenta y una ciudad que…
+- [Cómo empezar una colección de billetes](https://www.notofilia.com/blog/como-empezar-coleccion-billetes/): Guía para principiantes: cómo elegir un enfoque, dónde conseguir piezas, y cómo cuidar y clasificar tus primeros billetes de colección.
+- [Cómo identificar billetes falsos: elementos de seguridad](https://www.notofilia.com/blog/como-identificar-billetes-falsos/): Marca de agua, hilo de seguridad, microimpresión, tintas que cambian de color: los elementos que distinguen un billete auténtico de uno…
+- [Diferencia entre numismática y notafilia](https://www.notofilia.com/blog/diferencia-numismatica-notafilia/): Numismática y notafilia se confunden a menudo. Explicamos qué estudia cada una, cómo se relacionan y por qué la distinción importa al…
+- [Números de serie especiales: por qué algunos billetes valen más](https://www.notofilia.com/blog/numeros-serie-especiales-billetes/): Series bajas, radares, sólidos, escaleras: por qué ciertos números de serie disparan el valor de un billete entre coleccionistas.
+- [Orígenes de la banca comercial en Colombia: la banca libre, 1870-1886](https://www.notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/): Antes de que existiera un banco central, decenas de bancos privados colombianos emitían sus propios billetes. Así funcionó —y por qué…
+- [Orígenes de la banca comercial en Puerto Rico](https://www.notofilia.com/blog/origenes-banca-comercial-puerto-rico/): Del peso español al dólar: cómo nació la banca emisora en Puerto Rico con el Banco Español de Puerto Rico y qué cambió tras 1898.
+- [Personajes en los billetes de Colombia](https://www.notofilia.com/blog/personajes-billetes-colombia/): De Bolívar y Policarpa a García Márquez y Débora Arango: los rostros que han protagonizado el papel moneda colombiano y lo que representan.
+
+## Noticias
+
+- [El Museo Arqueológico Nacional incorpora 239 monedas de gran relevancia a su colección de numismática andalusí](https://www.notofilia.com/noticias/man-239-monedas-numismatica-andalusi/): El MAN suma 239 monedas andalusíes (ss. VIII–XV) a la colección más importante del mundo, con piezas únicas como la dobla de Boabdil.…
+- [Tras aumento de la plata, ¿cuánto vale la moneda de $100 del Estado de México, primera fase?](https://www.notofilia.com/noticias/moneda-100-pesos-estado-mexico-primera-fase/): Con el alza de la plata, la moneda conmemorativa de $100 del Estado de México (Primera Fase, 2004) se cotiza entre $400 y $1.200 pesos.…
+- [El centenario y otras 8 monedas que hoy podrían valer una fortuna](https://www.notofilia.com/noticias/centenario-otras-8-monedas-valen-fortuna/): Nueve monedas de México y el mundo destacan por su contenido de oro, rareza, importancia histórica o errores de acuñación. Fuente: Debate.
+- [La moneda de EE.UU. que puede alcanzar un valor de US$1,85 millones: qué la hace tan buscada](https://www.notofilia.com/noticias/moneda-eeuu-1796-valor-185-millones/): Una moneda estadounidense de oro de US$2,50 acuñada en Filadelfia en 1796 puede valer hasta US$1,85 millones por su rareza, diseño y…
+- [Bessent anuncia una moneda conmemorativa por los 250 años de EE. UU.](https://www.notofilia.com/noticias/bessent-moneda-250-anos-independencia-eeuu/): Scott Bessent confirma una nueva moneda conmemorativa dentro del programa por el 250.º aniversario de la independencia de Estados Unidos.…
+- [El billete de $50.000 que puede valer más de un millón](https://www.notofilia.com/noticias/billete-50000-pesos-colombia-valor/): Por qué llevar un billete de $50.000 en el día a día trae inconvenientes prácticos, y qué recomiendan los expertos frente al efectivo de…
+- [El billete de $2 con serie L00000002A que vale más de US$5.000](https://www.notofilia.com/noticias/billete-2-dolares-serie-baja/): Un billete de dos dólares de 2003 con un número de serie sumamente bajo alcanza precios de subasta superiores a los US$5.000. Fuente: La…
+- [La moneda octogonal de $10 chilena que se cotiza en más de $500.000](https://www.notofilia.com/noticias/moneda-10-pesos-octogonal-chile/): Un prototipo octogonal de $10 pesos probado por la Casa de Moneda de Chile en 1992 hoy es una rareza muy buscada por coleccionistas.…
+- [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
+
+## APIs y agentes
+
+- [OpenAPI](https://www.notofilia.com/openapi.json): Catálogo, health, comentarios y registro de agentes.
+- [Catalog search API](https://www.notofilia.com/api/catalog): GET ?q=&limit= — búsqueda sobre título/ruta/keywords.
+- [Catalog index JSON](https://www.notofilia.com/data/catalog-index.json): Índice plano generado en build.
+- [Health](https://www.notofilia.com/api/health): Estado del servicio.
+- [MCP (Streamable HTTP)](https://www.notofilia.com/mcp): Herramientas de solo lectura: catalog.search, site.info, health.check.
+- [MCP server card](https://www.notofilia.com/.well-known/mcp/server-card.json): Descubrimiento MCP.
+- [Agent index](https://www.notofilia.com/.well-known/agent-index.json): Índice DNS-AID / agentes publicados.
+- [API Catalog (RFC 9727)](https://www.notofilia.com/.well-known/api-catalog): Linkset de servicios.
+- [Auth notes](https://www.notofilia.com/auth.md): Notas de autenticación para agentes.
+- [Sitemap](https://www.notofilia.com/sitemap_index.xml): Mapa completo de URLs indexables.
+
+## Optional
+
+- [llms-full.txt](https://www.notofilia.com/llms-full.txt): Inventario completo + texto de blog y noticias.
+- [Política de privacidad y cookies](https://www.notofilia.com/politica-privacidad-cookies/): GDPR / LOPDGDD / Ley 1581 Colombia.
+- [Facebook](https://www.facebook.com/NOTOFILIA/): Perfil social.
+- [Instagram](https://www.instagram.com/notofilia2026/): Perfil social.
+- [X / Twitter](https://x.com/notofilia): Perfil social.
+- [LinkedIn](https://www.linkedin.com/company/notofilia/about/): Página de empresa.
+
