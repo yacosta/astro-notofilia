@@ -14,10 +14,21 @@ This site publishes the machine-readable surfaces scanned by
 | Web Bot Auth JWKS directory | `/.well-known/http-message-signatures-directory` |
 | OpenAPI | `/openapi.json` |
 | Agent index (DNS-AID HTTP) | `/.well-known/agent-index.json` |
+| llms.txt (llmstxt.org) | `/llms.txt` (alias `/llm.txt`) |
+| llms-full.txt | `/llms-full.txt` (alias `/llm-full.txt`) |
 | Health | `/api/health` |
 | Catalog search API | `/api/catalog` |
 | MCP Streamable HTTP | `/mcp` |
 | WebMCP (browser tools) | `/webmcp.js` (loaded on pages) |
+
+## llms.txt
+
+Generated at build time by `scripts/generate-llms-txt.mjs` (wired into `prebuild`).
+
+- `/llms.txt` — curated index for LLM context windows (hubs, guías, APIs, citation rules).
+- `/llms-full.txt` — full catalog inventory plus full blog/noticias Markdown bodies.
+
+Both are Spanish-first, state clearly that pieces are **not for sale**, and point agents at `/api/catalog` and `/mcp`.
 
 ## Markdown for Agents
 
