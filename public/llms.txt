@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 9 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 13 noticias · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -72,6 +72,10 @@ Listado completo de 132 fichas: [llms-full.txt](https://www.notofilia.com/llms-f
 
 ## Noticias
 
+- [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
+- [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
+- [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
+- [7 detalles que podrían hacer que un billete de $2 valga mucho para los coleccionistas](https://www.notofilia.com/noticias/billetes-2-dolares-7-detalles/): Sello rojo, Star Notes, series fancy, estado sin circular, Bicentenario 1976, errores y billetes grandes del XIX pueden elevar el valor de…
 - [El Museo Arqueológico Nacional incorpora 239 monedas de gran relevancia a su colección de numismática andalusí](https://www.notofilia.com/noticias/man-239-monedas-numismatica-andalusi/): El MAN suma 239 monedas andalusíes (ss. VIII–XV) a la colección más importante del mundo, con piezas únicas como la dobla de Boabdil.…
 - [Tras aumento de la plata, ¿cuánto vale la moneda de $100 del Estado de México, primera fase?](https://www.notofilia.com/noticias/moneda-100-pesos-estado-mexico-primera-fase/): Con el alza de la plata, la moneda conmemorativa de $100 del Estado de México (Primera Fase, 2004) se cotiza entre $400 y $1.200 pesos.…
 - [El centenario y otras 8 monedas que hoy podrían valer una fortuna](https://www.notofilia.com/noticias/centenario-otras-8-monedas-valen-fortuna/): Nueve monedas de México y el mundo destacan por su contenido de oro, rareza, importancia histórica o errores de acuñación. Fuente: Debate.

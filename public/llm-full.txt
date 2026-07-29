@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 9 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 13 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,6 +813,10 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
+- [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
+- [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
+- [7 detalles que podrían hacer que un billete de $2 valga mucho para los coleccionistas](https://www.notofilia.com/noticias/billetes-2-dolares-7-detalles/): Sello rojo, Star Notes, series fancy, estado sin circular, Bicentenario 1976, errores y billetes grandes del XIX pueden elevar el valor de…
 - [El Museo Arqueológico Nacional incorpora 239 monedas de gran relevancia a su colección de numismática andalusí](https://www.notofilia.com/noticias/man-239-monedas-numismatica-andalusi/): El MAN suma 239 monedas andalusíes (ss. VIII–XV) a la colección más importante del mundo, con piezas únicas como la dobla de Boabdil.…
 - [Tras aumento de la plata, ¿cuánto vale la moneda de $100 del Estado de México, primera fase?](https://www.notofilia.com/noticias/moneda-100-pesos-estado-mexico-primera-fase/): Con el alza de la plata, la moneda conmemorativa de $100 del Estado de México (Primera Fase, 2004) se cotiza entre $400 y $1.200 pesos.…
 - [El centenario y otras 8 monedas que hoy podrían valer una fortuna](https://www.notofilia.com/noticias/centenario-otras-8-monedas-valen-fortuna/): Nueve monedas de México y el mundo destacan por su contenido de oro, rareza, importancia histórica o errores de acuñación. Fuente: Debate.
@@ -824,6 +828,214 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel
+
+URL canónica: https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/
+
+> Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con Chipre.
+
+Fuente externa: [CBN Mundo Cristiano](https://www1.cbn.com/mundocristiano/israel/2026/july/el-descubrimiento-de-una-moneda-de-2-500-anos-de-antiguedad-arroja-luz-sobre-el-antiguo-comercio-entre-israel-y-chipre)
+
+Una rara moneda de **unos 2.500 años**, originaria de **Chipre**, fue hallada
+en una playa de **Ashdod** (Israel). Avi Chaprak, subdirector del Departamento
+de Playas de Ashdod, la entregó a la **Autoridad de Antigüedades de Israel**,
+cuyo Departamento de Numismática la identificó como un ejemplar
+**excepcionalmente raro** y el **primero de su tipo** descubierto en el país.
+
+La pieza fue acuñada en la antigua ciudad de **Salamina** a mediados del
+**siglo V a. C.**, un puerto clave del Mediterráneo oriental. Pesa unos
+**11 gramos** y corresponde al patrón conocido como **«siglos»**. Aunque a
+simple vista parece de plata, el análisis reveló un **núcleo metálico
+recubierto de plata**, práctica documentada en la acuñación chipriota de la
+época por la escasez de ese metal en la isla.
+
+En una cara aparece un **carnero recostado**; en la otra, la **cabeza de un
+carnero** en un cuadrado hundido, junto a una **rama de laurel** y símbolos de
+la **escritura silábica chipriota**. Según Yanniv David Levy, del Departamento
+de Numismática de la Autoridad, las monedas de este tamaño del **período
+persa** son muy raras intactas: suelen fragmentarse para uso como moneda de
+cambio local, sobre todo en el interior de Israel. Hallar una **completa** en
+la costa es, por tanto, inusual e históricamente relevante.
+
+La Dra. Evangeline Markou, experta en numismática chipriota antigua, señaló
+que las monedas de Salamina del siglo V a. C. circularon por el Mediterráneo
+oriental, pero los hallazgos con **procedencia exacta** son escasos: esta
+pieza puede aportar datos sobre el **comercio y el tráfico marítimo** entre
+Chipre y la Tierra de Israel hace unos 2.500 años.
+
+---
+
+### Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas
+
+URL canónica: https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/
+
+> Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/07/26/que-debes-revisar-en-billetes-de-1-para-saber-si-vale-miles-de-dolares-para-los-coleccionistas/)
+
+Un billete de **$1** puede valer mucho más que su denominación si pertenece a
+una emisión antigua, conserva rasgos poco comunes o presenta un **error de
+impresión**. Conviene revisar la fecha, el diseño, el sello, el número de
+serie y el estado físico antes de gastarlo.
+
+## Antigüedad y personaje del retrato
+
+El primer billete de $1 se imprimió en **1862** con el retrato de **Salmon
+Chase**, no de George Washington. Un ejemplar aceptable puede superar los
+$500; piezas calificadas como “fino” han pasado de **$1.000**.
+
+Washington apareció en 1869. Esos billetes, con Cristóbal Colón y conocidos
+como **“rainbow”** por su variedad de colores, pueden alcanzar cientos o
+miles de dólares. La emisión de **1874** mantuvo ambos retratos con cambios
+de color y ubicación; un ejemplar “muy fino” se ofreció cerca de **$850**.
+
+## El banco emisor también importa
+
+Los billetes de bancos nacionales de **1875** son escasos: una pieza del
+First National Bank en “muy fino” se anunció por casi **$1.000**. También
+se busca el **Treasury Note de 1890** con Edwin Stanton: incluso con
+desgaste puede superar los $500; sin circular, más.
+
+## Diseños especiales, estrellas y sellos de colores
+
+El billete de **1917** (“sawhorse”), por la gran X del reverso, fue la
+última emisión con ese diseño y puede cotizar alrededor de **$300**. En
+**1923** el diseño se acercó al actual; una **estrella** al inicio de la
+serie puede empujar el precio por encima de **$1.000**.
+
+Los de **1928**, ya en tamaño moderno y apodados **“funny back”**, pueden
+llevar sellos azules o rojos; un ejemplar bien conservado ronda los
+**$250**.
+
+## El error que puede valer hasta $150.000
+
+Los más valiosos son ciertos billetes de **2014 y 2016** con **números de
+serie duplicados**, tras un envío duplicado de la Oficina de Grabado e
+Impresión a dos plantas. Hay que comprobar que la serie termine en
+estrella y esté entre B00000001\* y B00250000\*, o entre B03200001\* y
+B09600000\*.
+
+El gran valor aparece al reunir la **pareja coincidente**: según Wealthy
+Nickel, entre **$20.000 y $150.000**. Antes de vender, conviene una
+evaluación profesional: autenticidad, conservación y demanda fijan el
+precio final.
+
+---
+
+### ¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle
+
+URL canónica: https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/
+
+> Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”.
+
+Fuente externa: [Tus Buenas Noticias](https://www.tusbuenasnoticias.com/noticias/economia/2026/07/24/62516-detalles-de-los-billetes-mexicanos-coleccionables-)
+
+La numismática gana terreno en México gracias a las ediciones conmemorativas
+del **Banco de México (Banxico)**. Una de las más recientes es la serie
+coleccionable emitida por el **centenario** de la institución, ya vista como
+una de las piezas más atractivas de la actual **Familia G**.
+
+## El billete conmemorativo de 100 pesos
+
+Durante 2026, Banxico lanzó un billete especial de **100 pesos**. En el
+anverso destaca la fachada del edificio principal en el Centro Histórico de
+la Ciudad de México, junto a las esculturas **El Trabajo** y **La Abundancia**.
+
+Además de la versión de circulación, existe un ejemplar **“Espécimen”**
+pensado solo para colección: se entrega en presentación especial y no sirve
+como medio de pago. Por su tiraje limitado, algunos ya se ofrecen en línea
+muy por encima del valor facial.
+
+## La serie especial del centenario
+
+El homenaje no se quedó en el 100 pesos. También circuló una edición especial
+de la Familia G en las denominaciones de **20, 50, 100, 200, 500 y 1.000
+pesos**. Conservan casi el mismo diseño, pero llevan la inscripción
+**“100 Aniversario 1925-2025”** bajo el monograma de Banxico: un detalle
+suficiente para atraer a coleccionistas.
+
+## ¿Qué hace valioso a un billete de colección?
+
+Más allá de la denominación, importan el **estado de conservación**, la
+cantidad de ejemplares, la demanda y pertenecer a una emisión conmemorativa.
+Banxico también avanza en una nueva familia de billetes con materiales más
+resistentes y mayores medidas de seguridad; mientras tanto, piezas como el
+tradicional billete azul de **20 pesos de Benito Juárez** irán retirándose
+de forma gradual.
+
+---
+
+### 7 detalles que podrían hacer que un billete de $2 valga mucho para los coleccionistas
+
+URL canónica: https://www.notofilia.com/noticias/billetes-2-dolares-7-detalles/
+
+> Sello rojo, Star Notes, series fancy, estado sin circular, Bicentenario 1976, errores y billetes grandes del XIX pueden elevar el valor de un $2.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/07/23/7-detalles-que-podrian-hacer-que-un-billete-de-2-valga-mucho-para-los-coleccionistas/)
+
+Aunque el billete de **$2** suele pasar desapercibido —e incluso muchos creen
+que ya no se fabrica—, algunos ejemplares alcanzan cientos o miles de dólares.
+La clave no siempre es la antigüedad, sino rasgos poco comunes. Estos son
+siete detalles a revisar antes de gastarlo.
+
+## 1. Tiene un sello rojo
+
+Los especialistas empiezan por el **color del sello del Tesoro**. Los
+ejemplares antiguos con sello rojo (series **1928, 1953 y 1963**) son cada
+vez más escasos. Un 1928 sin circular puede superar los **$1.000**; usado,
+suele ir de **$5 a $175** según conservación. Los de 1953, emitidos como
+*United States Notes* y no como *Federal Reserve Notes*, también son muy
+buscados.
+
+## 2. Es un Star Note
+
+Si al final de la serie hay una **estrella (★)** en lugar de letra, es un
+*Star Note*: se imprimió para reemplazar piezas dañadas o con error, así
+que hay menos. Circulado puede valer **$10–$50**; algunos de 1953 sin
+circular llegan a **$500**. Casos excepcionales de 1969 (serie baja, error
+y ciertos distritos) han superado los **$100.000** e incluso acercarse a
+**$290.000**.
+
+## 3. Tiene un número de serie poco común
+
+Los coleccionistas buscan *fancy serial numbers*: consecutivos (12345678,
+87654321), idénticos (77777777), *radar* (se leen igual al derecho y al
+revés) y series muy bajas (00000001–00000009). La rareza y el estado
+determinan cuánto sube el precio.
+
+## 4. Está impecable y nunca circuló
+
+Sin dobleces, manchas ni desgaste, el papel firme multiplica el valor —
+sobre todo si además hay sello rojo, estrella, serie especial o error. Un
+billete doblado, lavado o mal guardado pierde gran parte de su atractivo.
+
+## 5. Es un billete del Bicentenario de 1976 con rasgos especiales
+
+El $2 de **1976** conmemoró el Bicentenario y marcó el regreso de la
+denominación tras unos diez años. La mayoría solo vale su facial, pero
+series especiales, errores, sello postal del primer día o *Star Notes*
+pueden venderse entre **$20 y $900**. Los sellados el **13 de abril de
+1976** rondan **$10–$20** en excelente estado.
+
+## 6. Presenta un error de impresión
+
+Impresiones descentradas, series que no coinciden, dobles, reversos
+invertidos o cortes con parte de otro billete elevan el valor: cuanto más
+evidente el defecto, mayor la cotización. Al imprimirse menos $2 que otras
+denominaciones, los errores también son más escasos.
+
+## 7. Es un billete grande impreso antes de 1900
+
+Los *large size* del siglo XIX (~7,5 × 3,5 pulgadas) son otra categoría:
+tirajes menores y diseños más elaborados. El Certificado de Plata
+**“Educational” de 1896** puede superar los **$15.000** en excelente
+estado. Según U.S. Currency Auctions, algunos $2 raros parten de unos
+**$4.500**, aunque la mayoría de los más valiosos son del XIX; aun así,
+piezas de las últimas tres décadas pueden valer cientos si reúnen varias
+de estas características.
+
+---
 
 ### El Museo Arqueológico Nacional incorpora 239 monedas de gran relevancia a su colección de numismática andalusí
 
