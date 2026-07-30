@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 13 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 14 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,6 +813,7 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI](https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/): Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
 - [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
@@ -828,6 +829,42 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI
+
+URL canónica: https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/
+
+> Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.
+
+Fuente externa: [Rue20](https://es.rue20.com/2026/07/29/bank-al-maghrib-acuna-moneda-conmemorativa-por-los-27-anos-de-reinado-del-rey-mohamed-vi/)
+
+Con motivo del **27.º aniversario** de la entronización del rey **Mohamed VI**
+(Fiesta del Trono), **Bank Al-Maghrib (BAM)** ha emitido una moneda
+conmemorativa de **plata** con valor facial de **250 dirhams**, según el
+comunicado del banco central.
+
+## Diseño
+
+En el **anverso** figura la efigie de Mohamed VI, rodeada de las inscripciones
+«محمد السادس» y «المملكة المغربية – ⵜⴰⴳⵍⴷⵉⵜ ⵏ ⵍⵎⵖⵔⵉⴱ» (árabe y tifinagh),
+junto al millésime **2026 – 1448**.
+
+En el **reverso**, una representación artística de fuegos artificiales en forma
+de estrellas acompaña las armas del Reino, el valor facial «250 – مائتان و خمسون
+درهما», el número **27** y la leyenda en árabe con su traducción francesa:
+«27ème ANNIVERSAIRE DE L’INTRONISATION DE S.M. LE ROI MOHAMMED VI».
+
+## Características técnicas
+
+La aleación es de **925 milésimas de plata** y **75 de cobre**. La pieza pesa
+**28,28 g**, mide **38,61 mm** de diámetro, tiene canto estriado y se acuñó en
+calidad **Proof**, acabado habitual en emisiones de colección.
+
+La emisión forma parte de las celebraciones oficiales de la Fiesta del Trono y
+refuerza el patrimonio numismático marroquí. Más detalles en la nota original
+de Rue20.
+
+---
 
 ### Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel
 
