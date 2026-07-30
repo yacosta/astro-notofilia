@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 13 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 14 noticias · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -72,6 +72,7 @@ Listado completo de 132 fichas: [llms-full.txt](https://www.notofilia.com/llms-f
 
 ## Noticias
 
+- [La Plata sede de las XLVI Jornadas Nacionales de Numismática](https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/): Tras casi 20 años, La Plata vuelve a albergar las XLVI Jornadas Nacionales de Numismática y Medallística, del 14 al 16 de agosto de 2026.…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
 - [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
