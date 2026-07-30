@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 13 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 14 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,6 +813,7 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [España acuñará una moneda por la victoria en el Mundial 2026](https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/): La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE. Fuente:…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
 - [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
@@ -828,6 +829,44 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### España acuñará una moneda por la victoria en el Mundial 2026
+
+URL canónica: https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/
+
+> La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE.
+
+Fuente externa: [elDiario.es](https://www.eldiario.es/spin/deportes/mundial-2026-moneda-conmemorativa-pieza-limitada-celebrar-victoria-copa-mundo-futbol-pm_1_13415293.html)
+
+Tras la victoria de España en el **Mundial 2026** (1-0 a Argentina el 19 de
+julio, gol de Ferran Torres en la prórroga), el Ministerio de Economía,
+Comercio y Empresa ha anunciado en el **BOE** una moneda conmemorativa que
+emitirá la **Fábrica Nacional de Moneda y Timbre–Real Casa de la Moneda**. La
+pieza sigue la línea de las emisiones posteriores al Mundial femenino de 2023 y
+a la Eurocopa masculina de 2024.
+
+## Características
+
+La tirada será de **50.000** piezas de **4 reales**, con valor facial de
+**5 euros** y precio de venta de **60,33 euros** (IVA excluido). Se acuñará en
+**plata de ley de 925 milésimas**, con peso y diámetro habituales en este tipo
+de emisiones de colección.
+
+En el **anverso**, el retrato de Felipe VI, la leyenda «Felipe VI rey de
+España», el año **2026** y una gráfila de perlas. En el **reverso**, el logo
+de la Copa del Mundo de la FIFA 26 y, en la parte inferior, la leyenda
+circular **«Campeones del mundo»**.
+
+## Dónde se vende
+
+Al ser moneda de colección, no entrará en circulación ordinaria: la
+comercializará la Real Casa de la Moneda en su tienda oficial, entidades
+financieras autorizadas y establecimientos numismáticos especializados. La
+tirada limitada hace prever una demanda alta.
+
+Más detalles en la nota original de elDiario.es.
+
+---
 
 ### Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel
 
