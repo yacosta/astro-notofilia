@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 14 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 17 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,7 +813,10 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI](https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/): Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.…
 - [La Plata sede de las XLVI Jornadas Nacionales de Numismática](https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/): Tras casi 20 años, La Plata vuelve a albergar las XLVI Jornadas Nacionales de Numismática y Medallística, del 14 al 16 de agosto de 2026.…
+- [Ceca, fecha y conservación: claves del valor numismático](https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/): En La Linterna de COPE, Luis Lanza explica que conservación, fecha y ceca —Madrid, Sevilla, México o Guatemala— fijan el valor de una…
+- [España acuñará una moneda por la victoria en el Mundial 2026](https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/): La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE. Fuente:…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
 - [¿Tienes alguno? Estos son los billetes mexicanos coleccionables a detalle](https://www.notofilia.com/noticias/billetes-mexicanos-coleccionables/): Banxico celebró su centenario con un billete de 100 pesos y una serie especial de la Familia G marcada “100 Aniversario 1925-2025”. Fuente:…
@@ -829,6 +832,42 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI
+
+URL canónica: https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/
+
+> Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.
+
+Fuente externa: [Rue20](https://es.rue20.com/2026/07/29/bank-al-maghrib-acuna-moneda-conmemorativa-por-los-27-anos-de-reinado-del-rey-mohamed-vi/)
+
+Con motivo del **27.º aniversario** de la entronización del rey **Mohamed VI**
+(Fiesta del Trono), **Bank Al-Maghrib (BAM)** ha emitido una moneda
+conmemorativa de **plata** con valor facial de **250 dirhams**, según el
+comunicado del banco central.
+
+## Diseño
+
+En el **anverso** figura la efigie de Mohamed VI, rodeada de las inscripciones
+«محمد السادس» y «المملكة المغربية – ⵜⴰⴳⵍⴷⵉⵜ ⵏ ⵍⵎⵖⵔⵉⴱ» (árabe y tifinagh),
+junto al millésime **2026 – 1448**.
+
+En el **reverso**, una representación artística de fuegos artificiales en forma
+de estrellas acompaña las armas del Reino, el valor facial «250 – مائتان و خمسون
+درهما», el número **27** y la leyenda en árabe con su traducción francesa:
+«27ème ANNIVERSAIRE DE L’INTRONISATION DE S.M. LE ROI MOHAMMED VI».
+
+## Características técnicas
+
+La aleación es de **925 milésimas de plata** y **75 de cobre**. La pieza pesa
+**28,28 g**, mide **38,61 mm** de diámetro, tiene canto estriado y se acuñó en
+calidad **Proof**, acabado habitual en emisiones de colección.
+
+La emisión forma parte de las celebraciones oficiales de la Fiesta del Trono y
+refuerza el patrimonio numismático marroquí. Más detalles en la nota original
+de Rue20.
+
+---
 
 ### La Plata sede de las XLVI Jornadas Nacionales de Numismática
 
@@ -874,6 +913,82 @@ cierran el **9 de agosto**.
 
 Más información y cronograma completo en la página de la ANUMLP y en la nota
 original de 0221.com.ar.
+
+---
+
+### Ceca, fecha y conservación: claves del valor numismático
+
+URL canónica: https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/
+
+> En La Linterna de COPE, Luis Lanza explica que conservación, fecha y ceca —Madrid, Sevilla, México o Guatemala— fijan el valor de una moneda antigua.
+
+Fuente externa: [COPE](https://www.cope.es/programas/poniendo-las-calles/audios/luis-lanza-trabaja-casa-monedas-hora-determinar-valor-importa-ceca-antiguas-acunaban-madrid-sevilla-mexico-guatemala-20260729_3411949.html)
+
+En **La Linterna** de la Cadena COPE, Carlos Moreno «El Pulpo» entrevista a
+**Luis Lanza**, de una casa de coleccionismo de monedas y sellos en Madrid
+(calle Felipe III). Su familia lleva más de **50 años** en el oficio y la tienda,
+casi **40** atendiendo a aficionados y profesionales.
+
+## Conservación, fecha y ceca
+
+Para tasar una pieza antigua, Lanza destaca tres factores: **conservación**,
+**fecha** y **ceca** (el lugar de acuñación). «Cuanto mejor conservada esté la
+moneda, más vale»; la **escasez** es lo que, en última instancia, dispara el
+precio. Sobre la ceca: «A la hora de determinar el valor, importa la ceca; las
+antiguas se acuñaban en **Madrid, Sevilla, México o Guatemala**». Algunas
+producían menos ejemplares y hoy son más raras y codiciadas, aunque a simple
+vista parezcan comunes.
+
+## Quién colecciona y cómo evitar fraudes
+
+El perfil es diverso: la moneda antigua de alto precio suele atraer a
+coleccionistas mayores, mientras las **conmemorativas de 2 euros** suman público
+joven. Lanza advierte de **falsificaciones** —incluso de época— y se muestra
+escéptico ante el encapsulado y la certificación por empresas extranjeras para
+piezas españolas. Su consejo: comprar en **sitios de confianza** (tienda física
+o vendedores con trayectoria, como el mercadillo de la Plaza Mayor de Madrid).
+En su local triunfan las monedas de 2 euros, las clásicas griegas y romanas, y
+la moneda española antigua «de Carlos III para atrás».
+
+La entrevista completa, en audio, está en la nota original de COPE.
+
+---
+
+### España acuñará una moneda por la victoria en el Mundial 2026
+
+URL canónica: https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/
+
+> La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE.
+
+Fuente externa: [elDiario.es](https://www.eldiario.es/spin/deportes/mundial-2026-moneda-conmemorativa-pieza-limitada-celebrar-victoria-copa-mundo-futbol-pm_1_13415293.html)
+
+Tras la victoria de España en el **Mundial 2026** (1-0 a Argentina el 19 de
+julio, gol de Ferran Torres en la prórroga), el Ministerio de Economía,
+Comercio y Empresa ha anunciado en el **BOE** una moneda conmemorativa que
+emitirá la **Fábrica Nacional de Moneda y Timbre–Real Casa de la Moneda**. La
+pieza sigue la línea de las emisiones posteriores al Mundial femenino de 2023 y
+a la Eurocopa masculina de 2024.
+
+## Características
+
+La tirada será de **50.000** piezas de **4 reales**, con valor facial de
+**5 euros** y precio de venta de **60,33 euros** (IVA excluido). Se acuñará en
+**plata de ley de 925 milésimas**, con peso y diámetro habituales en este tipo
+de emisiones de colección.
+
+En el **anverso**, el retrato de Felipe VI, la leyenda «Felipe VI rey de
+España», el año **2026** y una gráfila de perlas. En el **reverso**, el logo
+de la Copa del Mundo de la FIFA 26 y, en la parte inferior, la leyenda
+circular **«Campeones del mundo»**.
+
+## Dónde se vende
+
+Al ser moneda de colección, no entrará en circulación ordinaria: la
+comercializará la Real Casa de la Moneda en su tienda oficial, entidades
+financieras autorizadas y establecimientos numismáticos especializados. La
+tirada limitada hace prever una demanda alta.
+
+Más detalles en la nota original de elDiario.es.
 
 ---
 
