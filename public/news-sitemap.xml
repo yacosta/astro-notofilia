@@ -2,47 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/</loc>
+    <loc>https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-07-29</news:publication_date>
-      <news:title>Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI</news:title>
+      <news:publication_date>2026-07-30</news:publication_date>
+      <news:title>La Plata sede de encuentro de coleccionistas</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/</loc>
+    <loc>https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-07-29</news:publication_date>
-      <news:title>La Plata sede de las XLVI Jornadas Nacionales de Numismática</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-29</news:publication_date>
-      <news:title>Ceca, fecha y conservación: claves del valor numismático</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-29</news:publication_date>
-      <news:title>España acuñará una moneda por la victoria en el Mundial 2026</news:title>
+      <news:publication_date>2026-07-30</news:publication_date>
+      <news:title>Moneda de plata por los campeones del mundo</news:title>
     </news:news>
   </url>
 </urlset>

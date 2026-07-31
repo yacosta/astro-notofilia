@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 17 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 21 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,9 +813,13 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [La Plata sede de encuentro de coleccionistas](https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/): Las XLVI Jornadas Nacionales de Numismática reunirán a coleccionistas del 14 al 16 de agosto en el Hotel Grand Brizo. Fuente: El Día.
+- [Moneda de plata por los campeones del mundo](https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/): El BOE autoriza una pieza de plata 925 de la Real Casa de la Moneda: tirada de 50.000 y venta a 60,33 €. Fuente: elDiario Cantabria.
 - [Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI](https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/): Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.…
 - [La Plata sede de las XLVI Jornadas Nacionales de Numismática](https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/): Tras casi 20 años, La Plata vuelve a albergar las XLVI Jornadas Nacionales de Numismática y Medallística, del 14 al 16 de agosto de 2026.…
 - [Ceca, fecha y conservación: claves del valor numismático](https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/): En La Linterna de COPE, Luis Lanza explica que conservación, fecha y ceca —Madrid, Sevilla, México o Guatemala— fijan el valor de una…
+- [La moneda de $500 con doble fecha 2000](https://www.notofilia.com/noticias/moneda-500-chile-doble-fecha-2000/): Si el año 2000 aparece en anverso y reverso, la moneda de $500 chilena puede cotizar entre $300 mil y $500 mil. Fuente: ADN Radio.
+- [Monedas de $500 chilenas de hasta $2 millones](https://www.notofilia.com/noticias/moneda-500-chile-rara-ensayos/): Errores, ensayos y ediciones escasas de la moneda de $500 pueden cotizar desde $15 mil hasta más de $2 millones. Fuente: El Morrocotudo.
 - [España acuñará una moneda por la victoria en el Mundial 2026](https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/): La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE. Fuente:…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…
@@ -832,6 +836,77 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### La Plata sede de encuentro de coleccionistas
+
+URL canónica: https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/
+
+> Las XLVI Jornadas Nacionales de Numismática reunirán a coleccionistas del 14 al 16 de agosto en el Hotel Grand Brizo.
+
+Fuente externa: [El Día](https://www.eldia.com/la-ciudad/la-plata-sera-sede-de-un-encuentro-de-coleccionistas-de-monedas-billetes-y-medallas-cuando-se-realizara-la-ciudad_1785437820)
+
+**La Plata** será el epicentro de las **XLVI Jornadas Nacionales de Numismática
+y Medallística de la República Argentina**, del **viernes 14 al domingo 16 de
+agosto de 2026**. La sede principal será el **Hotel Grand Brizo** (calle 51
+entre 9 y 10). El encuentro reunirá a coleccionistas de monedas, billetes y
+medallas con especialistas, comerciantes e instituciones del país y del
+exterior.
+
+## Agenda
+
+El **viernes 14** arranca con una visita guiada a la Casa Matriz del Banco
+Provincia (calle 7 entre 46 y 47) y la muestra *«200 años de la Casa de Moneda
+Bonaerense»*, más una dispersión numismática a cargo de Río de la Plata Compañía
+Numismática en el Grand Brizo. El **sábado** y el **domingo** concentran
+conferencias, presentaciones de libros y catálogos, exposiciones, mesas de
+profesionales, sorteos y actividades de investigación.
+
+La apertura incluirá una presentación en la **Sala Astor Piazzolla** del Teatro
+Argentino, con la Banda Musical «Paso de los Andes» del Regimiento de Infantería
+Mecanizado 7 «Coronel Conde» de La Plata.
+
+## Medalla conmemorativa
+
+Esta edición tendrá una **medalla** con La Plata como protagonista: tirada de
+**200** piezas a **$25.000** cada una, con el plano tradicional de la ciudad
+como homenaje al lugar que recibe las jornadas por tercera vez.
+
+Más información en la nota original de El Día.
+
+---
+
+### Moneda de plata por los campeones del mundo
+
+URL canónica: https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/
+
+> El BOE autoriza una pieza de plata 925 de la Real Casa de la Moneda: tirada de 50.000 y venta a 60,33 €.
+
+Fuente externa: [elDiario Cantabria](https://eldiariocantabria.publico.es/articulo/sociedad/moneda-campeones-mundo-es-realidad-plata-edicion-limitada/20260730110730196540.html)
+
+El Ministerio de Economía, Comercio y Empresa ha autorizado, mediante la
+**Orden ECM/778/2026** publicada en el **BOE**, la emisión de una moneda
+conmemorativa dedicada a los **campeones del mundo**. La pieza la acuñará la
+**Fábrica Nacional de Moneda y Timbre–Real Casa de la Moneda** y rinde homenaje
+a la conquista de la Copa del Mundo por España.
+
+## Características
+
+Según la resolución oficial, la moneda se vende a **60,33 euros** (IVA
+incluido), con una tirada máxima de **50.000** unidades. Se elabora en **plata
+de ley de 925 milésimas**. Anverso y reverso incorporan motivos alegóricos al
+título mundial, el año de acuñación, la marca de la Ceca de Madrid (la «M»
+coronada) y elementos gráficos de seguridad.
+
+## Comercialización
+
+Al ser moneda de colección, **no entrará en circulación** ordinaria. Se
+distribuirá en la tienda oficial de la Real Casa de la Moneda, entidades
+financieras autorizadas y establecimientos numismáticos especializados. El
+sector prevé una demanda alta y un agotamiento rápido de la tirada.
+
+Más detalles en la nota original de elDiario Cantabria.
+
+---
 
 ### Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI
 
@@ -951,6 +1026,75 @@ En su local triunfan las monedas de 2 euros, las clásicas griegas y romanas, y
 la moneda española antigua «de Carlos III para atrás».
 
 La entrevista completa, en audio, está en la nota original de COPE.
+
+---
+
+### La moneda de $500 con doble fecha 2000
+
+URL canónica: https://www.notofilia.com/noticias/moneda-500-chile-doble-fecha-2000/
+
+> Si el año 2000 aparece en anverso y reverso, la moneda de $500 chilena puede cotizar entre $300 mil y $500 mil.
+
+Fuente externa: [ADN Radio](https://www.adnradio.cl/2026/07/29/la-extrana-moneda-de-500-que-puede-valer-hasta-500-mil-en-chile-este-es-el-detalle-clave-para-reconocerla/)
+
+Una moneda de **$500** puede valer mucho más que su denominación si muestra el
+año **2000** grabado tanto en el **anverso** como en el **reverso**. Según
+cuentas especializadas como **Mundo Monedas CL**, ese ejemplar puede alcanzar
+entre **$300.000** y **$500.000**, según autenticidad, conservación, rareza y
+demanda.
+
+## Cómo reconocerla
+
+La moneda de $500 circula desde **diciembre de 2000**, cuando reemplazó al
+billete de la misma denominación. El diseño habitual lleva en el anverso al
+cardenal **Raúl Silva Henríquez** y en el reverso el valor de 500 pesos con el
+año de acuñación.
+
+La variante buscada muestra el año **«2000» en ambas caras**: bajo la imagen
+del cardenal y también bajo la palabra «pesos» en el reverso. Ese detalle la
+distingue de las piezas comunes. «Es la más famosa y una de las más escasas»,
+señalan desde Mundo Monedas CL.
+
+## Otras piezas de interés
+
+También generan atención ensayos en oro y plata (que en casos excepcionales
+pueden superar el millón de pesos), monedas con el logo de la Casa de Moneda,
+ejemplares monometálicos y el error conocido como **«huevo frito»**, cuando el
+centro queda descentrado.
+
+Un precio alto en un anuncio no equivale a una venta real: conviene contrastar
+con especialistas. Más detalles en la nota original de ADN Radio.
+
+---
+
+### Monedas de $500 chilenas de hasta $2 millones
+
+URL canónica: https://www.notofilia.com/noticias/moneda-500-chile-rara-ensayos/
+
+> Errores, ensayos y ediciones escasas de la moneda de $500 pueden cotizar desde $15 mil hasta más de $2 millones.
+
+Fuente externa: [El Morrocotudo](https://www.elmorrocotudo.cl/noticia/sociedad/tienes-una-moneda-de-500-rara-conoce-cuales-pueden-costar-entre-500-mil-y-2-millone)
+
+Algunas monedas chilenas de **$500** pueden valer mucho más que su facial por
+errores de acuñación, pruebas de fabricación o ediciones poco comunes. Las
+cotizaciones publicadas van desde unos **$15.000** hasta **$500.000** o incluso
+más de **$2 millones**, según rareza y estado.
+
+## Variantes más buscadas
+
+Una de las piezas más perseguidas es la que lleva la fecha **2000 en ambas
+caras**, considerada de las más escasas. Su precio estimado oscila entre
+**$300.000** y **$500.000**, según conservación y autenticidad.
+
+## Ensayos millonarios
+
+Entre las más exclusivas figura el **ensayo de anverso sin reverso** en oro y
+plata, con valores que pueden ir de **$1 millón** a **$2 millones**. También se
+cita el ensayo de reverso con el **logo de la Casa de Moneda** en el anverso,
+alrededor de **$500.000**.
+
+El valor real depende de autenticación profesional y de ventas efectivas, no
+solo de anuncios en redes. Más detalles en la nota original de El Morrocotudo.
 
 ---
 
