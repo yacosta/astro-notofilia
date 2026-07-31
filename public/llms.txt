@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 17 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 21 noticias · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -72,9 +72,13 @@ Listado completo de 132 fichas: [llms-full.txt](https://www.notofilia.com/llms-f
 
 ## Noticias
 
+- [La Plata sede de encuentro de coleccionistas](https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/): Las XLVI Jornadas Nacionales de Numismática reunirán a coleccionistas del 14 al 16 de agosto en el Hotel Grand Brizo. Fuente: El Día.
+- [Moneda de plata por los campeones del mundo](https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/): El BOE autoriza una pieza de plata 925 de la Real Casa de la Moneda: tirada de 50.000 y venta a 60,33 €. Fuente: elDiario Cantabria.
 - [Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI](https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/): Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.…
 - [La Plata sede de las XLVI Jornadas Nacionales de Numismática](https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/): Tras casi 20 años, La Plata vuelve a albergar las XLVI Jornadas Nacionales de Numismática y Medallística, del 14 al 16 de agosto de 2026.…
 - [Ceca, fecha y conservación: claves del valor numismático](https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/): En La Linterna de COPE, Luis Lanza explica que conservación, fecha y ceca —Madrid, Sevilla, México o Guatemala— fijan el valor de una…
+- [La moneda de $500 con doble fecha 2000](https://www.notofilia.com/noticias/moneda-500-chile-doble-fecha-2000/): Si el año 2000 aparece en anverso y reverso, la moneda de $500 chilena puede cotizar entre $300 mil y $500 mil. Fuente: ADN Radio.
+- [Monedas de $500 chilenas de hasta $2 millones](https://www.notofilia.com/noticias/moneda-500-chile-rara-ensayos/): Errores, ensayos y ediciones escasas de la moneda de $500 pueden cotizar desde $15 mil hasta más de $2 millones. Fuente: El Morrocotudo.
 - [España acuñará una moneda por la victoria en el Mundial 2026](https://www.notofilia.com/noticias/mundial-2026-moneda-conmemorativa-espana/): La Real Casa de la Moneda emitirá 50.000 piezas de plata (facial 5 €, venta 60,33 €) por el título mundial de España, según el BOE. Fuente:…
 - [Una moneda chipriota de 2.500 años ilumina el antiguo comercio con Israel](https://www.notofilia.com/noticias/moneda-chipre-salamina-2500-anos/): Un «siglos» de Salamina (s. V a. C.), hallado en Ashdod, es el primer ejemplar de su tipo en Israel y documenta el comercio marítimo con…
 - [Qué debes revisar en billetes de $1 para saber si vale miles de dólares para los coleccionistas](https://www.notofilia.com/noticias/billetes-1-dolar-coleccionistas/): Fecha, retrato, sello, número de serie y errores como series duplicadas de 2014–2016 pueden hacer que un billete de $1 valga miles. Fuente:…

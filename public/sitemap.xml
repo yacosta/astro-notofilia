@@ -925,6 +925,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -957,6 +963,24 @@
   <url>
     <loc>https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/</loc>
     <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-500-chile-doble-fecha-2000/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-500-chile-rara-ensayos/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
