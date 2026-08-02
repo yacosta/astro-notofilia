@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/polimero-mundial/costa-rica-20-1000-colones/",
   "title": "Colones de Tyvek y Polímero, Costa Rica | Notofilia",
-  "description": "Ficha de catálogo numismático: billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011) del Banco Central de Costa Rica.",
+  "description": "Ficha de catálogo numismático: billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011)…",
   "keywords": [
     "costa rica",
     "banco central de costa rica",
@@ -16,8 +16,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "Costa Rica — 20 Colones (Tyvek, 1983) y 1.000 Colones (Polímero, 2011)",
-  "ogDescription": "Billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011) del Banco Central de Costa Rica. Colección privada Notofilia.",
+  "ogTitle": "Costa Rica — 20 Colones (Tyvek, 1983) y 1.000 Colones",
+  "ogDescription": "Billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011) del Banco Central de Costa Rica.",
   "ogImage": "/uploads/costarica-bccr-1000-colones-2011-polimero.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

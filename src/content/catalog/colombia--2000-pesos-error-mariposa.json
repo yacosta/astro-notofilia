@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/2000-pesos-error-mariposa/",
-  "title": "Dos Mil Pesos, Error &ldquo;Mariposa&rdquo; — Notofilia",
-  "description": "Ficha de catálogo numismático: billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa» que dejó unido un par de billetes.",
+  "title": "Dos Mil Pesos, Error “Mariposa” | Notofilia",
+  "description": "Ficha de catálogo numismático: billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa»…",
   "keywords": [
     "banco de la república",
     "dos mil pesos",
@@ -14,8 +14,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "El Banco de la República — Dos Mil Pesos, Error &ldquo;Mariposa&rdquo;",
-  "ogDescription": "Billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa» dejando unido un par de ejemplares. Colección privada Notofilia.",
+  "ogTitle": "El Banco de la República — Dos Mil Pesos, Error “Mariposa”",
+  "ogDescription": "Billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa» dejando unido un par de ejemplares.",
   "ogImage": "/uploads/colombia-2000-pesos-error-mariposa.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

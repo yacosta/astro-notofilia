@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/ecuador/100-sucres-1993/",
-  "title": "100 Sucres, Banco Central del Ecuador (1993) — Notofilia",
-  "description": "Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993, con números de serie consecutivos 00000002 y 00000003.",
+  "title": "100 Sucres, Banco Central del Ecuador (1993) | Notofilia",
+  "description": "Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993…",
   "keywords": [
     "banco central del ecuador",
     "cien sucres",
@@ -14,8 +14,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "Banco Central del Ecuador — Cien Sucres, Par de Serie Baja (1993)",
-  "ogDescription": "Par de billetes de Cien Sucres, serie WF, 20 de agosto de 1993, con los números de serie consecutivos 00000002 y 00000003. Colección privada Notofilia.",
+  "ogTitle": "Banco Central del Ecuador — Cien Sucres, Par de Serie Baja",
+  "ogDescription": "Par de billetes de Cien Sucres, serie WF, 20 de agosto de 1993, con los números de serie consecutivos 00000002 y 00000003.",
   "ogImage": "/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

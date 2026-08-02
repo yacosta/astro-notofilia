@@ -247,6 +247,11 @@
             </div>
 
             <div>
+              <a href="/coleccion/certificados-de-pago-militar/" onClick="{{ closeDrawer }}" style="display:block; font-size:17px; font-weight:600; color:#1c1a15; text-decoration:none; margin-bottom:8px;" style-hover="color:#5c4e33;">{{ mpcLabel }}</a>
+              <a href="/coleccion/certificados-de-pago-militar/10-dolares-serie-641/" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ mpc641Label }}</a>
+            </div>
+
+            <div>
               <span style="display:block; font-size:17px; font-weight:600; color:#1c1a15; margin-bottom:8px;">{{ miscLabel }}</span>
               <a href="/coleccion/giori-press-test-note/" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ goriTestLabel }}</a>
               <a href="/coleccion/emisiones-promocionales/" onClick="{{ closeDrawer }}" style="display:block; font-size:15px; color:#5c4e33; text-decoration:none; padding:9px 0;" style-hover="color:#1c1a15;">{{ ringlingLabel }}</a>
@@ -434,6 +439,8 @@ class Component extends DCLogic {
       misc: "Misceláneos",
       northAfrica: "Un Dólar — \u201cNorte de África\u201d (1935-A)",
       fed: "Catálogo de la Reserva Federal",
+      mpc: "Catálogo de Certificados de Pago Militar (MPC)",
+      mpc641: "Diez Dólares — Serie 641 (Vietnam, 1965–1968)",
       hawaii: "Veinte Dólares — Emisión \u201cHawái\u201d (1934-A)",
       minneapolis: "Cien Dólares — Minneapolis (1929)",
       districts: "Diez Dólares — Cuatro Distritos (1934)",
@@ -458,6 +465,8 @@ class Component extends DCLogic {
       misc: "Misc",
       northAfrica: "One Dollar — \u201cNorth Africa\u201d (1935-A)",
       fed: "Federal Reserve System",
+      mpc: "Military Payment Certificates (MPC) Catalog",
+      mpc641: "Ten Dollars — Series 641 (Vietnam, 1965–1968)",
       hawaii: "Twenty Dollars — \u201cHawaii\u201d Overprint (1934-A)",
       minneapolis: "One Hundred Dollars — Minneapolis (1929)",
       districts: "Ten Dollars — Four Districts (1934)",
@@ -643,6 +652,8 @@ class Component extends DCLogic {
       miscLabel: t.misc,
       northAfricaLabel: t.northAfrica,
       fedLabel: t.fed,
+      mpcLabel: t.mpc,
+      mpc641Label: t.mpc641,
       hawaiiLabel: t.hawaii,
       minneapolisLabel: t.minneapolis,
       districtsLabel: t.districts,

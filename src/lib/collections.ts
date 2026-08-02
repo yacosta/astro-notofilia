@@ -27,7 +27,7 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
     emptyMessage: 'Muy pronto publicaremos las primeras guías.',
     title: 'Blog de Numismática y Notafilia · Notofilia',
     description:
-      'Guías sobre numismática y notafilia: cómo empezar una colección de billetes, historia monetaria de Colombia y Puerto Rico y consejos para coleccionistas.',
+      'Guías de numismática y notafilia: cómo empezar una colección de billetes, historia monetaria de Colombia y Puerto Rico y consejos para coleccionistas.',
     keywords: [
       'colección de billetes',
       'colección de monedas',

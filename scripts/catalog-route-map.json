@@ -348,6 +348,14 @@
     "legacyFile": "billete-colombia-republica-bolivar-1-2-pesos-1882.dc.html"
   },
   {
+    "route": "/coleccion/certificados-de-pago-militar/",
+    "legacyFile": "catalogo-certificados-de-pago-militar.dc.html"
+  },
+  {
+    "route": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
+    "legacyFile": "billete-mpc-serie-641-10-dolares.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },

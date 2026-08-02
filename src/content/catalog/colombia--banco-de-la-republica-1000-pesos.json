@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/banco-de-la-republica-1000-pesos/",
-  "title": "Mil Pesos, Banco de la República — Notofilia",
-  "description": "Ficha de catálogo numismático: billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996) y la serie Jorge Eliécer Gaitán (2001–2006).",
+  "title": "Mil Pesos, Banco de la República | Notofilia",
+  "description": "Ficha de catálogo numismático: billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996)…",
   "keywords": [
     "banco de la república",
     "mil pesos colombia",
@@ -14,7 +14,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "El Banco de la República — Mil Pesos",
-  "ogDescription": "Billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996) y la serie Jorge Eliécer Gaitán (2001–2006). Colección privada Notofilia.",
+  "ogDescription": "Billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996) y la serie Jorge Eliécer Gaitán (2001–2006).",
   "ogImage": "/uploads/colombia-banco-de-la-republica-1000-pesos-1990.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

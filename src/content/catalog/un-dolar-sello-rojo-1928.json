@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/un-dolar-sello-rojo-1928/",
   "title": "$1 United States Note, Sello Rojo, Serie 1928 | Notofilia",
-  "description": "Ficha de catálogo numismático: United States Note de $1, sello rojo, serie de 1928, reverso &ldquo;funny back&rdquo;. Referencia Friedberg FR-1500.",
+  "description": "Ficha de catálogo numismático: United States Note de $1, sello rojo, serie de 1928, reverso “funny back”. Referencia Friedberg FR-1500.",
   "keywords": [
     "united states note",
     "legal tender",
@@ -16,7 +16,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "$1 United States Note — Sello Rojo, Serie de 1928",
-  "ogDescription": "Legal Tender Note de $1, sello rojo, reverso &ldquo;funny back&rdquo;, distribuido en Puerto Rico. Colección privada Notofilia.",
+  "ogDescription": "Legal Tender Note de $1, sello rojo, reverso “funny back”, distribuido en Puerto Rico. Colección privada Notofilia.",
   "ogImage": "/uploads/us-legal-tender-note-1-dollar-red-seal-1928.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

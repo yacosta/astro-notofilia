@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",
-  "title": "50 Centavos 1900, Banco de Barranquilla — Notofilia",
-  "description": "Ficha de catálogo numismático: billete de Cincuenta Centavos del Banco de Barranquilla, puesto en circulación forzosa en 1900 durante la Guerra de los Mil Días.",
+  "title": "50 Centavos 1900, Banco de Barranquilla | Notofilia",
+  "description": "Ficha de catálogo numismático: billete de Cincuenta Centavos del Banco de Barranquilla, puesto en circulación forzosa en 1900…",
   "keywords": [
     "banco de barranquilla",
     "50 centavos 1900",
@@ -14,7 +14,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "Cincuenta Centavos, 1900 — Banco de Barranquilla",
-  "ogDescription": "Billete de Cincuenta Centavos del Banco de Barranquilla, puesto en circulación forzosa en 1900 durante la Guerra de los Mil Días. Colección privada Notofilia.",
+  "ogDescription": "Billete de Cincuenta Centavos del Banco de Barranquilla, puesto en circulación forzosa en 1900 durante la Guerra de los Mil Días.",
   "ogImage": "/uploads/colombia-banco-de-barranquilla-50-centavos-1900.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

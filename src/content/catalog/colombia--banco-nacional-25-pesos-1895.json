@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/banco-nacional-25-pesos-1895/",
   "title": "Banco Nacional de Colombia: Serie 1895 | Notofilia",
-  "description": "Ficha de catálogo numismático: billetes de Diez Centavos (1885, 1893), Un Peso y Cinco Pesos (Guerra de los Mil Días, 1899–1900) y Veinticinco Pesos (1895) de El Banco Nacional de la República de Colombia.",
+  "description": "Ficha de catálogo numismático: billetes de Diez Centavos (1885, 1893), Un Peso y Cinco Pesos (Guerra de los Mil Días, 1899–1900)…",
   "keywords": [
     "banco nacional colombia",
     "billete colombiano siglo xix",
@@ -17,8 +17,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "El Banco Nacional — Diez Centavos (1885, 1893) y Veinticinco Pesos (1895)",
-  "ogDescription": "Billetes de Diez Centavos (1885, 1893, specimen) y Veinticinco Pesos (1895) de El Banco Nacional de la República de Colombia, Bogotá. Colección privada Notofilia.",
+  "ogTitle": "El Banco Nacional — Diez Centavos (1885, 1893) y",
+  "ogDescription": "Billetes de Diez Centavos (1885, 1893, specimen) y Veinticinco Pesos (1895) de El Banco Nacional de la República de Colombia, Bogotá.",
   "ogImage": "/uploads/colombia-banco-nacional-25-pesos-1895.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

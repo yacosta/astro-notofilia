@@ -27,6 +27,7 @@ const HUB_ORDER = [
   { path: '/coleccion/moneda-colonial-espanola/', label: 'Moneda colonial española (oro)' },
   { path: '/coleccion/reserva-federal/', label: 'Reserva Federal' },
   { path: '/coleccion/departamento-del-tesoro-de-ee-uu/', label: 'Departamento del Tesoro EE. UU.' },
+  { path: '/coleccion/certificados-de-pago-militar/', label: 'MPC (EE. UU.)' },
   { path: '/coleccion/pop-art/', label: 'Pop art / exonumia' },
   { path: '/coleccion/emisiones-promocionales/', label: 'Emisiones promocionales' },
 ];
@@ -95,6 +96,9 @@ function sectionForPath(p) {
   if (p.startsWith('/coleccion/reserva-federal/')) return '/coleccion/reserva-federal/';
   if (p.startsWith('/coleccion/departamento-del-tesoro-de-ee-uu/')) {
     return '/coleccion/departamento-del-tesoro-de-ee-uu/';
+  }
+  if (p.startsWith('/coleccion/certificados-de-pago-militar/')) {
+    return '/coleccion/certificados-de-pago-militar/';
   }
   if (p.startsWith('/coleccion/pop-art/')) return '/coleccion/pop-art/';
   if (p.startsWith('/coleccion/emisiones-promocionales/')) return '/coleccion/emisiones-promocionales/';

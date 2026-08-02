@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/",
-  "title": "Cinco Pesos y Diez Pesos, El Banco de la Unión (1883) — Notofilia",
-  "description": "Ficha de catálogo numismático: billetes de Cinco Pesos y Diez Pesos de El Banco de la Unión, Palau Corrales & Compañía, Bogotá, 1883, resellados como billetes del Banco Nacional en 1899.",
+  "title": "Cinco Pesos y Diez Pesos, El Banco de la Unión | Notofilia",
+  "description": "Ficha de catálogo numismático: billetes de Cinco Pesos y Diez Pesos de El Banco de la Unión, Palau Corrales & Compañía, Bogotá, 1883…",
   "keywords": [
     "banco de la union bogota",
     "palau corrales y compania",
@@ -14,7 +14,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "El Banco de la Unión — Cinco Pesos y Diez Pesos (1883)",
-  "ogDescription": "Billetes de Cinco Pesos y Diez Pesos de El Banco de la Unión, Bogotá, 1883, resellados en 1899 como billetes provisionales del Banco Nacional. Colección privada Notofilia.",
+  "ogDescription": "Billetes de Cinco Pesos y Diez Pesos de El Banco de la Unión, Bogotá, 1883, resellados en 1899 como billetes provisionales del Banco Nacional.",
   "ogImage": "/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

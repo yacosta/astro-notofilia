@@ -1,6 +1,6 @@
 {
   "path": "/coleccion/ringling-bros-50-aniversario-baraboo/",
-  "title": "Scrip Ringling Bros. 50º Aniversario, Baraboo 1933 | Notofilia",
+  "title": "Scrip Ringling Bros. 50º Aniversario, Baraboo | Notofilia",
   "description": "Ficha de catálogo: scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin, 1933 — serie completa de 5, 10 y 15 centavos, Golden Jubilee.",
   "keywords": [
     "ringling bros scrip",
@@ -13,8 +13,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "Ringling Bros. 50º Aniversario — Scrip de Baraboo, Wisconsin (1933)",
-  "ogDescription": "Serie completa de scrip conmemorativo (5, 10 y 15 centavos) emitido por la Cámara de Comercio de Baraboo, Wisconsin, para el Golden Jubilee de Ringling Bros., 1933.",
+  "ogTitle": "Ringling Bros. 50º Aniversario — Scrip de Baraboo",
+  "ogDescription": "Serie completa de scrip conmemorativo (5, 10 y 15 centavos)…",
   "ogImage": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

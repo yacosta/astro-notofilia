@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/",
-  "title": "Food Coupon USDA, Un Dólar (Serie 1980-B) — Notofilia",
-  "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE. UU., serie 1980-B, impreso por el Bureau of Engraving and Printing.",
+  "title": "Food Coupon USDA, Un Dólar (Serie 1980-B) | Notofilia",
+  "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE.",
   "keywords": [
     "food coupon",
     "food stamp",
@@ -17,7 +17,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "Food Coupon USDA — Un Dólar, Serie 1980-B",
-  "ogDescription": "Cupón de alimentos de un dólar del Departamento de Agricultura de EE. UU., serie 1980-B, impreso por el Bureau of Engraving and Printing. Colección privada Notofilia.",
+  "ogDescription": "Cupón de alimentos de un dólar del Departamento de Agricultura de EE. UU., serie 1980-B, impreso por el Bureau of Engraving and Printing.",
   "ogImage": "/uploads/usda-food-coupon-1-dollar-1980-serie-b.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

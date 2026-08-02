@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/polimero-mundial/republica-dominicana-20-pesos-2009/",
   "title": "20 Pesos Oro de Polímero, Dominicana (2009) | Notofilia",
-  "description": "Ficha de catálogo numismático: billete de 20 Pesos Oro de República Dominicana, primer polímero del país, con Gregorio Luperón y el Panteón Nacional. Pick-182a.",
+  "description": "Ficha de catálogo numismático: billete de 20 Pesos Oro de República Dominicana, primer polímero del país, con Gregorio Luperón y el Panteón Nacional.",
   "keywords": [
     "banco central republica dominicana",
     "20 pesos oro",
@@ -13,8 +13,8 @@
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
-  "ogTitle": "Banco Central de la República Dominicana — 20 Pesos Oro de Polímero (2009)",
-  "ogDescription": "Billete de 20 Pesos Oro de República Dominicana, primer polímero del país: retrato de Gregorio Luperón y el Panteón Nacional. Colección privada Notofilia.",
+  "ogTitle": "Banco Central de la República Dominicana — 20 Pesos Oro de",
+  "ogDescription": "Billete de 20 Pesos Oro de República Dominicana, primer polímero del país: retrato de Gregorio Luperón y el Panteón Nacional.",
   "ogImage": "/uploads/dominicana-bcrd-20-pesos-2009-polimero.jpg",
   "jsonLd": {
     "@context": "https://schema.org",

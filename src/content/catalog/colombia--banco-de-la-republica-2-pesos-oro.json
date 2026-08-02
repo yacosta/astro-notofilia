@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/colombia/banco-de-la-republica-2-pesos-oro/",
-  "title": "Dos Pesos Oro, Banco de la República — Notofilia",
-  "description": "Ficha de catálogo numismático: Dos Pesos Oro de El Banco de la República, Colombia — billete de 1947 con Camilo Torres y espécimen de 1972 con Policarpa Salavarrieta.",
+  "title": "Dos Pesos Oro, Banco de la República | Notofilia",
+  "description": "Ficha de catálogo numismático: Dos Pesos Oro de El Banco de la República, Colombia — billete de 1947 con Camilo Torres y espécimen de 1972…",
   "keywords": [
     "banco de la república",
     "dos pesos oro",
@@ -15,7 +15,7 @@
   "robots": "index, follow, max-image-preview:large",
   "ogType": "article",
   "ogTitle": "El Banco de la República — Dos Pesos Oro",
-  "ogDescription": "Dos Pesos Oro de El Banco de la República, Colombia — billete de 1947 con Camilo Torres y espécimen de 1972 con Policarpa Salavarrieta. Colección privada Notofilia.",
+  "ogDescription": "Dos Pesos Oro de El Banco de la República, Colombia — billete de 1947 con Camilo Torres y espécimen de 1972 con Policarpa Salavarrieta.",
   "ogImage": "/uploads/colombia-banco-de-la-republica-2-pesos-oro-1947.jpg",
   "jsonLd": {
     "@context": "https://schema.org",
