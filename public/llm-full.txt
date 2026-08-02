@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 21 noticias · glosario · perfiles.
+**Inventario (build):** ~132 fichas de catálogo · 8 guías de blog · 26 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -813,8 +813,13 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Tabasco exhibirá billetes del Banco de Tabasco en septiembre](https://www.notofilia.com/noticias/muestra-billetes-antiguos-tabasco-septiembre/): La Asociación Numismática de Tabasco prepara en septiembre una muestra con billetes del Banco de Tabasco (1901-1903) y piezas de haciendas.…
+- [Córdoba y el tesoro andalusí que refuerza al MAN](https://www.notofilia.com/noticias/tesoro-monedas-andalusies-cordoba-man/): El MAN suma 239 monedas andalusíes (Tonegawa, 990.000 €). Córdoba, ceca clave; piezas únicas como la dobla de Boabdil. Fuente: Cordópolis…
+- [Los coleccionistas chaqueños que preservan la memoria en cada pieza](https://www.notofilia.com/noticias/coleccionistas-chaquenos-preservan-memoria/): Dante Zacarías y José Campos muestran cómo la numismática chaqueña conserva memoria regional más allá del precio de mercado. Fuente: Diario…
+- [Flowing Hair 1794: el dólar que llega a US$8,5 millones](https://www.notofilia.com/noticias/flowing-hair-1794-valor-85-millones/): El dólar Flowing Hair de 1794, primera emisión de plata de EE.UU., puede cotizar hasta US$8,5 millones por rareza e historia. Fuente: LA…
 - [La Plata sede de encuentro de coleccionistas](https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/): Las XLVI Jornadas Nacionales de Numismática reunirán a coleccionistas del 14 al 16 de agosto en el Hotel Grand Brizo. Fuente: El Día.
 - [Moneda de plata por los campeones del mundo](https://www.notofilia.com/noticias/moneda-campeones-mundo-plata-edicion-limitada/): El BOE autoriza una pieza de plata 925 de la Real Casa de la Moneda: tirada de 50.000 y venta a 60,33 €. Fuente: elDiario Cantabria.
+- [Monedas de 25 centavos que podrían valer una fortuna](https://www.notofilia.com/noticias/monedas-25-centavos-valen-fortuna/): Algunos cuartos de dólar valen miles por plata, baja acuñación o errores; conviene revisar fecha, ceca y peso. Fuente: El Diario NY.
 - [Bank Al-Maghrib acuña moneda por los 27 años de Mohamed VI](https://www.notofilia.com/noticias/bank-al-maghrib-moneda-27-anos-mohamed-vi/): Bank Al-Maghrib emite una moneda de plata de 250 dirhams (Proof, 28,28 g) por el 27.º aniversario de la entronización del rey Mohamed VI.…
 - [La Plata sede de las XLVI Jornadas Nacionales de Numismática](https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/): Tras casi 20 años, La Plata vuelve a albergar las XLVI Jornadas Nacionales de Numismática y Medallística, del 14 al 16 de agosto de 2026.…
 - [Ceca, fecha y conservación: claves del valor numismático](https://www.notofilia.com/noticias/luis-lanza-ceca-valor-moneda-antigua/): En La Linterna de COPE, Luis Lanza explica que conservación, fecha y ceca —Madrid, Sevilla, México o Guatemala— fijan el valor de una…
@@ -836,6 +841,138 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Tabasco exhibirá billetes del Banco de Tabasco en septiembre
+
+URL canónica: https://www.notofilia.com/noticias/muestra-billetes-antiguos-tabasco-septiembre/
+
+> La Asociación Numismática de Tabasco prepara en septiembre una muestra con billetes del Banco de Tabasco (1901-1903) y piezas de haciendas.
+
+Fuente externa: [Tabasco Trends](https://tabascotrends.com/2026/08/01/tienes-uno-en-casa-billetes-antiguos/)
+
+La **Asociación Numismática de Tabasco A.C.** prepara para **septiembre** una
+muestra en el **Centro Cultural** de Villahermosa (municipio de Centro). Su
+presidente, **Vidal William Lara Sosa**, indicó que aún **no hay fecha
+confirmada**: están revisando el espacio para una presentación de
+numismática —billetes, monedas y, con alta probabilidad, **papel moneda del
+Estado de Tabasco**. El anuncio también circuló en *El Heraldo de Tabasco*.
+
+## El Banco de Tabasco y el papel local
+
+A principios del siglo XX operó el **Banco de Tabasco**, institución del
+gobierno estatal que entre **1901 y 1903** emitió billetes de **5, 10, 20, 50
+y 100 pesos**, además de acciones, bonos fundadores y bonos de deuda
+revolucionaria. En su corta vida **no acuñó monedas** de circulación; esas
+emisiones de papel son hoy piezas muy buscadas en el coleccionismo del
+sureste.
+
+## De las haciendas a las convenciones
+
+Entre los antecedentes locales destacan las **fichas y monedas de cambio** de
+medio, uno y dos reales de la Hacienda **«El Chinal»** (Jonuta), vinculada al
+exgobernador yucateco **Benito Aznar**. En la **Primera Convención
+Numismática** de la entidad participaron **22 expositores** nacionales con
+**18 vitrinas**.
+
+## Tracción reciente y lo que viene
+
+La asociación sitúa el anuncio tras la **cuarta edición** del encuentro
+estatal, con un aforo cercano a **3.000** personas (**1.600** el primer día y
+**1.200** el segundo), y ya trabaja en la **V Convención Numismática de
+Tabasco** para el próximo año, en formato de fin de semana.
+
+---
+
+### Córdoba y el tesoro andalusí que refuerza al MAN
+
+URL canónica: https://www.notofilia.com/noticias/tesoro-monedas-andalusies-cordoba-man/
+
+> El MAN suma 239 monedas andalusíes (Tonegawa, 990.000 €). Córdoba, ceca clave; piezas únicas como la dobla de Boabdil.
+
+Fuente externa: [Cordópolis (elDiario.es)](https://cordopolis.eldiario.es/cordoba-hoy/sociedad/formidable-tesoro-monedas-andalusies-historia-enterrada-andalus_1_13421540.html)
+
+El **Museo Arqueológico Nacional** se acerca a unas **17.000** monedas
+andalusíes tras adquirir **239** piezas «excepcionales» entre **2024 y 2026**
+en cuatro subastas por **990.000 euros**, en buena parte de la colección
+**Tonegawa**. El lote incluye la **dobla de Boabdil** y el **primer dírham**
+de Al-Ándalus como entidad independiente.
+
+## El ángulo cordobés
+
+Según **Paula Grañeda** (MAN), muchas piezas con leyenda genérica
+«Al-Ándalus» se acuñaron en **Córdoba** —en **Medina Azahara** o junto al
+antiguo alcázar califal—. Es la compra andalusí más relevante del museo
+desde **1895**. Predominan **dinares de oro**, con dírhams y feluses.
+
+La última subasta aportó dinares de **Ismail II** y **Yusuf II**, y plata de
+**Abderramán V**. Especialistas como **Alberto Canto** lamentan que Tonegawa
+no haya quedado íntegro en manos públicas.
+
+---
+
+### Los coleccionistas chaqueños que preservan la memoria en cada pieza
+
+URL canónica: https://www.notofilia.com/noticias/coleccionistas-chaquenos-preservan-memoria/
+
+> Dante Zacarías y José Campos muestran cómo la numismática chaqueña conserva memoria regional más allá del precio de mercado.
+
+Fuente externa: [Diario Norte](https://www.diarionorte.com/331310-los-coleccionistas-chaquenos-que-preservan-la-memoria-en-cada-pieza)
+
+**Dante Zacarías** y **José Campos** compartieron con *Diario Norte* cómo una
+afición nacida en la infancia hoy los une con decenas de apasionados por la
+numismática en **Chaco** y **Corrientes**. Exhibieron monedas, billetes, vales,
+fichas históricas y recortes de prensa, y coincidieron en que coleccionar es
+una forma de **conservar la memoria** regional.
+
+## De monedas centenarias a fichas de obrajes
+
+Zacarías reúne monedas, billetes, fichas, vales, acciones, bonos, cheques y una
+hemeroteca. Campos se concentra en **billetes argentinos anteriores a la
+unificación monetaria**, cuando provincias y bancos emitían su propio papel.
+Entre las piezas más llamativas están las **fichas de obrajes y quebrachales**
+chaqueños —emitidas por empresas como **Las Palmas** o **Quebrachales
+Fusionados**— canjeables por carne, leche u otros productos en las
+proveedurías. También conservan billetes del siglo XIX, documentos financieros
+y monedas romanas y griegas.
+
+## Infancia y comunidad
+
+Zacarías empezó guardando monedas extranjeras que veía en la feria con su
+padre; Campos comenzó a los **12 años** y, tras más de dos décadas, se enfocó
+en billetes históricos. El grupo se reúne los **domingos** (18–22 h) en
+Castelli y San Lorenzo (Resistencia) y un sábado al mes alternando Chaco y
+Corrientes. De tres fundadores pasó a **12–15** integrantes, con chicos de 11
+y 12 años; el contacto público es la página de Facebook **Coleccionista de
+Chaco y Corrientes**.
+
+---
+
+### Flowing Hair 1794: el dólar que llega a US$8,5 millones
+
+URL canónica: https://www.notofilia.com/noticias/flowing-hair-1794-valor-85-millones/
+
+> El dólar Flowing Hair de 1794, primera emisión de plata de EE.UU., puede cotizar hasta US$8,5 millones por rareza e historia.
+
+Fuente externa: [LA NACION](https://www.lanacion.com.ar/estados-unidos/flowing-hair-de-que-ano-es-el-dolar-estadounidense-que-vale-us85-millones-en-el-mercado-de-nid31072026/)
+
+El **dólar Flowing Hair de 1794** es el primer dólar de plata de Estados
+Unidos. Su escasez e importancia histórica explican cotizaciones que, según
+la guía PCGS de julio de 2026, pueden alcanzar **US$8,5 millones** en los
+grados más altos.
+
+La acuñación fue posible tras la **Ley de la Casa de la Moneda del 2 de abril
+de 1792**; la plata arrancó en **octubre de 1794**. El diseño de **Robert
+Scot** muestra a la Libertad con el cabello suelto y un águila con corona de
+olivo al reverso. La serie solo se acuñó en **1794 y parte de 1795**.
+
+## Datos clave
+
+Se entregaron unas **1.758** piezas; composición **90% plata / 10% cobre**;
+**40 mm** y **27 g**; ceca Filadelfia; borde **«HUNDRED CENTS ONE DOLLAR OR
+UNIT»**. Sobreviven entre **135 y 150** ejemplares. Un MS63+ se vendió en
+**Stack’s Bowers** el **11 de noviembre de 2025** por **US$4,5 millones**.
+
+---
 
 ### La Plata sede de encuentro de coleccionistas
 
@@ -905,6 +1042,37 @@ financieras autorizadas y establecimientos numismáticos especializados. El
 sector prevé una demanda alta y un agotamiento rápido de la tirada.
 
 Más detalles en la nota original de elDiario Cantabria.
+
+---
+
+### Monedas de 25 centavos que podrían valer una fortuna
+
+URL canónica: https://www.notofilia.com/noticias/monedas-25-centavos-valen-fortuna/
+
+> Algunos cuartos de dólar valen miles por plata, baja acuñación o errores; conviene revisar fecha, ceca y peso.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/07/30/monedas-de-25-centavos-que-podrian-valer-una-fortuna/)
+
+Aunque la mayoría de los **cuartos de dólar** solo valen 25 centavos, algunos
+se cotizan en miles por **escasez**, **plata** o **errores de acuñación**.
+
+Entre las más buscadas: el **1932-D** (Denver, **436.800** acuñadas; bien
+conservado, unos **US$3.000–10.000+**) y el **1932-S** (San Francisco,
+**408.000**; circulado desde ~**US$80**). Los cuartos hasta **1964** llevan
+**90% plata**; el **error de transición 1965** sobre cospel de plata pesa
+**6,25 g** frente a **5,67 g** y certificados se han vendido entre
+**US$5.000 y 16.800**.
+
+## Errores y emisiones modernas
+
+También importan las marcas sobrepuestas **1950-D/S** y **1950-S/D**,
+ejemplares impecables **1982-P / 1983-P**, un proof **1970** sobre moneda
+canadiense de **1941** (Heritage, **US$7.800**), el Bicentenario **1976** en
+**40% plata**, errores de state quarters (Wisconsin 2004-D; Minnesota
+2005-P) y los **«W» de West Point 2019–2020**.
+
+Antes de vender o gastar: mirar **fecha, ceca y peso**, usar lupa **10x** y,
+si parece rara, certificar con **PCGS o NGC**.
 
 ---
 
