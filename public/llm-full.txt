@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 8 guías de blog · 26 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 8 guías de blog · 29 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -819,6 +819,9 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Monedas de oro robadas en Albacete: 200.000 €](https://www.notofilia.com/noticias/monedas-oro-robadas-museo-albacete-valor/): El numismático Jesús Vico valora en unos 200.000 € los tesoros de Madrigueras y Villamalea sustraídos del Museo Provincial de Albacete.…
+- [Al Sur del Mundo subasta más de 2.500 piezas](https://www.notofilia.com/noticias/al-sur-del-mundo-subasta-2500-piezas/): La novena subasta en línea de Al Sur del Mundo (Chile) ofrece 2.023 lotes —unas 2.500 piezas— con cierres entre el 27 y el 30 de agosto.…
+- [Legado del tren de oro y el forint en Budapest](https://www.notofilia.com/noticias/legado-tren-oro-renacimiento-forint-hungria/): El Museo del Dinero de Budapest abre una muestra temporal (2026–2027) sobre el tren de oro del MNB y los 80 años del forint moderno.…
 - [Tabasco exhibirá billetes del Banco de Tabasco en septiembre](https://www.notofilia.com/noticias/muestra-billetes-antiguos-tabasco-septiembre/): La Asociación Numismática de Tabasco prepara en septiembre una muestra con billetes del Banco de Tabasco (1901-1903) y piezas de haciendas.…
 - [Córdoba y el tesoro andalusí que refuerza al MAN](https://www.notofilia.com/noticias/tesoro-monedas-andalusies-cordoba-man/): El MAN suma 239 monedas andalusíes (Tonegawa, 990.000 €). Córdoba, ceca clave; piezas únicas como la dobla de Boabdil. Fuente: Cordópolis…
 - [Los coleccionistas chaqueños que preservan la memoria en cada pieza](https://www.notofilia.com/noticias/coleccionistas-chaquenos-preservan-memoria/): Dante Zacarías y José Campos muestran cómo la numismática chaqueña conserva memoria regional más allá del precio de mercado. Fuente: Diario…
@@ -847,6 +850,99 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Monedas de oro robadas en Albacete: 200.000 €
+
+URL canónica: https://www.notofilia.com/noticias/monedas-oro-robadas-museo-albacete-valor/
+
+> El numismático Jesús Vico valora en unos 200.000 € los tesoros de Madrigueras y Villamalea sustraídos del Museo Provincial de Albacete.
+
+Fuente externa: [El Digital de Albacete](https://www.eldigitaldealbacete.com/2026/08/02/cuanto-valen-las-monedas-de-oro-robadas-del-museo-de-albacete-un-experto-pone-cifra-al-botin/)
+
+El **Museo Provincial de Albacete** sufrió el robo de dos colecciones de oro
+del Ministerio de Cultura: el **Tesoro de Madrigueras** (**42** monedas de
+Carlos III a Isabel II) y el de **Villamalea** (**180** monedas de
+**1850–1860**, reinado de Isabel II). Parte de las piezas se perdieron en la
+huida; el inventariado final aún no está cerrado.
+
+## La cifra de Jesús Vico
+
+El numismático albaceteño **Jesús Vico** estimó, solo a partir del inventario
+y sin examinar las piezas, unos **50.000–60.000 €** para Madrigueras y unos
+**140.000 €** para Villamalea: del orden de **200.000 €** en conjunto. El
+valor patrimonial, subrayan las instituciones, supera con creces el del metal.
+
+Vico apunta a una **banda organizada** —posiblemente la misma del Museo de
+Badajoz— y teme que las monedas se **fundan** para venderlas como oro. El
+sector ya comparte el listado con la asociación profesional para bloquear su
+comercialización si reaparecen.
+
+---
+
+### Al Sur del Mundo subasta más de 2.500 piezas
+
+URL canónica: https://www.notofilia.com/noticias/al-sur-del-mundo-subasta-2500-piezas/
+
+> La novena subasta en línea de Al Sur del Mundo (Chile) ofrece 2.023 lotes —unas 2.500 piezas— con cierres entre el 27 y el 30 de agosto.
+
+Fuente externa: [Ex-Ante](https://www.ex-ante.cl/negocios/al-sur-del-mundo-subasta-2500-piezas/)
+
+**Al Sur del Mundo Subastas** abrió su **noveno remate** numismático: **2.023 lotes**
+con unas **2.500** monedas, billetes, medallas, fichas y otros objetos. Es el
+mayor catálogo de la casa desde que empezó a operar en **2024**.
+
+La subasta es **totalmente en línea**, en **cuatro sesiones** con cierres entre
+el **27 y el 30 de agosto**: monedas chilenas; monedas antiguas y del mundo;
+billetes; y medallas, fichas y misceláneos. Según sus socios, cerca del **70%**
+de las compras ya las hacen clientes extranjeros.
+
+## Piezas destacadas
+
+Entre las estimaciones más altas figuran el billete chileno de **500 escudos
+de 1971** («El Minero») sin leyenda en el reverso (**US$8.000–15.000**); un
+álbum de **Rafael Bini** (Iquique, Revolución de **1891**) con billetes, vales
+y fichas (**US$8.000–12.000**); y un **ocho escudos** de oro de Santiago
+**1759** (**US$4.000–8.000**).
+
+También destacan el ocho escudos de **1838** («Mano sobre la Constitución»),
+el conjunto de **1971** con los dos escudos de Caupolicán (apenas **106**
+ejemplares documentados) y una columnaria de **ocho reales** de Lima **1754**
+(**US$3.000–5.000**).
+
+---
+
+### Legado del tren de oro y el forint en Budapest
+
+URL canónica: https://www.notofilia.com/noticias/legado-tren-oro-renacimiento-forint-hungria/
+
+> El Museo del Dinero de Budapest abre una muestra temporal (2026–2027) sobre el tren de oro del MNB y los 80 años del forint moderno.
+
+Fuente externa: [Pénzmúzeum (Money Museum)](https://www.penzmuzeum.hu/en/visit/exhibitions/temporary-exhibitions/the-legacy-of-the-gold-train-rebirth-of-the-hungarian-currency/)
+
+El **1 de agosto de 2026** el **Museo del Dinero** (Pénzmúzeum) de Budapest
+inauguró la muestra temporal **«El legado del tren de oro – Renacimiento de
+la moneda húngara»**, abierta hasta el **1 de noviembre de 2027**. Coincide
+con el **80.º aniversario** del forint moderno.
+
+En el centro está la misión del **tren de oro** del banco central (MNB) que,
+en los últimos meses de la Segunda Guerra Mundial, salvaguardó las reservas
+áureas húngaras y posibilitó la reconstrucción financiera de posguerra y el
+nacimiento de la nueva moneda nacional.
+
+## Qué se puede ver
+
+Con **80** piezas seleccionadas, la exposición combina memorias personales,
+documentos de archivo, noticiarios, entrevistas en vídeo, elementos
+interactivos y un interior ferroviario que evoca el tren de oro. Entre los
+destacados: el libro de visitas de la Casa de la Moneda húngara (1946), una
+copia de la carta de la sucursal del MNB en **Spital am Pyhrn** a los
+estadounidenses, el billete de **100 forint** con retrato de **Kossuth** y
+una hoja de billetes de **1.000 millones** de b.-pengő.
+
+La temporal es **gratuita** y **sin reserva**; la permanente del museo sigue
+requiriendo cita previa.
+
+---
 
 ### Tabasco exhibirá billetes del Banco de Tabasco en septiembre
 
