@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 29 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 32 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1183,6 +1183,9 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Banxico vende medallas con dinosaurios: precios y compra](https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/): La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial. Fuente:…
+- [Numismática reúne colecciones de todo el país en Pereira](https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/): El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.…
+- [10 monedas de EE.UU. que podrían valer hasta US$143.750](https://www.notofilia.com/noticias/monedas-eeuu-podrian-valer-143750/): De un Washington Quarter 1932-D a errores Double Die: diez piezas estadounidenses con precios récord en subasta, según El Diario NY.…
 - [Monedas de oro robadas en Albacete: 200.000 €](https://www.notofilia.com/noticias/monedas-oro-robadas-museo-albacete-valor/): El numismático Jesús Vico valora en unos 200.000 € los tesoros de Madrigueras y Villamalea sustraídos del Museo Provincial de Albacete.…
 - [Al Sur del Mundo subasta más de 2.500 piezas](https://www.notofilia.com/noticias/al-sur-del-mundo-subasta-2500-piezas/): La novena subasta en línea de Al Sur del Mundo (Chile) ofrece 2.023 lotes —unas 2.500 piezas— con cierres entre el 27 y el 30 de agosto.…
 - [Legado del tren de oro y el forint en Budapest](https://www.notofilia.com/noticias/legado-tren-oro-renacimiento-forint-hungria/): El Museo del Dinero de Budapest abre una muestra temporal (2026–2027) sobre el tren de oro del MNB y los 80 años del forint moderno.…
@@ -1214,6 +1217,119 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Banxico vende medallas con dinosaurios: precios y compra
+
+URL canónica: https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/
+
+> La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial.
+
+Fuente externa: [Heraldo Binario](https://www.heraldobinario.com.mx/tendencias/2026/8/3/banxico-lanza-monedas-conmemorativas-con-disenos-de-dinosaurios-cuanto-cuestan-y-como-conseguirlas-41276.html)
+
+La **Casa de Moneda de México** puso a la venta una colección especial
+inspirada en dinosaurios: un set de **seis medallas** en distintos
+materiales. Aunque a menudo se llaman «monedas conmemorativas»,
+**Heraldo Binario** aclara que son **medallas** de Banxico, sin poder
+liberatorio como moneda de curso legal.
+
+## Precios
+
+- **Latón** con acabado rosa metálico: **$800 MXN** el set
+- **CuAlNi** (cobre, aluminio y níquel) con acabado dorado: **$800 MXN**
+- **Plata ley .999**: **$4.200 MXN**
+
+## Cómo comprarlas
+
+Solo se venden **presencialmente** en las sucursales de Paseo de la
+Reforma (Ciudad de México) y **San Luis Potosí**, de lunes a viernes
+de **9:30 a 15:00**. Hay que presentar identificación oficial con
+fotografía; el pago es con tarjeta de débito o crédito (**no American
+Express**).
+
+Hay cupos semanales: hasta **seis** sets de metal industrial (máximo
+tres por acabado) y **un** set de plata por persona. No son moneda de
+curso legal, pero el diseño y la temática pueden atraer a coleccionistas
+de numismática y paleontología.
+
+---
+
+### Numismática reúne colecciones de todo el país en Pereira
+
+URL canónica: https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/
+
+> El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.
+
+Fuente externa: [El Diario](https://www.eldiario.com.co/noticias/risaralda/numismatica-reune-colecciones-de-todo-el-pais/)
+
+La numismática ocupó el centro de Pereira en el **VII Encuentro Nacional
+de Coleccionistas**, con billetes y monedas de distintas épocas y
+países. Cerca de **45 expositores** de ciudades como Barranquilla,
+Bogotá, Medellín, Cali, Armenia y Pereira se distribuyeron en **35
+mesas**, según **El Diario**.
+
+El espacio, impulsado por la **Sociedad de Coleccionistas del Eje
+Cafetero**, también invitó a llevar piezas de casa para orientar sobre
+valor y cuidado. Su presidente, **Juan Esteban Zuluaga**, subrayó que
+cada emisión registra personajes, paisajes y decisiones políticas de su
+tiempo.
+
+## Piezas y curiosidades
+
+Entre lo exhibido hubo billetes de **bancos privados anteriores a
+1923**, ejemplares certificados en Estados Unidos, billetes de la
+Alemania nazi y un conmemorativo de **Bahamas** alusivo al descubrimiento
+de América.
+
+El coleccionista **Daladier Morales** destacó el **medio peso
+provisional** de hacia **1946**: el Banco de la República dividió
+billetes de un peso y los habilitó con sello oficial ante la falta de
+monedas de 50 centavos. También recordó el billete de **200 pesos
+cafetero** (**1974–1982**), con un campesino cosechando café en el
+reverso.
+
+Para el coleccionista **Luis Alfonso Uribe**, estos encuentros ayudan a
+conservar piezas que ya no circulan y a transmitir ese patrimonio a
+nuevas generaciones, pese al avance de los pagos electrónicos.
+
+---
+
+### 10 monedas de EE.UU. que podrían valer hasta US$143.750
+
+URL canónica: https://www.notofilia.com/noticias/monedas-eeuu-podrian-valer-143750/
+
+> De un Washington Quarter 1932-D a errores Double Die: diez piezas estadounidenses con precios récord en subasta, según El Diario NY.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/08/02/estas-10-monedas-podrian-valer-hasta-143750-y-quiza-las-tienes-en-casa/)
+
+Una moneda olvidada en un frasco o en una colección familiar puede valer
+mucho más que su valor facial. **El Diario NY** resume diez piezas
+estadounidenses buscadas por **escasez**, **errores de acuñación** o
+**baja producción**, con precios récord en subasta que llegan hasta
+**US$143.750**.
+
+## Las más cotizadas
+
+Encabeza la lista el **Washington Quarter 1932-D** (primer año del
+diseño, acuñación limitada en la Gran Depresión): un ejemplar **MS66**
+certificado por **PCGS** alcanzó **US$143.750**. Le siguen el centavo
+**1969-S Lincoln Double Die** (**US$126.500** en **MS64**) y el
+**Kennedy Half Dollar 1964** de **90% plata** (**US$57.600** en
+**MS68**).
+
+También destacan la **Sacagawea «Cheerios» 2000-P** con reverso especial
+(**US$33.600**), el clásico **1955 Lincoln Double Die** (hasta
+**US$24.000**), el **Silver Eagle 1996** de baja tirada (**US$21.850**
+en **MS70**), el proof **1990** sin marca **«S»** (**US$20.700**), el
+**1972 Double Die**, el **1992-D Close AM** y el **Double Eagle High
+Relief 2009** de oro.
+
+## Antes de vender
+
+Si crees tener una pieza rara, conviene una **evaluación profesional**
+(por ejemplo con **PCGS** o **NGC**) antes de ponerla a la venta: el
+estado y la certificación pueden cambiar el precio en miles de dólares.
+
+---
 
 ### Monedas de oro robadas en Albacete: 200.000 €
 
