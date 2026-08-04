@@ -4,6 +4,9 @@
 # Legacy URLs from the old Notofilia content portal -> revived as a new profile page
 /j-s-g-boggs/  /perfil-j-s-g-boggs.dc.html  200
 /j-s-g-boggs  /perfil-j-s-g-boggs.dc.html  200
+# Legacy WordPress-era pretty URL for Hagerstown Bank catalog page
+/the-hagerstown-bank/  /coleccion/hagerstown-bank-maryland/  301
+/the-hagerstown-bank  /coleccion/hagerstown-bank-maryland/  301
 /glosario/  /glosario-numismatico.dc.html  200
 /politica-privacidad-cookies/  /politica-privacidad-cookies.dc.html  200
 /contacto/  /contacto.dc.html  200
