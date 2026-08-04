@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 8 guías de blog · 26 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 26 noticias · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -62,6 +62,7 @@ Listado completo de 134 fichas: [llms-full.txt](https://www.notofilia.com/llms-f
 
 ## Guías del blog
 
+- [Mylar sí, plástico no: cómo guardar tus billetes](https://www.notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/): El PVC destruye billetes en silencio: amarillea el papel, borra tintas y deja residuos grasos. Por qué el poliéster Mylar es el único…
 - [¿Tres imprentas? Pies de imprenta colombianos](https://www.notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/): IBB, IBSFB y Banco de la República parecen tres impresores distintos, pero cuentan otra historia: la de una misma imprenta y una ciudad que…
 - [Cómo empezar una colección de billetes](https://www.notofilia.com/blog/como-empezar-coleccion-billetes/): Guía para principiantes: cómo elegir un enfoque, dónde conseguir piezas, y cómo cuidar y clasificar tus primeros billetes de colección.
 - [Cómo identificar billetes falsos: elementos de seguridad](https://www.notofilia.com/blog/como-identificar-billetes-falsos/): Marca de agua, hilo de seguridad, microimpresión, tintas que cambian de color: los elementos que distinguen un billete auténtico de uno…
