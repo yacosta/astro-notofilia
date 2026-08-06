@@ -8,6 +8,7 @@ import { SITE } from '../lib/site';
 import BaseHead from '../components/BaseHead.astro';
 import HomeHero from '../components/HomeHero.astro';
 import HomePostStrip from '../components/HomePostStrip.astro';
+import HomeLogrosStrip from '../components/HomeLogrosStrip.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CookieBanner from '../components/CookieBanner.astro';
@@ -15,7 +16,7 @@ import type { StripItem } from '../components/HomePostStrip.astro';
 
 function toStripItems(
   posts: PublishedPost[],
-  base: 'noticias' | 'blog' | 'logros',
+  base: 'noticias' | 'blog',
 ): StripItem[] {
   return posts.slice(0, 4).map((p) => ({
     url: `/${base}/${p.slug}/`,
@@ -30,7 +31,6 @@ function toStripItems(
 
 const posts = toStripItems(await getPublishedPosts('noticias'), 'noticias');
 const blogPosts = toStripItems(await getPublishedPosts('blog'), 'blog');
-const logrosPosts = toStripItems(await getPublishedPosts('logros'), 'logros');
 
 const heroImg = `${SITE}/uploads/hero-engraving-01.jpg`;
 const heroes = [
@@ -150,18 +150,7 @@ const jsonLd = {
         bordered
       />
 
-      <HomePostStrip
-        headingId="logros-heading"
-        heading="Logros del Mes — Colección Virtual"
-        headingEn="Monthly Milestones — Virtual Collection"
-        items={logrosPosts}
-        emptyMessage="Muy pronto publicaremos el primer resumen mensual de la Colección Virtual."
-        emptyMessageEn="Coming soon: the first monthly summary of the Virtual Collection."
-        moreHref="/logros/"
-        moreLabel="Ver todos los logros"
-        moreLabelEn="See all milestones"
-        bordered
-      />
+      <HomeLogrosStrip />
 
       <PreFooter />
 

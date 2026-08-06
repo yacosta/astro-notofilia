@@ -93,8 +93,11 @@ for (const file of await readdir(publicDir)) {
 }
 
 // Native Astro section indexes and every published editorial entry.
+// Logros del Mes is a homepage strip (/#logros-heading), not a separate index.
 for (const section of ['blog', 'noticias', 'logros']) {
-  add(`${site}/${section}/`, { changefreq: 'weekly', priority: '0.8' });
+  if (section !== 'logros') {
+    add(`${site}/${section}/`, { changefreq: 'weekly', priority: '0.8' });
+  }
   const sectionDir = new URL(`../src/content/${section}/`, import.meta.url);
   let files = [];
   try {

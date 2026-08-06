@@ -15,8 +15,6 @@ export interface Props {
   posts: PublishedPost[];
   /** Show source next to the date (noticias). */
   showSource?: boolean;
-  /** Hide the empty-state copy (e.g. when a custom slot provides content). */
-  hideEmptyMessage?: boolean;
 }
 
 const {
@@ -26,7 +24,6 @@ const {
   emptyMessage,
   posts,
   showSource = false,
-  hideEmptyMessage = false,
 } = Astro.props;
 const basePath = `/${collection}/`;
 const label = COLLECTIONS[collection].label;
@@ -43,10 +40,8 @@ const label = COLLECTIONS[collection].label;
     {intro}
   </p>
 
-  <slot />
-
   {posts.length === 0 ? (
-    !hideEmptyMessage && <p class="text-muted">{emptyMessage}</p>
+    <p class="text-muted">{emptyMessage}</p>
   ) : (
     <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
       {posts.map((post) => (

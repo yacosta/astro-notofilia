@@ -210,7 +210,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, full }) {
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
   lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.'));
   lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
-  lines.push(linkLine('Logros del Mes', abs('/logros/'), 'Resúmenes mensuales de avances en la Colección Virtual.'));
+  lines.push(linkLine('Logros del Mes', abs('/#logros-heading'), 'Piezas y avances recientes de la Colección Virtual (sección en la home).'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), 'Más de 90 términos de numismática y notafilia (ES/EN).'));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));

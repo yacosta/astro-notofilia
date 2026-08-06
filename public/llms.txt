@@ -25,7 +25,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 - [Inicio](https://www.notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
 - [Catálogo (índice)](https://www.notofilia.com/coleccion/): Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.
 - [Blog](https://www.notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
-- [Logros del Mes](https://www.notofilia.com/logros/): Resúmenes mensuales de avances en la Colección Virtual.
+- [Logros del Mes](https://www.notofilia.com/#logros-heading): Piezas y avances recientes de la Colección Virtual (sección en la home).
 - [Noticias](https://www.notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
 - [Glosario](https://www.notofilia.com/glosario/): Más de 90 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://www.notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
