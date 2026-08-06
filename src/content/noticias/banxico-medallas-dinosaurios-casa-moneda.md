@@ -16,9 +16,6 @@ keywords:
   - "Huehuecanauhtlus"
   - "numismática"
 relatedLinks:
-  - href: "/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/"
-    title: "Cobertura de La Jornada"
-    description: "Anuncio en Facebook y precio del set según consulta telefónica."
   - href: "/noticias/billetes-mexicanos-coleccionables/"
     title: "Billetes mexicanos coleccionables"
   - href: "/noticias/moneda-100-pesos-estado-mexico-primera-fase/"

@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 34 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 33 noticias · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -74,7 +74,6 @@ Listado completo de 134 fichas: [llms-full.txt](https://www.notofilia.com/llms-f
 
 ## Noticias
 
-- [Dinosaurios mexicanos en medallas de Casa de Moneda](https://www.notofilia.com/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/): La Casa de Moneda de México relanza «Dinosaurios de México»: seis medallas conmemorativas; set desde $800 MXN en tienda física. Fuente: La…
 - [Banxico vende medallas con dinosaurios: precios y compra](https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/): La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial. Fuente:…
 - [Casa Museo Cecilio Acosta: bandera y numismática](https://www.notofilia.com/noticias/casa-museo-cecilio-acosta-muestra-bandera-numismatica/): En San Diego de los Altos, Miranda, una muestra gratuita de agosto une la historia del tricolor con billetes y monedas venezolanas. Fuente:…
 - [Numismática reúne colecciones de todo el país en Pereira](https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/): El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.…

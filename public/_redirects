@@ -1,6 +1,9 @@
 # Cloudflare Pages rewrites: pretty URL -> actual .dc.html file (200 = rewrite, keeps URL in address bar)
 # Legacy Google Search Console sitemap URL (pre-Astro) -> current news sitemap
 /sitemap-news.xml  /news-sitemap.xml  301
+# Duplicate noticia (same story as Banxico/Heraldo) → keep one canonical piece
+/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
+/noticias/dinosaurios-mexicanos-coleccion-casa-moneda  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
 # Legacy URLs from the old Notofilia content portal -> revived as a new profile page
 /j-s-g-boggs/  /perfil-j-s-g-boggs.dc.html  200
 /j-s-g-boggs  /perfil-j-s-g-boggs.dc.html  200
