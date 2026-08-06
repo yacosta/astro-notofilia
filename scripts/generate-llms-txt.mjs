@@ -13,6 +13,7 @@ const SITE = 'https://www.notofilia.com';
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
 const NOTICIAS_DIR = path.join(ROOT, 'src/content/noticias');
+const LOGROS_DIR = path.join(ROOT, 'src/content/logros');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
@@ -127,7 +128,12 @@ async function loadCatalog() {
 }
 
 async function loadPosts(dir, base) {
-  const files = (await readdir(dir)).filter((f) => f.endsWith('.md')).sort();
+  let files = [];
+  try {
+    files = (await readdir(dir)).filter((f) => f.endsWith('.md')).sort();
+  } catch {
+    return [];
+  }
   const posts = [];
   for (const file of files) {
     const raw = await readFile(path.join(dir, file), 'utf8');
@@ -148,7 +154,7 @@ async function loadPosts(dir, base) {
   return posts.sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 }
 
-function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
+function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full = false }) {
   const lines = [
     '# Notofilia',
     '',
@@ -168,7 +174,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
-    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · glosario · perfiles.`,
+    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · glosario · perfiles.`,
     '',
   ];
 
@@ -187,7 +193,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
   return lines.join('\n');
 }
 
-function buildCoreSections({ catalog, blog, noticias, full }) {
+function buildCoreSections({ catalog, blog, noticias, logros, full }) {
   const byPath = new Map(catalog.map((c) => [c.path, c]));
   const hubs = HUB_ORDER.map((h) => {
     const entry = byPath.get(h.path);
@@ -204,6 +210,7 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
   lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.'));
   lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
+  lines.push(linkLine('Logros del Mes', abs('/logros/'), 'Resúmenes mensuales de avances en la Colección Virtual.'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), 'Más de 90 términos de numismática y notafilia (ES/EN).'));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));
@@ -298,6 +305,26 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
     }
   }
 
+  lines.push('## Logros del Mes — Colección Virtual', '');
+  if (logros.length === 0) {
+    lines.push('Aún no hay resúmenes mensuales publicados.', '');
+  } else {
+    for (const post of logros) {
+      lines.push(linkLine(post.title, abs(post.path), clip(post.excerpt, 140)));
+    }
+    lines.push('');
+  }
+
+  if (full && logros.length > 0) {
+    lines.push('## Texto completo — logros del mes', '');
+    for (const post of logros) {
+      lines.push(`### ${post.title}`, '');
+      lines.push(`URL canónica: ${abs(post.path)}`, '');
+      if (post.excerpt) lines.push(`> ${post.excerpt}`, '');
+      lines.push(post.body, '', '---', '');
+    }
+  }
+
   lines.push('## APIs y agentes', '');
   lines.push(linkLine('OpenAPI', abs('/openapi.json'), 'Catálogo, health, comentarios y registro de agentes.'));
   lines.push(linkLine('Catalog search API', abs('/api/catalog'), 'GET ?q=&limit= — búsqueda sobre título/ruta/keywords.'));
@@ -330,14 +357,16 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
 const catalog = await loadCatalog();
 const blog = await loadPosts(BLOG_DIR, 'blog');
 const noticias = await loadPosts(NOTICIAS_DIR, 'noticias');
+const logros = await loadPosts(LOGROS_DIR, 'logros');
 const counts = {
   catalogCount: catalog.length,
   blogCount: blog.length,
   noticiasCount: noticias.length,
+  logrosCount: logros.length,
 };
 
-const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, full: false })}\n`;
-const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, full: true })}\n`;
+const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, full: false })}\n`;
+const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, full: true })}\n`;
 
 const targets = [
   ['llms.txt', llmsTxt],
@@ -354,5 +383,5 @@ for (const [name, body] of targets) {
 const kb = (n) => `${(Buffer.byteLength(n, 'utf8') / 1024).toFixed(1)} KiB`;
 console.log(
   `Generated llms.txt (${kb(llmsTxt)}) + llms-full.txt (${kb(llmsFull)}) ` +
-    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias.`,
+    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros.`,
 );

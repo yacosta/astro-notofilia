@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
-// Shared schema for the two editorial collections.
+// Shared schema for the editorial collections (blog, noticias, logros).
 const postSchema = z.object({
   title: z.string(),
   publishedAt: z.coerce.date(),
@@ -34,6 +34,10 @@ const noticias = defineCollection({ type: 'content', schema: postSchema });
 // "Fuentes" section), not external pointers.
 const blog = defineCollection({ type: 'content', schema: postSchema });
 
+// "Logros" — monthly milestones for the virtual collection. Each post is a
+// Markdown file in src/content/logros/ → /logros/<slug>/.
+const logros = defineCollection({ type: 'content', schema: postSchema });
+
 // Catalog pages share one Astro route/layout. Their preserved dc-runtime body
 // and interaction logic are imported once from the former standalone pages.
 const catalog = defineCollection({
@@ -57,4 +61,4 @@ const catalog = defineCollection({
   }),
 });
 
-export const collections = { noticias, blog, catalog };
+export const collections = { noticias, blog, logros, catalog };

@@ -46,6 +46,32 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
     jsonLdDescription:
       'Guías y artículos sobre numismática y notafilia: cómo coleccionar billetes y monedas, historia monetaria y consejos para el coleccionista.',
   },
+  logros: {
+    id: 'logros',
+    label: 'Logros del Mes',
+    heading: 'Logros del Mes — Colección Virtual',
+    intro:
+      'Un resumen mensual de lo nuevo en la Colección Virtual de Notofilia: piezas añadidas, fichas publicadas y avances del catálogo.',
+    emptyMessage: 'Muy pronto publicaremos el primer resumen mensual de la Colección Virtual.',
+    title: 'Logros del Mes — Colección Virtual · Notofilia',
+    description:
+      'Logros mensuales de la Colección Virtual de Notofilia: nuevas fichas, billetes y monedas incorporados al catálogo digital.',
+    keywords: [
+      'colección virtual Notofilia',
+      'logros del mes',
+      'catálogo de billetes',
+      'catálogo de monedas',
+      'notafilia',
+      'numismática',
+      'colección privada',
+    ],
+    showSource: false,
+    sourceLinkLabel: 'Leer la fuente original',
+    backLabel: 'Volver a Logros del Mes',
+    jsonLdName: 'Logros del Mes — Colección Virtual',
+    jsonLdDescription:
+      'Resúmenes mensuales de avances en la Colección Virtual de Notofilia: nuevas piezas y fichas del catálogo.',
+  },
   noticias: {
     id: 'noticias',
     label: 'Noticias',
@@ -76,7 +102,7 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
 };
 
 export function isPostCollection(value: string): value is PostCollection {
-  return value === 'blog' || value === 'noticias';
+  return value === 'blog' || value === 'noticias' || value === 'logros';
 }
 
 export function collectionIndexJsonLd(meta: CollectionMeta) {

@@ -3,6 +3,7 @@
  * Shared listing page for blog / noticias collections.
  */
 import Cover from './Cover.astro';
+import { COLLECTIONS } from '../lib/collections';
 import { formatDateLongEs, toIsoDate } from '../lib/dates';
 import type { PostCollection, PublishedPost } from '../lib/posts';
 
@@ -18,7 +19,7 @@ export interface Props {
 
 const { collection, heading, intro, emptyMessage, posts, showSource = false } = Astro.props;
 const basePath = `/${collection}/`;
-const label = collection === 'blog' ? 'Blog' : 'Noticias';
+const label = COLLECTIONS[collection].label;
 ---
 <div class="max-w-content mx-auto px-6 pt-14 pb-6">
   <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
