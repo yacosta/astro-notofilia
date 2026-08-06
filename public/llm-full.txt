@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 32 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 34 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1183,7 +1183,9 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Dinosaurios mexicanos en medallas de Casa de Moneda](https://www.notofilia.com/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/): La Casa de Moneda de México relanza «Dinosaurios de México»: seis medallas conmemorativas; set desde $800 MXN en tienda física. Fuente: La…
 - [Banxico vende medallas con dinosaurios: precios y compra](https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/): La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial. Fuente:…
+- [Casa Museo Cecilio Acosta: bandera y numismática](https://www.notofilia.com/noticias/casa-museo-cecilio-acosta-muestra-bandera-numismatica/): En San Diego de los Altos, Miranda, una muestra gratuita de agosto une la historia del tricolor con billetes y monedas venezolanas. Fuente:…
 - [Numismática reúne colecciones de todo el país en Pereira](https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/): El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.…
 - [10 monedas de EE.UU. que podrían valer hasta US$143.750](https://www.notofilia.com/noticias/monedas-eeuu-podrian-valer-143750/): De un Washington Quarter 1932-D a errores Double Die: diez piezas estadounidenses con precios récord en subasta, según El Diario NY.…
 - [Monedas de oro robadas en Albacete: 200.000 €](https://www.notofilia.com/noticias/monedas-oro-robadas-museo-albacete-valor/): El numismático Jesús Vico valora en unos 200.000 € los tesoros de Madrigueras y Villamalea sustraídos del Museo Provincial de Albacete.…
@@ -1218,6 +1220,37 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Texto completo — noticias
 
+### Dinosaurios mexicanos en medallas de Casa de Moneda
+
+URL canónica: https://www.notofilia.com/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/
+
+> La Casa de Moneda de México relanza «Dinosaurios de México»: seis medallas conmemorativas; set desde $800 MXN en tienda física.
+
+Fuente externa: [La Jornada](https://www.jornada.com.mx/noticia/2026/08/04/economia/dinosaurios-mexicanos-los-protagonistas-de-la-nueva-coleccion-de-la-casa-de-moneda)
+
+La **Casa de Moneda de México** anunció en su cuenta de Facebook el
+relanzamiento de la colección de medallas conmemorativas
+**«Dinosaurios de México»**, un homenaje a especies que habitaron el
+territorio nacional hace millones de años. Cada pieza, según la
+institución, busca un acabado de colección y se presenta como «un
+fragmento de la historia natural» del país.
+
+## Compra presencial
+
+La casa acuñadora invita a adquirir las medallas en sus **tiendas
+físicas**; el anuncio en redes no detalló compra en línea ni, al
+principio, el número de piezas ni el precio. En consulta telefónica
+reportada por **La Jornada Maya**, el **set de seis medallas** cuesta
+**$800 MXN**.
+
+Para materiales (latón, CuAlNi y plata .999), sucursales, horarios y
+cupos semanales, ver la nota de Notofilia con la cobertura de
+[Heraldo Binario](/noticias/banxico-medallas-dinosaurios-casa-moneda/).
+No son moneda de curso legal: son medallas conmemorativas para
+coleccionistas de numismática y paleontología.
+
+---
+
 ### Banxico vende medallas con dinosaurios: precios y compra
 
 URL canónica: https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/
@@ -1250,6 +1283,41 @@ Hay cupos semanales: hasta **seis** sets de metal industrial (máximo
 tres por acabado) y **un** set de plata por persona. No son moneda de
 curso legal, pero el diseño y la temática pueden atraer a coleccionistas
 de numismática y paleontología.
+
+---
+
+### Casa Museo Cecilio Acosta: bandera y numismática
+
+URL canónica: https://www.notofilia.com/noticias/casa-museo-cecilio-acosta-muestra-bandera-numismatica/
+
+> En San Diego de los Altos, Miranda, una muestra gratuita de agosto une la historia del tricolor con billetes y monedas venezolanas.
+
+Fuente externa: [Gobernación de Miranda](http://www.miranda.gob.ve/index.php/casa-museo-cecilio-acosta-inaugura-muestra-documental-de-la-bandera-y-la-numismatica-venezolana/)
+
+El **3 de agosto de 2026**, en el marco del **Día de la Bandera Nacional**,
+la **Casa Museo Cecilio Acosta** (San Diego de los Altos, municipio
+Guaicaipuro, Miranda) inauguró una exhibición documental y numismática
+sobre la simbología patria y la evolución del sistema monetario
+venezolano. La iniciativa, coordinada por la Secretaría de Cultura de
+la Gobernación de Miranda, estará abierta **de forma gratuita** durante
+todo el mes de agosto, con visitas guiadas para estudiantes,
+investigadores y familias de los Altos Mirandinos.
+
+## Del tricolor al cono monetario
+
+El recorrido sigue la génesis del pabellón desde Francisco de Miranda
+—quien lo flameó el **12 de marzo de 1806** en el buque *Leander* y el
+**3 de agosto** en La Vela de Coro— hasta las ocho estrellas actuales,
+pasando por la Bandera de las Provincias Unidas de 1811 y los decretos
+de Simón Bolívar.
+
+En paralelo, un catálogo numismático documenta la historia económica
+desde la Capitanía General y las acuñaciones provinciales de la
+Independencia hasta la **Ley Monetaria de 1879**, que fijó el
+**bolívar** como unidad nacional bajo Antonio Guzmán Blanco. Billetes
+y piezas metálicas originales ilustran estandarización comercial,
+transformaciones bancarias y la iconografía de próceres, flora, fauna
+y monumentos en el papel moneda.
 
 ---
 
