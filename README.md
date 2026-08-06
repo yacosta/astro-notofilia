@@ -52,9 +52,10 @@ top for the pages that benefit most from content collections and shared layouts.
 | `/` | `src/pages/index.astro` |
 | `/noticias/`, `/noticias/<slug>/` | `src/pages/[section]/*` + collection `noticias` |
 | `/blog/`, `/blog/<slug>/` | `src/pages/[section]/*` + collection `blog` |
+| `/logros/`, `/logros/<slug>/` | `src/pages/[section]/*` + collection `logros` |
 | `/404` | `src/pages/404.astro` |
 
-Editorial posts live as Markdown in `src/content/{noticias,blog}/` with a shared
+Editorial posts live as Markdown in `src/content/{noticias,blog,logros}/` with a shared
 Zod schema (`src/content/config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
@@ -74,10 +75,10 @@ workflow and required Cloudflare bindings.
 │   └── _middleware.js      # Cloudflare Pages Function: logs 404s
 ├── src/
 │   ├── components/         # Cover, PreFooter, SiteFooter, BaseHead, Post*, Home*
-│   ├── content/            # Markdown collections (blog, noticias)
+│   ├── content/            # Markdown collections (blog, noticias, logros)
 │   ├── layouts/            # BlogLayout (editorial shell)
 │   ├── lib/                # site URL, dates, posts helpers, sitemap stats
-│   ├── pages/              # native Astro routes ([section] = blog|noticias)
+│   ├── pages/              # native Astro routes ([section] = blog|noticias|logros)
 │   └── styles/global.css   # Tailwind v4 theme + fonts + prose
 ├── public/                 # catalog site, served verbatim
 │   ├── billete-*.dc.html   # individual banknote pages (~90)

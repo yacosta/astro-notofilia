@@ -5,12 +5,13 @@
 import type { CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
+import { COLLECTIONS } from '../lib/collections';
 import { formatDateLongEs, toIsoDate } from '../lib/dates';
 import type { PostCollection } from '../lib/posts';
 
 export interface Props {
   collection: PostCollection;
-  post: CollectionEntry<'blog'> | CollectionEntry<'noticias'>;
+  post: CollectionEntry<'blog'> | CollectionEntry<'noticias'> | CollectionEntry<'logros'>;
   /** CTA label for external source link. */
   sourceLinkLabel: string;
   /** Back-link label under the article. */
@@ -23,7 +24,7 @@ const d = post.data;
 const iso = toIsoDate(d.publishedAt);
 const fmt = formatDateLongEs(d.publishedAt);
 const basePath = `/${collection}/`;
-const label = collection === 'blog' ? 'Blog' : 'Noticias';
+const label = COLLECTIONS[collection].label;
 const coverFit = d.coverFit ?? 'cover';
 ---
 <article class="max-w-content mx-auto px-6 pt-12">

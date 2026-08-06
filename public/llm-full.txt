@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 33 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 33 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -25,6 +25,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 - [Inicio](https://www.notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
 - [Catálogo (índice)](https://www.notofilia.com/coleccion/): Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.
 - [Blog](https://www.notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
+- [Logros del Mes](https://www.notofilia.com/logros/): Resúmenes mensuales de avances en la Colección Virtual.
 - [Noticias](https://www.notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
 - [Glosario](https://www.notofilia.com/glosario/): Más de 90 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://www.notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
@@ -2331,6 +2332,10 @@ numismático, de modo que las monedas gastadas que pasan de mano en mano rara
 vez alcanzan las cifras de los titulares.
 
 ---
+
+## Logros del Mes — Colección Virtual
+
+Aún no hay resúmenes mensuales publicados.
 
 ## APIs y agentes
 

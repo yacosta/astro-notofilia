@@ -93,10 +93,16 @@ for (const file of await readdir(publicDir)) {
 }
 
 // Native Astro section indexes and every published editorial entry.
-for (const section of ['blog', 'noticias']) {
+for (const section of ['blog', 'noticias', 'logros']) {
   add(`${site}/${section}/`, { changefreq: 'weekly', priority: '0.8' });
   const sectionDir = new URL(`../src/content/${section}/`, import.meta.url);
-  for (const file of await readdir(sectionDir)) {
+  let files = [];
+  try {
+    files = await readdir(sectionDir);
+  } catch {
+    continue;
+  }
+  for (const file of files) {
     if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
     const source = await readFile(join(sectionDir.pathname, file), 'utf8');
     if (/^draft:\s*true\s*$/m.test(source)) continue;

@@ -4,7 +4,7 @@
     "title": "Notofilia MCP",
     "version": "1.0.0"
   },
-  "description": "Read-only MCP tools for Notofilia's historical banknote and coin catalog, noticias, and blog.",
+  "description": "Read-only MCP tools for Notofilia's historical banknote and coin catalog, noticias, blog, and monthly collection milestones.",
   "url": "https://www.notofilia.com/mcp",
   "endpoint": "https://www.notofilia.com/mcp",
   "transport": {
