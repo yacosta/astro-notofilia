@@ -52,7 +52,7 @@ top for the pages that benefit most from content collections and shared layouts.
 | `/` | `src/pages/index.astro` |
 | `/noticias/`, `/noticias/<slug>/` | `src/pages/[section]/*` + collection `noticias` |
 | `/blog/`, `/blog/<slug>/` | `src/pages/[section]/*` + collection `blog` |
-| `/logros/`, `/logros/<slug>/` | `src/pages/[section]/*` + collection `logros` |
+| `/#logros-heading`, `/logros/<slug>/` | Homepage strip + collection `logros` (index redirects to `/`) |
 | `/404` | `src/pages/404.astro` |
 
 Editorial posts live as Markdown in `src/content/{noticias,blog,logros}/` with a shared
