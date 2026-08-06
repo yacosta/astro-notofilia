@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 34 noticias · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 33 noticias · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1183,7 +1183,6 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
-- [Dinosaurios mexicanos en medallas de Casa de Moneda](https://www.notofilia.com/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/): La Casa de Moneda de México relanza «Dinosaurios de México»: seis medallas conmemorativas; set desde $800 MXN en tienda física. Fuente: La…
 - [Banxico vende medallas con dinosaurios: precios y compra](https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/): La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial. Fuente:…
 - [Casa Museo Cecilio Acosta: bandera y numismática](https://www.notofilia.com/noticias/casa-museo-cecilio-acosta-muestra-bandera-numismatica/): En San Diego de los Altos, Miranda, una muestra gratuita de agosto une la historia del tricolor con billetes y monedas venezolanas. Fuente:…
 - [Numismática reúne colecciones de todo el país en Pereira](https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/): El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.…
@@ -1219,37 +1218,6 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
-
-### Dinosaurios mexicanos en medallas de Casa de Moneda
-
-URL canónica: https://www.notofilia.com/noticias/dinosaurios-mexicanos-coleccion-casa-moneda/
-
-> La Casa de Moneda de México relanza «Dinosaurios de México»: seis medallas conmemorativas; set desde $800 MXN en tienda física.
-
-Fuente externa: [La Jornada](https://www.jornada.com.mx/noticia/2026/08/04/economia/dinosaurios-mexicanos-los-protagonistas-de-la-nueva-coleccion-de-la-casa-de-moneda)
-
-La **Casa de Moneda de México** anunció en su cuenta de Facebook el
-relanzamiento de la colección de medallas conmemorativas
-**«Dinosaurios de México»**, un homenaje a especies que habitaron el
-territorio nacional hace millones de años. Cada pieza, según la
-institución, busca un acabado de colección y se presenta como «un
-fragmento de la historia natural» del país.
-
-## Compra presencial
-
-La casa acuñadora invita a adquirir las medallas en sus **tiendas
-físicas**; el anuncio en redes no detalló compra en línea ni, al
-principio, el número de piezas ni el precio. En consulta telefónica
-reportada por **La Jornada Maya**, el **set de seis medallas** cuesta
-**$800 MXN**.
-
-Para materiales (latón, CuAlNi y plata .999), sucursales, horarios y
-cupos semanales, ver la nota de Notofilia con la cobertura de
-[Heraldo Binario](/noticias/banxico-medallas-dinosaurios-casa-moneda/).
-No son moneda de curso legal: son medallas conmemorativas para
-coleccionistas de numismática y paleontología.
-
----
 
 ### Banxico vende medallas con dinosaurios: precios y compra
 
