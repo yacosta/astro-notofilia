@@ -7,6 +7,7 @@ import {
 } from '../../lib/collections';
 import { getPublishedPosts } from '../../lib/posts';
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import LogrosHighlights from '../../components/LogrosHighlights.astro';
 import PostCollectionIndex from '../../components/PostCollectionIndex.astro';
 
 export function getStaticPaths() {
@@ -22,6 +23,7 @@ if (!isPostCollection(meta.id)) throw new Error(`Unknown section: ${meta.id}`);
 
 const posts = await getPublishedPosts(meta.id);
 const jsonLd = collectionIndexJsonLd(meta);
+const isLogros = meta.id === 'logros';
 ---
 <BlogLayout
   title={meta.title}
@@ -37,5 +39,8 @@ const jsonLd = collectionIndexJsonLd(meta);
     emptyMessage={meta.emptyMessage}
     posts={posts}
     showSource={meta.showSource}
-  />
+    hideEmptyMessage={isLogros}
+  >
+    {isLogros && <LogrosHighlights />}
+  </PostCollectionIndex>
 </BlogLayout>
