@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 33 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~134 fichas de catálogo · 9 guías de blog · 36 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1184,6 +1184,9 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [España autoriza 5.000 monedas de oro del cerdo ibérico](https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/): El BOE fija una onza de oro .9999 (facial 1,5 €) dedicada al cerdo ibérico; tirada máxima de 5.000 y lanzamiento en el último cuatrimestre.…
+- [La moneda chilena de 2 escudos que puede valer $2 millones](https://www.notofilia.com/noticias/moneda-2-escudos-chile-1971-caupolican/): El 2 escudos de 1971 «Caupolicán» apenas tuvo 106 ejemplares en cuproníquel; coleccionistas la cotizan cerca de $2 millones según estado.…
+- [Monedas de Spider-Man en plata .999 y relieve 3D](https://www.notofilia.com/noticias/monedas-spiderman-plata-999-relieve-3d/): De Fiji con iluminación a una máscara 3D de Crown Mint (5.000 piezas) y bullion AMC de 1987: piezas Marvel cotizadas entre cientos y 10 mil…
 - [Banxico vende medallas con dinosaurios: precios y compra](https://www.notofilia.com/noticias/banxico-medallas-dinosaurios-casa-moneda/): La Casa de Moneda de México ofrece sets de seis medallas con dinosaurios en latón, CuAlNi y plata .999; solo venta presencial. Fuente:…
 - [Casa Museo Cecilio Acosta: bandera y numismática](https://www.notofilia.com/noticias/casa-museo-cecilio-acosta-muestra-bandera-numismatica/): En San Diego de los Altos, Miranda, una muestra gratuita de agosto une la historia del tricolor con billetes y monedas venezolanas. Fuente:…
 - [Numismática reúne colecciones de todo el país en Pereira](https://www.notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/): El VII Encuentro Nacional de Coleccionistas en Pereira reunió cerca de 45 expositores con billetes y monedas de Colombia y el mundo.…
@@ -1219,6 +1222,117 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### España autoriza 5.000 monedas de oro del cerdo ibérico
+
+URL canónica: https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/
+
+> El BOE fija una onza de oro .9999 (facial 1,5 €) dedicada al cerdo ibérico; tirada máxima de 5.000 y lanzamiento en el último cuatrimestre.
+
+Fuente externa: [Europa Press](https://www.europapress.es/economia/noticia-gobierno-autoriza-emision-5000-monedas-oro-dedicadas-cerdo-iberico-20260806133907.html)
+
+El **Ministerio de Economía, Comercio y Empresa** autorizó la emisión,
+acuñación y puesta en circulación de una nueva serie de monedas de
+colección de **una onza de oro** dedicadas al **cerdo ibérico**, según
+la orden publicada el **6 de agosto de 2026** en el **BOE**.
+
+## Características
+
+- Tirada máxima: **5.000** unidades
+- Valor facial: **1,5 euros**
+- Oro fino **999,9** milésimas
+- Peso mínimo: **31,104 g** (una onza troy)
+- Diámetro: **37,20 mm**, canto estriado
+- Lanzamiento previsto: **último cuatrimestre de 2026**
+
+En el **anverso** figura un real de tipo columnario (hemisferios bajo la
+corona y columnas de Hércules), una cuádruple imagen latente de
+seguridad y la leyenda «Felipe VI Rey de España». El **reverso** muestra
+el cerdo ibérico en su hábitat, el año de acuñación y la marca de la
+Ceca.
+
+La comercialización correrá a cargo de la **FNMT-Real Casa de la Moneda**,
+directamente o mediante entidades autorizadas. La pieza continúa la
+serie anual de onzas bullion de fauna ibérica iniciada en **2021**
+(lince ibérico, oso pardo y otras especies).
+
+---
+
+### La moneda chilena de 2 escudos que puede valer $2 millones
+
+URL canónica: https://www.notofilia.com/noticias/moneda-2-escudos-chile-1971-caupolican/
+
+> El 2 escudos de 1971 «Caupolicán» apenas tuvo 106 ejemplares en cuproníquel; coleccionistas la cotizan cerca de $2 millones según estado.
+
+Fuente externa: [Canal 13](https://www.13.cl/programas/noticias-13/servicios/la-moneda-chilena-que-podria-valer-hasta-2-millones-asi-puedes)
+
+Una moneda chilena de **2 escudos de 1971**, conocida como
+**«Caupolicán»** por el toqui mapuche del anverso, puede cotizar cerca
+de **$2 millones** según estado de conservación e interés de
+compradores, reporta **Canal 13**.
+
+## Cómo reconocerla
+
+- Emisión de **1971**, cuando el **escudo** era la unidad monetaria
+- Material: **cuproníquel**
+- Diámetro aproximado: **21 mm**
+- Tiraje estimado: solo **106** ejemplares
+- No circuló de forma masiva, lo que refuerza su rareza
+
+En el circuito numismático se la llama a menudo el «santo grial de los
+escudos». En subastas previas, piezas similares se han movido cerca de
+**US$1.900**, aunque el precio final depende de autenticidad,
+conservación y negociación.
+
+## ¿La antigüedad basta?
+
+No. Especialistas recuerdan que el valor lo impulsan sobre todo la
+**escasez**, el **estado**, los **errores de acuñación** y la demanda,
+no solo los años. Ante una pieza sospechosamente valiosa, conviene
+pedir evaluación a un numismático o casa especializada antes de vender.
+
+---
+
+### Monedas de Spider-Man en plata .999 y relieve 3D
+
+URL canónica: https://www.notofilia.com/noticias/monedas-spiderman-plata-999-relieve-3d/
+
+> De Fiji con iluminación a una máscara 3D de Crown Mint (5.000 piezas) y bullion AMC de 1987: piezas Marvel cotizadas entre cientos y 10 mil pesos.
+
+Fuente externa: [Heraldo Binario](https://www.heraldobinario.com.mx/tendencias/2026/8/6/asi-son-las-nuevas-monedas-de-spiderman-acunadas-en-plata-999-y-con-un-relieve-en-3d-41358.html)
+
+Con el próximo estreno de *Spider-Man: Brand New Day*, **Heraldo
+Binario** repasa emisiones de colección dedicadas al Hombre Araña —
+plata pura, tirajes cortos y acabados poco habituales— que han ganado
+interés entre coleccionistas.
+
+## Fiji con iluminación
+
+Una pieza de **Fiji** se presenta como la primera moneda de curso legal
+con sistema de iluminación: Spider-Man en el reverso y el escudo fijiano
+en el anverso. Es cuproníquel con baño de plata, tiraje de **50.000**
+ejemplares y cotiza alrededor de **$540 MXN** según estado.
+
+## Plata .999 y máscara en 3D
+
+Otra emisión muestra a Spider-Man en color entre edificios: unos
+**31 g** de plata pura, **40,7 mm** de diámetro y precio cercano a
+**$2.000 MXN**.
+
+La más llamativa es la de **2019** con forma de **máscara** del héroe:
+plata **.999**, relieve tridimensional (rompe el formato circular),
+desarrollada por **Crown Mint** (Scottsdale, Arizona) con tiraje de
+**5.000** piezas. En el mercado especializado ronda **$4.000 MXN**.
+
+## Medalla AMC de 1987
+
+De la serie *Cartoon Celebrities* de la **American Medallion
+Corporation** (EE. UU., **1987**): bullion de plata pura, Brilliant
+Uncirculated, **39 mm** y **3 mm** de grosor. Suele cotizar cerca de
+**$3.000 MXN** y, por escasez e interés histórico entre fans del cómic,
+puede acercarse a **$10.000 MXN** en subastas especializadas.
+
+---
 
 ### Banxico vende medallas con dinosaurios: precios y compra
 

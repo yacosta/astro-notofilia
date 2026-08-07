@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-
+  <url>
+    <loc>https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-06</news:publication_date>
+      <news:title>España autoriza 5.000 monedas de oro del cerdo ibérico</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-2-escudos-chile-1971-caupolican/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-06</news:publication_date>
+      <news:title>La moneda chilena de 2 escudos que puede valer $2 millones</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/monedas-spiderman-plata-999-relieve-3d/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-06</news:publication_date>
+      <news:title>Monedas de Spider-Man en plata .999 y relieve 3D</news:title>
+    </news:news>
+  </url>
 </urlset>

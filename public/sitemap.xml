@@ -979,6 +979,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/noticias/jornadas-nacionales-numismatica-la-plata-2026/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -1011,6 +1017,12 @@
   <url>
     <loc>https://www.notofilia.com/noticias/moneda-100-pesos-estado-mexico-primera-fase/</loc>
     <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-2-escudos-chile-1971-caupolican/</loc>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1065,6 +1077,12 @@
   <url>
     <loc>https://www.notofilia.com/noticias/monedas-oro-robadas-museo-albacete-valor/</loc>
     <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/monedas-spiderman-plata-999-relieve-3d/</loc>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
