@@ -967,6 +967,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/noticias/encuentro-coleccionistas-la-plata-2026/</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -981,6 +987,12 @@
   <url>
     <loc>https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/</loc>
     <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1059,6 +1071,12 @@
   <url>
     <loc>https://www.notofilia.com/noticias/moneda-eeuu-1796-valor-185-millones/</loc>
     <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
