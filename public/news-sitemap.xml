@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.notofilia.com/noticias/gobierno-monedas-oro-cerdo-iberico/</loc>
+    <loc>https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-06</news:publication_date>
-      <news:title>España autoriza 5.000 monedas de oro del cerdo ibérico</news:title>
+      <news:publication_date>2026-08-07</news:publication_date>
+      <news:title>Saltillo: convención numismática el 15 y 16 de agosto</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.notofilia.com/noticias/moneda-2-escudos-chile-1971-caupolican/</loc>
+    <loc>https://www.notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-06</news:publication_date>
-      <news:title>La moneda chilena de 2 escudos que puede valer $2 millones</news:title>
+      <news:publication_date>2026-08-07</news:publication_date>
+      <news:title>Arequipa exhibe 390 piezas en su III Encuentro Numismático</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://www.notofilia.com/noticias/monedas-spiderman-plata-999-relieve-3d/</loc>
+    <loc>https://www.notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-06</news:publication_date>
-      <news:title>Monedas de Spider-Man en plata .999 y relieve 3D</news:title>
+      <news:publication_date>2026-08-07</news:publication_date>
+      <news:title>Vaticano emite euros con la imagen del Papa León XIV</news:title>
     </news:news>
   </url>
 </urlset>
