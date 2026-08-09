@@ -2,36 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/</loc>
+    <loc>https://www.notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-07</news:publication_date>
-      <news:title>Saltillo: convención numismática el 15 y 16 de agosto</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-07</news:publication_date>
-      <news:title>Arequipa exhibe 390 piezas en su III Encuentro Numismático</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-07</news:publication_date>
-      <news:title>Vaticano emite euros con la imagen del Papa León XIV</news:title>
+      <news:publication_date>2026-08-08</news:publication_date>
+      <news:title>Billete de 10.000 pesos: Banxico explica el canje</news:title>
     </news:news>
   </url>
 </urlset>
