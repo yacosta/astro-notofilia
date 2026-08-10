@@ -475,7 +475,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/</loc>
+    <loc>https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
