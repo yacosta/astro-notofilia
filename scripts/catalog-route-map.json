@@ -538,5 +538,9 @@
   {
     "route": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
     "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/",
+    "legacyFile": ""
   }
 ]
