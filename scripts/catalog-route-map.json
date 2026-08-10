@@ -356,6 +356,10 @@
     "legacyFile": "billete-mpc-serie-641-10-dolares.dc.html"
   },
   {
+    "route": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
+    "legacyFile": "billete-mpc-serie-692-20-dolares.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
