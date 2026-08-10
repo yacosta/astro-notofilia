@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-04T03:34:08.836Z",
-  "count": 134,
+  "generatedAt": "2026-08-10T19:41:14.833Z",
+  "count": 135,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -38,7 +38,7 @@
       "id": "certificados-de-pago-militar--10-dolares-serie-641",
       "path": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
       "title": "MPC Serie 641 $10 EE. UU. Vietnam | Notofilia",
-      "description": "MPC Serie 641 $10 de Vietnam (1965–1968): Schwan-887 / Pick M63, reverso con la Estatua de la Libertad. Notofilia.",
+      "description": "MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.",
       "keywords": [
         "military payment certificate",
         "MPC serie 641",
@@ -49,15 +49,37 @@
         "diez dólares MPC",
         "Estatua de la Libertad",
         "notafilia",
-        "numismática"
+        "numismática",
+        "PMG 53",
+        "about uncirculated"
       ],
       "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/"
+    },
+    {
+      "id": "certificados-de-pago-militar--20-dolares-serie-692",
+      "path": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
+      "title": "MPC Serie 692 $20 EE. UU. Vietnam | Notofilia",
+      "description": "MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.",
+      "keywords": [
+        "military payment certificate",
+        "MPC serie 692",
+        "schwan 938",
+        "pick m98",
+        "billete vietnam",
+        "certificado de pago militar",
+        "veinte dólares MPC",
+        "Chief Ouray",
+        "Hoover Dam",
+        "notafilia",
+        "numismática"
+      ],
+      "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/"
     },
     {
       "id": "certificados-de-pago-militar",
       "path": "/coleccion/certificados-de-pago-militar/",
       "title": "Certificados de Pago Militar (MPC) EE. UU. | Notofilia",
-      "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam y el fin del scrip. Catálogo Notofilia.",
+      "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.",
       "keywords": [
         "military payment certificates",
         "MPC",
@@ -69,7 +91,9 @@
         "numismática",
         "Department of Defense",
         "serie 461",
-        "serie 641"
+        "serie 641",
+        "serie 692",
+        "Chief Ouray"
       ],
       "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/"
     },
