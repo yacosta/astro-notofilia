@@ -368,6 +368,11 @@
     "legacyFile": "billete-usda-food-coupon-1-dolar-1980.dc.html"
   },
   {
+    "route": "/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/",
+    "legacyFile": "billetes-usda-food-coupons-serie-2000-b.dc.html",
+    "title": "Food Coupons USDA — Serie 2000 B ($5 y $10) — Notofilia"
+  },
+  {
     "route": "/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
     "legacyFile": "billete-nueva-jersey-6-chelines-1776-colonial.dc.html"
   },
@@ -538,9 +543,5 @@
   {
     "route": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
     "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
-  },
-  {
-    "route": "/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/",
-    "legacyFile": ""
   }
 ]

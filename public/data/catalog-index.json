@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-10T19:41:14.833Z",
-  "count": 135,
+  "generatedAt": "2026-08-10T20:48:26.369Z",
+  "count": 136,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -1024,7 +1024,7 @@
       "id": "diez-dolares-1934-distritos",
       "path": "/coleccion/diez-dolares-1934-distritos/",
       "title": "$10 Reserva Federal 1934 — Cuatro Distritos | Notofilia",
-      "description": "Ficha de catálogo numismático: cuatro billetes de $10 de la Reserva Federal, serie de 1934…",
+      "description": "Cuatro billetes de $10 Reserva Federal (Serie 1934/A/D): Cleveland, Richmond, Chicago y San Francisco.",
       "keywords": [
         "federal reserve note",
         "billete de diez dólares",
@@ -1032,7 +1032,11 @@
         "distritos de la reserva federal",
         "notafilia",
         "numismática",
-        "hamilton"
+        "hamilton",
+        "chicago",
+        "fr-2004g",
+        "serie 1934",
+        "julian morgenthau"
       ],
       "url": "https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/"
     },
@@ -1089,10 +1093,30 @@
       "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/"
     },
     {
+      "id": "emisiones-promocionales--food-coupons-serie-2000-b",
+      "path": "/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/",
+      "title": "Food Coupons USDA — Serie 2000-B ($5 y $10) | Notofilia",
+      "description": "Cupones de alimentos USDA Serie 2000-B: $5 (Jefferson) y $10 (Hamilton). Colección Notofilia.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "serie 2000 b",
+        "cupon de alimentos",
+        "jefferson",
+        "hamilton",
+        "5 dolares",
+        "10 dolares",
+        "american bank note company",
+        "notafilia"
+      ],
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/"
+    },
+    {
       "id": "emisiones-promocionales",
       "path": "/coleccion/emisiones-promocionales/",
       "title": "Scrip Promocional de EE. UU. | Notofilia",
-      "description": "Catálogo de scrip promocional y emisiones efímeras de Estados Unidos: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin (1933).",
+      "description": "Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA (1980-B, 2000-B).",
       "keywords": [
         "scrip promocional",
         "depression scrip",
@@ -2193,7 +2217,7 @@
       "id": "ringling-bros-50-aniversario-baraboo",
       "path": "/coleccion/ringling-bros-50-aniversario-baraboo/",
       "title": "Scrip Ringling Bros. 50º Aniversario, Baraboo | Notofilia",
-      "description": "Ficha de catálogo: scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin, 1933 — serie completa de 5, 10 y 15 centavos, Golden Jubilee.",
+      "description": "Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.",
       "keywords": [
         "ringling bros scrip",
         "baraboo 1933",
@@ -2201,7 +2225,11 @@
         "notafilia",
         "exonumia circense",
         "scrip depresión",
-        "shafer wi-100"
+        "shafer wi-100",
+        "1 dolar",
+        "one dollar",
+        "shafer wi-100-1a",
+        "un dolar baraboo"
       ],
       "url": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/"
     },

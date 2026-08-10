@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~135 fichas de catálogo · 9 guías de blog · 42 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~136 fichas de catálogo · 9 guías de blog · 42 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -46,7 +46,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 - [Departamento del Tesoro de EE. UU.](https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/): Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos: certificados de oro y más. Colección Notofilia.
 - [Certificados de Pago Militar (MPC) EE. UU.](https://www.notofilia.com/coleccion/certificados-de-pago-militar/): Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.
 - [Pop Art](https://www.notofilia.com/coleccion/pop-art/): Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.
-- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional y emisiones efímeras de Estados Unidos: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin…
+- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA (1980-B, 2000-B).
 
 ## Catálogo — fichas
 
@@ -119,13 +119,14 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Cinco Pesos, Vicente B. Villa é Hijos, Medellín](https://www.notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/): Ficha de catálogo numismático: billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.
 ### Billete obsoleto EE. UU.
 
-- [$10 Reserva Federal 1934 — Cuatro Distritos](https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/): Ficha de catálogo numismático: cuatro billetes de $10 de la Reserva Federal, serie de 1934…
+- [$10 Reserva Federal 1934 — Cuatro Distritos](https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/): Cuatro billetes de $10 Reserva Federal (Serie 1934/A/D): Cleveland, Richmond, Chicago y San Francisco.
 ### Billetes de Ecuador
 
 - [100 Sucres, Banco Central del Ecuador (1993)](https://www.notofilia.com/coleccion/ecuador/100-sucres-1993/): Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993…
 ### Emisiones promocionales
 
 - [Food Coupon USDA, Un Dólar (Serie 1980-B)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/): Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE.
+- [Food Coupons USDA — Serie 2000-B ($5 y $10)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupons-serie-2000-b/): Cupones de alimentos USDA Serie 2000-B: $5 (Jefferson) y $10 (Hamilton). Colección Notofilia.
 ### Billete obsoleto EE. UU.
 
 - [Nota de Prueba de la Prensa Giori](https://www.notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
@@ -198,7 +199,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [$100 Federal Reserve Note, Serie 1990, Cleveland](https://www.notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): Ficha de catálogo numismático: Federal Reserve Note de $100, serie de 1990, Distrito D (Cleveland)…
 ### Billete obsoleto EE. UU.
 
-- [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Ficha de catálogo: scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin, 1933 — serie completa de 5, 10 y 15 centavos, Golden Jubilee.
+- [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.
 - [Billete $1 State Bank New Brunswick](https://www.notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/): Ficha de catálogo numismático: billete obsoleto de $1 de The State Bank at New Brunswick, Nueva Jersey, c. 1860. Referencia Haxby NJ-350-G14a.
 - [$1 Certificado de Plata “Norte de África” 1935-A](https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/): Ficha de catálogo numismático: Certificado de Plata de $1, serie de 1935-A, sello amarillo de emergencia “North Africa”, Segunda Guerra Mundial.
 - [$1 United States Note, Sello Rojo, Serie 1928](https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/): Ficha de catálogo numismático: United States Note de $1, sello rojo, serie de 1928, reverso “funny back”. Referencia Friedberg FR-1500.
