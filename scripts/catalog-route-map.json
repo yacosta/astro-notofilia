@@ -272,6 +272,14 @@
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
   {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/",
+    "legacyFile": "billete-usda-food-coupon-50-centavos-1967.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/",
+    "legacyFile": "billete-usda-food-coupon-2-dolares-1967.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/",
     "legacyFile": "billete-usda-food-coupon-1-dolar-2000.dc.html"
   },
