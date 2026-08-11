@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~137 fichas de catálogo · 9 guías de blog · 42 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~138 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -46,7 +46,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 - [Departamento del Tesoro de EE. UU.](https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/): Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos: certificados de oro y más. Colección Notofilia.
 - [Certificados de Pago Militar (MPC) EE. UU.](https://www.notofilia.com/coleccion/certificados-de-pago-militar/): Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.
 - [Pop Art](https://www.notofilia.com/coleccion/pop-art/): Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.
-- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA Serie 2000-B.
+- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin (1933).
 
 ## Catálogo — fichas
 
@@ -130,6 +130,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Food Coupon USDA, Cinco Dólares (Serie 2000-B)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/): Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.
 ### Billete obsoleto EE. UU.
 
+- [Food Coupons USDA Serie 2000-B](https://www.notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA Serie 2000-B: $1, $5 y $10 impresos por el Bureau of Engraving and Printing.
 - [Nota de Prueba de la Prensa Giori](https://www.notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
 - [Billetes $5 y $10 Hagerstown Bank, Maryland](https://www.notofilia.com/coleccion/hagerstown-bank-maryland/): Ficha de catálogo numismático: billetes obsoletos de $5 y $10 de The Hagerstown Bank, Maryland, hacia 1850–1860. Haxby MD-240.
 ### Moneda colonial española (oro)
@@ -1187,7 +1188,10 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Exhiben en Talca el peso independiente de 1817](https://www.notofilia.com/noticias/exhibicion-peso-independiente-ohiggins-talca/): ANUM muestra por primera vez en el Museo O’Higginiano la moneda de plata que O’Higgins autorizó al inicio de la Nueva Patria. Fuente:…
+- [Medalla heptagonal del Sistema Solar](https://www.notofilia.com/noticias/medalla-sistema-solar-heptagonal/): Pieza de colección en plata .999 con forma de 50 peniques británicos: Sol, Luna y planetas para numismática temática. Fuente: Cultivarte.
 - [Billete de 10.000 pesos: Banxico explica el canje](https://www.notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/): El billete de Lázaro Cárdenas de la antigua unidad vale 10 pesos de canje; Banxico detalla cómo cambiarlo en bancos. Fuente: El Cronista.
+- [Cien años de moneda argentina en Corrientes](https://www.notofilia.com/noticias/expo-coleccionismo-moneda-argentina-corrientes/): La primera Expo de Coleccionismo en el Colegio Nacional destacó una muestra de un siglo de moneda argentina y series del Mundial 1978.…
 - [Saltillo: convención numismática el 15 y 16 de agosto](https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/): Más de 50 expositores se dan cita en el Museo del Desierto con monedas, billetes, acciones y asesoría para coleccionistas. Fuente: El…
 - [Arequipa exhibe 390 piezas en su III Encuentro Numismático](https://www.notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/): Del 7 al 9 de agosto, la Biblioteca Regional Mario Vargas Llosa muestra 206 billetes y 184 monedas con ingreso libre. Fuente: Revelación.pe.
 - [Vaticano emite euros con la imagen del Papa León XIV](https://www.notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/): La serie vaticana en euros vuelve a mostrar el rostro papal; el escudo figura en 1, 2 y 5 céntimos y el set cuesta 59 euros. Fuente:…
@@ -1232,6 +1236,75 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Texto completo — noticias
 
+### Exhiben en Talca el peso independiente de 1817
+
+URL canónica: https://www.notofilia.com/noticias/exhibicion-peso-independiente-ohiggins-talca/
+
+> ANUM muestra por primera vez en el Museo O’Higginiano la moneda de plata que O’Higgins autorizó al inicio de la Nueva Patria.
+
+Fuente externa: [MauleHoy](https://maulehoy.cl/2026/08/10/en-el-natalicio-de-ohiggins-se-exhibira-la-primera-moneda-que-el-procer-autorizo-en-la-independencia-de-chile/)
+
+En el **Museo O’Higginiano y de Bellas Artes de Talca**, la
+**Asociación de Numismática del Maule (ANUM)** presentará entre el
+**18 y el 22 de agosto de 2026** —natalicio de Bernardo O’Higgins— la
+primera exhibición pública local del **peso independiente** de **1817**,
+la moneda que el Director Supremo autorizó al inicio de la Nueva Patria.
+
+La pieza, de **plata 950**, lleva la leyenda **«Unión y Fuerza»** y
+equivale a **ocho reales** españoles. Según José Osses Valdés, presidente
+de ANUM, se trata de una acuñación escasa —muchos ejemplares salieron del
+país— que la asociación localizó en Viña del Mar para mostrarla en la
+casa asociada a O’Higgins y al Acta de la Independencia.
+
+## Qué más se verá
+
+Junto a la chaquetilla del prócer y una copia del Acta, la muestra
+recorre el paso del numerario colonial al republicano: primeras monedas
+españolas, el **cobre de 1835** con leyenda «República de Chile», las
+piezas de **«rompe cadenas»** de **1844** (reconocimiento español de la
+independencia) y monedas con el cóndor vinculadas al escudo de la Patria
+Vieja. Habrá visitas guiadas a cargo de socios de ANUM.
+
+La inauguración es el **martes 18 de agosto a las 11:00**; la muestra
+permanece abierta hasta el **sábado 22**, en horario del museo. ANUM
+también anuncia actividades en septiembre (Instituto San Agustín) y
+octubre (Universidad Católica de Curicó).
+
+Más detalles en la nota original de MauleHoy.
+
+---
+
+### Medalla heptagonal del Sistema Solar
+
+URL canónica: https://www.notofilia.com/noticias/medalla-sistema-solar-heptagonal/
+
+> Pieza de colección en plata .999 con forma de 50 peniques británicos: Sol, Luna y planetas para numismática temática.
+
+Fuente externa: [Cultivarte](https://cultivarte.mx/una-moneda-inspirada-en-el-sistema-solar-conquista-a-coleccionistas/)
+
+Una **medalla de colección** en **plata .999**, de forma
+**heptagonal** similar a la moneda británica de **50 peniques**, ha
+llamado la atención de coleccionistas y aficionados a la astronomía,
+según *Cultivarte*. No es emisión oficial de la Royal Mint ni tiene curso
+legal: se comercializa para el mercado de piezas conmemorativas.
+
+El diseño integra el **Sol**, la **Luna** y los planetas principales.
+Algunas versiones añaden color, brillos o piedras decorativas. Mide unos
+**27 mm** y pesa cerca de **ocho gramos**; la geometría de siete lados
+sigue el patrón del heptágono curvo equilátero del 50p británico.
+
+## Moneda o medalla
+
+Aunque muchos la llaman «moneda», los especialistas recuerdan que carece
+de valor monetario oficial: su atractivo es el diseño y la **numismática
+temática** —historia, ciencia y exploración espacial—, no su uso como
+divisa. Se suma a una larga serie de objetos coleccionables inspirados en
+el cosmos.
+
+Más detalles en la nota original de Cultivarte.
+
+---
+
 ### Billete de 10.000 pesos: Banxico explica el canje
 
 URL canónica: https://www.notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/
@@ -1272,6 +1345,36 @@ de cada denominación por operación.
 Antes de canjearlo, conviene revisar si la pieza tiene interés
 notafilístico: una vez entregada, se pierde esa opción. Más detalles en la
 nota de El Cronista y en la ficha de billetes desmonetizados de Banxico.
+
+---
+
+### Cien años de moneda argentina en Corrientes
+
+URL canónica: https://www.notofilia.com/noticias/expo-coleccionismo-moneda-argentina-corrientes/
+
+> La primera Expo de Coleccionismo en el Colegio Nacional destacó una muestra de un siglo de moneda argentina y series del Mundial 1978.
+
+Fuente externa: [Diario Época](https://www.diarioepoca.com/1386605-un-viaje-de-cien-anos-por-la-historia-a-traves-de-la-moneda-argentina)
+
+El **Colegio Nacional** de Corrientes fue sede de la primera
+**Expo de Coleccionismo**, un encuentro que reunió piezas de valor
+histórico y atrajo a numerosos visitantes. Entre las atracciones
+principales destacó una exhibición numismática con series
+conmemorativas argentinas e internacionales, según *Diario Época*.
+
+El coleccionista **Víctor Hugo** presentó un recorrido por la
+**evolución de la moneda argentina en los últimos cien años**, con
+ejemplares de otros países y emisiones alegóricas ligadas a
+centenarios, bicentenarios y a la figura de **Jorge Luis Borges**. Uno
+de los focos de interés fue la **serie completa de monedas
+conmemorativas del Mundial de 1978**, acompañada de objetos de época.
+
+«Empecé a coleccionar de adolescente. Me regalaban monedas, fui
+juntando y, cuando me quise dar cuenta, tenía un montón», relató sobre
+el origen de su afición. Durante la jornada hubo **lupas** y
+herramientas para observar cada pieza de cerca.
+
+Más detalles en la nota original de Diario Época.
 
 ---
 
@@ -1391,8 +1494,8 @@ Fuente externa: [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-c
 
 Aunque la moneda de **$100** sigue en el vuelto diario, ciertas variantes —
 errores de fabricación, cambios en el diseño de los **copihues** y ensayos—
-se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*
-y cuentas especializadas como **Mundo Monedas Chile**.
+se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
+*Meganoticias* y cuentas especializadas como **Mundo Monedas Chile**.
 
 ## Variantes más citadas
 
@@ -1403,6 +1506,10 @@ y cuentas especializadas como **Mundo Monedas Chile**.
 3. **$100 de 2000 con copihues sin escudo nacional:** solo denominación y
    fecha; rango similar, **$700.000–$800.000**.
 4. **Ensayo de copihues** sin denominación ni fecha: alrededor de **$800.000**.
+   *Meganoticias* (10 ago. 2026) insiste en que se trata de una **prueba
+   técnica** de la Casa de Moneda, de tiraje muy limitado y casi imposible de
+   hallar en el vuelto; el precio final depende del estado y de la demanda
+   entre particulares.
 5. **$100 de 2001 con copihues, escudo y «Mapuche»:** la versión más reconocida
    de esa serie; cerca de **$600.000** en buen estado.
 6. **$100 de 1991:** acuñación baja de su serie; valor estimado en torno a
@@ -1413,9 +1520,11 @@ y cuentas especializadas como **Mundo Monedas Chile**.
 Tiraje, errores, variantes de diseño y estado de conservación marcan la
 diferencia. Revisar año, símbolos e inscripciones frente a la versión habitual
 puede evitar que una pieza interesante termine en el cambio. Un anuncio alto
-no equivale a una venta real: conviene contrastar con especialistas.
+no equivale a una venta real: conviene contrastar con especialistas o tiendas
+de numismática.
 
-Más detalles en la nota original de 24 Horas.
+Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas)
+y [Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html).
 
 ---
 
