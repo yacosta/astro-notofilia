@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-04T03:34:08.836Z",
-  "count": 134,
+  "generatedAt": "2026-08-11T01:00:34.402Z",
+  "count": 136,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -1046,10 +1046,10 @@
       "url": "https://www.notofilia.com/coleccion/ecuador/"
     },
     {
-      "id": "emisiones-promocionales--food-coupon-1-dolar-1980",
-      "path": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/",
-      "title": "Food Coupon USDA, Un Dólar (Serie 1980-B) | Notofilia",
-      "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE.",
+      "id": "emisiones-promocionales--food-coupon-1-dolar-2000",
+      "path": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/",
+      "title": "Food Coupon USDA, Un Dólar (Serie 2000-B) | Notofilia",
+      "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE. UU., serie 2000-B.",
       "keywords": [
         "food coupon",
         "food stamp",
@@ -1057,12 +1057,55 @@
         "cupon de alimentos",
         "escrip fiscal",
         "bureau of engraving and printing",
-        "declaration of independence",
-        "liberty bell",
+        "serie 2000",
         "notafilia",
-        "numismática"
+        "numismática",
+        "declaration of independence",
+        "liberty bell"
       ],
-      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/"
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/"
+    },
+    {
+      "id": "emisiones-promocionales--food-coupon-10-dolares-2000",
+      "path": "/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/",
+      "title": "Food Coupon USDA, Diez Dólares (Serie 2000-B) | Notofilia",
+      "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de diez dólares del Departamento de Agricultura de EE. UU., serie 2000-B.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "cupon de alimentos",
+        "escrip fiscal",
+        "bureau of engraving and printing",
+        "serie 2000",
+        "notafilia",
+        "numismática",
+        "hamilton",
+        "liberty bell",
+        "eagle"
+      ],
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/"
+    },
+    {
+      "id": "emisiones-promocionales--food-coupon-5-dolares-2000",
+      "path": "/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
+      "title": "Food Coupon USDA, Cinco Dólares (Serie 2000-B) | Notofilia",
+      "description": "Ficha de catálogo: cupón de alimentos (Food Coupon) de cinco dólares del Departamento de Agricultura de EE. UU., serie 2000-B.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "cupon de alimentos",
+        "escrip fiscal",
+        "bureau of engraving and printing",
+        "serie 2000",
+        "notafilia",
+        "numismática",
+        "jefferson",
+        "independence hall",
+        "liberty bell"
+      ],
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/"
     },
     {
       "id": "emisiones-promocionales",
