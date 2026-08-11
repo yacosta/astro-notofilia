@@ -103,6 +103,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/coleccion/cien-dolares-minneapolis-1929/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -565,6 +571,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/coleccion/moneda-colonial/perfil-alexander-hamilton/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -579,6 +591,12 @@
   <url>
     <loc>https://www.notofilia.com/coleccion/moneda-colonial/perfil-george-washington/</loc>
     <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

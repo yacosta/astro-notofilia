@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-11T01:13:02.130Z",
-  "count": 138,
+  "generatedAt": "2026-08-11T01:58:18.693Z",
+  "count": 141,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -74,6 +74,21 @@
         "numismática"
       ],
       "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/"
+    },
+    {
+      "id": "certificados-de-pago-militar--perfil-jefe-ouray",
+      "path": "/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/",
+      "title": "Jefe Ouray | Notofilia",
+      "description": "Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.",
+      "keywords": [
+        "jefe ouray",
+        "chief ouray",
+        "ute uncompahgre",
+        "mpc serie 692",
+        "military payment certificate",
+        "notafilia estadounidense"
+      ],
+      "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/"
     },
     {
       "id": "certificados-de-pago-militar",
@@ -1232,6 +1247,21 @@
       "url": "https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
     },
     {
+      "id": "moneda-colonial--perfil-alexander-hamilton",
+      "path": "/coleccion/moneda-colonial/perfil-alexander-hamilton/",
+      "title": "Alexander Hamilton | Notofilia",
+      "description": "Perfil histórico de Alexander Hamilton, primer secretario del Tesoro de EE. UU., retratado en el billete de $10 y Food Coupons USDA.",
+      "keywords": [
+        "alexander hamilton",
+        "secretario del tesoro",
+        "billete 10 dolares",
+        "food coupon hamilton",
+        "notafilia estadounidense",
+        "federalist papers"
+      ],
+      "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-alexander-hamilton/"
+    },
+    {
       "id": "moneda-colonial--perfil-andrew-jackson",
       "path": "/coleccion/moneda-colonial/perfil-andrew-jackson/",
       "title": "Andrew Jackson | Notofilia",
@@ -1274,6 +1304,21 @@
         "billetes con george washington"
       ],
       "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-george-washington/"
+    },
+    {
+      "id": "moneda-colonial--perfil-thomas-jefferson",
+      "path": "/coleccion/moneda-colonial/perfil-thomas-jefferson/",
+      "title": "Thomas Jefferson | Notofilia",
+      "description": "Perfil histórico de Thomas Jefferson, autor de la Declaración de Independencia y tercer presidente, en Food Coupons USDA de $5.",
+      "keywords": [
+        "thomas jefferson",
+        "declaración de independencia",
+        "food coupon jefferson",
+        "billete 2 dolares",
+        "monticello",
+        "notafilia estadounidense"
+      ],
+      "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/"
     },
     {
       "id": "moneda-colonial--provincia-de-pensilvania",
