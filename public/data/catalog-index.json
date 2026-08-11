@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-11T10:13:30.634Z",
-  "count": 141,
+  "generatedAt": "2026-08-11T10:35:04.049Z",
+  "count": 143,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -1129,6 +1129,26 @@
       "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/"
     },
     {
+      "id": "emisiones-promocionales--food-coupon-2-dolares-1967",
+      "path": "/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/",
+      "title": "Food Coupon USDA, Dos Dólares (Serie 1967) | Notofilia",
+      "description": "Ficha de catálogo: cupón de alimentos USDA de dos dólares, Serie 1967, impreso por el Bureau of Engraving and Printing.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "cupon de alimentos",
+        "escrip fiscal",
+        "bureau of engraving and printing",
+        "serie 1967",
+        "notafilia",
+        "numismática",
+        "agricultural abundance",
+        "healthier families"
+      ],
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/"
+    },
+    {
       "id": "emisiones-promocionales--food-coupon-5-dolares-2000",
       "path": "/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
       "title": "Food Coupon USDA, Cinco Dólares (Serie 2000-B) | Notofilia",
@@ -1147,6 +1167,26 @@
         "notafilia"
       ],
       "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/"
+    },
+    {
+      "id": "emisiones-promocionales--food-coupon-50-centavos-1967",
+      "path": "/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/",
+      "title": "Food Coupon USDA, Cincuenta Centavos (Serie 1967) | Notofilia",
+      "description": "Ficha de catálogo: cupón de alimentos USDA de cincuenta centavos, Serie 1967, impreso por el Bureau of Engraving and Printing.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "cupon de alimentos",
+        "escrip fiscal",
+        "bureau of engraving and printing",
+        "serie 1967",
+        "notafilia",
+        "numismática",
+        "agricultural abundance",
+        "healthier families"
+      ],
+      "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/"
     },
     {
       "id": "emisiones-promocionales",
@@ -1169,14 +1209,15 @@
     {
       "id": "food-coupons-usda",
       "path": "/coleccion/food-coupons-usda/",
-      "title": "Food Coupons USDA Serie 2000-B | Notofilia",
-      "description": "Cupones USDA Serie 2000-B y historia de los food stamps en papel: eras 1939–1943 y 1961–2004, producción BEP y paso a EBT.",
+      "title": "Food Coupons USDA Series 1967 y 2000-B | Notofilia",
+      "description": "Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.",
       "keywords": [
         "food coupon",
         "food stamp",
         "usda",
         "cupon de alimentos",
         "escrip fiscal",
+        "serie 1967",
         "serie 2000",
         "bureau of engraving and printing",
         "EBT",
