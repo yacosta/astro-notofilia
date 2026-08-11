@@ -35,8 +35,8 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Scrip Promocional de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/emisiones-promocionales/"
+            "name": "Food Coupons USDA",
+            "item": "https://www.notofilia.com/coleccion/food-coupons-usda/"
           },
           {
             "@type": "ListItem",
@@ -56,7 +56,7 @@
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/emisiones-promocionales/#page"
+          "@id": "https://www.notofilia.com/coleccion/food-coupons-usda/#page"
         }
       }
     ]

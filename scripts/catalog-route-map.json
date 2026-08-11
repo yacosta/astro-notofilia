@@ -364,6 +364,10 @@
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
   {
+    "route": "/coleccion/food-coupons-usda/",
+    "legacyFile": "catalogo-food-coupons-usda.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/",
     "legacyFile": "billete-usda-food-coupon-1-dolar-2000.dc.html"
   },

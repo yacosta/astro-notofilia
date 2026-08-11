@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-11T01:08:12.336Z",
-  "count": 137,
+  "generatedAt": "2026-08-11T01:13:02.130Z",
+  "count": 138,
   "items": [
     {
       "id": "adrian-insurance-michigan--2-dolares",
@@ -1137,7 +1137,7 @@
       "id": "emisiones-promocionales",
       "path": "/coleccion/emisiones-promocionales/",
       "title": "Scrip Promocional de EE. UU. | Notofilia",
-      "description": "Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA Serie 2000-B.",
+      "description": "Catálogo de scrip promocional de EE. UU.: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin (1933).",
       "keywords": [
         "scrip promocional",
         "depression scrip",
@@ -1150,6 +1150,24 @@
         "billetes de colección valor"
       ],
       "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/"
+    },
+    {
+      "id": "food-coupons-usda",
+      "path": "/coleccion/food-coupons-usda/",
+      "title": "Food Coupons USDA Serie 2000-B | Notofilia",
+      "description": "Catálogo de cupones de alimentos USDA Serie 2000-B: $1, $5 y $10 impresos por el Bureau of Engraving and Printing.",
+      "keywords": [
+        "food coupon",
+        "food stamp",
+        "usda",
+        "cupon de alimentos",
+        "escrip fiscal",
+        "serie 2000",
+        "bureau of engraving and printing",
+        "notafilia",
+        "numismática"
+      ],
+      "url": "https://www.notofilia.com/coleccion/food-coupons-usda/"
     },
     {
       "id": "giori-press-test-note",
