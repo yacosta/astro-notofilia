@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~138 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~141 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -60,6 +60,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 
 - [MPC Serie 641 $10 EE. UU. Vietnam](https://www.notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/): MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.
 - [MPC Serie 692 $20 EE. UU. Vietnam](https://www.notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/): MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.
+- [Jefe Ouray](https://www.notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/): Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.
 ### Billete obsoleto EE. UU.
 
 - [$100 Federal Reserve Bank Note, Minneapolis 1929](https://www.notofilia.com/coleccion/cien-dolares-minneapolis-1929/): Ficha de catálogo numismático: Billete de Banco de la Reserva Federal de $100, serie de 1929, Minneapolis. Referencia Friedberg FR-1890-I.
@@ -145,9 +146,11 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Moneda colonial americana (papel)
 
 - [Seis Chelines, Colonia de Nueva Jersey (1776)](https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/): Ficha de catálogo numismático: billete colonial de 6 chelines de la Colonia de Nueva Jersey, 1776…
+- [Alexander Hamilton](https://www.notofilia.com/coleccion/moneda-colonial/perfil-alexander-hamilton/): Perfil histórico de Alexander Hamilton, primer secretario del Tesoro de EE. UU., retratado en el billete de $10 y Food Coupons USDA.
 - [Andrew Jackson](https://www.notofilia.com/coleccion/moneda-colonial/perfil-andrew-jackson/): Perfil histórico de Andrew Jackson, séptimo presidente de Estados Unidos, retratado en el billete de Veinte Dólares, emisión de Hawái (1934).
 - [Benjamin Franklin](https://www.notofilia.com/coleccion/moneda-colonial/perfil-benjamin-franklin/): Perfil histórico de Benjamin Franklin…
 - [George Washington](https://www.notofilia.com/coleccion/moneda-colonial/perfil-george-washington/): Perfil histórico de George Washington, primer presidente de Estados Unidos, retratado en el billete de Un Dólar, Sello Rojo (1928).
+- [Thomas Jefferson](https://www.notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/): Perfil histórico de Thomas Jefferson, autor de la Declaración de Independencia y tercer presidente, en Food Coupons USDA de $5.
 - [Moneda Colonial de Pensilvania, 1773](https://www.notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/): Ficha de catálogo numismático: billetes de moneda colonial de la provincia de Pensilvania, 1773…
 ### Polímero mundial
 
