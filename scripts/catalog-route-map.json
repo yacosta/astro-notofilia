@@ -368,14 +368,16 @@
     "legacyFile": "billete-usda-food-coupon-1-dolar-1980.dc.html"
   },
   {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/",
+    "legacyFile": "billete-usda-food-coupon-1-dolar-2000.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
-    "legacyFile": "billete-usda-food-coupon-5-dolares-2000.dc.html",
-    "title": "Food Coupon USDA — Cinco Dólares (Serie 2000-B) — Notofilia"
+    "legacyFile": "billete-usda-food-coupon-5-dolares-2000.dc.html"
   },
   {
     "route": "/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/",
-    "legacyFile": "billete-usda-food-coupon-10-dolares-2000.dc.html",
-    "title": "Food Coupon USDA — Diez Dólares (Serie 2000-B) — Notofilia"
+    "legacyFile": "billete-usda-food-coupon-10-dolares-2000.dc.html"
   },
   {
     "route": "/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
