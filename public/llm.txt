@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~138 fichas de catálogo · 9 guías de blog · 42 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~137 fichas de catálogo · 9 guías de blog · 42 noticias · 0 logros del mes · glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).
 
@@ -46,7 +46,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 - [Departamento del Tesoro de EE. UU.](https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/): Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos: certificados de oro y más. Colección Notofilia.
 - [Certificados de Pago Militar (MPC) EE. UU.](https://www.notofilia.com/coleccion/certificados-de-pago-militar/): Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.
 - [Pop Art](https://www.notofilia.com/coleccion/pop-art/): Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.
-- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA (1980-B, 2000-B).
+- [Scrip Promocional de EE. UU.](https://www.notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: Ringling Bros. Baraboo y Food Coupons USDA Serie 2000-B.
 
 ## Catálogo — piezas destacadas
 
@@ -59,7 +59,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 - [2 Tala, Central Bank of Samoa, Polímero](https://www.notofilia.com/coleccion/polimero-mundial/samoa-2-tala/): Ficha de catálogo numismático: billete specimen de 2 Tala de polímero del Central Bank of Samoa (1990/91)…
 - [The King Pelé — Rency Art $2](https://www.notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/): The King Pelé “The Beautiful Game”: giclée pop art de Rency sobre billete de dos dólares (2024), chilena icónica,…
 
-Listado completo de 138 fichas: [llms-full.txt](https://www.notofilia.com/llms-full.txt) · API: [GET /api/catalog](https://www.notofilia.com/api/catalog) · índice JSON: [https://www.notofilia.com/data/catalog-index.json](https://www.notofilia.com/data/catalog-index.json).
+Listado completo de 137 fichas: [llms-full.txt](https://www.notofilia.com/llms-full.txt) · API: [GET /api/catalog](https://www.notofilia.com/api/catalog) · índice JSON: [https://www.notofilia.com/data/catalog-index.json](https://www.notofilia.com/data/catalog-index.json).
 
 ## Guías del blog
 
