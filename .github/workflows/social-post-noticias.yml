@@ -1,0 +1,104 @@
+name: Social post noticias
+
+# When a noticia Markdown file lands on main (new file, or draft → published),
+# wait for Cloudflare Pages to serve it, then post to X and Instagram.
+# Setup: docs/social-posting.md
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/noticias/**'
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Noticia slug(s), comma-separated (required for manual runs)'
+        required: true
+        type: string
+      dry_run:
+        description: 'Log captions without calling APIs'
+        required: false
+        default: false
+        type: boolean
+      skip_wait:
+        description: 'Skip waiting for live Cloudflare Pages URLs'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: social-post-noticias
+  cancel-in-progress: false
+
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Detect credentials
+        id: creds
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          has_x=0
+          has_ig=0
+          if [ -n "$X_API_KEY" ] && [ -n "$X_API_SECRET" ] && [ -n "$X_ACCESS_TOKEN" ] && [ -n "$X_ACCESS_TOKEN_SECRET" ]; then
+            has_x=1
+          fi
+          if [ -n "$INSTAGRAM_ACCESS_TOKEN" ] && [ -n "$INSTAGRAM_BUSINESS_ACCOUNT_ID" ]; then
+            has_ig=1
+          fi
+          echo "has_x=$has_x" >> "$GITHUB_OUTPUT"
+          echo "has_ig=$has_ig" >> "$GITHUB_OUTPUT"
+          if [ "$has_x" = "0" ] && [ "$has_ig" = "0" ]; then
+            echo "::warning::No X or Instagram secrets configured. Running dry-run only. See docs/social-posting.md"
+          fi
+
+      - name: Share new noticias
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+          SITE_ORIGIN: https://www.notofilia.com
+          SOCIAL_BASE_SHA: ${{ github.event.before }}
+          SOCIAL_HEAD_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          EXTRA=()
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            EXTRA+=(--slug="${{ inputs.slug }}")
+            if [ "${{ inputs.dry_run }}" = "true" ]; then
+              EXTRA+=(--dry-run)
+            fi
+            if [ "${{ inputs.skip_wait }}" = "true" ]; then
+              EXTRA+=(--skip-wait)
+            fi
+          fi
+
+          if [ "${{ steps.creds.outputs.has_x }}" = "0" ] && [ "${{ steps.creds.outputs.has_ig }}" = "0" ]; then
+            EXTRA+=(--dry-run)
+          fi
+
+          node scripts/social-post-noticias.mjs "${EXTRA[@]}"

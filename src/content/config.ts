@@ -21,6 +21,10 @@ const postSchema = z.object({
     title: z.string(),
     description: z.string().optional(),
   })).max(4).optional(),
+  // Auto-share to X / Instagram on publish (see docs/social-posting.md).
+  // Set social: false to skip. socialCaption overrides the default caption.
+  social: z.boolean().default(true),
+  socialCaption: z.string().optional(),
   draft: z.boolean().default(false),
 });
 

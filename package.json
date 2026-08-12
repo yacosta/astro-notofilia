@@ -16,6 +16,7 @@
     "check:drift": "node scripts/check-site-drift.mjs",
     "check:ci": "npm run check && npm run build && npm run check:drift",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
+    "social:noticias": "node scripts/social-post-noticias.mjs",
     "astro": "astro",
     "purge:css": "node scripts/purge-css.mjs"
   },
