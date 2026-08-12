@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~141 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -64,7 +64,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Billete obsoleto EE. UU.
 
 - [$100 Federal Reserve Bank Note, Minneapolis 1929](https://www.notofilia.com/coleccion/cien-dolares-minneapolis-1929/): Ficha de catálogo numismático: Billete de Banco de la Reserva Federal de $100, serie de 1929, Minneapolis. Referencia Friedberg FR-1890-I.
-- [$100 United States Note, Sello Rojo 1966](https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/): Ficha de catálogo numismático: United States Note de $100, sello rojo, serie de 1966, con Benjamin Franklin. Referencia Friedberg FR-1550.
+- [$100 United States Note, Sello Rojo 1966](https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/): United States Note $100 sello rojo 1966 (FR-1550): tirada 896.000; emisión nacional del Tesoro.
 - [Billete $5 Citizens Bank of Louisiana](https://www.notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del Citizens' Bank of Louisiana, sucursal de Shreveport, 1860. Referencia Haxby LA-15-G60a.
 - [Billete $5 City Bank of New Haven](https://www.notofilia.com/coleccion/city-bank-new-haven/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del City Bank of New Haven, Connecticut, hacia 1850–1860. Referencia Haxby CT-265-G52b.
 ### Billetes de Colombia
@@ -120,7 +120,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Cinco Pesos, Vicente B. Villa é Hijos, Medellín](https://www.notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/): Ficha de catálogo numismático: billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.
 ### Billete obsoleto EE. UU.
 
-- [$10 Reserva Federal 1934 — Cuatro Distritos](https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/): Cuatro billetes de $10 Reserva Federal (Serie 1934/A/D): Cleveland, Richmond, Chicago y San Francisco.
+- [$10 Reserva Federal 1934 — Cuatro Distritos](https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/): Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).
 ### Billetes de Ecuador
 
 - [100 Sucres, Banco Central del Ecuador (1993)](https://www.notofilia.com/coleccion/ecuador/100-sucres-1993/): Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993…
@@ -128,10 +128,12 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 
 - [Food Coupon USDA, Un Dólar (Serie 2000-B)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/): Ficha de catálogo: cupón de alimentos (Food Coupon) de un dólar del Departamento de Agricultura de EE. UU., serie 2000-B.
 - [Food Coupon USDA, Diez Dólares (Serie 2000-B)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/): Cupón de alimentos USDA de diez dólares, Serie 2000-B, n.º E07421176U. Colección Notofilia.
+- [Food Coupon USDA, Dos Dólares (Serie 1967)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/): Ficha de catálogo: cupón de alimentos USDA de dos dólares, Serie 1967, impreso por el Bureau of Engraving and Printing.
 - [Food Coupon USDA, Cinco Dólares (Serie 2000-B)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/): Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.
+- [Food Coupon USDA, Cincuenta Centavos (Serie 1967)](https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/): Ficha de catálogo: cupón de alimentos USDA de cincuenta centavos, Serie 1967, impreso por el Bureau of Engraving and Printing.
 ### Billete obsoleto EE. UU.
 
-- [Food Coupons USDA Serie 2000-B](https://www.notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA Serie 2000-B: $1, $5 y $10 impresos por el Bureau of Engraving and Printing.
+- [Food Coupons USDA Series 1967 y 2000-B](https://www.notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.
 - [Nota de Prueba de la Prensa Giori](https://www.notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
 - [Billetes $5 y $10 Hagerstown Bank, Maryland](https://www.notofilia.com/coleccion/hagerstown-bank-maryland/): Ficha de catálogo numismático: billetes obsoletos de $5 y $10 de The Hagerstown Bank, Maryland, hacia 1850–1860. Haxby MD-240.
 ### Moneda colonial española (oro)
@@ -201,13 +203,13 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [25 Pesos 1813, Tesorería de Puerto Rico](https://www.notofilia.com/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/): Ficha de catálogo numismático: vale de la Tesorería Nacional de Puerto Rico por 25…
 ### Reserva Federal
 
-- [$100 Federal Reserve Note, Serie 1990, Cleveland](https://www.notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): Ficha de catálogo numismático: Federal Reserve Note de $100, serie de 1990, Distrito D (Cleveland)…
+- [$100 Federal Reserve Note, Serie 1990, Cleveland](https://www.notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): FRN $100 Serie 1990, Cleveland: tirada nacional 1.694.464.000 y primer hilo de seguridad.
 ### Billete obsoleto EE. UU.
 
 - [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.
 - [Billete $1 State Bank New Brunswick](https://www.notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/): Ficha de catálogo numismático: billete obsoleto de $1 de The State Bank at New Brunswick, Nueva Jersey, c. 1860. Referencia Haxby NJ-350-G14a.
 - [$1 Certificado de Plata “Norte de África” 1935-A](https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/): Ficha de catálogo numismático: Certificado de Plata de $1, serie de 1935-A, sello amarillo de emergencia “North Africa”, Segunda Guerra Mundial.
-- [$1 United States Note, Sello Rojo, Serie 1928](https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/): Ficha de catálogo numismático: United States Note de $1, sello rojo, serie de 1928, reverso “funny back”. Referencia Friedberg FR-1500.
+- [$1 United States Note, Sello Rojo, Serie 1928](https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/): United States Note $1 sello rojo 1928 (Fr. 1500): tirada 1.872.012 y reverso “funny back”.
 - [$20 Reserva Federal, Emisión Hawái 1934](https://www.notofilia.com/coleccion/veinte-dolares-hawaii-1934/): Ficha de catálogo numismático: Billete de Reserva Federal de $20, serie de 1934-A, con sobreimpresión de emergencia HAWAII.
 
 ## Guías del blog
