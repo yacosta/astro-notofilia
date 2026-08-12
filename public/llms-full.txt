@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 45 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 47 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1193,6 +1193,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [El $20.000 chileno que puede valer hasta $200.000](https://www.notofilia.com/noticias/billete-20000-chile-serie-anverso-falla/): Ejemplares con el número de serie en el anverso en lugar del reverso se cotizan hasta diez veces su facial entre coleccionistas. Fuente: 24…
+- [Casa de Moneda homenajea a Condorito con fichas](https://www.notofilia.com/noticias/casa-moneda-condorito-fichas-conmemorativas/): Tres fichas de bronce de Condorito, Yayita y Coné en la serie Personajes Chilenos; venta desde el 10 de agosto en tienda.casamoneda.cl.…
 - [Exhiben en Talca el peso independiente de 1817](https://www.notofilia.com/noticias/exhibicion-peso-independiente-ohiggins-talca/): ANUM muestra por primera vez en el Museo O’Higginiano la moneda de plata que O’Higgins autorizó al inicio de la Nueva Patria. Fuente:…
 - [Medalla heptagonal del Sistema Solar](https://www.notofilia.com/noticias/medalla-sistema-solar-heptagonal/): Pieza de colección en plata .999 con forma de 50 peniques británicos: Sol, Luna y planetas para numismática temática. Fuente: Cultivarte.
 - [Billete de 10.000 pesos: Banxico explica el canje](https://www.notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/): El billete de Lázaro Cárdenas de la antigua unidad vale 10 pesos de canje; Banxico detalla cómo cambiarlo en bancos. Fuente: El Cronista.
@@ -1240,6 +1242,73 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### El $20.000 chileno que puede valer hasta $200.000
+
+URL canónica: https://www.notofilia.com/noticias/billete-20000-chile-serie-anverso-falla/
+
+> Ejemplares con el número de serie en el anverso en lugar del reverso se cotizan hasta diez veces su facial entre coleccionistas.
+
+Fuente externa: [24 Horas](https://www.24horas.cl/tendencias/redes-sociales/revisa-tu-billetera-el-billete-de-20-000-que-puede-valer-hasta-200-mil-falla)
+
+Un fallo de fabricación en billetes chilenos de **$20.000** dejó el **número
+de serie en el anverso** —donde habitualmente no va— en lugar del reverso. El
+detalle se ve a simple vista y, según especialistas citados por *24 Horas*,
+puede elevar el valor de mercado hasta unos **$200.000**, unas **diez veces**
+el facial, si el estado de conservación es alto.
+
+## Cómo se originó
+
+El coleccionista **Ignacio Villalón** (**Error Coins Chile**) atribuye el
+error al estampado de series: el pliego habría ingresado **al revés** a la
+máquina, de modo que la numeración quedó en la cara frontal. Calcula hasta
+**40** ejemplares posibles (capacidad típica de un pliego) y, al cierre de la
+nota, solo **cinco** detectados en el circuito de coleccionistas; el suyo, en
+muy buen estado, lo adquirió por ese múltiplo del nominal.
+
+Un anuncio alto no garantiza venta: conviene contrastar autenticidad y
+precios con especialistas o casas de numismática/notafilia.
+
+Más detalles en la nota original de
+[24 Horas](https://www.24horas.cl/tendencias/redes-sociales/revisa-tu-billetera-el-billete-de-20-000-que-puede-valer-hasta-200-mil-falla).
+
+---
+
+### Casa de Moneda homenajea a Condorito con fichas
+
+URL canónica: https://www.notofilia.com/noticias/casa-moneda-condorito-fichas-conmemorativas/
+
+> Tres fichas de bronce de Condorito, Yayita y Coné en la serie Personajes Chilenos; venta desde el 10 de agosto en tienda.casamoneda.cl.
+
+Fuente externa: [G5noticias](https://g5noticias.cl/2026/08/10/casa-de-moneda-de-chile-rinde-homenaje-a-condorito-con-inedita-edicion-conmemorativa/)
+
+La **Casa de Moneda de Chile** presentó el **10 de agosto de 2026** una edición
+conmemorativa de su serie **«Personajes Chilenos»** dedicada a **Condorito**,
+**Yayita** y **Coné**, creados por René Ríos Boettiger (**Pepo**). El
+lanzamiento, que coincide con los **77 años** del personaje (1949), contó con
+el ministro de las Culturas, Francisco Undurraga, y representantes de
+**World Editors Chile**, titular de los derechos del cómic.
+
+## Qué incluye la edición
+
+Son **tres fichas** de **bronce de 28 mm**, una por personaje, con rasgos
+reinterpretados en relieve a partir de las ilustraciones originales. Se venden
+**por separado** o en un **display** con la trilogía completa: según *CNN Chile*
+y *T13*, el set completo cuesta **$18.990**.
+
+## Dónde comprarlas
+
+Disponibles desde el **10 de agosto** en la tienda digital
+[tienda.casamoneda.cl](https://tienda.casamoneda.cl/). No son moneda de curso
+legal: son piezas coleccionables de la serie cultural de la ceca.
+
+Más detalles en las notas de
+[G5noticias](https://g5noticias.cl/2026/08/10/casa-de-moneda-de-chile-rinde-homenaje-a-condorito-con-inedita-edicion-conmemorativa/),
+[CNN Chile](https://www.cnnchile.com/pais/casa-de-moneda-rinde-homenaje-a-condorito-y-lanza-fichas-conmemorativas-donde-comprarlas-y-cual-es-su-valor/)
+y
+[T13](https://www.t13.cl/noticia/nacional/casa-moneda-lanza-fichas-conmemorativas-condorito-cuanto-cuestan-como-conseguir-11-8-2026).
+
+---
 
 ### Exhiben en Talca el peso independiente de 1817
 
