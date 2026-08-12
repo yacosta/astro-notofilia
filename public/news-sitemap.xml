@@ -1,26 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <url>
-    <loc>https://www.notofilia.com/noticias/exhibicion-peso-independiente-ohiggins-talca/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-10</news:publication_date>
-      <news:title>Exhiben en Talca el peso independiente de 1817</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.notofilia.com/noticias/medalla-sistema-solar-heptagonal/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Notofilia</news:name>
-        <news:language>es</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-10</news:publication_date>
-      <news:title>Medalla heptagonal del Sistema Solar</news:title>
-    </news:news>
-  </url>
+
 </urlset>

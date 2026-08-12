@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T10:35:04.049Z",
+  "generatedAt": "2026-08-12T00:39:35.545Z",
   "count": 143,
   "items": [
     {
@@ -133,7 +133,7 @@
       "id": "cien-dolares-sello-rojo-1966",
       "path": "/coleccion/cien-dolares-sello-rojo-1966/",
       "title": "$100 United States Note, Sello Rojo 1966 | Notofilia",
-      "description": "Ficha de catálogo numismático: United States Note de $100, sello rojo, serie de 1966, con Benjamin Franklin. Referencia Friedberg FR-1550.",
+      "description": "United States Note $100 sello rojo 1966 (FR-1550): tirada 896.000; emisión nacional del Tesoro.",
       "keywords": [
         "united states note",
         "legal tender",
@@ -143,7 +143,11 @@
         "benjamin franklin",
         "independence hall",
         "notafilia",
-        "numismática"
+        "numismática",
+        "serie 1966",
+        "tirada 896000",
+        "fr-1550",
+        "granahan fowler"
       ],
       "url": "https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
     },
@@ -1039,7 +1043,7 @@
       "id": "diez-dolares-1934-distritos",
       "path": "/coleccion/diez-dolares-1934-distritos/",
       "title": "$10 Reserva Federal 1934 — Cuatro Distritos | Notofilia",
-      "description": "Cuatro billetes de $10 Reserva Federal (Serie 1934/A/D): Cleveland, Richmond, Chicago y San Francisco.",
+      "description": "Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).",
       "keywords": [
         "federal reserve note",
         "billete de diez dólares",
@@ -1051,7 +1055,9 @@
         "chicago",
         "fr-2004g",
         "serie 1934",
-        "julian morgenthau"
+        "julian morgenthau",
+        "tirada serie 1934",
+        "impresión por distrito"
       ],
       "url": "https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/"
     },
@@ -2306,7 +2312,7 @@
       "id": "reserva-federal--cien-dolares-1990-cleveland",
       "path": "/coleccion/reserva-federal/cien-dolares-1990-cleveland/",
       "title": "$100 Federal Reserve Note, Serie 1990, Cleveland | Notofilia",
-      "description": "Ficha de catálogo numismático: Federal Reserve Note de $100, serie de 1990, Distrito D (Cleveland)…",
+      "description": "FRN $100 Serie 1990, Cleveland: tirada nacional 1.694.464.000 y primer hilo de seguridad.",
       "keywords": [
         "federal reserve note",
         "100 dolares",
@@ -2318,7 +2324,10 @@
         "villalpando",
         "nicholas brady",
         "notafilia",
-        "numismática"
+        "numismática",
+        "tirada",
+        "uspapermoney",
+        "star notes"
       ],
       "url": "https://www.notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/"
     },
@@ -2396,7 +2405,7 @@
       "id": "un-dolar-sello-rojo-1928",
       "path": "/coleccion/un-dolar-sello-rojo-1928/",
       "title": "$1 United States Note, Sello Rojo, Serie 1928 | Notofilia",
-      "description": "Ficha de catálogo numismático: United States Note de $1, sello rojo, serie de 1928, reverso “funny back”. Referencia Friedberg FR-1500.",
+      "description": "United States Note $1 sello rojo 1928 (Fr. 1500): tirada 1.872.012 y reverso “funny back”.",
       "keywords": [
         "united states note",
         "legal tender",
@@ -2406,7 +2415,10 @@
         "friedberg fr-1500",
         "notafilia",
         "numismática",
-        "puerto rico"
+        "puerto rico",
+        "fr-1500",
+        "tirada 1872012",
+        "woods woodin"
       ],
       "url": "https://www.notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
     },
