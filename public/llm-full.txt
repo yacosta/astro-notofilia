@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 51 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1193,6 +1193,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [El $20 del Bicentenario se anuncia hasta en $4 millones](https://www.notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
+- [Tenochtitlan 2021: Ámbito habla de hasta $73.000](https://www.notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/): Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1. Fuente: Ámbito.
 - [Hallan una moneda de Carausius en el East West Rail](https://www.notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…
 - [EE. UU. acuña monedas con Trump por el 250.º aniversario](https://www.notofilia.com/noticias/moneda-trump-250-aniversario-primeras/): UNN informa de la primera tanda de monedas conmemorativas con Trump por el Semiquincentenario; el dólar de $1 es latón-manganeso, no oro 24…
 - [10 monedas de los años 60 que pueden valer más de US$150.000](https://www.notofilia.com/noticias/monedas-anos-60-valen-150000/): De un Kennedy Half Dollar ‘Hair’ a centavos Doubled Die: diez piezas de la década de 1960 buscadas por rareza, error y conservación.…
@@ -1246,6 +1248,79 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### El $20 del Bicentenario se anuncia hasta en $4 millones
+
+URL canónica: https://www.notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/
+
+> Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de mercado.
+
+Fuente externa: [Azteca Bajío](https://www.aztecabajio.com/tendencia/ofrecen-4-millones-por-moneda-20-del-bicentenario-la-independencia/)
+
+En plataformas de comercio electrónico se anuncian ejemplares de la moneda
+de **20 pesos** del **Bicentenario de la Independencia Nacional** por hasta
+**$4 millones**, reporta **Azteca Bajío**. La pieza pertenece a la familia
+**C1** de **Banxico** y sigue siendo de **curso legal**.
+
+## Cómo se reconoce
+
+Es **dodecagonal** (12 lados), con canto estriado discontinuo, **12,67 g**
+y **30 mm** de diámetro. En el anverso aparecen de perfil **Miguel Hidalgo
+y Costilla**, **José María Morelos y Pavón** y **Vicente Guerrero**, con el
+Ángel de la Independencia, el microtexto **«Libertad»**, la leyenda del
+bicentenario, los años **1821–2021** y la ceca de la Casa de Moneda. El
+reverso muestra el Escudo Nacional y la leyenda «Estados Unidos Mexicanos».
+
+## El precio publicado no es el de mercado
+
+Especialistas citados por Azteca Bajío aclaran que una cifra en un anuncio
+web **no fija** el valor real. Para estimar el interés coleccionable
+conviene revisar con un experto o una casa numismática autorizada:
+
+1. **Estado de conservación** (brillo original, sin rayones).
+2. **Rareza o errores de acuñación**.
+3. **Año y tiraje** puestos en circulación por Banxico.
+
+Solo después de esa valoración tiene sentido ofrecer la pieza en portales
+o a coleccionistas particulares.
+
+---
+
+### Tenochtitlan 2021: Ámbito habla de hasta $73.000
+
+URL canónica: https://www.notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/
+
+> Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1.
+
+Fuente externa: [Ámbito](https://www.ambito.com/mexico/economia/banorte-le-deposita-73000-los-mexicanos-que-tengan-esta-moneda-50-sus-casas-cual-es-n6308702)
+
+*Ámbito* asegura que **Banorte** paga hasta **$73.000** por una moneda
+conmemorativa de la familia **C1** dedicada a los **700 años de la
+fundación lunar de la Ciudad de México-Tenochtitlan**. La nota la presenta
+como de **$50**, pero el diseño que describe —águila del **Teocalli de la
+Guerra Sagrada**, microtexto **«Teocalli»**, imagen latente y años
+**1321–2021**— corresponde a la pieza de **$20** que el **Banco de México**
+puso en circulación en **2021**.
+
+## Qué dice la fuente
+
+Según Ámbito, el banco solo desembolsaría esa cifra si el ejemplar es
+**genuino** y cumple los criterios de adquisición que fije la entidad, con
+evaluación presencial en sucursales autorizadas. La nota destaca el metal,
+la fecha y el estado de conservación como factores del valor asignado.
+
+## Datos de la pieza (familia C1)
+
+La conmemorativa de curso legal es **dodecagonal** y **bimetálica** (núcleo
+de alpaca plateada y anillo de bronce-aluminio), con **12,67 g** de peso.
+En el reverso lleva el águila del Teocalli, la leyenda de los 700 años, la
+ceca **M°**, el facial **$20** y el año **2021**.
+
+Antes de asumir un precio de catálogo o de un banco, conviene contrastar
+con **Banxico**, una casa numismática y el propio Banorte: los anuncios
+virales suelen mezclar facial, rareza y cifras de venta aspiracionales.
+
+---
 
 ### Hallan una moneda de Carausius en el East West Rail
 
