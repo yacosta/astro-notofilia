@@ -4,8 +4,11 @@
  * Triggered by `.github/workflows/social-post-noticias.yml` on push to main
  * when Markdown under `src/content/noticias/` changes. Also runnable locally.
  *
- * X (Twitter API v2, OAuth 1.0a user context):
- *   X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET
+ * X (Twitter API v2, OAuth 1.0a user context — Bearer Token cannot post):
+ *   X_API_KEY            (= Consumer Key)
+ *   X_API_SECRET         (= Secret Key / Consumer Secret)
+ *   X_ACCESS_TOKEN       (= Access Token — generate under Authentication Tokens)
+ *   X_ACCESS_TOKEN_SECRET(= Access Token Secret)
  *
  * Instagram (Graph API Content Publishing — Business/Creator + Facebook Page):
  *   INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_BUSINESS_ACCOUNT_ID
@@ -293,11 +296,26 @@ async function urlOk(url) {
 /* -------------------------------------------------------------------------- */
 
 function readXCreds() {
-  const apiKey = process.env.X_API_KEY || process.env.TWITTER_API_KEY;
-  const apiSecret = process.env.X_API_SECRET || process.env.TWITTER_API_SECRET;
+  const apiKey =
+    process.env.X_API_KEY ||
+    process.env.X_CONSUMER_KEY ||
+    process.env.TWITTER_API_KEY;
+  const apiSecret =
+    process.env.X_API_SECRET ||
+    process.env.X_SECRET_KEY ||
+    process.env.X_CONSUMER_SECRET ||
+    process.env.TWITTER_API_SECRET;
   const accessToken = process.env.X_ACCESS_TOKEN || process.env.TWITTER_ACCESS_TOKEN;
   const accessSecret =
     process.env.X_ACCESS_TOKEN_SECRET || process.env.TWITTER_ACCESS_TOKEN_SECRET;
+
+  // Common mix-up: portal Bearer Token is app-only and cannot create tweets.
+  if (process.env.X_BEARER_TOKEN && !accessToken) {
+    console.warn(
+      'X_BEARER_TOKEN is set but Access Token is missing. Bearer Token is app-only and cannot post; generate Access Token + Secret (Read and write). See docs/social-posting.md',
+    );
+  }
+
   if (!apiKey || !apiSecret || !accessToken || !accessSecret) return null;
   return { apiKey, apiSecret, accessToken, accessSecret };
 }

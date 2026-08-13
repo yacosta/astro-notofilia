@@ -27,18 +27,33 @@ Add these under **Settings → Secrets and variables → Actions** on `yacosta/a
 
 ### X (Twitter API v2)
 
-| Secret | Notes |
+The developer portal **Keys and tokens** page often shows three values first:
+
+| Portal label | Enough to post? | Maps to |
+|---|---|---|
+| **Consumer Key** | Partial | `X_API_KEY` |
+| **Secret Key** (Consumer Secret) | Partial | `X_API_SECRET` |
+| **Bearer Token** | **No** — app-only / read-only | *(do not use for posting)* |
+
+Posting a tweet needs **user context** (OAuth 1.0a), which is **four** secrets:
+
+| GitHub Actions secret | Portal label |
 |---|---|
 | `X_API_KEY` | Consumer Key |
-| `X_API_SECRET` | Consumer Secret |
-| `X_ACCESS_TOKEN` | User access token (Read and Write) |
-| `X_ACCESS_TOKEN_SECRET` | User access token secret |
+| `X_API_SECRET` | Secret Key / Consumer Secret |
+| `X_ACCESS_TOKEN` | Access Token |
+| `X_ACCESS_TOKEN_SECRET` | Access Token Secret |
 
-1. Create a project/app at [developer.x.com](https://developer.x.com/)
-2. App permissions: **Read and write**
-3. Generate **Consumer Keys** and **Access Token & Secret** for the `@notofilia` account
+#### How to get Access Token & Secret
 
-Free tier allows posting tweets; media upload is optional (we rely on link cards).
+1. Open [developer.x.com](https://developer.x.com/) → your Project → App → **Settings**
+2. Set **App permissions** to **Read and write** (save; you may need to regenerate tokens afterward)
+3. Open **Keys and tokens**
+4. Under **Authentication Tokens** (not the Bearer Token row), click **Generate** for **Access Token and Secret**
+5. Confirm the token is issued for **@notofilia** and shows **Created with Read and Write permissions**
+6. Add all four values as repository secrets (never commit them; never put the Bearer Token in `X_ACCESS_TOKEN`)
+
+The Bearer Token alone cannot create posts. Free tier allows text tweets; we rely on link cards for the image (no media upload required).
 
 ### Instagram (Graph API Content Publishing)
 
