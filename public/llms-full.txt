@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 50 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1193,8 +1193,11 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [El $20 del Bicentenario se anuncia hasta en $4 millones](https://www.notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
+- [Tenochtitlan 2021: Ámbito habla de hasta $73.000](https://www.notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/): Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1. Fuente: Ámbito.
 - [Hallan una moneda de Carausius en el East West Rail](https://www.notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…
 - [EE. UU. acuña monedas con Trump por el 250.º aniversario](https://www.notofilia.com/noticias/moneda-trump-250-aniversario-primeras/): UNN informa de la primera tanda de monedas conmemorativas con Trump por el Semiquincentenario; el dólar de $1 es latón-manganeso, no oro 24…
+- [10 monedas de los años 60 que pueden valer más de US$150.000](https://www.notofilia.com/noticias/monedas-anos-60-valen-150000/): De un Kennedy Half Dollar ‘Hair’ a centavos Doubled Die: diez piezas de la década de 1960 buscadas por rareza, error y conservación.…
 - [Filadelfia celebra la primera Casa de Moneda de EE. UU.](https://www.notofilia.com/noticias/primera-casa-moneda-filadelfia-firstival/): El Firstival del 15 de agosto recuerda la U.S. Mint de 1792 en Filadelfia: tours, escultura conmemorativa y actividades familiares. Fuente:…
 - [El $20.000 chileno que puede valer hasta $200.000](https://www.notofilia.com/noticias/billete-20000-chile-serie-anverso-falla/): Ejemplares con el número de serie en el anverso en lugar del reverso se cotizan hasta diez veces su facial entre coleccionistas. Fuente: 24…
 - [Casa de Moneda homenajea a Condorito con fichas](https://www.notofilia.com/noticias/casa-moneda-condorito-fichas-conmemorativas/): Tres fichas de bronce de Condorito, Yayita y Coné en la serie Personajes Chilenos; venta desde el 10 de agosto en tienda.casamoneda.cl.…
@@ -1202,7 +1205,7 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [Medalla heptagonal del Sistema Solar](https://www.notofilia.com/noticias/medalla-sistema-solar-heptagonal/): Pieza de colección en plata .999 con forma de 50 peniques británicos: Sol, Luna y planetas para numismática temática. Fuente: Cultivarte.
 - [Billete de 10.000 pesos: Banxico explica el canje](https://www.notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/): El billete de Lázaro Cárdenas de la antigua unidad vale 10 pesos de canje; Banxico detalla cómo cambiarlo en bancos. Fuente: El Cronista.
 - [Cien años de moneda argentina en Corrientes](https://www.notofilia.com/noticias/expo-coleccionismo-moneda-argentina-corrientes/): La primera Expo de Coleccionismo en el Colegio Nacional destacó una muestra de un siglo de moneda argentina y series del Mundial 1978.…
-- [Saltillo: convención numismática el 15 y 16 de agosto](https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/): Más de 50 expositores se dan cita en el Museo del Desierto con monedas, billetes, acciones y asesoría para coleccionistas. Fuente: El…
+- [Saltillo: convención numismática el 15 y 16 de agosto](https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/): Acceso libre en el Museo del Desierto con 40–50 expositores, asesoría de piezas y la muestra Numisarte. Cartografías del signo. Fuente: El…
 - [Arequipa exhibe 390 piezas en su III Encuentro Numismático](https://www.notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/): Del 7 al 9 de agosto, la Biblioteca Regional Mario Vargas Llosa muestra 206 billetes y 184 monedas con ingreso libre. Fuente: Revelación.pe.
 - [Vaticano emite euros con la imagen del Papa León XIV](https://www.notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/): La serie vaticana en euros vuelve a mostrar el rostro papal; el escudo figura en 1, 2 y 5 céntimos y el set cuesta 59 euros. Fuente:…
 - [Monedas de $100 chilenas de hasta $800 mil](https://www.notofilia.com/noticias/monedas-100-chilenas-copihues-coleccionistas/): Errores de cospel, variantes de copihues 2000-2001 y ensayos elevan el interés por algunas monedas de $100 en circulación. Fuente: 24 Horas.
@@ -1245,6 +1248,79 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### El $20 del Bicentenario se anuncia hasta en $4 millones
+
+URL canónica: https://www.notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/
+
+> Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de mercado.
+
+Fuente externa: [Azteca Bajío](https://www.aztecabajio.com/tendencia/ofrecen-4-millones-por-moneda-20-del-bicentenario-la-independencia/)
+
+En plataformas de comercio electrónico se anuncian ejemplares de la moneda
+de **20 pesos** del **Bicentenario de la Independencia Nacional** por hasta
+**$4 millones**, reporta **Azteca Bajío**. La pieza pertenece a la familia
+**C1** de **Banxico** y sigue siendo de **curso legal**.
+
+## Cómo se reconoce
+
+Es **dodecagonal** (12 lados), con canto estriado discontinuo, **12,67 g**
+y **30 mm** de diámetro. En el anverso aparecen de perfil **Miguel Hidalgo
+y Costilla**, **José María Morelos y Pavón** y **Vicente Guerrero**, con el
+Ángel de la Independencia, el microtexto **«Libertad»**, la leyenda del
+bicentenario, los años **1821–2021** y la ceca de la Casa de Moneda. El
+reverso muestra el Escudo Nacional y la leyenda «Estados Unidos Mexicanos».
+
+## El precio publicado no es el de mercado
+
+Especialistas citados por Azteca Bajío aclaran que una cifra en un anuncio
+web **no fija** el valor real. Para estimar el interés coleccionable
+conviene revisar con un experto o una casa numismática autorizada:
+
+1. **Estado de conservación** (brillo original, sin rayones).
+2. **Rareza o errores de acuñación**.
+3. **Año y tiraje** puestos en circulación por Banxico.
+
+Solo después de esa valoración tiene sentido ofrecer la pieza en portales
+o a coleccionistas particulares.
+
+---
+
+### Tenochtitlan 2021: Ámbito habla de hasta $73.000
+
+URL canónica: https://www.notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/
+
+> Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1.
+
+Fuente externa: [Ámbito](https://www.ambito.com/mexico/economia/banorte-le-deposita-73000-los-mexicanos-que-tengan-esta-moneda-50-sus-casas-cual-es-n6308702)
+
+*Ámbito* asegura que **Banorte** paga hasta **$73.000** por una moneda
+conmemorativa de la familia **C1** dedicada a los **700 años de la
+fundación lunar de la Ciudad de México-Tenochtitlan**. La nota la presenta
+como de **$50**, pero el diseño que describe —águila del **Teocalli de la
+Guerra Sagrada**, microtexto **«Teocalli»**, imagen latente y años
+**1321–2021**— corresponde a la pieza de **$20** que el **Banco de México**
+puso en circulación en **2021**.
+
+## Qué dice la fuente
+
+Según Ámbito, el banco solo desembolsaría esa cifra si el ejemplar es
+**genuino** y cumple los criterios de adquisición que fije la entidad, con
+evaluación presencial en sucursales autorizadas. La nota destaca el metal,
+la fecha y el estado de conservación como factores del valor asignado.
+
+## Datos de la pieza (familia C1)
+
+La conmemorativa de curso legal es **dodecagonal** y **bimetálica** (núcleo
+de alpaca plateada y anillo de bronce-aluminio), con **12,67 g** de peso.
+En el reverso lleva el águila del Teocalli, la leyenda de los 700 años, la
+ceca **M°**, el facial **$20** y el año **2021**.
+
+Antes de asumir un precio de catálogo o de un banco, conviene contrastar
+con **Banxico**, una casa numismática y el propio Banorte: los anuncios
+virales suelen mezclar facial, rareza y cifras de venta aspiracionales.
+
+---
 
 ### Hallan una moneda de Carausius en el East West Rail
 
@@ -1337,6 +1413,60 @@ Act*), que permite diseños emblemáticos del Semiquincentenario en 2026.
 Fuente: [UNN](https://unn.ua/en/news/the-united-states-has-minted-the-first-batch-of-gold-coins-featuring-an-image-of-trump);
 especificaciones y diseño del dólar en
 [CoinNews](https://www.coinnews.net/2026/07/16/treasury-unveils-trump-1-coin/).
+
+---
+
+### 10 monedas de los años 60 que pueden valer más de US$150.000
+
+URL canónica: https://www.notofilia.com/noticias/monedas-anos-60-valen-150000/
+
+> De un Kennedy Half Dollar ‘Hair’ a centavos Doubled Die: diez piezas de la década de 1960 buscadas por rareza, error y conservación.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/08/12/10-monedas-de-los-anos-60-que-pueden-valer-hasta-mas-de-150000/)
+
+Algunas monedas estadounidenses de la **década de 1960** cotizan muy por
+encima del facial cuando combinan **rareza**, **errores de acuñación** o
+**conservación excepcional**. **El Diario NY** resume, a partir de
+**FinanceBuzz**, diez ejemplares cuyo rango puede ir de unos pocos dólares
+hasta más de **US$150.000**, siempre según estado y certificación.
+
+## Condición y certificación
+
+Servicios como **PCGS** y **NGC** usan la escala **Sheldon**. Las piezas
+**MS-60 a MS-70** se consideran *Mint State* (sin circulación comercial) y
+suelen marcar la diferencia de precio.
+
+## Diez piezas de la década
+
+1. **1960-D Small Date Lincoln Cent** — variedades rarísimas pueden superar
+   **US$3.500**.
+2. **1964 Kennedy Half Dollar «Hair»** — pruebas con mayor detalle en el
+   cabello de Kennedy han llegado a **US$156.000**; otras variantes, a
+   **US$46.800**.
+3. **1969-S Doubled Die Obverse Lincoln Cent** — duplicación visible en la
+   fecha y en «LIBERTY»; un ejemplar superó **US$125.000**.
+4. **1964 Silver Roosevelt Dime** — uno de los últimos *dimes* con **90%
+   plata**; entre **US$3** y **US$20.000** según condición.
+5. **1963 Franklin Half Dollar** (sin marca de ceca) — con líneas completas
+   en la Campana de la Libertad puede superar **US$5.000**.
+6. **1968 No-S Proof Roosevelt Dime** — pruebas sin la «S» de San Francisco;
+   un ejemplar se vendió por **US$31.000** (2015).
+7. **1965 Washington Quarter** de alta graduación — algunos salieron sobre
+   plancha de plata (~**6,25 g** frente a **5,67 g**); uno *Mint State*
+   alcanzó **US$8.400**.
+8. **1969-D Kennedy Half Dollar** — bien conservados, con acabado tipo
+   espejo, pueden superar **US$112**.
+9. **1960 Franklin Half Dollar Full Bell Lines** — líneas horizontales
+   completas en la campana; entre **US$100** y **US$8.000**.
+10. **1961-D Lincoln Cent «D sobre D horizontal»** — marca de ceca
+    repunzonada; de **US$3** a **US$228**.
+
+## Antes de vender
+
+Tener una moneda de esos años **no garantiza** un precio alto: los
+ejemplares más caros suelen unir rareza, error concreto y excelente
+conservación. Si crees tener una pieza valiosa, conviene una evaluación
+profesional (**PCGS** o **NGC**) antes de venderla.
 
 ---
 
@@ -1599,22 +1729,47 @@ Más detalles en la nota original de Diario Época.
 
 URL canónica: https://www.notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/
 
-> Más de 50 expositores se dan cita en el Museo del Desierto con monedas, billetes, acciones y asesoría para coleccionistas.
+> Acceso libre en el Museo del Desierto con 40–50 expositores, asesoría de piezas y la muestra Numisarte. Cartografías del signo.
 
 Fuente externa: [El Heraldo de Saltillo](https://elheraldodesaltillo.mx/2026/08/07/te-interesa-coleccionar-billetes-y-monedas-asiste-este-15-y-16-de-agosto-a-la-convencion-2026-de-la-sociedad-numismatica-de-saltillo/)
 
-La **Sociedad Numismática de Saltillo** convoca a su **convención anual
-2026** los días **15 y 16 de agosto**, a partir de las **10:00**, en el
-**Museo del Desierto**. Más de **50 expositores** presentarán monedas,
-billetes, acciones y material numismático de México y el mundo.
+La **Sociedad Numismática de Saltillo** convoca a su **convención 2026**
+los días **15 y 16 de agosto**, de **10:00 a 18:00**, en el lobby del
+**Museo del Desierto**. El acceso es **gratuito**. Entre **40 y 50
+expositores** de distintas partes de México presentarán monedas, billetes,
+medallas, fichas de hacienda, acciones y otro material numismático.
 
 ## Para coleccionistas y principiantes
 
 El encuentro espera a coleccionistas de Saltillo y de otras ciudades, a
-quienes quieren iniciar una colección y a quien solo desee admirar piezas de
-distintos países y épocas. Habrá valuación, compra y venta de piezas
-originales —incluidas colecciones completas y ejemplares escasos—,
-literatura numismática y asesoría de expertos.
+quien quiere iniciar una colección y a quien solo desee admirar piezas de
+distintos países y épocas. Habrá compra, venta e intercambio, literatura
+numismática y asesoría de expertos.
+
+*Posta* detalla que el comité organizador —**Felipe García Flores**,
+**Felipe Bravo** y **José Antonio Delgado**— invita a llevar monedas o
+billetes heredados para orientación sobre características e interés
+coleccionable. Subrayan que la **antigüedad sola no fija el precio**:
+pesan el año, la tirada, la escasez, rasgos particulares y la demanda del
+mercado; conviene contrastar con especialistas frente a cifras virales en
+redes.
+
+Entre los temas y piezas que suelen circular en estas mesas figuran
+**macuquinas**, plata, medallas, fichas de hacienda y series temáticas
+(Revolución, imperios, República, animales, países, ciudades, eventos y
+mundiales de fútbol, incluida **México 86**). Los asistentes podrán
+descargar un **libro digital gratuito** mediante un código **QR**.
+
+## Numisarte en el lobby
+
+Como complemento, *Vanguardia* reporta la exposición **«Numisarte.
+Cartografías del signo»**, curada por **Homero Rodríguez** con apoyo de
+**Rafael Blando** y del grupo **PeCA** (con **Baby Solís**). Reúne obra de
+once artistas —entre ellos José Vera Matos, Christian Becerra, Gabriela
+González Leal, Fernando Sepúlveda, Marek Wolfryd, Omar Árcega, Daniel
+Ruanova, Alexis Mata, Cecilia Barreto y Francesco Bartolozzi— que
+intervienen monedas y billetes. Estará abierta el **15 y 16 de agosto**,
+de **10:00 a 18:00**, en el mismo lobby del museo.
 
 ---
 

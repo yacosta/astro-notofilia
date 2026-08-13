@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-12</news:publication_date>
+      <news:title>El $20 del Bicentenario se anuncia hasta en $4 millones</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-12</news:publication_date>
+      <news:title>Tenochtitlan 2021: Ámbito habla de hasta $73.000</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/noticias/moneda-carausius-east-west-rail/</loc>
     <news:news>
       <news:publication>
@@ -21,6 +43,17 @@
       </news:publication>
       <news:publication_date>2026-08-12</news:publication_date>
       <news:title>EE. UU. acuña monedas con Trump por el 250.º aniversario</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.notofilia.com/noticias/monedas-anos-60-valen-150000/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Notofilia</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-12</news:publication_date>
+      <news:title>10 monedas de los años 60 que pueden valer más de US$150.000</news:title>
     </news:news>
   </url>
   <url>
