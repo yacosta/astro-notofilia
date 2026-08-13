@@ -120,10 +120,15 @@ for (const { route, legacyFile } of routeMap) {
   const normalized = normalizePath(route);
   if (!catalogPaths.has(normalized)) fail(`Route map path missing from catalog collection: ${normalized}`);
   if (!sitemap.has(normalized)) fail(`Catalog path missing from sitemap: ${normalized}`);
-  const expectedSource = `/${legacyFile}`;
-  const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
-  if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
-  else if (normalizePath(legacyRule.to) !== normalized) fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${normalized}`);
+  const expectedSources = [`/${legacyFile}`];
+  if (legacyFile.endsWith('.dc.html')) {
+    expectedSources.push(`/${legacyFile.slice(0, -5)}`); // name.dc.html -> name.dc
+  }
+  for (const expectedSource of expectedSources) {
+    const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
+    if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
+    else if (normalizePath(legacyRule.to) !== normalized) fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${normalized}`);
+  }
 }
 
 const header = await readFile(path.join(root, 'public/SiteHeader.dc.html'), 'utf8');
