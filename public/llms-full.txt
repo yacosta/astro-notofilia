@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 47 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 50 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).
 
@@ -1193,6 +1193,9 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Hallan una moneda de Carausius en el East West Rail](https://www.notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…
+- [EE. UU. acuña monedas con Trump por el 250.º aniversario](https://www.notofilia.com/noticias/moneda-trump-250-aniversario-primeras/): UNN informa de la primera tanda de monedas conmemorativas con Trump por el Semiquincentenario; el dólar de $1 es latón-manganeso, no oro 24…
+- [Filadelfia celebra la primera Casa de Moneda de EE. UU.](https://www.notofilia.com/noticias/primera-casa-moneda-filadelfia-firstival/): El Firstival del 15 de agosto recuerda la U.S. Mint de 1792 en Filadelfia: tours, escultura conmemorativa y actividades familiares. Fuente:…
 - [El $20.000 chileno que puede valer hasta $200.000](https://www.notofilia.com/noticias/billete-20000-chile-serie-anverso-falla/): Ejemplares con el número de serie en el anverso en lugar del reverso se cotizan hasta diez veces su facial entre coleccionistas. Fuente: 24…
 - [Casa de Moneda homenajea a Condorito con fichas](https://www.notofilia.com/noticias/casa-moneda-condorito-fichas-conmemorativas/): Tres fichas de bronce de Condorito, Yayita y Coné en la serie Personajes Chilenos; venta desde el 10 de agosto en tienda.casamoneda.cl.…
 - [Exhiben en Talca el peso independiente de 1817](https://www.notofilia.com/noticias/exhibicion-peso-independiente-ohiggins-talca/): ANUM muestra por primera vez en el Museo O’Higginiano la moneda de plata que O’Higgins autorizó al inicio de la Nueva Patria. Fuente:…
@@ -1242,6 +1245,146 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://www.notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Hallan una moneda de Carausius en el East West Rail
+
+URL canónica: https://www.notofilia.com/noticias/moneda-carausius-east-west-rail/
+
+> Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en Britania.
+
+Fuente externa: [Popular Mechanics](https://www.popularmechanics.com/science/archaeology/a73395890/a-self-proclaimed-emperor-minted-his-own-coins-1700-years-ago-archaeologists-just-found-one/)
+
+Arqueólogos que trabajan en la línea ferroviaria **East West Rail**
+(Oxford–Cambridge) han recuperado una rara **moneda romana acuñada por
+Carausius**, el comandante naval que se proclamó «emperador del Norte» y
+gobernó Britania entre **286 y 293 d. C.** Lo reporta **Popular Mechanics**,
+a partir del programa de sondeos de la East West Rail Company.
+
+## Por qué importa la pieza
+
+Durante su breve reinado, Carausius abrió **cecas en Londres y Colchester** y
+emitió oro y plata de calidad notable —a menudo superior a la de Roma— con
+fines políticos y de propaganda. El ejemplar hallado ayuda a fechar el
+contexto hacia **circa 287 d. C.** (~1.740 años), según el análisis tipológico
+de sus emisiones.
+
+En las mismas zanjas de ensayo aparecieron otra moneda romana (mediados–
+finales del siglo II, probablemente de **Antonino Pío** o **Marco Aurelio**),
+un vaso de la **Edad del Hierro tardía** y fragmentos de cerámica, además de
+indicios de un **asentamiento romano** (hoyos de postes).
+
+## El contexto del ferrocarril
+
+East West Rail ha completado unas **1.000 zanjas** de evaluación en
+Bedfordshire y Cambridgeshire y prevé unas **6.000** en unos dos años, como
+parte de la evaluación ambiental previa a la solicitud de autorización
+(Development Consent Order). Cada hallazgo se limpia, analiza y archiva; los
+más relevantes podrían exhibirse en museos locales.
+
+El propio Carausius, estacionado en el Canal de la Mancha para combatir la
+piratería, rompió con Roma tras enfrentarse a Maximiano y consolidó un poder
+independiente en Britania hasta su asesinato. Su moneda sigue siendo una de
+las claves para datar ese intervalo de la Britania romana.
+
+Fuente: [Popular Mechanics](https://www.popularmechanics.com/science/archaeology/a73395890/a-self-proclaimed-emperor-minted-his-own-coins-1700-years-ago-archaeologists-just-found-one/);
+comunicado de [East West Rail](https://eastwestrail.co.uk/news/latest-stories/1740-year-old-roman-coin-among-discoveries-as-east-west-rail-archaeology-programme-reaches-milestone).
+
+---
+
+### EE. UU. acuña monedas con Trump por el 250.º aniversario
+
+URL canónica: https://www.notofilia.com/noticias/moneda-trump-250-aniversario-primeras/
+
+> UNN informa de la primera tanda de monedas conmemorativas con Trump por el Semiquincentenario; el dólar de $1 es latón-manganeso, no oro 24 k.
+
+Fuente externa: [UNN](https://unn.ua/en/news/the-united-states-has-minted-the-first-batch-of-gold-coins-featuring-an-image-of-trump)
+
+La agencia **UNN** recoge que la Casa Blanca informó de la **primera tanda**
+de monedas conmemorativas con la imagen del presidente **Donald Trump**,
+dedicadas al **250.º aniversario** de la independencia de Estados Unidos
+(Semiquincentenario, 1776–2026). El anuncio se suma al programa ya adelantado
+por el secretario del Tesoro **Scott Bessent**.
+
+## Qué pieza es (y qué no es)
+
+La prensa especializada distingue **dos productos** distintos:
+
+1. **Dólar de 1 $** con acabado dorado: retrato de Trump en el anverso
+   (inscripciones *LIBERTY*, *IN GOD WE TRUST* y la doble fecha
+   **1776 ~ 2026**) y el **sello presidencial** en el reverso, con el
+   número **250** en el escudo. Pesa 8,10 g, mide 26,49 mm y su aleación es
+   **88,5 % cobre, 6 % zinc, 3,5 % manganeso y 2 % níquel** —no contiene oro
+   pese a su apariencia. Se acuñará en **Filadelfia** (sin marca de ceca) y
+   los productos para coleccionistas se esperan hacia el **otoño de 2026**.
+2. Un programa **aparte de oro de 24 quilates**, de tirada muy limitada, que
+   la U.S. Mint ha tratado como emisión de colección; su calendario de
+   puesta a la venta no coincide necesariamente con el 4 de julio.
+
+UNN describe la pieza como oro de 24 k con águila en el reverso; esa
+descripción se acerca más al **diseño del programa en oro** aprobado en
+comisiones, no a la composición del dólar de circulación/colección. Conviene
+separar ambas emisiones al hablar de «monedas de oro» con Trump.
+
+## Un precedente poco habitual
+
+Representar a un **presidente en vida** en la moneda estadounidense es
+infrecuente. Un antecedente citado con frecuencia es el
+**medio dólar del Sesquicentenario de 1926**, que mostró a **Calvin Coolidge**.
+La autorización del dólar de 2026 se apoya en la ley de rediseño de moneda
+coleccionable de circulación de 2020 (*Circulating Collectible Coin Redesign
+Act*), que permite diseños emblemáticos del Semiquincentenario en 2026.
+
+Fuente: [UNN](https://unn.ua/en/news/the-united-states-has-minted-the-first-batch-of-gold-coins-featuring-an-image-of-trump);
+especificaciones y diseño del dólar en
+[CoinNews](https://www.coinnews.net/2026/07/16/treasury-unveils-trump-1-coin/).
+
+---
+
+### Filadelfia celebra la primera Casa de Moneda de EE. UU.
+
+URL canónica: https://www.notofilia.com/noticias/primera-casa-moneda-filadelfia-firstival/
+
+> El Firstival del 15 de agosto recuerda la U.S. Mint de 1792 en Filadelfia: tours, escultura conmemorativa y actividades familiares.
+
+Fuente externa: [Billy Penn](https://billypenn.com/2026/08/12/us-mint-history-philadelphia-firstival/)
+
+**Filadelfia** fue la cuna de la moneda federal estadounidense: el Congreso
+creó la **United States Mint** el **2 de abril de 1792** (*Coinage Act*),
+cuando la ciudad era aún capital del país. **Billy Penn** recoge el relato
+de Eliza Rasmussen, de asuntos públicos de la U.S. Mint, con motivo del
+**Firstival** que este fin de semana dedica a ese «primer» filadelfiano.
+
+## De la colonia a la soberanía monetaria
+
+Antes de 1792 circulaban monedas europeas y se pagaba también en especie.
+Los Padres Fundadores debatiaron si hacía falta una ceca propia; la conclusión
+fue que un Estado soberano debía **controlar su propio dinero**. La Mint
+permaneció en Filadelfia incluso cuando la capital se trasladó a Washington:
+mover maquinaria y personal resultó demasiado costoso.
+
+En sus primeros años acuñó centavos, monedas de diez centavos y dólares, y
+también denominaciones hoy desaparecidas —**quarter eagle** (2,50 $),
+**half eagle** (5 $) y **eagle** (10 $)—. La ceca ha ocupado **cuatro sedes**
+en la ciudad; las prisas de las fiebres del oro en Carolina del Norte y
+Georgia impulsaron cecas de sucursal (Charlotte, Dahlonega, Nueva Orleans).
+Hoy producen moneda **Denver, San Francisco, West Point** y Filadelfia.
+
+## Firstival: 15 de agosto
+
+El evento se celebra el **sábado 15 de agosto de 2026**, de **11:00 a 13:00**,
+en la Mint actual (**151 N. Independence Mall East**). Habrá tours,
+actividades familiares, un concurso para adivinar cuántas monedas hay en una
+columna y la escultura de **Sean Martorana** de la serie *52 Weeks of Firsts*,
+con simbolismo de corona de laurel, llama y antorcha.
+
+«Tu moneda es una miniobra de arte en el bolsillo que representa al país»,
+resume Rasmussen: la historia de la Mint de Filadelfia es, en buena medida,
+la historia de cómo Estados Unidos aprendió a fabricar —y a cuidar— su
+dinero.
+
+Fuente: [Billy Penn](https://billypenn.com/2026/08/12/us-mint-history-philadelphia-firstival/).
+
+---
 
 ### El $20.000 chileno que puede valer hasta $200.000
 
