@@ -1,4 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const correctionSchema = z.object({
   date: z.coerce.date(),
@@ -66,23 +68,32 @@ const postSchema = z.object({
 });
 
 // "Noticias" — curated news. Each post is a Markdown file in
-// src/content/noticias/ → /noticias/<slug>/. Typically a short summary that
+// src/content/noticias/ → /noticias/<id>/. Typically a short summary that
 // points to an external source (set `source` + `sourceUrl`).
-const noticias = defineCollection({ type: 'content', schema: postSchema });
+const noticias = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/noticias' }),
+  schema: postSchema,
+});
 
 // "Blog" — original evergreen guides. Each post is a Markdown file in
-// src/content/blog/ → /blog/<slug>/. Full long-form articles (with a body
+// src/content/blog/ → /blog/<id>/. Full long-form articles (with a body
 // "Fuentes" section), not external pointers.
-const blog = defineCollection({ type: 'content', schema: postSchema });
+const blog = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog' }),
+  schema: postSchema,
+});
 
 // "Logros" — monthly milestones for the virtual collection. Each post is a
-// Markdown file in src/content/logros/ → /logros/<slug>/.
-const logros = defineCollection({ type: 'content', schema: postSchema });
+// Markdown file in src/content/logros/ → /logros/<id>/.
+const logros = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/logros' }),
+  schema: postSchema,
+});
 
 // Catalog pages share one Astro route/layout. Their preserved dc-runtime body
 // and interaction logic are imported once from the former standalone pages.
 const catalog = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/catalog' }),
   schema: z.object({
     path: z.string().startsWith('/coleccion/').endsWith('/'),
     title: z.string(),

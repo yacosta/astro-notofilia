@@ -56,7 +56,7 @@ top for the pages that benefit most from content collections and shared layouts.
 | `/404` | `src/pages/404.astro` |
 
 Editorial posts live as Markdown in `src/content/{noticias,blog,logros}/` with a shared
-Zod schema (`src/content/config.ts`). Shared UI lives under `src/components/`;
+Zod schema (`src/content.config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
 

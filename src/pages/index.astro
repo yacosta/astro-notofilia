@@ -24,7 +24,7 @@ function toStripItems(
   base: 'noticias' | 'blog',
 ): StripItem[] {
   return posts.slice(0, 4).map((p) => ({
-    url: `/${base}/${p.slug}/`,
+    url: `/${base}/${p.id}/`,
     title: p.data.title,
     source: p.data.source ?? 'Notofilia',
     iso: toIsoDate(p.data.publishedAt),

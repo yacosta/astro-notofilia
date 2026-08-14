@@ -20,12 +20,21 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://www.notofilia.com',
   trailingSlash: 'ignore',
+  // Keep empty alt="" and intentional whitespace for a11y scanners / layout.
+  // Astro 7 defaults to compressHTML: 'jsx', which can collapse spaces between
+  // inline elements and may strip empty attributes under aggressive minify.
+  compressHTML: false,
   build: {
     format: 'directory',
     // Shared Tailwind bundle is ~23 KiB — inline it to remove the render-blocking
     // `/_astro/*.css` round-trip that PageSpeed flags on mobile.
     inlineStylesheets: 'always',
   },
+  // Astro 7.1+ supports granular CSP `kind` (`element` | `attribute` | `default`)
+  // for script-src-*/style-src-*. Enforcing Astro CSP is deferred: this site still
+  // relies on Cloudflare `_headers` Report-Only CSP plus dc-runtime / Turnstile
+  // inline scripts. Enable `security.csp` in a follow-up once hashes and kinds
+  // are validated against real page inventories.
   vite: {
     plugins: [tailwindcss()],
   },
