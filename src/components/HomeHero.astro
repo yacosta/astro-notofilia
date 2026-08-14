@@ -56,21 +56,31 @@ const transparentPixel =
 
   <div
     role="group"
-    aria-label="Selector de idioma / Language selector"
-    class="absolute top-[78px] right-7 z-[2] flex items-center bg-bg/35 border border-line-input rounded-full p-[3px]"
+    aria-label="Idioma de la interfaz / Interface language"
+    class="absolute top-[78px] right-7 z-[2] flex flex-col items-end gap-1"
   >
-    <button
-      id="lang-es"
-      aria-pressed="true"
-      aria-label="Ver sitio en español"
-      class="border-none bg-cream/92 text-bg font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer"
-    >ES</button>
-    <button
-      id="lang-en"
-      aria-pressed="false"
-      aria-label="View site in English"
-      class="border-none bg-transparent text-cream font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer"
-    >EN</button>
+    <span
+      id="interface-lang-label"
+      class="font-serif text-[11px] tracking-[0.12em] uppercase text-cream-dim/90 px-1"
+    >Idioma de la interfaz</span>
+    <div class="flex items-center bg-bg/35 border border-line-input rounded-full p-[3px]">
+      <button
+        id="lang-es"
+        type="button"
+        aria-pressed="true"
+        aria-describedby="interface-lang-label"
+        aria-label="Interfaz en español"
+        class="border-none bg-cream/92 text-bg font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer min-h-[44px]"
+      >ES</button>
+      <button
+        id="lang-en"
+        type="button"
+        aria-pressed="false"
+        aria-describedby="interface-lang-label"
+        aria-label="Interface in English"
+        class="border-none bg-transparent text-cream font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer min-h-[44px]"
+      >EN</button>
+    </div>
   </div>
 
   <div
@@ -113,5 +123,15 @@ const transparentPixel =
         class="inline-flex items-center justify-center min-h-[48px] px-7 py-3 border border-cream text-cream no-underline font-serif font-semibold text-[15px] tracking-[0.1em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       >Buscar una pieza</a>
     </div>
+  </div>
+
+  <div class="absolute bottom-7 left-0 right-0 z-[2] flex justify-center px-6">
+    <button
+      id="hero-motion-toggle"
+      type="button"
+      class="hero-motion-toggle inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2 border border-line-input bg-bg/45 text-cream font-serif text-[13px] tracking-[0.08em] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      aria-pressed="false"
+      hidden
+    >Pausar diapositivas</button>
   </div>
 </div>

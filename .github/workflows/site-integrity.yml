@@ -40,3 +40,28 @@ jobs:
 
       - name: Ensure generated sitemap is committed
         run: git diff --exit-code -- public/sitemap.xml
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: validate
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production site and search index
+        run: npm run build
+
+      - name: Lighthouse CI budgets (home, coleccion, large catalog, noticia)
+        run: npm run lighthouse:ci
+        # Performance starts as warn in lighthouserc.json; a11y/SEO/BP are errors.
+        # Re-measure against CrUX after deploy — simulated scores are not live RUM.

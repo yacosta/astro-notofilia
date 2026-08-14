@@ -15,6 +15,7 @@
     "check": "astro check",
     "check:drift": "node scripts/check-site-drift.mjs",
     "check:ci": "npm run check && npm run build && npm run check:drift",
+    "lighthouse:ci": "lhci autorun",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
     "astro": "astro",
     "purge:css": "node scripts/purge-css.mjs"
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "esbuild": "^0.28.1",

@@ -1,4 +1,14 @@
 # Cloudflare Pages custom response headers.
+#
+# Global security baseline (also mirrored in functions/_middleware.js for HTML).
+# CSP starts in Report-Only because many pages still rely on inline styles/scripts.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://api.web3forms.com; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://api.web3forms.com; frame-src 'self' https://challenges.cloudflare.com; worker-src 'self' blob:; report-uri /api/csp-report
+
 # Link headers for agent/machine discovery on the homepage (RFC 8288 / RFC 9727 §3).
 /
   Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
@@ -99,13 +109,15 @@
   Cache-Control: public, max-age=900
 
 # Long-lived first-party static assets (repeat-visit PageSpeed).
-# Hashed Astro chunks and fingerprinted uploads/fonts can be immutable.
-# Unhashed runtime scripts get a week so deploys still propagate reasonably.
+# Hashed Astro chunks and fingerprinted vendor bundles can be immutable.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Replaceable catalog imagery: long cache without immutable so a same-path
+# overwrite can propagate (fingerprint filenames when a permanent immutable
+# cache is required).
 /uploads/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
 /vendor/*
   Cache-Control: public, max-age=31536000, immutable

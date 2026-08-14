@@ -15,6 +15,17 @@ const WELL_KNOWN_TYPES = {
   '/openapi.json': 'application/vnd.oai.openapi+json; charset=utf-8',
 };
 
+/** Baseline security headers. Prefer existing edge values when already set. */
+const SECURITY_HEADERS = {
+  'x-content-type-options': 'nosniff',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'permissions-policy':
+    'accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()',
+  'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+  'content-security-policy-report-only':
+    "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://api.web3forms.com; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://api.web3forms.com; frame-src 'self' https://challenges.cloudflare.com; worker-src 'self' blob:; report-uri /api/csp-report",
+};
+
 function withContentType(response, contentType) {
   if (!contentType || !response.ok) return response;
   const headers = new Headers(response.headers);
@@ -32,6 +43,18 @@ function isHtmlResponse(response) {
   return ctype.includes('text/html');
 }
 
+function withSecurityHeaders(response) {
+  const headers = new Headers(response.headers);
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+    if (!headers.has(name)) headers.set(name, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const pathname = url.pathname.replace(/\/+$/, '') || '/';
@@ -42,7 +65,7 @@ export async function onRequest(context) {
 
   const wellKnownType = WELL_KNOWN_TYPES[pathname] || WELL_KNOWN_TYPES[url.pathname];
   if (wellKnownType) {
-    return withContentType(response, wellKnownType);
+    return withSecurityHeaders(withContentType(response, wellKnownType));
   }
 
   if (wantsMarkdown && response.ok && isHtmlResponse(response)) {
@@ -55,6 +78,9 @@ export async function onRequest(context) {
     headers.delete('content-length');
     headers.delete('content-encoding');
     headers.delete('etag');
+    for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+      if (!headers.has(name)) headers.set(name, value);
+    }
     return new Response(markdown, {
       status: 200,
       headers,
@@ -72,5 +98,5 @@ export async function onRequest(context) {
     }));
   }
 
-  return response;
+  return withSecurityHeaders(response);
 }

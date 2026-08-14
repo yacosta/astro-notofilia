@@ -58,7 +58,9 @@
 
   function loadPagefind() {
     if (!pagefindPromise) {
-      pagefindPromise = import('/pagefind/pagefind.js').catch(function () {
+      // Built as an absolute runtime URL so Vite/Rollup does not try to bundle Pagefind.
+      var pagefindUrl = '/pagefind/' + 'pagefind.js';
+      pagefindPromise = import(pagefindUrl).catch(function () {
         pagefindPromise = null;
         throw new Error('pagefind');
       });

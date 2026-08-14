@@ -168,7 +168,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full 
     '',
     '**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*',
     '',
-    '**Idioma:** contenido principal en español (`lang=es`). La home tiene toggle ES/EN. Citar en el idioma de la página fuente.',
+    '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN de la home cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
     '',
     '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://www.notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).',
     '',

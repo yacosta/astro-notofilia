@@ -52,20 +52,14 @@ const shareDescription = ogDescription ?? description;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- Nested routes: <base> makes the shared dc-runtime header's relative links resolve from root. -->
 <base href="/" />
-<!-- Critical self-hosted fonts: preload so they arrive before first paint and
-     reduce fallback→webfont swap (and the italic hero subtitle jump). -->
+<!-- Critical self-hosted fonts: preload only the faces used above the fold
+     on most pages (display + body regular). Italic loads via @font-face when
+     first needed, avoiding three competing font preloads on every document. -->
 <link
   rel="preload"
   as="font"
   type="font/woff2"
   href="/uploads/fonts/SourceSans3-Variable-Latin.woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  as="font"
-  type="font/woff2"
-  href="/uploads/fonts/SourceSans3-Italic-Variable-Latin.woff2"
   crossorigin
 />
 <link

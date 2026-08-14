@@ -137,10 +137,12 @@ if (/href:\s*["'][^"']+\.dc\.html/i.test(header)) fail('Shared search/navigation
 if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertises unavailable catalog entries');
 
 const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.astro'), 'utf8');
-if (!nativeHeader.includes('/site-header.js')) fail('Native SiteHeader does not load site-header.js');
+if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not load site-header.js');
 if (!nativeHeader.includes('/coleccion/')) fail('Native SiteHeader is missing the collection link');
-const headerIsland = await readFile(path.join(root, 'public/site-header.js'), 'utf8');
-if (!headerIsland.includes('/pagefind/pagefind.js')) fail('Native header island is not wired to Pagefind');
+const headerIsland = await readFile(path.join(root, 'src/client/site-header.js'), 'utf8');
+if (!headerIsland.includes('/pagefind/') || !headerIsland.includes('pagefind.js')) {
+  fail('Native header island is not wired to Pagefind');
+}
 if (!headerIsland.includes('import(')) fail('Native header island must lazy-import Pagefind');
 
 const publicFiles = await readdir(path.join(root, 'public'));
