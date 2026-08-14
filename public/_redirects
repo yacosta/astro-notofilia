@@ -20,8 +20,8 @@
 
 # Legacy catalog document URLs
 # Bare .dc hosts (pre-.html DotCommerce / GSC) share the same destinations as .dc.html
-/catalogo.dc.html  /coleccion/  301
-/catalogo.dc  /coleccion/  301
+/catalogo.dc.html  /coleccion/billete-obsoleto-estados-unidos/  301
+/catalogo.dc  /coleccion/billete-obsoleto-estados-unidos/  301
 /catalogo-reserva-federal.dc.html  /coleccion/reserva-federal/  301
 /catalogo-reserva-federal.dc  /coleccion/reserva-federal/  301
 /departamento-del-tesoro-de-ee-uu.dc.html  /coleccion/departamento-del-tesoro-de-ee-uu/  301

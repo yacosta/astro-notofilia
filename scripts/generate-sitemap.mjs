@@ -130,6 +130,8 @@ for (const section of ['blog', 'noticias', 'logros']) {
 }
 
 add(`${site}/`, { changefreq: 'weekly', priority: '1.0' });
+// Global collection hub is a native Astro page (not a catalog JSON entry).
+add(`${site}/coleccion/`, { changefreq: 'weekly', priority: '0.9' });
 
 const ordered = [...entries.values()].sort((a, b) => {
   if (a.loc === `${site}/`) return -1;

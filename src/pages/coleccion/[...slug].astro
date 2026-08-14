@@ -5,7 +5,7 @@ import CatalogLayout from '../../layouts/CatalogLayout.astro';
 export async function getStaticPaths() {
   const pages = await getCollection('catalog');
   return pages.map((page) => ({
-    params: { slug: page.data.path === '/coleccion/' ? undefined : page.data.path.slice('/coleccion/'.length, -1) },
+    params: { slug: page.data.path.slice('/coleccion/'.length, -1) },
     props: { page },
   }));
 }

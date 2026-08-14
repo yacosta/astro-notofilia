@@ -1,0 +1,693 @@
+---
+/**
+ * Global collection hub — /coleccion/
+ * Replaces the obsolete-U.S. catalog formerly served at this path.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseHead from '../../components/BaseHead.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
+import PreFooter from '../../components/PreFooter.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { SITE } from '../../lib/site';
+import {
+  FEATURED_ENTRIES,
+  RECENT_PIECES,
+  hubLead,
+  hubStats,
+} from '../../lib/catalog-hub';
+
+const catalogIndex = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'public/data/catalog-index.json'), 'utf8'),
+) as {
+  countries: Array<{ name: string; count: number; slug: string }>;
+};
+
+const stats = hubStats();
+const lead = hubLead(stats);
+const title = 'Colección Virtual de Billetes y Monedas | Notofilia';
+const description =
+  `Explora ${stats.banknotes} billetes y ${stats.coins} monedas de ${stats.countries} países: imágenes, historia y referencias de catálogo.`;
+const keywords = [
+  'colección virtual billetes',
+  'catálogo numismático',
+  'billetes del mundo',
+  'monedas coloniales',
+  'notafilia',
+  'numismática',
+  'colección de billetes',
+];
+
+const countries = catalogIndex.countries ?? [];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Notofilia',
+          item: `${SITE}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Colección Virtual',
+          item: `${SITE}/coleccion/`,
+        },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE}/coleccion/#page`,
+      name: 'Colección Virtual de Billetes y Monedas',
+      url: `${SITE}/coleccion/`,
+      description,
+      inLanguage: 'es',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: {
+        '@type': 'Thing',
+        name: 'Notafilia y numismática',
+      },
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      path="/coleccion/"
+      keywords={keywords}
+      robots="index, follow, max-image-preview:large"
+      ogType="website"
+      ogTitle="Colección Virtual de Billetes y Monedas — Notofilia"
+      ogDescription={description}
+      ogImage="/uploads/state-bank-new-brunswick-1-dollar.jpg"
+      jsonLd={jsonLd}
+    />
+    <link rel="stylesheet" href="/catalog-fonts.css" />
+    <style is:global>
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      html, body, #dc-root, #dc-root > .sc-host { height: auto !important; }
+      body { margin: 0; background: #0a0a09; }
+      x-dc { display: none; }
+      img { max-width: 100%; height: auto; }
+      ::selection { background: rgba(138, 109, 59, 0.25); }
+    </style>
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .hub {
+        color: var(--color-cream-dim);
+        background:
+          radial-gradient(circle at 50% -8%, rgba(138, 109, 59, 0.12), transparent 34rem),
+          var(--color-bg);
+        font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+      }
+      .hub-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 64px var(--page-gutter, 24px) 96px;
+      }
+      .hub h1 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.05;
+        color: #d8d2cd;
+        margin: 0 0 20px;
+        max-width: 18ch;
+      }
+      .hub-lead {
+        font-size: clamp(18px, 1.8vw, 21px);
+        line-height: 1.7;
+        color: #d8d2cd;
+        max-width: 42rem;
+        margin: 0 0 40px;
+      }
+      .hub-search {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 0 0 56px;
+      }
+      .hub-search input[type='search'] {
+        flex: 1 1 280px;
+        min-height: 52px;
+        padding: 14px 18px;
+        font: inherit;
+        font-size: 18px;
+        color: #1c1a15;
+        background: #d8d2cd;
+        border: 1px solid rgba(10, 10, 9, 0.12);
+        border-radius: 3px;
+      }
+      .hub-search input[type='search']:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 3px;
+      }
+      .hub-search button {
+        min-height: 52px;
+        min-width: 44px;
+        padding: 12px 22px;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0a0a09;
+        background: #e7ddc4;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .hub-search button:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 3px;
+      }
+      .hub-section {
+        margin: 0 0 72px;
+        padding-top: 48px;
+        border-top: 1px solid rgba(231, 222, 201, 0.18);
+      }
+      .hub-kicker {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+        margin-bottom: 14px;
+      }
+      .hub h2 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(24px, 3vw, 32px);
+        line-height: 1.15;
+        color: #d8d2cd;
+        margin: 0 0 12px;
+      }
+      .hub-section-lead {
+        font-size: 18px;
+        line-height: 1.65;
+        color: #b7ab8a;
+        max-width: 40rem;
+        margin: 0 0 28px;
+      }
+      .featured-grid,
+      .country-grid,
+      .recent-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 18px 28px;
+      }
+      .featured-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      .featured-grid a,
+      .country-grid a {
+        display: block;
+        min-height: 44px;
+        padding-top: 14px;
+        border-top: 2px solid rgba(216, 210, 205, 0.35);
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease;
+      }
+      .featured-grid a:hover,
+      .country-grid a:hover {
+        border-color: #e7ddc4;
+      }
+      .featured-grid a:focus-visible,
+      .country-grid a:focus-visible,
+      .recent-grid a:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 4px;
+      }
+      .featured-title,
+      .country-name {
+        display: block;
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-size: clamp(18px, 1.2vw, 22px);
+        color: #d8d2cd;
+        margin-bottom: 6px;
+      }
+      .featured-desc,
+      .country-count {
+        display: block;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #b7ab8a;
+      }
+      .country-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      .recent-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      .recent-grid a {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        color: inherit;
+        text-decoration: none;
+        min-height: 44px;
+      }
+      .recent-grid picture {
+        display: block;
+        overflow: hidden;
+        border-radius: 3px;
+        background: #fff;
+        aspect-ratio: 4 / 3;
+      }
+      .recent-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.4s ease;
+      }
+      .recent-grid a:hover img {
+        transform: scale(1.03);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .recent-grid img { transition: none; }
+        .recent-grid a:hover img { transform: none; }
+      }
+      .recent-title {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-size: clamp(17px, 1.1vw, 20px);
+        color: #d8d2cd;
+      }
+      .recent-desc {
+        font-size: 15px;
+        line-height: 1.55;
+        color: #b7ab8a;
+      }
+
+      :global(#catalog-browser[data-loading] .catalog-results::before) {
+        content: 'Cargando catálogo…';
+        display: block;
+        color: #b7ab8a;
+        margin-bottom: 16px;
+      }
+      .filter-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+        align-items: end;
+        margin-bottom: 20px;
+      }
+      .filter-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 14px 16px;
+        width: 100%;
+      }
+      .filter-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .filter-field label {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+        font-weight: 600;
+      }
+      .filter-field input,
+      .filter-field select {
+        min-height: 44px;
+        padding: 10px 12px;
+        font: inherit;
+        font-size: 15px;
+        color: #1c1a15;
+        background: #d8d2cd;
+        border: 1px solid rgba(10, 10, 9, 0.12);
+        border-radius: 3px;
+      }
+      .filter-field input:focus-visible,
+      .filter-field select:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 3px;
+      }
+      .filter-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 8px;
+      }
+      .filter-actions button,
+      .view-toggle button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 10px 16px;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: #d8d2cd;
+        background: transparent;
+        border: 1px solid rgba(231, 222, 201, 0.35);
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .view-toggle button[aria-pressed='true'] {
+        color: #0a0a09;
+        background: #e7ddc4;
+        border-color: #e7ddc4;
+      }
+      .view-toggle button:focus-visible,
+      .filter-actions button:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 3px;
+      }
+      .result-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        align-items: center;
+        justify-content: space-between;
+        margin: 24px 0 16px;
+      }
+      :global(#catalog-result-count) {
+        font-size: 15px;
+        color: #b7ab8a;
+      }
+      :global(.catalog-results) {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      :global(.catalog-results[data-view='grid']) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 24px;
+      }
+      :global(.catalog-results[data-view='list']) {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      :global(.catalog-result-link) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.018), transparent 42%),
+          #161410;
+        border: 1px solid rgba(231, 222, 201, 0.14);
+        border-radius: 3px;
+        overflow: hidden;
+        min-height: 44px;
+        transition: border-color 0.2s ease, transform 0.15s ease;
+      }
+      :global(.catalog-result-link:hover) {
+        border-color: rgba(231, 222, 201, 0.4);
+        transform: translateY(-2px);
+      }
+      :global(.catalog-result-link:focus-visible) {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        :global(.catalog-result-link) { transition: none; }
+        :global(.catalog-result-link:hover) { transform: none; }
+      }
+      :global(.catalog-results[data-view='list'] .catalog-result-link) {
+        flex-direction: row;
+        align-items: stretch;
+      }
+      :global(.catalog-result-media) {
+        display: block;
+        background: #fff;
+        aspect-ratio: 4 / 3;
+      }
+      :global(.catalog-results[data-view='list'] .catalog-result-media) {
+        width: 140px;
+        min-width: 140px;
+        aspect-ratio: auto;
+        align-self: stretch;
+      }
+      :global(.catalog-result-media picture),
+      :global(.catalog-result-media img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      :global(.catalog-result-body) {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 18px 20px;
+      }
+      :global(.catalog-result-meta) {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+      }
+      :global(.catalog-result-title) {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-size: clamp(17px, 1.1vw, 20px);
+        line-height: 1.2;
+        color: #d8d2cd;
+      }
+      :global(.catalog-result-sub),
+      :global(.catalog-result-ref) {
+        font-size: 14px;
+        line-height: 1.45;
+        color: #b7ab8a;
+      }
+      :global(.catalog-result-ref) {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      :global(#catalog-empty) {
+        color: #b7ab8a;
+        font-size: 17px;
+        margin: 24px 0 0;
+      }
+      @media (max-width: 640px) {
+        .hub-inner { padding-top: 48px; }
+        :global(.catalog-results[data-view='list'] .catalog-result-media) {
+          width: 96px;
+          min-width: 96px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+    >Saltar al contenido principal</a>
+
+    <x-dc><dc-import name="SiteHeader" lang="es" hint-size="100%,60px"></dc-import></x-dc>
+
+    <div class="hub">
+      <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/">
+        <h1>Colección Virtual de Billetes y Monedas</h1>
+        <p class="hub-lead">{lead}</p>
+
+        <form class="hub-search" action="/coleccion/" method="get" role="search">
+          <label class="sr-only" for="catalog-search-hero">Buscar en la colección</label>
+          <input
+            id="catalog-search-hero"
+            type="search"
+            name="q"
+            placeholder="Buscar país, emisor, Pick, Friedberg, denominación…"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <section class="hub-section" aria-labelledby="featured-heading">
+          <span class="hub-kicker">Accesos destacados</span>
+          <h2 id="featured-heading">Colecciones y temas</h2>
+          <p class="hub-section-lead">
+            Entra por país, material o tipología sin recorrer todo el índice.
+          </p>
+          <ul class="featured-grid">
+            {FEATURED_ENTRIES.map((entry) => (
+              <li>
+                <a href={entry.href}>
+                  <span class="featured-title">{entry.title}</span>
+                  <span class="featured-desc">{entry.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="hub-section" aria-labelledby="countries-heading">
+          <span class="hub-kicker">Por país</span>
+          <h2 id="countries-heading">Países en la colección</h2>
+          <p class="hub-section-lead">
+            {countries.length} países con fichas documentadas. El filtro abre el explorador abajo.
+          </p>
+          <ul class="country-grid">
+            {countries.map((c) => (
+              <li>
+                <a
+                  href={`/coleccion/?pais=${encodeURIComponent(c.name)}#explorar`}
+                  data-filter-pais={c.name}
+                >
+                  <span class="country-name">{c.name}</span>
+                  <span class="country-count">
+                    {c.count === 1 ? '1 ficha' : `${c.count} fichas`}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="hub-section" aria-labelledby="recent-heading">
+          <span class="hub-kicker">Recientes</span>
+          <h2 id="recent-heading">Piezas añadidas recientemente</h2>
+          <p class="hub-section-lead">
+            Destacados recientes de la Colección Virtual.
+          </p>
+          <ul class="recent-grid">
+            {RECENT_PIECES.map((item) => (
+              <li>
+                <a href={item.href}>
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset={`/uploads/${item.imageBase}-card.webp 440w, /uploads/${item.imageBase}-card-2x.webp 660w`}
+                      sizes="(max-width: 640px) 90vw, 280px"
+                    />
+                    <img
+                      src={`/uploads/${item.imageBase}-card.jpg`}
+                      alt={item.imageAlt}
+                      width="440"
+                      height="280"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                  <span class="recent-title">{item.title}</span>
+                  <span class="recent-desc">{item.description}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section class="hub-section" id="explorar" aria-labelledby="browse-heading">
+          <span class="hub-kicker">Explorar</span>
+          <h2 id="browse-heading">Catálogo completo</h2>
+          <p class="hub-section-lead">
+            Filtra por país, emisor, año, denominación, tipo, material, condición y referencia de catálogo.
+          </p>
+
+          <div id="catalog-browser" data-loading>
+            <form id="catalog-filters" class="filter-toolbar" action="/coleccion/" method="get">
+              <div class="filter-grid">
+                <div class="filter-field" style="grid-column: 1 / -1;">
+                  <label for="catalog-search">Búsqueda</label>
+                  <input id="catalog-search" name="q" type="search" placeholder="Texto libre…" autocomplete="off" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-pais">País</label>
+                  <select id="filter-pais" name="pais"><option value="">Todos</option></select>
+                </div>
+                <div class="filter-field">
+                  <label for="filter-emisor">Emisor</label>
+                  <select id="filter-emisor" name="emisor"><option value="">Todos</option></select>
+                </div>
+                <div class="filter-field">
+                  <label for="filter-tipo">Tipo</label>
+                  <select id="filter-tipo" name="tipo">
+                    <option value="">Todos</option>
+                    <option value="banknote">Billete</option>
+                    <option value="coin">Moneda</option>
+                    <option value="specimen">Specimen</option>
+                    <option value="error">Error</option>
+                  </select>
+                </div>
+                <div class="filter-field">
+                  <label for="filter-material">Material</label>
+                  <select id="filter-material" name="material"><option value="">Todos</option></select>
+                </div>
+                <div class="filter-field">
+                  <label for="filter-desde">Año desde</label>
+                  <input id="filter-desde" name="desde" type="number" inputmode="numeric" min="1700" max="2100" placeholder="p. ej. 1860" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-hasta">Año hasta</label>
+                  <input id="filter-hasta" name="hasta" type="number" inputmode="numeric" min="1700" max="2100" placeholder="p. ej. 1970" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-denom">Denominación</label>
+                  <input id="filter-denom" name="denom" type="search" placeholder="peso, dólar…" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-condicion">Condición</label>
+                  <input id="filter-condicion" name="condicion" type="search" placeholder="PMG, AU…" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-catalogo">Referencia de catálogo</label>
+                  <input id="filter-catalogo" name="catalogo" type="search" placeholder="Pick, Friedberg, KM…" />
+                </div>
+                <div class="filter-field">
+                  <label for="filter-orden">Orden</label>
+                  <select id="filter-orden" name="orden">
+                    <option value="newest">Más recientes (año)</option>
+                    <option value="year">Fecha de emisión</option>
+                    <option value="country">País</option>
+                    <option value="denom">Denominación</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filter-actions">
+                <button type="button" id="catalog-clear-filters">Limpiar filtros</button>
+                <div class="view-toggle" role="group" aria-label="Vista de resultados">
+                  <button type="button" data-view="grid" aria-pressed="true">Cuadrícula</button>
+                  <button type="button" data-view="list" aria-pressed="false">Lista</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="result-meta-row">
+              <p id="catalog-result-count" aria-live="polite">Cargando…</p>
+            </div>
+            <p id="catalog-empty" hidden>No hay piezas con esos criterios. Prueba a ampliar el filtro.</p>
+            <ul id="catalog-results" class="catalog-results" data-view="grid"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <PreFooter />
+    <SiteFooter variant="editorial" />
+    <CookieBanner />
+    <script src="/coleccion-hub.js" defer is:inline></script>
+  </body>
+</html>
