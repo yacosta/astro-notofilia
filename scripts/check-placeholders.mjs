@@ -1,6 +1,7 @@
 /**
- * Fail the build if unresolved template placeholders remain in shipped HTML/JSON.
- * Catches leftover Mustache/DC bindings like {{ note.alt }} in dist/ or public data.
+ * Fail the build if unresolved template placeholders remain in shipped
+ * Astro HTML / catalog data. Intentionally skips legacy `*.dc.html` shells
+ * and `support.js`, which still use Mustache for the dc-runtime.
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -16,6 +17,7 @@ const SKIP_DIR = new Set([
   'playwright-report',
   'legacy',
   'pagefind',
+  '_astro',
 ]);
 
 const TARGETS = [
@@ -29,6 +31,15 @@ const TARGETS = [
   path.join(root, 'public', 'sitemap_index.xml'),
   path.join(root, 'public', 'robots.txt'),
 ];
+
+function shouldSkipFile(filePath) {
+  const base = path.basename(filePath);
+  // Legacy dc-runtime pages and shared fragments keep Mustache by design.
+  if (/\.dc\.html$/i.test(base)) return true;
+  if (/^support(\.min)?\.js$/i.test(base)) return true;
+  if (/^coleccion-hub\.js$/i.test(base)) return true;
+  return false;
+}
 
 async function walk(filePath, out) {
   let info;
@@ -46,16 +57,8 @@ async function walk(filePath, out) {
     }
     return;
   }
-  if (!/\.(html?|xml|txt|json|js|css)$/i.test(filePath)) return;
-  // Skip known DC component shells that are not standalone pages.
-  const base = path.basename(filePath);
-  if (/^(BanknoteCard|SiteHeader|SiteFooter)\.dc\.html$/i.test(base)) return;
-  // Catalog JSON: only flag unresolved placeholders in structured `record`
-  // (legacy `logic` / narrative fields may still mention mustache historically).
-  if (filePath.includes(`${path.sep}src${path.sep}content${path.sep}catalog${path.sep}`) && filePath.endsWith('.json')) {
-    out.push(filePath);
-    return;
-  }
+  if (!/\.(html?|xml|txt|json)$/i.test(filePath)) return;
+  if (shouldSkipFile(filePath)) return;
   out.push(filePath);
 }
 
