@@ -1,0 +1,6 @@
+{
+  "http://localhost:35573/": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1786717650332-90468.report.html",
+  "http://localhost:35573/coleccion/": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1786717650815-48384.report.html",
+  "http://localhost:35573/coleccion/colombia/banco-de-la-republica-1000-pesos/": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1786717651236-58697.report.html",
+  "http://localhost:35573/noticias/moneda-20-bicentenario-independencia-4-millones/": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1786717651616-3610.report.html"
+}

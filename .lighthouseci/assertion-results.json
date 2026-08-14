@@ -1,0 +1,31 @@
+[
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.76,
+    "values": [
+      0.76
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:35573/coleccion/colombia/banco-de-la-republica-1000-pesos/"
+  },
+  {
+    "name": "maxNumericValue",
+    "expected": 0.1,
+    "actual": 0.68119,
+    "values": [
+      0.68119
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "cumulative-layout-shift",
+    "level": "warn",
+    "url": "http://localhost:35573/coleccion/colombia/banco-de-la-republica-1000-pesos/",
+    "auditTitle": "Cumulative Layout Shift",
+    "auditDocumentationLink": "https://web.dev/articles/cls"
+  }
+]
