@@ -1,6 +1,6 @@
 # Notofilia.com — Astro build
 
-Astro 4 build of [notofilia.com](https://www.notofilia.com): a digital catalog
+Astro 4 build of [notofilia.com](https://notofilia.com): a digital catalog
 and virtual collection of historical banknotes and coins — Colombia, Puerto
 Rico, Ecuador, U.S. currency, colonial issues, and world polymer notes — plus
 historical profiles of figures tied to Colombian monetary history.
@@ -59,6 +59,11 @@ Editorial posts live as Markdown in `src/content/{noticias,blog,logros}/` with a
 Zod schema (`src/content.config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
+
+Catalog piece pages keep a frozen HTML `template` for narrative fidelity and a structured
+`record` object (`src/lib/catalog-record.ts`) that drives breadcrumb, permanent id, metadata,
+citation, related links, hub card grids, and feedback chrome via `src/components/catalog/*`.
+Catalog pages no longer load the custom dc-runtime (`support.js`); zoom uses `/catalog-zoom.js`.
 
 News articles include a Turnstile-protected comment form backed by Cloudflare
 D1. New comments remain pending until approved. See

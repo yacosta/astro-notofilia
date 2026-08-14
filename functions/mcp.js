@@ -58,15 +58,15 @@ async function handleToolCall(name, args, origin) {
   if (name === 'get_site_info') {
     const info = {
       name: 'Notofilia',
-      url: 'https://www.notofilia.com',
+      url: 'https://notofilia.com',
       description:
         'Digital catalog and virtual collection of historical banknotes and coins.',
       discovery: {
-        apiCatalog: 'https://www.notofilia.com/.well-known/api-catalog',
-        mcpServerCard: 'https://www.notofilia.com/.well-known/mcp/server-card.json',
-        authMd: 'https://www.notofilia.com/auth.md',
-        openapi: 'https://www.notofilia.com/openapi.json',
-        agentIndex: 'https://www.notofilia.com/.well-known/agent-index.json',
+        apiCatalog: 'https://notofilia.com/.well-known/api-catalog',
+        mcpServerCard: 'https://notofilia.com/.well-known/mcp/server-card.json',
+        authMd: 'https://notofilia.com/auth.md',
+        openapi: 'https://notofilia.com/openapi.json',
+        agentIndex: 'https://notofilia.com/.well-known/agent-index.json',
       },
     };
     return {
@@ -144,8 +144,8 @@ export async function onRequestGet() {
     version: SERVER_INFO.version,
     transport: 'streamable-http',
     endpoints: {
-      mcp: 'https://www.notofilia.com/mcp',
-      serverCard: 'https://www.notofilia.com/.well-known/mcp/server-card.json',
+      mcp: 'https://notofilia.com/mcp',
+      serverCard: 'https://notofilia.com/.well-known/mcp/server-card.json',
     },
   });
 }

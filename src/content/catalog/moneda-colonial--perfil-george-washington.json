@@ -24,26 +24,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Estados Unidos",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "George Washington",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-george-washington/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/perfil-george-washington/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "George Washington",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-george-washington/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/perfil-george-washington/",
         "birthDate": "1732-02-22",
         "deathDate": "1799-12-14",
         "birthPlace": {
@@ -63,6 +63,37 @@
   "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
   "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Ruta de navegación\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/coleccion/moneda-colonial/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Catálogo de Moneda Colonial</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/coleccion/moneda-colonial/perfil-george-washington/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Perfil Histórico &middot; Estados Unidos</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">George Washington</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Westmoreland, 1732 &mdash; Mount Vernon, 1799</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:960/1166; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture style=\"display:block; width:100%; height:100%;\">\n              <source srcset=\"uploads/washington-portrait-stuart-480.webp 480w, uploads/washington-portrait-stuart.webp 960w\" sizes=\"(max-width: 448px) calc(100vw - 48px), 400px\" type=\"image/webp\" />\n              <img src=\"uploads/washington-portrait-stuart.jpg\" alt=\"Retrato al óleo de George Washington, con casaca negra y camisa blanca de gorguera\" width=\"960\" height=\"1166\" decoding=\"async\" fetchpriority=\"high\" style=\"width:100%; height:100%; object-fit:cover; display:block;\">\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">George Washington</span>\n            <span style=\"display:block;\">Por Gilbert Stuart &mdash; <a href=\"https://www.clarkart.edu/ArtPiece/Detail/George-Washington\" target=\"_blank\" rel=\"noopener noreferrer\">Clark Art Institute</a></span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Nacimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">22 de febrero de 1732 &mdash; Westmoreland County, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Fallecimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">14 de diciembre de 1799 &mdash; Mount Vernon, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rol Clave</span>\n              <span style=\"font-size:19px; color:#221f19;\">Comandante en jefe del Ejército Continental (1775&ndash;1783) y primer presidente de los Estados Unidos (1789&ndash;1797)</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. El Comandante de la Independencia</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Terrateniente y militar de Virginia con experiencia en la Guerra Franco-India, Washington fue nombrado comandante en jefe del recién creado Ejército Continental en 1775 por el Segundo Congreso Continental, al estallar la Guerra de Independencia contra Gran Bretaña.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">A pesar de numerosas derrotas iniciales, su liderazgo constante durante los duros inviernos de Valley Forge y su victoria decisiva en Yorktown (1781), con apoyo francés, sellaron la independencia estadounidense en 1783.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. El Primer Presidente</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Elegido por unanimidad como primer presidente bajo la nueva Constitución, Washington estableció numerosos precedentes institucionales que perduran hasta hoy: el gabinete de asesores, el límite informal de dos mandatos y la tradición del discurso de despedida.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Se retiró voluntariamente del poder en 1797, un gesto entonces excepcional que reforzó el carácter republicano de la naciente nación frente a los modelos monárquicos europeos.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Legado Numismático</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">El retrato de Washington es el más reproducido en la historia del papel moneda estadounidense: aparece en el billete de <a href=\"/coleccion/un-dolar-sello-rojo-1928/\">Un Dólar, Sello Rojo (1928)</a> de esta colección, así como en el billete corriente de un dólar desde 1869 hasta la actualidad.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notas</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biografía basada en fuentes históricas estándar sobre la Guerra de Independencia de Estados Unidos y la presidencia de George Washington.</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
   "logic": "",
+  "record": {
+    "id": "NF.moneda-colonial.perfil-george-washington",
+    "kind": "profile",
+    "title": "George Washington",
+    "subtitle": "Westmoreland, 1732 — Mount Vernon, 1799",
+    "dateOrSeries": "Perfil Histórico · Estados Unidos",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Estados Unidos",
+        "href": "/coleccion/moneda-colonial/"
+      },
+      {
+        "name": "George Washington"
+      }
+    ],
+    "images": {
+      "stacked": {
+        "src": "/uploads/washington-portrait-stuart.jpg",
+        "srcWebp": "/uploads/washington-portrait-stuart.webp",
+        "alt": "Retrato al óleo de George Washington, con casaca negra y camisa blanca de gorguera"
+      },
+      "defaultView": "stacked"
+    },
+    "metadata": {},
+    "render": "astro-static",
+    "eyebrow": "Perfil Histórico · Estados Unidos"
+  },
   "legacyFile": "perfil-george-washington.dc.html",
   "sourceHash": "905f49792cb7cf8b"
 }

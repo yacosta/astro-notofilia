@@ -44,7 +44,7 @@ const jsonLd = {
     },
     {
       '@type': 'Person',
-      '@id': `${SITE}${path}#equipo-editorial`,
+      '@id': `${SITE}/editorial/equipo/#person`,
       name: EDITORIAL_TEAM.name,
       url: EDITORIAL_TEAM.url,
       jobTitle: EDITORIAL_TEAM.jobTitle,
@@ -99,6 +99,14 @@ const jsonLd = {
         <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
       </p>
 
+      <h2 id="correcciones">Política de correcciones</h2>
+      <p>
+        Los errores de hecho, cifras mal etiquetadas o atribuciones incorrectas se corrigen en
+        la pieza afectada. Cada corrección material queda listada en el historial de la página
+        (fecha + descripción). Si el cambio es sustancial, actualizamos también la fecha de
+        “Última actualización”.
+      </p>
+
       <h2>Fechas y actualizaciones</h2>
       <ul>
         <li><strong>Fecha de publicación:</strong> cuándo salió la nota en Notofilia.</li>
@@ -136,7 +144,7 @@ const jsonLd = {
         <li>No duplicamos la misma noticia solo porque otro medio la repitió; actualizamos la existente si aporta hechos nuevos.</li>
       </ul>
 
-      <h2>Cómo reportar un error</h2>
+      <h2 id="como-reportar-un-error">Cómo reportar un error</h2>
       <p>
         Si detecta una cifra mal etiquetada, una fuente rotunda o un hecho incorrecto, escríbanos
         a través de los canales públicos de Notofilia. Publicaremos la corrección en el historial

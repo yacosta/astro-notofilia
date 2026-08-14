@@ -5,6 +5,7 @@
  */
 import '../styles/global.css';
 import { absoluteUrl, keywordsContent } from '../lib/site';
+import WebVitals from './WebVitals.astro';
 
 export interface Props {
   title: string;
@@ -111,4 +112,5 @@ const shareDescription = ogDescription ?? description;
 <meta name="twitter:description" content={shareDescription} />
 <meta name="twitter:image" content={image} />
 {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
+<WebVitals />
 <slot />

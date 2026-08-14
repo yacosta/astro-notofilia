@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "Astro build of notofilia.com \u2014 digital catalog and virtual collection of historical banknotes and coins.",
+  "description": "Astro build of notofilia.com — digital catalog and virtual collection of historical banknotes and coins.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,8 +14,13 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:drift": "node scripts/check-site-drift.mjs",
-    "check:ci": "npm run check && npm run build && npm run check:drift",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "check:headers": "node scripts/check-security-headers.mjs",
+    "check:ci": "npm run check && npm run build && npm run check:placeholders && npm run check:headers && npm run check:drift",
     "lighthouse:ci": "lhci autorun",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "migrate:catalog:phase3": "node scripts/phase3-catalog-astro.mjs",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
     "astro": "astro",
     "purge:css": "node scripts/purge-css.mjs"
@@ -26,11 +31,14 @@
   "dependencies": {
     "astro": "^7.2.2",
     "cookie": "^2.0.1",
-    "preact": "^10.29.7"
+    "preact": "^10.29.7",
+    "web-vitals": "^4.2.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
     "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "esbuild": "^0.28.1",

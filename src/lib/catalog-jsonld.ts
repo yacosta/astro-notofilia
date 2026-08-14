@@ -2,10 +2,32 @@
  * Enrich catalog page JSON-LD at render time:
  * - Keep CreativeWork (never Product) for pieces not for sale
  * - Ensure additionalProperty on CreativeWork nodes
+ * - Merge structured `record` metadata into CreativeWork when present
  * - Add ItemList alongside CollectionPage hasPart for catalog indexes
  */
 
+import { recordPropertyValues, type CatalogRecord } from './catalog-record';
+import { SITE } from './site';
+
 type JsonLdNode = Record<string, unknown>;
+
+const LEGACY_WWW = 'https://www.notofilia.com';
+
+/** Rewrite legacy www absolute URLs to the canonical apex host. */
+function canonicalizeHost(value: unknown): unknown {
+  if (typeof value === 'string') {
+    return value.includes(LEGACY_WWW) ? value.split(LEGACY_WWW).join(SITE) : value;
+  }
+  if (Array.isArray(value)) return value.map(canonicalizeHost);
+  if (value && typeof value === 'object') {
+    const out: JsonLdNode = {};
+    for (const [k, v] of Object.entries(value as JsonLdNode)) {
+      out[k] = canonicalizeHost(v);
+    }
+    return out;
+  }
+  return value;
+}
 
 function asNodes(jsonLd: unknown): JsonLdNode[] {
   if (!jsonLd || typeof jsonLd !== 'object') return [];
@@ -75,13 +97,30 @@ function itemListFromHasPart(page: JsonLdNode): JsonLdNode | null {
   };
 }
 
+function mergeRecordProperties(node: JsonLdNode, record: CatalogRecord): void {
+  const existing = Array.isArray(node.additionalProperty)
+    ? (node.additionalProperty as JsonLdNode[])
+    : [];
+  const names = new Set(
+    existing
+      .map((p) => (typeof p?.name === 'string' ? p.name : ''))
+      .filter(Boolean),
+  );
+  const extras = recordPropertyValues(record).filter((p) => !names.has(p.name));
+  if (extras.length > 0) {
+    node.additionalProperty = [...existing, ...extras];
+  }
+  if (!node.identifier) node.identifier = record.id;
+  if (!node.name) node.name = record.title;
+}
+
 /**
  * Returns enriched JSON-LD suitable for BaseHead. Mutates a deep clone only.
  */
-export function enrichCatalogJsonLd(jsonLd: unknown): unknown {
+export function enrichCatalogJsonLd(jsonLd: unknown, record?: CatalogRecord): unknown {
   if (!jsonLd || typeof jsonLd !== 'object') return jsonLd;
 
-  const clone = structuredClone(jsonLd) as JsonLdNode;
+  const clone = canonicalizeHost(structuredClone(jsonLd)) as JsonLdNode;
   const nodes = asNodes(clone);
   const extras: JsonLdNode[] = [];
 
@@ -102,6 +141,7 @@ export function enrichCatalogJsonLd(jsonLd: unknown): unknown {
 
     if (types.includes('CreativeWork') || (node['@type'] === 'CreativeWork')) {
       ensureAdditionalProperty(node);
+      if (record) mergeRecordProperties(node, record);
     }
 
     if (types.includes('CollectionPage') || node['@type'] === 'CollectionPage') {

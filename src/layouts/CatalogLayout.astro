@@ -4,6 +4,9 @@ import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CatalogRecordSurface from '../components/catalog/CatalogRecordSurface.astro';
+import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
+import type { CatalogRecord } from '../lib/catalog-record';
 
 export interface Props {
   title: string;
@@ -19,22 +22,19 @@ export interface Props {
   styles?: string;
   template: string;
   logic?: string;
+  /** Phase 3 structured catalog-record model. */
+  record?: CatalogRecord;
 }
 
 const props = Astro.props;
-const inventoryCount = (props.template.match(/<dc-import\s+name="BanknoteCard"/g) ?? []).length;
-const isThinCatalog = inventoryCount > 0 && inventoryCount <= 2;
-const inventoryLabel = inventoryCount === 1 ? '1 pieza documentada' : `${inventoryCount} piezas documentadas`;
-const inventoryNote = isThinCatalog
-  ? `<aside class="catalog-inventory-status" aria-label="Estado del catálogo" data-pagefind-ignore><span>Catálogo en crecimiento</span><strong>${inventoryLabel}</strong><p>Esta sección muestra únicamente fichas con imágenes y datos verificados. Se ampliará a medida que se documenten nuevas piezas.</p></aside>`
-  : '';
-const catalogTemplate = inventoryNote
-  ? props.template.replace(/<\/h1>/i, `</h1>${inventoryNote}`)
-  : props.template;
-const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
+const record = props.record;
+const cards = record?.cards ?? [];
+const isHub = record?.render === 'astro-hub' || cards.length > 0;
+// Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
+const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
 ---
 <!doctype html>
-<html lang="es" data-dc-static>
+<html lang="es">
   <head>
     <BaseHead
       title={props.title}
@@ -47,16 +47,15 @@ const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
       ogDescription={props.ogDescription}
       ogImage={props.ogImage}
       jsonLd={props.jsonLd}
-      loadDcRuntime={true}
+      loadDcRuntime={false}
     />
     <link rel="stylesheet" href="/catalog-fonts.css" />
+    <script src="/catalog-zoom.js" defer is:inline></script>
     {props.styles && <style is:global set:html={props.styles} />}
     <style is:global>
       * { box-sizing: border-box; }
       html { -webkit-text-size-adjust: 100%; }
-      html, body, #dc-root, #dc-root > .sc-host { height: auto !important; }
       body { margin: 0; background: #0a0a09; }
-      x-dc { display: none; }
       img { max-width: 100%; height: auto; }
 
       .catalog-shell {
@@ -119,31 +118,20 @@ const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
       .catalog-shell [style*="border-bottom:1px solid rgba(10,10,9"] {
         border-color: var(--rule-subtle) !important;
       }
-      .catalog-shell picture,
-      .catalog-shell figure {
-        isolation: isolate;
-      }
-      .catalog-shell img {
-        border-radius: 2px;
-      }
       .catalog-inventory-status {
         display: grid;
         grid-template-columns: auto 1fr;
+        gap: 6px 14px;
         align-items: baseline;
-        gap: 6px 18px;
-        max-width: 720px;
-        margin: 24px 0 48px;
-        padding: 18px 20px;
-        color: var(--text-secondary);
-        background: rgba(203, 191, 157, 0.045);
-        border-left: 2px solid var(--accent-metal);
-        border-top: 1px solid var(--rule-subtle);
-        border-bottom: 1px solid var(--rule-subtle);
+        margin: 0 0 40px;
+        padding: 16px 18px;
+        border: 1px solid var(--rule-artifact);
+        border-radius: var(--radius-surface);
+        background: rgba(255, 255, 255, 0.03);
       }
       .catalog-inventory-status span {
         color: var(--accent-metal);
         font-size: 12px;
-        font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
@@ -188,8 +176,19 @@ const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
     >Saltar al contenido principal</a>
     <SiteHeader />
-    <x-dc set:html={dcTemplate} />
-    {props.logic && <script type="text/x-dc" data-dc-script is:inline set:html={props.logic} />}
+    {
+      record ? (
+        <CatalogRecordSurface record={record} path={props.path} mode="augment">
+          <div set:html={catalogShell} />
+          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+        </CatalogRecordSurface>
+      ) : (
+        <>
+          <div set:html={catalogShell} />
+          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+        </>
+      )
+    }
     <PreFooter />
     <SiteFooter variant="editorial" />
     <CookieBanner />

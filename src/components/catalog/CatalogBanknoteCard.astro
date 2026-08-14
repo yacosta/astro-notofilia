@@ -1,0 +1,52 @@
+---
+/**
+ * Native replacement for BanknoteCard.dc.html (no dc-runtime).
+ */
+import type { CatalogCard } from '../../lib/catalog-record';
+
+interface Props {
+  card: CatalogCard;
+}
+
+const { card } = Astro.props;
+const image = card.image?.startsWith('/') ? card.image : card.image ? `/${card.image}` : undefined;
+const imageWebp = card.imageWebp?.startsWith('/')
+  ? card.imageWebp
+  : card.imageWebp
+    ? `/${card.imageWebp}`
+    : undefined;
+const meta = [card.denomination, card.year].filter(Boolean).join(' · ');
+---
+<a
+  href={card.href}
+  class="catalog-banknote-card group flex h-full flex-col no-underline overflow-hidden border border-[rgba(10,10,9,0.1)] bg-[#d8d2cd] shadow-[0_14px_34px_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-[3px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a15] focus-visible:outline-offset-4"
+>
+  <div class="relative aspect-[4/3] overflow-hidden border-b border-[rgba(10,10,9,0.08)] bg-white p-3.5 box-border">
+    {
+      image && (
+        <picture class="absolute inset-3.5 block">
+          {imageWebp && <source srcset={imageWebp} type="image/webp" />}
+          <img
+            src={image}
+            alt={card.alt || card.title}
+            width="400"
+            height="300"
+            loading="lazy"
+            decoding="async"
+            class="block h-full w-full object-contain"
+          />
+        </picture>
+      )
+    }
+  </div>
+  <div class="flex flex-1 flex-col gap-1.5 px-[22px] pt-5 pb-6">
+    {
+      meta && (
+        <span class="font-serif text-[13px] tracking-[0.16em] uppercase text-[#5c4e33]">
+          {meta}
+        </span>
+      )
+    }
+    <span class="font-display text-[22px] leading-[1.15] text-[#1c1a15]">{card.title}</span>
+  </div>
+</a>

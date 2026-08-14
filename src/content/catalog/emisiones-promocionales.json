@@ -28,36 +28,93 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Scrip Promocional de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/emisiones-promocionales/"
+            "item": "https://notofilia.com/coleccion/emisiones-promocionales/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/emisiones-promocionales/#page",
+        "@id": "https://notofilia.com/coleccion/emisiones-promocionales/#page",
         "name": "Scrip Promocional y Emisiones Efímeras de Estados Unidos",
-        "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/",
+        "url": "https://notofilia.com/coleccion/emisiones-promocionales/",
         "description": "Catálogo de scrip promocional y emisiones efímeras de Estados Unidos, colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "Scrip 50º Aniversario Ringling Bros. — Baraboo, Wisconsin (1933)",
-            "url": "https://www.notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/"
+            "url": "https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/"
           }
         ]
       }
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/emisiones-promocionales/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Scrip Promocional y Emisiones Efímeras</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Moneda sustituta emitida fuera del sistema bancario &mdash;por cámaras de comercio, festejos locales o campañas promocionales&mdash; y pensada para circular brevemente antes de canjearse o coleccionarse como recuerdo.</p>\n\n    <section style=\"margin:0 0 80px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">El &ldquo;Scrip&rdquo; de la Gran Depresión</h2>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 14px;\">Durante la Gran Depresión de la década de 1930, la escasez de circulante llevó a cientos de municipios, cámaras de comercio y comerciantes estadounidenses a emitir su propio &ldquo;scrip&rdquo; &mdash;papel moneda sustituto, sin respaldo del gobierno federal, redimible en comercios locales o por la propia entidad emisora dentro de un plazo determinado.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">Un subgénero particular de este fenómeno es el <em>scrip conmemorativo o promocional</em>: emitido no por necesidad monetaria estricta, sino para celebrar un aniversario, festival o evento cívico, combinando la función de moneda temporal con la de recuerdo coleccionable. El scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin, es un ejemplo característico de esta categoría.</p>\n    </section>\n\n    <section id=\"ringling-bros-50-aniversario-baraboo\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">50º Aniversario Ringling Bros. &mdash; Baraboo, Wisconsin</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Cámara de Comercio de Baraboo, Wisconsin &middot; Golden Jubilee, 1933 &middot; serie de 5&cent;, 10&cent;, 15&cent; y $1.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg\"\n          image-webp=\"uploads/ringling-bros-50th-anniversary-baraboo-5-cents-640.webp\"\n          alt=\"Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, cinco centavos, anverso, 1933\"\n          title=\"Ringling Bros. Golden Jubilee\"\n          denomination=\"5&cent;\"\n          year=\"1933\"\n          href=\"/coleccion/ringling-bros-50-aniversario-baraboo/#5-centavos\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/ringling-bros-50th-anniversary-baraboo-10-cents.jpg\"\n          image-webp=\"uploads/ringling-bros-50th-anniversary-baraboo-10-cents-640.webp\"\n          alt=\"Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, diez centavos, anverso, 1933\"\n          title=\"Ringling Bros. Golden Jubilee\"\n          denomination=\"10&cent;\"\n          year=\"1933\"\n          href=\"/coleccion/ringling-bros-50-aniversario-baraboo/#10-centavos\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/ringling-bros-50th-anniversary-baraboo-15-cents.jpg\"\n          image-webp=\"uploads/ringling-bros-50th-anniversary-baraboo-15-cents-640.webp\"\n          alt=\"Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, quince centavos, anverso y reverso, 1933\"\n          title=\"Ringling Bros. Golden Jubilee\"\n          denomination=\"15&cent;\"\n          year=\"1933\"\n          href=\"/coleccion/ringling-bros-50-aniversario-baraboo/#15-centavos\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.jpg\"\n          image-webp=\"uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.webp\"\n          alt=\"Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, un dólar, anverso y reverso, 1933\"\n          title=\"Ringling Bros. Golden Jubilee\"\n          denomination=\"$1\"\n          year=\"1933\"\n          href=\"/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n            \n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/emisiones-promocionales/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Scrip Promocional y Emisiones Efímeras</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Moneda sustituta emitida fuera del sistema bancario &mdash;por cámaras de comercio, festejos locales o campañas promocionales&mdash; y pensada para circular brevemente antes de canjearse o coleccionarse como recuerdo.</p>\n\n    <section style=\"margin:0 0 80px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">El &ldquo;Scrip&rdquo; de la Gran Depresión</h2>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 14px;\">Durante la Gran Depresión de la década de 1930, la escasez de circulante llevó a cientos de municipios, cámaras de comercio y comerciantes estadounidenses a emitir su propio &ldquo;scrip&rdquo; &mdash;papel moneda sustituto, sin respaldo del gobierno federal, redimible en comercios locales o por la propia entidad emisora dentro de un plazo determinado.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">Un subgénero particular de este fenómeno es el <em>scrip conmemorativo o promocional</em>: emitido no por necesidad monetaria estricta, sino para celebrar un aniversario, festival o evento cívico, combinando la función de moneda temporal con la de recuerdo coleccionable. El scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin, es un ejemplo característico de esta categoría.</p>\n    </section>\n\n    <section id=\"ringling-bros-50-aniversario-baraboo\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">50º Aniversario Ringling Bros. &mdash; Baraboo, Wisconsin</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Cámara de Comercio de Baraboo, Wisconsin &middot; Golden Jubilee, 1933 &middot; serie de 5&cent;, 10&cent;, 15&cent; y $1.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n        \n        \n      </div>\n    </section>\n\n            \n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.emisiones-promocionales",
+    "kind": "other",
+    "title": "Scrip Promocional y Emisiones Efímeras",
+    "subtitle": "Moneda sustituta emitida fuera del sistema bancario —por cámaras de comercio, festejos locales o campañas promocionales— y pensada para circular brevemente antes de canjearse o coleccionarse como recuerdo.",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Scrip Promocional de EE. UU."
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#5-centavos",
+        "title": "Ringling Bros. Golden Jubilee",
+        "denomination": "5&cent;",
+        "year": "1933",
+        "image": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
+        "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents-640.webp",
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, cinco centavos, anverso, 1933"
+      },
+      {
+        "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#10-centavos",
+        "title": "Ringling Bros. Golden Jubilee",
+        "denomination": "10&cent;",
+        "year": "1933",
+        "image": "/uploads/ringling-bros-50th-anniversary-baraboo-10-cents.jpg",
+        "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-10-cents-640.webp",
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, diez centavos, anverso, 1933"
+      },
+      {
+        "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#15-centavos",
+        "title": "Ringling Bros. Golden Jubilee",
+        "denomination": "15&cent;",
+        "year": "1933",
+        "image": "/uploads/ringling-bros-50th-anniversary-baraboo-15-cents.jpg",
+        "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-15-cents-640.webp",
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, quince centavos, anverso y reverso, 1933"
+      },
+      {
+        "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar",
+        "title": "Ringling Bros. Golden Jubilee",
+        "denomination": "$1",
+        "year": "1933",
+        "image": "/uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.jpg",
+        "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.webp",
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, un dólar, anverso y reverso, 1933"
+      }
+    ],
+    "eyebrow": "Contexto Histórico"
+  },
   "legacyFile": "catalogo-emisiones-promocionales.dc.html",
   "sourceHash": "f8df3d8cce018126"
 }

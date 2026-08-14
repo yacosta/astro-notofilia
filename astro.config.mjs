@@ -18,7 +18,7 @@ import tailwindcss from '@tailwindcss/vite';
 // `site` is set so canonical/absolute URLs resolve correctly. Output is the
 // default `static`; deployment target is Cloudflare Pages (dist/ + functions/).
 export default defineConfig({
-  site: 'https://www.notofilia.com',
+  site: 'https://notofilia.com',
   trailingSlash: 'ignore',
   // Keep empty alt="" and intentional whitespace for a11y scanners / layout.
   // Astro 7 defaults to compressHTML: 'jsx', which can collapse spaces between

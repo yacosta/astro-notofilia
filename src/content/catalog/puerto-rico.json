@@ -26,51 +26,107 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Puerto Rico",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/puerto-rico/#page",
+        "@id": "https://notofilia.com/coleccion/puerto-rico/#page",
         "name": "Catálogo de Billetes de Puerto Rico",
-        "url": "https://www.notofilia.com/coleccion/puerto-rico/",
+        "url": "https://notofilia.com/coleccion/puerto-rico/",
         "description": "Catálogo de billetes y vales históricos de Puerto Rico de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "25 Pesos — Tesorería Nacional de Puerto Rico (1813)",
-            "url": "https://www.notofilia.com/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/"
+            "url": "https://notofilia.com/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/"
           },
           {
             "@type": "CreativeWork",
             "name": "Junta Central de Cuba y Puerto Rico — Recibo (1869)",
-            "url": "https://www.notofilia.com/coleccion/puerto-rico/junta-central-cuba-1869/"
+            "url": "https://notofilia.com/coleccion/puerto-rico/junta-central-cuba-1869/"
           },
           {
             "@type": "CreativeWork",
             "name": "La República de Cuba — Un Peso (1869)",
-            "url": "https://www.notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/"
+            "url": "https://notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/"
           },
           {
             "@type": "CreativeWork",
             "name": "Billete de Canje — Un Peso (1895)",
-            "url": "https://www.notofilia.com/coleccion/puerto-rico/billete-de-canje-1-peso-1895/"
+            "url": "https://notofilia.com/coleccion/puerto-rico/billete-de-canje-1-peso-1895/"
           }
         ]
       }
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/puerto-rico/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Puerto Rico</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">La Primera Moneda de Papel Puertorriqueña</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">Con el estallido de las guerras de independencia en el continente americano, el subsidio anual que la Corona española giraba desde México &mdash;el &ldquo;situado&rdquo;&mdash; dejó de llegar a Puerto Rico, precipitando una severa crisis fiscal. Ante la escasez de metálico, el gobernador Salvador Meléndez Bruna autorizó por Real Orden del 31 de agosto de 1812 la emisión de una moneda provincial de papel conocida como &ldquo;papeletas&rdquo;, que llegó a circular por 500,000 pesos durante 1813.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La llegada del intendente Alejandro Ramírez en febrero de 1813 marcó el inicio de un riguroso saneamiento de la Real Hacienda: bajo su gestión, la emisión de papeletas fue amortizada por completo hacia 1816. Por su fragilidad material y su temprana retirada de circulación, estos documentos &mdash;junto con los billetes de 3 y 5 pesos emitidos posteriormente&mdash; se cuentan hoy entre las piezas más raras y codiciadas de la numismática puertorriqueña.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Crisis Fiscal y Papeletas</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Tesorería Nacional de Puerto Rico (1813)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.jpg\"\n          image-webp=\"uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.webp\"\n          alt=\"Vale de la Tesorería Nacional de Puerto Rico por veinticinco pesos, 1813, anverso y reverso\"\n          title=\"Tesorería Nacional de Puerto Rico\"\n          denomination=\"25 Pesos\"\n          year=\"1813\"\n          href=\"/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guerra de los Diez Años</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Junta Central Republicana de Cuba y Puerto Rico (1869)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.jpg\"\n          image-webp=\"uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.webp\"\n          alt=\"Recibo de contribución de mil quinientos pesos de la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869\"\n          title=\"Junta Central de Cuba y Puerto Rico\"\n          denomination=\"1,500 Pesos\"\n          year=\"1869\"\n          href=\"/coleccion/puerto-rico/junta-central-cuba-1869/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/puerto-rico-republica-de-cuba-1-peso-1869.jpg\"\n          image-webp=\"uploads/puerto-rico-republica-de-cuba-1-peso-1869.webp\"\n          alt=\"Billete de Un Peso de La República de Cuba emitido por la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869\"\n          title=\"La República de Cuba\"\n          denomination=\"Un Peso\"\n          year=\"1869\"\n          href=\"/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Fin de la Era Colonial Española</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Billete de Canje (1895)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/puerto-rico-billete-de-canje-1-peso-1895.jpg\"\n          image-webp=\"uploads/puerto-rico-billete-de-canje-1-peso-1895.webp\"\n          alt=\"Billete de Canje de Un Peso del Ministerio de Ultramar, Puerto Rico, anverso y reverso, 1895\"\n          title=\"Billete de Canje\"\n          denomination=\"Un Peso\"\n          year=\"1895\"\n          href=\"/coleccion/puerto-rico/billete-de-canje-1-peso-1895/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/puerto-rico/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Puerto Rico</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">La Primera Moneda de Papel Puertorriqueña</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">Con el estallido de las guerras de independencia en el continente americano, el subsidio anual que la Corona española giraba desde México &mdash;el &ldquo;situado&rdquo;&mdash; dejó de llegar a Puerto Rico, precipitando una severa crisis fiscal. Ante la escasez de metálico, el gobernador Salvador Meléndez Bruna autorizó por Real Orden del 31 de agosto de 1812 la emisión de una moneda provincial de papel conocida como &ldquo;papeletas&rdquo;, que llegó a circular por 500,000 pesos durante 1813.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La llegada del intendente Alejandro Ramírez en febrero de 1813 marcó el inicio de un riguroso saneamiento de la Real Hacienda: bajo su gestión, la emisión de papeletas fue amortizada por completo hacia 1816. Por su fragilidad material y su temprana retirada de circulación, estos documentos &mdash;junto con los billetes de 3 y 5 pesos emitidos posteriormente&mdash; se cuentan hoy entre las piezas más raras y codiciadas de la numismática puertorriqueña.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Crisis Fiscal y Papeletas</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Tesorería Nacional de Puerto Rico (1813)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guerra de los Diez Años</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Junta Central Republicana de Cuba y Puerto Rico (1869)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Fin de la Era Colonial Española</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Billete de Canje (1895)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.puerto-rico",
+    "kind": "other",
+    "title": "Catálogo de Billetes de Puerto Rico",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Puerto Rico"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/",
+        "title": "Tesorería Nacional de Puerto Rico",
+        "denomination": "25 Pesos",
+        "year": "1813",
+        "image": "/uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.jpg",
+        "imageWebp": "/uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.webp",
+        "alt": "Vale de la Tesorería Nacional de Puerto Rico por veinticinco pesos, 1813, anverso y reverso"
+      },
+      {
+        "href": "/coleccion/puerto-rico/junta-central-cuba-1869/",
+        "title": "Junta Central de Cuba y Puerto Rico",
+        "denomination": "1,500 Pesos",
+        "year": "1869",
+        "image": "/uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.jpg",
+        "imageWebp": "/uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.webp",
+        "alt": "Recibo de contribución de mil quinientos pesos de la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869"
+      },
+      {
+        "href": "/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
+        "title": "La República de Cuba",
+        "denomination": "Un Peso",
+        "year": "1869",
+        "image": "/uploads/puerto-rico-republica-de-cuba-1-peso-1869.jpg",
+        "imageWebp": "/uploads/puerto-rico-republica-de-cuba-1-peso-1869.webp",
+        "alt": "Billete de Un Peso de La República de Cuba emitido por la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869"
+      },
+      {
+        "href": "/coleccion/puerto-rico/billete-de-canje-1-peso-1895/",
+        "title": "Billete de Canje",
+        "denomination": "Un Peso",
+        "year": "1895",
+        "image": "/uploads/puerto-rico-billete-de-canje-1-peso-1895.jpg",
+        "imageWebp": "/uploads/puerto-rico-billete-de-canje-1-peso-1895.webp",
+        "alt": "Billete de Canje de Un Peso del Ministerio de Ultramar, Puerto Rico, anverso y reverso, 1895"
+      }
+    ],
+    "eyebrow": "Contexto Histórico"
+  },
   "legacyFile": "catalogo-puerto-rico.dc.html",
   "sourceHash": "b4a572e0656358b3"
 }

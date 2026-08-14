@@ -1,7 +1,7 @@
 /**
  * Canonical site origin — keep in sync with `site` in astro.config.mjs.
  */
-export const SITE = 'https://www.notofilia.com';
+export const SITE = 'https://notofilia.com';
 
 /** Site-wide keyword terms always included in <meta name="keywords">. */
 export const BASE_KEYWORDS = [

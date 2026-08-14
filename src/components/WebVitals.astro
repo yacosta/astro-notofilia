@@ -1,0 +1,24 @@
+---
+/**
+ * Consent-gated Web Vitals reporter (CLS, INP, LCP, FCP, TTFB).
+ * Loads the self-hosted bootstrap only after analytics consent.
+ */
+---
+<script is:inline>
+  (function () {
+    var KEY = 'notofilia_cookie_consent';
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      var s = document.createElement('script');
+      s.src = '/web-vitals.js';
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+    try {
+      if (localStorage.getItem(KEY) === 'accepted') start();
+    } catch (e) {}
+    window.addEventListener('notofilia:cookies-accepted', start);
+  })();
+</script>

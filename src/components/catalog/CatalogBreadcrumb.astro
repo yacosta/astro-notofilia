@@ -1,0 +1,36 @@
+---
+/**
+ * Accessible country/issuer (or collection) breadcrumb for catalog records.
+ */
+import type { CatalogRecord } from '../../lib/catalog-record';
+
+interface Props {
+  crumbs: CatalogRecord['breadcrumb'];
+}
+
+const { crumbs } = Astro.props;
+---
+<nav class="catalog-record-crumbs" aria-label="Migas de pan">
+  <ol class="m-0 p-0 list-none flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] tracking-[0.06em] text-muted">
+    {
+      crumbs.map((crumb, index) => {
+        const isLast = index === crumbs.length - 1;
+        return (
+          <li class="inline-flex items-center gap-x-2">
+            {index > 0 && <span aria-hidden="true">/</span>}
+            {crumb.href && !isLast ? (
+              <a
+                class="text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+                href={crumb.href}
+              >
+                {crumb.name}
+              </a>
+            ) : (
+              <span aria-current={isLast ? 'page' : undefined}>{crumb.name}</span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

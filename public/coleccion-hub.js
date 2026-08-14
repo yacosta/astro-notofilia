@@ -11,7 +11,7 @@
   var countEl = document.getElementById('catalog-result-count');
   var emptyEl = document.getElementById('catalog-empty');
   var form = document.getElementById('catalog-filters');
-  var viewButtons = root.querySelectorAll('[data-view]');
+  var viewButtons = root.querySelectorAll('button[data-view]');
   var clearBtn = document.getElementById('catalog-clear-filters');
 
   var state = {

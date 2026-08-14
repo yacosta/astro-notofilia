@@ -22,6 +22,12 @@ const catalogIndex = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), 'public/data/catalog-index.json'), 'utf8'),
 ) as {
   countries: Array<{ name: string; count: number; slug: string }>;
+  items: Array<{
+    country?: string;
+    issuer?: string;
+    material?: string;
+    kind?: string;
+  }>;
 };
 
 const stats = hubStats();
@@ -40,6 +46,33 @@ const keywords = [
 ];
 
 const countries = catalogIndex.countries ?? [];
+const catalogItems = catalogIndex.items ?? [];
+
+const uniqueSorted = (values: Array<string | undefined>) =>
+  [...new Set(values.map((v) => (v || '').trim()).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b, 'es', { sensitivity: 'base' }),
+  );
+
+const issuerOptions = uniqueSorted(catalogItems.map((item) => item.issuer));
+const materialOptions = uniqueSorted(catalogItems.map((item) => item.material));
+const countryOptions = uniqueSorted([
+  ...countries.map((c) => c.name),
+  ...catalogItems.map((item) => item.country),
+]);
+
+const filterParams = Astro.url.searchParams;
+const selectedPais = filterParams.get('pais') || '';
+const selectedEmisor = filterParams.get('emisor') || '';
+const selectedMaterial = filterParams.get('material') || '';
+const selectedTipo = filterParams.get('tipo') || '';
+const selectedOrden = filterParams.get('orden') || 'newest';
+const selectedQ = filterParams.get('q') || '';
+const selectedDesde = filterParams.get('desde') || '';
+const selectedHasta = filterParams.get('hasta') || '';
+const selectedDenom = filterParams.get('denom') || '';
+const selectedCondicion = filterParams.get('condicion') || '';
+const selectedCatalogo = filterParams.get('catalogo') || '';
+const selectedVista = filterParams.get('vista') === 'lista' ? 'list' : 'grid';
 
 const countryList = countries.slice(0, 40).map((c, index) => ({
   '@type': 'ListItem',
@@ -548,6 +581,7 @@ const jsonLd = {
             id="catalog-search-hero"
             type="search"
             name="q"
+            value={selectedQ}
             placeholder="Buscar país, emisor, Pick, Friedberg, denominación…"
             autocomplete="off"
             enterkeyhint="search"
@@ -641,65 +675,123 @@ const jsonLd = {
               <div class="filter-grid">
                 <div class="filter-field" style="grid-column: 1 / -1;">
                   <label for="catalog-search">Búsqueda</label>
-                  <input id="catalog-search" name="q" type="search" placeholder="Texto libre…" autocomplete="off" />
+                  <input
+                    id="catalog-search"
+                    name="q"
+                    type="search"
+                    value={selectedQ}
+                    placeholder="Texto libre…"
+                    autocomplete="off"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-pais">País</label>
-                  <select id="filter-pais" name="pais"><option value="">Todos</option></select>
+                  <select id="filter-pais" name="pais">
+                    <option value="">Todos</option>
+                    {countryOptions.map((name) => (
+                      <option value={name} selected={selectedPais === name}>{name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div class="filter-field">
                   <label for="filter-emisor">Emisor</label>
-                  <select id="filter-emisor" name="emisor"><option value="">Todos</option></select>
+                  <select id="filter-emisor" name="emisor">
+                    <option value="">Todos</option>
+                    {issuerOptions.map((name) => (
+                      <option value={name} selected={selectedEmisor === name}>{name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div class="filter-field">
                   <label for="filter-tipo">Tipo</label>
                   <select id="filter-tipo" name="tipo">
-                    <option value="">Todos</option>
-                    <option value="banknote">Billete</option>
-                    <option value="coin">Moneda</option>
-                    <option value="specimen">Specimen</option>
-                    <option value="error">Error</option>
+                    <option value="" selected={selectedTipo === ''}>Todos</option>
+                    <option value="banknote" selected={selectedTipo === 'banknote'}>Billete</option>
+                    <option value="coin" selected={selectedTipo === 'coin'}>Moneda</option>
+                    <option value="specimen" selected={selectedTipo === 'specimen'}>Specimen</option>
+                    <option value="error" selected={selectedTipo === 'error'}>Error</option>
                   </select>
                 </div>
                 <div class="filter-field">
                   <label for="filter-material">Material</label>
-                  <select id="filter-material" name="material"><option value="">Todos</option></select>
+                  <select id="filter-material" name="material">
+                    <option value="">Todos</option>
+                    {materialOptions.map((name) => (
+                      <option value={name} selected={selectedMaterial === name}>{name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div class="filter-field">
                   <label for="filter-desde">Año desde</label>
-                  <input id="filter-desde" name="desde" type="number" inputmode="numeric" min="1700" max="2100" placeholder="p. ej. 1860" />
+                  <input
+                    id="filter-desde"
+                    name="desde"
+                    type="number"
+                    inputmode="numeric"
+                    min="1700"
+                    max="2100"
+                    value={selectedDesde}
+                    placeholder="p. ej. 1860"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-hasta">Año hasta</label>
-                  <input id="filter-hasta" name="hasta" type="number" inputmode="numeric" min="1700" max="2100" placeholder="p. ej. 1970" />
+                  <input
+                    id="filter-hasta"
+                    name="hasta"
+                    type="number"
+                    inputmode="numeric"
+                    min="1700"
+                    max="2100"
+                    value={selectedHasta}
+                    placeholder="p. ej. 1970"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-denom">Denominación</label>
-                  <input id="filter-denom" name="denom" type="search" placeholder="peso, dólar…" />
+                  <input
+                    id="filter-denom"
+                    name="denom"
+                    type="search"
+                    value={selectedDenom}
+                    placeholder="peso, dólar…"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-condicion">Condición</label>
-                  <input id="filter-condicion" name="condicion" type="search" placeholder="PMG, AU…" />
+                  <input
+                    id="filter-condicion"
+                    name="condicion"
+                    type="search"
+                    value={selectedCondicion}
+                    placeholder="PMG, AU…"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-catalogo">Referencia de catálogo</label>
-                  <input id="filter-catalogo" name="catalogo" type="search" placeholder="Pick, Friedberg, KM…" />
+                  <input
+                    id="filter-catalogo"
+                    name="catalogo"
+                    type="search"
+                    value={selectedCatalogo}
+                    placeholder="Pick, Friedberg, KM…"
+                  />
                 </div>
                 <div class="filter-field">
                   <label for="filter-orden">Orden</label>
                   <select id="filter-orden" name="orden">
-                    <option value="newest">Más recientes (año)</option>
-                    <option value="year">Fecha de emisión</option>
-                    <option value="country">País</option>
-                    <option value="denom">Denominación</option>
+                    <option value="newest" selected={selectedOrden === 'newest'}>Más recientes (año)</option>
+                    <option value="year" selected={selectedOrden === 'year'}>Fecha de emisión</option>
+                    <option value="country" selected={selectedOrden === 'country'}>País</option>
+                    <option value="denom" selected={selectedOrden === 'denom'}>Denominación</option>
                   </select>
                 </div>
               </div>
               <div class="filter-actions">
                 <button type="button" id="catalog-clear-filters">Limpiar filtros</button>
                 <div class="view-toggle" role="group" aria-label="Vista de resultados">
-                  <button type="button" data-view="grid" aria-pressed="true">Cuadrícula</button>
-                  <button type="button" data-view="list" aria-pressed="false">Lista</button>
+                  <button type="button" data-view="grid" aria-pressed={selectedVista === 'grid' ? 'true' : 'false'}>Cuadrícula</button>
+                  <button type="button" data-view="list" aria-pressed={selectedVista === 'list' ? 'true' : 'false'}>Lista</button>
                 </div>
               </div>
             </form>

@@ -1,0 +1,70 @@
+---
+/**
+ * Supporting narrative blocks from the structured catalog record.
+ */
+import type { CatalogRecord } from '../../lib/catalog-record';
+
+interface Props {
+  record: CatalogRecord;
+}
+
+const { record } = Astro.props;
+const ctx = record.context;
+const sources = record.sources ?? [];
+const blocks = [
+  ctx?.historical ? { id: 'catalog-ctx-historical', title: 'Contexto histórico', body: ctx.historical } : null,
+  ctx?.design ? { id: 'catalog-ctx-design', title: 'Diseño y retrato', body: ctx.design } : null,
+  ctx?.varieties ? { id: 'catalog-ctx-varieties', title: 'Variedades conocidas', body: ctx.varieties } : null,
+  ctx?.population ? { id: 'catalog-ctx-population', title: 'Tirada o población', body: ctx.population } : null,
+].filter(Boolean) as Array<{ id: string; title: string; body: string }>;
+---
+{
+  (blocks.length > 0 || sources.length > 0) && (
+    <section class="catalog-record-context grid gap-8" aria-label="Información de apoyo">
+      {
+        blocks.map((block) => (
+          <div>
+            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream">
+              {block.title}
+            </h2>
+            <p class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line">{block.body}</p>
+          </div>
+        ))
+      }
+      {
+        sources.length > 0 && (
+          <div>
+            <h2
+              id="catalog-sources-heading"
+              class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+            >
+              Fuentes
+            </h2>
+            <ol class="m-0 pl-5 grid gap-2 text-[16px] leading-[1.6] text-cream-dim" aria-labelledby="catalog-sources-heading">
+              {
+                sources.map((source, index) => (
+                  <li id={`catalog-source-${index + 1}`}>
+                    {source.url ? (
+                      <a
+                        class="text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {source.label}
+                        <span class="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0 [clip:rect(0,0,0,0)]"> (se abre en una pestaña nueva)</span>
+                      </a>
+                    ) : (
+                      <span>{source.label}</span>
+                    )}
+                    {source.note ? <span> — {source.note}</span> : null}
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+        )
+      }
+    </section>
+  )
+}

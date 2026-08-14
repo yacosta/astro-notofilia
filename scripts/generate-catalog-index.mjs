@@ -6,7 +6,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const OUT_DIR = path.join(ROOT, 'public/data');
 const OUT_FILE = path.join(OUT_DIR, 'catalog-index.json');
-const SITE = 'https://www.notofilia.com';
+const SITE = 'https://notofilia.com';
 
 const POLYMER_COUNTRY = {
   bangladesh: 'Bangladesh',

@@ -36,7 +36,7 @@ export async function onRequestGet(context) {
     path: item.path,
     title: item.title,
     description: item.description,
-    url: item.url || `https://www.notofilia.com${item.path}`,
+    url: item.url || `https://notofilia.com${item.path}`,
     keywords: item.keywords || [],
   }));
 
