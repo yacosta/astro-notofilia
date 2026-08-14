@@ -131,5 +131,11 @@
 /support.js
   Cache-Control: public, max-age=604800
 
+/catalog-zoom.js
+  Cache-Control: public, max-age=604800
+
+/web-vitals.js
+  Cache-Control: public, max-age=604800
+
 /webmcp.js
   Cache-Control: public, max-age=604800

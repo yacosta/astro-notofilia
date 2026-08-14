@@ -54,8 +54,37 @@
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/ecuador/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Catálogo de Ecuador\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Ecuador</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">El Sucre Ecuatoriano</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">El sucre, nombrado en honor al mariscal Antonio José de Sucre, prócer de la independencia sudamericana, reemplazó al peso ecuatoriano como moneda nacional en 1884. El Banco Central del Ecuador, creado en 1927, centralizó la emisión de papel moneda que hasta entonces habían realizado bancos privados regionales, consolidando un sistema monetario unificado que perduraría durante más de un siglo.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La severa crisis financiera de finales de la década de 1990 provocó una devaluación descontrolada del sucre, que llevó al gobierno del presidente Jamil Mahuad a decretar la dolarización oficial de la economía ecuatoriana en el año 2000, poniendo fin a 116 años de historia monetaria nacional.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Últimos Años del Sucre</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Banco Central del Ecuador</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg\"\n          image-webp=\"uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.webp\"\n          alt=\"Billete de Cien Sucres del Banco Central del Ecuador, serie WF, 1993, anverso con retrato de Simón Bolívar y reverso con el escudo nacional\"\n          title=\"Cien Sucres, Par de Serie Baja\"\n          denomination=\"100 Sucres\"\n          year=\"1993\"\n          href=\"/coleccion/ecuador/100-sucres-1993/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/ecuador/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Catálogo de Ecuador\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Ecuador</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">El Sucre Ecuatoriano</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">El sucre, nombrado en honor al mariscal Antonio José de Sucre, prócer de la independencia sudamericana, reemplazó al peso ecuatoriano como moneda nacional en 1884. El Banco Central del Ecuador, creado en 1927, centralizó la emisión de papel moneda que hasta entonces habían realizado bancos privados regionales, consolidando un sistema monetario unificado que perduraría durante más de un siglo.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La severa crisis financiera de finales de la década de 1990 provocó una devaluación descontrolada del sucre, que llevó al gobierno del presidente Jamil Mahuad a decretar la dolarización oficial de la economía ecuatoriana en el año 2000, poniendo fin a 116 años de historia monetaria nacional.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Últimos Años del Sucre</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Banco Central del Ecuador</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.ecuador",
+    "kind": "other",
+    "title": "Catálogo de Billetes de Ecuador",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Ecuador"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/ecuador/100-sucres-1993/",
+        "title": "Cien Sucres, Par de Serie Baja",
+        "denomination": "100 Sucres",
+        "year": "1993",
+        "image": "/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg",
+        "imageWebp": "/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.webp",
+        "alt": "Billete de Cien Sucres del Banco Central del Ecuador, serie WF, 1993, anverso con retrato de Simón Bolívar y reverso con el escudo nacional"
+      }
+    ],
+    "eyebrow": "Contexto Histórico"
+  },
   "legacyFile": "catalogo-ecuador.dc.html",
   "sourceHash": "e290115caf132350"
 }

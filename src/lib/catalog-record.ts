@@ -27,6 +27,16 @@ export const catalogSourceSchema = z.object({
   note: z.string().optional(),
 });
 
+export const catalogCardSchema = z.object({
+  href: z.string().min(1),
+  title: z.string().min(1),
+  denomination: z.string().optional(),
+  year: z.string().optional(),
+  image: z.string().optional(),
+  imageWebp: z.string().optional(),
+  alt: z.string().optional(),
+});
+
 /**
  * Structured metadata for an individual note/coin (or related) record.
  * Progressive: all fields optional except identity/title so legacy pages can
@@ -92,11 +102,23 @@ export const catalogRecordSchema = z.object({
   related: z.array(catalogLinkSchema).max(12).optional(),
   previous: catalogLinkSchema.optional(),
   next: catalogLinkSchema.optional(),
+  /** Hub card grid (replaces BanknoteCard dc-imports). */
+  cards: z.array(catalogCardSchema).max(200).optional(),
+  eyebrow: z.string().optional(),
+  /**
+   * Rendering mode for Phase 3 native Astro catalog pages.
+   * - astro-static: frozen HTML shell + catalog-zoom.js (no dc-runtime)
+   * - astro-hub: frozen narrative + Astro card grid
+   * - primary: full Astro chrome (title/media/metadata) without legacy body
+   * - augment: legacy progressive mode (deprecated)
+   */
+  render: z.enum(['astro-static', 'astro-hub', 'primary', 'augment']).default('astro-static'),
 });
 
 export type CatalogImage = z.infer<typeof catalogImageSchema>;
 export type CatalogRecord = z.infer<typeof catalogRecordSchema>;
 export type CatalogMetadata = z.infer<typeof catalogMetadataSchema>;
+export type CatalogCard = z.infer<typeof catalogCardSchema>;
 
 const STATUS_LABELS: Record<NonNullable<CatalogMetadata['status']>, string> = {
   specimen: 'Specimen',
