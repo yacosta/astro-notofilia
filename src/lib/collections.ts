@@ -127,7 +127,7 @@ export function collectionIndexJsonLd(
           itemListElement: posts.slice(0, 40).map((post, index) => ({
             '@type': 'ListItem',
             position: index + 1,
-            url: `${SITE}/${meta.id}/${post.slug}/`,
+            url: `${SITE}/${meta.id}/${post.id}/`,
             name: post.data.title,
           })),
         }
@@ -183,7 +183,7 @@ type PostData = {
 export function articleJsonLd(meta: CollectionMeta, post: PublishedPost, iso: string) {
   // CollectionEntry union widens Zod fields to optional; values are required at runtime.
   const d = post.data as PostData;
-  const path = `/${meta.id}/${post.slug}/`;
+  const path = `/${meta.id}/${post.id}/`;
   const pageUrl = SITE + path;
   const modified = d.updatedAt ? toIsoDate(d.updatedAt) : iso;
   const authorName = d.reviewedBy?.trim() || EDITORIAL_TEAM.name;

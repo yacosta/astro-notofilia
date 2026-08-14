@@ -2,7 +2,7 @@
 /**
  * Shared article page for a single blog / noticias / logros post.
  */
-import type { CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
 import ClaimCallout from './ClaimCallout.astro';
@@ -22,7 +22,7 @@ export interface Props {
 }
 
 const { collection, post, sourceLinkLabel, backLabel } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 const d = post.data;
 const iso = toIsoDate(d.publishedAt);
 const fmt = formatDateLongEs(d.publishedAt);
@@ -178,7 +178,7 @@ const corrections = d.corrections ?? [];
     </a>
   </p>
 
-  {collection === 'noticias' && <Comments slug={post.slug} />}
+  {collection === 'noticias' && <Comments slug={post.id} />}
 
   <p class="mt-10"><a class="text-muted" href={basePath}>&larr; {backLabel}</a></p>
 </article>

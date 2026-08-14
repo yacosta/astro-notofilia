@@ -16,7 +16,7 @@ export async function getStaticPaths() {
     const posts = await getPublishedPosts(section);
     for (const post of posts) {
       paths.push({
-        params: { section, slug: post.slug },
+        params: { section, slug: post.id },
         props: { meta: COLLECTIONS[section], post },
       });
     }
@@ -32,7 +32,7 @@ const { meta, post } = Astro.props;
 if (!isPostCollection(meta.id)) throw new Error(`Unknown section: ${meta.id}`);
 
 const d = post.data;
-const path = `/${meta.id}/${post.slug}/`;
+const path = `/${meta.id}/${post.id}/`;
 const iso = toIsoDate(d.publishedAt);
 const jsonLd = articleJsonLd(meta, post, iso);
 ---

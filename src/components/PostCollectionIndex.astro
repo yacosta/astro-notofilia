@@ -46,7 +46,7 @@ const label = COLLECTIONS[collection].label;
     <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
       {posts.map((post) => (
         <li class="card">
-          <a class="group block no-underline text-inherit h-full" href={`${basePath}${post.slug}/`}>
+          <a class="group block no-underline text-inherit h-full" href={`${basePath}${post.id}/`}>
             {post.data.cover && (
               <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
             )}
