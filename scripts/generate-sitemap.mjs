@@ -26,9 +26,10 @@ const newsEntries = [];
 function add(url, options = {}) {
   const normalized = url.endsWith('/') ? url : `${url}/`;
   const previous = previousMetadata.get(normalized) ?? {};
+  const forceToday = process.env.FORCE_SITEMAP_LASTMOD === '1';
   entries.set(normalized, {
     loc: normalized,
-    lastmod: options.lastmod ?? previous.lastmod ?? today,
+    lastmod: forceToday ? today : (options.lastmod ?? previous.lastmod ?? today),
     changefreq: options.changefreq ?? previous.changefreq ?? 'monthly',
     priority: options.priority ?? previous.priority ?? '0.7',
   });

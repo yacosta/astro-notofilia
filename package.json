@@ -17,6 +17,7 @@
     "check:placeholders": "node scripts/check-placeholders.mjs",
     "check:headers": "node scripts/check-security-headers.mjs",
     "check:ci": "npm run check && npm run build && npm run check:placeholders && npm run check:headers && npm run check:drift",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "lighthouse:ci": "lhci autorun",
     "test:e2e": "playwright test",
     "test:e2e:update": "playwright test --update-snapshots",

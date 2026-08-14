@@ -139,3 +139,13 @@
 
 /webmcp.js
   Cache-Control: public, max-age=604800
+
+# IndexNow key (must stay publicly readable, short cache)
+/a3190f98-e644-4a96-bda0-fa87530608ef.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/indexnow-key.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
