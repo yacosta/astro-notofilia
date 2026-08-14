@@ -10,7 +10,7 @@ export const EDITORIAL_TEAM = {
 export const EDITORIAL_POLICY_PATH = '/editorial/';
 export const EDITORIAL_POLICY_URL = `${SITE}${EDITORIAL_POLICY_PATH}`;
 
-export function personJsonLd(name = EDITORIAL_TEAM.name, url = EDITORIAL_TEAM.url) {
+export function personJsonLd(name: string = EDITORIAL_TEAM.name, url: string = EDITORIAL_TEAM.url) {
   return {
     '@type': 'Person' as const,
     name,
