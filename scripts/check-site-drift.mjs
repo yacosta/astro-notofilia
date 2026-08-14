@@ -132,9 +132,16 @@ for (const { route, legacyFile } of routeMap) {
 }
 
 const header = await readFile(path.join(root, 'public/SiteHeader.dc.html'), 'utf8');
-if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared header is not wired to Pagefind');
+if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared legacy header is not wired to Pagefind');
 if (/href:\s*["'][^"']+\.dc\.html/i.test(header)) fail('Shared search/navigation contains a legacy .dc.html target');
 if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertises unavailable catalog entries');
+
+const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.astro'), 'utf8');
+if (!nativeHeader.includes('/site-header.js')) fail('Native SiteHeader does not load site-header.js');
+if (!nativeHeader.includes('/coleccion/')) fail('Native SiteHeader is missing the collection link');
+const headerIsland = await readFile(path.join(root, 'public/site-header.js'), 'utf8');
+if (!headerIsland.includes('/pagefind/pagefind.js')) fail('Native header island is not wired to Pagefind');
+if (!headerIsland.includes('import(')) fail('Native header island must lazy-import Pagefind');
 
 const publicFiles = await readdir(path.join(root, 'public'));
 const standalonePages = publicFiles.filter((file) => file.endsWith('.dc.html') && file === file.toLowerCase());

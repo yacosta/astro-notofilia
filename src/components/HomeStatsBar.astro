@@ -1,0 +1,26 @@
+---
+/**
+ * Compact collection stats strip for the homepage.
+ */
+import { formatStatsEs, formatStatsEn, type CollectionStats } from '../lib/stats';
+
+export interface Props {
+  stats: CollectionStats;
+}
+
+const { stats } = Astro.props;
+const es = formatStatsEs(stats);
+const en = formatStatsEn(stats);
+---
+<section
+  class="border-t border-line"
+  aria-label="Estadísticas de la colección"
+>
+  <div class="max-w-content mx-auto px-6 py-10 text-center">
+    <p
+      data-i18n
+      data-en={en}
+      class="m-0 font-serif text-[clamp(15px,1.4vw,18px)] tracking-[0.08em] text-cream-dim"
+    >{es}</p>
+  </div>
+</section>

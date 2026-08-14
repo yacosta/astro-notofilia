@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -30,7 +31,7 @@ const inventoryNote = isThinCatalog
 const catalogTemplate = inventoryNote
   ? props.template.replace(/<\/h1>/i, `</h1>${inventoryNote}`)
   : props.template;
-const dcTemplate = `<dc-import name="SiteHeader" lang="es" hint-size="100%,60px"></dc-import><div class="catalog-shell">${catalogTemplate}</div>`;
+const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
 ---
 <!doctype html>
 <html lang="es">
@@ -46,6 +47,7 @@ const dcTemplate = `<dc-import name="SiteHeader" lang="es" hint-size="100%,60px"
       ogDescription={props.ogDescription}
       ogImage={props.ogImage}
       jsonLd={props.jsonLd}
+      loadDcRuntime={true}
     />
     <link rel="stylesheet" href="/catalog-fonts.css" />
     {props.styles && <style is:global set:html={props.styles} />}
@@ -57,11 +59,6 @@ const dcTemplate = `<dc-import name="SiteHeader" lang="es" hint-size="100%,60px"
       x-dc { display: none; }
       img { max-width: 100%; height: auto; }
 
-      /*
-       * Catalog skin: the content keeps its proven document structure, while
-       * semantic tokens make it part of the same dark, archival system as the
-       * homepage and editorial pages.
-       */
       .catalog-shell {
         color: var(--text-secondary);
         background:
@@ -69,7 +66,6 @@ const dcTemplate = `<dc-import name="SiteHeader" lang="es" hint-size="100%,60px"
           var(--surface-page);
         font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
       }
-      /* Inline Montenegrin headings: keep metric-matched Georgia fallback in stack. */
       .catalog-shell [style*="Montenegrin Gothic One"] {
         font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif !important;
       }
@@ -191,6 +187,7 @@ const dcTemplate = `<dc-import name="SiteHeader" lang="es" hint-size="100%,60px"
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
     >Saltar al contenido principal</a>
+    <SiteHeader />
     <x-dc set:html={dcTemplate} />
     {props.logic && <script type="text/x-dc" data-dc-script is:inline set:html={props.logic} />}
     <PreFooter />

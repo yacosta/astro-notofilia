@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import BaseHead from '../../components/BaseHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
 import CookieBanner from '../../components/CookieBanner.astro';
 import PreFooter from '../../components/PreFooter.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
@@ -90,6 +91,7 @@ const jsonLd = {
       ogDescription={description}
       ogImage="/uploads/state-bank-new-brunswick-1-dollar.jpg"
       jsonLd={jsonLd}
+      loadDcRuntime={false}
     />
     <link rel="stylesheet" href="/catalog-fonts.css" />
     <style is:global>
@@ -506,7 +508,7 @@ const jsonLd = {
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
     >Saltar al contenido principal</a>
 
-    <x-dc><dc-import name="SiteHeader" lang="es" hint-size="100%,60px"></dc-import></x-dc>
+    <SiteHeader />
 
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/">
