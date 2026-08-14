@@ -21,6 +21,14 @@ relatedLinks:
     description: "Quarter eagle Draped Bust With Stars, otra rareza temprana de Filadelfia."
   - href: "/noticias/centenario-otras-8-monedas-valen-fortuna/"
     title: "El centenario y otras 8 monedas valiosas"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: catalog_valuation
+claimCurrency: USD
+claimValuationDate: 2026-07-01
+primarySources:
+  - label: "PCGS CoinFacts / guías de precios"
+    url: "https://www.pcgs.com/"
 ---
 
 El **dólar Flowing Hair de 1794** es el primer dólar de plata de Estados

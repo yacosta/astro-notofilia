@@ -13,6 +13,11 @@ keywords:
   - "monedas raras"
   - "monedas de colección"
   - "numismática"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: media_claim
+claimCurrency: USD
+claimNote: "El listado mezcla valor de metal (p. ej. centenario), estimaciones de catálogo y récords de subasta divulgados por un medio. Cada pieza requiere su propia evidencia; ninguna cifra garantiza el precio de un ejemplar ordinario."
 ---
 
 El artículo presenta nueve monedas cuyo valor se debe a su contenido de oro,

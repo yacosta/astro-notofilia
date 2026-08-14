@@ -24,6 +24,12 @@ relatedLinks:
     title: "Billetes mexicanos coleccionables"
   - href: "/noticias/luis-lanza-ceca-valor-moneda-antigua/"
     title: "Ceca, fecha y conservación: claves del valor"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: media_claim
+claimCurrency: MXN
+claimValuationDate: 2026-08-12
+claimNote: "La cifra de hasta $73.000 se atribuye a un medio que cita criterios de adquisición bancaria; Notofilia no ha verificado una compra cerrada a ese precio. Además, la pieza descrita corresponde al $20 C1 de Banxico, no a un facial de $50."
 ---
 
 *Ámbito* asegura que **Banorte** paga hasta **$73.000** por una moneda

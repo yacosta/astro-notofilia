@@ -25,6 +25,12 @@ relatedLinks:
     title: "Billetes mexicanos coleccionables"
   - href: "/noticias/luis-lanza-ceca-valor-moneda-antigua/"
     title: "Ceca, fecha y conservación: claves del valor"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: seller_asking
+claimCurrency: MXN
+claimValuationDate: 2026-08-12
+claimNote: "El monto citado es un precio de venta publicado en portales por terceros, no una venta verificada. Especialistas citados por la fuente aclaran que el anuncio no fija el valor de mercado."
 ---
 
 En plataformas de comercio electrónico se anuncian ejemplares de la moneda

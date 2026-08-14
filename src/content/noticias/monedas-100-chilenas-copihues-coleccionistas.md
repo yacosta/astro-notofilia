@@ -28,6 +28,11 @@ relatedLinks:
   - href: "/coleccion/polimero-mundial/chile-1000-2000-pesos/"
     title: "Billetes de polímero de Chile"
     description: "1.000, 2.000 y 5.000 pesos en el catálogo."
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: dealer_retail
+claimCurrency: CLP
+claimValuationDate: 2026-08-07
 ---
 
 Aunque la moneda de **$100** sigue en el vuelto diario, ciertas variantes —

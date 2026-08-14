@@ -25,6 +25,11 @@ relatedLinks:
     title: "Qué revisar en billetes de $1"
   - href: "/noticias/billetes-2-dolares-7-detalles/"
     title: "7 detalles que elevan un billete de $2"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: auction_record
+claimCurrency: USD
+claimValuationDate: 2026-07-01
 ---
 
 Una moneda olvidada en un frasco o en una colección familiar puede valer

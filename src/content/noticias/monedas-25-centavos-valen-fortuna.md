@@ -25,6 +25,10 @@ relatedLinks:
     title: "7 detalles que elevan un billete de $2"
   - href: "/noticias/moneda-eeuu-1796-valor-185-millones/"
     title: "Moneda EE.UU. 1796 hasta US$1,85 millones"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: media_claim
+claimCurrency: USD
 ---
 
 Aunque la mayoría de los **cuartos de dólar** solo valen 25 centavos, algunos
