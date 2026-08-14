@@ -1,5 +1,15 @@
 import { defineCollection, z } from 'astro:content';
 
+const correctionSchema = z.object({
+  date: z.coerce.date(),
+  text: z.string().min(1),
+});
+
+const primarySourceSchema = z.object({
+  label: z.string().min(1),
+  url: z.string().url(),
+});
+
 // Shared schema for the editorial collections (blog, noticias, logros).
 const postSchema = z.object({
   title: z.string(),
@@ -21,6 +31,37 @@ const postSchema = z.object({
     title: z.string(),
     description: z.string().optional(),
   })).max(4).optional(),
+  // --- Editorial trust / valuation metadata ---
+  /** Last substantive review or update (ISO date). Falls back to publishedAt in JSON-LD. */
+  updatedAt: z.coerce.date().optional(),
+  /** Named reviewer or editorial desk shown in the byline. */
+  reviewedBy: z.string().optional(),
+  /** Public correction log entries (newest last). */
+  corrections: z.array(correctionSchema).max(12).optional(),
+  /**
+   * When set, renders the “Sobre este valor” callout and marks the post as
+   * price-related for structured data.
+   */
+  claimKind: z.enum([
+    'seller_asking',
+    'dealer_retail',
+    'catalog_valuation',
+    'melt_value',
+    'auction_result',
+    'auction_record',
+    'media_claim',
+  ]).optional(),
+  /** Optional override of the default callout copy for this claimKind. */
+  claimNote: z.string().optional(),
+  /** ISO 4217 or clear label (USD, MXN, CLP, EUR…). */
+  claimCurrency: z.string().optional(),
+  /** Date the cited valuation refers to (guide issue, auction day, etc.). */
+  claimValuationDate: z.coerce.date().optional(),
+  /** Link to auction archive, catalog page, or other realized-price evidence. */
+  claimEvidenceUrl: z.string().url().optional(),
+  claimEvidenceLabel: z.string().optional(),
+  /** Extra primary-source links beyond `sourceUrl` (mints, auction houses, catalogs). */
+  primarySources: z.array(primarySourceSchema).max(8).optional(),
   draft: z.boolean().default(false),
 });
 

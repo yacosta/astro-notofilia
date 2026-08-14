@@ -344,6 +344,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, full }) {
   } else {
     lines.push(linkLine('llms.txt', abs('/llms.txt'), 'Índice corto curado (preferir si el contexto es limitado).'));
   }
+  lines.push(linkLine('Política editorial y valoración', abs('/editorial/'), 'Tipos de cifra, fuentes, correcciones y equipo editorial.'));
   lines.push(linkLine('Política de privacidad y cookies', abs('/politica-privacidad-cookies/'), 'GDPR / LOPDGDD / Ley 1581 Colombia.'));
   lines.push(linkLine('Facebook', 'https://www.facebook.com/NOTOFILIA/', 'Perfil social.'));
   lines.push(linkLine('Instagram', 'https://www.instagram.com/notofilia2026/', 'Perfil social.'));
