@@ -98,42 +98,46 @@ const description = q
     <PreFooter />
     <SiteFooter variant="editorial" />
     <CookieBanner />
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
     <script is:inline>
       (function () {
         var host = document.getElementById('buscar-pagefind');
         if (!host) return;
         var initial = host.getAttribute('data-initial-query') || '';
-        import('/pagefind/pagefind-ui.js')
-          .then(function (mod) {
-            var PagefindUI = mod.PagefindUI || mod.default;
-            if (!PagefindUI) throw new Error('ui');
-            new PagefindUI({
-              element: '#buscar-pagefind',
-              showImages: false,
-              showSubResults: false,
-              translations: {
-                placeholder: 'Buscar billetes, perfiles, artículos…',
-                clear_search: 'Limpiar',
-                load_more: 'Cargar más',
-                search_label: 'Buscar en Notofilia',
-                filters_label: 'Filtros',
-                zero_results: 'Sin resultados para [SEARCH_TERM]',
-                many_results: '[COUNT] resultados para [SEARCH_TERM]',
-                one_result: '1 resultado para [SEARCH_TERM]',
-              },
-            });
-            if (initial) {
-              var input = host.querySelector('input[type="text"], input[type="search"]');
-              if (input) {
-                input.value = initial;
-                input.dispatchEvent(new Event('input', { bubbles: true }));
-              }
-            }
-          })
-          .catch(function () {
+        function boot() {
+          if (typeof PagefindUI === 'undefined') {
             host.innerHTML =
               '<p class="buscar-fallback">No se pudo cargar el índice de búsqueda. <a href="/coleccion/">Explorar la colección</a>.</p>';
+            return;
+          }
+          new PagefindUI({
+            element: '#buscar-pagefind',
+            showImages: false,
+            showSubResults: false,
+            translations: {
+              placeholder: 'Buscar billetes, perfiles, artículos…',
+              clear_search: 'Limpiar',
+              load_more: 'Cargar más',
+              search_label: 'Buscar en Notofilia',
+              filters_label: 'Filtros',
+              zero_results: 'Sin resultados para [SEARCH_TERM]',
+              many_results: '[COUNT] resultados para [SEARCH_TERM]',
+              one_result: '1 resultado para [SEARCH_TERM]',
+            },
           });
+          if (initial) {
+            var input = host.querySelector('input[type="text"], input[type="search"]');
+            if (input) {
+              input.value = initial;
+              input.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', boot);
+        } else {
+          boot();
+        }
       })();
     </script>
   </body>
