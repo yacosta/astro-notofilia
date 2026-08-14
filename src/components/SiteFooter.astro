@@ -60,15 +60,31 @@ const isHome = variant === 'home';
         {taglineEs}
       </span>
     )}
-    <a
-      href="/politica-privacidad-cookies/"
-      data-i18n
-      data-en="Privacy &amp; Cookie Policy"
+    <p
       class:list={[
-        'text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
-        isHome && 'font-serif text-[13px] underline [text-decoration-color:rgba(183,171,138,0.4)] mt-1',
+        'm-0 mt-1 flex flex-wrap justify-center gap-x-3 gap-y-1',
+        isHome && 'font-serif text-[13px]',
       ]}
-    >Política de Privacidad y Cookies</a>
+    >
+      <a
+        href="/editorial/"
+        data-i18n
+        data-en="Editorial &amp; valuation policy"
+        class:list={[
+          'text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
+          !isHome && 'text-[13px]',
+        ]}
+      >Política editorial y valoración</a>
+      <a
+        href="/politica-privacidad-cookies/"
+        data-i18n
+        data-en="Privacy &amp; Cookie Policy"
+        class:list={[
+          'text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
+          !isHome && 'text-[13px]',
+        ]}
+      >Política de Privacidad y Cookies</a>
+    </p>
     <p class:list={['font-serif text-[13px] tracking-[0.1em] text-muted text-center m-0 mt-2', isHome && 'max-w-full']}>
       <strong data-i18n data-en="Virtual Collection:" class="font-bold text-gold-light">Colección Virtual:</strong>
       {' '}

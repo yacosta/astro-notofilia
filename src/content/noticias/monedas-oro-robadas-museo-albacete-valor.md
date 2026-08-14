@@ -23,6 +23,12 @@ relatedLinks:
     title: "Córdoba y el tesoro andalusí del MAN"
   - href: "/noticias/luis-lanza-ceca-valor-moneda-antigua/"
     title: "Ceca, fecha y estado: claves del valor"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: dealer_retail
+claimCurrency: EUR
+claimValuationDate: 2026-07-01
+claimNote: "La cifra (~200.000 €) es una estimación pericial/numismática del valor patrimonial y de mercado de piezas robadas, no un remate cerrado ni un precio de anuncio."
 ---
 
 El **Museo Provincial de Albacete** sufrió el robo de dos colecciones de oro

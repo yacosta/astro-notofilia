@@ -22,6 +22,10 @@ relatedLinks:
     title: "Catálogo Pop Art"
   - href: "/blog/diferencia-numismatica-notafilia/"
     title: "Diferencia entre numismática y notafilia"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: seller_asking
+claimCurrency: MXN
 ---
 
 Con el próximo estreno de *Spider-Man: Brand New Day*, **Heraldo

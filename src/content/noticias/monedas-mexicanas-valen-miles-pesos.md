@@ -27,6 +27,11 @@ relatedLinks:
   - href: "/noticias/billetes-mexicanos-coleccionables/"
     title: "Billetes mexicanos coleccionables"
     description: "Familia G y ediciones del centenario de Banxico."
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: catalog_valuation
+claimCurrency: MXN
+claimValuationDate: 2026-08-05
 ---
 
 El interés por la **numismática** en México sigue al alza en 2026: piezas

@@ -1,11 +1,14 @@
 ---
 /**
- * Shared article page for a single blog / noticias post.
+ * Shared article page for a single blog / noticias / logros post.
  */
 import type { CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
+import ClaimCallout from './ClaimCallout.astro';
 import { COLLECTIONS } from '../lib/collections';
+import { EDITORIAL_TEAM } from '../lib/editorial';
+import { isClaimKind } from '../lib/claims';
 import { formatDateLongEs, toIsoDate } from '../lib/dates';
 import type { PostCollection } from '../lib/posts';
 
@@ -23,9 +26,15 @@ const { Content } = await post.render();
 const d = post.data;
 const iso = toIsoDate(d.publishedAt);
 const fmt = formatDateLongEs(d.publishedAt);
+const updatedIso = d.updatedAt ? toIsoDate(d.updatedAt) : undefined;
+const updatedFmt = d.updatedAt ? formatDateLongEs(d.updatedAt) : undefined;
+const reviewedBy = d.reviewedBy?.trim() || EDITORIAL_TEAM.name;
 const basePath = `/${collection}/`;
 const label = COLLECTIONS[collection].label;
 const coverFit = d.coverFit ?? 'cover';
+const claimKind = d.claimKind && isClaimKind(d.claimKind) ? d.claimKind : undefined;
+const primarySources = d.primarySources ?? [];
+const corrections = d.corrections ?? [];
 ---
 <article class="max-w-content mx-auto px-6 pt-12">
   <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
@@ -35,15 +44,33 @@ const coverFit = d.coverFit ?? 'cover';
   </nav>
 
   <header>
-    <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
-      <time datetime={iso}>{fmt}</time>
+    <div class="flex flex-wrap gap-x-2 gap-y-1 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
+      <span>
+        Publicado el
+        <time datetime={iso}>{fmt}</time>
+      </span>
       {d.source && <span aria-hidden="true">·</span>}
       {d.source && <span>{d.source}</span>}
     </div>
     <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
       {d.title}
     </h1>
-    <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-9 leading-[1.5]">{d.excerpt}</p>
+    <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-5 leading-[1.5]">{d.excerpt}</p>
+
+    <dl class="m-0 mb-9 grid gap-1 text-[14px] tracking-[0.02em] text-muted not-italic">
+      <div class="flex flex-wrap gap-x-2">
+        <dt class="m-0 font-semibold text-cream-soft">Revisado por</dt>
+        <dd class="m-0">
+          <a class="text-muted hover:text-cream" href="/editorial/#equipo-editorial">{reviewedBy}</a>
+        </dd>
+      </div>
+      {updatedFmt && updatedIso && (
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="m-0 font-semibold text-cream-soft">Última actualización</dt>
+          <dd class="m-0"><time datetime={updatedIso}>{updatedFmt}</time></dd>
+        </div>
+      )}
+    </dl>
   </header>
 
   {d.cover && (
@@ -63,9 +90,57 @@ const coverFit = d.coverFit ?? 'cover';
     </figure>
   )}
 
+  {claimKind && (
+    <ClaimCallout
+      kind={claimKind}
+      note={d.claimNote}
+      currency={d.claimCurrency}
+      valuationDate={d.claimValuationDate}
+      evidenceUrl={d.claimEvidenceUrl}
+      evidenceLabel={d.claimEvidenceLabel}
+    />
+  )}
+
   <div class="prose-notofilia text-[20px] leading-[1.75] text-cream-dim">
     <Content />
   </div>
+
+  {primarySources.length > 0 && (
+    <aside class="mt-12 border-t border-line pt-8" aria-labelledby="primary-sources-heading">
+      <h2 id="primary-sources-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4">
+        Fuentes primarias
+      </h2>
+      <ul class="m-0 pl-5 text-[17px] leading-[1.6] text-cream-dim">
+        {primarySources.map((src) => (
+          <li class="mb-2">
+            <a
+              class="text-cream underline [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+              href={src.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{src.label} <span class="whitespace-nowrap text-[14px] text-muted">(se abre en una pestaña nueva)</span></a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
+
+  {corrections.length > 0 && (
+    <aside class="mt-10 border border-line rounded-[4px] px-6 py-5" aria-labelledby="corrections-heading">
+      <h2 id="corrections-heading" class="font-display font-normal text-[22px] text-cream mt-0 mb-3">
+        Historial de correcciones
+      </h2>
+      <ol class="m-0 pl-5 text-[16px] leading-[1.55] text-cream-dim">
+        {corrections.map((c) => (
+          <li class="mb-2">
+            <time datetime={toIsoDate(c.date)}>{formatDateLongEs(c.date)}</time>
+            {' — '}
+            {c.text}
+          </li>
+        ))}
+      </ol>
+    </aside>
+  )}
 
   {d.relatedLinks && d.relatedLinks.length > 0 && (
     <aside class="mt-12 border border-line rounded-[4px] px-6 py-6" aria-labelledby="related-heading">
@@ -83,11 +158,25 @@ const coverFit = d.coverFit ?? 'cover';
 
   {d.sourceUrl && (
     <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
-      <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
-        {sourceLinkLabel}{d.source ? ` en ${d.source}` : ''} &rarr;
+      <a
+        class="text-muted font-semibold hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+        href={d.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {sourceLinkLabel}{d.source ? ` en ${d.source}` : ''}
+        {' '}
+        <span class="normal-case tracking-normal font-normal">(se abre en una pestaña nueva)</span>
+        {' '}&rarr;
       </a>
     </p>
   )}
+
+  <p class="mt-6 text-[14px] text-muted">
+    <a class="text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] hover:text-cream" href="/editorial/">
+      Política editorial, fuentes y valoración
+    </a>
+  </p>
 
   {collection === 'noticias' && <Comments slug={post.slug} />}
 

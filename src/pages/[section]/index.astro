@@ -24,7 +24,7 @@ const { meta } = Astro.props;
 if (!isPostCollection(meta.id)) throw new Error(`Unknown section: ${meta.id}`);
 
 const posts = await getPublishedPosts(meta.id);
-const jsonLd = collectionIndexJsonLd(meta);
+const jsonLd = collectionIndexJsonLd(meta, posts);
 ---
 <BlogLayout
   title={meta.title}

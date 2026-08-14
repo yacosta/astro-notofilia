@@ -26,6 +26,10 @@ relatedLinks:
     title: "Qué revisar en billetes de $1"
   - href: "/noticias/luis-lanza-ceca-valor-moneda-antigua/"
     title: "Ceca, fecha y conservación: claves del valor"
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: auction_record
+claimCurrency: USD
 ---
 
 Algunas monedas estadounidenses de la **década de 1960** cotizan muy por

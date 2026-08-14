@@ -25,6 +25,10 @@ relatedLinks:
   - href: "/blog/como-empezar-coleccion-billetes/"
     title: "Cómo empezar una colección de billetes"
     description: "Bases prácticas también útiles al acercarse a monedas de circulación."
+updatedAt: 2026-08-14
+reviewedBy: "Equipo editorial de Notofilia"
+claimKind: dealer_retail
+claimCurrency: CLP
 ---
 
 Una moneda de **$500** puede valer mucho más que su denominación si muestra el

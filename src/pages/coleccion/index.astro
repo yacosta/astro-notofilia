@@ -41,6 +41,18 @@ const keywords = [
 
 const countries = catalogIndex.countries ?? [];
 
+const countryList = countries.slice(0, 40).map((c, index) => ({
+  '@type': 'ListItem',
+  position: index + 1,
+  name: c.name,
+  url: `${SITE}/coleccion/${c.slug}/`,
+  item: {
+    '@type': 'CreativeWork',
+    name: `Catálogo: ${c.name}`,
+    url: `${SITE}/coleccion/${c.slug}/`,
+  },
+}));
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -73,6 +85,21 @@ const jsonLd = {
         '@type': 'Thing',
         name: 'Notafilia y numismática',
       },
+      mainEntity: { '@id': `${SITE}/coleccion/#itemlist` },
+      additionalProperty: [
+        {
+          '@type': 'PropertyValue',
+          name: 'Disponibilidad',
+          value: 'No está a la venta — colección privada documentada',
+        },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${SITE}/coleccion/#itemlist`,
+      name: 'Índice de catálogos por país y tema',
+      numberOfItems: countries.length,
+      itemListElement: countryList,
     },
   ],
 };

@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import CatalogLayout from '../../layouts/CatalogLayout.astro';
+import { enrichCatalogJsonLd } from '../../lib/catalog-jsonld';
 
 export async function getStaticPaths() {
   const pages = await getCollection('catalog');
@@ -11,6 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props as { page: CollectionEntry<'catalog'> };
+const jsonLd = enrichCatalogJsonLd(page.data.jsonLd);
 ---
 <CatalogLayout
   title={page.data.title!}
@@ -22,7 +24,7 @@ const { page } = Astro.props as { page: CollectionEntry<'catalog'> };
   ogTitle={page.data.ogTitle}
   ogDescription={page.data.ogDescription}
   ogImage={page.data.ogImage}
-  jsonLd={page.data.jsonLd}
+  jsonLd={jsonLd}
   styles={page.data.styles}
   template={page.data.template!}
   logic={page.data.logic}

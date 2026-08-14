@@ -3192,6 +3192,7 @@ Aún no hay resúmenes mensuales publicados.
 ## Optional
 
 - [llms.txt](https://www.notofilia.com/llms.txt): Índice corto curado (preferir si el contexto es limitado).
+- [Política editorial y valoración](https://www.notofilia.com/editorial/): Tipos de cifra, fuentes, correcciones y equipo editorial.
 - [Política de privacidad y cookies](https://www.notofilia.com/politica-privacidad-cookies/): GDPR / LOPDGDD / Ley 1581 Colombia.
 - [Facebook](https://www.facebook.com/NOTOFILIA/): Perfil social.
 - [Instagram](https://www.instagram.com/notofilia2026/): Perfil social.
