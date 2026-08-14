@@ -1,0 +1,51 @@
+---
+/**
+ * Suggested citation block for researchers.
+ */
+import { formatCitation, type CatalogRecord } from '../../lib/catalog-record';
+
+interface Props {
+  record: CatalogRecord;
+  path: string;
+}
+
+const { record, path } = Astro.props;
+const citation = formatCitation(record, path);
+---
+<section class="catalog-record-citation" aria-labelledby="catalog-citation-heading">
+  <h2
+    id="catalog-citation-heading"
+    class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+  >
+    Cómo citar esta ficha
+  </h2>
+  <blockquote class="m-0 border-l-2 border-line pl-4 text-[16px] leading-[1.65] text-cream-dim">
+    <p class="m-0" data-catalog-citation>{citation}</p>
+  </blockquote>
+  <button
+    type="button"
+    class="mt-4 min-h-11 px-4 py-2 text-[13px] tracking-[0.08em] uppercase border border-line text-muted bg-transparent cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+    data-catalog-copy-citation
+  >
+    Copiar cita
+  </button>
+  <p class="m-0 mt-2 text-[14px] text-muted" data-catalog-copy-status role="status" aria-live="polite"></p>
+  <script is:inline>
+    (function () {
+      const root = document.currentScript && document.currentScript.closest('.catalog-record-citation');
+      if (!root) return;
+      const btn = root.querySelector('[data-catalog-copy-citation]');
+      const text = root.querySelector('[data-catalog-citation]');
+      const status = root.querySelector('[data-catalog-copy-status]');
+      btn && btn.addEventListener('click', async function () {
+        const value = text ? text.textContent || '' : '';
+        try {
+          await navigator.clipboard.writeText(value);
+          if (status) status.textContent = 'Cita copiada al portapapeles.';
+        } catch {
+          if (status) status.textContent = 'No se pudo copiar automáticamente. Seleccione el texto de la cita.';
+        }
+      });
+    })();
+  </script>
+</section>

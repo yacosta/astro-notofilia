@@ -4,6 +4,8 @@ import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import CatalogRecordSurface from '../components/catalog/CatalogRecordSurface.astro';
+import type { CatalogRecord } from '../lib/catalog-record';
 
 export interface Props {
   title: string;
@@ -19,9 +21,12 @@ export interface Props {
   styles?: string;
   template: string;
   logic?: string;
+  /** Progressive structured catalog-record model (optional). */
+  record?: CatalogRecord;
 }
 
 const props = Astro.props;
+const record = props.record;
 const inventoryCount = (props.template.match(/<dc-import\s+name="BanknoteCard"/g) ?? []).length;
 const isThinCatalog = inventoryCount > 0 && inventoryCount <= 2;
 const inventoryLabel = inventoryCount === 1 ? '1 pieza documentada' : `${inventoryCount} piezas documentadas`;
@@ -188,8 +193,19 @@ const dcTemplate = `<div class="catalog-shell">${catalogTemplate}</div>`;
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
     >Saltar al contenido principal</a>
     <SiteHeader />
-    <x-dc set:html={dcTemplate} />
-    {props.logic && <script type="text/x-dc" data-dc-script is:inline set:html={props.logic} />}
+    {
+      record ? (
+        <CatalogRecordSurface record={record} path={props.path} mode="augment">
+          <x-dc set:html={dcTemplate} />
+          {props.logic && <script type="text/x-dc" data-dc-script is:inline set:html={props.logic} />}
+        </CatalogRecordSurface>
+      ) : (
+        <>
+          <x-dc set:html={dcTemplate} />
+          {props.logic && <script type="text/x-dc" data-dc-script is:inline set:html={props.logic} />}
+        </>
+      )
+    }
     <PreFooter />
     <SiteFooter variant="editorial" />
     <CookieBanner />

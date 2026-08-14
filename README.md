@@ -60,6 +60,11 @@ Zod schema (`src/content.config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
 
+Catalog piece pages keep a legacy `template` + `logic` envelope for dc-runtime, and may
+add an optional structured `record` object (see `src/lib/catalog-record.ts`) that drives
+breadcrumb, permanent id, metadata, citation, related links, and feedback chrome via
+`src/components/catalog/*`.
+
 News articles include a Turnstile-protected comment form backed by Cloudflare
 D1. New comments remain pending until approved. See
 [`docs/comments-moderation.md`](docs/comments-moderation.md) for the moderation

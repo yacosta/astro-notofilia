@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { catalogRecordSchema } from './lib/catalog-record';
 
 const correctionSchema = z.object({
   date: z.coerce.date(),
@@ -92,6 +93,7 @@ const logros = defineCollection({
 
 // Catalog pages share one Astro route/layout. Their preserved dc-runtime body
 // and interaction logic are imported once from the former standalone pages.
+// Optional `record` holds the progressive structured catalog-record model.
 const catalog = defineCollection({
   loader: glob({ pattern: '**/[^_]*.json', base: './src/content/catalog' }),
   schema: z.object({
@@ -110,6 +112,7 @@ const catalog = defineCollection({
     logic: z.string().default(''),
     legacyFile: z.string(),
     sourceHash: z.string(),
+    record: catalogRecordSchema.optional(),
   }),
 });
 
