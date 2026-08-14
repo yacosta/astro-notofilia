@@ -23,13 +23,21 @@ const entries = new Map();
 const previousMetadata = new Map();
 const newsEntries = [];
 
+function newestDate(...dates) {
+  return dates.filter(Boolean).sort().at(-1);
+}
+
 function add(url, options = {}) {
   const normalized = url.endsWith('/') ? url : `${url}/`;
   const previous = previousMetadata.get(normalized) ?? {};
   const forceToday = process.env.FORCE_SITEMAP_LASTMOD === '1';
   entries.set(normalized, {
     loc: normalized,
-    lastmod: forceToday ? today : (options.lastmod ?? previous.lastmod ?? today),
+    // Keep the newest known date so a host-migration lastmod bump is not
+    // clobbered by older publishedAt values on the next prebuild.
+    lastmod:
+      newestDate(forceToday ? today : null, options.lastmod, previous.lastmod) ??
+      today,
     changefreq: options.changefreq ?? previous.changefreq ?? 'monthly',
     priority: options.priority ?? previous.priority ?? '0.7',
   });
