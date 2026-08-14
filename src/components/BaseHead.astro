@@ -20,6 +20,11 @@ export interface Props {
   robots?: string;
   /** Extra <link rel="alternate" hreflang> etc. via default slot. */
   author?: string;
+  /**
+   * Load the legacy dc-runtime (`support.js`) for pages that still embed
+   * BanknoteCard / other dc-import components. Native Astro chrome does not need it.
+   */
+  loadDcRuntime?: boolean;
 }
 
 const {
@@ -34,6 +39,7 @@ const {
   keywords,
   robots = 'index, follow',
   author = 'Notofilia',
+  loadDcRuntime = false,
 } = Astro.props;
 
 const canonical = absoluteUrl(path);
@@ -69,9 +75,9 @@ const shareDescription = ogDescription ?? description;
   href="/uploads/fonts/MontenegrinGothicOne-Regular.woff2"
   crossorigin
 />
-<!-- dc-runtime is needed for the imported SiteHeader, but not for first paint.
-     Defer so it downloads in parallel and runs after HTML parse. -->
-<script src="/support.js" defer is:inline></script>
+{loadDcRuntime && (
+  <script src="/support.js" defer is:inline></script>
+)}
 <!-- WebMCP is agent-only — keep it entirely off the critical request chain. -->
 <script is:inline>
   (function () {
