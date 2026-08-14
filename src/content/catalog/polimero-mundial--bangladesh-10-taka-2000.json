@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Bangladesh Bank — 10 Taka (2000)",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/bangladesh-10-taka-2000/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/bangladesh-10-taka-2000/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Bangladesh Bank — Billete de 10 Taka de Polímero",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/bangladesh-10-taka-2000/",
-        "image": "https://www.notofilia.com/uploads/bangladesh-banco-bangladesh-10-taka-2000-polimero.jpg",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/bangladesh-10-taka-2000/",
+        "image": "https://notofilia.com/uploads/bangladesh-banco-bangladesh-10-taka-2000-polimero.jpg",
         "description": "Primer billete de polímero de Bangladesh, de 10 Taka, emitido por Bangladesh Bank en el año 2000.",
         "dateCreated": "2000",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

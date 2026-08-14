@@ -27,21 +27,21 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/polimero-mundial/#page",
+        "@id": "https://notofilia.com/coleccion/polimero-mundial/#page",
         "name": "Catálogo de Billetes de Polímero Mundial",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/",
         "description": "Catálogo de billetes de polímero de distintos países del mundo, de la colección Notofilia.",
         "inLanguage": "es"
       }

@@ -9,7 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = 'https://www.notofilia.com';
+const SITE = 'https://notofilia.com';
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
 const NOTICIAS_DIR = path.join(ROOT, 'src/content/noticias');
@@ -170,7 +170,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full 
     '',
     '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN de la home cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
     '',
-    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://www.notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).',
+    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).',
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
@@ -180,12 +180,12 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full 
 
   if (full) {
     lines.push(
-      'Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).',
+      'Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).',
       '',
     );
   } else {
     lines.push(
-      'Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).',
+      'Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).',
       '',
     );
   }

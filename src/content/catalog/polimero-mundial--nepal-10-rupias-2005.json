@@ -26,34 +26,34 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Nepal Rastra Bank — 10 Rupias (2005)",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/nepal-10-rupias-2005/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/nepal-10-rupias-2005/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Nepal Rastra Bank — Billete de 10 Rupias de Polímero",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/nepal-10-rupias-2005/",
-        "image": "https://www.notofilia.com/uploads/nepal-nrb-10-rupias-2005-polimero.jpg",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/nepal-10-rupias-2005/",
+        "image": "https://notofilia.com/uploads/nepal-nrb-10-rupias-2005-polimero.jpg",
         "description": "Billete de 10 rupias de polímero emitido por el Nepal Rastra Bank en 2005, con el retrato del rey Gyanendra.",
         "identifier": "Pick 54",
         "dateCreated": "2005",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

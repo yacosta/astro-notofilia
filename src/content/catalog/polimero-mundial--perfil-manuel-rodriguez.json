@@ -25,26 +25,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Manuel Rodríguez",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Manuel Javier Antonio Rodríguez Erdoíza",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/perfil-manuel-rodriguez/",
         "birthDate": "1785-02-25",
         "deathDate": "1818-05-26",
         "birthPlace": {

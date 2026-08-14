@@ -26,46 +26,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la Unión — Cinco Pesos y Diez Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la Unión — Billete de Cinco Pesos, 1883",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#cinco-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#cinco-pesos",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
         "description": "Billete de Cinco Pesos emitido por El Banco de la Unión (Palau, Corrales &amp; Compañía), Bogotá, el 1 de enero de 1883, resellado en 1899 como billete provisional del Banco Nacional.",
         "dateCreated": "1883-01-01",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la Unión — Billete de Diez Pesos, 1883",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#diez-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-union-10-pesos-1883.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#diez-pesos",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-union-10-pesos-1883.jpg",
         "description": "Billete de Diez Pesos emitido por El Banco de la Unión (Palau, Corrales &amp; Compañía), Bogotá, el 1 de enero de 1883, resellado en 1899 según el Decreto N.° 517 como billete provisional del Banco Nacional.",
         "dateCreated": "1883-01-01",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

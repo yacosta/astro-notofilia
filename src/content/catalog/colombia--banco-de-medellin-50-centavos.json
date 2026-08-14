@@ -24,34 +24,34 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de Medellín — Cincuenta Centavos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-medellin-50-centavos/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-medellin-50-centavos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Medellín — Billete de Cincuenta Centavos",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-medellin-50-centavos/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-medellin-50-centavos.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-medellin-50-centavos/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-medellin-50-centavos.jpg",
         "description": "Billete de Cincuenta Centavos emitido por El Banco de Medellín, Colombia, durante la era de la banca libre antioqueña del siglo XIX.",
         "dateCreated": "1880s",
         "identifier": "Pick S591",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

@@ -32,27 +32,27 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Estados Unidos",
-            "item": "https://www.notofilia.com/coleccion/"
+            "item": "https://notofilia.com/coleccion/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Certificados de Pago Militar (MPC)",
-            "item": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/"
+            "item": "https://notofilia.com/coleccion/certificados-de-pago-militar/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/#page",
+        "@id": "https://notofilia.com/coleccion/certificados-de-pago-militar/#page",
         "name": "Certificados de Pago Militar (MPC) de Estados Unidos",
-        "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/",
+        "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/",
         "description": "Catálogo de certificados de pago militar (MPC) de EE. UU.: 1946–1973, Vietnam, Series 641 y 692. Notofilia.",
         "inLanguage": "es",
         "about": {
@@ -65,12 +65,12 @@
           {
             "@type": "CreativeWork",
             "name": "Military Payment Certificate $10 — Serie 641 (Vietnam)",
-            "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/"
+            "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/"
           },
           {
             "@type": "CreativeWork",
             "name": "Military Payment Certificate $20 — Serie 692 (Vietnam)",
-            "url": "https://www.notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/"
+            "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/"
           }
         ]
       }

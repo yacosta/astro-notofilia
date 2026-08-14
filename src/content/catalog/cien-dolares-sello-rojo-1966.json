@@ -32,33 +32,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Departamento del Tesoro de EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
+            "item": "https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "$100 Sello Rojo (1966)",
-            "item": "https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
+            "item": "https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "United States Note $100 — Sello Rojo, Serie de 1966",
-        "url": "https://www.notofilia.com/coleccion/cien-dolares-sello-rojo-1966/",
-        "image": "https://www.notofilia.com/uploads/us-legal-tender-note-100-dollars-red-seal-1966.jpg",
+        "url": "https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/",
+        "image": "https://notofilia.com/uploads/us-legal-tender-note-100-dollars-red-seal-1966.jpg",
         "description": "Billete de cien dólares de curso legal (United States Note) con sello rojo, serie de 1966, con el retrato de Benjamin Franklin. Referencia Friedberg FR-1550.",
         "dateCreated": "1966",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

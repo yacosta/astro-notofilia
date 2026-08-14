@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const CATALOG_DIR = path.join(process.cwd(), 'src/content/catalog');
-const SITE = 'https://www.notofilia.com';
+const SITE = 'https://notofilia.com';
 
 function permanentIdFromPath(p) {
   const cleaned = p.replace(/^\/+|\/+$/g, '').replace(/^coleccion\//, '').replace(/\//g, '.');

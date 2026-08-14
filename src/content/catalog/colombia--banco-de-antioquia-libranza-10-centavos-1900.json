@@ -25,39 +25,39 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banca Libre",
-            "item": "https://www.notofilia.com/coleccion/colombia/banca-libre/"
+            "item": "https://notofilia.com/coleccion/colombia/banca-libre/"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Banco de Antioquia — Libranza de Diez Centavos (1900)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco de Antioquia — Libranza de Diez Centavos",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-antioquia-libranza-10-centavos-1900.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-antioquia-libranza-10-centavos-1900.jpg",
         "description": "Libranza de Diez Centavos emitida por el sucesor del Banco de Antioquia, Medellín, 19 de enero de 1900, en el contexto de la Guerra de los Mil Días.",
         "dateCreated": "1900-01-19",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/banca-libre/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/banca-libre/#page"
         }
       }
     ]

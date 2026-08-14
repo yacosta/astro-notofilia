@@ -44,7 +44,7 @@ const jsonLd = {
     },
     {
       '@type': 'Person',
-      '@id': `${SITE}${path}#equipo-editorial`,
+      '@id': `${SITE}/editorial/equipo/#person`,
       name: EDITORIAL_TEAM.name,
       url: EDITORIAL_TEAM.url,
       jobTitle: EDITORIAL_TEAM.jobTitle,
@@ -97,6 +97,14 @@ const jsonLd = {
         <strong>{EDITORIAL_TEAM.name}</strong>. Cuando un artículo lleva “Revisado por”, indica
         la responsabilidad editorial de esa pieza. Perfil público:
         <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2 id="correcciones">Política de correcciones</h2>
+      <p>
+        Los errores de hecho, cifras mal etiquetadas o atribuciones incorrectas se corrigen en
+        la pieza afectada. Cada corrección material queda listada en el historial de la página
+        (fecha + descripción). Si el cambio es sustancial, actualizamos también la fecha de
+        “Última actualización”.
       </p>
 
       <h2>Fechas y actualizaciones</h2>

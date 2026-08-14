@@ -24,26 +24,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Malietoa Tanumafili II",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-malietoa-tanumafili-ii/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/perfil-malietoa-tanumafili-ii/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Susuga Malietoa Tanumafili II",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/perfil-malietoa-tanumafili-ii/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/perfil-malietoa-tanumafili-ii/",
         "birthDate": "1913-01-04",
         "deathDate": "2007-05-11",
         "birthPlace": {

@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Medio Peso Oro (Specimen)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Medio Peso Oro, espécimen de 1948",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.jpg",
         "description": "Espécimen de Medio Peso Oro de El Banco de la República, Colombia, fechado 18 de enero de 1948, impreso por American Bank Note Company, con el retrato de Antonio Nariño y el escudo de Colombia en el reverso. Conocido entre coleccionistas como \"Lleritas\".",
         "dateCreated": "1948",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

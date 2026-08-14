@@ -3,6 +3,9 @@ import path from 'node:path';
 
 const root = process.cwd();
 const errors = [];
+/** Live Cloudflare preferred host (www → apex). Keep SEO URLs on apex. */
+const SITE_ORIGIN = 'https://notofilia.com';
+const FORBIDDEN_ORIGIN = 'https://www.notofilia.com';
 
 const fail = (message) => errors.push(message);
 const normalizePath = (value) => {
@@ -15,10 +18,25 @@ const sitemapXml = await readFile(path.join(root, 'public/sitemap.xml'), 'utf8')
 const sitemapPaths = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => normalizePath(match[1]));
 const sitemap = new Set(sitemapPaths);
 if (sitemap.size !== sitemapPaths.length) fail('sitemap.xml contains duplicate <loc> entries');
+if (sitemapXml.includes(FORBIDDEN_ORIGIN)) fail(`sitemap.xml still uses ${FORBIDDEN_ORIGIN}; prefer ${SITE_ORIGIN}`);
+const rawSitemapLocs = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+if (!rawSitemapLocs.every((loc) => loc === SITE_ORIGIN || loc === `${SITE_ORIGIN}/` || loc.startsWith(`${SITE_ORIGIN}/`))) {
+  fail(`sitemap.xml <loc> entries must use ${SITE_ORIGIN}`);
+}
+
+const robotsTxt = await readFile(path.join(root, 'public/robots.txt'), 'utf8');
+if (robotsTxt.includes(FORBIDDEN_ORIGIN)) fail(`robots.txt still uses ${FORBIDDEN_ORIGIN}; prefer ${SITE_ORIGIN}`);
+if (!robotsTxt.includes(`Sitemap: ${SITE_ORIGIN}/sitemap_index.xml`)) {
+  fail(`robots.txt must declare Sitemap: ${SITE_ORIGIN}/sitemap_index.xml`);
+}
+
+const siteTs = await readFile(path.join(root, 'src/lib/site.ts'), 'utf8');
+if (!siteTs.includes(`SITE = '${SITE_ORIGIN}'`)) fail(`src/lib/site.ts SITE must be '${SITE_ORIGIN}'`);
+if (siteTs.includes(FORBIDDEN_ORIGIN)) fail(`src/lib/site.ts still references ${FORBIDDEN_ORIGIN}`);
 
 const sitemapIndexXml = await readFile(path.join(root, 'public/sitemap_index.xml'), 'utf8');
 if (!sitemapIndexXml.includes('<sitemapindex')) fail('sitemap_index.xml is missing <sitemapindex>');
-for (const required of [`${'https://www.notofilia.com'}/sitemap.xml`, `${'https://www.notofilia.com'}/news-sitemap.xml`]) {
+for (const required of [`${SITE_ORIGIN}/sitemap.xml`, `${SITE_ORIGIN}/news-sitemap.xml`]) {
   if (!sitemapIndexXml.includes(`<loc>${required}</loc>`)) fail(`sitemap_index.xml does not reference ${required}`);
 }
 

@@ -26,32 +26,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Un Peso Specimen",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Un Peso Oro (1929) y Un Peso Plata (1932), Specimen",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.jpg",
         "description": "Especímenes de Un Peso Oro (20 de julio de 1929) y Un Peso Plata (1 de enero de 1932) emitidos por El Banco de la República, Colombia, impresos por American Bank Note Company.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -82,16 +82,12 @@
       "stacked": {
         "src": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.jpg",
         "srcWebp": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "Un Peso Specimen, Banco de la República | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
     "metadata": {
-      "denomination": "{{ note.denomination }}",
-      "printer": "American Bank Note Company (ABNC)",
-      "catalogNumber": "{{ note.catalogRef }}",
-      "dimensions": "{{ note.dimensions }}",
-      "condition": "{{ note.rarity }}"
+      "printer": "American Bank Note Company (ABNC)"
     },
     "render": "astro-static",
     "eyebrow": "Bogotá, Colombia · Especímenes de la Era del Peso Oro y Plata"

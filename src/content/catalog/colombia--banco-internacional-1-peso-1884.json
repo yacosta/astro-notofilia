@@ -25,46 +25,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco Internacional — Un Peso y Diez Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco Internacional — Billete de Un Peso, 1884",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/#un-peso",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-internacional-1-peso-1884.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/#un-peso",
+        "image": "https://notofilia.com/uploads/colombia-banco-internacional-1-peso-1884.jpg",
         "description": "Billete de Un Peso emitido por El Banco Internacional, Bogotá, el 15 de diciembre de 1884, resellado en 1899 como billete provisional del Banco Nacional.",
         "dateCreated": "1884-12-15",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco Internacional — Billete de Diez Pesos, 1884",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/#diez-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-internacional-10-pesos-1884.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/#diez-pesos",
+        "image": "https://notofilia.com/uploads/colombia-banco-internacional-10-pesos-1884.jpg",
         "description": "Billete de Diez Pesos emitido por El Banco Internacional, Bogotá, el 15 de diciembre de 1884, resellado en 1899 como billete de circulación garantizada por la República.",
         "dateCreated": "1884-12-15",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

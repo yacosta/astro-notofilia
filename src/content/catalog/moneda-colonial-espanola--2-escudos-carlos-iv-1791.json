@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial Española",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Carlos IV — 2 Escudos, Bogotá 1791",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Colombia, Carlos IV — 2 Escudos de Oro (Santa Fe de Bogotá, 1791)",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/",
-        "image": "https://www.notofilia.com/uploads/colombia-2-escudos-carlos-iv-1791-bogota.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/",
+        "image": "https://notofilia.com/uploads/colombia-2-escudos-carlos-iv-1791-bogota.jpg",
         "description": "2 escudos de oro acuñados a máquina en la ceca de Santa Fe de Bogotá en 1791, con el busto transicional de Carlos III y la leyenda de Carlos IV.",
         "dateCreated": "1791",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

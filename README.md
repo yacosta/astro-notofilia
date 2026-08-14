@@ -1,6 +1,6 @@
 # Notofilia.com — Astro build
 
-Astro 4 build of [notofilia.com](https://www.notofilia.com): a digital catalog
+Astro 4 build of [notofilia.com](https://notofilia.com): a digital catalog
 and virtual collection of historical banknotes and coins — Colombia, Puerto
 Rico, Ecuador, U.S. currency, colonial issues, and world polymer notes — plus
 historical profiles of figures tied to Colombian monetary history.

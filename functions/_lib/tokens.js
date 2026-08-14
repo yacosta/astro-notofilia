@@ -27,8 +27,8 @@ export async function signJwt(payload, env, expiresInSec = 3600) {
   const header = { alg: 'HS256', typ: 'JWT' };
   const now = Math.floor(Date.now() / 1000);
   const body = {
-    iss: 'https://www.notofilia.com',
-    aud: 'https://www.notofilia.com/',
+    iss: 'https://notofilia.com',
+    aud: 'https://notofilia.com/',
     iat: now,
     exp: now + expiresInSec,
     ...payload,

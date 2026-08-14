@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Citizens' Bank of Louisiana",
-            "item": "https://www.notofilia.com/coleccion/citizens-bank-of-louisiana/"
+            "item": "https://notofilia.com/coleccion/citizens-bank-of-louisiana/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Billete de $5",
-            "item": "https://www.notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/"
+            "item": "https://notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Citizens' Bank of Louisiana — Billete de $5",
-        "url": "https://www.notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/",
-        "image": "https://www.notofilia.com/uploads/citizens-bank-louisiana-shreveport-5-dollars.jpg",
+        "url": "https://notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/",
+        "image": "https://notofilia.com/uploads/citizens-bank-louisiana-shreveport-5-dollars.jpg",
         "description": "Billete obsoleto de cinco dólares emitido por el Citizens' Bank of Louisiana, sucursal de Shreveport, el 23 de agosto de 1860. Referencia Haxby LA-15-G60a.",
         "dateCreated": "1860-08-23",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

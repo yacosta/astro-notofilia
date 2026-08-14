@@ -12,8 +12,8 @@ Audience: AI agents that need machine-readable access to Notofilia's numismatic 
 GET /.well-known/oauth-protected-resource
 ```
 
-- `resource`: `https://www.notofilia.com/`
-- `authorization_servers`: `["https://www.notofilia.com"]`
+- `resource`: `https://notofilia.com/`
+- `authorization_servers`: `["https://notofilia.com"]`
 - `scopes_supported`: `catalog:read`, `comments:read`, `comments:write`, `mcp:tools`
 - `bearer_methods_supported`: `header`
 
@@ -25,13 +25,13 @@ GET /.well-known/oauth-authorization-server
 
 Key fields:
 
-- `issuer`: `https://www.notofilia.com`
-- `token_endpoint`: `https://www.notofilia.com/api/oauth/token`
-- `revocation_endpoint` / `agent_auth.revocation_uri`: `https://www.notofilia.com/api/oauth/revoke`
-- `jwks_uri`: `https://www.notofilia.com/.well-known/jwks.json`
+- `issuer`: `https://notofilia.com`
+- `token_endpoint`: `https://notofilia.com/api/oauth/token`
+- `revocation_endpoint` / `agent_auth.revocation_uri`: `https://notofilia.com/api/oauth/revoke`
+- `jwks_uri`: `https://notofilia.com/.well-known/jwks.json`
 - `agent_auth.skill`: this document
-- `agent_auth.register_uri` / `identity_endpoint`: `https://www.notofilia.com/api/agent/identity`
-- `agent_auth.claim_uri` / `claim_endpoint`: `https://www.notofilia.com/api/agent/identity/claim`
+- `agent_auth.register_uri` / `identity_endpoint`: `https://notofilia.com/api/agent/identity`
+- `agent_auth.claim_uri` / `claim_endpoint`: `https://notofilia.com/api/agent/identity/claim`
 - `agent_auth.identity_types_supported`: `anonymous`, `identity_assertion`
 
 OIDC clients may also read `/.well-known/openid-configuration`.
@@ -120,4 +120,4 @@ token=<access_token>
 
 ## Contact
 
-Human operators: [contacto](https://www.notofilia.com/contacto/). Prefer machine discovery documents over scraping HTML.
+Human operators: [contacto](https://notofilia.com/contacto/). Prefer machine discovery documents over scraping HTML.

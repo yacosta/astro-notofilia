@@ -27,46 +27,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de Panamá — Un Peso y Cinco Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Panamá — Billete de Un Peso",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/#un-peso",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-panama-1-peso.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/#un-peso",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-panama-1-peso.jpg",
         "description": "Billete de Un Peso emitido por El Banco de Panamá, Serie R-P, N.° 8480, mientras Panamá era un departamento de Colombia.",
         "identifier": "Pick 6",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Panamá — Billete de Cinco Pesos",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/#cinco-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-panama-5-pesos.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/#cinco-pesos",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-panama-5-pesos.jpg",
         "description": "Billete de Cinco Pesos emitido por El Banco de Panamá, N.° 3487, mientras Panamá era un departamento de Colombia.",
         "identifier": "Pick 8",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

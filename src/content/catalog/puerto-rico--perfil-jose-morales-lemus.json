@@ -25,27 +25,27 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Puerto Rico",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "José Morales Lemus",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/perfil-jose-morales-lemus/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/perfil-jose-morales-lemus/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "José Gregorio Morales Lemus",
-        "url": "https://www.notofilia.com/coleccion/puerto-rico/perfil-jose-morales-lemus/",
-        "image": "https://www.notofilia.com/uploads/jose-morales-lemus.jpg",
+        "url": "https://notofilia.com/coleccion/puerto-rico/perfil-jose-morales-lemus/",
+        "image": "https://notofilia.com/uploads/jose-morales-lemus.jpg",
         "birthDate": "1808-05-10",
         "deathDate": "1870-06-28",
         "birthPlace": {

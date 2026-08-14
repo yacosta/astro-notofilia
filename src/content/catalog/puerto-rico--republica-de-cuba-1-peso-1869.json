@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Puerto Rico",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "La República de Cuba — Un Peso (1869)",
-            "item": "https://www.notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/"
+            "item": "https://notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "La República de Cuba — Billete de Un Peso, 1869",
-        "url": "https://www.notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
-        "image": "https://www.notofilia.com/uploads/puerto-rico-republica-de-cuba-1-peso-1869.jpg",
+        "url": "https://notofilia.com/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
+        "image": "https://notofilia.com/uploads/puerto-rico-republica-de-cuba-1-peso-1869.jpg",
         "description": "Billete de Un Peso emitido en Nueva York el 17 de agosto de 1869 por la Junta Central Republicana de Cuba y Puerto Rico en nombre de La República de Cuba, firmado por José Morales Lemus, Presidente de la Junta.",
         "dateCreated": "1869-08-17",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

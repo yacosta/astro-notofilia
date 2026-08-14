@@ -7,8 +7,27 @@
  */
 
 import { recordPropertyValues, type CatalogRecord } from './catalog-record';
+import { SITE } from './site';
 
 type JsonLdNode = Record<string, unknown>;
+
+const LEGACY_WWW = 'https://www.notofilia.com';
+
+/** Rewrite legacy www absolute URLs to the canonical apex host. */
+function canonicalizeHost(value: unknown): unknown {
+  if (typeof value === 'string') {
+    return value.includes(LEGACY_WWW) ? value.split(LEGACY_WWW).join(SITE) : value;
+  }
+  if (Array.isArray(value)) return value.map(canonicalizeHost);
+  if (value && typeof value === 'object') {
+    const out: JsonLdNode = {};
+    for (const [k, v] of Object.entries(value as JsonLdNode)) {
+      out[k] = canonicalizeHost(v);
+    }
+    return out;
+  }
+  return value;
+}
 
 function asNodes(jsonLd: unknown): JsonLdNode[] {
   if (!jsonLd || typeof jsonLd !== 'object') return [];
@@ -101,7 +120,7 @@ function mergeRecordProperties(node: JsonLdNode, record: CatalogRecord): void {
 export function enrichCatalogJsonLd(jsonLd: unknown, record?: CatalogRecord): unknown {
   if (!jsonLd || typeof jsonLd !== 'object') return jsonLd;
 
-  const clone = structuredClone(jsonLd) as JsonLdNode;
+  const clone = canonicalizeHost(structuredClone(jsonLd)) as JsonLdNode;
   const nodes = asNodes(clone);
   const extras: JsonLdNode[] = [];
 

@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial Española",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Carlos III — 1 Escudo, Bogotá 1787",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Colombia, Carlos III — 1 Escudo de Oro (Santa Fe de Bogotá, 1787)",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/",
-        "image": "https://www.notofilia.com/uploads/colombia-1-escudo-carlos-iii-1787-bogota.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/",
+        "image": "https://notofilia.com/uploads/colombia-1-escudo-carlos-iii-1787-bogota.jpg",
         "description": "1 escudo de oro acuñado en la ceca de Santa Fe de Bogotá en 1787, último año completo del reinado de Carlos III, con una grieta de cuño visible en el reverso.",
         "dateCreated": "1787",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

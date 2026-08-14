@@ -25,34 +25,34 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Emisiones Colombianas en el Extranjero",
-            "item": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
+            "item": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/#page",
+        "@id": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/#page",
         "name": "Emisiones Colombianas en el Extranjero",
-        "url": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/",
+        "url": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/",
         "description": "Billetes emitidos fuera de Colombia por bancos fundados con capital colombiano, de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "El Banco Colombiano — Un Peso (Guatemala, 1900)",
-            "url": "https://www.notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
+            "url": "https://notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
           }
         ]
       }

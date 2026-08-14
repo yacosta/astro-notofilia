@@ -24,33 +24,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de Oriente — Cinco Pesos (1888)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-oriente-5-pesos-1888/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-oriente-5-pesos-1888/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de Oriente — Billete de Cinco Pesos",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-oriente-5-pesos-1888/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-oriente-5-pesos-1888.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-oriente-5-pesos-1888/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-oriente-5-pesos-1888.jpg",
         "description": "Billete de Cinco Pesos emitido por El Banco de Oriente, Rionegro, Antioquia, el 14 de febrero de 1888, durante la era de la banca libre colombiana.",
         "dateCreated": "1888-02-14",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

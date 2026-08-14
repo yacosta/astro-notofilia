@@ -30,33 +30,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Food Coupons USDA",
-            "item": "https://www.notofilia.com/coleccion/food-coupons-usda/"
+            "item": "https://notofilia.com/coleccion/food-coupons-usda/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Food Coupon USDA — Cinco Dólares (2000-B)",
-            "item": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/"
+            "item": "https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Food Coupon USDA — Cinco Dólares, Serie 2000-B",
-        "url": "https://www.notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
-        "image": "https://www.notofilia.com/uploads/usda-food-coupon-5-dollar-2000-serie-b.jpg",
+        "url": "https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
+        "image": "https://notofilia.com/uploads/usda-food-coupon-5-dollar-2000-serie-b.jpg",
         "description": "Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.",
         "dateCreated": "2000",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/food-coupons-usda/#page"
+          "@id": "https://notofilia.com/coleccion/food-coupons-usda/#page"
         }
       }
     ]

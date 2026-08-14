@@ -31,38 +31,38 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banco Central de Chile — 1.000, 2.000 y 5.000 Pesos",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco Central de Chile — Billetes de Polímero (1.000, 2.000 y 5.000 Pesos)",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/",
         "image": [
-          "https://www.notofilia.com/uploads/chile-banco-central-1000-pesos-2010-polimero.jpg",
-          "https://www.notofilia.com/uploads/chile-banco-central-2000-pesos-2009-polimero.jpg",
-          "https://www.notofilia.com/uploads/chile-banco-central-2000-pesos-2004-polimero.jpg",
-          "https://www.notofilia.com/uploads/chile-banco-central-5000-pesos-2009-polimero.jpg"
+          "https://notofilia.com/uploads/chile-banco-central-1000-pesos-2010-polimero.jpg",
+          "https://notofilia.com/uploads/chile-banco-central-2000-pesos-2009-polimero.jpg",
+          "https://notofilia.com/uploads/chile-banco-central-2000-pesos-2004-polimero.jpg",
+          "https://notofilia.com/uploads/chile-banco-central-5000-pesos-2009-polimero.jpg"
         ],
         "description": "Cuatro billetes de polímero del Banco Central de Chile: el de 1.000 pesos (2010) con Ignacio Carrera Pinto y Torres del Paine, el de 2.000 pesos Bicentenario (2009) con Manuel Rodríguez y la Reserva Nacional Nalcas, el de 2.000 pesos de la serie original (2004), y el de 5.000 pesos (2009) con Gabriela Mistral y el Parque Nacional La Campana.",
         "dateCreated": "2004/2010",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

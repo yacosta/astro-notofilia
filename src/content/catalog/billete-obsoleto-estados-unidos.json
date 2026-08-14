@@ -24,49 +24,49 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colección",
-            "item": "https://www.notofilia.com/coleccion/"
+            "item": "https://notofilia.com/coleccion/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Billete Obsoleto EE. UU.",
-            "item": "https://www.notofilia.com/coleccion/billete-obsoleto-estados-unidos/"
+            "item": "https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/billete-obsoleto-estados-unidos/#page",
+        "@id": "https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/#page",
         "name": "Catálogo de Billete Obsoleto de los Estados Unidos",
-        "url": "https://www.notofilia.com/coleccion/billete-obsoleto-estados-unidos/",
+        "url": "https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/",
         "description": "Catálogo numismático de billetes obsoletos de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "Billete de $1 — The State Bank at New Brunswick",
-            "url": "https://www.notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/"
+            "url": "https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/"
           },
           {
             "@type": "CreativeWork",
             "name": "Billete de $5 — Citizens' Bank of Louisiana",
-            "url": "https://www.notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/"
+            "url": "https://notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/"
           },
           {
             "@type": "CreativeWork",
             "name": "Billetes de $5 y $10 — The Hagerstown Bank",
-            "url": "https://www.notofilia.com/coleccion/hagerstown-bank-maryland/"
+            "url": "https://notofilia.com/coleccion/hagerstown-bank-maryland/"
           },
           {
             "@type": "CreativeWork",
             "name": "Billete de $5 — City Bank of New Haven",
-            "url": "https://www.notofilia.com/coleccion/city-bank-new-haven/5-dolares/"
+            "url": "https://notofilia.com/coleccion/city-bank-new-haven/5-dolares/"
           }
         ]
       }

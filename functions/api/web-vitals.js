@@ -7,7 +7,7 @@ export async function onRequest(context) {
     return new Response(null, {
       status: 204,
       headers: {
-        'access-control-allow-origin': 'https://www.notofilia.com',
+        'access-control-allow-origin': 'https://notofilia.com',
         'access-control-allow-methods': 'POST, OPTIONS',
         'access-control-allow-headers': 'content-type',
       },

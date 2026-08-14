@@ -28,42 +28,42 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banca Libre",
-            "item": "https://www.notofilia.com/coleccion/colombia/banca-libre/"
+            "item": "https://notofilia.com/coleccion/colombia/banca-libre/"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Departamento de Antioquia — Vales de 10 y 20 Centavos",
-            "item": "https://www.notofilia.com/coleccion/colombia/departamento-de-antioquia-centavos/"
+            "item": "https://notofilia.com/coleccion/colombia/departamento-de-antioquia-centavos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Departamento de Antioquia — Vales de 10 y 20 Centavos",
-        "url": "https://www.notofilia.com/coleccion/colombia/departamento-de-antioquia-centavos/",
+        "url": "https://notofilia.com/coleccion/colombia/departamento-de-antioquia-centavos/",
         "image": [
-          "https://www.notofilia.com/uploads/colombia-departamento-de-antioquia-10-centavos-1961.jpg",
-          "https://www.notofilia.com/uploads/colombia-departamento-de-antioquia-20-centavos-1901.jpg"
+          "https://notofilia.com/uploads/colombia-departamento-de-antioquia-10-centavos-1961.jpg",
+          "https://notofilia.com/uploads/colombia-departamento-de-antioquia-20-centavos-1901.jpg"
         ],
         "description": "Dos vales del Departamento de Antioquia: uno de 10 centavos emitido en Medellín en enero de 1961, y otro de 20 centavos emitido en enero de 1901 durante la Guerra de los Mil Días, ambos amortizables con rentas departamentales futuras.",
         "dateCreated": "1961/1901",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/coleccion/colombia/banca-libre/#page"
+          "@id": "https://notofilia.com/coleccion/colombia/banca-libre/#page"
         }
       }
     ]

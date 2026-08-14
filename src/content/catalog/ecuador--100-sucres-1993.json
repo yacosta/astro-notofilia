@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Ecuador",
-            "item": "https://www.notofilia.com/coleccion/ecuador/"
+            "item": "https://notofilia.com/coleccion/ecuador/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Cien Sucres, Par de Serie Baja (1993)",
-            "item": "https://www.notofilia.com/coleccion/ecuador/100-sucres-1993/"
+            "item": "https://notofilia.com/coleccion/ecuador/100-sucres-1993/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco Central del Ecuador — Cien Sucres, Par de Serie Baja (1993)",
-        "url": "https://www.notofilia.com/coleccion/ecuador/100-sucres-1993/",
-        "image": "https://www.notofilia.com/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg",
+        "url": "https://notofilia.com/coleccion/ecuador/100-sucres-1993/",
+        "image": "https://notofilia.com/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg",
         "description": "Par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, fechados el 20 de agosto de 1993, con los números de serie consecutivos 00000002 y 00000003.",
         "dateCreated": "1993",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -66,7 +66,6 @@
     "kind": "banknote",
     "title": "Cien Sucres, Par de Serie Baja",
     "subtitle": "Dos ejemplares consecutivos, N.&deg; 00000002 y 00000003 — entre los primeros billetes impresos de toda la emisión",
-    "dateOrSeries": "{{ note.serial }}",
     "breadcrumb": [
       {
         "name": "Notofilia",
@@ -84,12 +83,11 @@
       "stacked": {
         "src": "/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.jpg",
         "srcWebp": "/uploads/ecuador-banco-central-100-sucres-1993-serial-00000002.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "100 Sucres, Banco Central del Ecuador (1993) | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
     "metadata": {
-      "series": "{{ note.serial }}",
       "catalogNumber": "Pick P-123Ab"
     },
     "render": "astro-static",

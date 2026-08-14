@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banco Central de la República Dominicana — 20 Pesos Oro (2009)",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/republica-dominicana-20-pesos-2009/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/republica-dominicana-20-pesos-2009/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco Central de la República Dominicana — Billete de 20 Pesos Oro de Polímero",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/republica-dominicana-20-pesos-2009/",
-        "image": "https://www.notofilia.com/uploads/dominicana-bcrd-20-pesos-2009-polimero.jpg",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/republica-dominicana-20-pesos-2009/",
+        "image": "https://notofilia.com/uploads/dominicana-bcrd-20-pesos-2009-polimero.jpg",
         "description": "Primer billete de polímero de República Dominicana, con el retrato del General Gregorio Luperón y el Panteón Nacional en el reverso.",
         "dateCreated": "2009",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

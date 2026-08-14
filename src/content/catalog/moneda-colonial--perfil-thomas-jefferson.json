@@ -25,26 +25,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Estados Unidos",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Thomas Jefferson",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Thomas Jefferson",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/",
         "birthDate": "1743-04-13",
         "deathDate": "1826-07-04",
         "birthPlace": {
@@ -58,7 +58,7 @@
         "jobTitle": "Tercer presidente de los Estados Unidos",
         "description": "Autor principal de la Declaración de Independencia y tercer presidente de los Estados Unidos.",
         "nationality": "Estadounidense",
-        "image": "https://www.notofilia.com/uploads/thomas-jefferson-portrait-peale.jpg"
+        "image": "https://notofilia.com/uploads/thomas-jefferson-portrait-peale.jpg"
       }
     ]
   },

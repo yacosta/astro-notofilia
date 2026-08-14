@@ -25,36 +25,36 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Central Bank of Sri Lanka — 200 Rupias (1998)",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/sri-lanka-200-rupias-1998/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/sri-lanka-200-rupias-1998/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Central Bank of Sri Lanka — Billete de 200 Rupias de Polímero",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/sri-lanka-200-rupias-1998/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/sri-lanka-200-rupias-1998/",
         "image": [
-          "https://www.notofilia.com/uploads/sri-lanka-cbsl-200-rupees-1998-polimero-negro.jpg",
-          "https://www.notofilia.com/uploads/sri-lanka-cbsl-200-rupees-1998-polimero-rojo.jpg"
+          "https://notofilia.com/uploads/sri-lanka-cbsl-200-rupees-1998-polimero-negro.jpg",
+          "https://notofilia.com/uploads/sri-lanka-cbsl-200-rupees-1998-polimero-rojo.jpg"
         ],
         "description": "Billete conmemorativo de 200 rupias de polímero del Central Bank of Sri Lanka, emitido por el 50.º aniversario de independencia (1948–1998), con el Salón Conmemorativo de la Independencia y un panel histórico en el reverso.",
         "dateCreated": "1998",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

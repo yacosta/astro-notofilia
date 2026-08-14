@@ -26,46 +26,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "República Bolívar de Colombia — Un Peso y Dos Pesos (1882)",
-            "item": "https://www.notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/"
+            "item": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "República Bolívar de Colombia — Billete de Un Peso",
-        "url": "https://www.notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",
-        "image": "https://www.notofilia.com/uploads/colombia-republica-bolivar-1-peso-1882.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",
+        "image": "https://notofilia.com/uploads/colombia-republica-bolivar-1-peso-1882.jpg",
         "description": "Billete de Un Peso de la República Bolívar de Colombia, emitido en 1882.",
         "identifier": "Pick 5",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "República Bolívar de Colombia — Billete de Dos Pesos",
-        "url": "https://www.notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#dos-pesos",
-        "image": "https://www.notofilia.com/uploads/colombia-republica-bolivar-2-pesos-1882.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#dos-pesos",
+        "image": "https://notofilia.com/uploads/colombia-republica-bolivar-2-pesos-1882.jpg",
         "description": "Billete de Dos Pesos de la República Bolívar de Colombia, emitido en 1882.",
         "identifier": "Pick 6",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

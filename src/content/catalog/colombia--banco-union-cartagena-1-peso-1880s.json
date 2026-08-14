@@ -24,34 +24,34 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco Unión — Un Peso",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco Unión — Billete de Un Peso, Cartagena",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-union-cartagena-1-peso-1880s.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/",
+        "image": "https://notofilia.com/uploads/colombia-banco-union-cartagena-1-peso-1880s.jpg",
         "description": "Billete de Un Peso emitido por El Banco Unión, Cartagena, Colombia, durante la década de 1880, N.° 66635.",
         "dateCreated": "1880s",
         "identifier": "Pick S865",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

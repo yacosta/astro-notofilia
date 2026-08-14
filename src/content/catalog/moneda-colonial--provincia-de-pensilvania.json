@@ -28,46 +28,46 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Provincia de Pensilvania",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Pensilvania Colonial — Cinco Chelines, 1773",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/#5-chelines",
-        "image": "https://www.notofilia.com/uploads/pennsylvania-colonial-5-shillings-1773.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/#5-chelines",
+        "image": "https://notofilia.com/uploads/pennsylvania-colonial-5-shillings-1773.jpg",
         "description": "Billete colonial de Cinco Chelines emitido por la provincia de Pensilvania el 1 de octubre de 1773, impreso por Hall and Sellers, Filadelfia.",
         "dateCreated": "1773-10-01",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       },
       {
         "@type": "CreativeWork",
         "name": "Pensilvania Colonial — Dos Chelines y Seis Peniques, 1773",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/#2-chelines-6-peniques",
-        "image": "https://www.notofilia.com/uploads/pennsylvania-colonial-2s6d-1773.jpg",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/provincia-de-pensilvania/#2-chelines-6-peniques",
+        "image": "https://notofilia.com/uploads/pennsylvania-colonial-2s6d-1773.jpg",
         "description": "Billete colonial de Dos Chelines y Seis Peniques (Media Corona) emitido por la provincia de Pensilvania el 1 de octubre de 1773, impreso por Hall and Sellers, Filadelfia.",
         "dateCreated": "1773-10-01",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

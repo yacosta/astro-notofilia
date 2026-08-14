@@ -36,6 +36,12 @@ jobs:
       - name: Build production site and search index
         run: npm run build
 
+      - name: Fail on unresolved template placeholders in shipped output
+        run: npm run check:placeholders
+
+      - name: Validate production security header baseline
+        run: npm run check:headers
+
       - name: Check sitemap, redirects, search, and canonicals
         run: npm run check:drift
 

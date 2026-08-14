@@ -57,6 +57,21 @@ function withSecurityHeaders(response) {
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
+  const host = (context.request.headers.get('host') || url.host || '').toLowerCase();
+  // Prefer apex host for SEO (Cloudflare also redirects www → apex at the edge).
+  if (host === 'www.notofilia.com') {
+    const apex = new URL(url.toString());
+    apex.protocol = 'https:';
+    apex.host = 'notofilia.com';
+    return new Response(null, {
+      status: 301,
+      headers: {
+        location: apex.toString(),
+        ...SECURITY_HEADERS,
+      },
+    });
+  }
+
   const pathname = url.pathname.replace(/\/+$/, '') || '/';
   const accept = context.request.headers.get('accept') || '';
   const wantsMarkdown = prefersMarkdown(accept);

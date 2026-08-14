@@ -27,31 +27,31 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Bank of Papua New Guinea — 2 a 100 Kina",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/papua-nueva-guinea-kina/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/papua-nueva-guinea-kina/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Bank of Papua New Guinea — 2, 5, 10, 50 y 100 Kina",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/papua-nueva-guinea-kina/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/papua-nueva-guinea-kina/",
         "description": "Cinco billetes de polímero del Bank of Papua New Guinea, con el Ave del Paraíso, el Edificio del Parlamento Nacional y Sir Michael Somare, impresos por Note Printing Australia.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

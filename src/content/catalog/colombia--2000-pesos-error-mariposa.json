@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Dos Mil Pesos, Error Mariposa",
-            "item": "https://www.notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/"
+            "item": "https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Dos Mil Pesos, Par con Error de Corte \"Mariposa\"",
-        "url": "https://www.notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/",
-        "image": "https://www.notofilia.com/uploads/colombia-2000-pesos-error-mariposa.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/",
+        "image": "https://notofilia.com/uploads/colombia-2000-pesos-error-mariposa.jpg",
         "description": "Par de billetes de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con el retrato de Francisco de Paula Santander, unidos por un error de corte de guillotina conocido como «mariposa».",
         "dateCreated": "2009",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

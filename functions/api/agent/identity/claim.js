@@ -62,7 +62,7 @@ export async function onRequestPost(context) {
     claim_token: nextClaim,
     claim_attempt: {
       user_code: userCode || Math.random().toString(36).slice(2, 8).toUpperCase(),
-      verification_uri: 'https://www.notofilia.com/oauth/claim/',
+      verification_uri: 'https://notofilia.com/oauth/claim/',
       expires_in: 1800,
       interval: 5,
     },

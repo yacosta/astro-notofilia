@@ -26,32 +26,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Cien Pesos Oro",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Cien Pesos Oro",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.jpg",
         "description": "Billetes de Cien Pesos Oro emitidos por El Banco de la República, Colombia, con el retrato de Francisco de Paula Santander.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -64,7 +64,6 @@
     "kind": "banknote",
     "title": "El Banco de la República",
     "subtitle": "Cien Pesos Oro, por año de emisión",
-    "dateOrSeries": "{{ note.date }}",
     "breadcrumb": [
       {
         "name": "Notofilia",
@@ -82,16 +81,11 @@
       "stacked": {
         "src": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1947-specimen.jpg",
         "srcWebp": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1947-specimen.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "Cien Pesos Oro, Banco de la República | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
-    "metadata": {
-      "printer": "{{ note.printer }}",
-      "issueDate": "{{ note.date }}",
-      "catalogNumber": "{{ note.catalogRef }}",
-      "condition": "{{ note.rarity }}"
-    },
+    "metadata": {},
     "render": "astro-static",
     "eyebrow": "Bogotá, Colombia · Retrato de Santander"
   },

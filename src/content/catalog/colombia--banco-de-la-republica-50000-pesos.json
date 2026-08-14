@@ -27,33 +27,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — 50 Mil Pesos",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — 50 Mil Pesos, Ejemplar con Error de Impresión",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-50000-pesos-error.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-50000-pesos-error.jpg",
         "description": "Billete de 50 Mil Pesos emitido por El Banco de la República, Colombia, con el retrato de Gabriel García Márquez, presentando un error de impresión en el área de la numeración de serie.",
         "dateCreated": "2016",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

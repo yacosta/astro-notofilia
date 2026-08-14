@@ -26,33 +26,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Dos Mil Pesos, Corte Descentrado",
-            "item": "https://www.notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/"
+            "item": "https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Dos Mil Pesos, Error de Corte Descentrado",
-        "url": "https://www.notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/",
-        "image": "https://www.notofilia.com/uploads/colombia-2000-pesos-error-corte-descentrado.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/",
+        "image": "https://notofilia.com/uploads/colombia-2000-pesos-error-corte-descentrado.jpg",
         "description": "Dos billetes de Dos Mil Pesos de El Banco de la República, Colombia, fechados 2005 y 2009, con el retrato de Francisco de Paula Santander, ambos con el diseño impreso desplazado respecto al papel por un error de corte de guillotina.",
         "dateCreated": "2005/2009",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -83,13 +83,11 @@
       "stacked": {
         "src": "/uploads/colombia-2000-pesos-error-corte-descentrado-2005.jpg",
         "srcWebp": "/uploads/colombia-2000-pesos-error-corte-descentrado-2005.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "Dos Mil Pesos, Error de Corte Descentrado | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
-    "metadata": {
-      "denomination": "{{ note.denomination }}"
-    },
+    "metadata": {},
     "render": "astro-static",
     "eyebrow": "Error de Corte Descentrado · Bogotá, Colombia · 2005 y 2009"
   },

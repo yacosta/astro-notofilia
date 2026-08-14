@@ -6,7 +6,7 @@ const catalogDir = new URL('../src/content/catalog/', import.meta.url);
 const sitemapPath = new URL('../public/sitemap.xml', import.meta.url);
 const sitemapIndexPath = new URL('../public/sitemap_index.xml', import.meta.url);
 const newsSitemapPath = new URL('../public/news-sitemap.xml', import.meta.url);
-const site = 'https://www.notofilia.com';
+const site = 'https://notofilia.com';
 const publicationName = 'Notofilia';
 const today = new Date().toISOString().slice(0, 10);
 // Google News only uses articles from roughly the last two days.
@@ -134,6 +134,7 @@ add(`${site}/`, { changefreq: 'weekly', priority: '1.0' });
 add(`${site}/coleccion/`, { changefreq: 'weekly', priority: '0.9' });
 // Public editorial / valuation policy (native Astro page).
 add(`${site}/editorial/`, { changefreq: 'monthly', priority: '0.5' });
+add(`${site}/editorial/equipo/`, { changefreq: 'monthly', priority: '0.4' });
 // /buscar/ is intentionally noindex (utility search UI) — omit from sitemap.
 
 const ordered = [...entries.values()].sort((a, b) => {

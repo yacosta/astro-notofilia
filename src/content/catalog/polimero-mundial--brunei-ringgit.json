@@ -32,39 +32,39 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Negara Brunei Darussalam — 1, 5, 10, 50 y 100 Ringgit",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/brunei-ringgit/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/brunei-ringgit/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Negara Brunei Darussalam — Billetes de Polímero (1, 5, 10, 50 y 100 Ringgit)",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/brunei-ringgit/",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/brunei-ringgit/",
         "image": [
-          "https://www.notofilia.com/uploads/brunei-negara-1-ringgit-2004-polimero.jpg",
-          "https://www.notofilia.com/uploads/brunei-negara-5-ringgit-2004-polimero.jpg",
-          "https://www.notofilia.com/uploads/brunei-negara-10-ringgit-2004-polimero.jpg",
-          "https://www.notofilia.com/uploads/brunei-negara-50-ringgit-2004-polimero.jpg",
-          "https://www.notofilia.com/uploads/brunei-negara-100-ringgit-2004-polimero.jpg"
+          "https://notofilia.com/uploads/brunei-negara-1-ringgit-2004-polimero.jpg",
+          "https://notofilia.com/uploads/brunei-negara-5-ringgit-2004-polimero.jpg",
+          "https://notofilia.com/uploads/brunei-negara-10-ringgit-2004-polimero.jpg",
+          "https://notofilia.com/uploads/brunei-negara-50-ringgit-2004-polimero.jpg",
+          "https://notofilia.com/uploads/brunei-negara-100-ringgit-2004-polimero.jpg"
         ],
         "description": "Cinco billetes de polímero de Negara Brunei Darussalam (1, 5, 10, 50 y 100 Ringgit), emitidos a partir de 2004 sobre sustrato Guardian, con el retrato del Sultán Hassanal Bolkiah y motivos de flora nativa y la selva tropical de Brunéi.",
         "dateCreated": "2004",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

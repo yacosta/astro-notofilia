@@ -25,33 +25,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Billetes de Polímero Mundial",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Banco Central do Brasil — 10 Reais (2000)",
-            "item": "https://www.notofilia.com/coleccion/polimero-mundial/brazil-10-reais-2000/"
+            "item": "https://notofilia.com/coleccion/polimero-mundial/brazil-10-reais-2000/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Banco Central do Brasil — Billete de 10 Reais de Polímero",
-        "url": "https://www.notofilia.com/coleccion/polimero-mundial/brazil-10-reais-2000/",
-        "image": "https://www.notofilia.com/uploads/brazil-banco-central-10-reais-2000-polimero.jpg",
+        "url": "https://notofilia.com/coleccion/polimero-mundial/brazil-10-reais-2000/",
+        "image": "https://notofilia.com/uploads/brazil-banco-central-10-reais-2000-polimero.jpg",
         "description": "Billete conmemorativo de 10 Reais de polímero emitido por Banco Central do Brasil, con el retrato de Pedro Álvares Cabral por los 500 años del Descubrimiento de Brasil.",
         "dateCreated": "2000",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]

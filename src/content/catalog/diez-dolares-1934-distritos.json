@@ -32,33 +32,33 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Sistema de la Reserva Federal",
-            "item": "https://www.notofilia.com/coleccion/reserva-federal/"
+            "item": "https://notofilia.com/coleccion/reserva-federal/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "$10, Serie de 1934 — Cuatro Distritos",
-            "item": "https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/"
+            "item": "https://notofilia.com/coleccion/diez-dolares-1934-distritos/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "Billete de $10 — Reserva Federal de Chicago, Serie 1934",
-        "url": "https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/",
-        "image": "https://www.notofilia.com/uploads/us-federal-reserve-note-10-dollars-1934-chicago.jpg",
+        "url": "https://notofilia.com/coleccion/diez-dolares-1934-distritos/",
+        "image": "https://notofilia.com/uploads/us-federal-reserve-note-10-dollars-1934-chicago.jpg",
         "description": "Federal Reserve Note de $10, Serie 1934, distrito G (Chicago). Serial G30986728A. Friedberg FR-2004G. Colección Notofilia.",
         "dateCreated": "1934",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -71,7 +71,6 @@
     "kind": "banknote",
     "title": "Diez Dólares, Serie de 1934",
     "subtitle": "Un mismo diseño, cuatro Bancos de la Reserva Federal: Cleveland, Richmond, Chicago y San Francisco",
-    "dateOrSeries": "{{ note.series }}",
     "breadcrumb": [
       {
         "name": "Notofilia",
@@ -89,14 +88,11 @@
       "stacked": {
         "src": "/uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.jpg",
         "srcWebp": "/uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "$10 Reserva Federal 1934 — Cuatro Distritos | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
-    "metadata": {
-      "series": "{{ note.series }}",
-      "catalogNumber": "{{ note.catalogRef }}"
-    },
+    "metadata": {},
     "render": "astro-static",
     "eyebrow": "Federal Reserve Note · Serie de 1934 · Cuatro Distritos"
   },

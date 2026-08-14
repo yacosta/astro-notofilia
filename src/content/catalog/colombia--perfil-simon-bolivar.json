@@ -26,26 +26,26 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Simón Bolívar",
-            "item": "https://www.notofilia.com/coleccion/colombia/perfil-simon-bolivar/"
+            "item": "https://notofilia.com/coleccion/colombia/perfil-simon-bolivar/"
           }
         ]
       },
       {
         "@type": "Person",
         "name": "Simón José Antonio de la Santísima Trinidad Bolívar Palacios",
-        "url": "https://www.notofilia.com/coleccion/colombia/perfil-simon-bolivar/",
+        "url": "https://notofilia.com/coleccion/colombia/perfil-simon-bolivar/",
         "birthDate": "1783-07-24",
         "deathDate": "1830-12-17",
         "birthPlace": {

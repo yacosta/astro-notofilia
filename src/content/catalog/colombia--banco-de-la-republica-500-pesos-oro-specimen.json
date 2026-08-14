@@ -26,32 +26,32 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "El Banco de la República — Quinientos Pesos Oro (Specimen)",
-            "item": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/"
+            "item": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/"
           }
         ]
       },
       {
         "@type": "CreativeWork",
         "name": "El Banco de la República — Quinientos Pesos Oro, especímenes de 1947, 1984, 1989 y 1993",
-        "url": "https://www.notofilia.com/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/",
-        "image": "https://www.notofilia.com/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.jpg",
+        "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/",
+        "image": "https://notofilia.com/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.jpg",
         "description": "Especímenes de Quinientos Pesos Oro emitidos por El Banco de la República, Colombia, entre 1947 y 1993: el primero con un retrato militar temprano, y los tres siguientes con el retrato de Francisco de Paula Santander y la Casa de la Moneda de Bogotá en el reverso.",
         "creditText": "Colección privada de Notofilia.com — no está a la venta",
         "inLanguage": "es",
         "isPartOf": {
-          "@id": "https://www.notofilia.com/#website"
+          "@id": "https://notofilia.com/#website"
         }
       }
     ]
@@ -82,14 +82,11 @@
       "stacked": {
         "src": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.jpg",
         "srcWebp": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.webp",
-        "alt": "{{ note.alt }}"
+        "alt": "Quinientos Pesos Oro Specimen, Banco de la | Notofilia — anverso y reverso"
       },
       "defaultView": "stacked"
     },
-    "metadata": {
-      "denomination": "{{ note.denomination }}",
-      "condition": "{{ note.condition }}"
-    },
+    "metadata": {},
     "render": "astro-static",
     "eyebrow": "Bogotá, Colombia · Especímenes de Quinientos Pesos Oro"
   },
