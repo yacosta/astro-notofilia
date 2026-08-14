@@ -937,6 +937,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.notofilia.com/editorial/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.notofilia.com/glosario/</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
