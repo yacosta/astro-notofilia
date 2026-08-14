@@ -31,14 +31,21 @@ export function computeCollectionStats(
     const ROOTS = new Set([
       '/',
       '/coleccion/',
+      '/coleccion/billete-obsoleto-estados-unidos/',
       '/coleccion/reserva-federal/',
       '/coleccion/departamento-del-tesoro-de-ee-uu/',
       '/coleccion/moneda-colonial/',
       '/coleccion/colombia/',
       '/coleccion/colombia/banca-libre/',
+      '/coleccion/colombia/emisiones-en-el-extranjero/',
       '/coleccion/puerto-rico/',
       '/coleccion/ecuador/',
       '/coleccion/moneda-colonial-espanola/',
+      '/coleccion/polimero-mundial/',
+      '/coleccion/pop-art/',
+      '/coleccion/certificados-de-pago-militar/',
+      '/coleccion/emisiones-promocionales/',
+      '/coleccion/food-coupons-usda/',
     ]);
     const CF: Record<string, boolean> = {
       colombia: true,
