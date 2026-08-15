@@ -84,7 +84,7 @@ export const RECENT_PIECES: RecentPiece[] = [
     href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
     title: 'MPC Serie 681 — Un Dólar',
     description: 'Vietnam (1969–1970), Fr. M915 / Schwan S915-1, piloto USAF y F-100 Super Sabre.',
-    imageBase: 'mpc-series-681-1-dollar',
+    imageBase: 'mpc-series-681-1-dollar-c10102847',
     imageAlt:
       'Anverso y reverso del MPC Serie 681 de un dólar con piloto USAF y F-100 Super Sabre',
   },
