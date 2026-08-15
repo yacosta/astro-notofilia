@@ -151,21 +151,21 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await expect(notafilia.locator(':scope > summary')).toContainText('Colección virtual - Notafilia');
   await expect(numismatica).not.toHaveAttribute('open');
   await expect(notafilia).not.toHaveAttribute('open');
-  await expect(page.getByRole('link', { name: 'Catálogo de Numismática' })).toBeHidden();
-  await expect(page.getByRole('link', { name: 'Explorar la colección' })).toBeHidden();
+  await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeHidden();
+  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toBeHidden();
 
   await numismatica.locator(':scope > summary').click();
   await expect(numismatica).toHaveAttribute('open');
-  await expect(page.getByRole('link', { name: 'Catálogo de Numismática' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
 
   await notafilia.locator(':scope > summary').click();
   await expect(notafilia).toHaveAttribute('open');
-  await expect(page.getByRole('link', { name: 'Explorar la colección' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toBeVisible();
 
   const colombia = page.locator('#nav-sec-colombia');
   await expect(colombia).not.toHaveAttribute('open');
   await colombia.locator(':scope > summary').click();
   await expect(colombia).toHaveAttribute('open');
-  await expect(page.getByRole('link', { name: 'Catálogo de Billetes de Colombia' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Catálogo de Billetes de Colombia' })).toBeVisible();
 });
