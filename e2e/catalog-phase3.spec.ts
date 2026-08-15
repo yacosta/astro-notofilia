@@ -178,6 +178,30 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(ficha.getByText('Valoración de catálogo').first()).toBeVisible();
   await expect(ficha.getByRole('heading', { name: 'Este ejemplar' })).toBeVisible();
   await expect(ficha.getByText('14 ejemplares certificados').first()).toBeVisible();
+  const fuentes = ficha.locator('section').filter({ has: page.getByRole('heading', { name: 'Fuentes' }) });
+  await expect(fuentes.getByRole('heading', { name: 'Fuentes' })).toBeVisible();
+  const sourceHrefs = [
+    'https://www.bep.gov/media/1041/download?inline=',
+    'https://www.coin-currency.com/page8.html',
+    'https://www.money.org/uploads/Mili.pdf',
+    'https://www.greysheet.com/publications/greensheet',
+    'https://notes.www.collectors-society.com/registry/notes/SlotScoreDetail.aspx?SlotID=5896',
+    'https://www.pmgnotes.com/paper-money-grading/grading-scale/',
+    'https://www.pmgnotes.com/news/article/4845/aim-high-with-military-payment-certificates/',
+    'https://art-hanoi.com/collection/vnpaper/681.html',
+    'https://coinweek.com/vietnam-era-1969-military-payment-certificate-series-681/',
+    'https://coinweek.com/money-of-necessity-u-s-military-payment-certificates/',
+    'https://www.worldbanknotescoins.com/2014/11/us-military-payment-certificate-one-dollar-mpc-series-681.html',
+    'http://banknote.ws/COLLECTION/countries/AME/USA/USA-MIL/USAM0079.htm',
+    'https://collectingpapermoney.spmc.org/wiki/Collecting_U.S._Military_Payment_Certificates_%28MPC%29',
+    'https://en.wikipedia.org/wiki/Military_payment_certificate',
+  ];
+  for (const href of sourceHrefs) {
+    await expect(fuentes.locator(`a[href="${href}"]`)).toHaveCount(1);
+  }
+  await expect(fuentes.getByText('S915-1 (regular) y S915-1r (reemplazo)')).toBeVisible();
+  await expect(fuentes.getByText('ISBN 0-931960-54-1')).toBeVisible();
+  await expect(fuentes.locator('a[target="_blank"][rel="noopener noreferrer"]')).toHaveCount(sourceHrefs.length);
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });
