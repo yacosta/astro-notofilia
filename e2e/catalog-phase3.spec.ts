@@ -164,7 +164,7 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(page.getByRole('heading', { level: 1, name: 'Un Dólar — Serie 681' })).toBeVisible();
   const ficha = page.locator('#main-content');
   await expect(ficha.getByText('Fr. M915 · Schwan S915-1 · Pick M79').first()).toBeVisible();
-  await expect(ficha.getByText('C10102047C').first()).toBeVisible();
+  await expect(ficha.getByText('C10102847C').first()).toBeVisible();
   await expect(ficha.getByText('22.400.000').first()).toBeVisible();
   await expect(ficha.getByText('S915-1r').first()).toBeVisible();
   await expect(ficha.getByText('C22400000C').first()).toBeVisible();
