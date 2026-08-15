@@ -138,3 +138,34 @@ test('collection hub groups banknotes by country', async ({ page }) => {
   expect(colombiaHrefs.every((href) => href?.includes('/coleccion/colombia/'))).toBe(true);
   expect(usHrefs.every((href) => !href?.includes('/coleccion/colombia/'))).toBe(true);
 });
+
+test('menu drawer restores collection accordions', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Abrir menú' }).click();
+  const drawer = page.locator('#site-menu-drawer');
+  await expect(drawer).toBeVisible();
+
+  const numismatica = page.locator('#nav-sec-numismatica');
+  const notafilia = page.locator('#nav-sec-notafilia');
+  await expect(numismatica.locator(':scope > summary')).toContainText('Colección virtual - Numismática');
+  await expect(notafilia.locator(':scope > summary')).toContainText('Colección virtual - Notafilia');
+  await expect(numismatica).not.toHaveAttribute('open');
+  await expect(notafilia).not.toHaveAttribute('open');
+  await expect(page.getByRole('link', { name: 'Catálogo de Numismática' })).toBeHidden();
+  await expect(page.getByRole('link', { name: 'Explorar la colección' })).toBeHidden();
+
+  await numismatica.locator(':scope > summary').click();
+  await expect(numismatica).toHaveAttribute('open');
+  await expect(page.getByRole('link', { name: 'Catálogo de Numismática' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+
+  await notafilia.locator(':scope > summary').click();
+  await expect(notafilia).toHaveAttribute('open');
+  await expect(page.getByRole('link', { name: 'Explorar la colección' })).toBeVisible();
+
+  const colombia = page.locator('#nav-sec-colombia');
+  await expect(colombia).not.toHaveAttribute('open');
+  await colombia.locator(':scope > summary').click();
+  await expect(colombia).toHaveAttribute('open');
+  await expect(page.getByRole('link', { name: 'Catálogo de Billetes de Colombia' })).toBeVisible();
+});
