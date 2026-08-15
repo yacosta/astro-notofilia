@@ -459,12 +459,36 @@ const jsonLd = {
         margin: 0;
         padding: 0;
       }
-      :global(.catalog-results[data-view='grid']) {
+      :global(.catalog-country-group + .catalog-country-group) {
+        margin-top: 56px;
+      }
+      :global(.catalog-country-kicker) {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+        margin-bottom: 10px;
+      }
+      :global(.catalog-country-title) {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(22px, 2.6vw, 30px);
+        line-height: 1.15;
+        color: #d8d2cd;
+        margin: 0 0 24px;
+      }
+      :global(.catalog-result-list) {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      :global(.catalog-results[data-view='grid'] .catalog-result-list) {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 24px;
       }
-      :global(.catalog-results[data-view='list']) {
+      :global(.catalog-results[data-view='list'] .catalog-result-list) {
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -682,7 +706,7 @@ const jsonLd = {
           <span class="hub-kicker">Explorar</span>
           <h2 id="browse-heading">Catálogo completo</h2>
           <p class="hub-section-lead">
-            Filtra por país, emisor, año, denominación, tipo, material, condición y referencia de catálogo.
+            Las piezas se agrupan por país. Filtra por emisor, año, denominación, tipo, material, condición y referencia de catálogo.
           </p>
 
           <div id="catalog-browser" data-loading>
@@ -815,7 +839,7 @@ const jsonLd = {
               <p id="catalog-result-count" aria-live="polite">Cargando…</p>
             </div>
             <p id="catalog-empty" hidden>No hay piezas con esos criterios. Prueba a ampliar el filtro.</p>
-            <ul id="catalog-results" class="catalog-results" data-view="grid"></ul>
+            <div id="catalog-results" class="catalog-results" data-view="grid"></div>
           </div>
         </section>
       </main>

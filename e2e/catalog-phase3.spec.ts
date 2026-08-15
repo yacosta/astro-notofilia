@@ -114,3 +114,27 @@ test('collection hub points to the coins catalog', async ({ page }) => {
   await page.goto('/coleccion/');
   await expect(page.getByRole('link', { name: /Catálogo de numismática/i }).first()).toBeVisible();
 });
+
+test('collection hub groups banknotes by country', async ({ page }) => {
+  await page.goto('/coleccion/');
+  await expect(page.locator('#catalog-browser')).not.toHaveAttribute('data-loading', {
+    timeout: 15_000,
+  });
+  const colombia = page.locator('.catalog-country-group[data-country="Colombia"]');
+  const unitedStates = page.locator('.catalog-country-group[data-country="Estados Unidos"]');
+  await expect(page.getByRole('heading', { level: 3, name: 'Colombia' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Estados Unidos' })).toBeVisible();
+  await expect(colombia.locator('.catalog-result-link').first()).toBeVisible();
+  await expect(unitedStates.locator('.catalog-result-link').first()).toBeVisible();
+
+  const colombiaHrefs = await colombia.locator('.catalog-result-link').evaluateAll((els) =>
+    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
+  );
+  const usHrefs = await unitedStates.locator('.catalog-result-link').evaluateAll((els) =>
+    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
+  );
+  expect(colombiaHrefs.length).toBeGreaterThan(0);
+  expect(usHrefs.length).toBeGreaterThan(0);
+  expect(colombiaHrefs.every((href) => href?.includes('/coleccion/colombia/'))).toBe(true);
+  expect(usHrefs.every((href) => !href?.includes('/coleccion/colombia/'))).toBe(true);
+});

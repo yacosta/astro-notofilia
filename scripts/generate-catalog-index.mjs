@@ -103,25 +103,12 @@ function fact(html, label) {
 }
 
 function normalizeCountry(raw, catalogPath) {
-  const text = (raw || '').trim();
-  const lower = text.toLowerCase();
-  if (lower.includes('estados unidos') || lower.includes('ee. uu') || lower.includes('ee uu')) {
-    return 'Estados Unidos';
-  }
-  if (lower.includes('puerto rico')) return 'Puerto Rico';
-  if (lower.startsWith('colombia') || lower.includes('república de colombia') || lower.includes('nueva granada')) {
-    return 'Colombia';
-  }
-  if (lower.includes('ecuador')) return 'Ecuador';
-  if (lower.includes('guatemala')) return 'Guatemala';
-  if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
-  if (lower.includes('españa') || lower.includes('nueva granada')) return 'España';
-
   const segs = catalogPath.split('/').filter(Boolean);
   const section = segs[1] || '';
   if (section === 'colombia') return 'Colombia';
   if (section === 'puerto-rico') return 'Puerto Rico';
   if (section === 'ecuador') return 'Ecuador';
+  if (section === 'moneda-colonial-espanola') return 'España';
   if (section === 'polimero-mundial') {
     const slug = segs[2] || '';
     const known = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
@@ -143,7 +130,30 @@ function normalizeCountry(raw, catalogPath) {
   ) {
     return 'Estados Unidos';
   }
-  if (section === 'moneda-colonial-espanola') return 'España';
+
+  const text = (raw || '').trim();
+  const lower = text.toLowerCase();
+  if (
+    lower.includes('estados unidos de colombia') ||
+    lower.includes('estados unidos de nueva granada') ||
+    lower.includes('nueva granada') ||
+    lower.startsWith('colombia') ||
+    lower.includes('república de colombia')
+  ) {
+    return 'Colombia';
+  }
+  if (
+    lower.includes('estados unidos') ||
+    lower.includes('ee. uu') ||
+    lower.includes('ee uu')
+  ) {
+    return 'Estados Unidos';
+  }
+  if (lower.includes('puerto rico')) return 'Puerto Rico';
+  if (lower.includes('ecuador')) return 'Ecuador';
+  if (lower.includes('guatemala')) return 'Guatemala';
+  if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
+  if (lower.includes('españa')) return 'España';
 
   // Flat U.S. leaves under /coleccion/<slug>/
   if (segs.length >= 2 && !HUB_PATHS.has(catalogPath)) return 'Estados Unidos';
@@ -244,7 +254,10 @@ for (const file of files) {
     continue;
   }
 
-  const countryRaw = fact(template, 'País') || fact(template, 'País / Virreinato');
+  const countryRaw =
+    data.record?.country ||
+    fact(template, 'País') ||
+    fact(template, 'País / Virreinato');
   const issuer =
     fact(template, 'Entidad Emisora') ||
     fact(template, 'Ceca / Ensayador') ||

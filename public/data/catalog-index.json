@@ -1,32 +1,27 @@
 {
-  "generatedAt": "2026-08-15T01:17:51.016Z",
+  "generatedAt": "2026-08-15T01:48:44.418Z",
   "count": 128,
   "pieceCount": 112,
   "countries": [
     {
       "name": "Colombia",
-      "count": 36,
+      "count": 43,
       "slug": "colombia"
     },
     {
       "name": "Estados Unidos",
-      "count": 36,
+      "count": 29,
       "slug": "estados-unidos"
     },
     {
       "name": "España",
-      "count": 6,
+      "count": 7,
       "slug": "espana"
     },
     {
       "name": "Puerto Rico",
       "count": 4,
       "slug": "puerto-rico"
-    },
-    {
-      "name": "Guatemala",
-      "count": 2,
-      "slug": "guatemala"
     },
     {
       "name": "Bangladesh",
@@ -67,6 +62,11 @@
       "name": "Ecuador",
       "count": 1,
       "slug": "ecuador"
+    },
+    {
+      "name": "Guatemala",
+      "count": 1,
+      "slug": "guatemala"
     },
     {
       "name": "Haití",
@@ -862,7 +862,7 @@
       "image": "/uploads/guatemala-banco-colombiano-1-peso-1900.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Guatemala",
+      "country": "Colombia",
       "issuer": "El Banco Colombiano en Guatemala, fundado en 1878 por el Dr. Recaredo de Villa con capital antioqueño; emitió sus propios billetes hasta 1901",
       "denomination": "Un Peso, pagadero a la vista al portador en moneda corriente y efectiva",
       "catalogRef": "Pick S101",
@@ -872,7 +872,7 @@
       "year": 1900,
       "material": "",
       "kind": "banknote",
-      "searchText": "el banco colombiano — un peso, guatemala (1900) ficha de catálogo numismático: billete de un peso de el banco colombiano, emitido en la ciudad de guatemala el 17 de abril de 1900… guatemala el banco colombiano en guatemala, fundado en 1878 por el dr. recaredo de villa con capital antioqueño; emitió sus propios billetes hasta 1901 un peso, pagadero a la vista al portador en moneda corriente y efectiva pick s101 banknote banco colombiano guatemala billete guatemala 1900 un peso guatemala pick s101 emisiones colombianas en el extranjero notafilia colombiana"
+      "searchText": "el banco colombiano — un peso, guatemala (1900) ficha de catálogo numismático: billete de un peso de el banco colombiano, emitido en la ciudad de guatemala el 17 de abril de 1900… colombia el banco colombiano en guatemala, fundado en 1878 por el dr. recaredo de villa con capital antioqueño; emitió sus propios billetes hasta 1901 un peso, pagadero a la vista al portador en moneda corriente y efectiva pick s101 banknote banco colombiano guatemala billete guatemala 1900 un peso guatemala pick s101 emisiones colombianas en el extranjero notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-antioquia-libranza-10-centavos-1900",
@@ -1435,7 +1435,7 @@
       "image": "/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco de la Unión, casa bancaria privada de Bogotá operada por Palau, Corrales & Compañía",
       "denomination": "Cinco Pesos, en moneda legal corriente",
       "catalogRef": "Pick n.&deg; S866a (Standard Catalog of World Paper Money, sección de bancos privados de Colombia)",
@@ -1445,7 +1445,7 @@
       "year": 1883,
       "material": "",
       "kind": "banknote",
-      "searchText": "cinco pesos y diez pesos, el banco de la unión ficha de catálogo numismático: billetes de cinco pesos y diez pesos de el banco de la unión, palau corrales & compañía, bogotá, 1883… estados unidos el banco de la unión, casa bancaria privada de bogotá operada por palau, corrales & compañía cinco pesos, en moneda legal corriente pick n.&deg; s866a (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco de la union bogota palau corrales y compania billete colombiano siglo xix banca libre bogota resello banco nacional cinco pesos 1883 diez pesos 1883"
+      "searchText": "cinco pesos y diez pesos, el banco de la unión ficha de catálogo numismático: billetes de cinco pesos y diez pesos de el banco de la unión, palau corrales & compañía, bogotá, 1883… colombia el banco de la unión, casa bancaria privada de bogotá operada por palau, corrales & compañía cinco pesos, en moneda legal corriente pick n.&deg; s866a (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco de la union bogota palau corrales y compania billete colombiano siglo xix banca libre bogota resello banco nacional cinco pesos 1883 diez pesos 1883"
     },
     {
       "id": "colombia--banco-de-medellin-50-centavos",
@@ -1552,7 +1552,7 @@
       "image": "/uploads/colombia-banco-de-panama-1-peso.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco de Panamá, establecido en la ciudad de Panamá en 1869",
       "denomination": "Un Peso, pagadero al portador y a la vista en efectivo",
       "catalogRef": "Pick n.&deg; 6",
@@ -1562,7 +1562,7 @@
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso y cinco pesos, el banco de panamá ficha de catálogo numismático: billetes… estados unidos el banco de panamá, establecido en la ciudad de panamá en 1869 un peso, pagadero al portador y a la vista en efectivo pick n.&deg; 6 banknote banco de panama billete de panama siglo xix panama colombia un peso panama cinco pesos panama pick 6 pick 8 banca libre panama"
+      "searchText": "un peso y cinco pesos, el banco de panamá ficha de catálogo numismático: billetes… colombia el banco de panamá, establecido en la ciudad de panamá en 1869 un peso, pagadero al portador y a la vista en efectivo pick n.&deg; 6 banknote banco de panama billete de panama siglo xix panama colombia un peso panama cinco pesos panama pick 6 pick 8 banca libre panama"
     },
     {
       "id": "colombia--banco-del-cauca-1-5-pesos-1888",
@@ -1641,7 +1641,7 @@
       "image": "/uploads/colombia-banco-internacional-1-peso-1884.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco Internacional, banco privado con sede en Bogotá",
       "denomination": "Un Peso, en moneda corriente",
       "catalogRef": "Sin número Pick confirmado en las fuentes consultadas",
@@ -1651,7 +1651,7 @@
       "year": 1884,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso y diez pesos, el banco internacional ficha de catálogo numismático: billetes de un peso y diez pesos de el banco internacional, bogotá, 1884… estados unidos el banco internacional, banco privado con sede en bogotá un peso, en moneda corriente sin número pick confirmado en las fuentes consultadas banknote banco internacional bogota billete colombiano siglo xix banca libre bogota resello banco nacional un peso 1884 diez pesos 1884"
+      "searchText": "un peso y diez pesos, el banco internacional ficha de catálogo numismático: billetes de un peso y diez pesos de el banco internacional, bogotá, 1884… colombia el banco internacional, banco privado con sede en bogotá un peso, en moneda corriente sin número pick confirmado en las fuentes consultadas banknote banco internacional bogota billete colombiano siglo xix banca libre bogota resello banco nacional un peso 1884 diez pesos 1884"
     },
     {
       "id": "colombia--banco-nacional-25-pesos-1895",
@@ -1703,7 +1703,7 @@
       "image": "/uploads/colombia-banco-union-cartagena-1-peso-1880s.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco Unión, banco privado de Cartagena — entidad distinta de El Banco de la Unión de Bogotá",
       "denomination": "Un Peso, en moneda legal corriente",
       "catalogRef": "Pick n.&deg; S865 (Standard Catalog of World Paper Money, sección de bancos privados de Colombia)",
@@ -1713,7 +1713,7 @@
       "year": 1880,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso, el banco unión (cartagena, 188x) ficha de catálogo numismático: billete de un peso de el banco unión, cartagena, colombia, década de 1880, con viñeta central de un velero. estados unidos el banco unión, banco privado de cartagena — entidad distinta de el banco de la unión de bogotá un peso, en moneda legal corriente pick n.&deg; s865 (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco union cartagena billete colombiano siglo xix banca libre cartagena un peso 188x notafilia colombiana"
+      "searchText": "un peso, el banco unión (cartagena, 188x) ficha de catálogo numismático: billete de un peso de el banco unión, cartagena, colombia, década de 1880, con viñeta central de un velero. colombia el banco unión, banco privado de cartagena — entidad distinta de el banco de la unión de bogotá un peso, en moneda legal corriente pick n.&deg; s865 (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco union cartagena billete colombiano siglo xix banca libre cartagena un peso 188x notafilia colombiana"
     },
     {
       "id": "colombia--boyaca-libranza-500-pesos-1883",
@@ -1735,7 +1735,7 @@
       "image": "/uploads/colombia-boyaca-libranza-500-pesos-1883.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería General, Estado de Boyacá",
       "denomination": "Quinientos Pesos",
       "catalogRef": "",
@@ -1745,7 +1745,7 @@
       "year": 1883,
       "material": "",
       "kind": "banknote",
-      "searchText": "libranza de 500 pesos, estado de boyacá (1883) ficha de catálogo: libranza fiscal de 500 pesos del estado de boyacá, 1883, contra la renta de salinas, para el camino de chiquinquirá al magdalena. estados unidos tesorería general, estado de boyacá quinientos pesos banknote libranza bono fiscal estado de boyaca renta de salinas chiquinquira magdalena colombia siglo xix aníbal galindo notafilia colombiana"
+      "searchText": "libranza de 500 pesos, estado de boyacá (1883) ficha de catálogo: libranza fiscal de 500 pesos del estado de boyacá, 1883, contra la renta de salinas, para el camino de chiquinquirá al magdalena. colombia tesorería general, estado de boyacá quinientos pesos banknote libranza bono fiscal estado de boyaca renta de salinas chiquinquira magdalena colombia siglo xix aníbal galindo notafilia colombiana"
     },
     {
       "id": "colombia--cartagena-1-real-1813",
@@ -1889,7 +1889,7 @@
       "image": "/uploads/colombia-estado-soberano-panama-3-pesos-1865.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería del Estado Soberano de Panamá",
       "denomination": "Tres Pesos",
       "catalogRef": "Pick n.&deg; 80",
@@ -1899,7 +1899,7 @@
       "year": 1865,
       "material": "",
       "kind": "banknote",
-      "searchText": "tres pesos, estado soberano de panamá (1865) ficha de catálogo numismático: billete de tesorería de tres pesos del estado soberano de panamá, 1865, con el retrato de tomás herrera. estados unidos tesorería del estado soberano de panamá tres pesos pick n.&deg; 80 banknote estado soberano de panama billete de tesoreria tomas herrera ley 17 de 1865 tres pesos panama estados unidos de colombia notafilia colombiana"
+      "searchText": "tres pesos, estado soberano de panamá (1865) ficha de catálogo numismático: billete de tesorería de tres pesos del estado soberano de panamá, 1865, con el retrato de tomás herrera. colombia tesorería del estado soberano de panamá tres pesos pick n.&deg; 80 banknote estado soberano de panama billete de tesoreria tomas herrera ley 17 de 1865 tres pesos panama estados unidos de colombia notafilia colombiana"
     },
     {
       "id": "colombia--nueva-granada-1-peso-1861",
@@ -1919,7 +1919,7 @@
       "image": "/uploads/colombia-nueva-granada-1-peso-1861.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería Jeneral de los Estados Unidos de Nueva Granada, Bogotá",
       "denomination": "Un Peso (equivalente a diez reales)",
       "catalogRef": "Pick #61",
@@ -1929,7 +1929,7 @@
       "year": 1861,
       "material": "papel",
       "kind": "banknote",
-      "searchText": "un peso 1861, nueva granada ficha de catálogo numismático: billete de un peso de 1861, tesorería jeneral de los estados unidos de nueva granada, bogotá. estados unidos tesorería jeneral de los estados unidos de nueva granada, bogotá un peso (equivalente a diez reales) pick #61 papel banknote estados unidos de nueva granada un peso 1861 tesorería jeneral notafilia colombia mosquera papel moneda colombiano numismática colombiana"
+      "searchText": "un peso 1861, nueva granada ficha de catálogo numismático: billete de un peso de 1861, tesorería jeneral de los estados unidos de nueva granada, bogotá. colombia tesorería jeneral de los estados unidos de nueva granada, bogotá un peso (equivalente a diez reales) pick #61 papel banknote estados unidos de nueva granada un peso 1861 tesorería jeneral notafilia colombia mosquera papel moneda colombiano numismática colombiana"
     },
     {
       "id": "colombia--perfil-antonio-narino",
@@ -2839,7 +2839,7 @@
       "image": "/uploads/colombia-2-escudos-felipe-v-santa-fe-bogota.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Colombia",
+      "country": "España",
       "issuer": "",
       "denomination": "2 Escudos de oro (“doblón”)",
       "catalogRef": "KM #17.2 · Restrepo M80 · Calicó Tipo 243 · Friedberg Fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador)",
@@ -2849,7 +2849,7 @@
       "year": null,
       "material": "metal",
       "kind": "coin",
-      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. colombia 2 escudos de oro (“doblón”) km #17.2 · restrepo m80 · calicó tipo 243 · friedberg fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
+      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. españa 2 escudos de oro (“doblón”) km #17.2 · restrepo m80 · calicó tipo 243 · friedberg fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
     },
     {
       "id": "polimero-mundial--bangladesh-10-taka-2000",

@@ -168,14 +168,11 @@
     var copy = list.slice();
     if (state.sort === 'country') {
       copy.sort(function (a, b) {
-        return (
-          (a.country || '').localeCompare(b.country || '', 'es') ||
-          (a.title || '').localeCompare(b.title || '', 'es')
-        );
+        return (a.title || '').localeCompare(b.title || '', 'es');
       });
     } else if (state.sort === 'year') {
       copy.sort(function (a, b) {
-        return (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title, 'es');
+        return (a.year || 0) - (b.year || 0) || a.title.localeCompare(b.title, 'es');
       });
     } else if (state.sort === 'denom') {
       copy.sort(function (a, b) {
@@ -189,6 +186,36 @@
       });
     }
     return copy;
+  }
+
+  function countrySlug(name) {
+    var slug = String(name || 'otros').toLowerCase();
+    try {
+      slug = slug.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    } catch (_) {}
+    return (
+      'catalog-country-' +
+      slug.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+    );
+  }
+
+  function groupByCountry(list) {
+    var buckets = {};
+    var names = [];
+    list.forEach(function (item) {
+      var name = item.country || 'Otros';
+      if (!buckets[name]) {
+        buckets[name] = [];
+        names.push(name);
+      }
+      buckets[name].push(item);
+    });
+    names.sort(function (a, b) {
+      return a.localeCompare(b, 'es', { sensitivity: 'base' });
+    });
+    return names.map(function (name) {
+      return { name: name, items: buckets[name] };
+    });
   }
 
   function imageFor(item) {
@@ -207,6 +234,42 @@
     );
   }
 
+  function cardHtml(item) {
+    var meta = [
+      kindLabel(item.kind),
+      item.year || item.dateLabel || '',
+      materialLabel(item.material),
+    ]
+      .filter(Boolean)
+      .join(' · ');
+    var sub = [item.denomination, item.issuer].filter(Boolean).join(' — ');
+    return (
+      '<li class="catalog-result">' +
+      '<a class="catalog-result-link" href="' +
+      escapeAttr(item.path) +
+      '">' +
+      '<span class="catalog-result-media" aria-hidden="true">' +
+      imageFor(item) +
+      '</span>' +
+      '<span class="catalog-result-body">' +
+      '<span class="catalog-result-meta">' +
+      escapeHtml(meta) +
+      '</span>' +
+      '<span class="catalog-result-title">' +
+      escapeHtml(item.title) +
+      '</span>' +
+      (sub
+        ? '<span class="catalog-result-sub">' + escapeHtml(sub) + '</span>'
+        : '') +
+      (item.catalogRef
+        ? '<span class="catalog-result-ref">' +
+          escapeHtml(item.catalogRef) +
+          '</span>'
+        : '') +
+      '</span></a></li>'
+    );
+  }
+
   function render() {
     var filtered = sortItems(state.items.filter(matches));
     if (countEl) {
@@ -219,41 +282,29 @@
     if (!resultsEl) return;
 
     resultsEl.setAttribute('data-view', state.view);
-    resultsEl.innerHTML = filtered
-      .map(function (item) {
-        var meta = [
-          kindLabel(item.kind),
-          item.country,
-          item.year || item.dateLabel || '',
-          materialLabel(item.material),
-        ]
-          .filter(Boolean)
-          .join(' · ');
-        var sub = [item.denomination, item.issuer].filter(Boolean).join(' — ');
+    var groups = groupByCountry(filtered);
+    resultsEl.innerHTML = groups
+      .map(function (group) {
+        var headingId = countrySlug(group.name);
+        var countLabel =
+          group.items.length === 1 ? '1 ficha' : group.items.length + ' fichas';
         return (
-          '<li class="catalog-result">' +
-          '<a class="catalog-result-link" href="' +
-          escapeAttr(item.path) +
+          '<section class="catalog-country-group" aria-labelledby="' +
+          escapeAttr(headingId) +
+          '" data-country="' +
+          escapeAttr(group.name) +
           '">' +
-          '<span class="catalog-result-media" aria-hidden="true">' +
-          imageFor(item) +
+          '<span class="catalog-country-kicker">' +
+          escapeHtml(countLabel) +
           '</span>' +
-          '<span class="catalog-result-body">' +
-          '<span class="catalog-result-meta">' +
-          escapeHtml(meta) +
-          '</span>' +
-          '<span class="catalog-result-title">' +
-          escapeHtml(item.title) +
-          '</span>' +
-          (sub
-            ? '<span class="catalog-result-sub">' + escapeHtml(sub) + '</span>'
-            : '') +
-          (item.catalogRef
-            ? '<span class="catalog-result-ref">' +
-              escapeHtml(item.catalogRef) +
-              '</span>'
-            : '') +
-          '</span></a></li>'
+          '<h3 class="catalog-country-title" id="' +
+          escapeAttr(headingId) +
+          '">' +
+          escapeHtml(group.name) +
+          '</h3>' +
+          '<ul class="catalog-result-list">' +
+          group.items.map(cardHtml).join('') +
+          '</ul></section>'
         );
       })
       .join('');
