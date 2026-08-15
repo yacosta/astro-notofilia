@@ -152,7 +152,7 @@ test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ 
   await expect(meta).not.toContainText(/specimen/i);
 });
 
-test('MPC Serie 681 $1 is listed on the hub and documents Schwan-915', async ({ page }) => {
+test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915-1', async ({ page }) => {
   await page.goto('/coleccion/certificados-de-pago-militar/');
   await expect(page.getByRole('heading', { level: 1, name: 'Certificados de Pago Militar (MPC)' })).toBeVisible();
   const card = page.locator('.catalog-banknote-card[href="/coleccion/certificados-de-pago-militar/1-dolar-serie-681/"]');
@@ -162,9 +162,13 @@ test('MPC Serie 681 $1 is listed on the hub and documents Schwan-915', async ({ 
 
   await page.goto('/coleccion/certificados-de-pago-militar/1-dolar-serie-681/');
   await expect(page.getByRole('heading', { level: 1, name: 'Un Dólar — Serie 681' })).toBeVisible();
-  await expect(page.getByText('Schwan-915')).toBeVisible();
-  await expect(page.getByText('Pick M79')).toBeVisible();
-  await expect(page.getByText('C10102847')).toBeVisible();
+  await expect(page.getByText('Fr. M915')).toBeVisible();
+  await expect(page.getByText('Schwan S915-1')).toBeVisible();
+  await expect(page.getByText('C10102047C')).toBeVisible();
+  await expect(page.getByText('22.400.000')).toBeVisible();
+  await expect(page.getByText('S915-1r')).toBeVisible();
+  await expect(page.getByText('C22400000C')).toBeVisible();
+  await expect(page.getByText('C00560000')).toBeVisible();
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });

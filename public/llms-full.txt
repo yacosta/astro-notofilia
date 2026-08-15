@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~143 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~144 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · glosario · perfiles.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -46,7 +46,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 - [Catálogo de Moneda Colonial Española](https://notofilia.com/coleccion/moneda-colonial-espanola/): Catálogo de moneda colonial española acuñada en las cecas americanas: macuquinas de oro y plata del Imperio español. Colección Notofilia.
 - [Sistema de la Reserva Federal](https://notofilia.com/coleccion/reserva-federal/): Catálogo de billetes emitidos por el Sistema de la Reserva Federal de EE. UU., incluyendo emisiones de emergencia de la Segunda Guerra…
 - [Departamento del Tesoro de EE. UU.](https://notofilia.com/coleccion/departamento-del-tesoro-de-ee-uu/): Catálogo de billetes emitidos por el Departamento del Tesoro de los Estados Unidos: certificados de oro y más. Colección Notofilia.
-- [Certificados de Pago Militar (MPC) EE. UU.](https://notofilia.com/coleccion/certificados-de-pago-militar/): Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.
+- [Certificados de Pago Militar (MPC) EE. UU.](https://notofilia.com/coleccion/certificados-de-pago-militar/): Certificados de pago militar (MPC) de EE. UU., 1946–1973: Vietnam, Series 641, 681 y 692. Catálogo Notofilia.
 - [Pop Art](https://notofilia.com/coleccion/pop-art/): Catálogo Pop Art: billetes y moneda alterados con estética pop, giclée sobre curso legal y exonumia contemporánea en la colección Notofilia.
 - [Scrip Promocional de EE. UU.](https://notofilia.com/coleccion/emisiones-promocionales/): Catálogo de scrip promocional de EE. UU.: el scrip del 50º aniversario de Ringling Bros. en Baraboo, Wisconsin (1933).
 
@@ -61,6 +61,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Certificado de Oro $10 de 1928](https://notofilia.com/coleccion/certificado-de-oro-10-dolares-1928/): Ficha de catálogo numismático: Certificado de Oro de $10, serie de 1928, Departamento del Tesoro de EE. UU. Referencia Friedberg FR-2400.
 ### MPC (EE. UU.)
 
+- [MPC Serie 681 $1 Fr. M915 Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/): MPC Serie 681 $1 Vietnam (1969–1970): Fr. M915 / Schwan S915-1, 22,4 millones. Notofilia.
 - [MPC Serie 641 $10 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/): MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.
 - [MPC Serie 692 $20 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/): MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.
 - [Jefe Ouray](https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/): Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.
