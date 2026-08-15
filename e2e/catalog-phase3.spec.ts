@@ -169,6 +169,15 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(ficha.getByText('S915-1r').first()).toBeVisible();
   await expect(ficha.getByText('C22400000C').first()).toBeVisible();
   await expect(ficha.getByText('C00560000').first()).toBeVisible();
+  await expect(ficha.getByRole('heading', { name: 'Rareza en Uncirculated' })).toBeVisible();
+  await expect(ficha.getByText('Superb Gem UNC 67 EPQ').first()).toBeVisible();
+  await expect(ficha.getByText('Superb Gem UNC 68 EPQ').first()).toBeVisible();
+  await expect(ficha.getByText('70 USD').first()).toBeVisible();
+  await expect(ficha.getByText('195 USD').first()).toBeVisible();
+  await expect(ficha.getByRole('heading', { name: 'Sobre este valor' })).toBeVisible();
+  await expect(ficha.getByText('Valoración de catálogo').first()).toBeVisible();
+  await expect(ficha.getByRole('heading', { name: 'Este ejemplar' })).toBeVisible();
+  await expect(ficha.getByText('14 ejemplares certificados').first()).toBeVisible();
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });

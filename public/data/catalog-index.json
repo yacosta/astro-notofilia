@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T18:16:25.949Z",
+  "generatedAt": "2026-08-15T18:33:18.737Z",
   "count": 129,
   "pieceCount": 113,
   "countries": [
@@ -544,7 +544,7 @@
       "id": "certificados-de-pago-militar--1-dolar-serie-681",
       "path": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
       "title": "MPC Serie 681 $1 Fr. M915 Vietnam",
-      "description": "MPC Serie 681 $1 Vietnam (1969–1970): Fr. M915 / Schwan S915-1, 22,4 millones. Notofilia.",
+      "description": "MPC Serie 681 $1 Vietnam (1969–1970): Fr. M915, UNC 67 escaso / 68 muy raro. Notofilia.",
       "keywords": [
         "military payment certificate",
         "MPC serie 681",
@@ -559,7 +559,12 @@
         "Thunderbirds",
         "piloto USAF",
         "notafilia",
-        "numismática"
+        "numismática",
+        "pmg 67",
+        "pmg 68 epq",
+        "greysheet",
+        "uncirculated",
+        "s915-1"
       ],
       "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
       "image": "/uploads/mpc-series-681-1-dollar.jpg",
@@ -575,7 +580,7 @@
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "mpc serie 681 $1 fr. m915 vietnam mpc serie 681 $1 vietnam (1969–1970): fr. m915 / schwan s915-1, 22,4 millones. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $1.00 (un dólar) fr. m915 · schwan s915-1 · pick m79 banknote military payment certificate mpc serie 681 friedberg m915 schwan s915-1 s915-1r pick m79 billete vietnam certificado de pago militar un dólar mpc f-100 super sabre thunderbirds piloto usaf notafilia numismática"
+      "searchText": "mpc serie 681 $1 fr. m915 vietnam mpc serie 681 $1 vietnam (1969–1970): fr. m915, unc 67 escaso / 68 muy raro. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $1.00 (un dólar) fr. m915 · schwan s915-1 · pick m79 banknote military payment certificate mpc serie 681 friedberg m915 schwan s915-1 s915-1r pick m79 billete vietnam certificado de pago militar un dólar mpc f-100 super sabre thunderbirds piloto usaf notafilia numismática pmg 67 pmg 68 epq greysheet uncirculated s915-1"
     },
     {
       "id": "certificados-de-pago-militar--10-dolares-serie-641",
