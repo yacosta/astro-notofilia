@@ -1,0 +1,145 @@
+{
+  "path": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+  "title": "MPC Serie 681 $1 EE. UU. Vietnam | Notofilia",
+  "description": "MPC Serie 681 $1 Vietnam (1969–1970): Schwan-915 / Pick M79, piloto USAF y F-100. Notofilia.",
+  "keywords": [
+    "military payment certificate",
+    "MPC serie 681",
+    "schwan 915",
+    "pick m79",
+    "billete vietnam",
+    "certificado de pago militar",
+    "un dólar MPC",
+    "F-100 Super Sabre",
+    "Thunderbirds",
+    "piloto USAF",
+    "notafilia",
+    "numismática"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "article",
+  "ogTitle": "MPC Serie 681 $1 Vietnam (1969–1970) | Notofilia",
+  "ogDescription": "MPC Serie 681 $1 de Vietnam (1969–1970). Schwan-915 / Pick M79; piloto USAF y F-100 Super Sabre. Notofilia.",
+  "ogImage": "/uploads/mpc-series-681-1-dollar.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Estados Unidos",
+            "item": "https://notofilia.com/coleccion/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Certificados de Pago Militar (MPC)",
+            "item": "https://notofilia.com/coleccion/certificados-de-pago-militar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Un Dólar — Serie 681",
+            "item": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/"
+          }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Military Payment Certificate $1 — Serie 681",
+        "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+        "image": "https://notofilia.com/uploads/mpc-series-681-1-dollar.jpg",
+        "description": "MPC Serie 681 $1 de Vietnam (1969–1970). Schwan-915 / Pick M79; piloto USAF y F-100 Super Sabre. Notofilia.",
+        "dateCreated": "1969",
+        "creditText": "Colección privada de Notofilia.com — no está a la venta",
+        "inLanguage": "es",
+        "isPartOf": {
+          "@id": "https://notofilia.com/coleccion/certificados-de-pago-militar/#page"
+        }
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  <main data-pagefind-meta=\"url:/coleccion/certificados-de-pago-militar/1-dolar-serie-681/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"MPC Serie 681 — Un Dólar\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 80px; outline:none;\">\n\n    <a href=\"/coleccion/certificados-de-pago-militar/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em; margin-bottom:24px;\">&larr; Certificados de Pago Militar (MPC)</a>\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Estados Unidos &middot; Military Payment Certificate &middot; Serie 681</span>\n\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(30px,4vw,46px); line-height:1.08; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Un Dólar &mdash; Serie 681</h1>\n\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">$1.00 &middot; 11 ago. 1969 &ndash; 7 oct. 1970 &middot; Uso exclusivo en Vietnam</p>\n        </div>\n\n        <div style=\"width:100%; max-width:660px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <button\n            data-zoom-trigger=\"mpc-681-1\"\n            aria-label=\"Ampliar imagen del certificado de pago militar Serie 681\"\n            style=\"all:unset; display:block; width:100%; position:relative; cursor:zoom-in;\"\n          >\n            <picture>\n              <source srcset=\"uploads/mpc-series-681-1-dollar.webp\" type=\"image/webp\" />\n              <img\n                src=\"uploads/mpc-series-681-1-dollar.jpg\"\n                alt=\"Certificado de pago militar de un dólar, Serie 681: anverso con piloto de la USAF y reverso con cuatro F-100 Super Sabre en formación\"\n                width=\"800\"\n                height=\"979\"\n                loading=\"eager\"\n                decoding=\"async\"\n                style=\"display:block; width:100%; height:auto;\"\n              />\n            </picture>\n            <span style=\"position:absolute; bottom:22px; right:22px; display:flex; align-items:center; gap:8px; background:rgba(10,10,9,0.82); color:#d8d2cd; font-size:13px; letter-spacing:0.08em; padding:8px 14px; border-radius:999px;\">\n              <span style=\"width:6px; height:6px; background:#d8d2cd; transform:rotate(45deg);\" aria-hidden=\"true\"></span>\n              Ampliar\n            </span>\n          </button>\n          <span style=\"font-size:13px; letter-spacing:0.08em; color:#5c4e33; text-align:center; font-style:italic;\">Anverso (arriba) y reverso (abajo) — Colección de Notofilia.com</span>\n\n          \n            <div\n              role=\"dialog\"\n              aria-modal=\"true\"\n              aria-label=\"Certificado ampliado\"\n              data-zoom-dialog=\"mpc-681-1\" hidden style=\"display:none\"\n              style=\"position:fixed; inset:0; z-index:50; background:rgba(5,5,4,0.94); display:flex; flex-direction:column; align-items:center; justify-content:center;\"\n            >\n              <button\n                data-zoom-close\n                aria-label=\"Cerrar\"\n                style=\"position:absolute; top:24px; right:28px; background:transparent; border:1px solid rgba(231,222,201,0.4); color:#d8d2cd; font-size:22px; line-height:1; width:44px; height:44px; border-radius:50%; cursor:pointer;\"\n              >&times;</button>\n\n              <div style=\"position:absolute; top:24px; left:28px; display:flex; align-items:center; gap:6px; background:rgba(10,10,9,0.5); border:1px solid rgba(231,222,201,0.25); border-radius:999px; padding:6px;\">\n                <button\n                  disabled=\"true\"\n                  aria-label=\"Alejar\"\n                  style=\"width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;\"\n                >&minus;</button>\n                <span style=\"min-width:56px; text-align:center; font-size:14px; color:#e7ddc4; letter-spacing:0.05em;\">100%</span>\n                <button\n                  disabled=\"false\"\n                  aria-label=\"Acercar\"\n                  style=\"width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;\"\n                >&#43;</button>\n              </div>\n\n              <div\n                style=\"overflow:hidden; max-width:92vw; max-height:74vh; touch-action:none;\"\n              >\n                <picture>\n                  <source srcset=\"uploads/mpc-series-681-1-dollar.webp\" type=\"image/webp\" />\n                  <img\n                    src=\"uploads/mpc-series-681-1-dollar.jpg\"\n                    alt=\"MPC Serie 681 de un dólar, vista ampliada del anverso y reverso\"\n                    draggable=\"false\"\n                    style=\"display:block; max-width:92vw; max-height:74vh; width:auto; height:auto; transform:; cursor:zoom-in; user-select:none;\"\n                  />\n                </picture>\n              </div>\n\n              <span style=\"margin-top:18px; font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic;\">Arrastra para mover &middot; Rueda del ratón para ampliar</span>\n            </div>\n          \n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">País</span>\n              <span style=\"font-size:19px; color:#221f19;\">Estados Unidos &mdash; circulación exclusiva en Vietnam</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Entidad Emisora</span>\n              <span style=\"font-size:19px; color:#221f19;\">Departamento de Defensa de los EE. UU. (<em>U.S. Department of Defense</em>)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Tipo de Emisión</span>\n              <span style=\"font-size:19px; color:#221f19;\">Certificado de Pago Militar (<em>Military Payment Certificate</em>, MPC) &mdash; scrip para personal autorizado; no billete del Tesoro</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Denominación</span>\n              <span style=\"font-size:19px; color:#221f19;\">$1.00 (Un Dólar)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Serie / Vigencia</span>\n              <span style=\"font-size:19px; color:#221f19;\">Serie 681 &mdash; emitida el 11 de agosto de 1969; retirada el 7 de octubre de 1970</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Impresor</span>\n              <span style=\"font-size:19px; color:#221f19;\">Bureau of Engraving and Printing (BEP) &mdash; litografía en color (offset), no intaglio</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Referencia de Catálogo</span>\n              <span style=\"font-size:19px; color:#221f19;\">Schwan-915 &middot; Pick M79</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Tirada</span>\n              <span style=\"font-size:19px; color:#221f19;\">Aprox. 22.400.000 billetes de $1 (Serie 681: unas 214 millones de dólares en valor facial total de todas las denominaciones)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Dimensiones</span>\n              <span style=\"font-size:19px; color:#221f19;\">112 &times; 66 mm (formato estándar del $1 MPC; 70 billetes por pliego)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rareza</span>\n              <span style=\"font-size:19px; color:#221f19;\">Común en grados circulados por la tirada de ~22,4 millones; Uncirculated cotiza con prima. Emisión regular de primera impresión (S915-1) &mdash;serial con letra final C&mdash;, no billete de reemplazo</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Número de Serie / Placa</span>\n              <span style=\"font-size:19px; color:#221f19;\">C10102847&nbsp;C &middot; placa 3 &middot; primera impresión (S915-1)</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Contexto Histórico</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">La Serie 681 circuló exclusivamente en Vietnam del 11 de agosto de 1969 al 7 de octubre de 1970. Sustituyó a la Serie 661 en un <em>C-Day</em> no anunciado y, a su vez, fue reemplazada por la <a href=\"/coleccion/certificados-de-pago-militar/20-dolares-serie-692/\">Serie 692</a>, última emisión oficial del programa MPC. Es la serie que más claramente retrata al personal y al material de las fuerzas armadas estadounidenses.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Como el resto de los MPC, estos billetes solo podían usarse en establecimientos militares por personal autorizado. Convertibles a moneda local al salir de permiso &mdash;pero no a la inversa&mdash; y a dólares estadounidenses únicamente al abandonar la zona MPC. Así se limitaba el mercado negro y se protegía la economía local del exceso de dólares.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">El $1 de esta serie es de los más comunes del programa (unos 22,4 millones de ejemplares). Los reemplazos &mdash;serial sin la letra final C&mdash; sí son bastante más escasos. Este ejemplar es emisión regular de primera impresión (S915-1), con serial C&hellip;C.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Esquema de Color</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\"><strong style=\"color:#1c1a15;\">Anverso:</strong> impresión principal en púrpura sobre fondo de guilloché rosa-terracota, con el retrato del piloto a la derecha y un rosetón estrellado a la izquierda bajo el número de serie.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\"><strong style=\"color:#1c1a15;\">Reverso:</strong> jets en naranja-rojo sobre un campo de líneas horizontales púrpura y estelas blancas; franjas rojas superior e inferior con el texto reglamentario del MPC.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Retrato e Imágenes del Anverso</h2>\n            <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;\">\n              <li style=\"display:flex; gap:12px; align-items:baseline;\">\n                <span style=\"width:6px; height:6px; min-width:6px; background:#5c4e33; transform:rotate(45deg); position:relative; top:-3px;\" aria-hidden=\"true\"></span>\n                <span style=\"font-size:19px; line-height:1.6; color:#332e22;\"><strong style=\"color:#1c1a15;\">Derecha:</strong> piloto de la Fuerza Aérea de EE. UU. con casco de vuelo, gafas sobre la frente y máscara de oxígeno al cuello, en un óvalo grabado. Continúa el tema USAF de las fracciones de la misma serie (submarino <em>Thomas Edison</em> y el paseo espacial de Edward White).</span>\n              </li>\n              <li style=\"display:flex; gap:12px; align-items:baseline;\">\n                <span style=\"width:6px; height:6px; min-width:6px; background:#5c4e33; transform:rotate(45deg); position:relative; top:-3px;\" aria-hidden=\"true\"></span>\n                <span style=\"font-size:19px; line-height:1.6; color:#332e22;\"><strong style=\"color:#1c1a15;\">Leyendas:</strong> &ldquo;SERIES 681&rdquo; sobre el retrato; numeral &ldquo;1&rdquo; en las cuatro esquinas; &ldquo;ONE DOLLAR&rdquo; en cápsula inferior; número de serie en negro a la izquierda sobre el rosetón estrellado.</span>\n              </li>\n              <li style=\"display:flex; gap:12px; align-items:baseline;\">\n                <span style=\"width:6px; height:6px; min-width:6px; background:#5c4e33; transform:rotate(45deg); position:relative; top:-3px;\" aria-hidden=\"true\"></span>\n                <span style=\"font-size:19px; line-height:1.6; color:#332e22;\"><strong style=\"color:#1c1a15;\">Texto reglamentario:</strong> franja inferior &ldquo;MILITARY PAYMENT CERTIFICATE&rdquo; y la cláusula de uso exclusivo en establecimientos militares por personal autorizado.</span>\n              </li>\n            </ul>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Imágenes del Reverso</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Cuatro cazas F-100 Super Sabre de la USAF en formación diagonal ascendente, con &ldquo;USAF&rdquo; en las alas y el número de aparato visible en el fuselaje. La viñeta se asocia a los Thunderbirds, que volaron el F-100 entre 1956 y 1968.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Numeral &ldquo;1&rdquo; en blanco con contorno rojo en las esquinas superior izquierda e inferior derecha; &ldquo;ONE DOLLAR&rdquo; en cápsula a la izquierda; mismas franjas reglamentarias en rojo.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Firmas y Sellos</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">A diferencia de los billetes del Tesoro o de la Reserva Federal, los MPC no llevan firmas de tesorero ni secretario del Tesoro, ni el sello del Departamento del Tesoro: se emitían bajo autoridad del Departamento de Defensa.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">Legado para Coleccionistas</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">La Serie 681 es favorita entre veteranos y coleccionistas de papel de Vietnam porque, a diferencia de series anteriores de viñetas alegóricas, muestra personal y equipo militar. El $1 con piloto y Thunderbirds es una pieza de entrada asequible: común en Fine/VF, con prima clara en Uncirculated.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Los billetes de reemplazo (serie que termina en dígito en lugar de la letra C) son bastante más escasos. Este ejemplar es emisión regular de primera impresión (S915-1), con serial C&hellip;C. Véase también el <a href=\"/coleccion/certificados-de-pago-militar/10-dolares-serie-641/\">$10 de la Serie 641</a> y el <a href=\"/coleccion/certificados-de-pago-militar/20-dolares-serie-692/\">$20 de la Serie 692</a> en esta colección.</p>\n          </section>\n\n          <section style=\"margin-top:32px; border-top:1px solid rgba(10,10,9,0.12); padding-top:24px;\">\n            <h2 style=\"font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 12px; font-style:normal;\">Fuentes</h2>\n            <ul style=\"margin:0; padding:0 0 0 20px; font-size:15px; line-height:1.7; color:#5c4e33; font-style:italic;\">\n              <li>Bureau of Engraving and Printing &mdash; <a href=\"https://www.bep.gov/media/1041/download?inline=\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#6b521f;\">Military Payment Certificates 1946&ndash;1973 <span aria-hidden=\"true\">↗</span> <span>(nueva ventana)</span></a></li>\n              <li>Schwan, Fred. <em>Comprehensive Catalog of Military Payment Certificates</em> &mdash; Schwan-915</li>\n              <li>Art-Hanoi &mdash; <a href=\"https://art-hanoi.com/collection/vnpaper/681.html\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#6b521f;\">MPC Series 681 <span aria-hidden=\"true\">↗</span> <span>(nueva ventana)</span></a> (Pick M79)</li>\n              <li>CoinWeek / PCGS &mdash; <a href=\"https://coinweek.com/vietnam-era-1969-military-payment-certificate-series-681/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#6b521f;\">Vietnam-Era 1969 Military Payment Certificate Series 681 <span aria-hidden=\"true\">↗</span> <span>(nueva ventana)</span></a></li>\n              <li>World Banknotes &amp; Coins Museum &mdash; <a href=\"https://www.worldbanknotescoins.com/2014/11/us-military-payment-certificate-one-dollar-mpc-series-681.html\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#6b521f;\">Series 681 $1 <span aria-hidden=\"true\">↗</span> <span>(nueva ventana)</span></a></li>\n              <li>Banknote.ws &mdash; <a href=\"http://banknote.ws/COLLECTION/countries/AME/USA/USA-MIL/USAM0079.htm\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#6b521f;\">P-M79 Series 681 $1 <span aria-hidden=\"true\">↗</span> <span>(nueva ventana)</span></a></li>\n            </ul>\n          </section>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.certificados-de-pago-militar.1-dolar-serie-681",
+    "kind": "banknote",
+    "title": "Un Dólar — Serie 681",
+    "subtitle": "$1.00 · 11 ago. 1969 &ndash; 7 oct. 1970 · Uso exclusivo en Vietnam",
+    "dateOrSeries": "Estados Unidos · Military Payment Certificate · Serie 681",
+    "country": "Estados Unidos — circulación exclusiva en Vietnam",
+    "issuer": "Departamento de Defensa de los EE. UU. (U.S. Department of Defense)",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Estados Unidos",
+        "href": "/coleccion/"
+      },
+      {
+        "name": "Certificados de Pago Militar (MPC)",
+        "href": "/coleccion/certificados-de-pago-militar/"
+      },
+      {
+        "name": "Un Dólar — Serie 681"
+      }
+    ],
+    "images": {
+      "stacked": {
+        "src": "/uploads/mpc-series-681-1-dollar.jpg",
+        "srcWebp": "/uploads/mpc-series-681-1-dollar.webp",
+        "alt": "Certificado de pago militar de un dólar, Serie 681: anverso con piloto de la USAF y reverso con cuatro F-100 Super Sabre en formación",
+        "width": 800,
+        "height": 979
+      },
+      "defaultView": "stacked"
+    },
+    "metadata": {
+      "denomination": "$1.00 (Un Dólar)",
+      "issuer": "Departamento de Defensa de los EE. UU. (U.S. Department of Defense)",
+      "printer": "Bureau of Engraving and Printing (BEP) — litografía en color (offset), no intaglio",
+      "catalogNumber": "Schwan-915 · Pick M79",
+      "series": "Serie 681",
+      "serialNumber": "C10102847 C · placa 3 · primera impresión (S915-1)",
+      "issueDate": "11 de agosto de 1969 – 7 de octubre de 1970",
+      "dimensions": "112 × 66 mm",
+      "material": "papel",
+      "condition": "Común en grados circulados (tirada de ~22,4 millones); Uncirculated cotiza con prima. Emisión regular de primera impresión (S915-1) —serial con letra final C—, no billete de reemplazo",
+      "status": "circulated"
+    },
+    "related": [
+      {
+        "href": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
+        "title": "MPC Serie 641 — Diez Dólares"
+      },
+      {
+        "href": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
+        "title": "MPC Serie 692 — Veinte Dólares"
+      }
+    ],
+    "previous": {
+      "href": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
+      "title": "Diez Dólares — Serie 641"
+    },
+    "next": {
+      "href": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
+      "title": "Veinte Dólares — Serie 692"
+    },
+    "render": "astro-static",
+    "eyebrow": "Estados Unidos · Military Payment Certificate · Serie 681"
+  },
+  "legacyFile": "billete-mpc-serie-681-1-dolar.dc.html",
+  "sourceHash": "mpc681-1-c10102847"
+}

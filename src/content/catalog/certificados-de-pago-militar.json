@@ -1,7 +1,7 @@
 {
   "path": "/coleccion/certificados-de-pago-militar/",
   "title": "Certificados de Pago Militar (MPC) EE. UU. | Notofilia",
-  "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.",
+  "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: Vietnam, Series 641, 681 y 692. Catálogo Notofilia.",
   "keywords": [
     "military payment certificates",
     "MPC",
@@ -14,13 +14,14 @@
     "Department of Defense",
     "serie 461",
     "serie 641",
+    "serie 681",
     "serie 692",
     "Chief Ouray"
   ],
   "robots": "index, follow, max-image-preview:large",
   "ogType": "website",
   "ogTitle": "Certificados de Pago Militar (MPC) EE. UU. | Notofilia",
-  "ogDescription": "Catálogo de certificados de pago militar (MPC) de EE. UU.: 1946–1973, Vietnam, Series 641 y 692. Notofilia.",
+  "ogDescription": "Catálogo de certificados de pago militar (MPC) de EE. UU.: 1946–1973, Vietnam, Series 641, 681 y 692. Notofilia.",
   "ogImage": "/uploads/mpc-series-641-10-dollars.jpg",
   "jsonLd": {
     "@context": "https://schema.org",
@@ -53,7 +54,7 @@
         "@id": "https://notofilia.com/coleccion/certificados-de-pago-militar/#page",
         "name": "Certificados de Pago Militar (MPC) de Estados Unidos",
         "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/",
-        "description": "Catálogo de certificados de pago militar (MPC) de EE. UU.: 1946–1973, Vietnam, Series 641 y 692. Notofilia.",
+        "description": "Catálogo de certificados de pago militar (MPC) de EE. UU.: 1946–1973, Vietnam, Series 641, 681 y 692. Notofilia.",
         "inLanguage": "es",
         "about": {
           "@type": "CreativeWork",
@@ -66,6 +67,11 @@
             "@type": "CreativeWork",
             "name": "Military Payment Certificate $10 — Serie 641 (Vietnam)",
             "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Military Payment Certificate $1 — Serie 681 (Vietnam)",
+            "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/"
           },
           {
             "@type": "CreativeWork",
@@ -111,6 +117,15 @@
         "alt": "Certificado de pago militar de diez dólares, Serie 641, anverso con figura femenina y reverso con la Estatua de la Libertad"
       },
       {
+        "href": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+        "title": "MPC Serie 681",
+        "denomination": "$1.00",
+        "year": "1969–1970",
+        "image": "/uploads/mpc-series-681-1-dollar.jpg",
+        "imageWebp": "/uploads/mpc-series-681-1-dollar-640.webp",
+        "alt": "Certificado de pago militar de un dólar, Serie 681, anverso con piloto de la USAF y reverso con F-100 Super Sabre"
+      },
+      {
         "href": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
         "title": "MPC Serie 692",
         "denomination": "$20.00",
@@ -123,5 +138,5 @@
     "eyebrow": "Estados Unidos"
   },
   "legacyFile": "catalogo-certificados-de-pago-militar.dc.html",
-  "sourceHash": "mpc1946-1973-v2"
+  "sourceHash": "mpc1946-1973-v3"
 }
