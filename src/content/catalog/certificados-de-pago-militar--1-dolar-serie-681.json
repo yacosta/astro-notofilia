@@ -141,11 +141,7 @@
       "title": "Veinte Dólares — Serie 692"
     },
     "render": "astro-static",
-    "eyebrow": "Estados Unidos · Military Payment Certificate · Serie 681",
-    "context": {
-      "varieties": "Emisión regular S915-1: serial con prefijo y sufijo C; el más alto documentado es C22400000C. Reemplazos S915-1r: numerados hasta C00560000 (560.000); omiten el sufijo de la letra y se usaron para sustituir regulares defectuosos, no para ampliar la tirada puesta en circulación.",
-      "population": "22.400.000 billetes regulares de $1 (Greensheet/CPG). 560.000 reemplazos S915-1r preparados; no se añaden al total regular."
-    }
+    "eyebrow": "Estados Unidos · Military Payment Certificate · Serie 681"
   },
   "legacyFile": "billete-mpc-serie-681-1-dolar.dc.html",
   "sourceHash": "mpc681-1-c10102047"
