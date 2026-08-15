@@ -41,6 +41,7 @@ export function computeCollectionStats(
       '/coleccion/puerto-rico/',
       '/coleccion/ecuador/',
       '/coleccion/moneda-colonial-espanola/',
+      '/coleccion/numismatica/',
       '/coleccion/polimero-mundial/',
       '/coleccion/pop-art/',
       '/coleccion/certificados-de-pago-militar/',

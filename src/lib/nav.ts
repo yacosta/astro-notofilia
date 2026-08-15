@@ -30,7 +30,9 @@ export const PRIMARY_LINKS: NavLink[] = [
 ];
 
 /** Featured collection destinations for drawer + homepage browse strip. */
-export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.map((entry) => ({
+export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
+  (entry) => entry.href !== '/coleccion/numismatica/',
+).map((entry) => ({
   href: entry.href,
   label: entry.title,
 }));
@@ -42,6 +44,20 @@ export const NAV_SECTIONS: NavSection[] = [
     labelEn: 'Virtual collection',
     href: '/coleccion/',
     links: COLLECTION_LINKS,
+  },
+  {
+    id: 'numismatica',
+    label: 'Numismática',
+    labelEn: 'Numismatics',
+    href: '/coleccion/numismatica/',
+    links: [
+      { href: '/coleccion/numismatica/', label: 'Catálogo de monedas', labelEn: 'Coin catalog' },
+      {
+        href: '/coleccion/moneda-colonial-espanola/',
+        label: 'Moneda colonial española',
+        labelEn: 'Spanish colonial coinage',
+      },
+    ],
   },
   {
     id: 'editorial',

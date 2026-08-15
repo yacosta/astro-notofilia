@@ -1,6 +1,7 @@
 ---
 /**
  * Hub card grid — replaces dc-import BanknoteCard lists.
+ * Optional `group` / `groupKicker` on cards render reign or theme sections.
  */
 import type { CatalogCard } from '../../lib/catalog-record';
 import CatalogBanknoteCard from './CatalogBanknoteCard.astro';
@@ -8,15 +9,43 @@ import CatalogBanknoteCard from './CatalogBanknoteCard.astro';
 interface Props {
   cards: CatalogCard[];
   thinNote?: boolean;
+  labelledBy?: string;
+  /** Group headings. Use 3 when this grid sits under an existing page h2. */
+  headingLevel?: 2 | 3;
 }
 
-const { cards, thinNote = false } = Astro.props;
+const { cards, thinNote = false, labelledBy, headingLevel = 2 } = Astro.props;
+const GroupHeading = headingLevel === 3 ? 'h3' : 'h2';
 const showThinNote = thinNote && cards.length > 0 && cards.length <= 2;
 const inventoryLabel = cards.length === 1 ? '1 pieza documentada' : `${cards.length} piezas documentadas`;
+const hasGroups = cards.some((card) => Boolean(card.group));
+
+type CardGroup = { name: string; kicker?: string; cards: CatalogCard[] };
+
+const groups: CardGroup[] = [];
+if (hasGroups) {
+  const seen = new Map<string, CardGroup>();
+  for (const card of cards) {
+    const name = card.group || 'Otras piezas';
+    let group = seen.get(name);
+    if (!group) {
+      group = { name, kicker: card.groupKicker, cards: [] };
+      seen.set(name, group);
+      groups.push(group);
+    }
+    group.cards.push(card);
+  }
+} else {
+  groups.push({ name: '', cards });
+}
 ---
 {
   cards.length > 0 ? (
-    <section class="catalog-hub-grid max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pb-16" aria-label="Fichas del catálogo">
+    <section
+      class="catalog-hub-grid max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pb-16"
+      aria-label={labelledBy ? undefined : 'Fichas del catálogo'}
+      aria-labelledby={labelledBy}
+    >
       {showThinNote ? (
         <aside
           class="catalog-inventory-status mb-8"
@@ -31,13 +60,50 @@ const inventoryLabel = cards.length === 1 ? '1 pieza documentada' : `${cards.len
           </p>
         </aside>
       ) : null}
-      <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
-        {cards.map((card) => (
-          <li>
-            <CatalogBanknoteCard card={card} />
-          </li>
-        ))}
-      </ul>
+      {groups.map((group) => (
+        group.name ? (
+          <section class="catalog-hub-group">
+            {group.kicker ? <span class="catalog-hub-kicker">{group.kicker}</span> : null}
+            <GroupHeading class="catalog-hub-group-title">{group.name}</GroupHeading>
+            <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+              {group.cards.map((card) => (
+                <li>
+                  <CatalogBanknoteCard card={card} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : (
+          <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+            {group.cards.map((card) => (
+              <li>
+                <CatalogBanknoteCard card={card} />
+              </li>
+            ))}
+          </ul>
+        )
+      ))}
     </section>
   ) : null
 }
+
+<style>
+  .catalog-hub-group + .catalog-hub-group {
+    margin-top: 64px;
+  }
+  .catalog-hub-kicker {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #b7ab8a;
+    margin-bottom: 14px;
+  }
+  .catalog-hub-group-title {
+    font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3vw, 32px);
+    color: #d8d2cd;
+    margin: 0 0 32px;
+  }
+</style>

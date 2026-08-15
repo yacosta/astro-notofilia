@@ -23,7 +23,8 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 ## Sitio principal
 
 - [Inicio](https://notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
-- [Catálogo (índice)](https://notofilia.com/coleccion/): Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.
+- [Catálogo (índice)](https://notofilia.com/coleccion/): Hub global de la Colección Virtual: billetes, filtros y accesos por país.
+- [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de monedas: oro colonial de Santa Fe de Bogotá.
 - [Blog](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
 - [Logros del Mes](https://notofilia.com/#logros-heading): Piezas y avances recientes de la Colección Virtual (sección en la home).
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
@@ -33,7 +34,8 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 ## Catálogo — secciones
 
-- [Billete obsoleto EE. UU.](https://notofilia.com/coleccion/): Billete obsoleto EE. UU.
+- [Colección Virtual](https://notofilia.com/coleccion/): Colección Virtual
+- [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
 - [Emisiones Colombianas en el Extranjero](https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/): Billetes emitidos en el extranjero por bancos y capital colombianos, como El Banco Colombiano en Guatemala (1900). Colección Notofilia.
@@ -52,7 +54,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ninguna pieza está a la venta.
 
-### Billete obsoleto EE. UU.
+### Colección Virtual
 
 - [Billete $2 The Adrian Insurance Company](https://notofilia.com/coleccion/adrian-insurance-michigan/2-dolares/): Ficha de catálogo numismático: billete obsoleto de $2 de The Adrian Insurance Company, Adrian, Michigan, hacia 1852–1856…
 - [Catálogo de Billete Obsoleto EE. UU.](https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/): Catálogo numismático de billetes obsoletos de la colección Notofilia: The State Bank at New Brunswick, Citizens' Bank of Louisiana y más.
@@ -62,7 +64,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [MPC Serie 641 $10 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/): MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.
 - [MPC Serie 692 $20 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/): MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.
 - [Jefe Ouray](https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/): Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.
-### Billete obsoleto EE. UU.
+### Colección Virtual
 
 - [$100 Federal Reserve Bank Note, Minneapolis 1929](https://notofilia.com/coleccion/cien-dolares-minneapolis-1929/): Ficha de catálogo numismático: Billete de Banco de la Reserva Federal de $100, serie de 1929, Minneapolis. Referencia Friedberg FR-1890-I.
 - [$100 United States Note, Sello Rojo 1966](https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/): United States Note $100 sello rojo 1966 (FR-1550): tirada 896.000; emisión nacional del Tesoro.
@@ -119,7 +121,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [República de Colombia — Emisiones de 1910 y 1915](https://notofilia.com/coleccion/colombia/republica-1910-1915-emisiones/): Ficha de catálogo numismático: billetes de la República de Colombia, Dos y Cinco Pesos Oro (Bogotá, 1915) y Cien Pesos (Bogotá, 1910).
 - [República de Bolívar: 1 y 2 Pesos (1882)](https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/): Ficha de catálogo numismático: billetes de Un Peso y Dos Pesos de la República Bolívar de Colombia, emitidos en 1882. Colección Notofilia.
 - [Cinco Pesos, Vicente B. Villa é Hijos, Medellín](https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/): Ficha de catálogo numismático: billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.
-### Billete obsoleto EE. UU.
+### Colección Virtual
 
 - [$10 Reserva Federal 1934 — Cuatro Distritos](https://notofilia.com/coleccion/diez-dolares-1934-distritos/): Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).
 ### Billetes de Ecuador
@@ -132,7 +134,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Food Coupon USDA, Dos Dólares (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/): Ficha de catálogo: cupón de alimentos USDA de dos dólares, Serie 1967, impreso por el Bureau of Engraving and Printing.
 - [Food Coupon USDA, Cinco Dólares (Serie 2000-B)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/): Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.
 - [Food Coupon USDA, Cincuenta Centavos (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/): Ficha de catálogo: cupón de alimentos USDA de cincuenta centavos, Serie 1967, impreso por el Bureau of Engraving and Printing.
-### Billete obsoleto EE. UU.
+### Colección Virtual
 
 - [Food Coupons USDA Series 1967 y 2000-B](https://notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.
 - [Nota de Prueba de la Prensa Giori](https://notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
@@ -205,7 +207,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Reserva Federal
 
 - [$100 Federal Reserve Note, Serie 1990, Cleveland](https://notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): FRN $100 Serie 1990, Cleveland: tirada nacional 1.694.464.000 y primer hilo de seguridad.
-### Billete obsoleto EE. UU.
+### Colección Virtual
 
 - [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.
 - [Billete $1 State Bank New Brunswick](https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/): Ficha de catálogo numismático: billete obsoleto de $1 de The State Bank at New Brunswick, Nueva Jersey, c. 1860. Referencia Haxby NJ-350-G14a.

@@ -625,6 +625,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/numismatica/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/polimero-mundial/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>

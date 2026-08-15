@@ -71,3 +71,25 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('dc-import')).toHaveCount(0);
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
+
+test('coins have a dedicated numismática catalog page', async ({ page }) => {
+  await page.goto('/coleccion/numismatica/');
+  await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
+  await expect(page.getByRole('heading', { level: 1, name: 'Catálogo de Numismática' })).toBeVisible();
+  await expect(page.locator('.catalog-banknote-card')).toHaveCount(7);
+  await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Moneda colonial española' }).first()).toBeVisible();
+});
+
+test('spanish colonial catalog shows grouped coin cards', async ({ page }) => {
+  await page.goto('/coleccion/moneda-colonial-espanola/');
+  await expect(page.getByRole('heading', { name: 'Catálogo de Moneda Colonial Española' })).toBeVisible();
+  await expect(page.locator('.catalog-banknote-card')).toHaveCount(7);
+  await expect(page.getByRole('heading', { name: 'Reinado de Felipe V' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Reinado de Carlos III' })).toBeVisible();
+});
+
+test('collection hub points to the coins catalog', async ({ page }) => {
+  await page.goto('/coleccion/');
+  await expect(page.getByRole('link', { name: /Catálogo de numismática/i }).first()).toBeVisible();
+});

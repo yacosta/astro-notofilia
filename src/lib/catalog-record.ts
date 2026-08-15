@@ -35,6 +35,9 @@ export const catalogCardSchema = z.object({
   image: z.string().optional(),
   imageWebp: z.string().optional(),
   alt: z.string().optional(),
+  /** Optional heading used when a hub renders cards in thematic groups. */
+  group: z.string().min(1).optional(),
+  groupKicker: z.string().min(1).optional(),
 });
 
 /**

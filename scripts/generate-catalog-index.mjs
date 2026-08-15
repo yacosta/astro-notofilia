@@ -51,6 +51,7 @@ const HUB_PATHS = new Set([
   '/coleccion/puerto-rico/',
   '/coleccion/ecuador/',
   '/coleccion/moneda-colonial-espanola/',
+  '/coleccion/numismatica/',
   '/coleccion/polimero-mundial/',
   '/coleccion/pop-art/',
   '/coleccion/certificados-de-pago-militar/',
@@ -158,7 +159,10 @@ function normalizeMaterial(raw, pathValue, keywords, kind) {
   return raw ? 'papel' : '';
 }
 
-function detectKind(pathValue, title, keywords, emissionType) {
+function detectKind(pathValue, title, keywords, emissionType, recordKind) {
+  if (recordKind === 'coin' || recordKind === 'banknote' || recordKind === 'profile') {
+    return recordKind;
+  }
   const blob = `${pathValue} ${title} ${keywords.join(' ')} ${emissionType}`.toLowerCase();
   if (pathValue.includes('/moneda-colonial-espanola/') && !HUB_PATHS.has(pathValue)) return 'coin';
   if (/specimen|esp[eé]cimen/.test(blob)) return 'specimen';
@@ -240,18 +244,34 @@ for (const file of files) {
     continue;
   }
 
-  const countryRaw = fact(template, 'País');
-  const issuer = fact(template, 'Entidad Emisora');
-  const denomination = fact(template, 'Denominación');
-  const catalogRef = fact(template, 'Referencia de Catálogo');
+  const countryRaw = fact(template, 'País') || fact(template, 'País / Virreinato');
+  const issuer =
+    fact(template, 'Entidad Emisora') ||
+    fact(template, 'Ceca / Ensayador') ||
+    data.record?.issuer ||
+    data.record?.metadata?.issuer ||
+    '';
+  const denomination = fact(template, 'Denominación') || data.record?.metadata?.denomination || '';
+  const catalogRef =
+    fact(template, 'Referencia de Catálogo') ||
+    fact(template, 'Referencias catalográficas') ||
+    data.record?.metadata?.catalogNumber ||
+    '';
   const condition = fact(template, 'Condición');
   const emissionType = fact(template, 'Tipo de Emisión');
   const dateLabel =
     fact(template, 'Fecha de Emisión') ||
     fact(template, 'Fecha') ||
-    fact(template, 'Año');
+    fact(template, 'Año') ||
+    fact(template, 'Año de acuñación');
   const materialRaw = fact(template, 'Material') || fact(template, 'Composición');
-  const kind = detectKind(data.path, data.title, keywords, emissionType);
+  const kind = detectKind(
+    data.path,
+    data.title,
+    keywords,
+    emissionType,
+    data.record?.kind,
+  );
   const material = normalizeMaterial(materialRaw, data.path, keywords, kind);
   const country = normalizeCountry(countryRaw, data.path);
   const year = extractYear(dateLabel, denomination, data.title, data.path);
