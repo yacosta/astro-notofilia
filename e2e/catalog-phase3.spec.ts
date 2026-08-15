@@ -142,11 +142,11 @@ test('collection hub groups banknotes by country', async ({ page }) => {
 test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ page }) => {
   await page.goto('/coleccion/colombia/banco-nacional-25-pesos-1895/');
   await expect(page.getByRole('heading', { name: 'Veinticinco Pesos' })).toBeVisible();
-  await expect(page.getByText(/Serie 1\.\s*ª,\s*N\.\s*°\s*170390/)).toBeVisible();
+  await expect(page.getByText('Serie 1.ª, N.° 170390 · Bogotá, 4 de marzo de 1895')).toBeVisible();
 
   const meta = page.locator('.catalog-record-meta');
   await expect(meta.getByText('Veinticinco Pesos, en moneda corriente')).toBeVisible();
-  await expect(meta.getByText('N.° 170390')).toBeVisible();
+  await expect(meta.getByText('N.° 170390', { exact: true })).toBeVisible();
   await expect(meta.getByText('Bogotá, 4 de marzo de 1895')).toBeVisible();
   await expect(meta.getByText('Circulado')).toBeVisible();
   await expect(meta).not.toContainText(/specimen/i);
