@@ -81,6 +81,14 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
+    title: 'MPC Serie 681 — Un Dólar',
+    description: 'Vietnam (1969–1970), Fr. M915 / Schwan S915-1, piloto USAF y F-100 Super Sabre.',
+    imageBase: 'mpc-series-681-1-dollar',
+    imageAlt:
+      'Anverso y reverso del MPC Serie 681 de un dólar con piloto USAF y F-100 Super Sabre',
+  },
+  {
     href: '/coleccion/diez-dolares-1934-distritos/',
     title: '$10 Reserva Federal — Chicago 1934',
     description: 'Serie de 1934, distrito G (Chicago). Friedberg FR-2004G.',
@@ -101,13 +109,6 @@ export const RECENT_PIECES: RecentPiece[] = [
     description: 'Última serie oficial de MPC (1970–1973), jefe Ouray.',
     imageBase: 'mpc-series-692-20-dollars',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
-  },
-  {
-    href: '/coleccion/certificados-de-pago-militar/10-dolares-serie-641/',
-    title: 'MPC Serie 641 — Diez Dólares',
-    description: 'Vietnam (1965–1968), ejemplar PMG 53 About Uncirculated.',
-    imageBase: 'mpc-series-641-10-dollars',
-    imageAlt: 'Anverso y reverso del MPC Serie 641 de diez dólares usado en Vietnam',
   },
 ];
 

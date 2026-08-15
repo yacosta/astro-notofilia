@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-15T01:48:44.418Z",
-  "count": 128,
-  "pieceCount": 112,
+  "generatedAt": "2026-08-15T18:33:18.737Z",
+  "count": 129,
+  "pieceCount": 113,
   "countries": [
     {
       "name": "Colombia",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 29,
+      "count": 30,
       "slug": "estados-unidos"
     },
     {
@@ -191,7 +191,7 @@
       "id": "certificados-de-pago-militar",
       "path": "/coleccion/certificados-de-pago-militar/",
       "title": "Certificados de Pago Militar (MPC) EE. UU.",
-      "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: C-Days, Vietnam, Series 641 y 692. Catálogo Notofilia.",
+      "description": "Certificados de pago militar (MPC) de EE. UU., 1946–1973: Vietnam, Series 641, 681 y 692. Catálogo Notofilia.",
       "keywords": [
         "military payment certificates",
         "MPC",
@@ -204,6 +204,7 @@
         "Department of Defense",
         "serie 461",
         "serie 641",
+        "serie 681",
         "serie 692",
         "Chief Ouray"
       ],
@@ -538,6 +539,48 @@
       "material": "",
       "kind": "banknote",
       "searchText": "certificado de oro $10 de 1928 ficha de catálogo numismático: certificado de oro de $10, serie de 1928, departamento del tesoro de ee. uu. referencia friedberg fr-2400. estados unidos departamento del tesoro de los estados unidos ( united states treasury ) $10.00 (diez dólares) friedberg fr-2400 banknote certificado de oro gold certificate friedberg fr-2400 notafilia numismática billete de diez dólares tesoro de estados unidos"
+    },
+    {
+      "id": "certificados-de-pago-militar--1-dolar-serie-681",
+      "path": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+      "title": "MPC Serie 681 $1 Fr. M915 Vietnam",
+      "description": "MPC Serie 681 $1 Vietnam (1969–1970): Fr. M915, UNC 67 escaso / 68 muy raro. Notofilia.",
+      "keywords": [
+        "military payment certificate",
+        "MPC serie 681",
+        "friedberg m915",
+        "schwan s915-1",
+        "s915-1r",
+        "pick m79",
+        "billete vietnam",
+        "certificado de pago militar",
+        "un dólar MPC",
+        "F-100 Super Sabre",
+        "Thunderbirds",
+        "piloto USAF",
+        "notafilia",
+        "numismática",
+        "pmg 67",
+        "pmg 68 epq",
+        "greysheet",
+        "uncirculated",
+        "s915-1"
+      ],
+      "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+      "image": "/uploads/mpc-series-681-1-dollar.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense )",
+      "denomination": "$1.00 (Un Dólar)",
+      "catalogRef": "Fr. M915 · Schwan S915-1 · Pick M79",
+      "condition": "",
+      "emissionType": "Certificado de Pago Militar ( Military Payment Certificate , MPC) — scrip para personal autorizado; no billete del Tesoro",
+      "dateLabel": "",
+      "year": null,
+      "material": "",
+      "kind": "banknote",
+      "searchText": "mpc serie 681 $1 fr. m915 vietnam mpc serie 681 $1 vietnam (1969–1970): fr. m915, unc 67 escaso / 68 muy raro. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $1.00 (un dólar) fr. m915 · schwan s915-1 · pick m79 banknote military payment certificate mpc serie 681 friedberg m915 schwan s915-1 s915-1r pick m79 billete vietnam certificado de pago militar un dólar mpc f-100 super sabre thunderbirds piloto usaf notafilia numismática pmg 67 pmg 68 epq greysheet uncirculated s915-1"
     },
     {
       "id": "certificados-de-pago-militar--10-dolares-serie-641",
