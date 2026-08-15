@@ -72,6 +72,27 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
 
+test('colombia catalog lists banknotes by issue date', async ({ page }) => {
+  await page.goto('/coleccion/colombia/');
+  const cards = page.locator('.catalog-banknote-card');
+  await expect(cards.first()).toContainText('1813');
+  await expect(cards.first()).toContainText('Cartagena');
+  await expect(cards.last()).toContainText('2016');
+  await expect(cards.last()).toHaveAttribute('href', /50000-pesos/);
+  await expect(page.getByRole('heading', { name: 'Cartagena de Indias (1811–1815)' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Bonos y Libranzas Fiscales' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Errores de impresión' })).toBeVisible();
+
+  const hrefs = await cards.evaluateAll((els) =>
+    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : null)),
+  );
+  expect(hrefs.at(-1)).not.toContain('libranza');
+  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeGreaterThan(0);
+  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  );
+});
+
 test('coins have a dedicated numismática catalog page', async ({ page }) => {
   await page.goto('/coleccion/numismatica/');
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);

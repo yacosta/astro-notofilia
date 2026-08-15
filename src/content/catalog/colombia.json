@@ -63,13 +63,28 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "Un Peso — Estado Soberano de Cundinamarca (1870)",
+            "url": "https://notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "República Bolívar de Colombia — Un Peso (1882)",
+            "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "República Bolívar de Colombia — Dos Pesos (1882)",
+            "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#dos-pesos"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "Cinco Pesos — Estado Soberano del Cauca (1882)",
             "url": "https://notofilia.com/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/"
           },
           {
             "@type": "CreativeWork",
-            "name": "Un Peso — Estado Soberano de Cundinamarca (1870)",
-            "url": "https://notofilia.com/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/"
+            "name": "Estado de Boyacá — Libranza de 500 Pesos (1883)",
+            "url": "https://notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/"
           },
           {
             "@type": "CreativeWork",
@@ -83,8 +98,53 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "República de Colombia — emisiones de 1910–1915",
+            "url": "https://notofilia.com/coleccion/colombia/republica-1910-1915-emisiones/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Un Peso Oro y Un Peso Plata (Specimen, 1923–1977)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Cinco Pesos Plata (1941)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Dos Pesos Oro (1947 y 1972)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2-pesos-oro/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "El Banco de la República — Cien Pesos Oro (1923–1991)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Quinientos Pesos Oro (Specimen) (1947, 1984, 1989 y 1993)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Medio Peso Oro (Specimen, 1935, 1941–46)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Diez Pesos Oro (1949–1961)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Cincuenta Pesos Oro (Specimen) (1964 y 1985)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — Doscientos Pesos Oro (Specimen) (1982, 1983 y 1992)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/"
           },
           {
             "@type": "CreativeWork",
@@ -98,43 +158,13 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco de la República — Mil Pesos — Bolívar y Gaitán (1990–2006)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-1000-pesos/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "El Banco de la República — Diez Mil Pesos (Specimen, 1992–presente)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Diez Pesos Oro (1949–1961)",
-            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Medio Peso Oro (Specimen, 1935, 1941–46)",
-            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Un Peso Oro y Un Peso Plata (Specimen, 1923–1977)",
-            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Dos Pesos Oro (1972, Muestra)",
-            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2-pesos-oro-1972/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — 50 Mil Pesos (Error)",
-            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Dos Mil Pesos (Error Mariposa)",
-            "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/"
-          },
-          {
-            "@type": "CreativeWork",
-            "name": "El Banco de la República — Dos Mil Pesos (Corte Descentrado)",
-            "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/"
           },
           {
             "@type": "CreativeWork",
@@ -143,13 +173,23 @@
           },
           {
             "@type": "CreativeWork",
-            "name": "Banca Libre Colombiana (catálogo)",
-            "url": "https://notofilia.com/coleccion/colombia/banca-libre/"
+            "name": "El Banco de la República — Dos Mil Pesos (Corte Descentrado)",
+            "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/"
           },
           {
             "@type": "CreativeWork",
-            "name": "Estado de Boyacá — Libranza de 500 Pesos (1883)",
-            "url": "https://notofilia.com/coleccion/colombia/boyaca-libranza-500-pesos-1883/"
+            "name": "El Banco de la República — Dos Mil Pesos (Error Mariposa)",
+            "url": "https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de la República — 50 Mil Pesos (Error)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-50000-pesos/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Banca Libre Colombiana (catálogo)",
+            "url": "https://notofilia.com/coleccion/colombia/banca-libre/"
           },
           {
             "@type": "CreativeWork",
@@ -161,7 +201,7 @@
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/colombia/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Colombia</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Los Inicios del Papel Moneda en Colombia</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 28px;\">La historia del papel moneda en Colombia comenzó precisamente en el período de la Independencia, marcado por la urgencia de la guerra, la escasez de metales preciosos y el rechazo inicial de la población. A continuación, se presentan las etapas clave de los inicios de la impresión de billetes en el país.</p>\n\n      <div style=\"display:flex; flex-direction:column; gap:26px;\">\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">1. Las Emisiones Provinciales de Emergencia (1811&ndash;1813)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Antes de que existiera una banca centralizada, las provincias que declararon su independencia de España emitieron los primeros billetes de Colombia para financiar sus ejércitos.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Cartagena (1811&ndash;1813):</strong> fue la provincia pionera. Ante la falta de plata y oro, el Estado de Cartagena autorizó las primeras emisiones de papel moneda fiduciario en denominaciones de reales. Estos billetes eran impresos de forma muy rudimentaria en papel ordinario y firmados a mano por próceres como los hermanos Piñeres.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Cundinamarca (1814):</strong> siguiendo el ejemplo de Cartagena, el Estado de Cundinamarca emitió sus propios &ldquo;vales&rdquo; o billetes de la Tesorería General en Bogotá para sostener la guerra contra los realistas.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">El fracaso inicial:</strong> la población, acostumbrada al valor intrínseco de las monedas de oro y plata, desconfiaba profundamente de estos papeles. Con la Reconquista Española en 1815, la mayoría de estos billetes fueron quemados o destruidos, convirtiéndose hoy en piezas de extrema rareza numismática.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">2. La República de la Gran Colombia (1819&ndash;1831)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Tras la victoria definitiva de Simón Bolívar en la Batalla de Boyacá (1819), se fundó la Gran Colombia.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Durante este período se emitieron <strong style=\"color:#d8d2cd;\">Vales de la Tesorería General de la República</strong> para pagar las deudas de la guerra de independencia.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Aunque se discutió formalmente la creación de un banco nacional que emitiera billetes de forma organizada, la inestabilidad política y la disolución de la Gran Colombia en 1830 postergaron el proyecto.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">3. La Era de la Banca Privada y Libre (1870&ndash;1885)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">A mediados del siglo XIX, la economía colombiana seguía funcionando principalmente con monedas de oro, plata y monedas extranjeras. El verdadero auge y la regularización del papel moneda moderno llegó en la década de 1870.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">El Banco de Bogotá (1870):</strong> fue el primer banco privado exitoso en emitir billetes en el país. Al contar con el respaldo de reservas reales y la confianza del comercio local, estos billetes sí fueron aceptados masivamente.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Multiplicidad de emisores:</strong> tras el éxito del Banco de Bogotá, se desató una era de &ldquo;banca libre&rdquo;. Decenas de bancos privados en diferentes regiones (como el Banco de Antioquia, el Banco de Colombia y el Banco de Bolívar) imprimían sus propios billetes, los cuales eran fabricados con altos estándares de seguridad por compañías extranjeras (principalmente en Nueva York y Londres).</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">4. El Banco Nacional y el &ldquo;Curso Forzoso&rdquo; (1880&ndash;1903)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">En 1880, bajo la presidencia de Rafael Núñez, se fundó el <strong style=\"color:#d8d2cd;\">Banco Nacional</strong>, el primer intento del Estado por centralizar la emisión de dinero.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">La Regeneración:</strong> en 1886, el gobierno decretó el &ldquo;curso forzoso&rdquo; de los billetes del Banco Nacional, prohibiendo la exigencia de pagos en oro y eliminando gradualmente el derecho de emisión de los bancos privados.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">La crisis de la Guerra de los Mil Días (1899&ndash;1902):</strong> para financiar este devastador conflicto civil, el gobierno imprimió billetes de forma descontrolada. Esto provocó una de las peores hiperinflaciones en la historia de Colombia, haciendo que el papel moneda perdiera casi todo su valor y obligando a la liquidación del Banco Nacional.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">5. La Consolidación: El Banco de la República (1923)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Para sanear la economía y restaurar la confianza, en 1923 se contrató a la Misión Kemmerer (un grupo de expertos financieros estadounidenses liderados por Edwin Walter Kemmerer).</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Fundación:</strong> el 23 de julio de 1923 se fundó el <strong style=\"color:#d8d2cd;\">Banco de la República</strong>, el cual recibió el derecho exclusivo y definitivo de emitir el papel moneda de curso legal en Colombia.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Los primeros billetes del Banco de la República fueron, de hecho, billetes provisionales sobreimpresos de la antigua Casa de Moneda de Medellín, hasta que llegaron las primeras series oficiales encargadas a la <em>American Bank Note Company</em>. Desde entonces, la emisión del peso colombiano se centralizó y estabilizó por completo.</span>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guerra de Independencia</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Cartagena de Indias (1811&ndash;1815)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Primera República</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">República Bolívar de Colombia (1882)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guerra Civil de 1860&ndash;1862</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Estados Unidos de Nueva Granada (1861)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Estados Unidos de Colombia</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Estado Soberano de Panamá (1865)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">La Regeneración (1880&ndash;1896)</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Nacional</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Consolidación Nacional</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">República de Colombia &mdash; Serie de 1904</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Banca Privada y Libre (1870&ndash;1919)</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 20px;\">Banca Libre Colombiana</h2>\n      <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 24px;\">El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín, El Banco de Oriente, El Banco Internacional y la casa comercial Vicente B. Villa é Hijos, con su propio catálogo dedicado a la era de la banca privada regional.</p>\n      <a href=\"/coleccion/colombia/banca-libre/\" style=\"display:inline-block; font-size:16px; letter-spacing:0.06em; color:#d8d2cd; text-decoration:underline; text-decoration-color:rgba(239,231,212,0.35);\">Ver el catálogo de Banca Libre &rarr;</a>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Capital Colombiano en el Exterior</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 20px;\">Emisiones Colombianas en el Extranjero</h2>\n      <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 24px;\">El Banco Colombiano, fundado por inversionistas colombianos y establecido en Guatemala, emitió su propio papel moneda fuera de las fronteras del país &mdash;un capítulo aparte de la historia bancaria colombiana en el exterior.</p>\n      <a href=\"/coleccion/colombia/emisiones-en-el-extranjero/\" style=\"display:inline-block; font-size:16px; letter-spacing:0.06em; color:#d8d2cd; text-decoration:underline; text-decoration-color:rgba(239,231,212,0.35);\">Ver el catálogo de Emisiones en el Extranjero &rarr;</a>\n    </section>\n\n    <section id=\"banco-de-la-republica\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Banca Centralizada</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de la República</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n      </div>\n\n      <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:36px 0 20px; font-style:normal;\">Error de Impresión</h3>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n\n        \n\n        \n\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Deuda Pública Estatal</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Bonos y Libranzas Fiscales</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/colombia/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Colombia</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Los Inicios del Papel Moneda en Colombia</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 28px;\">La historia del papel moneda en Colombia comenzó precisamente en el período de la Independencia, marcado por la urgencia de la guerra, la escasez de metales preciosos y el rechazo inicial de la población. A continuación, se presentan las etapas clave de los inicios de la impresión de billetes en el país.</p>\n\n      <div style=\"display:flex; flex-direction:column; gap:26px;\">\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">1. Las Emisiones Provinciales de Emergencia (1811&ndash;1813)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Antes de que existiera una banca centralizada, las provincias que declararon su independencia de España emitieron los primeros billetes de Colombia para financiar sus ejércitos.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Cartagena (1811&ndash;1813):</strong> fue la provincia pionera. Ante la falta de plata y oro, el Estado de Cartagena autorizó las primeras emisiones de papel moneda fiduciario en denominaciones de reales. Estos billetes eran impresos de forma muy rudimentaria en papel ordinario y firmados a mano por próceres como los hermanos Piñeres.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Cundinamarca (1814):</strong> siguiendo el ejemplo de Cartagena, el Estado de Cundinamarca emitió sus propios &ldquo;vales&rdquo; o billetes de la Tesorería General en Bogotá para sostener la guerra contra los realistas.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">El fracaso inicial:</strong> la población, acostumbrada al valor intrínseco de las monedas de oro y plata, desconfiaba profundamente de estos papeles. Con la Reconquista Española en 1815, la mayoría de estos billetes fueron quemados o destruidos, convirtiéndose hoy en piezas de extrema rareza numismática.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">2. La República de la Gran Colombia (1819&ndash;1831)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Tras la victoria definitiva de Simón Bolívar en la Batalla de Boyacá (1819), se fundó la Gran Colombia.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Durante este período se emitieron <strong style=\"color:#d8d2cd;\">Vales de la Tesorería General de la República</strong> para pagar las deudas de la guerra de independencia.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Aunque se discutió formalmente la creación de un banco nacional que emitiera billetes de forma organizada, la inestabilidad política y la disolución de la Gran Colombia en 1830 postergaron el proyecto.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">3. La Era de la Banca Privada y Libre (1870&ndash;1885)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">A mediados del siglo XIX, la economía colombiana seguía funcionando principalmente con monedas de oro, plata y monedas extranjeras. El verdadero auge y la regularización del papel moneda moderno llegó en la década de 1870.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">El Banco de Bogotá (1870):</strong> fue el primer banco privado exitoso en emitir billetes en el país. Al contar con el respaldo de reservas reales y la confianza del comercio local, estos billetes sí fueron aceptados masivamente.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Multiplicidad de emisores:</strong> tras el éxito del Banco de Bogotá, se desató una era de &ldquo;banca libre&rdquo;. Decenas de bancos privados en diferentes regiones (como el Banco de Antioquia, el Banco de Colombia y el Banco de Bolívar) imprimían sus propios billetes, los cuales eran fabricados con altos estándares de seguridad por compañías extranjeras (principalmente en Nueva York y Londres).</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">4. El Banco Nacional y el &ldquo;Curso Forzoso&rdquo; (1880&ndash;1903)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">En 1880, bajo la presidencia de Rafael Núñez, se fundó el <strong style=\"color:#d8d2cd;\">Banco Nacional</strong>, el primer intento del Estado por centralizar la emisión de dinero.</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">La Regeneración:</strong> en 1886, el gobierno decretó el &ldquo;curso forzoso&rdquo; de los billetes del Banco Nacional, prohibiendo la exigencia de pagos en oro y eliminando gradualmente el derecho de emisión de los bancos privados.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">La crisis de la Guerra de los Mil Días (1899&ndash;1902):</strong> para financiar este devastador conflicto civil, el gobierno imprimió billetes de forma descontrolada. Esto provocó una de las peores hiperinflaciones en la historia de Colombia, haciendo que el papel moneda perdiera casi todo su valor y obligando a la liquidación del Banco Nacional.</span>\n            </li>\n          </ul>\n        </div>\n\n        <div>\n          <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:0 0 10px; font-style:normal;\">5. La Consolidación: El Banco de la República (1923)</h3>\n          <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; margin:0 0 10px;\">Para sanear la economía y restaurar la confianza, en 1923 se contrató a la Misión Kemmerer (un grupo de expertos financieros estadounidenses liderados por Edwin Walter Kemmerer).</p>\n          <ul style=\"list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;\">\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\"><strong style=\"color:#d8d2cd;\">Fundación:</strong> el 23 de julio de 1923 se fundó el <strong style=\"color:#d8d2cd;\">Banco de la República</strong>, el cual recibió el derecho exclusivo y definitivo de emitir el papel moneda de curso legal en Colombia.</span>\n            </li>\n            <li style=\"display:flex; gap:12px; align-items:baseline;\">\n              <span style=\"width:6px; height:6px; min-width:6px; background:#b7ab8a; transform:rotate(45deg); position:relative; top:-3px;\"></span>\n              <span style=\"font-size:19px; line-height:1.7; color:#d8d2cd;\">Los primeros billetes del Banco de la República fueron, de hecho, billetes provisionales sobreimpresos de la antigua Casa de Moneda de Medellín, hasta que llegaron las primeras series oficiales encargadas a la <em>American Bank Note Company</em>. Desde entonces, la emisión del peso colombiano se centralizó y estabilizó por completo.</span>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </section>\n\n    <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:720px; margin:0 0 48px;\">Las piezas documentadas se listan por fecha de emisión, de 1813 a 2016. Los catálogos de banca libre y de emisiones en el extranjero se enlazan a continuación.</p>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Banca Privada y Libre (1870&ndash;1919)</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 20px;\">Banca Libre Colombiana</h2>\n      <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 24px;\">El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín, El Banco de Oriente, El Banco Internacional y la casa comercial Vicente B. Villa é Hijos, con su propio catálogo dedicado a la era de la banca privada regional.</p>\n      <a href=\"/coleccion/colombia/banca-libre/\" style=\"display:inline-flex; align-items:center; min-height:44px; font-size:16px; letter-spacing:0.06em; color:#d8d2cd; text-decoration:underline; text-decoration-color:rgba(239,231,212,0.35);\">Ver el catálogo de Banca Libre &rarr;</a>\n    </section>\n\n    <section style=\"margin-bottom:48px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Capital Colombiano en el Exterior</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 20px;\">Emisiones Colombianas en el Extranjero</h2>\n      <p style=\"font-size:19px; line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 24px;\">El Banco Colombiano, fundado por inversionistas colombianos y establecido en Guatemala, emitió su propio papel moneda fuera de las fronteras del país &mdash;un capítulo aparte de la historia bancaria colombiana en el exterior.</p>\n      <a href=\"/coleccion/colombia/emisiones-en-el-extranjero/\" style=\"display:inline-flex; align-items:center; min-height:44px; font-size:16px; letter-spacing:0.06em; color:#d8d2cd; text-decoration:underline; text-decoration-color:rgba(239,231,212,0.35);\">Ver el catálogo de Emisiones en el Extranjero &rarr;</a>\n    </section>\n\n  </main>\n\n\n\n</div>",
   "logic": "",
   "record": {
     "id": "NF.colombia",
@@ -187,25 +227,9 @@
         "year": "1813",
         "image": "/uploads/colombia-cartagena-1-real-1813.jpg",
         "imageWebp": "/uploads/colombia-cartagena-1-real-1813.webp",
-        "alt": "Billete de Un Real de 1813 emitido por el Estado de Cartagena, anverso y reverso, firmado por Piñeres"
-      },
-      {
-        "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",
-        "title": "República Bolívar de Colombia",
-        "denomination": "Un Peso",
-        "year": "1882",
-        "image": "/uploads/colombia-republica-bolivar-1-peso-1882.jpg",
-        "imageWebp": "/uploads/colombia-republica-bolivar-1-peso-1882.webp",
-        "alt": "Billete de Un Peso de la República Bolívar de Colombia, anverso y reverso"
-      },
-      {
-        "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#dos-pesos",
-        "title": "República Bolívar de Colombia",
-        "denomination": "Dos Pesos",
-        "year": "1882",
-        "image": "/uploads/colombia-republica-bolivar-2-pesos-1882.jpg",
-        "imageWebp": "/uploads/colombia-republica-bolivar-2-pesos-1882.webp",
-        "alt": "Billete de Dos Pesos de la República Bolívar de Colombia, anverso y reverso"
+        "alt": "Billete de Un Real de 1813 emitido por el Estado de Cartagena, anverso y reverso, firmado por Piñeres",
+        "group": "Cartagena de Indias (1811–1815)",
+        "groupKicker": "Guerra de Independencia"
       },
       {
         "href": "/coleccion/colombia/nueva-granada-1-peso-1861/",
@@ -214,7 +238,9 @@
         "year": "1861",
         "image": "/uploads/colombia-nueva-granada-1-peso-1861.jpg",
         "imageWebp": "/uploads/colombia-nueva-granada-1-peso-1861.webp",
-        "alt": "Billete de Un Peso de 1861 de la Tesorería Jeneral de los Estados Unidos de Nueva Granada, anverso y reverso"
+        "alt": "Billete de Un Peso de 1861 de la Tesorería Jeneral de los Estados Unidos de Nueva Granada, anverso y reverso",
+        "group": "Estados Unidos de Nueva Granada (1861)",
+        "groupKicker": "Guerra Civil de 1860–1862"
       },
       {
         "href": "/coleccion/colombia/estado-soberano-panama-3-pesos-1865/",
@@ -223,16 +249,9 @@
         "year": "1865",
         "image": "/uploads/colombia-estado-soberano-panama-3-pesos-1865.jpg",
         "imageWebp": "/uploads/colombia-estado-soberano-panama-3-pesos-1865.webp",
-        "alt": "Billete de Tesorería de Tres Pesos del Estado Soberano de Panamá, anverso y reverso"
-      },
-      {
-        "href": "/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/",
-        "title": "Cinco Pesos — Cauca",
-        "denomination": "Cinco Pesos",
-        "year": "1882",
-        "image": "/uploads/colombia-estado-soberano-cauca-5-pesos-1882.jpg",
-        "imageWebp": "/uploads/colombia-estado-soberano-cauca-5-pesos-1882.webp",
-        "alt": "Vale al portador de Cinco Pesos de El Estado Soberano del Cauca, anverso y reverso"
+        "alt": "Billete de Tesorería de Tres Pesos del Estado Soberano de Panamá, anverso y reverso",
+        "group": "Estados Unidos de Colombia",
+        "groupKicker": "Emisiones de los estados soberanos"
       },
       {
         "href": "/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/",
@@ -241,187 +260,42 @@
         "year": "1870",
         "image": "/uploads/colombia-estado-soberano-cundinamarca-1-peso-1870.jpg",
         "imageWebp": "/uploads/colombia-estado-soberano-cundinamarca-1-peso-1870.webp",
-        "alt": "Vale de deuda flotante de Un Peso de El Estado Soberano de Cundinamarca, anverso y reverso"
+        "alt": "Vale de deuda flotante de Un Peso de El Estado Soberano de Cundinamarca, anverso y reverso",
+        "group": "Estados Unidos de Colombia",
+        "groupKicker": "Emisiones de los estados soberanos"
       },
       {
-        "href": "/coleccion/colombia/banco-nacional-25-pesos-1895/",
-        "title": "El Banco Nacional",
-        "denomination": "10 Ctvs., 1, 5 y 25 Pesos",
-        "year": "1885–1900",
-        "image": "/uploads/colombia-banco-nacional-25-pesos-1895.jpg",
-        "imageWebp": "/uploads/colombia-banco-nacional-25-pesos-1895.webp",
-        "alt": "Billete de Veinticinco Pesos de El Banco Nacional de la República de Colombia, anverso y reverso"
+        "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",
+        "title": "República Bolívar de Colombia",
+        "denomination": "Un Peso",
+        "year": "1882",
+        "image": "/uploads/colombia-republica-bolivar-1-peso-1882.jpg",
+        "imageWebp": "/uploads/colombia-republica-bolivar-1-peso-1882.webp",
+        "alt": "Billete de Un Peso de la República Bolívar de Colombia, anverso y reverso",
+        "group": "Estados soberanos (1882)",
+        "groupKicker": "Primera República"
       },
       {
-        "href": "/coleccion/colombia/republica-1904-serie/",
-        "title": "República de Colombia &mdash; 1904",
-        "denomination": "Un a Cincuenta Pesos",
-        "year": "1904",
-        "image": "/uploads/colombia-republica-1904-1-peso.jpg",
-        "imageWebp": "/uploads/colombia-republica-1904-1-peso.webp",
-        "alt": "Billete de Un Peso de la República de Colombia, Bogotá, abril de 1904, anverso y reverso"
+        "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#dos-pesos",
+        "title": "República Bolívar de Colombia",
+        "denomination": "Dos Pesos",
+        "year": "1882",
+        "image": "/uploads/colombia-republica-bolivar-2-pesos-1882.jpg",
+        "imageWebp": "/uploads/colombia-republica-bolivar-2-pesos-1882.webp",
+        "alt": "Billete de Dos Pesos de la República Bolívar de Colombia, anverso y reverso",
+        "group": "Estados soberanos (1882)",
+        "groupKicker": "Primera República"
       },
       {
-        "href": "/coleccion/colombia/republica-1910-1915-emisiones/",
-        "title": "República de Colombia &mdash; 1910&ndash;1915",
-        "denomination": "Dos, Cinco y Cien Pesos",
-        "year": "1910&ndash;1915",
-        "image": "/uploads/colombia-republica-1915-2-pesos-oro.jpg",
-        "imageWebp": "/uploads/colombia-republica-1915-2-pesos-oro.webp",
-        "alt": "Billete de Dos Pesos Oro de la República de Colombia, Bogotá, 20 de julio de 1915, anverso y reverso"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Medio Peso Oro (Specimen)",
-        "year": "1948",
-        "image": "/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.webp",
-        "alt": "Billete especimen de Medio Peso Oro de El Banco de la República, anverso y reverso, conocido como Lleritas"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-1-peso-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Un Peso Oro y Un Peso Plata (Specimen)",
-        "year": "1929–1932",
-        "image": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.webp",
-        "alt": "Billete especimen de Un Peso Oro de El Banco de la República, anverso y reverso, con los retratos de Santander y Bolívar"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-2-pesos-oro/",
-        "title": "El Banco de la República",
-        "denomination": "Dos Pesos Oro",
-        "year": "1947 y 1972",
-        "image": "/uploads/colombia-banco-de-la-republica-2-pesos-oro-1947.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-2-pesos-oro-1947.webp",
-        "alt": "Billete de Dos Pesos Oro de El Banco de la República, anverso con el retrato de Camilo Torres Tenorio y reverso con un medallón de la Mariana de la Libertad"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/",
-        "title": "El Banco de la República",
-        "denomination": "Cinco Pesos Plata",
-        "year": "1941",
-        "image": "/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.webp",
-        "alt": "Billete de Cinco Pesos, Certificado de Plata, de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
-        "title": "El Banco de la República",
-        "denomination": "Diez Pesos Oro",
-        "year": "1949–1961",
-        "image": "/uploads/colombia-10-pesos-oro-1953.jpg",
-        "imageWebp": "/uploads/colombia-10-pesos-oro-1953.webp",
-        "alt": "Billete de Diez Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Antonio Nariño"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Cincuenta Pesos Oro (Specimen)",
-        "year": "1964 y 1985",
-        "image": "/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.webp",
-        "alt": "Billete especimen de Cincuenta Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
-        "title": "El Banco de la República",
-        "denomination": "Cien Pesos Oro",
-        "year": "1947, 1969, 1980, 1983",
-        "image": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.webp",
-        "alt": "Billete especimen de Cien Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Santander"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Doscientos Pesos Oro (Specimen)",
-        "year": "1982, 1983 y 1992",
-        "image": "/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.webp",
-        "alt": "Billete especimen de Doscientos Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar y una recolectora de café"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Quinientos Pesos Oro (Specimen)",
-        "year": "1947, 1984, 1989 y 1993",
-        "image": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.webp",
-        "alt": "Billete especimen de Quinientos Pesos Oro de El Banco de la República, anverso y reverso, con retrato militar y medallón de la Libertad"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-1000-pesos/",
-        "title": "El Banco de la República",
-        "denomination": "Mil Pesos — Bolívar y Gaitán",
-        "year": "1990–2006",
-        "image": "/uploads/colombia-banco-de-la-republica-1000-pesos-1990.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-1000-pesos-1990.webp",
-        "alt": "Billete de Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
-        "title": "El Banco de la República",
-        "denomination": "Dos Mil Pesos Oro",
-        "year": "1984–1993",
-        "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.webp",
-        "alt": "Billete especimen de Dos Mil Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-5000-pesos-oro-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Cinco Mil Pesos Oro (Specimen)",
-        "year": "1986, 1987, 1993",
-        "image": "/uploads/colombia-banco-de-la-republica-5000-pesos-oro-1987-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-5000-pesos-oro-1987-specimen.webp",
-        "alt": "Billete especimen de Cinco Mil Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Rafael Núñez y la estatua de Miguel Antonio Caro"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/",
-        "title": "El Banco de la República",
-        "denomination": "Diez Mil Pesos (Specimen)",
-        "year": "1994 y 1995",
-        "image": "/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.webp",
-        "alt": "Billete especimen de Diez Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de una mujer emberá y biodiversidad colombiana"
-      },
-      {
-        "href": "/coleccion/colombia/banco-de-la-republica-50000-pesos/",
-        "title": "El Banco de la República",
-        "denomination": "50 Mil Pesos — Error de Impresión",
-        "year": "2016",
-        "image": "/uploads/colombia-banco-de-la-republica-50000-pesos-error.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-50000-pesos-error.webp",
-        "alt": "Billete de 50 Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Gabriel García Márquez, mostrando un error de impresión en la numeración"
-      },
-      {
-        "href": "/coleccion/colombia/2000-pesos-error-mariposa/",
-        "title": "El Banco de la República",
-        "denomination": "Dos Mil Pesos — Corte &ldquo;Mariposa&rdquo;",
-        "year": "2009",
-        "image": "/uploads/colombia-2000-pesos-error-mariposa.jpg",
-        "imageWebp": "/uploads/colombia-2000-pesos-error-mariposa.webp",
-        "alt": "Billete de Dos Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Santander, mostrando un error de corte mariposa"
-      },
-      {
-        "href": "/coleccion/colombia/2000-pesos-error-corte-descentrado/",
-        "title": "El Banco de la República",
-        "denomination": "Dos Mil Pesos — Corte Descentrado",
-        "year": "2005, 2009",
-        "image": "/uploads/colombia-2000-pesos-error-corte-descentrado.jpg",
-        "imageWebp": "/uploads/colombia-2000-pesos-error-corte-descentrado.webp",
-        "alt": "Billete de Dos Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Santander, mostrando un error de corte descentrado"
-      },
-      {
-        "href": "/coleccion/colombia/2000-pesos-1996-error-mariposa/",
-        "title": "El Banco de la República",
-        "denomination": "Dos Mil Pesos — Corte Descentrado",
-        "year": "1996",
-        "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.jpg",
-        "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.webp",
-        "alt": "Billete colombiano de Dos Mil Pesos de 1996 con un error de corte descentrado"
+        "href": "/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/",
+        "title": "Cinco Pesos — Cauca",
+        "denomination": "Cinco Pesos",
+        "year": "1882",
+        "image": "/uploads/colombia-estado-soberano-cauca-5-pesos-1882.jpg",
+        "imageWebp": "/uploads/colombia-estado-soberano-cauca-5-pesos-1882.webp",
+        "alt": "Vale al portador de Cinco Pesos de El Estado Soberano del Cauca, anverso y reverso",
+        "group": "Estados soberanos (1882)",
+        "groupKicker": "Primera República"
       },
       {
         "href": "/coleccion/colombia/boyaca-libranza-500-pesos-1883/",
@@ -430,7 +304,229 @@
         "year": "1883",
         "image": "/uploads/colombia-boyaca-libranza-500-pesos-1883.jpg",
         "imageWebp": "/uploads/colombia-boyaca-libranza-500-pesos-1883.webp",
-        "alt": "Libranza de 500 pesos del Estado de Boyacá, 1883, anverso y reverso"
+        "alt": "Libranza de 500 pesos del Estado de Boyacá, 1883, anverso y reverso",
+        "group": "Bonos y Libranzas Fiscales",
+        "groupKicker": "Deuda pública estatal"
+      },
+      {
+        "href": "/coleccion/colombia/banco-nacional-25-pesos-1895/",
+        "title": "El Banco Nacional",
+        "denomination": "10 Ctvs., 1, 5 y 25 Pesos",
+        "year": "1885–1900",
+        "image": "/uploads/colombia-banco-nacional-25-pesos-1895.jpg",
+        "imageWebp": "/uploads/colombia-banco-nacional-25-pesos-1895.webp",
+        "alt": "Billete de Veinticinco Pesos de El Banco Nacional de la República de Colombia, anverso y reverso",
+        "group": "El Banco Nacional",
+        "groupKicker": "La Regeneración (1880–1896)"
+      },
+      {
+        "href": "/coleccion/colombia/republica-1904-serie/",
+        "title": "República de Colombia &mdash; 1904",
+        "denomination": "Un a Cincuenta Pesos",
+        "year": "1904",
+        "image": "/uploads/colombia-republica-1904-1-peso.jpg",
+        "imageWebp": "/uploads/colombia-republica-1904-1-peso.webp",
+        "alt": "Billete de Un Peso de la República de Colombia, Bogotá, abril de 1904, anverso y reverso",
+        "group": "República de Colombia",
+        "groupKicker": "Consolidación nacional"
+      },
+      {
+        "href": "/coleccion/colombia/republica-1910-1915-emisiones/",
+        "title": "República de Colombia &mdash; 1910&ndash;1915",
+        "denomination": "Dos, Cinco y Cien Pesos",
+        "year": "1910&ndash;1915",
+        "image": "/uploads/colombia-republica-1915-2-pesos-oro.jpg",
+        "imageWebp": "/uploads/colombia-republica-1915-2-pesos-oro.webp",
+        "alt": "Billete de Dos Pesos Oro de la República de Colombia, Bogotá, 20 de julio de 1915, anverso y reverso",
+        "group": "República de Colombia",
+        "groupKicker": "Consolidación nacional"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-1-peso-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Un Peso Oro y Un Peso Plata (Specimen)",
+        "year": "1929–1932",
+        "image": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-1-peso-oro-1929-specimen.webp",
+        "alt": "Billete especimen de Un Peso Oro de El Banco de la República, anverso y reverso, con los retratos de Santander y Bolívar",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/",
+        "title": "El Banco de la República",
+        "denomination": "Cinco Pesos Plata",
+        "year": "1941",
+        "image": "/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-5-pesos-plata-1941-specimen.webp",
+        "alt": "Billete de Cinco Pesos, Certificado de Plata, de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-2-pesos-oro/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Pesos Oro",
+        "year": "1947 y 1972",
+        "image": "/uploads/colombia-banco-de-la-republica-2-pesos-oro-1947.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-2-pesos-oro-1947.webp",
+        "alt": "Billete de Dos Pesos Oro de El Banco de la República, anverso con el retrato de Camilo Torres Tenorio y reverso con un medallón de la Mariana de la Libertad",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
+        "title": "El Banco de la República",
+        "denomination": "Cien Pesos Oro",
+        "year": "1947, 1969, 1980, 1983",
+        "image": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-100-pesos-oro-1980-specimen.webp",
+        "alt": "Billete especimen de Cien Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Santander",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Quinientos Pesos Oro (Specimen)",
+        "year": "1947, 1984, 1989 y 1993",
+        "image": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-500-pesos-oro-1947-specimen.webp",
+        "alt": "Billete especimen de Quinientos Pesos Oro de El Banco de la República, anverso y reverso, con retrato militar y medallón de la Libertad",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Medio Peso Oro (Specimen)",
+        "year": "1948",
+        "image": "/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-medio-peso-oro-1948-specimen.webp",
+        "alt": "Billete especimen de Medio Peso Oro de El Banco de la República, anverso y reverso, conocido como Lleritas",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
+        "title": "El Banco de la República",
+        "denomination": "Diez Pesos Oro",
+        "year": "1949–1961",
+        "image": "/uploads/colombia-10-pesos-oro-1953.jpg",
+        "imageWebp": "/uploads/colombia-10-pesos-oro-1953.webp",
+        "alt": "Billete de Diez Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Antonio Nariño",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Cincuenta Pesos Oro (Specimen)",
+        "year": "1964 y 1985",
+        "image": "/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-50-pesos-oro-1964-specimen.webp",
+        "alt": "Billete especimen de Cincuenta Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Doscientos Pesos Oro (Specimen)",
+        "year": "1982, 1983 y 1992",
+        "image": "/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-200-pesos-oro-1982-specimen.webp",
+        "alt": "Billete especimen de Doscientos Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar y una recolectora de café",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Mil Pesos Oro",
+        "year": "1984–1993",
+        "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-oro-1984-specimen.webp",
+        "alt": "Billete especimen de Dos Mil Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-5000-pesos-oro-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Cinco Mil Pesos Oro (Specimen)",
+        "year": "1986, 1987, 1993",
+        "image": "/uploads/colombia-banco-de-la-republica-5000-pesos-oro-1987-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-5000-pesos-oro-1987-specimen.webp",
+        "alt": "Billete especimen de Cinco Mil Pesos Oro de El Banco de la República, anverso y reverso, con el retrato de Rafael Núñez y la estatua de Miguel Antonio Caro",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-1000-pesos/",
+        "title": "El Banco de la República",
+        "denomination": "Mil Pesos — Bolívar y Gaitán",
+        "year": "1990–2006",
+        "image": "/uploads/colombia-banco-de-la-republica-1000-pesos-1990.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-1000-pesos-1990.webp",
+        "alt": "Billete de Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Simón Bolívar",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/",
+        "title": "El Banco de la República",
+        "denomination": "Diez Mil Pesos (Specimen)",
+        "year": "1994 y 1995",
+        "image": "/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.webp",
+        "alt": "Billete especimen de Diez Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de una mujer emberá y biodiversidad colombiana",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/2000-pesos-1996-error-mariposa/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Mil Pesos — Corte Descentrado",
+        "year": "1996",
+        "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.webp",
+        "alt": "Billete colombiano de Dos Mil Pesos de 1996 con un error de corte descentrado",
+        "group": "Errores de impresión",
+        "groupKicker": "Banco de la República"
+      },
+      {
+        "href": "/coleccion/colombia/2000-pesos-error-corte-descentrado/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Mil Pesos — Corte Descentrado",
+        "year": "2005, 2009",
+        "image": "/uploads/colombia-2000-pesos-error-corte-descentrado.jpg",
+        "imageWebp": "/uploads/colombia-2000-pesos-error-corte-descentrado.webp",
+        "alt": "Billete de Dos Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Santander, mostrando un error de corte descentrado",
+        "group": "Errores de impresión",
+        "groupKicker": "Banco de la República"
+      },
+      {
+        "href": "/coleccion/colombia/2000-pesos-error-mariposa/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Mil Pesos — Corte &ldquo;Mariposa&rdquo;",
+        "year": "2009",
+        "image": "/uploads/colombia-2000-pesos-error-mariposa.jpg",
+        "imageWebp": "/uploads/colombia-2000-pesos-error-mariposa.webp",
+        "alt": "Billete de Dos Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Santander, mostrando un error de corte mariposa",
+        "group": "Errores de impresión",
+        "groupKicker": "Banco de la República"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-50000-pesos/",
+        "title": "El Banco de la República",
+        "denomination": "50 Mil Pesos — Error de Impresión",
+        "year": "2016",
+        "image": "/uploads/colombia-banco-de-la-republica-50000-pesos-error.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-50000-pesos-error.webp",
+        "alt": "Billete de 50 Mil Pesos de El Banco de la República, anverso y reverso, con el retrato de Gabriel García Márquez, mostrando un error de impresión en la numeración",
+        "group": "Errores de impresión",
+        "groupKicker": "Banco de la República"
       }
     ],
     "eyebrow": "Contexto Histórico"
