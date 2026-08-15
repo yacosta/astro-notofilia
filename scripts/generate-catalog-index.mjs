@@ -169,7 +169,12 @@ function normalizeMaterial(raw, pathValue, keywords, kind) {
   return raw ? 'papel' : '';
 }
 
-function detectKind(pathValue, title, keywords, emissionType, recordKind) {
+function detectKind(pathValue, title, keywords, emissionType, recordKind, status) {
+  if (status === 'specimen') return 'specimen';
+  if (status === 'error') return 'error';
+  if (status === 'circulated' || status === 'uncirculated') {
+    return recordKind === 'coin' ? 'coin' : 'banknote';
+  }
   if (recordKind === 'coin' || recordKind === 'banknote' || recordKind === 'profile') {
     return recordKind;
   }
@@ -284,6 +289,7 @@ for (const file of files) {
     keywords,
     emissionType,
     data.record?.kind,
+    data.record?.metadata?.status,
   );
   const material = normalizeMaterial(materialRaw, data.path, keywords, kind);
   const country = normalizeCountry(countryRaw, data.path);

@@ -81,8 +81,8 @@
     "id": "NF.colombia.banco-nacional-25-pesos-1895",
     "kind": "banknote",
     "title": "El Banco Nacional",
-    "subtitle": "Diez y Veinte Centavos, Un Peso, Cinco, Diez, Veinte y Cincuenta Pesos, Veinticinco Pesos (1885&ndash;1901)",
-    "dateOrSeries": "Bogotá, 2 de enero de 1893",
+    "subtitle": "Diez y Veinte Centavos, Un Peso, Cinco, Diez, Veinte y Cincuenta Pesos, Veinticinco Pesos (1885–1901)",
+    "dateOrSeries": "Bogotá, 4 de marzo de 1895",
     "country": "Colombia (Bogotá)",
     "issuer": "El Banco Nacional de la República de Colombia, banco estatal de emisión creado por la Ley 39 de 1880",
     "breadcrumb": [
@@ -100,25 +100,24 @@
     ],
     "images": {
       "stacked": {
-        "src": "/uploads/colombia-banco-nacional-10-centavos-1893-specimen.jpg",
-        "srcWebp": "/uploads/colombia-banco-nacional-10-centavos-1893-specimen.webp",
-        "alt": "Billete specimen de Diez Centavos de El Banco Nacional de la República de Colombia, anverso arriba en tinta ocre con escudo de Colombia y sobretinta roja SPECIMEN, reverso abajo en tinta verde con gran cifra 10 y sello circular rojo de anulación"
+        "src": "/uploads/colombia-banco-nacional-25-pesos-1895.jpg",
+        "srcWebp": "/uploads/colombia-banco-nacional-25-pesos-1895.webp",
+        "alt": "Billete de Veinticinco Pesos de El Banco Nacional de la República de Colombia, anverso arriba con retrato ovalado de un perro y viñeta de mujer con corona de laurel, reverso abajo en tinta sepia con gran medallón estrellado y el número 25"
       },
       "defaultView": "stacked"
     },
     "metadata": {
-      "denomination": "Diez Centavos",
+      "denomination": "Veinticinco Pesos, en moneda corriente",
       "issuer": "El Banco Nacional de la República de Colombia, banco estatal de emisión creado por la Ley 39 de 1880",
-      "printer": "American Bank Note Company, New York",
-      "series": "Série K, N.&deg; 00000 (numeración de ejemplar specimen)",
-      "issueDate": "Bogotá, 2 de enero de 1893",
-      "catalogNumber": "Sin número Pick confirmado en las fuentes consultadas",
-      "dimensions": "Formato fraccionario estándar, aprox. 115 &times; 65 mm",
-      "weight": "Serie P, N.&deg; 62982 · Bogotá, 30 de septiembre de 1900 · Guerra de los Mil Días",
-      "condition": "Ejemplar specimen (muestra de imprenta) sin curso legal, con perforación y sobretinta de anulación — no circuló como dinero"
+      "series": "Serie 1.ª",
+      "serialNumber": "N.° 170390",
+      "issueDate": "Bogotá, 4 de marzo de 1895",
+      "catalogNumber": "Pick n.° 237",
+      "condition": "Billete emitido al portador, con numeración de circulación (Serie 1.ª, N.° 170390)",
+      "status": "circulated"
     },
     "render": "astro-static",
-    "eyebrow": "La Regeneración · Bogotá · 1893&ndash;1895"
+    "eyebrow": "La Regeneración · Bogotá · 1895"
   },
   "legacyFile": "billete-colombia-banco-nacional-25-pesos-1895.dc.html",
   "sourceHash": "414e8a1aeebdd6f0"
