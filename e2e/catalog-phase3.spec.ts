@@ -162,13 +162,13 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
 
   await page.goto('/coleccion/certificados-de-pago-militar/1-dolar-serie-681/');
   await expect(page.getByRole('heading', { level: 1, name: 'Un Dólar — Serie 681' })).toBeVisible();
-  await expect(page.getByText('Fr. M915')).toBeVisible();
-  await expect(page.getByText('Schwan S915-1')).toBeVisible();
-  await expect(page.getByText('C10102047C')).toBeVisible();
-  await expect(page.getByText('22.400.000')).toBeVisible();
-  await expect(page.getByText('S915-1r')).toBeVisible();
-  await expect(page.getByText('C22400000C')).toBeVisible();
-  await expect(page.getByText('C00560000')).toBeVisible();
+  const ficha = page.locator('#main-content');
+  await expect(ficha.getByText('Fr. M915 · Schwan S915-1 · Pick M79').first()).toBeVisible();
+  await expect(ficha.getByText('C10102047C').first()).toBeVisible();
+  await expect(ficha.getByText('22.400.000').first()).toBeVisible();
+  await expect(ficha.getByText('S915-1r').first()).toBeVisible();
+  await expect(ficha.getByText('C22400000C').first()).toBeVisible();
+  await expect(ficha.getByText('C00560000').first()).toBeVisible();
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });
