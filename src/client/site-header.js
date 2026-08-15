@@ -38,6 +38,11 @@
     setHidden(backdrop, true);
     if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     document.documentElement.style.overflow = '';
+    if (drawer) {
+      drawer.querySelectorAll('details[open]').forEach(function (panel) {
+        panel.removeAttribute('open');
+      });
+    }
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   }
 

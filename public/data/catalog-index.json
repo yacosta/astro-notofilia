@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-08-14T15:30:21.784Z",
+  "generatedAt": "2026-08-15T01:48:44.418Z",
   "count": 128,
   "pieceCount": 112,
   "countries": [
     {
-      "name": "Estados Unidos",
-      "count": 36,
-      "slug": "estados-unidos"
+      "name": "Colombia",
+      "count": 43,
+      "slug": "colombia"
     },
     {
-      "name": "Colombia",
-      "count": 35,
-      "slug": "colombia"
+      "name": "Estados Unidos",
+      "count": 29,
+      "slug": "estados-unidos"
     },
     {
       "name": "España",
@@ -22,11 +22,6 @@
       "name": "Puerto Rico",
       "count": 4,
       "slug": "puerto-rico"
-    },
-    {
-      "name": "Guatemala",
-      "count": 2,
-      "slug": "guatemala"
     },
     {
       "name": "Bangladesh",
@@ -67,6 +62,11 @@
       "name": "Ecuador",
       "count": 1,
       "slug": "ecuador"
+    },
+    {
+      "name": "Guatemala",
+      "count": 1,
+      "slug": "guatemala"
     },
     {
       "name": "Haití",
@@ -775,14 +775,14 @@
       "country": "Colombia",
       "issuer": "El Banco de la República, Bogotá",
       "denomination": "Dos Mil Pesos",
-      "catalogRef": "",
+      "catalogRef": "Pick #437 (subtipo/variante según fecha)",
       "condition": "",
       "emissionType": "Billete de curso legal — ejemplar con error de corte descentrado",
       "dateLabel": "2 de abril de 1996",
       "year": 1996,
       "material": "",
-      "kind": "error",
-      "searchText": "2.000 pesos de 1996: corte descentrado ficha de catálogo numismático: billete de dos mil pesos «mariposa» de el banco de la república, colombia, fechado 2 de abril de 1996… colombia el banco de la república, bogotá dos mil pesos error banco de la república dos mil pesos mariposa francisco de paula santander billete casa de la moneda bogotá error de corte descentrado billete colombiano numismática de errores"
+      "kind": "banknote",
+      "searchText": "2.000 pesos de 1996: corte descentrado ficha de catálogo numismático: billete de dos mil pesos «mariposa» de el banco de la república, colombia, fechado 2 de abril de 1996… colombia el banco de la república, bogotá dos mil pesos pick #437 (subtipo/variante según fecha) banknote banco de la república dos mil pesos mariposa francisco de paula santander billete casa de la moneda bogotá error de corte descentrado billete colombiano numismática de errores"
     },
     {
       "id": "colombia--2000-pesos-error-corte-descentrado",
@@ -811,8 +811,8 @@
       "dateLabel": "",
       "year": 2000,
       "material": "",
-      "kind": "error",
-      "searchText": "dos mil pesos, error de corte descentrado ficha de catálogo numismático: billetes de dos mil pesos de el banco de la república, colombia (2005, 2009)… colombia error banco de la república dos mil pesos error corte descentrado billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
+      "kind": "banknote",
+      "searchText": "dos mil pesos, error de corte descentrado ficha de catálogo numismático: billetes de dos mil pesos de el banco de la república, colombia (2005, 2009)… colombia banknote banco de la república dos mil pesos error corte descentrado billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
     },
     {
       "id": "colombia--2000-pesos-error-mariposa",
@@ -842,8 +842,8 @@
       "dateLabel": "Bogotá, 20 de agosto de 2009",
       "year": 2009,
       "material": "",
-      "kind": "error",
-      "searchText": "dos mil pesos, error “mariposa” ficha de catálogo numismático: billete de dos mil pesos de el banco de la república, colombia, 2009, con error de corte «mariposa»… colombia el banco de la república, bogotá dos mil pesos error banco de la república dos mil pesos error mariposa corte defectuoso billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
+      "kind": "banknote",
+      "searchText": "dos mil pesos, error “mariposa” ficha de catálogo numismático: billete de dos mil pesos de el banco de la república, colombia, 2009, con error de corte «mariposa»… colombia el banco de la república, bogotá dos mil pesos banknote banco de la república dos mil pesos error mariposa corte defectuoso billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
     },
     {
       "id": "colombia--banco-colombiano-guatemala-1-peso-1900",
@@ -862,7 +862,7 @@
       "image": "/uploads/guatemala-banco-colombiano-1-peso-1900.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Guatemala",
+      "country": "Colombia",
       "issuer": "El Banco Colombiano en Guatemala, fundado en 1878 por el Dr. Recaredo de Villa con capital antioqueño; emitió sus propios billetes hasta 1901",
       "denomination": "Un Peso, pagadero a la vista al portador en moneda corriente y efectiva",
       "catalogRef": "Pick S101",
@@ -872,7 +872,7 @@
       "year": 1900,
       "material": "",
       "kind": "banknote",
-      "searchText": "el banco colombiano — un peso, guatemala (1900) ficha de catálogo numismático: billete de un peso de el banco colombiano, emitido en la ciudad de guatemala el 17 de abril de 1900… guatemala el banco colombiano en guatemala, fundado en 1878 por el dr. recaredo de villa con capital antioqueño; emitió sus propios billetes hasta 1901 un peso, pagadero a la vista al portador en moneda corriente y efectiva pick s101 banknote banco colombiano guatemala billete guatemala 1900 un peso guatemala pick s101 emisiones colombianas en el extranjero notafilia colombiana"
+      "searchText": "el banco colombiano — un peso, guatemala (1900) ficha de catálogo numismático: billete de un peso de el banco colombiano, emitido en la ciudad de guatemala el 17 de abril de 1900… colombia el banco colombiano en guatemala, fundado en 1878 por el dr. recaredo de villa con capital antioqueño; emitió sus propios billetes hasta 1901 un peso, pagadero a la vista al portador en moneda corriente y efectiva pick s101 banknote banco colombiano guatemala billete guatemala 1900 un peso guatemala pick s101 emisiones colombianas en el extranjero notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-antioquia-libranza-10-centavos-1900",
@@ -960,8 +960,8 @@
       "dateLabel": "c. 1919",
       "year": 1919,
       "material": "",
-      "kind": "specimen",
-      "searchText": "un peso oro 1919, banco de caldas ficha de catálogo numismático: cédula hipotecaria especimen de un peso oro legal, el banco de caldas, manizales, colombia, 1919. colombia el banco de caldas, manizales — sección hipotecaria un peso oro legal pick #326 (especimen) specimen banco de caldas manizales cédula hipotecaria un peso oro legal specimen american bank note company notafilia colombia"
+      "kind": "banknote",
+      "searchText": "un peso oro 1919, banco de caldas ficha de catálogo numismático: cédula hipotecaria especimen de un peso oro legal, el banco de caldas, manizales, colombia, 1919. colombia el banco de caldas, manizales — sección hipotecaria un peso oro legal pick #326 (especimen) banknote banco de caldas manizales cédula hipotecaria un peso oro legal specimen american bank note company notafilia colombia"
     },
     {
       "id": "colombia--banco-de-colombia-1-peso-oro-1919",
@@ -1020,8 +1020,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia specimen banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
+      "kind": "banknote",
+      "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia banknote banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-10-pesos-oro",
@@ -1140,8 +1140,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "diez mil pesos specimen, banco de la república ficha de catálogo numismático: especímenes de diez mil pesos (1994 y 1995)… colombia specimen banco de la república diez mil pesos specimen mujer embera billete policarpa salavarrieta billete la pola billete muestra sin valor numismática colombiana"
+      "kind": "banknote",
+      "searchText": "diez mil pesos specimen, banco de la república ficha de catálogo numismático: especímenes de diez mil pesos (1994 y 1995)… colombia banknote banco de la república diez mil pesos specimen mujer embera billete policarpa salavarrieta billete la pola billete muestra sin valor numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2-pesos-oro",
@@ -1202,8 +1202,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia specimen banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
+      "kind": "banknote",
+      "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia banknote banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2000-pesos-oro",
@@ -1234,8 +1234,8 @@
       "dateLabel": "",
       "year": 2000,
       "material": "",
-      "kind": "specimen",
-      "searchText": "dos mil pesos oro, banco de la república ficha de catálogo numismático: especímenes de dos mil pesos oro (1984, 1985, 1986, 1993)… colombia specimen banco de la república dos mil pesos oro 2000 pesos colombia simón bolívar billete pantano de vargas specimen muestra sin valor notafilia colombiana numismática colombiana"
+      "kind": "banknote",
+      "searchText": "dos mil pesos oro, banco de la república ficha de catálogo numismático: especímenes de dos mil pesos oro (1984, 1985, 1986, 1993)… colombia banknote banco de la república dos mil pesos oro 2000 pesos colombia simón bolívar billete pantano de vargas specimen muestra sin valor notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-5-pesos-plata-1941",
@@ -1294,8 +1294,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "cincuenta pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cincuenta pesos oro (1964, bolívar) y (1985, camilo torres) de el banco de la república, colombia. colombia specimen banco de la república cincuenta pesos oro specimen muestra sin valor simón bolívar billete camilo torres billete notafilia colombiana numismática colombiana"
+      "kind": "banknote",
+      "searchText": "cincuenta pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cincuenta pesos oro (1964, bolívar) y (1985, camilo torres) de el banco de la república, colombia. colombia banknote banco de la república cincuenta pesos oro specimen muestra sin valor simón bolívar billete camilo torres billete notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-500-pesos-oro-specimen",
@@ -1324,8 +1324,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "quinientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de quinientos pesos oro (1947, 1984, 1989 y 1993)… colombia specimen banco de la república quinientos pesos oro specimen muestra sin valor francisco de paula santander billete casa de la moneda bogotá notafilia colombiana numismática colombiana"
+      "kind": "banknote",
+      "searchText": "quinientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de quinientos pesos oro (1947, 1984, 1989 y 1993)… colombia banknote banco de la república quinientos pesos oro specimen muestra sin valor francisco de paula santander billete casa de la moneda bogotá notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-5000-pesos-oro-specimen",
@@ -1347,14 +1347,14 @@
       "country": "Colombia",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Pick P-439 (subtipo por fecha)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "specimen",
-      "searchText": "cinco mil pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cinco mil pesos oro (1986, 1987 y 1993)… colombia specimen banco de la república cinco mil pesos oro specimen rafael núñez billete miguel antonio caro billete muestra sin valor numismática colombiana"
+      "kind": "banknote",
+      "searchText": "cinco mil pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cinco mil pesos oro (1986, 1987 y 1993)… colombia pick p-439 (subtipo por fecha) banknote banco de la república cinco mil pesos oro specimen rafael núñez billete miguel antonio caro billete muestra sin valor numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-50000-pesos",
@@ -1384,8 +1384,8 @@
       "dateLabel": "",
       "year": null,
       "material": "",
-      "kind": "error",
-      "searchText": "50.000 pesos: error de impresión ficha de catálogo numismático: billete de 50… colombia el banco de la república, bogotá 50 mil pesos error banco de la república 50 mil pesos gabriel garcía márquez error de impresión billete colombiano ciudad perdida notafilia colombiana numismática de errores"
+      "kind": "banknote",
+      "searchText": "50.000 pesos: error de impresión ficha de catálogo numismático: billete de 50… colombia el banco de la república, bogotá 50 mil pesos banknote banco de la república 50 mil pesos gabriel garcía márquez error de impresión billete colombiano ciudad perdida notafilia colombiana numismática de errores"
     },
     {
       "id": "colombia--banco-de-la-republica-medio-peso-oro-specimen",
@@ -1408,14 +1408,14 @@
       "country": "Colombia",
       "issuer": "El Banco de la República, Bogotá",
       "denomination": "Medio Peso Oro",
-      "catalogRef": "",
+      "catalogRef": "Pick P-384s (variante fraccionaria)",
       "condition": "Gema sin circular, con dos perforaciones de cancelación",
       "emissionType": "",
       "dateLabel": "18 de enero de 1948, Bogotá",
       "year": 1948,
       "material": "",
-      "kind": "specimen",
-      "searchText": "medio peso oro specimen, banco de la república ficha de catálogo numismático: espécimen de medio peso oro (18 de enero de 1948) de el banco de la república, colombia, conocido como \"lleritas\". colombia el banco de la república, bogotá medio peso oro gema sin circular, con dos perforaciones de cancelación specimen banco de la república medio peso oro specimen lleritas billete narino billete colombiano american bank note company casa de la moneda bogotá numismática colombiana"
+      "kind": "banknote",
+      "searchText": "medio peso oro specimen, banco de la república ficha de catálogo numismático: espécimen de medio peso oro (18 de enero de 1948) de el banco de la república, colombia, conocido como \"lleritas\". colombia el banco de la república, bogotá medio peso oro pick p-384s (variante fraccionaria) gema sin circular, con dos perforaciones de cancelación banknote banco de la república medio peso oro specimen lleritas billete narino billete colombiano american bank note company casa de la moneda bogotá numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-union-5-10-pesos-1883",
@@ -1435,7 +1435,7 @@
       "image": "/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco de la Unión, casa bancaria privada de Bogotá operada por Palau, Corrales & Compañía",
       "denomination": "Cinco Pesos, en moneda legal corriente",
       "catalogRef": "Pick n.&deg; S866a (Standard Catalog of World Paper Money, sección de bancos privados de Colombia)",
@@ -1445,7 +1445,7 @@
       "year": 1883,
       "material": "",
       "kind": "banknote",
-      "searchText": "cinco pesos y diez pesos, el banco de la unión ficha de catálogo numismático: billetes de cinco pesos y diez pesos de el banco de la unión, palau corrales & compañía, bogotá, 1883… estados unidos el banco de la unión, casa bancaria privada de bogotá operada por palau, corrales & compañía cinco pesos, en moneda legal corriente pick n.&deg; s866a (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco de la union bogota palau corrales y compania billete colombiano siglo xix banca libre bogota resello banco nacional cinco pesos 1883 diez pesos 1883"
+      "searchText": "cinco pesos y diez pesos, el banco de la unión ficha de catálogo numismático: billetes de cinco pesos y diez pesos de el banco de la unión, palau corrales & compañía, bogotá, 1883… colombia el banco de la unión, casa bancaria privada de bogotá operada por palau, corrales & compañía cinco pesos, en moneda legal corriente pick n.&deg; s866a (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco de la union bogota palau corrales y compania billete colombiano siglo xix banca libre bogota resello banco nacional cinco pesos 1883 diez pesos 1883"
     },
     {
       "id": "colombia--banco-de-medellin-50-centavos",
@@ -1552,7 +1552,7 @@
       "image": "/uploads/colombia-banco-de-panama-1-peso.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco de Panamá, establecido en la ciudad de Panamá en 1869",
       "denomination": "Un Peso, pagadero al portador y a la vista en efectivo",
       "catalogRef": "Pick n.&deg; 6",
@@ -1562,7 +1562,7 @@
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso y cinco pesos, el banco de panamá ficha de catálogo numismático: billetes… estados unidos el banco de panamá, establecido en la ciudad de panamá en 1869 un peso, pagadero al portador y a la vista en efectivo pick n.&deg; 6 banknote banco de panama billete de panama siglo xix panama colombia un peso panama cinco pesos panama pick 6 pick 8 banca libre panama"
+      "searchText": "un peso y cinco pesos, el banco de panamá ficha de catálogo numismático: billetes… colombia el banco de panamá, establecido en la ciudad de panamá en 1869 un peso, pagadero al portador y a la vista en efectivo pick n.&deg; 6 banknote banco de panama billete de panama siglo xix panama colombia un peso panama cinco pesos panama pick 6 pick 8 banca libre panama"
     },
     {
       "id": "colombia--banco-del-cauca-1-5-pesos-1888",
@@ -1641,7 +1641,7 @@
       "image": "/uploads/colombia-banco-internacional-1-peso-1884.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco Internacional, banco privado con sede en Bogotá",
       "denomination": "Un Peso, en moneda corriente",
       "catalogRef": "Sin número Pick confirmado en las fuentes consultadas",
@@ -1651,7 +1651,7 @@
       "year": 1884,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso y diez pesos, el banco internacional ficha de catálogo numismático: billetes de un peso y diez pesos de el banco internacional, bogotá, 1884… estados unidos el banco internacional, banco privado con sede en bogotá un peso, en moneda corriente sin número pick confirmado en las fuentes consultadas banknote banco internacional bogota billete colombiano siglo xix banca libre bogota resello banco nacional un peso 1884 diez pesos 1884"
+      "searchText": "un peso y diez pesos, el banco internacional ficha de catálogo numismático: billetes de un peso y diez pesos de el banco internacional, bogotá, 1884… colombia el banco internacional, banco privado con sede en bogotá un peso, en moneda corriente sin número pick confirmado en las fuentes consultadas banknote banco internacional bogota billete colombiano siglo xix banca libre bogota resello banco nacional un peso 1884 diez pesos 1884"
     },
     {
       "id": "colombia--banco-nacional-25-pesos-1895",
@@ -1684,8 +1684,8 @@
       "dateLabel": "",
       "year": 1895,
       "material": "",
-      "kind": "specimen",
-      "searchText": "banco nacional de colombia: serie 1895 ficha de catálogo numismático: billetes de diez centavos (1885, 1893), un peso y cinco pesos (guerra de los mil días, 1899–1900)… colombia el banco nacional de la república de colombia, banco estatal de emisión creado por la ley 39 de 1880 diez centavos sin número pick confirmado en las fuentes consultadas specimen banco nacional colombia billete colombiano siglo xix curso forzoso rafael nuñez veinticinco pesos 1895 diez centavos 1893 diez centavos 1885 specimen regeneracion american bank note company homer lee bank note"
+      "kind": "banknote",
+      "searchText": "banco nacional de colombia: serie 1895 ficha de catálogo numismático: billetes de diez centavos (1885, 1893), un peso y cinco pesos (guerra de los mil días, 1899–1900)… colombia el banco nacional de la república de colombia, banco estatal de emisión creado por la ley 39 de 1880 diez centavos sin número pick confirmado en las fuentes consultadas banknote banco nacional colombia billete colombiano siglo xix curso forzoso rafael nuñez veinticinco pesos 1895 diez centavos 1893 diez centavos 1885 specimen regeneracion american bank note company homer lee bank note"
     },
     {
       "id": "colombia--banco-union-cartagena-1-peso-1880s",
@@ -1703,7 +1703,7 @@
       "image": "/uploads/colombia-banco-union-cartagena-1-peso-1880s.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "El Banco Unión, banco privado de Cartagena — entidad distinta de El Banco de la Unión de Bogotá",
       "denomination": "Un Peso, en moneda legal corriente",
       "catalogRef": "Pick n.&deg; S865 (Standard Catalog of World Paper Money, sección de bancos privados de Colombia)",
@@ -1713,7 +1713,7 @@
       "year": 1880,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso, el banco unión (cartagena, 188x) ficha de catálogo numismático: billete de un peso de el banco unión, cartagena, colombia, década de 1880, con viñeta central de un velero. estados unidos el banco unión, banco privado de cartagena — entidad distinta de el banco de la unión de bogotá un peso, en moneda legal corriente pick n.&deg; s865 (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco union cartagena billete colombiano siglo xix banca libre cartagena un peso 188x notafilia colombiana"
+      "searchText": "un peso, el banco unión (cartagena, 188x) ficha de catálogo numismático: billete de un peso de el banco unión, cartagena, colombia, década de 1880, con viñeta central de un velero. colombia el banco unión, banco privado de cartagena — entidad distinta de el banco de la unión de bogotá un peso, en moneda legal corriente pick n.&deg; s865 (standard catalog of world paper money, sección de bancos privados de colombia) banknote banco union cartagena billete colombiano siglo xix banca libre cartagena un peso 188x notafilia colombiana"
     },
     {
       "id": "colombia--boyaca-libranza-500-pesos-1883",
@@ -1735,7 +1735,7 @@
       "image": "/uploads/colombia-boyaca-libranza-500-pesos-1883.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería General, Estado de Boyacá",
       "denomination": "Quinientos Pesos",
       "catalogRef": "",
@@ -1745,7 +1745,7 @@
       "year": 1883,
       "material": "",
       "kind": "banknote",
-      "searchText": "libranza de 500 pesos, estado de boyacá (1883) ficha de catálogo: libranza fiscal de 500 pesos del estado de boyacá, 1883, contra la renta de salinas, para el camino de chiquinquirá al magdalena. estados unidos tesorería general, estado de boyacá quinientos pesos banknote libranza bono fiscal estado de boyaca renta de salinas chiquinquira magdalena colombia siglo xix aníbal galindo notafilia colombiana"
+      "searchText": "libranza de 500 pesos, estado de boyacá (1883) ficha de catálogo: libranza fiscal de 500 pesos del estado de boyacá, 1883, contra la renta de salinas, para el camino de chiquinquirá al magdalena. colombia tesorería general, estado de boyacá quinientos pesos banknote libranza bono fiscal estado de boyaca renta de salinas chiquinquira magdalena colombia siglo xix aníbal galindo notafilia colombiana"
     },
     {
       "id": "colombia--cartagena-1-real-1813",
@@ -1889,7 +1889,7 @@
       "image": "/uploads/colombia-estado-soberano-panama-3-pesos-1865.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería del Estado Soberano de Panamá",
       "denomination": "Tres Pesos",
       "catalogRef": "Pick n.&deg; 80",
@@ -1899,7 +1899,7 @@
       "year": 1865,
       "material": "",
       "kind": "banknote",
-      "searchText": "tres pesos, estado soberano de panamá (1865) ficha de catálogo numismático: billete de tesorería de tres pesos del estado soberano de panamá, 1865, con el retrato de tomás herrera. estados unidos tesorería del estado soberano de panamá tres pesos pick n.&deg; 80 banknote estado soberano de panama billete de tesoreria tomas herrera ley 17 de 1865 tres pesos panama estados unidos de colombia notafilia colombiana"
+      "searchText": "tres pesos, estado soberano de panamá (1865) ficha de catálogo numismático: billete de tesorería de tres pesos del estado soberano de panamá, 1865, con el retrato de tomás herrera. colombia tesorería del estado soberano de panamá tres pesos pick n.&deg; 80 banknote estado soberano de panama billete de tesoreria tomas herrera ley 17 de 1865 tres pesos panama estados unidos de colombia notafilia colombiana"
     },
     {
       "id": "colombia--nueva-granada-1-peso-1861",
@@ -1919,7 +1919,7 @@
       "image": "/uploads/colombia-nueva-granada-1-peso-1861.jpg",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Colombia",
       "issuer": "Tesorería Jeneral de los Estados Unidos de Nueva Granada, Bogotá",
       "denomination": "Un Peso (equivalente a diez reales)",
       "catalogRef": "Pick #61",
@@ -1929,7 +1929,7 @@
       "year": 1861,
       "material": "papel",
       "kind": "banknote",
-      "searchText": "un peso 1861, nueva granada ficha de catálogo numismático: billete de un peso de 1861, tesorería jeneral de los estados unidos de nueva granada, bogotá. estados unidos tesorería jeneral de los estados unidos de nueva granada, bogotá un peso (equivalente a diez reales) pick #61 papel banknote estados unidos de nueva granada un peso 1861 tesorería jeneral notafilia colombia mosquera papel moneda colombiano numismática colombiana"
+      "searchText": "un peso 1861, nueva granada ficha de catálogo numismático: billete de un peso de 1861, tesorería jeneral de los estados unidos de nueva granada, bogotá. colombia tesorería jeneral de los estados unidos de nueva granada, bogotá un peso (equivalente a diez reales) pick #61 papel banknote estados unidos de nueva granada un peso 1861 tesorería jeneral notafilia colombia mosquera papel moneda colombiano numismática colombiana"
     },
     {
       "id": "colombia--perfil-antonio-narino",
@@ -2234,14 +2234,14 @@
       "country": "Ecuador",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Pick P-123Ab",
       "condition": "",
       "emissionType": "",
       "dateLabel": "Quito, 20 de agosto de 1993",
       "year": 1993,
       "material": "",
       "kind": "banknote",
-      "searchText": "100 sucres, banco central del ecuador (1993) ficha de catálogo numismático: par de billetes de cien sucres del banco central del ecuador, serie wf, 20 de agosto de 1993… ecuador banknote banco central del ecuador cien sucres ecuador billetes simón bolívar serie wf notafilia numismática ecuatoriana pick 123"
+      "searchText": "100 sucres, banco central del ecuador (1993) ficha de catálogo numismático: par de billetes de cien sucres del banco central del ecuador, serie wf, 20 de agosto de 1993… ecuador pick p-123ab banknote banco central del ecuador cien sucres ecuador billetes simón bolívar serie wf notafilia numismática ecuatoriana pick 123"
     },
     {
       "id": "emisiones-promocionales--food-coupon-1-dolar-2000",
@@ -2654,16 +2654,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador VJ (Victoriano del Valle y Juan José de Francisco) o JJ",
       "denomination": "1 Escudo de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #48.1 · Restrepo M68 · Friedberg Fr-32 · Numista N# 52835",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1774",
       "year": 1774,
       "material": "metal",
       "kind": "coin",
-      "searchText": "carlos iii — 1 escudo de oro, bogotá 1774 ficha numismática: 1 escudo de oro de carlos iii, 1774… españa 1 escudo de oro metal coin 1 escudo carlos iii bogota 1774 retrato oficial km 48.1 restrepo m68 friedberg fr-32 ensayador vj moneda colonial española"
+      "searchText": "carlos iii — 1 escudo de oro, bogotá 1774 ficha numismática: 1 escudo de oro de carlos iii, 1774… españa santa fe de bogotá (marca “nr”) · ensayador vj (victoriano del valle y juan josé de francisco) o jj 1 escudo de oro km #48.1 · restrepo m68 · friedberg fr-32 · numista n# 52835 metal coin 1 escudo carlos iii bogota 1774 retrato oficial km 48.1 restrepo m68 friedberg fr-32 ensayador vj moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-carlos-iii-1787",
@@ -2685,16 +2685,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador JJ (Juan de Dios del Real y José Antonio Rodríguez)",
       "denomination": "1 Escudo de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #48.1 · Restrepo M68 · Friedberg Fr-32 · Numista N# 52835",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1787",
       "year": 1787,
       "material": "metal",
       "kind": "coin",
-      "searchText": "carlos iii — 1 escudo de oro, bogotá 1787 ficha numismática: 1 escudo de oro de carlos iii, 1787… españa 1 escudo de oro metal coin 1 escudo carlos iii 1787 bogota 1787 grieta de cuño km 48.1 restrepo m68 friedberg fr-32 ensayador jj moneda colonial española"
+      "searchText": "carlos iii — 1 escudo de oro, bogotá 1787 ficha numismática: 1 escudo de oro de carlos iii, 1787… españa santa fe de bogotá (marca “nr”) · ensayador jj (juan de dios del real y josé antonio rodríguez) 1 escudo de oro km #48.1 · restrepo m68 · friedberg fr-32 · numista n# 52835 metal coin 1 escudo carlos iii 1787 bogota 1787 grieta de cuño km 48.1 restrepo m68 friedberg fr-32 ensayador jj moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-carlos-iv-1802",
@@ -2715,16 +2715,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador JJ (Juan de Dios del Real y José Antonio Rodríguez)",
       "denomination": "1 Escudo de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #64.1 · Restrepo M87 · Friedberg Fr-51 · Numista N# 61388",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1802",
       "year": 1802,
       "material": "metal",
       "kind": "coin",
-      "searchText": "carlos iv — 1 escudo de oro, bogotá 1802 ficha numismática: 1 escudo de oro de carlos iv, 1802, ceca de santa fe de bogotá — retrato oficial y no transicional del monarca. españa 1 escudo de oro metal coin 1 escudo carlos iv 1802 bogota 1802 km 64.1 restrepo m87 friedberg fr-51 ensayador jj moneda colonial española"
+      "searchText": "carlos iv — 1 escudo de oro, bogotá 1802 ficha numismática: 1 escudo de oro de carlos iv, 1802, ceca de santa fe de bogotá — retrato oficial y no transicional del monarca. españa santa fe de bogotá (marca “nr”) · ensayador jj (juan de dios del real y josé antonio rodríguez) 1 escudo de oro km #64.1 · restrepo m87 · friedberg fr-51 · numista n# 61388 metal coin 1 escudo carlos iv 1802 bogota 1802 km 64.1 restrepo m87 friedberg fr-51 ensayador jj moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-fernando-vii-1811",
@@ -2746,16 +2746,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador JF (Manuel José de Forero y Juan José de Francisco)",
       "denomination": "1 Escudo de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #64.1 · Restrepo M87 · Friedberg Fr-51 · Numista N# 61388",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1811",
       "year": 1811,
       "material": "metal",
       "kind": "coin",
-      "searchText": "fernando vii — 1 escudo de oro, bogotá 1811 ficha numismática: 1 escudo de oro de fernando vii, 1811… españa 1 escudo de oro metal coin 1 escudo fernando vii 1811 bogota 1811 patria boba km 64.1 restrepo m87 friedberg fr-51 ensayador jf moneda colonial española"
+      "searchText": "fernando vii — 1 escudo de oro, bogotá 1811 ficha numismática: 1 escudo de oro de fernando vii, 1811… españa santa fe de bogotá (marca “nr”) · ensayador jf (manuel josé de forero y juan josé de francisco) 1 escudo de oro km #64.1 · restrepo m87 · friedberg fr-51 · numista n# 61388 metal coin 1 escudo fernando vii 1811 bogota 1811 patria boba km 64.1 restrepo m87 friedberg fr-51 ensayador jf moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-fernando-vii-1820",
@@ -2777,16 +2777,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador JF (Manuel José de Forero y Juan José de Francisco)",
       "denomination": "1 Escudo de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #64.1 · Restrepo M87 · Friedberg Fr-51 · Numista N# 61388",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1820",
       "year": 1820,
       "material": "metal",
       "kind": "coin",
-      "searchText": "fernando vii — 1 escudo de oro, bogotá 1820 ficha numismática: 1 escudo de oro de fernando vii, 1820… españa 1 escudo de oro metal coin 1 escudo fernando vii bogota 1820 busto de carlos iv km 64.1 restrepo m87 friedberg fr-51 ensayador jf moneda colonial española"
+      "searchText": "fernando vii — 1 escudo de oro, bogotá 1820 ficha numismática: 1 escudo de oro de fernando vii, 1820… españa santa fe de bogotá (marca “nr”) · ensayador jf (manuel josé de forero y juan josé de francisco) 1 escudo de oro km #64.1 · restrepo m87 · friedberg fr-51 · numista n# 61388 metal coin 1 escudo fernando vii bogota 1820 busto de carlos iv km 64.1 restrepo m87 friedberg fr-51 ensayador jf moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--2-escudos-carlos-iv-1791",
@@ -2808,16 +2808,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "",
+      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador JJ (Juan de Dios del Real y José Antonio Rodríguez)",
       "denomination": "2 Escudos de oro",
-      "catalogRef": "",
+      "catalogRef": "KM #51.1 · Restrepo M88 · Friedberg Fr-47 · Numista N# 52841",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
+      "dateLabel": "1791",
       "year": 1791,
       "material": "metal",
       "kind": "coin",
-      "searchText": "carlos iv — 2 escudos de oro, bogotá 1791 ficha numismática: 2 escudos de oro de carlos iv, 1791, ceca de santa fe de bogotá — busto transicional de carlos iii con leyenda de carlos iv. españa 2 escudos de oro metal coin 2 escudos carlos iv bogota 1791 busto transicional km 51.1 restrepo m88 friedberg fr-47 ensayador jj moneda colonial española"
+      "searchText": "carlos iv — 2 escudos de oro, bogotá 1791 ficha numismática: 2 escudos de oro de carlos iv, 1791, ceca de santa fe de bogotá — busto transicional de carlos iii con leyenda de carlos iv. españa santa fe de bogotá (marca “nr”) · ensayador jj (juan de dios del real y josé antonio rodríguez) 2 escudos de oro km #51.1 · restrepo m88 · friedberg fr-47 · numista n# 52841 metal coin 2 escudos carlos iv bogota 1791 busto transicional km 51.1 restrepo m88 friedberg fr-47 ensayador jj moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--2-escudos-felipe-v-bogota",
@@ -2842,14 +2842,14 @@
       "country": "España",
       "issuer": "",
       "denomination": "2 Escudos de oro (“doblón”)",
-      "catalogRef": "",
+      "catalogRef": "KM #17.2 · Restrepo M80 · Calicó Tipo 243 · Friedberg Fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": null,
       "material": "metal",
       "kind": "coin",
-      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. españa 2 escudos de oro (“doblón”) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
+      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. españa 2 escudos de oro (“doblón”) km #17.2 · restrepo m80 · calicó tipo 243 · friedberg fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
     },
     {
       "id": "polimero-mundial--bangladesh-10-taka-2000",
@@ -3523,14 +3523,14 @@
       "country": "Papúa Nueva Guinea",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Pick-28",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": null,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "kina de polímero de papúa nueva guinea ficha de catálogo: billetes de polímero del bank of papua new guinea — 2, 5, 10, 50 y 100 kina, con el ave del paraíso y michael somare. papúa nueva guinea polímero banknote papua nueva guinea bank of papua new guinea kina ave del paraiso michael somare note printing australia billete de polimero billetes de polimero mundial"
+      "searchText": "kina de polímero de papúa nueva guinea ficha de catálogo: billetes de polímero del bank of papua new guinea — 2, 5, 10, 50 y 100 kina, con el ave del paraíso y michael somare. papúa nueva guinea pick-28 polímero banknote papua nueva guinea bank of papua new guinea kina ave del paraiso michael somare note printing australia billete de polimero billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--perfil-malietoa-tanumafili-ii",
@@ -3667,8 +3667,8 @@
       "dateLabel": "29 de septiembre de 1991 (fechado 1990 ND en la nota original) 1",
       "year": 1991,
       "material": "polímero",
-      "kind": "specimen",
-      "searchText": "2 tala, central bank of samoa, polímero ficha de catálogo numismático: billete specimen de 2 tala de polímero del central bank of samoa (1990/91)… samoa central bank of samoa (faletupe tutotonu o samoa) dos tala (lua tala / two tala) — ejemplar specimen, no de circulación pick-31 (variantes a–e según año de reimpresión) polímero specimen samoa western samoa central bank of samoa 2 tala billete de polimero specimen malietoa tanumafili ii note printing australia billetes de polimero mundial pick 31"
+      "kind": "banknote",
+      "searchText": "2 tala, central bank of samoa, polímero ficha de catálogo numismático: billete specimen de 2 tala de polímero del central bank of samoa (1990/91)… samoa central bank of samoa (faletupe tutotonu o samoa) dos tala (lua tala / two tala) — ejemplar specimen, no de circulación pick-31 (variantes a–e según año de reimpresión) polímero banknote samoa western samoa central bank of samoa 2 tala billete de polimero specimen malietoa tanumafili ii note printing australia billetes de polimero mundial pick 31"
     },
     {
       "id": "polimero-mundial--sri-lanka-200-rupias-1998",

@@ -318,3 +318,8 @@
 /coleccion/pop-art-rency/donald-trump-mugshot/  /coleccion/pop-art/donald-trump-mugshot/  301
 /coleccion/pop-art-rency/warhol-basquiat/  /coleccion/pop-art/warhol-basquiat/  301
 /coleccion/pop-art-rency/life-is-beautiful-spray-cans/  /coleccion/pop-art/life-is-beautiful-spray-cans/  301
+# Dedicated coins catalog (numismática), distinct from the banknote hub
+/coleccion/monedas/  /coleccion/numismatica/  301
+/coleccion/monedas  /coleccion/numismatica/  301
+/coleccion/catalogo-numismatica/  /coleccion/numismatica/  301
+/coleccion/catalogo-numismatica  /coleccion/numismatica/  301

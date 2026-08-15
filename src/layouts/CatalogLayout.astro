@@ -6,7 +6,9 @@ import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CatalogRecordSurface from '../components/catalog/CatalogRecordSurface.astro';
 import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
-import type { CatalogRecord } from '../lib/catalog-record';
+import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
+import { withColombiaGroup } from '../lib/colombia-catalog';
+import { compareByFirstYear } from '../lib/catalog-year';
 
 export interface Props {
   title: string;
@@ -26,9 +28,18 @@ export interface Props {
   record?: CatalogRecord;
 }
 
+function colombiaHubCards(cards: CatalogCard[]): CatalogCard[] {
+  return cards
+    .map((card, index) => ({ card: withColombiaGroup(card), index }))
+    .sort((a, b) => compareByFirstYear(a.card, b.card) || a.index - b.index)
+    .map(({ card }) => card);
+}
+
 const props = Astro.props;
 const record = props.record;
-const cards = record?.cards ?? [];
+const rawCards = record?.cards ?? [];
+const cards =
+  props.path === '/coleccion/colombia/' ? colombiaHubCards(rawCards) : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 const catalogShell = `<div class="catalog-shell">${props.template}</div>`;

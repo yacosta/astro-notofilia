@@ -157,6 +157,12 @@ if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertis
 const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.astro'), 'utf8');
 if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not load site-header.js');
 if (!nativeHeader.includes('/coleccion/')) fail('Native SiteHeader is missing the collection link');
+const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
+if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
+if (!navTs.includes('Colección virtual - Numismática')) fail('Primary nav is missing the Numismática accordion label');
+if (!navTs.includes('Colección virtual - Notafilia')) fail('Primary nav is missing the Notafilia accordion label');
+if (!nativeHeader.includes('site-header__accordion')) fail('Native SiteHeader is missing collection accordion markup');
+if (!sitemap.has('/coleccion/numismatica/')) fail('sitemap.xml is missing /coleccion/numismatica/');
 const headerIsland = await readFile(path.join(root, 'src/client/site-header.js'), 'utf8');
 if (!headerIsland.includes('/pagefind/') || !headerIsland.includes('pagefind.js')) {
   fail('Native header island is not wired to Pagefind');

@@ -32,12 +32,24 @@
           {
             "@type": "ListItem",
             "position": 2,
+            "name": "Colección Virtual",
+            "item": "https://notofilia.com/coleccion/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Numismática",
+            "item": "https://notofilia.com/coleccion/numismatica/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
             "name": "Moneda Colonial Española",
             "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/"
           },
           {
             "@type": "ListItem",
-            "position": 3,
+            "position": 5,
             "name": "Carlos III — 1 Escudo, Bogotá 1774",
             "item": "https://notofilia.com/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/"
           }
@@ -71,12 +83,16 @@
     "issuer": "Ceca de Santa Fe de Bogotá",
     "breadcrumb": [
       {
-        "name": "Inicio",
+        "name": "Notofilia",
         "href": "/"
       },
       {
         "name": "Colección",
         "href": "/coleccion/"
+      },
+      {
+        "name": "Numismática",
+        "href": "/coleccion/numismatica/"
       },
       {
         "name": "Moneda colonial española",
@@ -133,6 +149,10 @@
       }
     ],
     "related": [
+      {
+        "href": "/coleccion/numismatica/",
+        "title": "Catálogo de Numismática"
+      },
       {
         "href": "/coleccion/moneda-colonial-espanola/",
         "title": "Moneda colonial española"

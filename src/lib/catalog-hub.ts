@@ -19,6 +19,11 @@ export type RecentPiece = {
 /** Curated featured entry points for the global collection hub. */
 export const FEATURED_ENTRIES: FeaturedEntry[] = [
   {
+    href: '/coleccion/numismatica/',
+    title: 'Numismática',
+    description: 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.',
+  },
+  {
     href: '/coleccion/colombia/',
     title: 'Colombia',
     description: 'Banca libre, Banco de la República, specimens y errores.',

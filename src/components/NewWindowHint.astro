@@ -1,0 +1,21 @@
+---
+/**
+ * Visible new-window hint for `target="_blank"` links (WCAG 2.5.3 / 3.2.5).
+ * Keep the hint in the accessible name; do not hide it with aria-hidden.
+ */
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+const label = lang === 'en' ? 'opens in a new tab' : 'se abre en una pestaña nueva';
+---
+<span class="new-window-hint"> ({label})</span>
+
+<style>
+  .new-window-hint {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+</style>

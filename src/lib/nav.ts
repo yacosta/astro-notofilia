@@ -8,6 +8,14 @@ export type NavLink = {
   href: string;
   label: string;
   labelEn?: string;
+  lead?: boolean;
+};
+
+export type NavGroup = {
+  id: string;
+  label: string;
+  labelEn?: string;
+  links: NavLink[];
 };
 
 export type NavSection = {
@@ -15,7 +23,9 @@ export type NavSection = {
   label: string;
   labelEn?: string;
   href?: string;
+  description?: string;
   links: NavLink[];
+  groups?: NavGroup[];
 };
 
 /** Top-level links always reachable without JavaScript. */
@@ -29,19 +39,115 @@ export const PRIMARY_LINKS: NavLink[] = [
   { href: '/contacto/', label: 'Contacto', labelEn: 'Contact' },
 ];
 
-/** Featured collection destinations for drawer + homepage browse strip. */
-export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.map((entry) => ({
+/** Featured notafilia destinations (coins live under the Numismática accordion). */
+export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
+  (entry) => entry.href !== '/coleccion/numismatica/',
+).map((entry) => ({
   href: entry.href,
   label: entry.title,
 }));
 
+export const NUMISMATICA_LINKS: NavLink[] = [
+  { href: '/coleccion/numismatica/', label: 'Catálogo de Numismática', labelEn: 'Numismatics catalog', lead: true },
+  {
+    href: '/coleccion/moneda-colonial-espanola/',
+    label: 'Moneda colonial española',
+    labelEn: 'Spanish colonial coinage',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/',
+    label: 'Felipe V — Doblón de 2 Escudos, Bogotá',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/',
+    label: 'Carlos IV — 2 Escudos, Bogotá 1791',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/',
+    label: 'Fernando VII — 1 Escudo, Bogotá 1820',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
+    label: 'Carlos III — 1 Escudo, Bogotá 1774',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/',
+    label: 'Carlos III — 1 Escudo, Bogotá 1787',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/',
+    label: 'Carlos IV — 1 Escudo, Bogotá 1802',
+  },
+  {
+    href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/',
+    label: 'Fernando VII — 1 Escudo, Bogotá 1811',
+  },
+];
+
+export const NOTAFILIA_GROUPS: NavGroup[] = [
+  {
+    id: 'colombia',
+    label: 'Colombia',
+    links: [
+      { href: '/coleccion/colombia/', label: 'Catálogo de Billetes de Colombia', lead: true },
+      { href: '/coleccion/colombia/cartagena-1-real-1813/', label: 'Cartagena de Indias — 1 Real (1813)' },
+      { href: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones en el extranjero' },
+    ],
+  },
+  {
+    id: 'estados-unidos',
+    label: 'Estados Unidos',
+    labelEn: 'United States',
+    links: [
+      {
+        href: '/coleccion/?pais=Estados%20Unidos#explorar',
+        label: 'Catálogo de Estados Unidos',
+        labelEn: 'United States catalog',
+        lead: true,
+      },
+      { href: '/coleccion/billete-obsoleto-estados-unidos/', label: 'Billetes obsoletos de EE. UU.' },
+      { href: '/coleccion/certificados-de-pago-militar/', label: 'Certificados de Pago Militar' },
+      { href: '/coleccion/pop-art/', label: 'Pop-art currency' },
+    ],
+  },
+  {
+    id: 'puerto-rico',
+    label: 'Puerto Rico',
+    links: [{ href: '/coleccion/puerto-rico/', label: 'Catálogo de Billetes de Puerto Rico', lead: true }],
+  },
+  {
+    id: 'ecuador',
+    label: 'Ecuador',
+    links: [{ href: '/coleccion/ecuador/', label: 'Catálogo de Billetes de Ecuador', lead: true }],
+  },
+  {
+    id: 'polimero',
+    label: 'Billetes de polímero mundial',
+    labelEn: 'World polymer notes',
+    links: [{ href: '/coleccion/polimero-mundial/', label: 'Catálogo de polímero mundial', lead: true }],
+  },
+];
+
 export const NAV_SECTIONS: NavSection[] = [
   {
-    id: 'coleccion',
-    label: 'Colección virtual',
-    labelEn: 'Virtual collection',
+    id: 'numismatica',
+    label: 'Colección virtual - Numismática',
+    labelEn: 'Virtual collection - Numismatics',
+    href: '/coleccion/numismatica/',
+    links: NUMISMATICA_LINKS,
+  },
+  {
+    id: 'notafilia',
+    label: 'Colección virtual - Notafilia',
+    labelEn: 'Virtual collection - Notaphily',
     href: '/coleccion/',
-    links: COLLECTION_LINKS,
+    description: 'Catálogo global con búsqueda y filtros por país, tipo y material.',
+    links: [
+      { href: '/coleccion/', label: 'Explorar la colección', labelEn: 'Browse the collection', lead: true },
+      { href: '/coleccion/?tipo=specimen#explorar', label: 'Specimens' },
+      { href: '/coleccion/?tipo=error#explorar', label: 'Errores de imprenta', labelEn: 'Printing errors' },
+    ],
+    groups: NOTAFILIA_GROUPS,
   },
   {
     id: 'editorial',

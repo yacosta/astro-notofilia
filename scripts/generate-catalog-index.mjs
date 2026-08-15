@@ -51,6 +51,7 @@ const HUB_PATHS = new Set([
   '/coleccion/puerto-rico/',
   '/coleccion/ecuador/',
   '/coleccion/moneda-colonial-espanola/',
+  '/coleccion/numismatica/',
   '/coleccion/polimero-mundial/',
   '/coleccion/pop-art/',
   '/coleccion/certificados-de-pago-militar/',
@@ -102,25 +103,12 @@ function fact(html, label) {
 }
 
 function normalizeCountry(raw, catalogPath) {
-  const text = (raw || '').trim();
-  const lower = text.toLowerCase();
-  if (lower.includes('estados unidos') || lower.includes('ee. uu') || lower.includes('ee uu')) {
-    return 'Estados Unidos';
-  }
-  if (lower.includes('puerto rico')) return 'Puerto Rico';
-  if (lower.startsWith('colombia') || lower.includes('república de colombia') || lower.includes('nueva granada')) {
-    return 'Colombia';
-  }
-  if (lower.includes('ecuador')) return 'Ecuador';
-  if (lower.includes('guatemala')) return 'Guatemala';
-  if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
-  if (lower.includes('españa') || lower.includes('nueva granada')) return 'España';
-
   const segs = catalogPath.split('/').filter(Boolean);
   const section = segs[1] || '';
   if (section === 'colombia') return 'Colombia';
   if (section === 'puerto-rico') return 'Puerto Rico';
   if (section === 'ecuador') return 'Ecuador';
+  if (section === 'moneda-colonial-espanola') return 'España';
   if (section === 'polimero-mundial') {
     const slug = segs[2] || '';
     const known = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
@@ -142,7 +130,30 @@ function normalizeCountry(raw, catalogPath) {
   ) {
     return 'Estados Unidos';
   }
-  if (section === 'moneda-colonial-espanola') return 'España';
+
+  const text = (raw || '').trim();
+  const lower = text.toLowerCase();
+  if (
+    lower.includes('estados unidos de colombia') ||
+    lower.includes('estados unidos de nueva granada') ||
+    lower.includes('nueva granada') ||
+    lower.startsWith('colombia') ||
+    lower.includes('república de colombia')
+  ) {
+    return 'Colombia';
+  }
+  if (
+    lower.includes('estados unidos') ||
+    lower.includes('ee. uu') ||
+    lower.includes('ee uu')
+  ) {
+    return 'Estados Unidos';
+  }
+  if (lower.includes('puerto rico')) return 'Puerto Rico';
+  if (lower.includes('ecuador')) return 'Ecuador';
+  if (lower.includes('guatemala')) return 'Guatemala';
+  if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
+  if (lower.includes('españa')) return 'España';
 
   // Flat U.S. leaves under /coleccion/<slug>/
   if (segs.length >= 2 && !HUB_PATHS.has(catalogPath)) return 'Estados Unidos';
@@ -158,7 +169,15 @@ function normalizeMaterial(raw, pathValue, keywords, kind) {
   return raw ? 'papel' : '';
 }
 
-function detectKind(pathValue, title, keywords, emissionType) {
+function detectKind(pathValue, title, keywords, emissionType, recordKind, status) {
+  if (status === 'specimen') return 'specimen';
+  if (status === 'error') return 'error';
+  if (status === 'circulated' || status === 'uncirculated') {
+    return recordKind === 'coin' ? 'coin' : 'banknote';
+  }
+  if (recordKind === 'coin' || recordKind === 'banknote' || recordKind === 'profile') {
+    return recordKind;
+  }
   const blob = `${pathValue} ${title} ${keywords.join(' ')} ${emissionType}`.toLowerCase();
   if (pathValue.includes('/moneda-colonial-espanola/') && !HUB_PATHS.has(pathValue)) return 'coin';
   if (/specimen|esp[eé]cimen/.test(blob)) return 'specimen';
@@ -240,18 +259,38 @@ for (const file of files) {
     continue;
   }
 
-  const countryRaw = fact(template, 'País');
-  const issuer = fact(template, 'Entidad Emisora');
-  const denomination = fact(template, 'Denominación');
-  const catalogRef = fact(template, 'Referencia de Catálogo');
+  const countryRaw =
+    data.record?.country ||
+    fact(template, 'País') ||
+    fact(template, 'País / Virreinato');
+  const issuer =
+    fact(template, 'Entidad Emisora') ||
+    fact(template, 'Ceca / Ensayador') ||
+    data.record?.issuer ||
+    data.record?.metadata?.issuer ||
+    '';
+  const denomination = fact(template, 'Denominación') || data.record?.metadata?.denomination || '';
+  const catalogRef =
+    fact(template, 'Referencia de Catálogo') ||
+    fact(template, 'Referencias catalográficas') ||
+    data.record?.metadata?.catalogNumber ||
+    '';
   const condition = fact(template, 'Condición');
   const emissionType = fact(template, 'Tipo de Emisión');
   const dateLabel =
     fact(template, 'Fecha de Emisión') ||
     fact(template, 'Fecha') ||
-    fact(template, 'Año');
+    fact(template, 'Año') ||
+    fact(template, 'Año de acuñación');
   const materialRaw = fact(template, 'Material') || fact(template, 'Composición');
-  const kind = detectKind(data.path, data.title, keywords, emissionType);
+  const kind = detectKind(
+    data.path,
+    data.title,
+    keywords,
+    emissionType,
+    data.record?.kind,
+    data.record?.metadata?.status,
+  );
   const material = normalizeMaterial(materialRaw, data.path, keywords, kind);
   const country = normalizeCountry(countryRaw, data.path);
   const year = extractYear(dateLabel, denomination, data.title, data.path);

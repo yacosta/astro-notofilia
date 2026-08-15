@@ -17,7 +17,8 @@ const LOGROS_DIR = path.join(ROOT, 'src/content/logros');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
-  { path: '/coleccion/', label: 'Billete obsoleto EE. UU.' },
+  { path: '/coleccion/', label: 'Colección Virtual' },
+  { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
   { path: '/coleccion/colombia/banca-libre/', label: 'Banca libre colombiana' },
   { path: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones colombianas en el extranjero' },
@@ -202,13 +203,14 @@ function buildCoreSections({ catalog, blog, noticias, logros, full }) {
       description: entry?.description || h.label,
       title: entry?.title || h.label,
     };
-  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/');
+  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/' || h.path === '/coleccion/numismatica/');
 
   const lines = [];
 
   lines.push('## Sitio principal', '');
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
-  lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.'));
+  lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Hub global de la Colección Virtual: billetes, filtros y accesos por país.'));
+  lines.push(linkLine('Catálogo de Numismática', abs('/coleccion/numismatica/'), 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.'));
   lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
   lines.push(linkLine('Logros del Mes', abs('/#logros-heading'), 'Piezas y avances recientes de la Colección Virtual (sección en la home).'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));

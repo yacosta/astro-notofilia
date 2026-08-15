@@ -23,7 +23,8 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 ## Sitio principal
 
 - [Inicio](https://notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
-- [Catálogo (índice)](https://notofilia.com/coleccion/): Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.
+- [Catálogo (índice)](https://notofilia.com/coleccion/): Hub global de la Colección Virtual: billetes, filtros y accesos por país.
+- [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de monedas: oro colonial de Santa Fe de Bogotá.
 - [Blog](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
 - [Logros del Mes](https://notofilia.com/#logros-heading): Piezas y avances recientes de la Colección Virtual (sección en la home).
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
@@ -33,7 +34,8 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 ## Catálogo — secciones
 
-- [Billete obsoleto EE. UU.](https://notofilia.com/coleccion/): Billete obsoleto EE. UU.
+- [Colección Virtual](https://notofilia.com/coleccion/): Colección Virtual
+- [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
 - [Emisiones Colombianas en el Extranjero](https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/): Billetes emitidos en el extranjero por bancos y capital colombianos, como El Banco Colombiano en Guatemala (1900). Colección Notofilia.
