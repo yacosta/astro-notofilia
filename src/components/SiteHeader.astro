@@ -4,6 +4,7 @@
  * and Pagefind loaded only when search is opened.
  */
 import { CONTACT_LINK, DRAWER_PRIMARY_LINKS, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
+import { lookupEn } from '../lib/html-i18n';
 
 export interface Props {
   /** When true, header overlays the hero (homepage). Otherwise in normal flow. */
@@ -42,7 +43,7 @@ const { overlay = false } = Astro.props;
       </button>
       <div id="site-search-panel" class="site-header__search-panel" hidden>
         <form class="site-header__search-form" action="/buscar/" method="get" role="search">
-          <label class="sr-only" for="site-search-input">Buscar en el sitio</label>
+          <label class="sr-only" for="site-search-input" data-i18n data-en="Search the site">Buscar en el sitio</label>
           <input
             id="site-search-input"
             name="q"
@@ -61,6 +62,9 @@ const { overlay = false } = Astro.props;
           class="site-header__search-results"
           role="listbox"
           aria-label="Resultados de búsqueda"
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en="Search results"
           hidden
         ></div>
       </div>
@@ -145,7 +149,7 @@ const { overlay = false } = Astro.props;
     <ul class="site-header__primary">
       {DRAWER_PRIMARY_LINKS.map((link) => (
         <li>
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} data-i18n={link.labelEn ? true : undefined} data-en={link.labelEn}>{link.label}</a>
         </li>
       ))}
     </ul>
@@ -154,16 +158,27 @@ const { overlay = false } = Astro.props;
       {NAV_SECTIONS.map((section) => (
         <details class="site-header__accordion" id={`nav-sec-${section.id}`}>
           <summary>
-            <span class="site-header__accordion-label">{section.label}</span>
+            <span class="site-header__accordion-label" data-i18n={section.labelEn ? true : undefined} data-en={section.labelEn}>{section.label}</span>
             <span class="site-header__caret" aria-hidden="true">▾</span>
           </summary>
           <div class="site-header__accordion-panel">
-            {section.description && <p class="site-header__accordion-desc">{section.description}</p>}
+            {section.description && (
+              <p
+                class="site-header__accordion-desc"
+                data-i18n={(section.descriptionEn || lookupEn(section.description)) ? true : undefined}
+                data-en={section.descriptionEn || lookupEn(section.description)}
+              >{section.description}</p>
+            )}
             {section.links.length > 0 && (
               <ul>
                 {section.links.map((link) => (
                   <li>
-                    <a class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]} href={link.href}>
+                    <a
+                      class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                      href={link.href}
+                      data-i18n={(link.labelEn || lookupEn(link.label)) ? true : undefined}
+                      data-en={link.labelEn || lookupEn(link.label)}
+                    >
                       {link.label}
                     </a>
                   </li>
@@ -173,13 +188,18 @@ const { overlay = false } = Astro.props;
             {section.groups?.map((group) => (
               <details class="site-header__accordion site-header__accordion--nested" id={`nav-sec-${group.id}`}>
                 <summary>
-                  <span class="site-header__accordion-label">{group.label}</span>
+                  <span class="site-header__accordion-label" data-i18n={(group.labelEn || lookupEn(group.label)) ? true : undefined} data-en={group.labelEn || lookupEn(group.label)}>{group.label}</span>
                   <span class="site-header__caret" aria-hidden="true">▾</span>
                 </summary>
                 <ul>
                   {group.links.map((link) => (
                     <li>
-                      <a class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]} href={link.href}>
+                      <a
+                        class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                        href={link.href}
+                        data-i18n={(link.labelEn || lookupEn(link.label)) ? true : undefined}
+                        data-en={link.labelEn || lookupEn(link.label)}
+                      >
                         {link.label}
                       </a>
                     </li>
@@ -194,7 +214,7 @@ const { overlay = false } = Astro.props;
 
     <ul class="site-header__primary site-header__primary--last">
       <li>
-        <a href={CONTACT_LINK.href}>{CONTACT_LINK.label}</a>
+        <a href={CONTACT_LINK.href} data-i18n data-en={CONTACT_LINK.labelEn}>{CONTACT_LINK.label}</a>
       </li>
     </ul>
   </div>
@@ -206,7 +226,7 @@ const { overlay = false } = Astro.props;
   <nav class="site-header__noscript" aria-label="Enlaces principales sin JavaScript">
     <ul>
       {PRIMARY_LINKS.map((link) => (
-        <li><a href={link.href}>{link.label}</a></li>
+        <li><a href={link.href} data-i18n={link.labelEn ? true : undefined} data-en={link.labelEn}>{link.label}</a></li>
       ))}
     </ul>
   </nav>

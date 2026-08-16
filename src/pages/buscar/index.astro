@@ -72,25 +72,30 @@ const description = q
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+      data-i18n
+      data-en="Skip to main content"
     >Saltar al contenido principal</a>
     <SiteHeader />
     <main id="main-content" class="buscar-main" tabindex="-1" data-pagefind-ignore>
-      <h1>Buscar</h1>
+      <h1 data-i18n data-en="Search">Buscar</h1>
       <p class="buscar-lead">
-        Encuentra fichas de la colección, perfiles e artículos. También puedes
-        <a href="/coleccion/">explorar el catálogo completo</a>.
+        <span data-i18n data-en="Find collection records, profiles, and articles. You can also">Encuentra fichas de la colección, perfiles e artículos. También puedes</span>
+        {' '}
+        <a href="/coleccion/" data-i18n data-en="browse the full catalog">explorar el catálogo completo</a>.
       </p>
       <div id="buscar-pagefind" data-initial-query={q}></div>
       <noscript>
         <form action="/buscar/" method="get" role="search">
-          <label for="buscar-q">Consulta</label>
+          <label for="buscar-q" data-i18n data-en="Query">Consulta</label>
           <input id="buscar-q" name="q" type="search" value={q} />
-          <button type="submit">Buscar</button>
+          <button type="submit" data-i18n data-en="Search">Buscar</button>
         </form>
         <p class="buscar-fallback">
-          Con JavaScript desactivado, usa el
-          <a href="/coleccion/">catálogo</a>
-          o el buscador del navegador en las páginas del sitio.
+          <span data-i18n data-en="With JavaScript off, use the">Con JavaScript desactivado, usa el</span>
+          {' '}
+          <a href="/coleccion/" data-i18n data-en="catalog">catálogo</a>
+          {' '}
+          <span data-i18n data-en="or your browser’s find-in-page on site pages.">o el buscador del navegador en las páginas del sitio.</span>
         </p>
       </noscript>
     </main>
@@ -103,26 +108,45 @@ const description = q
         var host = document.getElementById('buscar-pagefind');
         if (!host) return;
         var initial = host.getAttribute('data-initial-query') || '';
+        var translations = {
+          es: {
+            placeholder: 'Buscar billetes, perfiles, artículos…',
+            clear_search: 'Limpiar',
+            load_more: 'Cargar más',
+            search_label: 'Buscar en Notofilia',
+            filters_label: 'Filtros',
+            zero_results: 'Sin resultados para [SEARCH_TERM]',
+            many_results: '[COUNT] resultados para [SEARCH_TERM]',
+            one_result: '1 resultado para [SEARCH_TERM]',
+            fail: 'No se pudo cargar el índice de búsqueda. <a href="/coleccion/">Explorar la colección</a>.',
+          },
+          en: {
+            placeholder: 'Search banknotes, profiles, articles…',
+            clear_search: 'Clear',
+            load_more: 'Load more',
+            search_label: 'Search Notofilia',
+            filters_label: 'Filters',
+            zero_results: 'No results for [SEARCH_TERM]',
+            many_results: '[COUNT] results for [SEARCH_TERM]',
+            one_result: '1 result for [SEARCH_TERM]',
+            fail: 'The search index could not be loaded. <a href="/coleccion/">Browse the collection</a>.',
+          },
+        };
+        function currentLang() {
+          return document.documentElement.getAttribute('data-interface-lang') === 'en' ? 'en' : 'es';
+        }
         function boot() {
+          var copy = translations[currentLang()];
           if (typeof PagefindUI === 'undefined') {
-            host.innerHTML =
-              '<p class="buscar-fallback">No se pudo cargar el índice de búsqueda. <a href="/coleccion/">Explorar la colección</a>.</p>';
+            host.innerHTML = '<p class="buscar-fallback">' + copy.fail + '</p>';
             return;
           }
+          host.innerHTML = '';
           new PagefindUI({
             element: '#buscar-pagefind',
             showImages: false,
             showSubResults: false,
-            translations: {
-              placeholder: 'Buscar billetes, perfiles, artículos…',
-              clear_search: 'Limpiar',
-              load_more: 'Cargar más',
-              search_label: 'Buscar en Notofilia',
-              filters_label: 'Filtros',
-              zero_results: 'Sin resultados para [SEARCH_TERM]',
-              many_results: '[COUNT] resultados para [SEARCH_TERM]',
-              one_result: '1 resultado para [SEARCH_TERM]',
-            },
+            translations: copy,
           });
           if (initial) {
             var input = host.querySelector('input[type="text"], input[type="search"]');
@@ -137,6 +161,9 @@ const description = q
         } else {
           boot();
         }
+        document.addEventListener('notofilia:interface-lang', function () {
+          boot();
+        });
       })();
     </script>
   </body>

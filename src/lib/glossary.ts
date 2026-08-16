@@ -5,6 +5,7 @@ export type GlossaryEntry = CollectionEntry<'glosario'>;
 
 export const GLOSSARY_PATH = '/glosario/';
 export const GLOSSARY_TITLE = 'Glosario de Numismática y Notafilia';
+export const GLOSSARY_TITLE_EN = 'Glossary of Numismatics and Notaphily';
 export const GLOSSARY_DESCRIPTION =
   'Glosario bilingüe de más de 90 términos de numismática y notafilia: monedas, billetes, diseño, producción y coleccionismo.';
 

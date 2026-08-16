@@ -61,25 +61,26 @@ const jsonLd = {
   jsonLd={jsonLd}
 >
   <article class="max-w-content mx-auto px-6 pt-12 pb-4">
-    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
-      <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
-      <a class="text-muted" href="/editorial/">Política editorial</a>
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
+      <a class="text-muted" href="/" data-i18n data-en="Home">Inicio</a> <span aria-hidden="true">/</span>
+      <a class="text-muted" href="/editorial/" data-i18n data-en="Editorial policy">Política editorial</a>
       <span aria-hidden="true">/</span>
       <span>{EDITORIAL_TEAM.name}</span>
     </nav>
 
     <header class="mb-10">
-      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">Editor</p>
+      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted" data-i18n data-en="Editor">Editor</p>
       <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
         {EDITORIAL_TEAM.name}
       </h1>
-      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]">
+      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]" data-i18n data-en="Founder and editor of Notofilia. Responsible for the private catalog, valuation labels, and the correction history.">
         Fundador y editor de Notofilia. Responsable del catálogo privado, del etiquetado de
         valoraciones y del historial de correcciones.
       </p>
     </header>
 
     <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
+      <div data-lang-panel="es">
       <h2>Qué firma este perfil</h2>
       <p>
         Cuando una noticia, guía o logro indica “Revisado por”, apunta a esta página. La
@@ -146,6 +147,75 @@ const jsonLd = {
           <a href="/contacto/">Contacto</a> para reportar un error o aportar una fuente
         </li>
       </ul>
+      </div>
+
+      <div data-lang-panel="en" lang="en" hidden>
+      <h2>What this profile signs</h2>
+      <p>
+        When a news item, guide, or milestone says “Reviewed by”, it points here. Editorial
+        responsibility —facts, figures, sources, and Virtual Collection records— sits with one
+        person, not an anonymous collective byline.
+      </p>
+
+      <h2>How I work</h2>
+      <ul>
+        <li>
+          I distinguish asking prices, catalog guides, and
+          <strong>verified sales</strong> (documented hammers).
+        </li>
+        <li>
+          I prefer primary sources: auction houses, central banks, catalogs, and official
+          releases.
+        </li>
+        <li>
+          Material corrections are recorded on the piece itself and summarized in the
+          <a href={CORRECTION_POLICY_URL}>corrections policy</a>.
+        </li>
+      </ul>
+
+      <h2>Public profile</h2>
+      <ul>
+        <li>
+          GitHub:{' '}
+          <a href="https://github.com/yacosta" target="_blank" rel="noopener noreferrer">
+            github.com/yacosta<NewWindowHint />
+          </a>
+        </li>
+        <li>
+          Editorial contact: <a href="/contacto/">form</a> or
+          <a href="mailto:info@notofilia.com">info@notofilia.com</a>
+        </li>
+      </ul>
+
+      <h2>Mention on Wikipedia</h2>
+      <p>
+        The article{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notaphily on Spanish Wikipedia<NewWindowHint />
+        </a>{' '}
+        lists Notofilia.com under External links. The mention is live. The destination is a{' '}
+        <a href={WIKIPEDIA_NOTOFILIA_ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
+          May 2013 archive.org snapshot<NewWindowHint />
+        </a>{' '}
+        of <code>http://www.notofilia.com/</code>, not the current apex, and MediaWiki marks the
+        link <code>rel="nofollow"</code>. It is a verifiable encyclopedic mention, not a
+        PageRank backlink. Detail in the
+        <a href="/editorial/#wikipedia">editorial policy</a>.
+      </p>
+
+      <h2>Related documents</h2>
+      <ul>
+        <li>
+          <a href="/editorial/">Editorial policy and valuation standard</a>
+        </li>
+        <li>
+          <a href="/editorial/#correcciones">Corrections policy</a>
+        </li>
+        <li>
+          <a href="/contacto/">Contact</a> to report an error or add a source
+        </li>
+      </ul>
+      </div>
     </div>
   </article>
 </BlogLayout>

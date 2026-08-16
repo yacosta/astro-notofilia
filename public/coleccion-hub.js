@@ -116,7 +116,17 @@
     });
   }
 
+  function isEn() {
+    return document.documentElement.getAttribute('data-interface-lang') === 'en';
+  }
+
   function kindLabel(kind) {
+    if (isEn()) {
+      if (kind === 'coin') return 'Coin';
+      if (kind === 'specimen') return 'Specimen';
+      if (kind === 'error') return 'Error';
+      return 'Banknote';
+    }
     if (kind === 'coin') return 'Moneda';
     if (kind === 'specimen') return 'Specimen';
     if (kind === 'error') return 'Error';
@@ -124,6 +134,13 @@
   }
 
   function materialLabel(material) {
+    if (isEn()) {
+      if (material === 'polímero') return 'Polymer';
+      if (material === 'híbrido') return 'Hybrid';
+      if (material === 'metal') return 'Metal';
+      if (material === 'papel') return 'Paper';
+      return material || '';
+    }
     if (material === 'polímero') return 'Polímero';
     if (material === 'híbrido') return 'Híbrido';
     if (material === 'metal') return 'Metal';
@@ -203,7 +220,7 @@
     var buckets = {};
     var names = [];
     list.forEach(function (item) {
-      var name = item.country || 'Otros';
+      var name = item.country || (isEn() ? 'Other' : 'Otros');
       if (!buckets[name]) {
         buckets[name] = [];
         names.push(name);
@@ -273,8 +290,11 @@
   function render() {
     var filtered = sortItems(state.items.filter(matches));
     if (countEl) {
-      countEl.textContent =
-        filtered.length === 1
+      countEl.textContent = isEn()
+        ? filtered.length === 1
+          ? '1 piece'
+          : filtered.length + ' pieces'
+        : filtered.length === 1
           ? '1 pieza'
           : filtered.length + ' piezas';
     }
@@ -286,8 +306,13 @@
     resultsEl.innerHTML = groups
       .map(function (group) {
         var headingId = countrySlug(group.name);
-        var countLabel =
-          group.items.length === 1 ? '1 ficha' : group.items.length + ' fichas';
+        var countLabel = isEn()
+          ? group.items.length === 1
+            ? '1 record'
+            : group.items.length + ' records'
+          : group.items.length === 1
+            ? '1 ficha'
+            : group.items.length + ' fichas';
         return (
           '<section class="catalog-country-group" aria-labelledby="' +
           escapeAttr(headingId) +
@@ -391,7 +416,9 @@
       if (matEl) {
         var mats = uniqueSorted(state.items.map(function (i) { return i.material; }));
         matEl.innerHTML =
-          '<option value="">Todos</option>' +
+          '<option value="">' +
+          (isEn() ? 'All' : 'Todos') +
+          '</option>' +
           mats
             .map(function (m) {
               return (
@@ -417,7 +444,7 @@
       }
     })
     .catch(function () {
-      if (countEl) countEl.textContent = 'No se pudo cargar el índice';
+      if (countEl) countEl.textContent = isEn() ? 'Could not load the index' : 'No se pudo cargar el índice';
       root.removeAttribute('data-loading');
     });
 
@@ -458,7 +485,10 @@
     });
   }
 
-  // Country card deep-links
+  document.addEventListener('notofilia:interface-lang', function () {
+    render();
+  });
+
   document.querySelectorAll('[data-filter-pais]').forEach(function (link) {
     link.addEventListener('click', function (event) {
       var pais = link.getAttribute('data-filter-pais');
