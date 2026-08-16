@@ -39,6 +39,36 @@ function shouldSkipFile(filePath) {
   return false;
 }
 
+function catalogFichaLayoutIssues(data) {
+  const template = data.template || '';
+  const record = data.record || {};
+  if (record.render === 'astro-hub' || (record.cards && record.cards.length)) return [];
+  if (String(data.path || '').includes('/perfil-')) return [];
+  const issues = [];
+  const dialogs = [...template.matchAll(/<div[^>]*(?:role="dialog"|data-zoom-dialog)[^>]*>/gi)].map(
+    (match) => match[0],
+  );
+  if (dialogs.some((dialog) => !/\bhidden\b/i.test(dialog) || /display\s*:\s*flex/i.test(dialog))) {
+    issues.push('zoom dialog would cover the ficha on load');
+  }
+  const triggerAt = template.search(/data-zoom-trigger/i);
+  const imgAt = template.search(/<img\b/i);
+  const denomAt = template.search(/>Denominación</i);
+  const paisAt = template.search(/>País</i);
+  const distritoAt = template.search(/>Distrito</i);
+  const serieAt = template.search(/>N\.(?:&deg;|º|°)? de Serie</i);
+  const specAt =
+    [denomAt, paisAt, distritoAt, serieAt].filter((index) => index >= 0).sort((a, b) => a - b)[0] ??
+    -1;
+  if (
+    specAt >= 0 &&
+    ((triggerAt >= 0 && triggerAt < specAt) || (imgAt >= 0 && imgAt < specAt))
+  ) {
+    issues.push('spec table sits below the stacked scan');
+  }
+  return issues;
+}
+
 async function walk(filePath, out) {
   let info;
   try {
@@ -76,6 +106,14 @@ for (const file of files) {
           file: path.relative(root, file),
           count: 1,
           samples: ['<sc-for> (note loop was not expanded into static HTML)'],
+        });
+      }
+      const layout = catalogFichaLayoutIssues(data);
+      if (layout.length) {
+        hits.push({
+          file: path.relative(root, file),
+          count: layout.length,
+          samples: layout,
         });
       }
       text = `${data.template || ''}\n${JSON.stringify(data.record ?? {})}`;

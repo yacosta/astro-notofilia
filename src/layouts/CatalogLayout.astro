@@ -177,8 +177,9 @@ const canonical = absoluteUrl(props.path);
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
       }
-      [data-zoom-dialog][hidden],
-      .catalog-zoom-dialog:not([data-open="true"]) {
+      [data-zoom-dialog]:not([data-open="true"]),
+      .catalog-zoom-dialog:not([data-open="true"]),
+      .catalog-shell [role="dialog"][aria-modal="true"]:not([data-open="true"]) {
         display: none !important;
       }
       [data-zoom-dialog][data-open="true"] {

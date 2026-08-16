@@ -26,6 +26,7 @@
     "test:e2e:update": "playwright test --update-snapshots",
     "migrate:catalog:phase3": "node scripts/phase3-catalog-astro.mjs",
     "restore:catalog-loops": "node scripts/restore-catalog-note-loops.mjs",
+    "sanitize:catalog-fichas": "node scripts/sanitize-catalog-fichas.mjs",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
     "astro": "astro",
     "purge:css": "node scripts/purge-css.mjs"

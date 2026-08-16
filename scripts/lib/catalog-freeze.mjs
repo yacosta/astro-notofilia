@@ -144,9 +144,8 @@ function replaceTaggedBlocks(html, tag, replacer) {
   return out + html.slice(last);
 }
 
-function sliceBalancedDiv(html, openTag) {
-  const start = html.indexOf(openTag);
-  if (start === -1) return null;
+function sliceBalancedDivAt(html, start) {
+  if (start < 0 || !/^<div\b/i.test(html.slice(start, start + 6))) return null;
   const lower = html.toLowerCase();
   let depth = 0;
   let i = start;
@@ -167,6 +166,98 @@ function sliceBalancedDiv(html, openTag) {
     i = end;
   }
   return null;
+}
+
+function sliceBalancedDiv(html, openTag) {
+  return sliceBalancedDivAt(html, html.indexOf(openTag));
+}
+
+const SPEC_LABEL =
+  />(?:País|Pa&iacute;s|Denominación|Denominaci&oacute;n|Referencia(?: de Catálogo)?|Entidad Emisora|Fecha(?: de Emisión)?|Número de catálogo|N&uacute;mero de catálogo|Distrito|Serie|Firmas|N\.(?:&deg;|º|°)? de Serie)</i;
+
+function isSpecTable(block) {
+  if (!block) return false;
+  if (/role="dialog"|data-zoom-dialog=/i.test(block.html)) return false;
+  if (/data-zoom-trigger|cursor:zoom-in/i.test(block.html)) return false;
+  return SPEC_LABEL.test(block.html);
+}
+
+function findSpecTableIn(html) {
+  const candidates = [];
+  const flexRe = /<div\s+style="display:\s*flex;\s*flex-direction:\s*column[^"]*">/gi;
+  let match;
+  while ((match = flexRe.exec(html))) {
+    const open = match[0];
+    if (/gap:\s*14px|align-items:\s*center|position:\s*fixed/i.test(open)) continue;
+    candidates.push(match.index);
+  }
+  const gridRe = /<div\s+style="display:\s*grid;\s*grid-template-columns:(?!repeat)[^"]*">/gi;
+  while ((match = gridRe.exec(html))) {
+    const open = match[0];
+    if (/minmax\(\s*220px|auto-fill|auto-fit/i.test(open)) continue;
+    candidates.push(match.index);
+  }
+  candidates.sort((a, b) => a - b);
+  for (const start of candidates) {
+    const sliced = sliceBalancedDivAt(html, start);
+    if (isSpecTable(sliced)) return sliced;
+  }
+  return null;
+}
+
+function findZoomButtons(html) {
+  const ranges = [];
+  const re = /<button\b/gi;
+  let match;
+  while ((match = re.exec(html))) {
+    const start = match.index;
+    const closeAt = html.toLowerCase().indexOf('</button>', start);
+    if (closeAt === -1) break;
+    const end = closeAt + '</button>'.length;
+    const chunk = html.slice(start, end);
+    if (/data-zoom-trigger=|Ampliar imagen|cursor:zoom-in/i.test(chunk)) {
+      ranges.push({ start, end, html: chunk });
+    }
+    re.lastIndex = end;
+  }
+  return ranges;
+}
+
+function slugFromUploads(chunk, fallback) {
+  const src = chunk.match(/uploads\/([a-zA-Z0-9._\/-]+)\.(?:jpe?g|png|webp)/i);
+  if (src) return src[1].split('/').pop().replace(/\.(?:jpe?g|png|webp)$/i, '');
+  return fallback;
+}
+
+/** Move each note's País/Denominación table above its stacked scan. */
+export function moveAllSpecTablesBeforeImages(html) {
+  const buttons = findZoomButtons(html);
+  if (buttons.length === 0) {
+    const spec = findSpecTableIn(html);
+    const imgAt = html.search(/<img\b/i);
+    if (!spec || imgAt === -1 || spec.start < imgAt) return html;
+    const block = spec.html;
+    html = html.slice(0, spec.start) + html.slice(spec.end);
+    const nextImg = html.search(/<img\b/i);
+    if (nextImg === -1) return html;
+    return `${html.slice(0, nextImg)}${block}\n${html.slice(nextImg)}`;
+  }
+
+  for (let i = buttons.length - 1; i >= 0; i -= 1) {
+    const button = buttons[i];
+    const regionEnd = i + 1 < buttons.length ? buttons[i + 1].start : html.length;
+    const region = html.slice(button.end, regionEnd);
+    const spec = findSpecTableIn(region);
+    if (!spec) continue;
+    const afterSpec = region.slice(spec.end);
+    if (i + 1 < buttons.length && /^\s*$/.test(afterSpec)) continue;
+    const absStart = button.end + spec.start;
+    const absEnd = button.end + spec.end;
+    const block = html.slice(absStart, absEnd);
+    html = html.slice(0, absStart) + html.slice(absEnd);
+    html = `${html.slice(0, button.start)}${block}\n${html.slice(button.start)}`;
+  }
+  return html;
 }
 
 function moveSpecTableBeforeImage(html) {
@@ -260,17 +351,51 @@ function addNewWindowHints(html) {
 }
 
 function hideZoomDialogs(html) {
-  return html.replace(/<div(\s[^>]*role="dialog"[^>]*)>/gi, (full, attrs) => {
-    if (/\bhidden\b/.test(attrs) && /data-zoom-dialog=/.test(attrs)) return full;
-    let next = attrs;
-    if (!/data-zoom-dialog=/.test(next)) {
-      next += ' data-zoom-dialog="stacked"';
-    }
-    if (!/\bhidden\b/.test(next)) {
-      next += ' hidden style="display:none"';
+  return html.replace(/<div(\s[^>]*(?:role="dialog"|data-zoom-dialog=)[^>]*)>/gi, (_full, attrs) => {
+    let next = attrs.replace(/\sstyle="[^"]*"/gi, '');
+    if (!/data-zoom-dialog=/.test(next)) next += ' data-zoom-dialog="stacked"';
+    if (!/\bhidden\b/.test(next)) next += ' hidden';
+    if (!/catalog-zoom-dialog/.test(next)) {
+      if (/\bclass="/i.test(next)) next = next.replace(/\bclass="/i, 'class="catalog-zoom-dialog ');
+      else next += ' class="catalog-zoom-dialog"';
     }
     return `<div${next}>`;
   });
+}
+
+function wireZoomTriggers(html) {
+  let unlabeled = 0;
+  html = html.replace(/<div(\s[^>]*role="dialog"[^>]*)>/gi, (full, attrs) => {
+    if (/data-zoom-dialog=/.test(attrs)) return full;
+    unlabeled += 1;
+    return `<div${attrs} data-zoom-dialog="note-${unlabeled}">`;
+  });
+  const buttons = findZoomButtons(html);
+  for (let i = buttons.length - 1; i >= 0; i -= 1) {
+    const button = buttons[i];
+    if (/data-zoom-trigger=/.test(button.html)) continue;
+    const regionEnd = i + 1 < buttons.length ? buttons[i + 1].start : html.length;
+    const region = html.slice(button.end, regionEnd);
+    const key =
+      region.match(/data-zoom-dialog="([^"]+)"/)?.[1] ||
+      slugFromUploads(button.html, `note-${i + 1}`);
+    const patched = button.html.replace(
+      /<button\b/,
+      `<button data-zoom-trigger="${escapeAttr(key)}"`,
+    );
+    html = html.slice(0, button.start) + patched + html.slice(button.end);
+  }
+  return html;
+}
+
+/** Hide zoom overlays and put ficha spec tables above stacked scans. */
+export function sanitizeCatalogTemplate(html) {
+  let next = wireZoomTriggers(html);
+  next = hideZoomDialogs(next);
+  next = moveAllSpecTablesBeforeImages(next);
+  next = prefixUploadPaths(next);
+  next = addNewWindowHints(next);
+  return next;
 }
 
 function firstUploads(template, logic) {
@@ -348,9 +473,7 @@ export function freezeTemplate(template, logic = '') {
   html = html.replace(/\{\{\s*note\.[a-zA-Z0-9_]+\s*\}\}/g, '');
   html = html.replace(/\{\{\s*[^}]+\s*\}\}/g, '');
 
-  html = prefixUploadPaths(html);
-  html = hideZoomDialogs(html);
-  html = addNewWindowHints(html);
+  html = sanitizeCatalogTemplate(html);
 
   if (/<sc-for/i.test(html)) {
     throw new Error('catalog freeze left an unexpanded <sc-for> loop');
