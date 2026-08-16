@@ -1,8 +1,8 @@
 ---
 // Server-rendered homepage. Content is baked into HTML at build time; small
-// Vanilla scripts handle the hero crossfade and the interface-language toggle.
-// Document language stays Spanish (`lang=es`); the toggle only swaps chrome
-// `[data-i18n]` strings and marks those nodes with `lang="en"` when needed.
+// Vanilla scripts handle the hero crossfade. The ES/EN chrome toggle lives in
+// SiteHeader on every page; `[data-i18n]` strings swap and those nodes get
+// `lang="en"` when needed. Document language stays Spanish (`lang=es`).
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
@@ -293,48 +293,6 @@ const jsonLd = {
         window.__notofiliaHeroMotion = {
           syncLabels: function () { setToggleLabel(paused); }
         };
-      })();
-
-      // --- Interface language toggle (chrome only; document stays lang=es) ---
-      (function () {
-        var es = document.getElementById('lang-es');
-        var en = document.getElementById('lang-en');
-        var label = document.getElementById('interface-lang-label');
-        if (!es || !en) return;
-        var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
-        nodes.forEach(function (n) { n.setAttribute('data-es', n.innerHTML); });
-        if (label) {
-          label.setAttribute('data-es', 'Idioma de la interfaz');
-          label.setAttribute('data-en', 'Interface language');
-        }
-        function setInterfaceLang(lang) {
-          // Keep <html lang="es">: editorial titles/dates stay Spanish.
-          document.documentElement.lang = 'es';
-          document.documentElement.setAttribute('data-interface-lang', lang);
-          nodes.forEach(function (n) {
-            var v = lang === 'en' ? n.getAttribute('data-en') : n.getAttribute('data-es');
-            if (v != null) n.innerHTML = v;
-            // Mark chrome strings so AT can switch pronunciation without retagging the page.
-            if (lang === 'en') n.setAttribute('lang', 'en');
-            else n.removeAttribute('lang');
-          });
-          if (label) {
-            label.textContent = lang === 'en' ? 'Interface language' : 'Idioma de la interfaz';
-            label.setAttribute('lang', lang === 'en' ? 'en' : 'es');
-          }
-          if (window.__notofiliaHeroMotion && window.__notofiliaHeroMotion.syncLabels) {
-            window.__notofiliaHeroMotion.syncLabels();
-          }
-          var isEs = lang === 'es';
-          es.setAttribute('aria-pressed', String(isEs));
-          en.setAttribute('aria-pressed', String(!isEs));
-          es.style.background = isEs ? 'rgba(231,222,201,0.92)' : 'transparent';
-          es.style.color = isEs ? '#0a0a09' : '#e7ddc4';
-          en.style.background = !isEs ? 'rgba(231,222,201,0.92)' : 'transparent';
-          en.style.color = !isEs ? '#0a0a09' : '#e7ddc4';
-        }
-        es.addEventListener('click', function () { setInterfaceLang('es'); });
-        en.addEventListener('click', function () { setInterfaceLang('en'); });
       })();
     </script>
   </body>

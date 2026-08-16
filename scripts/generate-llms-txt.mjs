@@ -198,7 +198,7 @@ function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCoun
     '',
     '**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*',
     '',
-    '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN de la home cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
+    '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN del encabezado cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
     '',
     '**Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
     '',
