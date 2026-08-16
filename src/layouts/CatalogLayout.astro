@@ -175,6 +175,20 @@ const canonical = absoluteUrl(props.path);
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
       }
+      [data-zoom-dialog][hidden],
+      .catalog-zoom-dialog:not([data-open="true"]) {
+        display: none !important;
+      }
+      [data-zoom-dialog][data-open="true"] {
+        display: flex !important;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 120 !important;
+        background: rgba(5, 5, 4, 0.94) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
       @media (max-width: 640px) {
         .catalog-shell [style*="background:#d8d2cd"],
         .catalog-shell [style*="background: rgb(216, 210, 205)"] {

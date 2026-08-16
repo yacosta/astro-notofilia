@@ -20,7 +20,10 @@ const PRE_PHASE3 = 'c5c818a^';
 
 function gitShow(fileName) {
   const spec = `${PRE_PHASE3}:src/content/catalog/${fileName}`;
-  return execFileSync('git', ['show', spec], { encoding: 'utf8' });
+  return execFileSync('git', ['show', spec], {
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
 }
 
 function countryFromPath(p) {
@@ -40,9 +43,14 @@ function statusFromPath(p, title) {
 function restoreFile(fileName) {
   const currentPath = path.join(CATALOG_DIR, fileName);
   const current = JSON.parse(fs.readFileSync(currentPath, 'utf8'));
-  if (!/<sc-for/i.test(current.template || '')) return null;
+  let original;
+  try {
+    original = JSON.parse(gitShow(fileName));
+  } catch {
+    return null;
+  }
+  if (!/<sc-for/i.test(original.template || '')) return null;
 
-  const original = JSON.parse(gitShow(fileName));
   const notes = collectNotes(original.template || '', original.logic || '');
   const frozen = freezeTemplate(original.template || '', original.logic || '');
 

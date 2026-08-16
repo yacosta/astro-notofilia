@@ -144,6 +144,56 @@ function replaceTaggedBlocks(html, tag, replacer) {
   return out + html.slice(last);
 }
 
+function sliceBalancedDiv(html, openTag) {
+  const start = html.indexOf(openTag);
+  if (start === -1) return null;
+  const lower = html.toLowerCase();
+  let depth = 0;
+  let i = start;
+  while (i < html.length) {
+    const nextOpen = lower.indexOf('<div', i);
+    const nextClose = lower.indexOf('</div>', i);
+    if (nextClose === -1) return null;
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      depth += 1;
+      i = nextOpen + 4;
+      continue;
+    }
+    depth -= 1;
+    const end = nextClose + 6;
+    if (depth === 0) {
+      return { start, end, html: html.slice(start, end) };
+    }
+    i = end;
+  }
+  return null;
+}
+
+function moveSpecTableBeforeImage(html) {
+  const spec = sliceBalancedDiv(
+    html,
+    '<div style="display:flex; flex-direction:column; margin-top:8px;">',
+  );
+  const buttonRe = /<button\b[^>]*data-zoom-trigger[\s\S]*?<\/button>/i;
+  const buttonMatch = html.match(buttonRe);
+  if (!spec || !buttonMatch) return html;
+  const buttonAt = html.indexOf(buttonMatch[0]);
+  if (spec.start < buttonAt) return html;
+
+  let block = spec.html;
+  const after = html.slice(spec.end).match(/^\s*<p\b[\s\S]*?<\/p>/);
+  let end = spec.end;
+  if (after) {
+    block += after[0];
+    end += after[0].length;
+  }
+
+  html = html.slice(0, spec.start) + html.slice(end);
+  const nextButtonAt = html.search(buttonRe);
+  if (nextButtonAt === -1) return html;
+  return `${html.slice(0, nextButtonAt)}${block}\n${html.slice(nextButtonAt)}`;
+}
+
 function noteTriggerHtml(itemHtml, note) {
   const key = String(note.key || 'note');
   const label = note.label || note.date || note.alt || 'billete';
@@ -155,7 +205,8 @@ function noteTriggerHtml(itemHtml, note) {
     /aria-label="Ampliar imagen del billete"/g,
     `aria-label="${escapeAttr(`Ampliar imagen del billete: ${label}`)}"`,
   );
-  return substAlias(html, 'note', note);
+  html = substAlias(html, 'note', note);
+  return moveSpecTableBeforeImage(html);
 }
 
 function freezeZoomDialog(dialogHtml, note) {
@@ -171,8 +222,8 @@ function freezeZoomDialog(dialogHtml, note) {
   html = html.replace(/\{\{\s*zoomInDisabled\s*\}\}/g, 'false');
   html = html.replace(/\{\{\s*[^}]+\s*\}\}/g, '');
   html = html.replace(
-    /<div(\s+role="dialog")/i,
-    `<div data-zoom-dialog="${escapeAttr(key)}" hidden style="display:none"$1`,
+    /<div\s+role="dialog"[^>]*>/i,
+    `<div data-zoom-dialog="${escapeAttr(key)}" hidden role="dialog" aria-modal="true" aria-label="${escapeAttr(`Billete ampliado: ${label}`)}" class="catalog-zoom-dialog">`,
   );
   html = html.replace(
     /aria-label="Billete ampliado"/i,

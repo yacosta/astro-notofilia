@@ -24,10 +24,13 @@ interface Props {
 
 const { record, path, mode = 'augment' } = Astro.props;
 const isPrimary = mode === 'primary';
+const isHub = record.render === 'astro-hub' || Boolean(record.cards?.length);
 const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse);
 const showMedia = isPrimary || hasSeparateFaces;
 const hideDuplicateFicha =
   record.id === 'NF.certificados-de-pago-militar.1-dolar-serie-681';
+/** Piece fichas: show structured data before the legacy scan so the first viewport is not image-only. */
+const metadataBeforeTemplate = !isPrimary && !isHub;
 ---
 {
   isPrimary ? (
@@ -83,6 +86,13 @@ const hideDuplicateFicha =
           Identificador permanente:
           <code class="ml-1 tracking-normal normal-case text-cream-dim">{record.id}</code>
         </p>
+        {
+          metadataBeforeTemplate && (
+            <div class="mt-8">
+              <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+            </div>
+          )
+        }
       </div>
 
       <slot />
@@ -92,7 +102,11 @@ const hideDuplicateFicha =
         aria-label="Registro estructurado de la ficha"
       >
         {showMedia && <CatalogMedia record={record} />}
-        <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+        {
+          !metadataBeforeTemplate && (
+            <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+          )
+        }
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
         <CatalogCitation record={record} path={path} />
