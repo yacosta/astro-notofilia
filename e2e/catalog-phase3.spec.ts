@@ -86,6 +86,65 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
 
+test('Colombia 10.000 pesos specimen ficha lists both notes and their details', async ({
+  page,
+}) => {
+  const response = await page.goto('/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'El Banco de la República' }),
+  ).toBeVisible();
+  await expect(page.getByText('Diez Mil Pesos · 15 de octubre de 1994')).toBeVisible();
+  await expect(page.getByText('Diez Mil Pesos · 1 de marzo de 1995')).toBeVisible();
+  await expect(page.getByText('Pick P-440 (variante conmemorativa)', { exact: true })).toBeVisible();
+  await expect(page.getByText('Pick P-441 (variante por fecha)', { exact: true })).toBeVisible();
+  await expect(page.getByText(/retrato de una mujer del pueblo emberá/i)).toBeVisible();
+  await expect(page.getByText(/Policarpa Salavarrieta/i).first()).toBeVisible();
+
+  const embera = page.locator(
+    'img[src="/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg"]',
+  );
+  const laPola = page.locator(
+    'img[src="/uploads/colombia-banco-de-la-republica-10000-pesos-1995-la-pola-specimen.jpg"]',
+  );
+  await expect(embera.first()).toBeVisible();
+  await expect(laPola.first()).toBeVisible();
+
+  const dialogs = page.locator('[data-zoom-dialog]');
+  await expect(dialogs).toHaveCount(2);
+  await expect(dialogs.nth(0)).toBeHidden();
+  await expect(dialogs.nth(1)).toBeHidden();
+
+  await page.getByRole('button', { name: /Ampliar imagen del billete: Diez Mil Pesos · 15 de octubre de 1994/ }).click();
+  const emberaDialog = page.locator('[data-zoom-dialog="1994-embera"]');
+  await expect(emberaDialog).toBeVisible();
+  await emberaDialog.getByRole('button', { name: 'Cerrar' }).click();
+  await expect(emberaDialog).toBeHidden();
+
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeVisible();
+  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeVisible();
+  await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
+  await expect(page.locator('sc-for')).toHaveCount(0);
+});
+
+test('Colombia 1.000 pesos gallery still lists Bolívar, Gaitán, and the printing error', async ({
+  page,
+}) => {
+  const response = await page.goto('/coleccion/colombia/banco-de-la-republica-1000-pesos/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+  await expect(page.getByText('1 de enero de 1990')).toBeVisible();
+  await expect(page.getByText('Pick #433 (tipo temprano)').first()).toBeVisible();
+  await expect(page.getByText('Pick #448').first()).toBeVisible();
+  await expect(page.getByText(/Gruesa barra de tinta negra/)).toBeVisible();
+  await expect(page.locator('[data-zoom-trigger]')).toHaveCount(19);
+  await expect(page.locator('sc-for')).toHaveCount(0);
+});
+
 test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   await page.goto('/coleccion/colombia/');
   const cards = page.locator('.catalog-banknote-card');

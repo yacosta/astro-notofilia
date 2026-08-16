@@ -71,7 +71,14 @@ for (const file of files) {
   if (file.includes(`${path.sep}src${path.sep}content${path.sep}catalog${path.sep}`) && file.endsWith('.json')) {
     try {
       const data = JSON.parse(text);
-      text = JSON.stringify(data.record ?? {});
+      if (/<sc-for/i.test(data.template || '')) {
+        hits.push({
+          file: path.relative(root, file),
+          count: 1,
+          samples: ['<sc-for> (note loop was not expanded into static HTML)'],
+        });
+      }
+      text = `${data.template || ''}\n${JSON.stringify(data.record ?? {})}`;
     } catch {
       // fall through to full-file scan
     }
