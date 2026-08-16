@@ -946,7 +946,7 @@
     <loc>https://notofilia.com/contacto/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://notofilia.com/editorial/</loc>
@@ -1540,7 +1540,7 @@
     <loc>https://notofilia.com/j-s-g-boggs/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://notofilia.com/noticias/</loc>
@@ -1869,7 +1869,7 @@
   <url>
     <loc>https://notofilia.com/politica-privacidad-cookies/</loc>
     <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

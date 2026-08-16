@@ -1,7 +1,7 @@
 /**
  * Fail the build if unresolved template placeholders remain in shipped
- * Astro HTML / catalog data. Intentionally skips legacy `*.dc.html` shells
- * and `support.js`, which still use Mustache for the dc-runtime.
+ * Astro HTML / catalog data. Legacy `*.dc.html` shells are no longer
+ * published; `support.js` still uses Mustache internally and is skipped.
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -34,8 +34,6 @@ const TARGETS = [
 
 function shouldSkipFile(filePath) {
   const base = path.basename(filePath);
-  // Legacy dc-runtime pages and shared fragments keep Mustache by design.
-  if (/\.dc\.html$/i.test(base)) return true;
   if (/^support(\.min)?\.js$/i.test(base)) return true;
   if (/^coleccion-hub\.js$/i.test(base)) return true;
   return false;

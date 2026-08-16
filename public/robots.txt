@@ -11,7 +11,7 @@ Disallow: /api/
 Disallow: /mcp
 Disallow: /mcp/
 
-# Shared template fragments (not standalone pages)
+# Shared template fragments are archived (not published)
 Disallow: /BanknoteCard.dc.html
 Disallow: /SiteHeader.dc.html
 Disallow: /SiteFooter.dc.html
