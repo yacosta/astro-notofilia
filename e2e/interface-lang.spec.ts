@@ -30,7 +30,7 @@ test('EN chrome does not flip html lang and updates header Colección', async ({
   await page.getByRole('button', { name: 'Interface in English' }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await expect(page.locator('html')).toHaveAttribute('data-interface-lang', 'en');
-  await expect(page.getByRole('link', { name: 'Collection' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Collection', exact: true })).toBeVisible();
 });
 
 test('interface language persists across pages', async ({ page }) => {
@@ -90,6 +90,8 @@ test('Boggs profile body switches to English', async ({ page }) => {
   await expect(page.getByText('Nationality', { exact: true })).toBeVisible();
   await expect(page.getByText('Artist profile', { exact: false })).toBeVisible();
 });
+
+test('404 page shows the ES/EN interface-language pill', async ({ page }) => {
   const response = await page.goto('/this-page-does-not-exist/', { waitUntil: 'domcontentloaded' });
   expect(response?.status()).toBe(404);
   await expect(page.getByRole('group', { name: /Idioma de la interfaz/ })).toBeVisible();
