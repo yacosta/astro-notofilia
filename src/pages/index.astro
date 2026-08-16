@@ -6,7 +6,7 @@
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
-import { hubStats } from '../lib/catalog-hub';
+import { getCollectionStats, inventoryProperties } from '../lib/stats';
 import BaseHead from '../components/BaseHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
@@ -36,7 +36,7 @@ function toStripItems(
 
 const posts = toStripItems(await getPublishedPosts('noticias'), 'noticias');
 const blogPosts = toStripItems(await getPublishedPosts('blog'), 'blog');
-const stats = hubStats();
+const stats = await getCollectionStats();
 
 const heroImg = `${SITE}/uploads/hero-engraving-01.jpg`;
 const heroes = [
@@ -78,6 +78,7 @@ const jsonLd = {
       isPartOf: { '@id': `${SITE}/#website` },
       primaryImageOfPage: heroImg,
       inLanguage: 'es',
+      additionalProperty: inventoryProperties(stats),
     },
   ],
 };
@@ -87,11 +88,11 @@ const jsonLd = {
   <head>
     <BaseHead
       title="Notofilia: Billetes y Numismática | Catálogo y Guías"
-      description="Notafilia y numismática: billetes de Colombia y del mundo, monedas antiguas y de colección. Catálogos, guías y valor para coleccionistas en español."
+      description={`Notafilia y numismática: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Catálogos y guías en español.`}
       path="/"
       ogImage="/uploads/hero-engraving-01.jpg"
       ogTitle="Notofilia — Numismática y coleccionismo de billetes"
-      ogDescription="Colección privada de billetes históricos de Colombia, Estados Unidos y Ecuador: specimens, errores de imprenta y piezas raras de numismática y notafilia."
+      ogDescription={`Colección privada: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Specimens, errores y piezas raras.`}
       robots="index, follow, max-image-preview:large"
       jsonLd={jsonLd}
       loadDcRuntime={false}
@@ -125,7 +126,7 @@ const jsonLd = {
     <SiteHeader overlay />
 
     <main id="main-content" tabindex="-1" class="relative w-full bg-bg outline-none">
-      <HomeHero slides={heroes} />
+      <HomeHero slides={heroes} stats={stats} />
 
       <HomeStatsBar stats={stats} />
 

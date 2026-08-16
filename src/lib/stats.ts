@@ -1,100 +1,88 @@
-import fs from 'node:fs';
+/**
+ * Single source of truth for collection inventory counts.
+ * Every public figure (hero, footer, /coleccion/, JSON-LD, API, llms.txt)
+ * must come from getCollectionStats() — never a hand-written digit.
+ */
+import { getCollection } from 'astro:content';
+import {
+  computeInventoryStats,
+  getCollectionStatsFromDisk,
+  INVENTORY_VOCABULARY_EN,
+  INVENTORY_VOCABULARY_ES,
+} from './catalog-inventory.mjs';
 
 export type CollectionStats = {
-  banknotes: number;
-  coins: number;
-  countries: number;
-  pages: number;
+  /** Individual notes documented (one ficha may hold several). */
+  billetes: number;
+  /** Individual coin fichas. */
+  monedas: number;
+  /** Distinct issuing countries on piece fichas. */
+  paises: number;
+  /** Catalog entries for collected pieces (not hubs or profiles). */
+  fichas: number;
+  /** Indexed catalog URLs (fichas + hubs + profiles). */
+  paginas: number;
 };
 
-const FALLBACK: CollectionStats = {
-  banknotes: 125,
-  coins: 7,
-  countries: 34,
-  pages: 155,
-};
+export { INVENTORY_VOCABULARY_EN, INVENTORY_VOCABULARY_ES, getCollectionStatsFromDisk };
+
+let cached: Promise<CollectionStats> | undefined;
+
+function asStats(value: {
+  billetes: number;
+  monedas: number;
+  paises: number;
+  fichas: number;
+  paginas: number;
+}): CollectionStats {
+  return {
+    billetes: value.billetes,
+    monedas: value.monedas,
+    paises: value.paises,
+    fichas: value.fichas,
+    paginas: value.paginas,
+  };
+}
 
 /**
- * Build-time stats from public/sitemap.xml (mirrors the legacy homepage runtime).
- * Falls back to last-known counts if the sitemap is missing or unreadable.
+ * Read the catalog content collection once per build and return live counts.
  */
-export function computeCollectionStats(
-  sitemapPath = 'public/sitemap.xml',
-): CollectionStats {
-  try {
-    const xml = fs.readFileSync(sitemapPath, 'utf-8');
-    const paths = [...xml.matchAll(/<loc>\s*(.*?)\s*<\/loc>/g)].map((m) => {
-      const p = m[1].replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
-      return p === '' ? '/' : `${p}/`;
-    });
-
-    const ROOTS = new Set([
-      '/',
-      '/coleccion/',
-      '/coleccion/billete-obsoleto-estados-unidos/',
-      '/coleccion/reserva-federal/',
-      '/coleccion/departamento-del-tesoro-de-ee-uu/',
-      '/coleccion/moneda-colonial/',
-      '/coleccion/colombia/',
-      '/coleccion/colombia/banca-libre/',
-      '/coleccion/colombia/emisiones-en-el-extranjero/',
-      '/coleccion/puerto-rico/',
-      '/coleccion/ecuador/',
-      '/coleccion/moneda-colonial-espanola/',
-      '/coleccion/numismatica/',
-      '/coleccion/polimero-mundial/',
-      '/coleccion/pop-art/',
-      '/coleccion/certificados-de-pago-militar/',
-      '/coleccion/emisiones-promocionales/',
-      '/coleccion/food-coupons-usda/',
-    ]);
-    const CF: Record<string, boolean> = {
-      colombia: true,
-      'puerto-rico': true,
-      ecuador: true,
-    };
-
-    const total = paths.length;
-    const profile = paths.filter((p) => p.includes('/perfil-')).length;
-    const rootc = paths.filter((p) => ROOTS.has(p)).length;
-    const coins = paths.filter(
-      (p) => p.startsWith('/coleccion/moneda-colonial-espanola/') && !ROOTS.has(p),
-    ).length;
-    const banknotes = Math.max(0, total - profile - rootc - coins);
-
-    let hasUS = false;
-    const cs = new Set<string>();
-    for (const p of paths) {
-      if (ROOTS.has(p)) continue;
-      const segs = p.split('/').filter(Boolean);
-      if (segs[0] !== 'coleccion') continue;
-      const second = segs[1];
-      if (second === 'polimero-mundial') {
-        if (segs.length > 2) {
-          const mm = segs[2].match(/^([a-z-]+?)-\d/);
-          cs.add(mm ? mm[1] : segs[2]);
-        }
-        continue;
-      }
-      if (CF[second]) cs.add(second);
-      else hasUS = true;
-    }
-
-    return {
-      banknotes,
-      coins,
-      countries: cs.size + (hasUS ? 1 : 0) || 1,
-      pages: total,
-    };
-  } catch {
-    return { ...FALLBACK };
+export function getCollectionStats(): Promise<CollectionStats> {
+  if (!cached) {
+    cached = (async () => {
+      const entries = await getCollection('catalog');
+      return asStats(
+        computeInventoryStats(
+          entries.map((entry) => ({
+            path: entry.data.path,
+            title: entry.data.title,
+            ogType: entry.data.ogType,
+            template: entry.data.template,
+            jsonLd: entry.data.jsonLd,
+            record: entry.data.record,
+            keywords: entry.data.keywords,
+          })),
+        ),
+      );
+    })();
   }
+  return cached;
 }
 
 export function formatStatsEs(s: CollectionStats): string {
-  return `${s.banknotes} billetes · ${s.coins} monedas · ${s.countries} países · ${s.pages} páginas`;
+  return `${s.billetes} billetes · ${s.monedas} monedas · ${s.paises} países · ${s.fichas} fichas · ${s.paginas} páginas`;
 }
 
 export function formatStatsEn(s: CollectionStats): string {
-  return `${s.banknotes} banknotes · ${s.coins} coins · ${s.countries} countries · ${s.pages} pages`;
+  return `${s.billetes} banknotes · ${s.monedas} coins · ${s.paises} countries · ${s.fichas} catalog entries · ${s.paginas} pages`;
+}
+
+export function inventoryProperties(s: CollectionStats) {
+  return [
+    { '@type': 'PropertyValue', name: 'Billetes', value: String(s.billetes) },
+    { '@type': 'PropertyValue', name: 'Monedas', value: String(s.monedas) },
+    { '@type': 'PropertyValue', name: 'Países', value: String(s.paises) },
+    { '@type': 'PropertyValue', name: 'Fichas', value: String(s.fichas) },
+    { '@type': 'PropertyValue', name: 'Páginas', value: String(s.paginas) },
+  ];
 }

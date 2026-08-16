@@ -6,6 +6,7 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { SITE } from '../../lib/site';
 import { CLAIM_KINDS, CLAIM_LABELS, CLAIM_DEFAULT_NOTES } from '../../lib/claims';
 import { EDITORIAL_TEAM } from '../../lib/editorial';
+import { INVENTORY_VOCABULARY_ES } from '../../lib/stats';
 
 const title = 'Política editorial y valoración · Notofilia';
 const description =
@@ -89,6 +90,11 @@ const jsonLd = {
         casas de subastas, bancos centrales, museos). El <a href="/blog/">blog</a> reúne guías
         originales. La <a href="/coleccion/">Colección Virtual</a> documenta piezas privadas
         <strong>que no están a la venta</strong>.
+      </p>
+      <p>
+        {INVENTORY_VOCABULARY_ES} Las cifras del pie, de la portada y de
+        <a href="/coleccion/">/coleccion/</a> se calculan en el build a partir de la colección,
+        nunca se escriben a mano.
       </p>
 
       <h2 id="equipo-editorial">Equipo editorial</h2>
