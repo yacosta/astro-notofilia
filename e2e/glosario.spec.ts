@@ -19,16 +19,19 @@ test.describe('glossary index', () => {
   test('search and category filters are progressive enhancement', async ({ page }) => {
     await page.goto('/glosario/');
     const search = page.getByRole('searchbox', { name: 'Buscar en el glosario' });
-    await search.fill('notafilia');
+    await search.fill('conversion day');
     await expect(page.locator('[data-glossary-term]:visible')).toHaveCount(1);
-    await expect(page.locator('#notafilia')).toBeVisible();
+    await expect(page.locator('#c-day')).toBeVisible();
     await page.getByRole('button', { name: 'Borrar búsqueda' }).click();
     await expect(page.locator('[data-glossary-term]:visible')).toHaveCount(95);
 
     await page.getByRole('button', { name: 'Disciplina' }).click();
     const visible = page.locator('[data-glossary-term]:visible');
     await expect(visible).toHaveCount(4);
-    await expect(visible).toContainText(['Notafilia', 'Numismática', 'Escripofilia', 'Exonumia']);
+    await expect(page.locator('#notafilia')).toBeVisible();
+    await expect(page.locator('#numismatica')).toBeVisible();
+    await expect(page.locator('#escripofilia')).toBeVisible();
+    await expect(page.locator('#exonumia')).toBeVisible();
   });
 
   test('has no serious accessibility violations', async ({ page }) => {
