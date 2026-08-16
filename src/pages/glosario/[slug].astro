@@ -1,0 +1,83 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { metaDescription, titleTag } from '../../lib/posts';
+import {
+  GLOSSARY_PATH,
+  buildGlossaryLookup,
+  definitionEs,
+  glossaryTermJsonLd,
+  glossaryTermPath,
+  getGlossaryTerms,
+  resolveSeeAlso,
+} from '../../lib/glossary';
+
+export async function getStaticPaths() {
+  const terms = await getGlossaryTerms();
+  return terms.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const terms = await getGlossaryTerms();
+const lookup = buildGlossaryLookup(terms);
+const spanish = definitionEs(entry);
+const seeAlso = resolveSeeAlso(entry.data.seeAlso, lookup);
+const path = glossaryTermPath(entry.id);
+const jsonLd = glossaryTermJsonLd(entry);
+const keywords = [entry.data.termEs, entry.data.termEn, entry.data.category, 'glosario'];
+---
+<BlogLayout
+  title={titleTag(`${entry.data.termEs} — Glosario`)}
+  description={metaDescription(spanish)}
+  path={path}
+  jsonLd={jsonLd}
+  keywords={keywords}
+>
+  <article class="max-w-[900px] mx-auto px-6 pt-14 pb-6">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/">Inicio</a>
+      <span aria-hidden="true"> / </span>
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href={GLOSSARY_PATH}>Glosario</a>
+      <span aria-hidden="true"> / </span>
+      <span>{entry.data.termEs}</span>
+    </nav>
+
+    <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">
+      {entry.data.category}
+    </p>
+    <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-2 leading-[1.12]">
+      {entry.data.termEs}
+    </h1>
+    <p lang="en" class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 mb-8 leading-[1.5]">
+      {entry.data.termEn}
+    </p>
+
+    <div class="bg-cream-dim border border-[rgba(10,10,9,0.08)] rounded-[3px] py-8 px-[clamp(20px,4vw,40px)]">
+      <p class="text-[19px] leading-[1.7] text-ink m-0 mb-4">{spanish}</p>
+      <p lang="en" class="text-[16px] leading-[1.6] text-gold-dark m-0 italic">{entry.data.definitionEn}</p>
+      {seeAlso.length > 0 && (
+        <p class="text-[15px] text-gold-dark mt-5 mb-0">
+          Ver también:{' '}
+          {seeAlso.map((link, index) => (
+            <>
+              {index > 0 && ', '}
+              <a
+                href={link.href}
+                class="text-gold-deep underline [text-decoration-color:rgba(107,82,31,0.35)] hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+              >{link.label}</a>
+            </>
+          ))}
+        </p>
+      )}
+    </div>
+
+    <p class="mt-8 mb-0">
+      <a
+        href={GLOSSARY_PATH}
+        class="inline-flex items-center min-h-11 text-cream underline [text-decoration-color:rgba(231,222,201,0.35)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      >← Volver al glosario</a>
+    </p>
+  </article>
+</BlogLayout>

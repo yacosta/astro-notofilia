@@ -14,7 +14,7 @@ relatedLinks:
   - { href: "/coleccion/puerto-rico/", title: "Catálogo de billetes de Puerto Rico" }
   - { href: "/coleccion/puerto-rico/billete-de-canje-1-peso-1895/", title: "Billete de canje de un peso, 1895" }
   - { href: "/coleccion/puerto-rico/junta-central-cuba-1869/", title: "Junta Central de Cuba y Puerto Rico" }
-  - { href: "/glosario/#banco-emisor", title: "Glosario: banco emisor" }
+  - { href: "/glosario/banco-emisor/", title: "Glosario: banco emisor" }
 ---
 
 La historia de la banca en Puerto Rico está marcada por su doble herencia

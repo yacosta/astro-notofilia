@@ -13,8 +13,8 @@ keywords:
 relatedLinks:
   - { href: "/noticias/billete-2-dolares-serie-baja/", title: "El billete de $2 con serie L00000002A" }
   - { href: "/coleccion/ecuador/100-sucres-1993/", title: "100 sucres con serie 00000003" }
-  - { href: "/glosario/#numeracion-especial", title: "Glosario: numeración especial" }
-  - { href: "/glosario/#numeracion-radar", title: "Glosario: numeración radar" }
+  - { href: "/glosario/numeracion-especial/", title: "Glosario: numeración especial" }
+  - { href: "/glosario/numeracion-radar/", title: "Glosario: numeración radar" }
 ---
 
 Dos billetes idénticos pueden valer muy distinto por un solo detalle: su

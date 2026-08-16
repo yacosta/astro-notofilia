@@ -16,7 +16,7 @@ relatedLinks:
   - { href: "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/", title: "2.000 pesos oro: Bolívar" }
   - { href: "/coleccion/colombia/banco-de-la-republica-5000-pesos-oro-specimen/", title: "5.000 pesos oro specimen" }
   - { href: "/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/", title: "10.000 pesos specimen: mujer embera" }
-  - { href: "/glosario/#specimen", title: "Glosario: specimen" }
+  - { href: "/glosario/specimen/", title: "Glosario: specimen" }
 ---
 
 Si usted colecciona billetes colombianos, seguramente lo ha notado: entre 1983

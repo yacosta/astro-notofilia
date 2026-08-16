@@ -178,6 +178,17 @@ if (legacyContactIdx === -1 || legacyPerfilBtnIdx === -1 || legacyContactIdx < l
   fail('Legacy SiteHeader must render Contacto after the last collection accordion');
 }
 if (!sitemap.has('/coleccion/numismatica/')) fail('sitemap.xml is missing /coleccion/numismatica/');
+if (!sitemap.has('/glosario/')) fail('sitemap.xml is missing /glosario/');
+for (const slug of ['notafilia', 'specimen', 'pick', 'friedberg', 'billete-sin-circular']) {
+  if (!sitemap.has(`/glosario/${slug}/`)) fail(`sitemap.xml is missing /glosario/${slug}/`);
+}
+{
+  const { html } = await htmlForRoute('/glosario/');
+  if (html && !/notafilia/i.test(html)) fail('/glosario/ HTML does not contain “notafilia” without depending on JS');
+  if (html && !html.includes('"@type":"DefinedTermSet"') && !html.includes('"@type": "DefinedTermSet"')) {
+    fail('/glosario/ is missing DefinedTermSet JSON-LD');
+  }
+}
 const headerIsland = await readFile(path.join(root, 'src/client/site-header.js'), 'utf8');
 if (!headerIsland.includes('/pagefind/') || !headerIsland.includes('pagefind.js')) {
   fail('Native header island is not wired to Pagefind');
