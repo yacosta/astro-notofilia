@@ -3,7 +3,7 @@
  * Native site header — server-rendered navigation with a lightweight drawer
  * and Pagefind loaded only when search is opened.
  */
-import { PRIMARY_LINKS, NAV_SECTIONS } from '../lib/nav';
+import { CONTACT_LINK, DRAWER_PRIMARY_LINKS, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
 
 export interface Props {
   /** When true, header overlays the hero (homepage). Otherwise in normal flow. */
@@ -95,7 +95,7 @@ const { overlay = false } = Astro.props;
     </div>
 
     <ul class="site-header__primary">
-      {PRIMARY_LINKS.map((link) => (
+      {DRAWER_PRIMARY_LINKS.map((link) => (
         <li>
           <a href={link.href}>{link.label}</a>
         </li>
@@ -143,6 +143,12 @@ const { overlay = false } = Astro.props;
         </details>
       ))}
     </div>
+
+    <ul class="site-header__primary site-header__primary--last">
+      <li>
+        <a href={CONTACT_LINK.href}>{CONTACT_LINK.label}</a>
+      </li>
+    </ul>
   </div>
 </header>
 
@@ -417,6 +423,12 @@ const { overlay = false } = Astro.props;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     border-bottom: 1px solid rgba(10, 10, 9, 0.08);
+  }
+  .site-header__primary--last {
+    border-top: 1px solid rgba(10, 10, 9, 0.08);
+  }
+  .site-header__primary--last a {
+    border-bottom: 0;
   }
   .site-header__primary a:hover,
   .site-header__accordion a:hover {

@@ -28,16 +28,29 @@ export type NavSection = {
   groups?: NavGroup[];
 };
 
-/** Top-level links always reachable without JavaScript. */
+/** Last item in the drawer — after collection accordions. */
+export const CONTACT_LINK: NavLink = {
+  href: '/contacto/',
+  label: 'Contacto',
+  labelEn: 'Contact',
+};
+
+/** Top-level links always reachable without JavaScript. Contacto stays last. */
 export const PRIMARY_LINKS: NavLink[] = [
   { href: '/', label: 'Inicio', labelEn: 'Home' },
   { href: '/coleccion/', label: 'Colección', labelEn: 'Collection' },
   { href: '/buscar/', label: 'Buscar', labelEn: 'Search' },
   { href: '/blog/', label: 'Blog', labelEn: 'Blog' },
   { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
+  { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
   { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
-  { href: '/contacto/', label: 'Contacto', labelEn: 'Contact' },
+  CONTACT_LINK,
 ];
+
+/** Drawer destinations above the collection accordions (Contacto is rendered after). */
+export const DRAWER_PRIMARY_LINKS: NavLink[] = PRIMARY_LINKS.filter(
+  (link) => link.href !== CONTACT_LINK.href,
+);
 
 /** Featured notafilia destinations (coins live under the Numismática accordion). */
 export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
@@ -128,6 +141,7 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
   },
 ];
 
+/** Collection accordions only — Blog, Noticias, Glosario, and Logros live in PRIMARY_LINKS. */
 export const NAV_SECTIONS: NavSection[] = [
   {
     id: 'numismatica',
@@ -148,16 +162,5 @@ export const NAV_SECTIONS: NavSection[] = [
       { href: '/coleccion/?tipo=error#explorar', label: 'Errores de imprenta', labelEn: 'Printing errors' },
     ],
     groups: NOTAFILIA_GROUPS,
-  },
-  {
-    id: 'editorial',
-    label: 'Editorial',
-    labelEn: 'Editorial',
-    links: [
-      { href: '/blog/', label: 'Blog' },
-      { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
-      { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
-      { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
-    ],
   },
 ];
