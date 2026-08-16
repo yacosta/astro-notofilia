@@ -26,6 +26,8 @@ const { record, path, mode = 'augment' } = Astro.props;
 const isPrimary = mode === 'primary';
 const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse);
 const showMedia = isPrimary || hasSeparateFaces;
+const hideDuplicateFicha =
+  record.id === 'NF.certificados-de-pago-militar.1-dolar-serie-681';
 ---
 {
   isPrimary ? (
@@ -62,7 +64,7 @@ const showMedia = isPrimary || hasSeparateFaces;
 
       <div class="grid gap-12">
         {showMedia && <CatalogMedia record={record} />}
-        <CatalogMetadata record={record} />
+        <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
         <CatalogCitation record={record} path={path} />
@@ -90,7 +92,7 @@ const showMedia = isPrimary || hasSeparateFaces;
         aria-label="Registro estructurado de la ficha"
       >
         {showMedia && <CatalogMedia record={record} />}
-        <CatalogMetadata record={record} />
+        <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
         <CatalogCitation record={record} path={path} />

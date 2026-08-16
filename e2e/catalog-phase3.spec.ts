@@ -161,7 +161,7 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(card).toContainText('1969–1970');
 
   await page.goto('/coleccion/certificados-de-pago-militar/1-dolar-serie-681/');
-  await expect(page.getByRole('heading', { level: 1, name: 'Un Dólar — Serie 681' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'MPC Serie 681 — Un Dólar (Vietnam, 1969–1970)' })).toBeVisible();
   const ficha = page.locator('#main-content');
   await expect(ficha.getByText('Fr. M915 · Schwan S915-1 · Pick M79').first()).toBeVisible();
   await expect(ficha.getByText('C10102847C').first()).toBeVisible();
@@ -177,7 +177,7 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(ficha.getByRole('heading', { name: 'Sobre este valor' })).toBeVisible();
   await expect(ficha.getByText('Valoración de catálogo').first()).toBeVisible();
   await expect(ficha.getByRole('heading', { name: 'Este ejemplar' })).toBeVisible();
-  await expect(ficha.getByText('14 ejemplares certificados').first()).toBeVisible();
+  await expect(ficha.getByText('14 certificados').first()).toBeVisible();
   const fuentes = ficha.locator('section').filter({ has: page.getByRole('heading', { name: 'Fuentes' }) });
   await expect(fuentes.getByRole('heading', { name: 'Fuentes' })).toBeVisible();
   const sourceHrefs = [
@@ -202,6 +202,12 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(fuentes.getByText('S915-1 (regular) y S915-1r (reemplazo)')).toBeVisible();
   await expect(fuentes.getByText('ISBN 0-931960-54-1')).toBeVisible();
   await expect(fuentes.locator('a[target="_blank"][rel="noopener noreferrer"]')).toHaveCount(sourceHrefs.length);
+  await expect(ficha.getByText('veteranos de Vietnam reconocen de inmediato').first()).toBeVisible();
+  await expect(ficha.locator('a[href="/glosario/#c-day"]')).toHaveCount(1);
+  await expect(ficha.getByText('puerta de entrada al programa MPC')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toHaveCount(0);
+  await expect(page.locator('meta[name="keywords"]')).toHaveCount(0);
+  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveCount(1);
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });

@@ -45,7 +45,7 @@ const {
 
 const canonical = absoluteUrl(path);
 const image = absoluteUrl(ogImage ?? '/favicon.png');
-const kw = keywordsContent(keywords);
+const kw = keywords?.length ? keywordsContent(keywords) : '';
 const shareTitle = ogTitle ?? title;
 const shareDescription = ogDescription ?? description;
 ---
@@ -95,7 +95,7 @@ const shareDescription = ogDescription ?? description;
 </script>
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="keywords" content={kw} />
+{kw ? <meta name="keywords" content={kw} /> : null}
 <meta name="author" content={author} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={canonical} />
