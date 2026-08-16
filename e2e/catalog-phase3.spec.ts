@@ -86,6 +86,78 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
 
+test('Colombia catalog cards open fichas with data, not only the image', async ({ page }) => {
+  const samples = [
+    {
+      href: '/coleccion/colombia/cartagena-1-real-1813/',
+      spec: 'Pick #S101',
+    },
+    {
+      href: '/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/',
+      spec: 'Pick P-384s',
+    },
+    {
+      href: '/coleccion/colombia/nueva-granada-1-peso-1861/',
+      spec: 'Denominación',
+    },
+  ];
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+
+  for (const sample of samples) {
+    const card = page.locator(`a.catalog-banknote-card[href="${sample.href}"]`);
+    await expect(card).toBeVisible();
+    await card.click();
+    await expect(page).toHaveURL(new RegExp(`${sample.href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`));
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+    await expect(page.getByText(sample.spec).first()).toBeInViewport();
+    const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
+    const count = await dialogs.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(dialogs.nth(i)).toBeHidden();
+    }
+    await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+  }
+});
+
+test('catalog fichas outside Colombia also show spec data before the scan', async ({ page }) => {
+  const samples = [
+    {
+      path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
+      spec: 'D 79155860 A',
+    },
+    {
+      path: '/coleccion/polimero-mundial/mexico-20-50-100-pesos/',
+      spec: 'Benito Juárez',
+    },
+    {
+      path: '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
+      spec: 'Tirada',
+    },
+    {
+      path: '/coleccion/ecuador/100-sucres-1993/',
+      spec: '00000002',
+    },
+    {
+      path: '/coleccion/diez-dolares-1934-distritos/',
+      spec: 'D — Cleveland, Ohio',
+    },
+  ];
+  for (const sample of samples) {
+    const response = await page.goto(sample.path, { waitUntil: 'domcontentloaded' });
+    expect(response?.ok()).toBeTruthy();
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+    await expect(page.getByText(sample.spec).first()).toBeInViewport();
+    const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
+    const count = await dialogs.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(dialogs.nth(i)).toBeHidden();
+    }
+  }
+});
+
 test('Colombia catalog card for 10.000 pesos opens the ficha data, not only the image', async ({
   page,
 }) => {
