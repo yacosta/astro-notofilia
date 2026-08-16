@@ -46,6 +46,31 @@ test.describe('glossary index', () => {
     );
     expect(serious, JSON.stringify(serious, null, 2)).toEqual([]);
   });
+
+  test('defined terms on cream cards are ink or darker, never cream', async ({ page }) => {
+    await page.goto('/glosario/', { waitUntil: 'domcontentloaded' });
+    const card = page.locator('#abrasiones');
+    await expect(card).toBeVisible();
+    const colors = await card.evaluate((el) => {
+      const term = el.querySelector('h2 a');
+      const body = el.querySelector('p');
+      const related = el.querySelector('p a');
+      const css = (node) => {
+        if (!node) return null;
+        const value = getComputedStyle(node).color;
+        const match = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+        if (!match) return { value, luminance: null };
+        const [r, g, b] = match.slice(1).map(Number);
+        const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+        return { value, luminance, r, g, b };
+      };
+      return { term: css(term), body: css(body), related: css(related) };
+    });
+    expect(colors.term.luminance, JSON.stringify(colors)).toBeLessThanOrEqual(colors.body.luminance);
+    // Cream #e7ddc4 is ~0.87 luminance; ink/bg on cream cards must stay dark.
+    expect(colors.term.luminance).toBeLessThan(0.35);
+    expect(colors.related.luminance).toBeLessThan(0.35);
+  });
 });
 
 const TERM_PAGES = [

@@ -124,13 +124,13 @@ const jsonLd = glossaryIndexJsonLd(terms);
               .toLowerCase()
               .normalize('NFD')
               .replace(/[\u0300-\u036f]/g, '')}
-            class="bg-cream-dim border border-[rgba(10,10,9,0.08)] rounded-[3px] py-7 px-[clamp(20px,4vw,40px)] mb-[18px] scroll-mt-[90px]"
+            class="glossary-card bg-cream-dim border border-[rgba(10,10,9,0.08)] rounded-[3px] py-7 px-[clamp(20px,4vw,40px)] mb-[18px] scroll-mt-[90px]"
           >
             <div class="flex flex-wrap items-baseline gap-2.5 mb-2.5">
-              <h2 class="font-display font-normal text-[22px] text-ink m-0">
+              <h2 class="font-display font-normal text-[22px] text-bg m-0">
                 <a
                   href={glossaryTermPath(entry.id)}
-                  class="text-ink no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+                  class="no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
                 >{entry.data.termEs}</a>
               </h2>
               <span lang="en" class="text-[17px] italic text-gold-dark">{entry.data.termEn}</span>
@@ -148,7 +148,7 @@ const jsonLd = glossaryIndexJsonLd(terms);
                     {index > 0 && ', '}
                     <a
                       href={link.href}
-                      class="text-gold-deep underline [text-decoration-color:rgba(107,82,31,0.35)] hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+                      class="underline [text-decoration-color:rgba(51,46,34,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
                     >{link.label}</a>
                   </>
                 ))}
