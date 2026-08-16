@@ -6,9 +6,11 @@
 export interface StripItem {
   url: string;
   title: string;
+  titleEn?: string;
   source: string;
   iso: string;
   dateLabel: string;
+  dateLabelEn?: string;
   cover?: string;
   coverAlt: string;
 }
@@ -16,7 +18,7 @@ export interface StripItem {
 export interface Props {
   headingId: string;
   heading: string;
-  /** English string for the ES/EN chrome toggle. Article cards stay Spanish-only. */
+  /** English string for the ES/EN chrome toggle. */
   headingEn?: string;
   items: StripItem[];
   emptyMessage: string;
@@ -64,10 +66,10 @@ const {
               </picture>
             )}
             <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
-              <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep">{it.dateLabel}</time>
+              <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep" data-i18n={it.dateLabelEn ? true : undefined} data-en={it.dateLabelEn}>{it.dateLabel}</time>
               <span class="text-[13px] text-gold-dark">&middot; {it.source}</span>
             </div>
-            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words">
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words" data-i18n={it.titleEn ? true : undefined} data-en={it.titleEn}>
               {it.title}
             </h3>
             <a href={it.url} data-i18n data-en="Read more &rarr;" class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>

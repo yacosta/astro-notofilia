@@ -3,6 +3,8 @@
  * Prev/next + related pieces for a catalog record.
  */
 import type { CatalogRecord } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
@@ -14,10 +16,10 @@ const hasNav = Boolean(record.previous || record.next || related.length);
 ---
 {
   hasNav && (
-    <section class="catalog-record-nav grid gap-6" aria-label="Navegación entre fichas">
+    <section class="catalog-record-nav grid gap-6" aria-label="Navegación entre fichas" data-i18n data-i18n-target="aria-label" data-en={UI.recordNav.en}>
       {
         (record.previous || record.next) && (
-          <nav class="flex flex-wrap justify-between gap-4" aria-label="Ficha anterior y siguiente">
+          <nav class="flex flex-wrap justify-between gap-4" aria-label="Ficha anterior y siguiente" data-i18n data-i18n-target="aria-label" data-en={UI.prevNext.en}>
             {
               record.previous ? (
                 <a
@@ -25,7 +27,7 @@ const hasNav = Boolean(record.previous || record.next || related.length);
                   href={record.previous.href}
                   rel="prev"
                 >
-                  ← {record.previous.title}
+                  ← <span data-i18n={lookupEn(record.previous.title) ? true : undefined} data-en={lookupEn(record.previous.title)}>{record.previous.title}</span>
                 </a>
               ) : (
                 <span />
@@ -38,7 +40,7 @@ const hasNav = Boolean(record.previous || record.next || related.length);
                   href={record.next.href}
                   rel="next"
                 >
-                  {record.next.title} →
+                  <span data-i18n={lookupEn(record.next.title) ? true : undefined} data-en={lookupEn(record.next.title)}>{record.next.title}</span> →
                 </a>
               ) : null
             }
@@ -48,8 +50,8 @@ const hasNav = Boolean(record.previous || record.next || related.length);
       {
         related.length > 0 && (
           <div>
-            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream">
-              Piezas relacionadas
+            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream" data-i18n data-en={UI.related.en}>
+              {UI.related.es}
             </h2>
             <ul class="m-0 p-0 list-none grid gap-2">
               {
@@ -58,6 +60,8 @@ const hasNav = Boolean(record.previous || record.next || related.length);
                     <a
                       class="min-h-11 inline-flex items-center text-[16px] text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
                       href={item.href}
+                      data-i18n={lookupEn(item.title) ? true : undefined}
+                      data-en={lookupEn(item.title)}
                     >
                       {item.title}
                     </a>

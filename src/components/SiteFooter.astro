@@ -24,7 +24,7 @@ export interface Props {
 
 const {
   taglineEs = 'Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.',
-  taglineEn,
+  taglineEn = 'Numismatics and Notaphily — a catalog and virtual collection of historical banknotes and coins.',
   statsLineEs,
   statsLineEn,
   variant = 'editorial',
@@ -107,7 +107,7 @@ const isHome = variant === 'home';
       {' '}
       <span data-i18n data-en="with much">con mucho</span>
       {' '}
-      <span class="footer-heart" role="img" aria-label="amor">
+      <span class="footer-heart" role="img" aria-label="amor" data-i18n data-i18n-target="aria-label" data-en="love">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
           <path
             fill="#e07a6a"

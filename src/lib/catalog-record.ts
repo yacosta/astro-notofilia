@@ -293,6 +293,16 @@ export function formatCitation(
   return `Notofilia. «${record.title}». Colección Virtual (${record.id}). ${url} (acceso ${iso}).`;
 }
 
+export function formatCitationEn(
+  record: Pick<CatalogRecord, 'title' | 'id'>,
+  path: string,
+  accessed: Date = new Date(),
+): string {
+  const url = `${SITE}${path.endsWith('/') ? path : `${path}/`}`;
+  const iso = accessed.toISOString().slice(0, 10);
+  return `Notofilia. “${record.title}”. Virtual Collection (${record.id}). ${url} (accessed ${iso}).`;
+}
+
 export function reportMailto(record: Pick<CatalogRecord, 'title' | 'id'>, path: string): string {
   const subject = encodeURIComponent(`Corrección o aporte — ${record.id}`);
   const body = encodeURIComponent(

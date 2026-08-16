@@ -7,15 +7,21 @@ import { toIsoDate } from './dates';
 export type CollectionMeta = {
   id: PostCollection;
   label: string;
+  labelEn: string;
   heading: string;
+  headingEn: string;
   intro: string;
+  introEn: string;
   emptyMessage: string;
+  emptyMessageEn: string;
   title: string;
   description: string;
   keywords: string[];
   showSource: boolean;
   sourceLinkLabel: string;
+  sourceLinkLabelEn: string;
   backLabel: string;
+  backLabelEn: string;
   jsonLdName: string;
   jsonLdDescription: string;
   /** schema.org type for individual posts in this section. */
@@ -26,10 +32,15 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
   blog: {
     id: 'blog',
     label: 'Blog',
+    labelEn: 'Blog',
     heading: 'Blog de Numismática y Notafilia',
+    headingEn: 'Numismatics and Notaphily Blog',
     intro:
       'Guías y artículos para aprender sobre el coleccionismo de billetes y monedas: historia, técnica y consejos prácticos.',
+    introEn:
+      'Guides and articles on collecting banknotes and coins: history, technique, and practical advice.',
     emptyMessage: 'Muy pronto publicaremos las primeras guías.',
+    emptyMessageEn: 'The first guides will be published soon.',
     title: 'Blog de Numismática y Notafilia · Notofilia',
     description:
       'Guías de numismática y notafilia: cómo empezar una colección de billetes, historia monetaria de Colombia y Puerto Rico y consejos para coleccionistas.',
@@ -46,7 +57,9 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
     ],
     showSource: false,
     sourceLinkLabel: 'Leer la fuente original',
+    sourceLinkLabelEn: 'Read the original source',
     backLabel: 'Volver al Blog',
+    backLabelEn: 'Back to the Blog',
     jsonLdName: 'Blog de Numismática y Notafilia',
     jsonLdDescription:
       'Guías y artículos sobre numismática y notafilia: cómo coleccionar billetes y monedas, historia monetaria y consejos para el coleccionista.',
@@ -55,10 +68,15 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
   logros: {
     id: 'logros',
     label: 'Logros del Mes',
+    labelEn: 'Monthly milestones',
     heading: 'Logros del Mes — Colección Virtual',
+    headingEn: 'Monthly Milestones — Virtual Collection',
     intro:
       'Un resumen mensual de lo nuevo en la Colección Virtual de Notofilia: piezas añadidas, fichas publicadas y avances del catálogo.',
+    introEn:
+      'A monthly summary of what is new in Notofilia’s Virtual Collection: pieces added, records published, and catalog progress.',
     emptyMessage: 'Muy pronto publicaremos el primer resumen mensual de la Colección Virtual.',
+    emptyMessageEn: 'The first monthly summary of the Virtual Collection will be published soon.',
     title: 'Logros del Mes — Colección Virtual · Notofilia',
     description:
       'Logros mensuales de la Colección Virtual de Notofilia: nuevas fichas, billetes y monedas incorporados al catálogo digital.',
@@ -73,7 +91,9 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
     ],
     showSource: false,
     sourceLinkLabel: 'Leer la fuente original',
+    sourceLinkLabelEn: 'Read the original source',
     backLabel: 'Volver a Logros del Mes',
+    backLabelEn: 'Back to Monthly milestones',
     jsonLdName: 'Logros del Mes — Colección Virtual',
     jsonLdDescription:
       'Resúmenes mensuales de avances en la Colección Virtual de Notofilia: nuevas piezas y fichas del catálogo.',
@@ -82,9 +102,13 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
   noticias: {
     id: 'noticias',
     label: 'Noticias',
+    labelEn: 'News',
     heading: 'Noticias de Numismática y Notafilia',
+    headingEn: 'Numismatics and Notaphily News',
     intro: 'Una selección de noticias, hallazgos y notas sobre monedas y billetes históricos.',
+    introEn: 'A selection of news, finds, and notes on historical coins and banknotes.',
     emptyMessage: 'Muy pronto publicaremos las primeras noticias.',
+    emptyMessageEn: 'The first news items will be published soon.',
     title: 'Noticias de Numismática y Notafilia · Notofilia',
     description:
       'Noticias y artículos sobre numismática y notafilia: emisiones, hallazgos y valor de billetes y monedas de colección de Colombia y del mundo.',
@@ -101,7 +125,9 @@ export const COLLECTIONS: Record<PostCollection, CollectionMeta> = {
     ],
     showSource: true,
     sourceLinkLabel: 'Leer la nota original',
+    sourceLinkLabelEn: 'Read the original article',
     backLabel: 'Volver a Noticias',
+    backLabelEn: 'Back to News',
     jsonLdName: 'Noticias de Numismática y Notafilia',
     jsonLdDescription:
       'Noticias y artículos sobre numismática y notafilia: subastas, emisiones y hallazgos para coleccionistas.',

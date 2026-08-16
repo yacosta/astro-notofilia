@@ -4,8 +4,10 @@
  */
 import Cover from './Cover.astro';
 import { COLLECTIONS } from '../lib/collections';
-import { formatDateLongEs, toIsoDate } from '../lib/dates';
+import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
+import { lookupEn } from '../lib/html-i18n';
 import type { PostCollection, PublishedPost } from '../lib/posts';
+import { UI } from '../lib/ui-i18n';
 
 export interface Props {
   collection: PostCollection;
@@ -26,22 +28,23 @@ const {
   showSource = false,
 } = Astro.props;
 const basePath = `/${collection}/`;
-const label = COLLECTIONS[collection].label;
+const meta = COLLECTIONS[collection];
+const label = meta.label;
 ---
 <div class="max-w-content mx-auto px-6 pt-14 pb-6">
-  <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
-    <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/">Inicio</a>
-    <span aria-hidden="true">/</span> <span>{label}</span>
+  <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en={UI.crumbs.en}>
+    <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/" data-i18n data-en={UI.home.en}>{UI.home.es}</a>
+    <span aria-hidden="true">/</span> <span data-i18n data-en={meta.labelEn}>{label}</span>
   </nav>
-  <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]">
+  <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]" data-i18n data-en={meta.headingEn}>
     {heading}
   </h1>
-  <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]">
+  <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]" data-i18n data-en={meta.introEn}>
     {intro}
   </p>
 
   {posts.length === 0 ? (
-    <p class="text-muted">{emptyMessage}</p>
+    <p class="text-muted" data-i18n data-en={meta.emptyMessageEn}>{emptyMessage}</p>
   ) : (
     <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
       {posts.map((post) => (
@@ -52,17 +55,17 @@ const label = COLLECTIONS[collection].label;
             )}
             <div class="pt-4 mt-4 border-t-2 border-muted">
               <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
-                <time datetime={toIsoDate(post.data.publishedAt)}>
+                <time datetime={toIsoDate(post.data.publishedAt)} data-i18n data-en={formatDateLongEn(post.data.publishedAt)}>
                   {formatDateLongEs(post.data.publishedAt)}
                 </time>
                 {showSource && post.data.source && <span aria-hidden="true">·</span>}
                 {showSource && post.data.source && <span>{post.data.source}</span>}
               </div>
-              <h2 class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white">
+              <h2 class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white" data-i18n={lookupEn(post.data.title) ? true : undefined} data-en={lookupEn(post.data.title)}>
                 {post.data.title}
               </h2>
-              <p class="text-[16px] text-cream-dim mt-0 mb-3">{post.data.excerpt}</p>
-              <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold">Leer más &rarr;</span>
+              <p class="text-[16px] text-cream-dim mt-0 mb-3" data-i18n={lookupEn(post.data.excerpt) ? true : undefined} data-en={lookupEn(post.data.excerpt)}>{post.data.excerpt}</p>
+              <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold" data-i18n data-en={UI.readMore.en}>{UI.readMore.es}</span>
             </div>
           </a>
         </li>
