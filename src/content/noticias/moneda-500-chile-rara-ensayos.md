@@ -26,7 +26,7 @@ relatedLinks:
     title: "Diferencia entre numismática y notafilia"
     description: "Qué estudia cada disciplina y cómo se relacionan monedas y billetes."
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: media_claim
 claimCurrency: CLP
 claimValuationDate: 2026-07-29

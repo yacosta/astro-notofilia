@@ -15,7 +15,6 @@ export interface Props {
   title: string;
   description: string;
   path: string;
-  keywords?: string[];
   robots?: string;
   ogType?: 'website' | 'article' | 'profile';
   ogTitle?: string;
@@ -45,7 +44,6 @@ const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
 const canonical = absoluteUrl(props.path);
-const pageKeywords = props.keywords?.length ? props.keywords : undefined;
 ---
 <!doctype html>
 <html lang="es">
@@ -54,7 +52,6 @@ const pageKeywords = props.keywords?.length ? props.keywords : undefined;
       title={props.title}
       description={props.description}
       path={props.path}
-      keywords={pageKeywords}
       robots={props.robots}
       ogType={props.ogType}
       ogTitle={props.ogTitle}

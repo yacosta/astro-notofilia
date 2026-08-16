@@ -4,6 +4,7 @@ termEn: "Notaphily"
 definitionEn: "The branch of numismatics focused specifically on collecting paper banknotes."
 category: "Disciplina"
 source: "site"
+wikipediaUrl: "https://es.wikipedia.org/wiki/Notafilia"
 seeAlso:
   - "Numismática"
 ---

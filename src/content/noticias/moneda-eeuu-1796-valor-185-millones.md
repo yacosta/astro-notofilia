@@ -14,7 +14,7 @@ keywords:
   - "monedas de colección"
   - "numismática"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: catalog_valuation
 claimCurrency: USD
 claimValuationDate: 2026-07-17

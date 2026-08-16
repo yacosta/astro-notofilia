@@ -26,7 +26,7 @@ relatedLinks:
     title: "Cómo empezar una colección de billetes"
     description: "Bases prácticas también útiles al acercarse a monedas de circulación."
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: dealer_retail
 claimCurrency: CLP
 ---

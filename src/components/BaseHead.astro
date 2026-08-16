@@ -4,7 +4,8 @@
  * Import once per document; callers pass page-specific metadata.
  */
 import '../styles/global.css';
-import { absoluteUrl, keywordsContent } from '../lib/site';
+import { absoluteUrl } from '../lib/site';
+import { EDITORIAL_TEAM } from '../lib/editorial';
 import WebVitals from './WebVitals.astro';
 
 export interface Props {
@@ -17,7 +18,6 @@ export interface Props {
   ogTitle?: string;
   ogDescription?: string;
   jsonLd?: unknown;
-  keywords?: string[];
   robots?: string;
   /** Extra <link rel="alternate" hreflang> etc. via default slot. */
   author?: string;
@@ -37,15 +37,13 @@ const {
   ogTitle,
   ogDescription,
   jsonLd,
-  keywords,
   robots = 'index, follow',
-  author = 'Notofilia',
+  author = EDITORIAL_TEAM.name,
   loadDcRuntime = false,
 } = Astro.props;
 
 const canonical = absoluteUrl(path);
 const image = absoluteUrl(ogImage ?? '/favicon.png');
-const kw = keywords?.length ? keywordsContent(keywords) : '';
 const shareTitle = ogTitle ?? title;
 const shareDescription = ogDescription ?? description;
 ---
@@ -95,7 +93,6 @@ const shareDescription = ogDescription ?? description;
 </script>
 <title>{title}</title>
 <meta name="description" content={description} />
-{kw ? <meta name="keywords" content={kw} /> : null}
 <meta name="author" content={author} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={canonical} />

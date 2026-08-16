@@ -43,7 +43,6 @@ const jsonLd = articleJsonLd(meta, post, iso);
   ogType="article"
   ogImage={d.cover ? `/uploads/${d.cover}.jpg` : undefined}
   jsonLd={jsonLd}
-  keywords={d.keywords}
 >
   <PostArticle
     collection={meta.id}

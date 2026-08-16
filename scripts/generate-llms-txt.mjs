@@ -200,7 +200,7 @@ function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCoun
     '',
     '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN de la home cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
     '',
-    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
+    '**Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
@@ -245,6 +245,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));
+  lines.push(linkLine('Editor — Yezid Acosta', abs('/editorial/equipo/'), 'Fundador y editor: catálogo, valoración y correcciones.'));
   lines.push(linkLine('J.S.G. Boggs', abs('/j-s-g-boggs/'), 'Perfil del artista de los «Boggs bills» dibujados a mano.'));
   lines.push('');
 
@@ -385,7 +386,8 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
   } else {
     lines.push(linkLine('llms.txt', abs('/llms.txt'), 'Índice corto curado (preferir si el contexto es limitado).'));
   }
-  lines.push(linkLine('Política editorial y valoración', abs('/editorial/'), 'Tipos de cifra, fuentes, correcciones y equipo editorial.'));
+  lines.push(linkLine('Política editorial y valoración', abs('/editorial/'), 'Tipos de cifra, fuentes, correcciones y editor.'));
+  lines.push(linkLine('Notafilia (Wikipedia ES)', 'https://es.wikipedia.org/wiki/Notafilia', 'Artículo de la disciplina; Enlaces externos menciona Notofilia.com vía archive.org 2013 (nofollow).'));
   lines.push(linkLine('Política de privacidad y cookies', abs('/politica-privacidad-cookies/'), 'GDPR / LOPDGDD / Ley 1581 Colombia.'));
   lines.push(linkLine('Facebook', 'https://www.facebook.com/NOTOFILIA/', 'Perfil social.'));
   lines.push(linkLine('Instagram', 'https://www.instagram.com/notofilia2026/', 'Perfil social.'));

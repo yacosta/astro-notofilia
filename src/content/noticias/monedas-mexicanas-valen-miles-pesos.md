@@ -28,7 +28,7 @@ relatedLinks:
     title: "Billetes mexicanos coleccionables"
     description: "Familia G y ediciones del centenario de Banxico."
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: catalog_valuation
 claimCurrency: MXN
 claimValuationDate: 2026-08-05

@@ -14,7 +14,7 @@ keywords:
   - "monedas de colección"
   - "numismática"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: media_claim
 claimCurrency: USD
 claimNote: "El listado mezcla valor de metal (p. ej. centenario), estimaciones de catálogo y récords de subasta divulgados por un medio. Cada pieza requiere su propia evidencia; ninguna cifra garantiza el precio de un ejemplar ordinario."

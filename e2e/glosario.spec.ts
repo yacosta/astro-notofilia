@@ -64,6 +64,11 @@ for (const term of TERM_PAGES) {
     expect(html).toMatch(/DefinedTerm/);
     await expect(page.getByRole('heading', { level: 1, name: term.heading })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Volver al glosario' })).toHaveAttribute('href', '/glosario/');
+    if (term.slug === 'notafilia') {
+      const wiki = page.getByRole('link', { name: /Wikipedia en español/i });
+      await expect(wiki).toHaveAttribute('href', 'https://es.wikipedia.org/wiki/Notafilia');
+      await expect(wiki).toContainText('se abre en una pestaña nueva');
+    }
   });
 }
 

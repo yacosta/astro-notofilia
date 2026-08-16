@@ -26,7 +26,7 @@ relatedLinks:
   - href: "/noticias/moneda-eeuu-1796-valor-185-millones/"
     title: "Moneda EE.UU. 1796 hasta US$1,85 millones"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: media_claim
 claimCurrency: USD
 ---
