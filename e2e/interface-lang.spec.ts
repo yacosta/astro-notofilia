@@ -48,3 +48,11 @@ test('privacy policy body follows the header language pill', async ({ page }) =>
   await expect(page.locator('[data-privacy-panel="en"]')).toBeVisible();
   await expect(page.locator('[data-privacy-panel="es"]')).toBeHidden();
 });
+
+test('404 page shows the ES/EN interface-language pill', async ({ page }) => {
+  const response = await page.goto('/this-page-does-not-exist/', { waitUntil: 'domcontentloaded' });
+  expect(response?.status()).toBe(404);
+  await expect(page.getByRole('group', { name: /Idioma de la interfaz/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Interfaz en español' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Interface in English' })).toBeVisible();
+});
