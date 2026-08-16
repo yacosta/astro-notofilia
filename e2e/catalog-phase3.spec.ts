@@ -86,6 +86,22 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
 
+test('Colombia catalog card for 10.000 pesos opens the ficha data, not only the image', async ({
+  page,
+}) => {
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+  const card = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/"]',
+  );
+  await expect(card).toContainText('Diez Mil Pesos (Specimen)');
+  await card.click();
+  await expect(page).toHaveURL(/\/coleccion\/colombia\/banco-de-la-republica-10000-pesos-specimen\/$/);
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeInViewport();
+  await expect(page.locator('[data-zoom-dialog]').first()).toBeHidden();
+});
+
 test('Colombia 10.000 pesos specimen ficha lists both notes and their details', async ({
   page,
 }) => {
