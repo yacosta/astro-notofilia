@@ -162,6 +162,10 @@ if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the
 if (!navTs.includes('Colección virtual - Numismática')) fail('Primary nav is missing the Numismática accordion label');
 if (!navTs.includes('Colección virtual - Notafilia')) fail('Primary nav is missing the Notafilia accordion label');
 if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
+if (/id:\s*'editorial'/.test(navTs)) {
+  fail('Primary nav must not duplicate Blog/Noticias/Glosario under an Editorial accordion');
+}
+if (!navTs.includes('/#logros-heading')) fail('Primary nav is missing Logros del Mes');
 if (!nativeHeader.includes('site-header__accordion')) fail('Native SiteHeader is missing collection accordion markup');
 const drawerContactIdx = nativeHeader.indexOf('CONTACT_LINK.href');
 const drawerSectionsIdx = nativeHeader.indexOf('NAV_SECTIONS.map');

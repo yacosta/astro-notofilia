@@ -42,6 +42,7 @@ export const PRIMARY_LINKS: NavLink[] = [
   { href: '/buscar/', label: 'Buscar', labelEn: 'Search' },
   { href: '/blog/', label: 'Blog', labelEn: 'Blog' },
   { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
+  { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
   { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
   CONTACT_LINK,
 ];
@@ -140,6 +141,7 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
   },
 ];
 
+/** Collection accordions only — Blog, Noticias, Glosario, and Logros live in PRIMARY_LINKS. */
 export const NAV_SECTIONS: NavSection[] = [
   {
     id: 'numismatica',
@@ -160,16 +162,5 @@ export const NAV_SECTIONS: NavSection[] = [
       { href: '/coleccion/?tipo=error#explorar', label: 'Errores de imprenta', labelEn: 'Printing errors' },
     ],
     groups: NOTAFILIA_GROUPS,
-  },
-  {
-    id: 'editorial',
-    label: 'Editorial',
-    labelEn: 'Editorial',
-    links: [
-      { href: '/blog/', label: 'Blog' },
-      { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
-      { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
-      { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
-    ],
   },
 ];
