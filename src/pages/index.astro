@@ -4,10 +4,11 @@
 // SiteHeader on every page; `[data-i18n]` strings swap and those nodes get
 // `lang="en"` when needed. Document language stays Spanish (`lang=es`).
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
-import { formatDateShortEs, toIsoDate } from '../lib/dates';
+import { formatDateShortEn, formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
 import { founderJsonLd } from '../lib/editorial';
 import { getCollectionStats, inventoryProperties } from '../lib/stats';
+import { lookupEn } from '../lib/html-i18n';
 import BaseHead from '../components/BaseHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import HomeHero from '../components/HomeHero.astro';
@@ -30,6 +31,8 @@ function toStripItems(
     source: p.data.source ?? 'Notofilia',
     iso: toIsoDate(p.data.publishedAt),
     dateLabel: formatDateShortEs(p.data.publishedAt),
+    dateLabelEn: formatDateShortEn(p.data.publishedAt),
+    titleEn: lookupEn(p.data.title),
     cover: p.data.cover,
     coverAlt: p.data.coverAlt ?? '',
   }));
@@ -117,7 +120,9 @@ const jsonLd = {
     <a
       href="#main-content"
       class="absolute top-[-60px] left-4 z-20 bg-cream-dim text-bg font-serif font-semibold text-[15px] tracking-[0.05em] px-5 py-3 rounded-[2px] no-underline transition-[top] duration-150 focus:top-4"
-    >Saltar al contenido principal / Skip to main content</a>
+      data-i18n
+      data-en="Skip to main content"
+    >Saltar al contenido principal</a>
 
     <SiteHeader overlay />
 

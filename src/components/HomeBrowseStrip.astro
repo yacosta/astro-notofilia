@@ -34,9 +34,9 @@ const items = FEATURED_ENTRIES.slice(0, 8);
             class="group block min-h-[44px] pt-3 border-t-2 border-line no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
           >
             <span class="block font-display text-[clamp(17px,1.1vw,21px)] text-cream-dim mb-1.5 group-hover:text-cream">
-              {entry.title}
+              <span data-i18n data-en={entry.titleEn}>{entry.title}</span>
             </span>
-            <span class="block text-[15px] leading-[1.5] text-muted">
+            <span class="block text-[15px] leading-[1.5] text-muted" data-i18n data-en={entry.descriptionEn}>
               {entry.description}
             </span>
           </a>

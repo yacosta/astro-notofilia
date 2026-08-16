@@ -6,16 +6,20 @@
 export interface Props {
   href: string;
   label: string;
+  labelEn?: string;
   /** Optional viewBox size defaults to 24. */
   iconSize?: number;
 }
-const { href, label, iconSize = 24 } = Astro.props;
+const { href, label, labelEn, iconSize = 24 } = Astro.props;
 ---
 <a
   href={href}
   target="_blank"
   rel="noopener noreferrer"
   aria-label={label}
+  data-i18n={labelEn ? true : undefined}
+  data-i18n-target="aria-label"
+  data-en={labelEn}
   class="inline-flex items-center justify-center w-12 h-12 rounded-full border border-line-strong text-cream-dim transition-colors duration-200 hover:text-bg hover:bg-cream hover:border-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
 >
   <svg viewBox="0 0 24 24" width={iconSize} height={iconSize} fill="currentColor" aria-hidden="true" focusable="false">

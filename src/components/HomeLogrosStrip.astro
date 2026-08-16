@@ -7,28 +7,36 @@ const highlights = [
   {
     href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
     title: 'MPC Serie 681 — Un Dólar',
+    titleEn: 'MPC Series 681 — One Dollar',
     description: 'Certificado de Pago Militar de Vietnam (1969–1970): piloto USAF y F-100 Super Sabre, Fr. M915 / Schwan S915-1.',
+    descriptionEn: 'Vietnam Military Payment Certificate (1969–1970): USAF pilot and F-100 Super Sabre, Fr. M915 / Schwan S915-1.',
     imageBase: 'mpc-series-681-1-dollar-c10102847',
     imageAlt: 'Anverso y reverso del MPC Serie 681 de un dólar con piloto USAF y F-100 Super Sabre',
   },
   {
     href: '/coleccion/diez-dolares-1934-distritos/',
     title: '$10 Reserva Federal — Chicago 1934',
+    titleEn: '$10 Federal Reserve — Chicago 1934',
     description: 'Serie de 1934, distrito G (Chicago), serial G30986728A. Friedberg FR-2004G.',
+    descriptionEn: 'Series 1934, district G (Chicago), serial G30986728A. Friedberg FR-2004G.',
     imageBase: 'us-federal-reserve-note-10-dollars-1934-chicago',
     imageAlt: 'Anverso del billete de diez dólares de la Reserva Federal de Chicago, serie 1934',
   },
   {
     href: '/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar',
     title: 'Ringling Bros. — Un Dólar (Baraboo)',
+    titleEn: 'Ringling Bros. — One Dollar (Baraboo)',
     description: 'Scrip del 50º aniversario (1933): ONE DOLLAR, Shafer WI-100-1a, Serie A Nº 2002.',
+    descriptionEn: '50th-anniversary scrip (1933): ONE DOLLAR, Shafer WI-100-1a, Series A No. 2002.',
     imageBase: 'ringling-bros-50th-anniversary-baraboo-1-dollar',
     imageAlt: 'Anverso y reverso del scrip de un dólar Ringling Bros. Baraboo 1933',
   },
   {
     href: '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/',
     title: 'MPC Serie 692 — Veinte Dólares',
+    titleEn: 'MPC Series 692 — Twenty Dollars',
     description: 'Última serie oficial de MPC (1970–1973): jefe Ouray en el anverso y la presa Hoover en el reverso.',
+    descriptionEn: 'Last official MPC series (1970–1973): Chief Ouray on the obverse and Hoover Dam on the reverse.',
     imageBase: 'mpc-series-692-20-dollars',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
   },
@@ -77,10 +85,10 @@ const highlights = [
                 class="block w-full h-[180px] object-cover rounded-[3px] mb-3"
               />
             </picture>
-            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink">
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n data-en={item.titleEn}>
               {item.title}
             </h3>
-            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3">{item.description}</p>
+            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3" data-i18n data-en={item.descriptionEn}>{item.description}</p>
             <span
               data-i18n
               data-en="View in the catalog &rarr;"

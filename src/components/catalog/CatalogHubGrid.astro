@@ -5,6 +5,8 @@
  */
 import type { CatalogCard } from '../../lib/catalog-record';
 import CatalogBanknoteCard from './CatalogBanknoteCard.astro';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI } from '../../lib/ui-i18n';
 
 interface Props {
   cards: CatalogCard[];
@@ -17,7 +19,8 @@ interface Props {
 const { cards, thinNote = false, labelledBy, headingLevel = 2 } = Astro.props;
 const GroupHeading = headingLevel === 3 ? 'h3' : 'h2';
 const showThinNote = thinNote && cards.length > 0 && cards.length <= 2;
-const inventoryLabel = cards.length === 1 ? '1 pieza documentada' : `${cards.length} piezas documentadas`;
+const inventoryLabel = cards.length === 1 ? UI.onePiece.es : `${cards.length} ${UI.pieces.es}`;
+const inventoryLabelEn = cards.length === 1 ? UI.onePiece.en : `${cards.length} ${UI.pieces.en}`;
 const hasGroups = cards.some((card) => Boolean(card.group));
 
 type CardGroup = { name: string; kicker?: string; cards: CatalogCard[] };
@@ -26,7 +29,7 @@ const groups: CardGroup[] = [];
 if (hasGroups) {
   const seen = new Map<string, CardGroup>();
   for (const card of cards) {
-    const name = card.group || 'Otras piezas';
+    const name = card.group || UI.otherPieces.es;
     let group = seen.get(name);
     if (!group) {
       group = { name, kicker: card.groupKicker, cards: [] };
@@ -43,28 +46,33 @@ if (hasGroups) {
   cards.length > 0 ? (
     <section
       class="catalog-hub-grid max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pb-16"
-      aria-label={labelledBy ? undefined : 'Fichas del catálogo'}
+      aria-label={labelledBy ? undefined : UI.hubCards.es}
+      data-i18n={labelledBy ? undefined : true}
+      data-i18n-target={labelledBy ? undefined : 'aria-label'}
+      data-en={labelledBy ? undefined : UI.hubCards.en}
       aria-labelledby={labelledBy}
     >
       {showThinNote ? (
         <aside
           class="catalog-inventory-status mb-8"
-          aria-label="Estado del catálogo"
+          aria-label={UI.catalogStatus.es}
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en={UI.catalogStatus.en}
           data-pagefind-ignore
         >
-          <span>Catálogo en crecimiento</span>
-          <strong>{inventoryLabel}</strong>
-          <p>
-            Esta sección muestra únicamente fichas con imágenes y datos verificados. Se ampliará a
-            medida que se documenten nuevas piezas.
+          <span data-i18n data-en={UI.growing.en}>{UI.growing.es}</span>
+          <strong data-i18n data-en={inventoryLabelEn}>{inventoryLabel}</strong>
+          <p data-i18n data-en={UI.thinNote.en}>
+            {UI.thinNote.es}
           </p>
         </aside>
       ) : null}
       {groups.map((group) => (
         group.name ? (
           <section class="catalog-hub-group">
-            {group.kicker ? <span class="catalog-hub-kicker">{group.kicker}</span> : null}
-            <GroupHeading class="catalog-hub-group-title">{group.name}</GroupHeading>
+            {group.kicker ? <span class="catalog-hub-kicker" data-i18n={lookupEn(group.kicker) ? true : undefined} data-en={lookupEn(group.kicker)}>{group.kicker}</span> : null}
+            <GroupHeading class="catalog-hub-group-title" data-i18n={lookupEn(group.name) ? true : undefined} data-en={lookupEn(group.name)}>{group.name}</GroupHeading>
             <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
               {group.cards.map((card) => (
                 <li>

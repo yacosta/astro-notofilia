@@ -46,6 +46,14 @@
       label.setAttribute('lang', lang === 'en' ? 'en' : 'es');
     }
     paintButtons(lang);
+    document.querySelectorAll('[data-lang-panel]').forEach(function (el) {
+      var parent = el.parentNode;
+      if (!parent || !parent.querySelectorAll) return;
+      var siblings = parent.querySelectorAll(':scope > [data-lang-panel]');
+      if (siblings.length < 2) return;
+      if (el.getAttribute('data-lang-panel') === lang) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    });
     if (window.__notofiliaHeroMotion && window.__notofiliaHeroMotion.syncLabels) {
       window.__notofiliaHeroMotion.syncLabels();
     }

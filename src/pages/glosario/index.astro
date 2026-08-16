@@ -5,6 +5,7 @@ import {
   GLOSSARY_DESCRIPTION,
   GLOSSARY_PATH,
   GLOSSARY_TITLE,
+  GLOSSARY_TITLE_EN,
   buildGlossaryLookup,
   definitionEs,
   glossaryAnchor,
@@ -14,6 +15,7 @@ import {
   getGlossaryTerms,
   resolveSeeAlso,
 } from '../../lib/glossary';
+import { GLOSSARY_CATEGORY_EN, UI } from '../../lib/ui-i18n';
 
 const terms = await getGlossaryTerms();
 const lookup = buildGlossaryLookup(terms);
@@ -27,20 +29,20 @@ const jsonLd = glossaryIndexJsonLd(terms);
   jsonLd={jsonLd}
 >
   <div id="glossary-index" class="max-w-[900px] mx-auto px-6 pt-14 pb-6">
-    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
-      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/">Inicio</a>
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/" data-i18n data-en="Home">Inicio</a>
       <span aria-hidden="true"> / </span>
-      <span>Glosario</span>
+      <span data-i18n data-en="Glossary">Glosario</span>
     </nav>
 
     <header class="text-center max-w-[720px] mx-auto mb-10">
-      <p class="m-0 mb-3.5 text-[14px] tracking-[0.22em] uppercase text-muted">
+      <p class="m-0 mb-3.5 text-[14px] tracking-[0.22em] uppercase text-muted" data-i18n data-en="A resource for collectors">
         Recurso para coleccionistas
       </p>
-      <h1 class="font-display font-normal text-[clamp(28px,4vw,44px)] text-cream mt-0 mb-4 leading-[1.08]">
+      <h1 class="font-display font-normal text-[clamp(28px,4vw,44px)] text-cream mt-0 mb-4 leading-[1.08]" data-i18n data-en={GLOSSARY_TITLE_EN}>
         {GLOSSARY_TITLE}
       </h1>
-      <p class="text-[clamp(18px,2.2vw,20px)] text-cream-dim m-0 leading-[1.6]">
+      <p class="text-[clamp(18px,2.2vw,20px)] text-cream-dim m-0 leading-[1.6]" data-i18n data-en={`${terms.length} coin and banknote terms — design, production, issuing, conservation, and collecting — that appear throughout the Notofilia catalog, with their English equivalent and a short definition.`}>
         {terms.length} términos de monedas y billetes —diseño, producción, emisión, conservación y
         coleccionismo— que aparecen a lo largo del catálogo de Notofilia, con su equivalente en inglés
         y una breve definición.
@@ -51,6 +53,8 @@ const jsonLd = glossaryIndexJsonLd(terms);
       <label
         for="glossary-search"
         class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2.5 text-center"
+        data-i18n
+        data-en="Search the glossary"
       >
         Buscar en el glosario
       </label>
@@ -70,6 +74,9 @@ const jsonLd = glossaryIndexJsonLd(terms);
           id="glossary-search"
           type="search"
           placeholder="Ej. specimen, viñeta, cospel…"
+          data-i18n
+          data-i18n-target="placeholder"
+          data-en="E.g. specimen, vignette, planchet…"
           autocomplete="off"
           aria-describedby="glossary-search-status"
           class="w-full box-border min-h-14 font-serif text-[19px] text-ink bg-[#f2ede2] border-2 border-[rgba(10,10,9,0.12)] rounded-full py-3.5 pr-[52px] pl-[54px] outline-none shadow-[0_10px_26px_rgba(0,0,0,0.28)] focus-visible:border-gold-deep focus-visible:shadow-[0_10px_26px_rgba(0,0,0,0.28),0_0_0_4px_rgba(138,109,59,0.22)]"
@@ -79,20 +86,25 @@ const jsonLd = glossaryIndexJsonLd(terms);
           id="glossary-clear"
           hidden
           aria-label="Borrar búsqueda"
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en="Clear search"
           class="absolute top-1/2 right-2.5 -translate-y-1/2 w-9 h-9 min-w-11 min-h-11 flex items-center justify-center bg-[rgba(10,10,9,0.08)] border-0 text-gold-dark text-[20px] leading-none cursor-pointer rounded-full hover:bg-[rgba(10,10,9,0.15)] hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-1"
         >×</button>
       </div>
-      <p id="glossary-search-status" aria-live="polite" class="text-[14px] text-muted text-center mt-3 mb-0">
+      <p id="glossary-search-status" aria-live="polite" class="text-[14px] text-muted text-center mt-3 mb-0" data-i18n data-en={`Showing all ${terms.length} glossary terms.`}>
         Mostrando los {terms.length} términos del glosario.
       </p>
     </div>
 
-    <div class="flex flex-wrap gap-2.5 justify-center mb-12" role="group" aria-label="Filtrar por categoría" data-pagefind-ignore>
+    <div class="flex flex-wrap gap-2.5 justify-center mb-12" role="group" aria-label="Filtrar por categoría" data-i18n data-i18n-target="aria-label" data-en="Filter by category" data-pagefind-ignore>
       <button
         type="button"
         data-glossary-category=""
         aria-pressed="true"
         class="glossary-chip min-h-11 px-3.5 py-[7px] text-[13px] tracking-[0.08em] uppercase text-gold-dark bg-cream-dim rounded-full border border-transparent cursor-pointer font-serif aria-[pressed=true]:border-gold-deep aria-[pressed=true]:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+        data-i18n
+        data-en="All"
       >Todas</button>
       {categories.map((cat) => (
         <button
@@ -100,6 +112,8 @@ const jsonLd = glossaryIndexJsonLd(terms);
           data-glossary-category={cat}
           aria-pressed="false"
           class="glossary-chip min-h-11 px-3.5 py-[7px] text-[13px] tracking-[0.08em] uppercase text-gold-dark bg-cream-dim rounded-full border border-transparent cursor-pointer font-serif aria-[pressed=true]:border-gold-deep aria-[pressed=true]:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+          data-i18n={GLOSSARY_CATEGORY_EN[cat] ? true : undefined}
+          data-en={GLOSSARY_CATEGORY_EN[cat]}
         >{cat}</button>
       ))}
     </div>
@@ -134,7 +148,7 @@ const jsonLd = glossaryIndexJsonLd(terms);
                 >{entry.data.termEs}</a>
               </h2>
               <span lang="en" class="text-[17px] italic text-gold-dark">{entry.data.termEn}</span>
-              <span class="ml-auto text-[11px] tracking-[0.1em] uppercase text-gold-deep border border-[rgba(138,109,59,0.35)] rounded-full py-[3px] px-2.5">
+              <span class="ml-auto text-[11px] tracking-[0.1em] uppercase text-gold-deep border border-[rgba(138,109,59,0.35)] rounded-full py-[3px] px-2.5" data-i18n={GLOSSARY_CATEGORY_EN[entry.data.category] ? true : undefined} data-en={GLOSSARY_CATEGORY_EN[entry.data.category]}>
                 {entry.data.category}
               </span>
             </div>
@@ -142,7 +156,7 @@ const jsonLd = glossaryIndexJsonLd(terms);
             <p lang="en" class="text-[15px] leading-[1.55] text-gold-dark m-0 italic">{entry.data.definitionEn}</p>
             {seeAlso.length > 0 && (
               <p class="text-[14px] text-gold-dark mt-2.5 mb-0">
-                Ver también:{' '}
+          <span data-i18n data-en={UI.seeAlso.en}>{UI.seeAlso.es}</span>{' '}
                 {seeAlso.map((link, index) => (
                   <>
                     {index > 0 && ', '}
@@ -167,10 +181,12 @@ const jsonLd = glossaryIndexJsonLd(terms);
         type="button"
         id="glossary-reset"
         class="min-h-11 px-[22px] py-2.5 font-serif text-[16px] text-ink bg-cream-dim border border-[rgba(10,10,9,0.15)] rounded cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+        data-i18n
+        data-en="View the whole glossary"
       >Ver todo el glosario</button>
     </div>
 
-    <p class="text-[14px] leading-[1.6] text-muted text-center mt-8 mb-0">
+    <p class="text-[14px] leading-[1.6] text-muted text-center mt-8 mb-0" data-i18n data-en="Terms marked as suggested complement the vocabulary already used in the catalog with standard words from international collecting.">
       Términos marcados como sugeridos complementan el vocabulario ya usado en el catálogo con vocablos
       estándar del coleccionismo internacional.
     </p>

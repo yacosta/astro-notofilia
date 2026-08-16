@@ -10,6 +10,8 @@ import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
 import { withColombiaGroup } from '../lib/colombia-catalog';
 import { compareByFirstYear } from '../lib/catalog-year';
 import { absoluteUrl } from '../lib/site';
+import { withI18nMarkup } from '../lib/html-i18n';
+import { UI } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
@@ -42,7 +44,7 @@ const cards =
   props.path === '/coleccion/colombia/' ? colombiaHubCards(rawCards) : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
-const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
+const catalogShell = `<div class="catalog-shell">${withI18nMarkup(props.template)}</div>`;
 const canonical = absoluteUrl(props.path);
 ---
 <!doctype html>
@@ -210,7 +212,9 @@ const canonical = absoluteUrl(props.path);
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
-    >Saltar al contenido principal</a>
+      data-i18n
+      data-en={UI.skipMain.en}
+    >{UI.skipMain.es}</a>
     <SiteHeader />
     {
       record ? (

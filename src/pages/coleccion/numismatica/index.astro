@@ -226,51 +226,59 @@ const jsonLd = {
     <a
       href="#main-content"
       class="absolute left-[-10000px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+      data-i18n
+      data-en="Skip to main content"
     >Saltar al contenido principal</a>
 
     <SiteHeader />
 
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/numismatica/">
-        <h1>Catálogo de Numismática</h1>
-        <p class="hub-lead">
+        <h1 data-i18n data-en="Numismatics catalog">Catálogo de Numismática</h1>
+        <p class="hub-lead" data-i18n data-en={`${count} colonial gold coins documented with images, mint, assayer, and catalog references.`}>
           {count} monedas de oro colonial documentadas con imágenes, ceca, ensayador y referencias de catálogo.
         </p>
         <p class="hub-note">
-          La Colección Virtual separa <strong>numismática</strong> (monedas acuñadas) de
-          <a href="/coleccion/">notafilia</a> (billetes y papel moneda). Estas piezas salieron de la
-          Casa de Moneda de Santa Fe de Bogotá, de macuquinas de Felipe V a escudos de volante de
-          Fernando VII. Fuente:
+          <span data-i18n data-en="The Virtual Collection separates">La Colección Virtual separa</span>
+          {' '}
+          <strong data-i18n data-en="numismatics">numismática</strong>
+          {' '}
+          <span data-i18n data-en="(struck coins) from"> (monedas acuñadas) de</span>
+          {' '}
+          <a href="/coleccion/" data-i18n data-en="notaphily">notafilia</a>
+          {' '}
+          <span data-i18n data-en="(banknotes and paper money). These pieces came from the Santa Fe de Bogotá mint, from Felipe V cobs to Fernando VII milled escudos. Source:">(billetes y papel moneda). Estas piezas salieron de la Casa de Moneda de Santa Fe de Bogotá, de macuquinas de Felipe V a escudos de volante de Fernando VII. Fuente:</span>
+          {' '}
           <a
             href="https://www.enumismatic.com/mints-history/santa-fe/es/la-ceca-de-santa-fe"
             target="_blank"
             rel="noopener noreferrer"
-          >«La Ceca de Santa Fe», eNumismatic<NewWindowHint /></a>.
+          ><span data-i18n data-en="“The Santa Fe Mint”, eNumismatic">«La Ceca de Santa Fe», eNumismatic</span><NewWindowHint /></a>.
         </p>
 
         <ul class="split-grid">
           <li>
             <a href="/coleccion/moneda-colonial-espanola/">
-              <span class="split-title">Moneda colonial española</span>
-              <span class="split-desc">Catálogo temático de la ceca de Santa Fe de Bogotá.</span>
+              <span class="split-title" data-i18n data-en="Spanish colonial coinage">Moneda colonial española</span>
+              <span class="split-desc" data-i18n data-en="Thematic catalog of the Santa Fe de Bogotá mint.">Catálogo temático de la ceca de Santa Fe de Bogotá.</span>
             </a>
           </li>
           <li>
             <a href="/coleccion/">
-              <span class="split-title">Catálogo de notafilia</span>
-              <span class="split-desc">Billetes, specimens, errores y papel moneda del mundo.</span>
+              <span class="split-title" data-i18n data-en="Notaphily catalog">Catálogo de notafilia</span>
+              <span class="split-desc" data-i18n data-en="Banknotes, specimens, errors, and paper money of the world.">Billetes, specimens, errores y papel moneda del mundo.</span>
             </a>
           </li>
         </ul>
 
         <section class="hub-section" aria-labelledby="coins-heading">
-          <span class="hub-kicker">Colección de monedas</span>
-          <h2 id="coins-heading">Oro colonial de Santa Fe</h2>
-          <p class="hub-section-lead">
+          <span class="hub-kicker" data-i18n data-en="Coin collection">Colección de monedas</span>
+          <h2 id="coins-heading" data-i18n data-en="Colonial gold of Santa Fe">Oro colonial de Santa Fe</h2>
+          <p class="hub-section-lead" data-i18n data-en={`${groups.length} reigns. Each record links the piece, the mint, and KM, Restrepo, and Friedberg references.`}>
             {groups.length} reinados. Cada ficha enlaza la pieza, la ceca y las referencias KM, Restrepo y Friedberg.
           </p>
           <CatalogHubGrid cards={cards} labelledBy="coins-heading" headingLevel={3} />
-          <a class="hub-more" href="/coleccion/moneda-colonial-espanola/">Ver el catálogo colonial español</a>
+          <a class="hub-more" href="/coleccion/moneda-colonial-espanola/" data-i18n data-en="See the Spanish colonial catalog">Ver el catálogo colonial español</a>
         </section>
       </main>
     </div>

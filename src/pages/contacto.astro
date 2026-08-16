@@ -35,9 +35,9 @@ const jsonLd = {
 ---
 <BlogLayout title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
   <article class="max-w-content mx-auto px-6 pt-12 pb-4" data-pagefind-meta="url:/contacto/">
-    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
-      <a class="text-muted" href="/">Notofilia</a> <span aria-hidden="true">/</span>
-      <span>Contacto</span>
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
+      <a class="text-muted" href="/" data-i18n data-en="Notofilia">Notofilia</a> <span aria-hidden="true">/</span>
+      <span data-i18n data-en="Contact">Contacto</span>
     </nav>
 
     <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -66,10 +66,10 @@ const jsonLd = {
       </div>
 
       <div data-contact-root>
-        <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n data-en="Contact">
           Contacto
         </h1>
-        <p class="text-[18px] leading-[1.6] text-muted m-0 mb-8">
+        <p class="text-[18px] leading-[1.6] text-muted m-0 mb-8" data-i18n data-en="Questions about the catalog, the glossary, or a piece? Write to us and we will reply by email.">
           ¿Preguntas sobre el catálogo, el glosario o alguna pieza? Escríbenos y te responderemos por correo.
         </p>
 
@@ -88,7 +88,7 @@ const jsonLd = {
           <div class="grid gap-4 sm:grid-cols-2">
             <div>
               <label for="cf-name" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
-                Nombre <span aria-hidden="true" class="text-gold-deep">*</span>
+                <span data-i18n data-en="Name">Nombre</span> <span aria-hidden="true" class="text-gold-deep">*</span>
               </label>
               <input
                 type="text"
@@ -101,7 +101,7 @@ const jsonLd = {
             </div>
             <div>
               <label for="cf-email" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
-                Correo electrónico <span aria-hidden="true" class="text-gold-deep">*</span>
+                <span data-i18n data-en="Email">Correo electrónico</span> <span aria-hidden="true" class="text-gold-deep">*</span>
               </label>
               <input
                 type="email"
@@ -115,7 +115,7 @@ const jsonLd = {
           </div>
 
           <div>
-            <label for="cf-country" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
+            <label for="cf-country" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2" data-i18n data-en="Country you are writing from">
               País de donde me escribes
             </label>
             <input
@@ -129,7 +129,7 @@ const jsonLd = {
 
           <div>
             <label for="cf-message" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
-              Mensaje <span aria-hidden="true" class="text-gold-deep">*</span>
+              <span data-i18n data-en="Message">Mensaje</span> <span aria-hidden="true" class="text-gold-deep">*</span>
             </label>
             <textarea
               name="message"
@@ -155,6 +155,8 @@ const jsonLd = {
               type="submit"
               data-contact-submit
               class="min-h-11 px-10 py-3.5 border border-cream bg-cream text-bg font-serif font-semibold text-[16px] tracking-[0.14em] uppercase rounded-full cursor-pointer disabled:opacity-60 disabled:cursor-wait focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+              data-i18n
+              data-en="Send message"
             >
               Enviar mensaje
             </button>
@@ -174,11 +176,24 @@ const jsonLd = {
       if (!form || !status || !submit) return;
 
       const copy = {
-        sending: 'Enviando…',
-        success: '¡Gracias! Tu mensaje fue enviado correctamente.',
-        error: 'Hubo un error al enviar el formulario. Inténtalo de nuevo.',
-        turnstile: 'Por favor completa la verificación de seguridad.',
+        es: {
+          sending: 'Enviando…',
+          success: '¡Gracias! Tu mensaje fue enviado correctamente.',
+          error: 'Hubo un error al enviar el formulario. Inténtalo de nuevo.',
+          turnstile: 'Por favor completa la verificación de seguridad.',
+        },
+        en: {
+          sending: 'Sending…',
+          success: 'Thank you! Your message was sent.',
+          error: 'There was an error sending the form. Please try again.',
+          turnstile: 'Please complete the security check.',
+        },
       };
+
+      function langCopy() {
+        const lang = document.documentElement.getAttribute('data-interface-lang') === 'en' ? 'en' : 'es';
+        return copy[lang];
+      }
 
       function showStatus(kind, message) {
         status.hidden = false;
@@ -197,13 +212,14 @@ const jsonLd = {
         const data = new FormData(form);
         if (data.get('botcheck')) return;
         if (!data.get('cf-turnstile-response')) {
-          showStatus('error', copy.turnstile);
+          showStatus('error', langCopy().turnstile);
           return;
         }
         submit.disabled = true;
         const idleLabel = submit.textContent;
-        submit.textContent = copy.sending;
-        showStatus('info', copy.sending);
+        const current = langCopy();
+        submit.textContent = current.sending;
+        showStatus('info', current.sending);
         try {
           const res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -212,15 +228,15 @@ const jsonLd = {
           });
           const json = await res.json();
           if (json && json.success) {
-            showStatus('success', copy.success);
+            showStatus('success', langCopy().success);
             form.reset();
             if (window.turnstile) window.turnstile.reset();
           } else {
-            showStatus('error', copy.error);
+            showStatus('error', langCopy().error);
             if (window.turnstile) window.turnstile.reset();
           }
         } catch (err) {
-          showStatus('error', copy.error);
+          showStatus('error', langCopy().error);
           if (window.turnstile) window.turnstile.reset();
         } finally {
           submit.disabled = false;

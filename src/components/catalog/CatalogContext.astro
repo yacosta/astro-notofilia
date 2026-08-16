@@ -4,6 +4,8 @@
  */
 import type { CatalogRecord } from '../../lib/catalog-record';
 import NewWindowHint from '../NewWindowHint.astro';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
@@ -13,22 +15,22 @@ const { record } = Astro.props;
 const ctx = record.context;
 const sources = record.sources ?? [];
 const blocks = [
-  ctx?.historical ? { id: 'catalog-ctx-historical', title: 'Contexto histórico', body: ctx.historical } : null,
-  ctx?.design ? { id: 'catalog-ctx-design', title: 'Diseño y retrato', body: ctx.design } : null,
-  ctx?.varieties ? { id: 'catalog-ctx-varieties', title: 'Variedades conocidas', body: ctx.varieties } : null,
-  ctx?.population ? { id: 'catalog-ctx-population', title: 'Tirada o población', body: ctx.population } : null,
-].filter(Boolean) as Array<{ id: string; title: string; body: string }>;
+  ctx?.historical ? { id: 'catalog-ctx-historical', title: UI.historical.es, titleEn: UI.historical.en, body: ctx.historical } : null,
+  ctx?.design ? { id: 'catalog-ctx-design', title: UI.design.es, titleEn: UI.design.en, body: ctx.design } : null,
+  ctx?.varieties ? { id: 'catalog-ctx-varieties', title: UI.varieties.es, titleEn: UI.varieties.en, body: ctx.varieties } : null,
+  ctx?.population ? { id: 'catalog-ctx-population', title: UI.population.es, titleEn: UI.population.en, body: ctx.population } : null,
+].filter(Boolean) as Array<{ id: string; title: string; titleEn: string; body: string }>;
 ---
 {
   (blocks.length > 0 || sources.length > 0) && (
-    <section class="catalog-record-context grid gap-8" aria-label="Información de apoyo">
+    <section class="catalog-record-context grid gap-8" aria-label="Información de apoyo" data-i18n data-i18n-target="aria-label" data-en={UI.catalogSupport.en}>
       {
         blocks.map((block) => (
           <div>
-            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream">
+            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream" data-i18n data-en={block.titleEn}>
               {block.title}
             </h2>
-            <p class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line">{block.body}</p>
+            <p class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line" data-i18n={lookupEn(block.body) ? true : undefined} data-en={lookupEn(block.body)}>{block.body}</p>
           </div>
         ))
       }
@@ -38,8 +40,10 @@ const blocks = [
             <h2
               id="catalog-sources-heading"
               class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+              data-i18n
+              data-en={UI.sources.en}
             >
-              Fuentes
+              {UI.sources.es}
             </h2>
             <ol class="m-0 pl-5 grid gap-2 text-[16px] leading-[1.6] text-cream-dim" aria-labelledby="catalog-sources-heading">
               {
