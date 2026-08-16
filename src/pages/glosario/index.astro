@@ -1,0 +1,182 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { titleTag } from '../../lib/posts';
+import {
+  GLOSSARY_DESCRIPTION,
+  GLOSSARY_KEYWORDS,
+  GLOSSARY_PATH,
+  GLOSSARY_TITLE,
+  buildGlossaryLookup,
+  definitionEs,
+  glossaryAnchor,
+  glossaryCategories,
+  glossaryIndexJsonLd,
+  glossaryTermPath,
+  getGlossaryTerms,
+  resolveSeeAlso,
+} from '../../lib/glossary';
+
+const terms = await getGlossaryTerms();
+const lookup = buildGlossaryLookup(terms);
+const categories = glossaryCategories(terms);
+const jsonLd = glossaryIndexJsonLd(terms);
+---
+<BlogLayout
+  title={titleTag(GLOSSARY_TITLE)}
+  description={GLOSSARY_DESCRIPTION}
+  path={GLOSSARY_PATH}
+  jsonLd={jsonLd}
+  keywords={GLOSSARY_KEYWORDS}
+>
+  <div id="glossary-index" class="max-w-[900px] mx-auto px-6 pt-14 pb-6">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan">
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/">Inicio</a>
+      <span aria-hidden="true"> / </span>
+      <span>Glosario</span>
+    </nav>
+
+    <header class="text-center max-w-[720px] mx-auto mb-10">
+      <p class="m-0 mb-3.5 text-[14px] tracking-[0.22em] uppercase text-muted">
+        Recurso para coleccionistas
+      </p>
+      <h1 class="font-display font-normal text-[clamp(28px,4vw,44px)] text-cream mt-0 mb-4 leading-[1.08]">
+        {GLOSSARY_TITLE}
+      </h1>
+      <p class="text-[clamp(18px,2.2vw,20px)] text-cream-dim m-0 leading-[1.6]">
+        {terms.length} términos de monedas y billetes —diseño, producción, emisión, conservación y
+        coleccionismo— que aparecen a lo largo del catálogo de Notofilia, con su equivalente en inglés
+        y una breve definición.
+      </p>
+    </header>
+
+    <div class="max-w-[560px] mx-auto mb-7" data-pagefind-ignore>
+      <label
+        for="glossary-search"
+        class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2.5 text-center"
+      >
+        Buscar en el glosario
+      </label>
+      <div class="relative">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          class="absolute top-1/2 left-5 -translate-y-1/2 pointer-events-none"
+        >
+          <circle cx="11" cy="11" r="7" stroke="#6b521f" stroke-width="2"></circle>
+          <line x1="16.4" y1="16.4" x2="21" y2="21" stroke="#6b521f" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+        <input
+          id="glossary-search"
+          type="search"
+          placeholder="Ej. specimen, viñeta, cospel…"
+          autocomplete="off"
+          aria-describedby="glossary-search-status"
+          class="w-full box-border min-h-14 font-serif text-[19px] text-ink bg-[#f2ede2] border-2 border-[rgba(10,10,9,0.12)] rounded-full py-3.5 pr-[52px] pl-[54px] outline-none shadow-[0_10px_26px_rgba(0,0,0,0.28)] focus-visible:border-gold-deep focus-visible:shadow-[0_10px_26px_rgba(0,0,0,0.28),0_0_0_4px_rgba(138,109,59,0.22)]"
+        />
+        <button
+          type="button"
+          id="glossary-clear"
+          hidden
+          aria-label="Borrar búsqueda"
+          class="absolute top-1/2 right-2.5 -translate-y-1/2 w-9 h-9 min-w-11 min-h-11 flex items-center justify-center bg-[rgba(10,10,9,0.08)] border-0 text-gold-dark text-[20px] leading-none cursor-pointer rounded-full hover:bg-[rgba(10,10,9,0.15)] hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-1"
+        >×</button>
+      </div>
+      <p id="glossary-search-status" aria-live="polite" class="text-[14px] text-muted text-center mt-3 mb-0">
+        Mostrando los {terms.length} términos del glosario.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5 justify-center mb-12" role="group" aria-label="Filtrar por categoría" data-pagefind-ignore>
+      <button
+        type="button"
+        data-glossary-category=""
+        aria-pressed="true"
+        class="glossary-chip min-h-11 px-3.5 py-[7px] text-[13px] tracking-[0.08em] uppercase text-gold-dark bg-cream-dim rounded-full border border-transparent cursor-pointer font-serif aria-[pressed=true]:border-gold-deep aria-[pressed=true]:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+      >Todas</button>
+      {categories.map((cat) => (
+        <button
+          type="button"
+          data-glossary-category={cat}
+          aria-pressed="false"
+          class="glossary-chip min-h-11 px-3.5 py-[7px] text-[13px] tracking-[0.08em] uppercase text-gold-dark bg-cream-dim rounded-full border border-transparent cursor-pointer font-serif aria-[pressed=true]:border-gold-deep aria-[pressed=true]:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+        >{cat}</button>
+      ))}
+    </div>
+
+    <div class="flex flex-col gap-0">
+      {terms.map((entry) => {
+        const spanish = definitionEs(entry);
+        const seeAlso = resolveSeeAlso(entry.data.seeAlso, lookup);
+        const searchBlob = [
+          entry.data.termEs,
+          entry.data.termEn,
+          spanish,
+          entry.data.definitionEn,
+          entry.data.category,
+        ].join(' ');
+        return (
+          <article
+            id={glossaryAnchor(entry)}
+            data-glossary-term
+            data-glossary-cat={entry.data.category}
+            data-glossary-search={searchBlob
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')}
+            class="bg-cream-dim border border-[rgba(10,10,9,0.08)] rounded-[3px] py-7 px-[clamp(20px,4vw,40px)] mb-[18px] scroll-mt-[90px]"
+          >
+            <div class="flex flex-wrap items-baseline gap-2.5 mb-2.5">
+              <h2 class="font-display font-normal text-[22px] text-ink m-0">
+                <a
+                  href={glossaryTermPath(entry.id)}
+                  class="text-ink no-underline hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+                >{entry.data.termEs}</a>
+              </h2>
+              <span lang="en" class="text-[17px] italic text-gold-dark">{entry.data.termEn}</span>
+              <span class="ml-auto text-[11px] tracking-[0.1em] uppercase text-gold-deep border border-[rgba(138,109,59,0.35)] rounded-full py-[3px] px-2.5">
+                {entry.data.category}
+              </span>
+            </div>
+            <p class="text-[18px] leading-[1.6] text-ink m-0 mb-1.5">{spanish}</p>
+            <p lang="en" class="text-[15px] leading-[1.55] text-gold-dark m-0 italic">{entry.data.definitionEn}</p>
+            {seeAlso.length > 0 && (
+              <p class="text-[14px] text-gold-dark mt-2.5 mb-0">
+                Ver también:{' '}
+                {seeAlso.map((link, index) => (
+                  <>
+                    {index > 0 && ', '}
+                    <a
+                      href={link.href}
+                      class="text-gold-deep underline [text-decoration-color:rgba(107,82,31,0.35)] hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+                    >{link.label}</a>
+                  </>
+                ))}
+              </p>
+            )}
+          </article>
+        );
+      })}
+    </div>
+
+    <div id="glossary-empty" hidden class="text-center py-8 px-5 text-gold-dark">
+      <p class="text-[18px] m-0 mb-3">
+        No encontramos términos para «<span id="glossary-empty-query"></span>».
+      </p>
+      <button
+        type="button"
+        id="glossary-reset"
+        class="min-h-11 px-[22px] py-2.5 font-serif text-[16px] text-ink bg-cream-dim border border-[rgba(10,10,9,0.15)] rounded cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-deep focus-visible:outline-offset-2"
+      >Ver todo el glosario</button>
+    </div>
+
+    <p class="text-[14px] leading-[1.6] text-muted text-center mt-8 mb-0">
+      Términos marcados como sugeridos complementan el vocabulario ya usado en el catálogo con vocablos
+      estándar del coleccionismo internacional.
+    </p>
+  </div>
+</BlogLayout>
+
+<script src="../../client/glossary-filter.js"></script>
