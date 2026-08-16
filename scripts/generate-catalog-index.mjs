@@ -34,7 +34,10 @@ function decodeEntities(value = '') {
 }
 
 function stripTags(html = '') {
-  return decodeEntities(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+  return decodeEntities(html.replace(/<[^>]+>/g, ' '))
+    .replace(/\(\s*se abre en una pestaña nueva\s*\)/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function fact(html, label) {
@@ -175,16 +178,18 @@ for (const file of files) {
     fact(template, 'País') ||
     fact(template, 'País / Virreinato');
   const issuer =
-    fact(template, 'Entidad Emisora') ||
-    fact(template, 'Ceca / Ensayador') ||
-    data.record?.issuer ||
     data.record?.metadata?.issuer ||
+    data.record?.issuer ||
+    fact(template, 'Entidad Emisora') ||
+    fact(template, 'Entidad emisora') ||
+    fact(template, 'Ceca / Ensayador') ||
     '';
-  const denomination = fact(template, 'Denominación') || data.record?.metadata?.denomination || '';
+  const denomination = data.record?.metadata?.denomination || fact(template, 'Denominación') || '';
   const catalogRef =
-    fact(template, 'Referencia de Catálogo') ||
-    fact(template, 'Referencias catalográficas') ||
     data.record?.metadata?.catalogNumber ||
+    fact(template, 'Referencia de Catálogo') ||
+    fact(template, 'Referencia de catálogo') ||
+    fact(template, 'Referencias catalográficas') ||
     '';
   const condition = fact(template, 'Condición');
   const emissionType = fact(template, 'Tipo de Emisión');
