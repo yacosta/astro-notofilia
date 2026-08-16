@@ -1,50 +1,54 @@
 ---
 // Custom 404 page — a genuine Astro-rendered route.
-import '../styles/global.css';
-import { absoluteUrl } from '../lib/site';
+import BaseHead from '../components/BaseHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 
 const title = 'Página no encontrada · Notofilia';
 const description = 'La página que buscas no existe o fue movida. Vuelve a la colección de billetes y monedas históricas de Notofilia.';
-const canonical = absoluteUrl('/404');
+const path = '/404';
 ---
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="robots" content="noindex, follow" />
-    <link rel="icon" href="/favicon.png" />
-    <link rel="canonical" href={canonical} />
+    <BaseHead
+      title={title}
+      description={description}
+      path={path}
+      robots="noindex, follow"
+    />
     <style is:global>
       * { box-sizing: border-box; }
-      html, body { margin: 0; height: 100%; }
+      html, body { margin: 0; height: auto; }
     </style>
   </head>
-  <body
-    class="min-h-screen flex items-center justify-center text-center p-8 antialiased font-serif text-cream-dim bg-[radial-gradient(120%_100%_at_50%_0%,#1c1a15_0%,#0a0a09_70%)]"
-  >
-    <main class="max-w-[40rem]" data-pagefind-ignore>
-      <p
-        class="font-display text-[clamp(72px,18vw,180px)] leading-[0.9] tracking-[0.04em] text-cream m-0 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
-        aria-hidden="true"
-      >404</p>
-      <h1 class="font-display font-normal text-[clamp(22px,4vw,34px)] tracking-[0.02em] mt-2 mb-4 text-cream-dim">
-        Página no encontrada
-      </h1>
-      <p class="text-[clamp(17px,2.4vw,20px)] leading-[1.5] text-muted mx-auto mb-8 max-w-[32rem]">
-        La página que buscas no existe o fue movida. Explora la colección de billetes y monedas históricas.
-      </p>
-      <div class="flex flex-wrap gap-x-5 gap-y-3 justify-center">
-        <a
-          class="inline-block px-[1.4rem] py-[0.7rem] min-h-[44px] border border-gold rounded-[2px] text-cream no-underline text-[1.05rem] tracking-[0.03em] transition-colors duration-200 hover:bg-gold hover:text-bg focus-visible:bg-gold focus-visible:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-          href="/"
-        >Ir al inicio</a>
-        <a
-          class="inline-block px-[1.4rem] py-[0.7rem] min-h-[44px] border border-gold rounded-[2px] text-cream no-underline text-[1.05rem] tracking-[0.03em] transition-colors duration-200 hover:bg-gold hover:text-bg focus-visible:bg-gold focus-visible:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-          href="/coleccion/"
-        >Ver la colección</a>
+  <body class="m-0 min-h-screen antialiased font-serif text-cream-dim bg-[radial-gradient(120%_100%_at_50%_0%,#1c1a15_0%,#0a0a09_70%)]">
+    <a
+      class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+      href="#main-content"
+    >Saltar al contenido</a>
+    <SiteHeader />
+    <main id="main-content" class="min-h-[60vh] flex items-center justify-center text-center p-8" tabindex="-1">
+      <div class="max-w-[40rem]" data-pagefind-ignore>
+        <p
+          class="font-display text-[clamp(72px,18vw,180px)] leading-[0.9] tracking-[0.04em] text-cream m-0 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
+          aria-hidden="true"
+        >404</p>
+        <h1 class="font-display font-normal text-[clamp(22px,4vw,34px)] tracking-[0.02em] mt-2 mb-4 text-cream-dim">
+          Página no encontrada
+        </h1>
+        <p class="text-[clamp(17px,2.4vw,20px)] leading-[1.5] text-muted mx-auto mb-8 max-w-[32rem]">
+          La página que buscas no existe o fue movida. Explora la colección de billetes y monedas históricas.
+        </p>
+        <div class="flex flex-wrap gap-x-5 gap-y-3 justify-center">
+          <a
+            class="inline-block px-[1.4rem] py-[0.7rem] min-h-[44px] border border-gold rounded-[2px] text-cream no-underline text-[1.05rem] tracking-[0.03em] transition-colors duration-200 hover:bg-gold hover:text-bg focus-visible:bg-gold focus-visible:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+            href="/"
+          >Ir al inicio</a>
+          <a
+            class="inline-block px-[1.4rem] py-[0.7rem] min-h-[44px] border border-gold rounded-[2px] text-cream no-underline text-[1.05rem] tracking-[0.03em] transition-colors duration-200 hover:bg-gold hover:text-bg focus-visible:bg-gold focus-visible:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+            href="/coleccion/"
+          >Ver la colección</a>
+        </div>
       </div>
     </main>
   </body>
