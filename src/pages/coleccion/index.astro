@@ -15,8 +15,12 @@ import {
   FEATURED_ENTRIES,
   RECENT_PIECES,
   hubLead,
-  hubStats,
 } from '../../lib/catalog-hub';
+import {
+  getCollectionStats,
+  INVENTORY_VOCABULARY_ES,
+  inventoryProperties,
+} from '../../lib/stats';
 
 const catalogIndex = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), 'public/data/catalog-index.json'), 'utf8'),
@@ -30,11 +34,11 @@ const catalogIndex = JSON.parse(
   }>;
 };
 
-const stats = hubStats();
+const stats = await getCollectionStats();
 const lead = hubLead(stats);
 const title = 'Colección Virtual de Billetes y Monedas | Notofilia';
 const description =
-  `Explora ${stats.banknotes} billetes y ${stats.coins} monedas de ${stats.countries} países: imágenes, historia y referencias de catálogo.`;
+  `Explora ${stats.billetes} billetes en ${stats.fichas} fichas y ${stats.monedas} monedas de ${stats.paises} países.`;
 const keywords = [
   'colección virtual billetes',
   'catálogo numismático',
@@ -125,13 +129,14 @@ const jsonLd = {
           name: 'Disponibilidad',
           value: 'No está a la venta — colección privada documentada',
         },
+        ...inventoryProperties(stats),
       ],
     },
     {
       '@type': 'ItemList',
       '@id': `${SITE}/coleccion/#itemlist`,
       name: 'Índice de catálogos por país y tema',
-      numberOfItems: countries.length,
+      numberOfItems: stats.paises,
       itemListElement: countryList,
     },
   ],
@@ -194,7 +199,7 @@ const jsonLd = {
         line-height: 1.05;
         color: #d8d2cd;
         margin: 0 0 20px;
-        max-width: 18ch;
+        max-width: 28ch;
       }
       .hub-lead {
         font-size: clamp(18px, 1.8vw, 21px);
@@ -596,8 +601,11 @@ const jsonLd = {
 
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/">
-        <h1>Colección Virtual de Billetes y Monedas</h1>
+        <h1>Colección Virtual: {stats.billetes} billetes y {stats.monedas} monedas de {stats.paises} países</h1>
         <p class="hub-lead">{lead}</p>
+        <p class="hub-lead" style="margin-top:-24px; font-size:17px; color:#b7ab8a;">
+          {INVENTORY_VOCABULARY_ES}
+        </p>
 
         <ul class="featured-grid" style="margin: 0 0 40px;">
           <li>
@@ -650,7 +658,7 @@ const jsonLd = {
           <span class="hub-kicker">Por país</span>
           <h2 id="countries-heading">Países en la colección</h2>
           <p class="hub-section-lead">
-            {countries.length} países con fichas documentadas. El filtro abre el explorador abajo.
+            {stats.paises} países con fichas documentadas. El filtro abre el explorador abajo.
           </p>
           <ul class="country-grid">
             {countries.map((c) => (

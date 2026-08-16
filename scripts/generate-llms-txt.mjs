@@ -7,6 +7,10 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  getCollectionStatsFromDisk,
+  INVENTORY_VOCABULARY_ES,
+} from '../src/lib/catalog-inventory.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://notofilia.com';
@@ -180,7 +184,7 @@ async function loadGlossary() {
   return terms.sort((a, b) => a.title.localeCompare(b.title, 'es'));
 }
 
-function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, glossaryCount, full = false }) {
+function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCount, full = false }) {
   const lines = [
     '# Notofilia',
     '',
@@ -188,9 +192,9 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, gloss
     '>',
     '> Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.',
     '',
-    'Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero de ~30 países— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia.',
+    `Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: ${stats.billetes} billetes en ${stats.fichas} fichas, ${stats.monedas} monedas, ${stats.paises} países, ${stats.paginas} páginas de catálogo.`,
     '',
-    '**Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe (+90 términos) y perfiles históricos ligados a emisiones.',
+    `**Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. ${INVENTORY_VOCABULARY_ES}`,
     '',
     '**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*',
     '',
@@ -200,7 +204,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, gloss
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
-    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · ${glossaryCount} términos del glosario · perfiles.`,
+    `**Inventario (build):** ${stats.fichas} fichas · ${stats.billetes} billetes · ${stats.monedas} monedas · ${stats.paises} países · ${stats.paginas} páginas · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · ${glossaryCount} términos del glosario.`,
     '',
   ];
 
@@ -219,7 +223,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, gloss
   return lines.join('\n');
 }
 
-function buildCoreSections({ catalog, blog, noticias, logros, glossary, full }) {
+function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full }) {
   const byPath = new Map(catalog.map((c) => [c.path, c]));
   const hubs = HUB_ORDER.map((h) => {
     const entry = byPath.get(h.path);
@@ -291,7 +295,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, full }) 
     }
     lines.push(
       '',
-      `Listado completo de ${catalog.length} fichas: [llms-full.txt](${SITE}/llms-full.txt) · API: [GET /api/catalog](${SITE}/api/catalog) · índice JSON: [${SITE}/data/catalog-index.json](${SITE}/data/catalog-index.json).`,
+      `Listado completo de ${stats.fichas} fichas (${stats.billetes} billetes, ${stats.monedas} monedas, ${stats.paises} países): [llms-full.txt](${SITE}/llms-full.txt) · API: [GET /api/catalog](${SITE}/api/catalog) · índice JSON: [${SITE}/data/catalog-index.json](${SITE}/data/catalog-index.json).`,
       '',
     );
   }
@@ -396,16 +400,17 @@ const blog = await loadPosts(BLOG_DIR, 'blog');
 const noticias = await loadPosts(NOTICIAS_DIR, 'noticias');
 const logros = await loadPosts(LOGROS_DIR, 'logros');
 const glossary = await loadGlossary();
+const stats = getCollectionStatsFromDisk(CATALOG_DIR);
 const counts = {
-  catalogCount: catalog.length,
+  stats,
   blogCount: blog.length,
   noticiasCount: noticias.length,
   logrosCount: logros.length,
   glossaryCount: glossary.length,
 };
 
-const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, full: false })}\n`;
-const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, full: true })}\n`;
+const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full: false })}\n`;
+const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full: true })}\n`;
 
 const targets = [
   ['llms.txt', llmsTxt],
@@ -422,5 +427,5 @@ for (const [name, body] of targets) {
 const kb = (n) => `${(Buffer.byteLength(n, 'utf8') / 1024).toFixed(1)} KiB`;
 console.log(
   `Generated llms.txt (${kb(llmsTxt)}) + llms-full.txt (${kb(llmsFull)}) ` +
-    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros · ${glossary.length} glosario.`,
+    `from ${stats.fichas} fichas · ${stats.billetes} billetes · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros · ${glossary.length} glosario.`,
 );

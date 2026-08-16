@@ -66,6 +66,18 @@
                   "type": "object",
                   "properties": {
                     "count": { "type": "integer" },
+                    "total": { "type": "integer" },
+                    "stats": {
+                      "type": "object",
+                      "description": "Live inventory from the catalog collection (ficha / billete / página).",
+                      "properties": {
+                        "billetes": { "type": "integer" },
+                        "monedas": { "type": "integer" },
+                        "paises": { "type": "integer" },
+                        "fichas": { "type": "integer" },
+                        "paginas": { "type": "integer" }
+                      }
+                    },
                     "items": {
                       "type": "array",
                       "items": {

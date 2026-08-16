@@ -11,6 +11,7 @@ export async function onRequestGet(context) {
 
   const indexUrl = new URL('/data/catalog-index.json', url.origin);
   let items = [];
+  let stats = null;
   try {
     const res = await fetch(indexUrl.toString(), {
       headers: { accept: 'application/json' },
@@ -19,6 +20,7 @@ export async function onRequestGet(context) {
     if (res.ok) {
       const data = await res.json();
       items = Array.isArray(data.items) ? data.items : [];
+      stats = data.stats || null;
     }
   } catch (error) {
     console.error('catalog index fetch failed', error);
@@ -41,7 +43,7 @@ export async function onRequestGet(context) {
   }));
 
   return json(
-    { count: sliced.length, total: items.length, items: sliced },
+    { count: sliced.length, total: items.length, stats, items: sliced },
     { headers: { 'cache-control': 'public, max-age=300' } },
   );
 }

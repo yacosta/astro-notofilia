@@ -48,6 +48,9 @@ jobs:
       - name: Check sitemap, redirects, search, and canonicals
         run: npm run check:drift
 
+      - name: Fail on hard-coded inventory counts
+        run: npm run check:inventory
+
       - name: Ensure generated sitemap is committed
         run: git diff --exit-code -- public/sitemap.xml
 

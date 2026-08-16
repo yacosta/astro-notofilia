@@ -1,4 +1,4 @@
-import { computeCollectionStats, type CollectionStats } from './stats';
+import { type CollectionStats } from './stats';
 
 export type FeaturedEntry = {
   href: string;
@@ -112,10 +112,6 @@ export const RECENT_PIECES: RecentPiece[] = [
   },
 ];
 
-export function hubStats(): CollectionStats {
-  return computeCollectionStats();
-}
-
 export function hubLead(stats: CollectionStats): string {
-  return `Explora ${stats.banknotes} billetes y ${stats.coins} monedas de ${stats.countries} países, documentados con imágenes, historia y referencias de catálogo.`;
+  return `Explora ${stats.billetes} billetes en ${stats.fichas} fichas, más ${stats.monedas} monedas, de ${stats.paises} países, documentados con imágenes, historia y referencias de catálogo.`;
 }

@@ -3,6 +3,9 @@
  * Full-bleed homepage hero: rotating banknote slides, brand lockup,
  * task-oriented CTAs, and language toggle.
  */
+import type { CollectionStats } from '../lib/stats';
+import { formatStatsEn, formatStatsEs } from '../lib/stats';
+
 export interface HeroSlide {
   base: string;
   alt: string;
@@ -10,9 +13,12 @@ export interface HeroSlide {
 
 export interface Props {
   slides: HeroSlide[];
+  stats: CollectionStats;
 }
 
-const { slides } = Astro.props;
+const { slides, stats } = Astro.props;
+const statsEs = formatStatsEs(stats);
+const statsEn = formatStatsEn(stats);
 const transparentPixel =
   'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ---
@@ -106,9 +112,14 @@ const transparentPixel =
     >Una colección privada de billetes y monedas históricas</h1>
     <p
       data-i18n
-      data-en="Detailed images, catalog references, and monetary histories from Colombia, the United States, Puerto Rico, and the world."
+      data-en="Detailed images, catalog references, and monetary histories from around the world."
       class="font-serif text-[clamp(16px,1.5vw,19px)] leading-[1.6] text-cream-dim mt-4 mb-0 max-w-[40rem]"
     >Imágenes detalladas, referencias de catálogo e historias monetarias de Colombia, Estados Unidos, Puerto Rico y el mundo.</p>
+    <p
+      data-i18n
+      data-en={statsEn}
+      class="font-serif text-[clamp(15px,1.4vw,17px)] tracking-[0.06em] text-cream-dim mt-3 mb-0"
+    >{statsEs}</p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
       <a
         href="/coleccion/"
