@@ -41,6 +41,9 @@ test('live inventory counts match across home, coleccion, and llms.txt', async (
   await expect(page.locator('main')).toContainText(
     'Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado',
   );
+  await expect(page.getByRole('heading', { name: 'Fuentes del catálogo' })).toBeVisible();
+  await expect(page.locator('main')).toContainText('no confirmado');
+  await expect(page.locator('main')).toContainText('Banknote World');
 
   const llms = await request.get('/llms.txt');
   expect(llms.ok()).toBeTruthy();

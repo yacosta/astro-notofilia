@@ -56,6 +56,20 @@ for (const pageDef of PAGES) {
   });
 }
 
+test('nepal showcase uses primary sources and visible no confirmado fields', async ({ page }) => {
+  await page.goto('/coleccion/polimero-mundial/nepal-10-rupias-2005/');
+  await expect(page.getByRole('heading', { name: 'Nepal Rastra Bank', exact: true }).first()).toBeVisible();
+  await expect(page.getByText('Emisiones nepalíes en polímero')).toBeVisible();
+  await expect(page.getByText('Los únicos billetes de polímero de Nepal')).toHaveCount(0);
+  await expect(page.getByText('Banknote World')).toHaveCount(0);
+  await expect(page.getByText('Tirada').first()).toBeVisible();
+  await expect(page.getByText('no confirmado').first()).toBeVisible();
+  await expect(page.getByText('Fecha de última revisión factual').first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Reserve Bank of Australia, Annual Report 2003/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Nepal Rastra Bank — sitio oficial/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Fuentes' })).toBeVisible();
+});
+
 test('catalog piece exposes research chrome', async ({ page }) => {
   await page.goto('/coleccion/reserva-federal/cien-dolares-1990-cleveland/');
   await expect(page.getByText('Identificador permanente')).toBeVisible();
