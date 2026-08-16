@@ -6,9 +6,11 @@ import { metadataRows, type CatalogRecord } from '../../lib/catalog-record';
 
 interface Props {
   record: CatalogRecord;
+  /** Keep markup for crawlers/citation, hide the visual duplicate of the spec table. */
+  visuallyHidden?: boolean;
 }
 
-const { record } = Astro.props;
+const { record, visuallyHidden = false } = Astro.props;
 const rows = metadataRows(record.metadata, {
   country: record.country,
   issuer: record.issuer,
@@ -16,7 +18,11 @@ const rows = metadataRows(record.metadata, {
 ---
 {
   rows.length > 0 && (
-    <section class="catalog-record-meta" aria-labelledby="catalog-meta-heading">
+    <section
+      class:list={['catalog-record-meta', visuallyHidden && 'catalog-record-meta--visually-hidden']}
+      aria-labelledby={visuallyHidden ? undefined : 'catalog-meta-heading'}
+      aria-hidden={visuallyHidden ? 'true' : undefined}
+    >
       <h2
         id="catalog-meta-heading"
         class="m-0 mb-4 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
