@@ -14,7 +14,7 @@ relatedLinks:
   - { href: "/coleccion/colombia/banca-libre/", title: "Catálogo de la banca libre colombiana" }
   - { href: "/coleccion/colombia/banco-de-medellin-50-centavos/", title: "Banco de Medellín: 50 centavos" }
   - { href: "/coleccion/colombia/vicente-villa-e-hijos-5-pesos/", title: "Vicente B. Villa é Hijos" }
-  - { href: "/glosario/#banca-libre", title: "Glosario: banca libre" }
+  - { href: "/glosario/banca-libre/", title: "Glosario: banca libre" }
 ---
 
 Durante buena parte del siglo XIX, Colombia no tuvo banco central ni una moneda

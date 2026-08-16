@@ -13,7 +13,16 @@
 # Legacy WordPress-era pretty URL for Hagerstown Bank catalog page
 /the-hagerstown-bank/  /coleccion/hagerstown-bank-maryland/  301
 /the-hagerstown-bank  /coleccion/hagerstown-bank-maryland/  301
-/glosario/  /glosario-numismatico.dc.html  200
+# Native Astro glossary at /glosario/ — send the old .dc document to the clean URL
+/glosario-numismatico.dc.html  /glosario/  301
+/glosario-numismatico.dc  /glosario/  301
+# Hash-era slugs that differ from the public term URL
+/glosario/pick-number/  /glosario/pick/  301
+/glosario/pick-number  /glosario/pick/  301
+/glosario/catalogo-friedberg/  /glosario/friedberg/  301
+/glosario/catalogo-friedberg  /glosario/friedberg/  301
+/glosario/sin-circular-unc/  /glosario/billete-sin-circular/  301
+/glosario/sin-circular-unc  /glosario/billete-sin-circular/  301
 /politica-privacidad-cookies/  /politica-privacidad-cookies.dc.html  200
 /contacto/  /contacto.dc.html  200
 # Collection pretty-URLs -> canonical .dc.html targets (200-rewrites)

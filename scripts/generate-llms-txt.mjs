@@ -14,6 +14,7 @@ const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
 const NOTICIAS_DIR = path.join(ROOT, 'src/content/noticias');
 const LOGROS_DIR = path.join(ROOT, 'src/content/logros');
+const GLOSARIO_DIR = path.join(ROOT, 'src/content/glosario');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
@@ -155,7 +156,31 @@ async function loadPosts(dir, base) {
   return posts.sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 }
 
-function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full = false }) {
+async function loadGlossary() {
+  let files = [];
+  try {
+    files = (await readdir(GLOSARIO_DIR)).filter((f) => f.endsWith('.md')).sort();
+  } catch {
+    return [];
+  }
+  const terms = [];
+  for (const file of files) {
+    const raw = await readFile(path.join(GLOSARIO_DIR, file), 'utf8');
+    const { data, body } = parseFrontmatter(raw);
+    const slug = file.replace(/\.md$/, '');
+    terms.push({
+      slug,
+      path: `/glosario/${slug}/`,
+      title: data.termEs || slug,
+      termEn: data.termEn || '',
+      category: data.category || '',
+      body,
+    });
+  }
+  return terms.sort((a, b) => a.title.localeCompare(b.title, 'es'));
+}
+
+function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, glossaryCount, full = false }) {
   const lines = [
     '# Notofilia',
     '',
@@ -175,7 +200,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full 
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
-    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · glosario · perfiles.`,
+    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · ${glossaryCount} términos del glosario · perfiles.`,
     '',
   ];
 
@@ -194,7 +219,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, logrosCount, full 
   return lines.join('\n');
 }
 
-function buildCoreSections({ catalog, blog, noticias, logros, full }) {
+function buildCoreSections({ catalog, blog, noticias, logros, glossary, full }) {
   const byPath = new Map(catalog.map((c) => [c.path, c]));
   const hubs = HUB_ORDER.map((h) => {
     const entry = byPath.get(h.path);
@@ -214,7 +239,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, full }) {
   lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
   lines.push(linkLine('Logros del Mes', abs('/#logros-heading'), 'Piezas y avances recientes de la Colección Virtual (sección en la home).'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
-  lines.push(linkLine('Glosario', abs('/glosario/'), 'Más de 90 términos de numismática y notafilia (ES/EN).'));
+  lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));
   lines.push(linkLine('J.S.G. Boggs', abs('/j-s-g-boggs/'), 'Perfil del artista de los «Boggs bills» dibujados a mano.'));
   lines.push('');
@@ -327,6 +352,15 @@ function buildCoreSections({ catalog, blog, noticias, logros, full }) {
     }
   }
 
+  if (full && glossary.length > 0) {
+    lines.push('## Glosario — términos', '');
+    for (const term of glossary) {
+      const note = [term.termEn, clip(term.body, 120)].filter(Boolean).join(' — ');
+      lines.push(linkLine(term.title, abs(term.path), note));
+    }
+    lines.push('');
+  }
+
   lines.push('## APIs y agentes', '');
   lines.push(linkLine('OpenAPI', abs('/openapi.json'), 'Catálogo, health, comentarios y registro de agentes.'));
   lines.push(linkLine('Catalog search API', abs('/api/catalog'), 'GET ?q=&limit= — búsqueda sobre título/ruta/keywords.'));
@@ -361,15 +395,17 @@ const catalog = await loadCatalog();
 const blog = await loadPosts(BLOG_DIR, 'blog');
 const noticias = await loadPosts(NOTICIAS_DIR, 'noticias');
 const logros = await loadPosts(LOGROS_DIR, 'logros');
+const glossary = await loadGlossary();
 const counts = {
   catalogCount: catalog.length,
   blogCount: blog.length,
   noticiasCount: noticias.length,
   logrosCount: logros.length,
+  glossaryCount: glossary.length,
 };
 
-const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, full: false })}\n`;
-const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, full: true })}\n`;
+const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, full: false })}\n`;
+const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, full: true })}\n`;
 
 const targets = [
   ['llms.txt', llmsTxt],
@@ -386,5 +422,5 @@ for (const [name, body] of targets) {
 const kb = (n) => `${(Buffer.byteLength(n, 'utf8') / 1024).toFixed(1)} KiB`;
 console.log(
   `Generated llms.txt (${kb(llmsTxt)}) + llms-full.txt (${kb(llmsFull)}) ` +
-    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros.`,
+    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros · ${glossary.length} glosario.`,
 );

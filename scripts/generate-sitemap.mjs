@@ -145,6 +145,22 @@ add(`${site}/coleccion/numismatica/`, { changefreq: 'weekly', priority: '0.85' }
 // Public editorial / valuation policy (native Astro page).
 add(`${site}/editorial/`, { changefreq: 'monthly', priority: '0.5' });
 add(`${site}/editorial/equipo/`, { changefreq: 'monthly', priority: '0.4' });
+// Glossary index + one URL per term (native Astro collection).
+add(`${site}/glosario/`, { changefreq: 'monthly', priority: '0.7' });
+{
+  const glosarioDir = new URL('../src/content/glosario/', import.meta.url);
+  let glosarioFiles = [];
+  try {
+    glosarioFiles = await readdir(glosarioDir);
+  } catch {
+    glosarioFiles = [];
+  }
+  for (const file of glosarioFiles) {
+    if (!file.endsWith('.md')) continue;
+    const slug = basename(file).replace(/\.md$/, '');
+    add(`${site}/glosario/${slug}/`, { changefreq: 'monthly', priority: '0.5' });
+  }
+}
 // /buscar/ is intentionally noindex (utility search UI) — omit from sitemap.
 
 const ordered = [...entries.values()].sort((a, b) => {

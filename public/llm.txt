@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** ~144 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · glosario · perfiles.
+**Inventario (build):** ~144 fichas de catálogo · 9 guías de blog · 53 noticias · 0 logros del mes · 95 términos del glosario · perfiles.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).
 
@@ -28,7 +28,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 - [Blog](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
 - [Logros del Mes](https://notofilia.com/#logros-heading): Piezas y avances recientes de la Colección Virtual (sección en la home).
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
-- [Glosario](https://notofilia.com/glosario/): Más de 90 términos de numismática y notafilia (ES/EN).
+- [Glosario](https://notofilia.com/glosario/): 95 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
 - [J.S.G. Boggs](https://notofilia.com/j-s-g-boggs/): Perfil del artista de los «Boggs bills» dibujados a mano.
 
