@@ -149,7 +149,7 @@ for (const { route, legacyFile } of routeMap) {
   }
 }
 
-const header = await readFile(path.join(root, 'public/SiteHeader.dc.html'), 'utf8');
+const header = await readFile(path.join(root, 'legacy/dc-shells/SiteHeader.dc.html'), 'utf8');
 if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared legacy header is not wired to Pagefind');
 if (/href:\s*["'][^"']+\.dc\.html/i.test(header)) fail('Shared search/navigation contains a legacy .dc.html target');
 if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertises unavailable catalog entries');
@@ -196,17 +196,47 @@ if (!headerIsland.includes('/pagefind/') || !headerIsland.includes('pagefind.js'
 if (!headerIsland.includes('import(')) fail('Native header island must lazy-import Pagefind');
 
 const publicFiles = await readdir(path.join(root, 'public'));
-const standalonePages = publicFiles.filter((file) => file.endsWith('.dc.html') && file === file.toLowerCase());
-for (const file of standalonePages) {
-  const html = await readFile(path.join(root, 'public', file), 'utf8');
-  if (!/^<!doctype html>/i.test(html.trimStart())) continue;
-  if (/<style\b[^>]*>[\s\S]*?<link\b[^>]*catalog-fonts\.css/i.test(html)) {
-    fail(`${file} places the catalog font stylesheet inside a <style> block`);
-  }
-  if (!/<link\s+rel="stylesheet"\s+href="\/catalog-fonts\.css">/i.test(html)) {
-    fail(`${file} does not load the shared catalog font stylesheet`);
-  }
+const shippedDcHtml = publicFiles.filter((file) => file.toLowerCase().endsWith('.dc.html'));
+if (shippedDcHtml.length) {
+  fail(`public/ still ships .dc.html files (${shippedDcHtml.join(', ')}); serve native Astro routes and 301 the .dc variants`);
 }
+
+const standaloneCanonicals = [
+  { pretty: '/j-s-g-boggs/', dc: 'perfil-j-s-g-boggs.dc.html' },
+  { pretty: '/contacto/', dc: 'contacto.dc.html' },
+  { pretty: '/politica-privacidad-cookies/', dc: 'politica-privacidad-cookies.dc.html' },
+];
+for (const { pretty, dc } of standaloneCanonicals) {
+  if (!sitemap.has(pretty)) fail(`sitemap.xml is missing standalone canonical ${pretty}`);
+  const expectedSources = [`/${dc}`];
+  if (dc.endsWith('.dc.html')) expectedSources.push(`/${dc.slice(0, -5)}`);
+  for (const expectedSource of expectedSources) {
+    const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
+    if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
+    else if (normalizePath(legacyRule.to) !== pretty) {
+      fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${pretty}`);
+    } else if (legacyRule.status !== '301') {
+      fail(`${expectedSource} must 301 to ${pretty}, found ${legacyRule.status}`);
+    }
+  }
+  const rewriteToDc = redirects.find(
+    (rule) => rule.status === '200' && normalizePath(rule.from) === pretty,
+  );
+  if (rewriteToDc) fail(`${pretty} must not 200-rewrite onto a .dc document (${rewriteToDc.line})`);
+  const { html } = await htmlForRoute(pretty);
+  if (html && /\{\{[^}]*\}\}/.test(html)) fail(`${pretty} still contains unresolved Mustache {{ }}`);
+}
+{
+  const { html } = await htmlForRoute('/j-s-g-boggs/');
+  if (html && !html.includes('data-zoom-percent')) fail('/j-s-g-boggs/ is missing data-zoom-percent for catalog-zoom.js');
+  if (html && !html.includes('>100%<')) fail('/j-s-g-boggs/ must ship a static 100% zoom fallback');
+}
+
+const distRoot = path.join(root, 'dist');
+let distEntries = [];
+try { distEntries = await readdir(distRoot); } catch { distEntries = []; }
+const distDcHtml = distEntries.filter((file) => file.toLowerCase().endsWith('.dc.html'));
+if (distDcHtml.length) fail(`dist/ still publishes .dc.html (${distDcHtml.join(', ')})`);
 
 for (const entry of catalogEntries) {
   const cardCount = (entry.template.match(/<dc-import\s+name="BanknoteCard"/g) ?? []).length;

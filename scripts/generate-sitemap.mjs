@@ -93,7 +93,12 @@ for (const file of await readdir(catalogDir)) {
   add(`${site}${page.path}`);
 }
 
-// Every hand-authored catalog/profile page declares its public canonical URL.
+// Standalone native pages that used to live as public/*.dc.html shells.
+add(`${site}/contacto/`, { changefreq: 'monthly', priority: '0.6' });
+add(`${site}/politica-privacidad-cookies/`, { changefreq: 'yearly', priority: '0.3' });
+add(`${site}/j-s-g-boggs/`, { changefreq: 'monthly', priority: '0.6' });
+
+// Safety net: any remaining public *.dc.html still declaring a canonical.
 for (const file of await readdir(publicDir)) {
   if (!file.endsWith('.dc.html')) continue;
   const html = await readFile(join(publicDir.pathname, file), 'utf8');

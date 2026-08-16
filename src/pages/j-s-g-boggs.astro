@@ -1,0 +1,213 @@
+---
+/**
+ * Artist profile — J.S.G. Boggs. Canonical URL is the extensionless path;
+ * legacy /perfil-j-s-g-boggs.dc(.html) 301s here.
+ */
+import CatalogLayout from '../layouts/CatalogLayout.astro';
+import { SITE } from '../lib/site';
+
+const title = 'J.S.G. Boggs — Perfil del Artista | Notofilia';
+const description =
+  'Perfil de J.S.G. Boggs (1955–2017), artista estadounidense conocido por sus dibujos a mano de billetes, los célebres «Boggs bills».';
+const path = '/j-s-g-boggs/';
+const keywords = [
+  'j.s.g. boggs',
+  'boggs bills',
+  'arte del dinero',
+  'billetes dibujados a mano',
+  'numismática y arte',
+  'notafilia',
+  'criptomonedas santo patrono',
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'J.S.G. Boggs', item: `${SITE}${path}` },
+      ],
+    },
+    {
+      '@type': 'Person',
+      name: 'James Stephen George Boggs',
+      url: `${SITE}${path}`,
+      birthDate: '1955-01-16',
+      deathDate: '2017-01-22',
+      jobTitle: 'Artista',
+      description:
+        'Artista estadounidense conocido por sus dibujos a mano de billetes de banco, intercambiados uno a uno por su valor nominal.',
+      nationality: 'Estadounidense',
+    },
+    {
+      '@type': 'ImageObject',
+      name: 'Retrato de J.S.G. Boggs',
+      contentUrl: `${SITE}/uploads/jsg-boggs.jpg`,
+      creditText: 'Pittsburgh Post-Gazette',
+    },
+  ],
+};
+
+const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing:border-box;">
+  <header>
+    <nav aria-label="Ruta de navegación" style="max-width:1180px; margin:0 auto; padding:56px 24px 0;">
+      <a href="/coleccion/" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Colección Virtual — Catálogo General</a>
+    </nav>
+  </header>
+
+  <main data-pagefind-meta="url:/j-s-g-boggs/" id="main-content" tabindex="-1" data-screen-label="J.S.G. Boggs" style="max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;">
+    <div style="background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div style="text-align:center; max-width:720px; margin:0 auto 48px;">
+          <span style="display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;">Perfil de Artista &middot; Arte del Dinero</span>
+          <h1 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;">J.S.G. Boggs</h1>
+          <p style="font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;">16 de enero de 1955 &mdash; 22 de enero de 2017</p>
+        </div>
+
+        <div style="width:100%; max-width:100%; display:flex; flex-direction:column; gap:14px; margin:0 auto 48px;">
+          <button
+            type="button"
+            data-zoom-trigger="jsg-boggs"
+            aria-label="Ampliar retrato de J.S.G. Boggs"
+            style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in;"
+          >
+            <picture>
+              <source srcset="/uploads/jsg-boggs-480.webp 480w, /uploads/jsg-boggs.webp 1140w" sizes="(max-width: 448px) calc(100vw - 48px), 400px" type="image/webp" />
+              <img
+                src="/uploads/jsg-boggs.jpg"
+                alt="J.S.G. Boggs de pie frente a una versión ampliada de su dibujo de un billete de 100 dólares, en blanco y negro"
+                width="1140"
+                height="797"
+                loading="eager"
+                decoding="async"
+                style="display:block; width:100%; height:auto; border:1px solid rgba(10,10,9,0.12);"
+              />
+            </picture>
+            <span style="position:absolute; bottom:22px; right:22px; display:flex; align-items:center; gap:8px; background:rgba(10,10,9,0.82); color:#d8d2cd; font-size:13px; letter-spacing:0.08em; padding:8px 14px; border-radius:999px;">
+              <span style="width:6px; height:6px; background:#d8d2cd; transform:rotate(45deg);"></span>
+              Ampliar
+            </span>
+          </button>
+
+          <div style="text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;">
+            <span style="display:block;">Pittsburgh Post-Gazette</span>
+          </div>
+
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Retrato ampliado"
+            data-zoom-dialog="jsg-boggs"
+            hidden
+            style="display:none; position:fixed; inset:0; z-index:50; background:rgba(5,5,4,0.94); flex-direction:column; align-items:center; justify-content:center;"
+          >
+            <button
+              type="button"
+              data-zoom-close
+              aria-label="Cerrar"
+              style="position:absolute; top:24px; right:28px; background:transparent; border:1px solid rgba(231,222,201,0.4); color:#d8d2cd; font-size:22px; line-height:1; width:44px; height:44px; border-radius:50%; cursor:pointer;"
+            >&times;</button>
+
+            <div style="position:absolute; top:24px; left:28px; display:flex; align-items:center; gap:6px; background:rgba(10,10,9,0.5); border:1px solid rgba(231,222,201,0.25); border-radius:999px; padding:6px;">
+              <button
+                type="button"
+                data-zoom-out
+                disabled
+                aria-label="Alejar"
+                style="width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;"
+              >&minus;</button>
+              <span data-zoom-percent style="min-width:56px; text-align:center; font-size:14px; color:#e7ddc4; letter-spacing:0.05em;">100%</span>
+              <button
+                type="button"
+                data-zoom-in
+                aria-label="Acercar"
+                style="width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;"
+              >&#43;</button>
+            </div>
+
+            <div style="overflow:hidden; max-width:92vw; max-height:74vh; touch-action:none;">
+              <picture>
+                <source srcset="/uploads/jsg-boggs.webp" type="image/webp" />
+                <img
+                  data-zoom-image
+                  src="/uploads/jsg-boggs.jpg"
+                  alt="Retrato de J.S.G. Boggs, vista ampliada"
+                  draggable="false"
+                  style="display:block; max-width:92vw; max-height:74vh; width:auto; height:auto; cursor:zoom-in; user-select:none;"
+                />
+              </picture>
+            </div>
+
+            <span style="margin-top:18px; font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic;">Arrastra para mover &middot; Rueda del ratón para ampliar</span>
+          </div>
+        </div>
+
+        <div style="width:100%; max-width:760px;">
+          <div style="display:flex; flex-direction:column;">
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Nacionalidad</span>
+              <span style="font-size:19px; color:#221f19;">Estadounidense</span>
+            </div>
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Profesión</span>
+              <span style="font-size:19px; color:#221f19;">Artista</span>
+            </div>
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Obra Principal</span>
+              <span style="font-size:19px; color:#221f19;">Dibujos a mano de billetes de banco, conocidos como &ldquo;Boggs bills&rdquo;</span>
+            </div>
+          </div>
+
+          <section style="margin-top:44px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">1. Un Billete Abstracto en un Diner de Chicago</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Boggs comenzó a dibujar dinero como obra de arte en 1984, cuando una camarera de Chicago aceptó un dibujo suyo &ldquo;muy abstracto&rdquo; de un billete de un dólar como pago de su cuenta de 90 centavos. Cuando ella le devolvió diez centavos de cambio, Boggs sintió &ldquo;electricidad&rdquo; ante el intercambio &mdash;el instante que lo llevaría a repetir la operación una y otra vez con su propio arte original.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">Sus dibujos, que reproducían solo una cara del billete, llegaron a conocerse como &ldquo;billetes de Boggs&rdquo;. Boggs los cambiaba únicamente por su valor nominal: al gastar un dibujo de 100 dólares, lo intercambiaba por bienes exactamente por ese valor.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">2. La Obra como Actuación</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Cada transacción era en sí misma parte de la pieza. Boggs vendía después el cambio recibido, el recibo de la compra y, a veces, los propios bienes adquiridos, generalmente a marchantes y coleccionistas de arte &mdash;pero nunca vendía directamente los billetes dibujados. En su lugar, le indicaba al coleccionista dónde y cómo había gastado cada pieza, y era el propio comprador quien debía localizar a la persona que la poseía para adquirirla.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">Boggs señalaba que, tras esa transacción inicial, sus billetes solían revenderse por sumas muy superiores a su valor nominal original; se ha llegado a reportar la reventa de un solo &ldquo;billete de Boggs&rdquo; por 420.000 dólares.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">3. La Serie de la Convención FUN</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Entre sus obras más conocidas figura una serie de billetes elaborados para la convención anual de Numismáticos Unidos de Florida (Florida United Numismatists, &ldquo;FUN&rdquo;). Las denominaciones, de 1 a 50 dólares, retomaban los diseños del reverso del papel moneda estadounidense contemporáneo, levemente alterados: la leyenda &ldquo;THE UNITED STATES OF AMERICA&rdquo; se convertía en &ldquo;FLORIDA UNITED NUMISMATISTS&rdquo;, y la denominación se sustituía ocasionalmente por el acrónimo &ldquo;FUN&rdquo;.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">También alteraba detalles visuales &mdash;el reflejo de Monticello en el billete de $2, el edificio de la Corte Suprema en lugar del Tesoro en el de $10, un ángulo distinto de la Casa Blanca en el de $20&mdash;. Estos billetes se imprimían en naranja brillante por un lado y llevaban el autógrafo y la huella digital de Boggs por el otro.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">4. Otras Obras y el Legado del &ldquo;Santo Patrono&rdquo;</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Entre sus otras creaciones destaca el mural <em>All the World's a Stage</em>, inspirado libremente en un billete de 20 libras esterlinas de la Serie D del Banco de Inglaterra con motivos shakesperianos, así como piezas del tamaño de un billete que representaban su propia visión de cómo debería lucir la moneda estadounidense &mdash;entre ellas, un conocido billete de 100 dólares con el retrato de Harriet Tubman.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Por sus interrogantes filosóficos sobre el valor de la moneda fiduciaria &mdash;planteados años antes del auge de Bitcoin&mdash;, su temprano interés en crear su propia moneda y sus contribuciones a una &ldquo;moneda criptográfica en línea&rdquo; ya en el año 2000, la publicación Artnet lo describió como el &ldquo;santo patrono de las criptomonedas&rdquo;.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">Su vida y obra quedaron narradas en <em>Boggs: A Comedy of Values</em>, del escritor Lawrence Weschler, publicado por University of Chicago Press.</p>
+          </section>
+
+          <section style="margin-top:32px; border-top:1px solid rgba(10,10,9,0.12); padding-top:24px;">
+            <h2 style="font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 12px; font-style:normal;">Fuentes</h2>
+            <ul style="margin:0; padding:0 0 0 20px; font-size:15px; line-height:1.7; color:#5c4e33; font-style:italic;">
+              <li>Wikipedia. &ldquo;J. S. G. Boggs.&rdquo; <a href="https://en.wikipedia.org/wiki/J._S._G._Boggs" target="_blank" rel="noopener noreferrer" style="color:#6b521f;">en.wikipedia.org/wiki/J._S._G._Boggs <span class="new-window-hint" style="font-style:italic; font-weight:400;">(se abre en una pestaña nueva)</span></a></li>
+              <li>Weschler, Lawrence. <em>Boggs: A Comedy of Values.</em> University of Chicago Press.</li>
+              <li>O'Neill, Brian (28 de enero de 2017). &ldquo;Obituario: J.S.G. Boggs / Artista que atrajo dinero y atención del gobierno&rdquo;. <em>Pittsburgh Post-Gazette</em>. Consultado el 2 de febrero de 2017.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>`;
+---
+<CatalogLayout
+  title={title}
+  description={description}
+  path={path}
+  keywords={keywords}
+  ogType="profile"
+  ogTitle="J.S.G. Boggs — Perfil del Artista"
+  ogDescription="Artista estadounidense conocido por sus dibujos a mano de billetes, los célebres «Boggs bills», cambiados uno a uno por su valor nominal."
+  ogImage="/uploads/jsg-boggs.jpg"
+  jsonLd={jsonLd}
+  template={template}
+/>

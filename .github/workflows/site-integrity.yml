@@ -36,6 +36,9 @@ jobs:
       - name: Build production site and search index
         run: npm run build
 
+      - name: Fail the build on unresolved Mustache in shipped HTML
+        run: npm run check:mustache
+
       - name: Fail on unresolved template placeholders in shipped output
         run: npm run check:placeholders
 
