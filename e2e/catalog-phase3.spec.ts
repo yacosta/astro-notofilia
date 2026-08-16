@@ -121,7 +121,7 @@ test('Colombia 10.000 pesos specimen ficha lists both notes and their details', 
   await page.getByRole('button', { name: /Ampliar imagen del billete: Diez Mil Pesos · 15 de octubre de 1994/ }).click();
   const emberaDialog = page.locator('[data-zoom-dialog="1994-embera"]');
   await expect(emberaDialog).toBeVisible();
-  await emberaDialog.getByRole('button', { name: 'Cerrar' }).click();
+  await page.keyboard.press('Escape');
   await expect(emberaDialog).toBeHidden();
 
   await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeVisible();
@@ -137,7 +137,7 @@ test('Colombia 1.000 pesos gallery still lists Bolívar, Gaitán, and the printi
     waitUntil: 'domcontentloaded',
   });
   expect(response?.ok()).toBeTruthy();
-  await expect(page.getByText('1 de enero de 1990')).toBeVisible();
+  await expect(page.getByText('1 de enero de 1990', { exact: true })).toBeVisible();
   await expect(page.getByText('Pick #433 (tipo temprano)').first()).toBeVisible();
   await expect(page.getByText('Pick #448').first()).toBeVisible();
   await expect(page.getByText(/Gruesa barra de tinta negra/)).toBeVisible();
