@@ -26,7 +26,7 @@ relatedLinks:
   - href: "/noticias/billetes-2-dolares-7-detalles/"
     title: "7 detalles que elevan un billete de $2"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: auction_record
 claimCurrency: USD
 claimValuationDate: 2026-07-01

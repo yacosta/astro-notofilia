@@ -6,6 +6,7 @@
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
+import { founderJsonLd } from '../lib/editorial';
 import { getCollectionStats, inventoryProperties } from '../lib/stats';
 import BaseHead from '../components/BaseHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -56,6 +57,7 @@ const jsonLd = {
       url: `${SITE}/`,
       logo: `${SITE}/favicon.png`,
       description: 'Colección privada de billetes históricos dedicada al coleccionismo de monedas y billetes (numismática y notafilia) en español.',
+      founder: founderJsonLd(),
     },
     {
       '@type': 'WebSite',
@@ -96,12 +98,6 @@ const jsonLd = {
       robots="index, follow, max-image-preview:large"
       jsonLd={jsonLd}
       loadDcRuntime={false}
-      keywords={[
-        'colección de monedas', 'billetes raros', 'monedas raras',
-        'catálogo billetes colombia', 'billetes de la república de colombia',
-        'billetes de colección banco de la república', 'billetes polímero colombia colección',
-        'notafilia billetes Estados Unidos', 'notafilia billetes Polímero Mundial',
-      ]}
     >
       <link rel="apple-touch-icon" href="/favicon.png" />
       <link rel="alternate" hreflang="es" href={`${SITE}/`} />

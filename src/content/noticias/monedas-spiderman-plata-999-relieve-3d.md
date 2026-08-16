@@ -23,7 +23,7 @@ relatedLinks:
   - href: "/blog/diferencia-numismatica-notafilia/"
     title: "Diferencia entre numismática y notafilia"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: seller_asking
 claimCurrency: MXN
 ---

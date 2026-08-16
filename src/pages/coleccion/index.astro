@@ -39,15 +39,6 @@ const lead = hubLead(stats);
 const title = 'Colección Virtual de Billetes y Monedas | Notofilia';
 const description =
   `Explora ${stats.billetes} billetes en ${stats.fichas} fichas y ${stats.monedas} monedas de ${stats.paises} países.`;
-const keywords = [
-  'colección virtual billetes',
-  'catálogo numismático',
-  'billetes del mundo',
-  'monedas coloniales',
-  'notafilia',
-  'numismática',
-  'colección de billetes',
-];
 
 const countries = catalogIndex.countries ?? [];
 const catalogItems = catalogIndex.items ?? [];
@@ -149,7 +140,6 @@ const jsonLd = {
       title={title}
       description={description}
       path="/coleccion/"
-      keywords={keywords}
       robots="index, follow, max-image-preview:large"
       ogType="website"
       ogTitle="Colección Virtual de Billetes y Monedas — Notofilia"

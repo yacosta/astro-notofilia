@@ -127,6 +127,21 @@
   --page-gutter: clamp(18px, 4vw, 32px);
 }
 
+/*
+ * Cream glossary cards sit on a light band. BlogLayout's unlayered
+ * `a { color: cream }` is for dark pages — do not use cream (or cream-dim)
+ * for defined terms or related links on these cards. Unlayered so it beats
+ * that global `a` rule (specificity 0,1,1 vs 0,1,0).
+ */
+.glossary-card a {
+  color: var(--color-ink);
+}
+.glossary-card :is(h1, h2) a,
+.glossary-card a:hover,
+.glossary-card a:focus-visible {
+  color: var(--color-bg);
+}
+
 @layer components {
   /* Markdown article body (blog + noticias). */
   .prose-notofilia p {

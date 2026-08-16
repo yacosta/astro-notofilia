@@ -7,23 +7,6 @@ export const GLOSSARY_PATH = '/glosario/';
 export const GLOSSARY_TITLE = 'Glosario de Numismática y Notafilia';
 export const GLOSSARY_DESCRIPTION =
   'Glosario bilingüe de más de 90 términos de numismática y notafilia: monedas, billetes, diseño, producción y coleccionismo.';
-export const GLOSSARY_KEYWORDS = [
-  'glosario numismatico',
-  'glosario notafilia',
-  'terminos de billetes',
-  'terminos de monedas',
-  'viñeta',
-  'guilloche',
-  'specimen',
-  'pick number',
-  'banca libre',
-  'cospel',
-  'planchuela',
-  'escala sheldon',
-  'escripofilia',
-  'macuquina',
-  'billete mula',
-];
 
 /** Same slugify as the legacy glossary (hash ids and related-link fragments). */
 export function slugifyGlossary(text: string): string {
@@ -153,6 +136,7 @@ export function glossaryTermJsonLd(entry: GlossaryEntry) {
         url,
         inLanguage: 'es',
         inDefinedTermSet: `${setUrl}#glossary`,
+        ...(entry.data.wikipediaUrl ? { sameAs: entry.data.wikipediaUrl } : {}),
       },
     ],
   };

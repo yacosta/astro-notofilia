@@ -5,20 +5,14 @@
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { SITE } from '../../lib/site';
 import { CLAIM_KINDS, CLAIM_LABELS, CLAIM_DEFAULT_NOTES } from '../../lib/claims';
-import { EDITORIAL_TEAM } from '../../lib/editorial';
+import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../lib/editorial';
 import { INVENTORY_VOCABULARY_ES } from '../../lib/stats';
+import NewWindowHint from '../../components/NewWindowHint.astro';
 
 const title = 'Política editorial y valoración · Notofilia';
 const description =
   'Cómo Notofilia cita precios, distingue tipos de valoración, corrige errores y atribuye fuentes en noticias, guías y fichas de catálogo.';
 const path = '/editorial/';
-const keywords = [
-  'política editorial Notofilia',
-  'valoración numismática',
-  'precio de subasta',
-  'fuentes primarias',
-  'correcciones editoriales',
-];
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -43,18 +37,7 @@ const jsonLd = {
         ],
       },
     },
-    {
-      '@type': 'Person',
-      '@id': `${SITE}/editorial/equipo/#person`,
-      name: EDITORIAL_TEAM.name,
-      url: EDITORIAL_TEAM.url,
-      jobTitle: EDITORIAL_TEAM.jobTitle,
-      worksFor: {
-        '@type': 'Organization',
-        name: 'Notofilia',
-        url: SITE,
-      },
-    },
+    personJsonLd(),
   ],
 };
 ---
@@ -64,7 +47,6 @@ const jsonLd = {
   path={path}
   ogType="website"
   jsonLd={jsonLd}
-  keywords={keywords}
 >
   <article class="max-w-content mx-auto px-6 pt-12 pb-4">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
@@ -97,12 +79,29 @@ const jsonLd = {
         nunca se escriben a mano.
       </p>
 
-      <h2 id="equipo-editorial">Equipo editorial</h2>
+      <h2 id="equipo-editorial">Editor</h2>
       <p>
-        Los textos se preparan y revisan bajo la firma del
-        <strong>{EDITORIAL_TEAM.name}</strong>. Cuando un artículo lleva “Revisado por”, indica
-        la responsabilidad editorial de esa pieza. Perfil público:
-        <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
+        Notofilia la edita <strong>{EDITORIAL_TEAM.name}</strong>, fundador del catálogo privado
+        y responsable de la investigación de fichas, el etiquetado de valoraciones y las
+        correcciones. Cuando un artículo lleva “Revisado por”, indica esa responsabilidad.
+        Perfil público: <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2 id="wikipedia">Mención en Wikipedia</h2>
+      <p>
+        El artículo{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notafilia en la Wikipedia en español<NewWindowHint />
+        </a>{' '}
+        incluye Notofilia.com en Enlaces externos (verificado el 16 de agosto de 2026). El
+        href apunta a una captura de{' '}
+        <a href={WIKIPEDIA_NOTOFILIA_ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
+          archive.org de mayo de 2013<NewWindowHint />
+        </a>{' '}
+        de <code>http://www.notofilia.com/</code>, no a <code>https://notofilia.com/</code>.
+        Como todos los enlaces externos de MediaWiki, lleva <code>rel="nofollow"</code>: es
+        una mención enciclopédica verificable, no un backlink de PageRank. No editamos
+        Wikipedia sobre nosotros mismos.
       </p>
 
       <h2 id="correcciones">Política de correcciones</h2>
