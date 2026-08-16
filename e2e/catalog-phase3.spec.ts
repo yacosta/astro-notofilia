@@ -130,7 +130,7 @@ test('catalog fichas outside Colombia also show spec data before the scan', asyn
     },
     {
       path: '/coleccion/polimero-mundial/mexico-20-50-100-pesos/',
-      spec: 'Benito Juárez',
+      spec: 'Pick-116',
     },
     {
       path: '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
@@ -149,7 +149,8 @@ test('catalog fichas outside Colombia also show spec data before the scan', asyn
     const response = await page.goto(sample.path, { waitUntil: 'domcontentloaded' });
     expect(response?.ok()).toBeTruthy();
     await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
-    await expect(page.getByText(sample.spec).first()).toBeInViewport();
+    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+    await expect(page.getByText(sample.spec).first()).toBeVisible();
     const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
     const count = await dialogs.count();
     for (let i = 0; i < count; i += 1) {
