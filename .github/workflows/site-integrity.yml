@@ -51,6 +51,9 @@ jobs:
       - name: Fail on hard-coded inventory counts
         run: npm run check:inventory
 
+      - name: Fail if re-sourced fichas have a retail citation majority
+        run: npm run check:citations
+
       - name: Ensure generated sitemap is committed
         run: git diff --exit-code -- public/sitemap.xml
 

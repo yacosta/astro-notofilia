@@ -3,6 +3,7 @@
  * Supporting narrative blocks from the structured catalog record.
  */
 import type { CatalogRecord } from '../../lib/catalog-record';
+import NewWindowHint from '../NewWindowHint.astro';
 
 interface Props {
   record: CatalogRecord;
@@ -51,8 +52,7 @@ const blocks = [
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {source.label}
-                        <span class="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0 [clip:rect(0,0,0,0)]"> (se abre en una pestaña nueva)</span>
+                        {source.label}<NewWindowHint />
                       </a>
                     ) : (
                       <span>{source.label}</span>

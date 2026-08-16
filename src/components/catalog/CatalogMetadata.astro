@@ -34,7 +34,14 @@ const rows = metadataRows(record.metadata, {
           rows.map((row) => (
             <div class="grid grid-cols-1 sm:grid-cols-[minmax(10rem,14rem)_1fr] gap-1 sm:gap-4 py-3 border-b border-line">
               <dt class="m-0 text-[13px] tracking-[0.08em] uppercase text-muted">{row.label}</dt>
-              <dd class="m-0 text-[16px] leading-[1.55] text-cream-dim">{row.value}</dd>
+              <dd
+                class:list={[
+                  'm-0 text-[16px] leading-[1.55] text-cream-dim',
+                  row.unconfirmed && 'italic',
+                ]}
+              >
+                {row.value}
+              </dd>
             </div>
           ))
         }

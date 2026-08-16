@@ -200,7 +200,7 @@ function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCoun
     '',
     '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN de la home cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
     '',
-    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).',
+    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
@@ -284,6 +284,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
       '/coleccion/ecuador/100-sucres-1993/',
       '/coleccion/veinte-dolares-hawaii-1934/',
       '/coleccion/un-dolar-norte-africa-1935a/',
+      '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
       '/coleccion/polimero-mundial/samoa-2-tala/',
       '/coleccion/pop-art/pele-bicycle-kick-the-king/',
     ];
