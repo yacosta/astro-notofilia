@@ -29,7 +29,13 @@ export type NavSection = {
   groups?: NavGroup[];
 };
 
-/** Last item in the drawer — after collection accordions. */
+/** Trailing drawer items — after collection accordions. */
+export const GLOSSARY_LINK: NavLink = {
+  href: '/glosario/',
+  label: 'Glosario',
+  labelEn: 'Glossary',
+};
+
 export const CONTACT_LINK: NavLink = {
   href: '/contacto/',
   label: 'Contacto',
@@ -44,13 +50,15 @@ export const PRIMARY_LINKS: NavLink[] = [
   { href: '/blog/', label: 'Blog', labelEn: 'Blog' },
   { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
   { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
-  { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
+  GLOSSARY_LINK,
   CONTACT_LINK,
 ];
 
-/** Drawer destinations above the collection accordions (Contacto is rendered after). */
+const DRAWER_TRAILING_HREFS = new Set([GLOSSARY_LINK.href, CONTACT_LINK.href]);
+
+/** Drawer destinations above the collection accordions (Glosario and Contacto render after). */
 export const DRAWER_PRIMARY_LINKS: NavLink[] = PRIMARY_LINKS.filter(
-  (link) => link.href !== CONTACT_LINK.href,
+  (link) => !DRAWER_TRAILING_HREFS.has(link.href),
 );
 
 /** Featured notafilia destinations (coins live under the Numismática accordion). */

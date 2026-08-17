@@ -3,7 +3,7 @@
  * Native site header — server-rendered navigation with a lightweight drawer
  * and Pagefind loaded only when search is opened.
  */
-import { CONTACT_LINK, DRAWER_PRIMARY_LINKS, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
+import { CONTACT_LINK, DRAWER_PRIMARY_LINKS, GLOSSARY_LINK, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
 import { lookupEn } from '../lib/html-i18n';
 
 export interface Props {
@@ -213,6 +213,9 @@ const { overlay = false } = Astro.props;
     </div>
 
     <ul class="site-header__primary site-header__primary--last">
+      <li>
+        <a href={GLOSSARY_LINK.href} data-i18n data-en={GLOSSARY_LINK.labelEn}>{GLOSSARY_LINK.label}</a>
+      </li>
       <li>
         <a href={CONTACT_LINK.href} data-i18n data-en={CONTACT_LINK.labelEn}>{CONTACT_LINK.label}</a>
       </li>
