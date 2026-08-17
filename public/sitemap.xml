@@ -1819,6 +1819,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/noticias/monedas-mexicanas-valen-miles-pesos/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1851,6 +1857,12 @@
   <url>
     <loc>https://notofilia.com/noticias/numismatica-encuentro-coleccionistas-pereira/</loc>
     <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/</loc>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
