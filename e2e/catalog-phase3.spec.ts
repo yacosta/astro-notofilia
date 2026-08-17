@@ -86,7 +86,7 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
 });
 
-test('Colombia catalog cards open fichas with data, not only the image', async ({ page }) => {
+test('Colombia catalog cards open fichas with the scan under the title', async ({ page }) => {
   const samples = [
     {
       href: '/coleccion/colombia/cartagena-1-real-1813/',
@@ -110,8 +110,9 @@ test('Colombia catalog cards open fichas with data, not only the image', async (
     await card.click();
     await expect(page).toHaveURL(new RegExp(`${sample.href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`));
     await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
-    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
-    await expect(page.getByText(sample.spec).first()).toBeInViewport();
+    await expect(page.locator('h1').first()).toBeInViewport();
+    await expect(page.locator('[data-zoom-trigger] img').first()).toBeInViewport();
+    await expect(page.getByText(sample.spec).first()).toBeVisible();
     const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
     const count = await dialogs.count();
     for (let i = 0; i < count; i += 1) {
@@ -122,7 +123,7 @@ test('Colombia catalog cards open fichas with data, not only the image', async (
   }
 });
 
-test('catalog fichas outside Colombia also show spec data before the scan', async ({ page }) => {
+test('catalog fichas outside Colombia also show the scan under the title', async ({ page }) => {
   const samples = [
     {
       path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
@@ -144,12 +145,17 @@ test('catalog fichas outside Colombia also show spec data before the scan', asyn
       path: '/coleccion/diez-dolares-1934-distritos/',
       spec: 'D — Cleveland, Ohio',
     },
+    {
+      path: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
+      spec: 'Santa Fe de Bogotá',
+    },
   ];
   for (const sample of samples) {
     const response = await page.goto(sample.path, { waitUntil: 'domcontentloaded' });
     expect(response?.ok()).toBeTruthy();
     await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
-    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+    await expect(page.locator('h1').first()).toBeInViewport();
+    await expect(page.locator('[data-zoom-trigger] img').first()).toBeInViewport();
     await expect(page.getByText(sample.spec).first()).toBeVisible();
     const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
     const count = await dialogs.count();
@@ -159,7 +165,7 @@ test('catalog fichas outside Colombia also show spec data before the scan', asyn
   }
 });
 
-test('Colombia catalog card for 10.000 pesos opens the ficha data, not only the image', async ({
+test('Colombia catalog card for 10.000 pesos opens the scan under the title', async ({
   page,
 }) => {
   await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
@@ -170,8 +176,9 @@ test('Colombia catalog card for 10.000 pesos opens the ficha data, not only the 
   await expect(card).toContainText('Diez Mil Pesos (Specimen)');
   await card.click();
   await expect(page).toHaveURL(/\/coleccion\/colombia\/banco-de-la-republica-10000-pesos-specimen\/$/);
-  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
-  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeInViewport();
+  await expect(page.locator('h1').first()).toBeInViewport();
+  await expect(page.locator('[data-zoom-trigger] img').first()).toBeInViewport();
+  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeVisible();
   await expect(page.locator('[data-zoom-dialog]').first()).toBeHidden();
 });
 

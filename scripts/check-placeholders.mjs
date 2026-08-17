@@ -51,20 +51,30 @@ function catalogFichaLayoutIssues(data) {
   if (dialogs.some((dialog) => !/\bhidden\b/i.test(dialog) || /display\s*:\s*flex/i.test(dialog))) {
     issues.push('zoom dialog would cover the ficha on load');
   }
+  const isPiece = record.kind === 'coin' || record.kind === 'banknote';
+  if (!isPiece) return issues;
+  const h1At = template.search(/<h1\b/i);
   const triggerAt = template.search(/data-zoom-trigger/i);
-  const imgAt = template.search(/<img\b/i);
   const denomAt = template.search(/>Denominación</i);
   const paisAt = template.search(/>País</i);
+  const cecaAt = template.search(/>Ceca</i);
   const distritoAt = template.search(/>Distrito</i);
   const serieAt = template.search(/>N\.(?:&deg;|º|°)? de Serie</i);
   const specAt =
-    [denomAt, paisAt, distritoAt, serieAt].filter((index) => index >= 0).sort((a, b) => a - b)[0] ??
-    -1;
-  if (
-    specAt >= 0 &&
-    ((triggerAt >= 0 && triggerAt < specAt) || (imgAt >= 0 && imgAt < specAt))
-  ) {
-    issues.push('spec table sits below the stacked scan');
+    [denomAt, paisAt, cecaAt, distritoAt, serieAt]
+      .filter((index) => index >= 0)
+      .sort((a, b) => a - b)[0] ?? -1;
+  if (h1At >= 0 && triggerAt >= 0 && triggerAt < h1At) {
+    issues.push('piece image sits above the title');
+  }
+  if (specAt >= 0 && triggerAt >= 0 && specAt < triggerAt && specAt > h1At) {
+    issues.push('piece image sits below the spec table instead of under the title');
+  }
+  if (h1At >= 0 && triggerAt >= 0) {
+    const between = template.slice(h1At, triggerAt);
+    if (/<p\b[^>]*line-height:\s*1\.7/i.test(between)) {
+      issues.push('intro copy sits between the title and the piece image');
+    }
   }
   return issues;
 }
