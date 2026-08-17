@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 53 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 55 noticias · 0 logros del mes · 95 términos del glosario.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).
 
@@ -79,6 +79,8 @@ Listado completo de 113 fichas (215 billetes, 7 monedas, 33 países): [llms-full
 
 ## Noticias
 
+- [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
+- [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
 - [Tenochtitlan 2021: Ámbito habla de hasta $73.000](https://notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/): Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1. Fuente: Ámbito.
 - [Hallan una moneda de Carausius en el East West Rail](https://notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…

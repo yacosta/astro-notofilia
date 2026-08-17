@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 53 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 55 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -1198,6 +1198,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
+- [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
 - [Tenochtitlan 2021: Ámbito habla de hasta $73.000](https://notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/): Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1. Fuente: Ámbito.
 - [Hallan una moneda de Carausius en el East West Rail](https://notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…
@@ -1253,6 +1255,93 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Del quetzal de plata a los pagos electrónicos
+
+URL canónica: https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/
+
+> Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo digital.
+
+Fuente externa: [Prensa Libre](https://www.prensalibre.com/guatemala/comunitario/monedas-de-guatemala-como-han-cambiado-desde-el-quetzal-de-plata-a-los-pagos-electronicos/)
+
+Las monedas de Guatemala ya no pesan tanto en el vuelto diario: el efectivo
+cede terreno a transferencias, tarjetas y billeteras, y las piezas de metal
+pasan del bolsillo a la vitrina. **Prensa Libre** (Belinda S. Martínez, 16 de
+agosto de 2026) describe ese tránsito —del **quetzal de plata** a los
+**pagos electrónicos**— y el valor que algunas emisiones conservan entre
+coleccionistas.
+
+## De la plata 720 a las aleaciones
+
+La **Ley Monetaria** de **1924** creó el quetzal, a la par del dólar, y en
+**1925** se acuñaron **1**, **½** y **¼** de quetzal, más **10** y **5**
+centavos en plata, según la reseña del **Banco de Guatemala**. El
+**Decreto Ley 265** de **1964** fijó nuevas aleaciones. En el comercio
+numismático capitalino, **José Pinetta** (Numismática Las Argollas) resume
+la regla práctica: «de 1964 para abajo son monedas de plata». Esas piezas
+de **Q0.05**, **Q0.10** y **Q0.25** —la llamada **colección 720** por la
+ley del metal— se ofrecen desde unos **Q25** y, en muy buen estado, entre
+**Q75** y **Q200**, según el año.
+
+Las actuales de baja denominación, de emisión masiva, apenas interesan al
+mercado: a veces se venden **por kilo**. En **2008** la Junta Monetaria
+autorizó dejar de acuñar el **centavo**.
+
+## Piezas buscadas
+
+El **quetzal de 1925** (primera moneda de **Q1**) es, para Pinetta, la que
+«todo coleccionista de Guatemala quiere»: grande, impopular en su día, y
+en gran parte **fundida** por el banco. Sobrevivirían unas **3.000** piezas;
+la cotización citada ronda **US$3.000** (unos **Q23.000**). **Boris
+Herrera** (Antigüedades La Moneda) recuerda que a veces convenía más
+venderla como plata a joyeros que gastar el facial.
+
+Más arriba están los **ocho escudos** coloniales de oro (hasta unos
+**US$12.000**, según estado). Entre las modernas, el **Q1 de 1998** —
+tiradas de unas **2.000** con canto liso y **2.000** con canto estriado,
+parte aún en bóveda— se menciona hacia **Q3.500** en buen estado. Las
+conmemorativas de plata del **Bicentenario de la Independencia** y del
+**Centenario del Quetzal**, de tiraje limitado, se sitúan entre **Q1.000**
+y **Q1.200**.
+
+William Cano, del Banguat, dice que no hay plan de retirar las
+denominaciones chicas; María Antonieta Del Cid de Bonilla, expresidenta
+del banco, apunta inflación, redondeo y pagos electrónicos como causas
+del menor uso. La pandemia de **2020** aceleró lo digital, pero el
+efectivo sigue presente en muchos hogares.
+
+Más detalles en la nota original de Prensa Libre y en la reseña histórica
+del Banco de Guatemala.
+
+---
+
+### Paysandú tuvo su primer encuentro numismático
+
+URL canónica: https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/
+
+> El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.
+
+Fuente externa: [Diario El Telégrafo](https://www.eltelegrafo.com/2026/08/paysandu-tuvo-su-primer-encuentro-numismatico/)
+
+El **Espacio Cultural Gobbi** de **Paysandú** (Uruguay) fue sede del **1.º
+Encuentro Numismático** de la ciudad, según **Diario El Telégrafo**. La
+jornada reunió a coleccionistas, comerciantes, expositores y aficionados,
+con una **exposición de colecciones** y mesas para **comprar, vender e
+intercambiar** monedas, billetes y otros materiales coleccionables.
+
+## Conferencias
+
+El programa incluyó dos charlas. **Alejandro Felix** presentó *«Transnistria
+– Construir un país a través de sus monedas»*. **Gustavo Gil** abordó los
+*«Efectos Numismáticos de la Guerra del Paraguay»*.
+
+El Telégrafo subraya el cruce de historia, cultura y afición que estos
+encuentros acercan al público general: no solo el mercado de piezas, sino
+el relato que cada emisión condensa.
+
+Más información en la nota original de Diario El Telégrafo.
+
+---
 
 ### El $20 del Bicentenario se anuncia hasta en $4 millones
 
@@ -1880,7 +1969,7 @@ Fuente externa: [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-c
 Aunque la moneda de **$100** sigue en el vuelto diario, ciertas variantes —
 errores de fabricación, cambios en el diseño de los **copihues** y ensayos—
 se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
-*Meganoticias* y cuentas especializadas como **Mundo Monedas Chile**.
+*Meganoticias*, *La Hora* y cuentas especializadas como **Mundo Monedas Chile**.
 
 ## Variantes más citadas
 
@@ -1891,10 +1980,13 @@ se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
 3. **$100 de 2000 con copihues sin escudo nacional:** solo denominación y
    fecha; rango similar, **$700.000–$800.000**.
 4. **Ensayo de copihues** sin denominación ni fecha: alrededor de **$800.000**.
-   *Meganoticias* (10 ago. 2026) insiste en que se trata de una **prueba
-   técnica** de la Casa de Moneda, de tiraje muy limitado y casi imposible de
-   hallar en el vuelto; el precio final depende del estado y de la demanda
-   entre particulares.
+   *Meganoticias* (10 ago. 2026) y *La Hora* (15 ago. 2026) coinciden en que
+   es una **prueba técnica** de la Casa de Moneda —sin el **100** ni el año
+   en las caras, con grabado de copihues—, de tiraje muy limitado y casi
+   imposible de hallar en el vuelto. No hay tarifa regulada: el precio final
+   depende del estado (rayones, corrosión, desgaste) y de la demanda entre
+   particulares; *La Hora* aconseja tasación en tiendas especializadas o
+   agrupaciones de coleccionistas.
 5. **$100 de 2001 con copihues, escudo y «Mapuche»:** la versión más reconocida
    de esa serie; cerca de **$600.000** en buen estado.
 6. **$100 de 1991:** acuñación baja de su serie; valor estimado en torno a
@@ -1908,8 +2000,9 @@ puede evitar que una pieza interesante termine en el cambio. Un anuncio alto
 no equivale a una venta real: conviene contrastar con especialistas o tiendas
 de numismática.
 
-Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas)
-y [Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html).
+Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas),
+[Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html)
+y [La Hora](https://lahora.cl/tendencias/coleccionistas-ofrecen-hasta-800-000-por-esta-moneda-que-podrias-tener-en-la-cartera/).
 
 ---
 
