@@ -25,9 +25,9 @@ relatedLinks:
   - href: "/noticias/monedas-100-chilenas-copihues-coleccionistas/"
     title: "Monedas de $100 chilenas de hasta $800 mil"
     description: "Otra pieza cotidiana que el mercado trata como rareza de colección."
-  - href: "/blog/como-empezar-coleccion-billetes/"
-    title: "Cómo empezar una colección de billetes"
-    description: "Guía práctica para quienes se acercan al coleccionismo."
+  - href: "/coleccion/polimero-mundial/guatemala-1-5-quetzales/"
+    title: "Billetes de polímero de Guatemala"
+    description: "1 y 5 quetzales en el catálogo de polímero mundial."
 updatedAt: 2026-08-17
 reviewedBy: "Yezid Acosta"
 claimKind: dealer_retail
