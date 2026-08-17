@@ -6,6 +6,7 @@ import { render, type CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
 import ClaimCallout from './ClaimCallout.astro';
+import SourceCredit from './SourceCredit.astro';
 import { COLLECTIONS } from '../lib/collections';
 import { EDITORIAL_TEAM } from '../lib/editorial';
 import { isClaimKind } from '../lib/claims';
@@ -61,9 +62,13 @@ const corrections = d.corrections ?? [];
         {' '}
         <time datetime={iso} data-i18n data-en={fmtEn}>{fmt}</time>
       </span>
-      {d.source && <span aria-hidden="true">·</span>}
-      {d.source && <span>{d.source}</span>}
     </div>
+    {collection === 'noticias' && d.source && d.sourceUrl && (
+      <SourceCredit source={d.source} sourceUrl={d.sourceUrl} class="mb-3" />
+    )}
+    {collection !== 'noticias' && d.source && (
+      <p class="m-0 mb-3 text-[13px] tracking-[0.08em] uppercase text-muted">{d.source}</p>
+    )}
     <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n={titleEn ? true : undefined} data-en={titleEn}>
       {d.title}
     </h1>
@@ -120,6 +125,10 @@ const corrections = d.corrections ?? [];
     <div data-lang-panel="en" lang="en" hidden set:html={bodyEnHtml} />
   </div>
 
+  {collection === 'noticias' && d.source && d.sourceUrl && (
+    <SourceCredit source={d.source} sourceUrl={d.sourceUrl} variant="footer" />
+  )}
+
   {primarySources.length > 0 && (
     <aside class="mt-12 border-t border-line pt-8" aria-labelledby="primary-sources-heading">
       <h2 id="primary-sources-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4" data-i18n data-en="Primary sources">
@@ -171,7 +180,7 @@ const corrections = d.corrections ?? [];
     </aside>
   )}
 
-  {d.sourceUrl && (
+  {collection !== 'noticias' && d.sourceUrl && (
     <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
       <a
         class="text-muted font-semibold hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
