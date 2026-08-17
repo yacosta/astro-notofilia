@@ -31,8 +31,9 @@ const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse)
 const showMedia = isPrimary || hasSeparateFaces;
 const hideDuplicateFicha =
   record.id === 'NF.certificados-de-pago-militar.1-dolar-serie-681';
-/** Piece fichas: show structured data before the legacy scan so the first viewport is not image-only. */
-const metadataBeforeTemplate = !isPrimary && !isHub;
+const isPiece = record.kind === 'coin' || record.kind === 'banknote';
+/** Coins and banknotes open with title + scan; spec chrome follows the legacy body. */
+const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
 ---
 {
   isPrimary ? (
