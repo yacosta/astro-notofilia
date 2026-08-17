@@ -11,10 +11,10 @@
 
 # Link headers for agent/machine discovery on the homepage (RFC 8288 / RFC 9727 §3).
 /
-  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
+  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </glosario/>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
 
 /index.html
-  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </glosario-numismatico.dc.html>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
+  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </glosario/>; rel="service-doc", </sitemap.xml>; rel="describedby", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource"
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8

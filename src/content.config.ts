@@ -26,7 +26,7 @@ const postSchema = z.object({
   // How the cover is fitted: 'cover' (default, crops to a 16:9 band) or
   // 'contain' (shows the whole image at natural size — for banknote scans).
   coverFit: z.enum(['cover', 'contain']).optional(),
-  // Optional SEO keyword list for this post's <meta name="keywords">.
+  // Optional keyword list for catalog search / related terms. Not emitted as <meta name="keywords">.
   keywords: z.array(z.string()).optional(),
   // Contextual paths into related editorial, catalog, profile, or glossary pages.
   relatedLinks: z.array(z.object({
@@ -116,4 +116,32 @@ const catalog = defineCollection({
   }),
 });
 
-export const collections = { noticias, blog, logros, catalog };
+const GLOSSARY_CATEGORIES = [
+  'Coleccionismo',
+  'Conservación',
+  'Disciplina',
+  'Diseño',
+  'Emisión',
+  'Monedas y divisas',
+  'Producción',
+] as const;
+
+// Bilingual glossary — one Markdown file per term in src/content/glosario/
+// → /glosario/<slug>/. Spanish definition is the Markdown body.
+const glosario = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/glosario' }),
+  schema: z.object({
+    termEs: z.string().min(1),
+    termEn: z.string().min(1),
+    definitionEn: z.string().min(1),
+    category: z.enum(GLOSSARY_CATEGORIES),
+    source: z.enum(['site', 'suggested']),
+    seeAlso: z.array(z.string()).default([]),
+    /** Extra path segments that 301 to this term (legacy hash slugs). */
+    aliases: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).default([]),
+    /** Canonical encyclopedia URL for this term (DefinedTerm.sameAs). */
+    wikipediaUrl: z.string().url().optional(),
+  }),
+});
+
+export const collections = { noticias, blog, logros, catalog, glosario };

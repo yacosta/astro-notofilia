@@ -22,7 +22,7 @@ relatedLinks:
   - href: "/noticias/centenario-otras-8-monedas-valen-fortuna/"
     title: "El centenario y otras 8 monedas valiosas"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: catalog_valuation
 claimCurrency: USD
 claimValuationDate: 2026-07-01

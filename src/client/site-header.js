@@ -18,6 +18,10 @@
   var searchRequest = 0;
   var lastFocus = null;
 
+  function isEn() {
+    return document.documentElement.getAttribute('data-interface-lang') === 'en';
+  }
+
   function setHidden(el, hidden) {
     if (!el) return;
     if (hidden) el.setAttribute('hidden', '');
@@ -90,7 +94,11 @@
       return;
     }
     setHidden(searchResults, false);
-    if (searchResults) searchResults.innerHTML = '<span class="site-header__search-empty">Buscando…</span>';
+    if (searchResults) {
+      searchResults.innerHTML = isEn()
+        ? '<span class="site-header__search-empty">Searching…</span>'
+        : '<span class="site-header__search-empty">Buscando…</span>';
+    }
     loadPagefind()
       .then(function (pagefind) {
         return pagefind.search(term);
@@ -105,12 +113,17 @@
       .then(function (data) {
         if (request !== searchRequest || !searchResults) return;
         if (!data.length) {
-          searchResults.innerHTML =
-            '<span class="site-header__search-empty">Sin resultados para “' +
-            escapeHtml(term) +
-            '”. <a href="/buscar/?q=' +
-            encodeURIComponent(term) +
-            '">Ver página de búsqueda</a></span>';
+          searchResults.innerHTML = isEn()
+            ? '<span class="site-header__search-empty">No results for “' +
+              escapeHtml(term) +
+              '”. <a href="/buscar/?q=' +
+              encodeURIComponent(term) +
+              '">Open the search page</a></span>'
+            : '<span class="site-header__search-empty">Sin resultados para “' +
+              escapeHtml(term) +
+              '”. <a href="/buscar/?q=' +
+              encodeURIComponent(term) +
+              '">Ver página de búsqueda</a></span>';
           return;
         }
         searchResults.innerHTML = data
@@ -129,10 +142,13 @@
       })
       .catch(function () {
         if (request !== searchRequest || !searchResults) return;
-        searchResults.innerHTML =
-          '<span class="site-header__search-empty">No se pudo cargar la búsqueda. <a href="/buscar/?q=' +
-          encodeURIComponent(term) +
-          '">Ir a /buscar/</a></span>';
+        searchResults.innerHTML = isEn()
+          ? '<span class="site-header__search-empty">Search could not be loaded. <a href="/buscar/?q=' +
+            encodeURIComponent(term) +
+            '">Go to /buscar/</a></span>'
+          : '<span class="site-header__search-empty">No se pudo cargar la búsqueda. <a href="/buscar/?q=' +
+            encodeURIComponent(term) +
+            '">Ir a /buscar/</a></span>';
       });
   }
 

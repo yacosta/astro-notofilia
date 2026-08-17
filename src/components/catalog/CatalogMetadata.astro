@@ -3,12 +3,16 @@
  * Structured metadata definition list for a catalog record.
  */
 import { metadataRows, type CatalogRecord } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
+  /** Keep markup for crawlers/citation, hide the visual duplicate of the spec table. */
+  visuallyHidden?: boolean;
 }
 
-const { record } = Astro.props;
+const { record, visuallyHidden = false } = Astro.props;
 const rows = metadataRows(record.metadata, {
   country: record.country,
   issuer: record.issuer,
@@ -16,21 +20,46 @@ const rows = metadataRows(record.metadata, {
 ---
 {
   rows.length > 0 && (
-    <section class="catalog-record-meta" aria-labelledby="catalog-meta-heading">
+    <section
+      class:list={['catalog-record-meta', visuallyHidden && 'catalog-record-meta--visually-hidden']}
+      aria-labelledby={visuallyHidden ? undefined : 'catalog-meta-heading'}
+      aria-hidden={visuallyHidden ? 'true' : undefined}
+    >
       <h2
         id="catalog-meta-heading"
         class="m-0 mb-4 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+        data-i18n
+        data-en={UI.catalogMeta.en}
       >
-        Datos de la ficha
+        {UI.catalogMeta.es}
       </h2>
       <dl class="m-0 grid gap-0 border-t border-line">
         {
-          rows.map((row) => (
+          rows.map((row) => {
+            const labelEn = METADATA_LABEL_EN[row.label] ?? lookupEn(row.label);
+            const valueEn = row.unconfirmed
+              ? UI.unconfirmed.en
+              : (STATUS_LABEL_EN[row.value] ?? lookupEn(row.value));
+            return (
             <div class="grid grid-cols-1 sm:grid-cols-[minmax(10rem,14rem)_1fr] gap-1 sm:gap-4 py-3 border-b border-line">
-              <dt class="m-0 text-[13px] tracking-[0.08em] uppercase text-muted">{row.label}</dt>
-              <dd class="m-0 text-[16px] leading-[1.55] text-cream-dim">{row.value}</dd>
+              <dt
+                class="m-0 text-[13px] tracking-[0.08em] uppercase text-muted"
+                data-i18n={labelEn ? true : undefined}
+                data-en={labelEn}
+              >{row.label}</dt>
+              <dd
+                class:list={[
+                  'm-0 text-[16px] leading-[1.55] text-cream-dim',
+                  row.unconfirmed && 'italic',
+                ]}
+                data-i18n={valueEn ? true : undefined}
+                data-en={valueEn}
+              >
+                {row.unconfirmed ? UI.unconfirmed.es : row.value}
+              </dd>
             </div>
-          ))
+            );
+          })
         }
       </dl>
     </section>

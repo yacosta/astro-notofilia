@@ -3,6 +3,8 @@
   "name": "notofilia",
   "compatibility_date": "2026-07-06",
   // Astro builds the static site into dist/; Cloudflare Pages serves it.
+  // Build command (Git-connected Pages): `npm run build`
+  // (`npm run build` ends with the Mustache guard so unresolved {{ }} cannot deploy).
   "pages_build_output_dir": "dist",
   "d1_databases": [
     {

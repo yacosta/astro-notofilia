@@ -1,63 +1,17 @@
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  HUB_PATHS,
+  computeInventoryStats,
+  normalizeCatalogCountry,
+} from '../src/lib/catalog-inventory.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const OUT_DIR = path.join(ROOT, 'public/data');
 const OUT_FILE = path.join(OUT_DIR, 'catalog-index.json');
 const SITE = 'https://notofilia.com';
-
-const POLYMER_COUNTRY = {
-  bangladesh: 'Bangladesh',
-  brazil: 'Brasil',
-  brasil: 'Brasil',
-  brunei: 'Brunéi',
-  bulgaria: 'Bulgaria',
-  catar: 'Catar',
-  chile: 'Chile',
-  'costa-rica': 'Costa Rica',
-  guatemala: 'Guatemala',
-  haiti: 'Haití',
-  honduras: 'Honduras',
-  'hong-kong': 'Hong Kong',
-  'islas-salomon': 'Islas Salomón',
-  kazajistan: 'Kazajistán',
-  malasia: 'Malasia',
-  mexico: 'México',
-  mozambique: 'Mozambique',
-  nepal: 'Nepal',
-  nicaragua: 'Nicaragua',
-  nigeria: 'Nigeria',
-  oman: 'Omán',
-  'papua-nueva-guinea': 'Papúa Nueva Guinea',
-  'republica-dominicana': 'República Dominicana',
-  rumania: 'Rumania',
-  samoa: 'Samoa',
-  'sri-lanka': 'Sri Lanka',
-  suazilandia: 'Suazilandia',
-  taiwan: 'Taiwán',
-  zambia: 'Zambia',
-};
-
-const HUB_PATHS = new Set([
-  '/coleccion/billete-obsoleto-estados-unidos/',
-  '/coleccion/reserva-federal/',
-  '/coleccion/departamento-del-tesoro-de-ee-uu/',
-  '/coleccion/moneda-colonial/',
-  '/coleccion/colombia/',
-  '/coleccion/colombia/banca-libre/',
-  '/coleccion/colombia/emisiones-en-el-extranjero/',
-  '/coleccion/puerto-rico/',
-  '/coleccion/ecuador/',
-  '/coleccion/moneda-colonial-espanola/',
-  '/coleccion/numismatica/',
-  '/coleccion/polimero-mundial/',
-  '/coleccion/pop-art/',
-  '/coleccion/certificados-de-pago-militar/',
-  '/coleccion/emisiones-promocionales/',
-  '/coleccion/food-coupons-usda/',
-]);
 
 function decodeEntities(value = '') {
   return value
@@ -80,7 +34,10 @@ function decodeEntities(value = '') {
 }
 
 function stripTags(html = '') {
-  return decodeEntities(html.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+  return decodeEntities(html.replace(/<[^>]+>/g, ' '))
+    .replace(/\(\s*se abre en una pestaña nueva\s*\)/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function fact(html, label) {
@@ -103,61 +60,7 @@ function fact(html, label) {
 }
 
 function normalizeCountry(raw, catalogPath) {
-  const segs = catalogPath.split('/').filter(Boolean);
-  const section = segs[1] || '';
-  if (section === 'colombia') return 'Colombia';
-  if (section === 'puerto-rico') return 'Puerto Rico';
-  if (section === 'ecuador') return 'Ecuador';
-  if (section === 'moneda-colonial-espanola') return 'España';
-  if (section === 'polimero-mundial') {
-    const slug = segs[2] || '';
-    const known = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
-    for (const key of known) {
-      if (slug === key || slug.startsWith(`${key}-`)) return POLYMER_COUNTRY[key];
-    }
-  }
-  if (
-    [
-      'certificados-de-pago-militar',
-      'reserva-federal',
-      'departamento-del-tesoro-de-ee-uu',
-      'moneda-colonial',
-      'emisiones-promocionales',
-      'food-coupons-usda',
-      'pop-art',
-      'billete-obsoleto-estados-unidos',
-    ].includes(section)
-  ) {
-    return 'Estados Unidos';
-  }
-
-  const text = (raw || '').trim();
-  const lower = text.toLowerCase();
-  if (
-    lower.includes('estados unidos de colombia') ||
-    lower.includes('estados unidos de nueva granada') ||
-    lower.includes('nueva granada') ||
-    lower.startsWith('colombia') ||
-    lower.includes('república de colombia')
-  ) {
-    return 'Colombia';
-  }
-  if (
-    lower.includes('estados unidos') ||
-    lower.includes('ee. uu') ||
-    lower.includes('ee uu')
-  ) {
-    return 'Estados Unidos';
-  }
-  if (lower.includes('puerto rico')) return 'Puerto Rico';
-  if (lower.includes('ecuador')) return 'Ecuador';
-  if (lower.includes('guatemala')) return 'Guatemala';
-  if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
-  if (lower.includes('españa')) return 'España';
-
-  // Flat U.S. leaves under /coleccion/<slug>/
-  if (segs.length >= 2 && !HUB_PATHS.has(catalogPath)) return 'Estados Unidos';
-  return text || 'Otros';
+  return normalizeCatalogCountry(raw, catalogPath);
 }
 
 function normalizeMaterial(raw, pathValue, keywords, kind) {
@@ -213,6 +116,7 @@ const files = (await readdir(CATALOG_DIR)).filter((f) => f.endsWith('.json')).so
 const items = [];
 const hubs = [];
 const countryCounts = new Map();
+const inventoryEntries = [];
 
 for (const file of files) {
   const raw = await readFile(path.join(CATALOG_DIR, file), 'utf8');
@@ -223,6 +127,16 @@ for (const file of files) {
     continue;
   }
   if (!data.path || !data.title) continue;
+
+  inventoryEntries.push({
+    path: data.path,
+    title: data.title,
+    ogType: data.ogType,
+    template: data.template,
+    jsonLd: data.jsonLd,
+    record: data.record,
+    keywords: Array.isArray(data.keywords) ? data.keywords : [],
+  });
 
   const id = file.replace(/\.json$/, '');
   const keywords = Array.isArray(data.keywords) ? data.keywords : [];
@@ -264,16 +178,18 @@ for (const file of files) {
     fact(template, 'País') ||
     fact(template, 'País / Virreinato');
   const issuer =
-    fact(template, 'Entidad Emisora') ||
-    fact(template, 'Ceca / Ensayador') ||
-    data.record?.issuer ||
     data.record?.metadata?.issuer ||
+    data.record?.issuer ||
+    fact(template, 'Entidad Emisora') ||
+    fact(template, 'Entidad emisora') ||
+    fact(template, 'Ceca / Ensayador') ||
     '';
-  const denomination = fact(template, 'Denominación') || data.record?.metadata?.denomination || '';
+  const denomination = data.record?.metadata?.denomination || fact(template, 'Denominación') || '';
   const catalogRef =
-    fact(template, 'Referencia de Catálogo') ||
-    fact(template, 'Referencias catalográficas') ||
     data.record?.metadata?.catalogNumber ||
+    fact(template, 'Referencia de Catálogo') ||
+    fact(template, 'Referencia de catálogo') ||
+    fact(template, 'Referencias catalográficas') ||
     '';
   const condition = fact(template, 'Condición');
   const emissionType = fact(template, 'Tipo de Emisión');
@@ -332,6 +248,8 @@ const countries = [...countryCounts.entries()]
   .map(([name, count]) => ({ name, count, slug: name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') }))
   .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'es'));
 
+const stats = computeInventoryStats(inventoryEntries);
+
 await mkdir(OUT_DIR, { recursive: true });
 await writeFile(
   OUT_FILE,
@@ -339,7 +257,8 @@ await writeFile(
     {
       generatedAt: new Date().toISOString(),
       count: items.length,
-      pieceCount: items.filter((i) => i.role === 'piece').length,
+      pieceCount: stats.fichas,
+      stats,
       countries,
       hubs,
       items,
@@ -350,5 +269,5 @@ await writeFile(
 );
 
 console.log(
-  `Wrote ${items.length} catalog entries (${countries.length} countries) to ${path.relative(ROOT, OUT_FILE)}`,
+  `Wrote ${items.length} catalog entries (${stats.paises} countries, ${stats.fichas} fichas, ${stats.billetes} billetes) to ${path.relative(ROOT, OUT_FILE)}`,
 );

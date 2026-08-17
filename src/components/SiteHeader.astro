@@ -3,7 +3,8 @@
  * Native site header — server-rendered navigation with a lightweight drawer
  * and Pagefind loaded only when search is opened.
  */
-import { PRIMARY_LINKS, NAV_SECTIONS } from '../lib/nav';
+import { CONTACT_LINK, DRAWER_PRIMARY_LINKS, GLOSSARY_LINK, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
+import { lookupEn } from '../lib/html-i18n';
 
 export interface Props {
   /** When true, header overlays the hero (homepage). Otherwise in normal flow. */
@@ -20,7 +21,7 @@ const { overlay = false } = Astro.props;
   <nav class="site-header__bar" aria-label="Navegación principal">
     <a class="site-header__brand" href="/">
       <span class="site-header__brand-name">NOTOFILIA</span>
-      <span class="site-header__brand-tag">Numismática y Notafilia</span>
+      <span class="site-header__brand-tag" data-i18n data-en="Numismatics and Notaphily">Numismática y Notafilia</span>
     </a>
 
     <div class="site-header__search">
@@ -31,6 +32,9 @@ const { overlay = false } = Astro.props;
         aria-expanded="false"
         aria-controls="site-search-panel"
         aria-label="Abrir búsqueda"
+        data-i18n
+        data-i18n-target="aria-label"
+        data-en="Open search"
       >
         <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.3"></circle>
@@ -39,29 +43,64 @@ const { overlay = false } = Astro.props;
       </button>
       <div id="site-search-panel" class="site-header__search-panel" hidden>
         <form class="site-header__search-form" action="/buscar/" method="get" role="search">
-          <label class="sr-only" for="site-search-input">Buscar en el sitio</label>
+          <label class="sr-only" for="site-search-input" data-i18n data-en="Search the site">Buscar en el sitio</label>
           <input
             id="site-search-input"
             name="q"
             type="search"
             placeholder="Buscar billetes, perfiles…"
+            data-i18n
+            data-i18n-target="placeholder"
+            data-en="Search banknotes, profiles…"
             autocomplete="off"
             enterkeyhint="search"
           />
-          <button type="submit">Buscar</button>
+          <button type="submit" data-i18n data-en="Search">Buscar</button>
         </form>
         <div
           id="site-search-results"
           class="site-header__search-results"
           role="listbox"
           aria-label="Resultados de búsqueda"
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en="Search results"
           hidden
         ></div>
       </div>
     </div>
 
     <div class="site-header__actions">
-      <a class="site-header__coleccion-link" href="/coleccion/">Colección</a>
+      <a
+        class="site-header__coleccion-link"
+        href="/coleccion/"
+        data-i18n
+        data-en="Collection"
+      >Colección</a>
+      <div
+        class="site-header__lang"
+        role="group"
+        aria-label="Idioma de la interfaz / Interface language"
+      >
+        <span id="interface-lang-label" class="sr-only">Idioma de la interfaz</span>
+        <button
+          id="lang-es"
+          type="button"
+          class="site-header__lang-btn is-active"
+          aria-pressed="true"
+          aria-describedby="interface-lang-label"
+          aria-label="Interfaz en español"
+        >ES</button>
+        <button
+          id="lang-en"
+          type="button"
+          class="site-header__lang-btn"
+          aria-pressed="false"
+          aria-describedby="interface-lang-label"
+          aria-label="Interface in English"
+          lang="en"
+        >EN</button>
+      </div>
       <button
         type="button"
         id="site-menu-toggle"
@@ -70,6 +109,9 @@ const { overlay = false } = Astro.props;
         aria-controls="site-menu-drawer"
         aria-haspopup="dialog"
         aria-label="Abrir menú"
+        data-i18n
+        data-i18n-target="aria-label"
+        data-en="Open menu"
       >
         <span></span>
         <span></span>
@@ -87,17 +129,27 @@ const { overlay = false } = Astro.props;
     role="dialog"
     aria-modal="true"
     aria-label="Menú del sitio"
+    data-i18n
+    data-i18n-target="aria-label"
+    data-en="Site menu"
     hidden
   >
     <div class="site-header__drawer-head">
       <span>NOTOFILIA</span>
-      <button type="button" id="site-menu-close" aria-label="Cerrar menú">&times;</button>
+      <button
+        type="button"
+        id="site-menu-close"
+        aria-label="Cerrar menú"
+        data-i18n
+        data-i18n-target="aria-label"
+        data-en="Close menu"
+      >&times;</button>
     </div>
 
     <ul class="site-header__primary">
-      {PRIMARY_LINKS.map((link) => (
+      {DRAWER_PRIMARY_LINKS.map((link) => (
         <li>
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} data-i18n={link.labelEn ? true : undefined} data-en={link.labelEn}>{link.label}</a>
         </li>
       ))}
     </ul>
@@ -106,16 +158,27 @@ const { overlay = false } = Astro.props;
       {NAV_SECTIONS.map((section) => (
         <details class="site-header__accordion" id={`nav-sec-${section.id}`}>
           <summary>
-            <span class="site-header__accordion-label">{section.label}</span>
+            <span class="site-header__accordion-label" data-i18n={section.labelEn ? true : undefined} data-en={section.labelEn}>{section.label}</span>
             <span class="site-header__caret" aria-hidden="true">▾</span>
           </summary>
           <div class="site-header__accordion-panel">
-            {section.description && <p class="site-header__accordion-desc">{section.description}</p>}
+            {section.description && (
+              <p
+                class="site-header__accordion-desc"
+                data-i18n={(section.descriptionEn || lookupEn(section.description)) ? true : undefined}
+                data-en={section.descriptionEn || lookupEn(section.description)}
+              >{section.description}</p>
+            )}
             {section.links.length > 0 && (
               <ul>
                 {section.links.map((link) => (
                   <li>
-                    <a class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]} href={link.href}>
+                    <a
+                      class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                      href={link.href}
+                      data-i18n={(link.labelEn || lookupEn(link.label)) ? true : undefined}
+                      data-en={link.labelEn || lookupEn(link.label)}
+                    >
                       {link.label}
                     </a>
                   </li>
@@ -125,13 +188,18 @@ const { overlay = false } = Astro.props;
             {section.groups?.map((group) => (
               <details class="site-header__accordion site-header__accordion--nested" id={`nav-sec-${group.id}`}>
                 <summary>
-                  <span class="site-header__accordion-label">{group.label}</span>
+                  <span class="site-header__accordion-label" data-i18n={(group.labelEn || lookupEn(group.label)) ? true : undefined} data-en={group.labelEn || lookupEn(group.label)}>{group.label}</span>
                   <span class="site-header__caret" aria-hidden="true">▾</span>
                 </summary>
                 <ul>
                   {group.links.map((link) => (
                     <li>
-                      <a class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]} href={link.href}>
+                      <a
+                        class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                        href={link.href}
+                        data-i18n={(link.labelEn || lookupEn(link.label)) ? true : undefined}
+                        data-en={link.labelEn || lookupEn(link.label)}
+                      >
                         {link.label}
                       </a>
                     </li>
@@ -143,6 +211,15 @@ const { overlay = false } = Astro.props;
         </details>
       ))}
     </div>
+
+    <ul class="site-header__primary site-header__primary--last">
+      <li>
+        <a href={GLOSSARY_LINK.href} data-i18n data-en={GLOSSARY_LINK.labelEn}>{GLOSSARY_LINK.label}</a>
+      </li>
+      <li>
+        <a href={CONTACT_LINK.href} data-i18n data-en={CONTACT_LINK.labelEn}>{CONTACT_LINK.label}</a>
+      </li>
+    </ul>
   </div>
 </header>
 
@@ -152,13 +229,14 @@ const { overlay = false } = Astro.props;
   <nav class="site-header__noscript" aria-label="Enlaces principales sin JavaScript">
     <ul>
       {PRIMARY_LINKS.map((link) => (
-        <li><a href={link.href}>{link.label}</a></li>
+        <li><a href={link.href} data-i18n={link.labelEn ? true : undefined} data-en={link.labelEn}>{link.label}</a></li>
       ))}
     </ul>
   </nav>
 </noscript>
 
 <script src="../client/site-header.js"></script>
+<script src="../client/interface-lang.js"></script>
 
 <style>
   .sr-only {
@@ -258,6 +336,35 @@ const { overlay = false } = Astro.props;
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+  .site-header__lang {
+    display: flex;
+    align-items: center;
+    background: rgba(10, 10, 9, 0.35);
+    border: 1px solid rgba(231, 222, 201, 0.35);
+    border-radius: 999px;
+    padding: 3px;
+  }
+  .site-header__lang-btn {
+    border: none;
+    background: transparent;
+    color: #e7ddc4;
+    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    padding: 0 16px;
+    min-height: 44px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .site-header__lang-btn.is-active {
+    background: rgba(231, 222, 201, 0.92);
+    color: #0a0a09;
+  }
+  .site-header__lang-btn:focus-visible {
+    outline: 2px solid #e7ddc4;
+    outline-offset: 2px;
   }
   .site-header__coleccion-link {
     display: inline-flex;
@@ -418,6 +525,12 @@ const { overlay = false } = Astro.props;
     text-transform: uppercase;
     border-bottom: 1px solid rgba(10, 10, 9, 0.08);
   }
+  .site-header__primary--last {
+    border-top: 1px solid rgba(10, 10, 9, 0.08);
+  }
+  .site-header__primary--last a {
+    border-bottom: 0;
+  }
   .site-header__primary a:hover,
   .site-header__accordion a:hover {
     color: #5c4e33;
@@ -547,5 +660,6 @@ const { overlay = false } = Astro.props;
     .site-header__brand-tag { display: none; }
     .site-header__brand-name { font-size: 22px; }
     .site-header__coleccion-link { display: none; }
+    .site-header__lang-btn { padding: 0 12px; }
   }
 </style>

@@ -10,13 +10,20 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import CookieBanner from '../../components/CookieBanner.astro';
 import PreFooter from '../../components/PreFooter.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import { lookupEn } from '../../lib/html-i18n';
 import { SITE } from '../../lib/site';
 import {
   FEATURED_ENTRIES,
   RECENT_PIECES,
   hubLead,
-  hubStats,
+  hubLeadEn,
 } from '../../lib/catalog-hub';
+import {
+  getCollectionStats,
+  INVENTORY_VOCABULARY_ES,
+  INVENTORY_VOCABULARY_EN,
+  inventoryProperties,
+} from '../../lib/stats';
 
 const catalogIndex = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), 'public/data/catalog-index.json'), 'utf8'),
@@ -30,20 +37,12 @@ const catalogIndex = JSON.parse(
   }>;
 };
 
-const stats = hubStats();
+const stats = await getCollectionStats();
 const lead = hubLead(stats);
+const leadEn = hubLeadEn(stats);
 const title = 'Colección Virtual de Billetes y Monedas | Notofilia';
 const description =
-  `Explora ${stats.banknotes} billetes y ${stats.coins} monedas de ${stats.countries} países: imágenes, historia y referencias de catálogo.`;
-const keywords = [
-  'colección virtual billetes',
-  'catálogo numismático',
-  'billetes del mundo',
-  'monedas coloniales',
-  'notafilia',
-  'numismática',
-  'colección de billetes',
-];
+  `Explora ${stats.billetes} billetes en ${stats.fichas} fichas y ${stats.monedas} monedas de ${stats.paises} países.`;
 
 const countries = catalogIndex.countries ?? [];
 const catalogItems = catalogIndex.items ?? [];
@@ -125,13 +124,14 @@ const jsonLd = {
           name: 'Disponibilidad',
           value: 'No está a la venta — colección privada documentada',
         },
+        ...inventoryProperties(stats),
       ],
     },
     {
       '@type': 'ItemList',
       '@id': `${SITE}/coleccion/#itemlist`,
       name: 'Índice de catálogos por país y tema',
-      numberOfItems: countries.length,
+      numberOfItems: stats.paises,
       itemListElement: countryList,
     },
   ],
@@ -144,7 +144,6 @@ const jsonLd = {
       title={title}
       description={description}
       path="/coleccion/"
-      keywords={keywords}
       robots="index, follow, max-image-preview:large"
       ogType="website"
       ogTitle="Colección Virtual de Billetes y Monedas — Notofilia"
@@ -194,7 +193,7 @@ const jsonLd = {
         line-height: 1.05;
         color: #d8d2cd;
         margin: 0 0 20px;
-        max-width: 18ch;
+        max-width: 28ch;
       }
       .hub-lead {
         font-size: clamp(18px, 1.8vw, 21px);
@@ -590,56 +589,64 @@ const jsonLd = {
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+      data-i18n
+      data-en="Skip to main content"
     >Saltar al contenido principal</a>
 
     <SiteHeader />
 
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/">
-        <h1>Colección Virtual de Billetes y Monedas</h1>
-        <p class="hub-lead">{lead}</p>
+        <h1 data-i18n data-en={`Virtual Collection: ${stats.billetes} banknotes and ${stats.monedas} coins from ${stats.paises} countries`}>Colección Virtual: {stats.billetes} billetes y {stats.monedas} monedas de {stats.paises} países</h1>
+        <p class="hub-lead" data-i18n data-en={leadEn}>{lead}</p>
+        <p class="hub-lead" style="margin-top:-24px; font-size:17px; color:#b7ab8a;" data-i18n data-en={INVENTORY_VOCABULARY_EN}>
+          {INVENTORY_VOCABULARY_ES}
+        </p>
 
         <ul class="featured-grid" style="margin: 0 0 40px;">
           <li>
             <a href="/coleccion/numismatica/">
-              <span class="featured-title">Catálogo de numismática</span>
-              <span class="featured-desc">Monedas acuñadas: oro colonial de Santa Fe de Bogotá.</span>
+              <span class="featured-title" data-i18n data-en="Numismatics catalog">Catálogo de numismática</span>
+              <span class="featured-desc" data-i18n data-en="Struck coins: colonial gold from Santa Fe de Bogotá.">Monedas acuñadas: oro colonial de Santa Fe de Bogotá.</span>
             </a>
           </li>
           <li>
             <a href="#explorar">
-              <span class="featured-title">Catálogo de notafilia</span>
-              <span class="featured-desc">Billetes, specimens, errores y papel moneda del mundo.</span>
+              <span class="featured-title" data-i18n data-en="Notaphily catalog">Catálogo de notafilia</span>
+              <span class="featured-desc" data-i18n data-en="Banknotes, specimens, errors, and paper money of the world.">Billetes, specimens, errores y papel moneda del mundo.</span>
             </a>
           </li>
         </ul>
 
         <form class="hub-search" action="/coleccion/" method="get" role="search">
-          <label class="sr-only" for="catalog-search-hero">Buscar en la colección</label>
+          <label class="sr-only" for="catalog-search-hero" data-i18n data-en="Search the collection">Buscar en la colección</label>
           <input
             id="catalog-search-hero"
             type="search"
             name="q"
             value={selectedQ}
             placeholder="Buscar país, emisor, Pick, Friedberg, denominación…"
+            data-i18n
+            data-i18n-target="placeholder"
+            data-en="Search country, issuer, Pick, Friedberg, denomination…"
             autocomplete="off"
             enterkeyhint="search"
           />
-          <button type="submit">Buscar</button>
+          <button type="submit" data-i18n data-en="Search">Buscar</button>
         </form>
 
         <section class="hub-section" aria-labelledby="featured-heading">
-          <span class="hub-kicker">Accesos destacados</span>
-          <h2 id="featured-heading">Colecciones y temas</h2>
-          <p class="hub-section-lead">
+          <span class="hub-kicker" data-i18n data-en="Featured entry points">Accesos destacados</span>
+          <h2 id="featured-heading" data-i18n data-en="Collections and themes">Colecciones y temas</h2>
+          <p class="hub-section-lead" data-i18n data-en="Enter by country, material, or type without scrolling the whole index.">
             Entra por país, material o tipología sin recorrer todo el índice.
           </p>
           <ul class="featured-grid">
             {FEATURED_ENTRIES.map((entry) => (
               <li>
                 <a href={entry.href}>
-                  <span class="featured-title">{entry.title}</span>
-                  <span class="featured-desc">{entry.description}</span>
+                  <span class="featured-title" data-i18n data-en={entry.titleEn}>{entry.title}</span>
+                  <span class="featured-desc" data-i18n data-en={entry.descriptionEn}>{entry.description}</span>
                 </a>
               </li>
             ))}
@@ -647,10 +654,10 @@ const jsonLd = {
         </section>
 
         <section class="hub-section" aria-labelledby="countries-heading">
-          <span class="hub-kicker">Por país</span>
-          <h2 id="countries-heading">Países en la colección</h2>
-          <p class="hub-section-lead">
-            {countries.length} países con fichas documentadas. El filtro abre el explorador abajo.
+          <span class="hub-kicker" data-i18n data-en="By country">Por país</span>
+          <h2 id="countries-heading" data-i18n data-en="Countries in the collection">Países en la colección</h2>
+          <p class="hub-section-lead" data-i18n data-en={`${stats.paises} countries with documented records. The filter opens the browser below.`}>
+            {stats.paises} países con fichas documentadas. El filtro abre el explorador abajo.
           </p>
           <ul class="country-grid">
             {countries.map((c) => (
@@ -659,8 +666,8 @@ const jsonLd = {
                   href={`/coleccion/?pais=${encodeURIComponent(c.name)}#explorar`}
                   data-filter-pais={c.name}
                 >
-                  <span class="country-name">{c.name}</span>
-                  <span class="country-count">
+                  <span class="country-name" data-i18n={lookupEn(c.name) ? true : undefined} data-en={lookupEn(c.name)}>{c.name}</span>
+                  <span class="country-count" data-i18n data-en={c.count === 1 ? '1 record' : `${c.count} records`}>
                     {c.count === 1 ? '1 ficha' : `${c.count} fichas`}
                   </span>
                 </a>
@@ -670,9 +677,9 @@ const jsonLd = {
         </section>
 
         <section class="hub-section" aria-labelledby="recent-heading">
-          <span class="hub-kicker">Recientes</span>
-          <h2 id="recent-heading">Piezas añadidas recientemente</h2>
-          <p class="hub-section-lead">
+          <span class="hub-kicker" data-i18n data-en="Recent">Recientes</span>
+          <h2 id="recent-heading" data-i18n data-en="Recently added pieces">Piezas añadidas recientemente</h2>
+          <p class="hub-section-lead" data-i18n data-en="Recent highlights from the Virtual Collection.">
             Destacados recientes de la Colección Virtual.
           </p>
           <ul class="recent-grid">
@@ -694,8 +701,8 @@ const jsonLd = {
                       decoding="async"
                     />
                   </picture>
-                  <span class="recent-title">{item.title}</span>
-                  <span class="recent-desc">{item.description}</span>
+                  <span class="recent-title" data-i18n data-en={item.titleEn}>{item.title}</span>
+                  <span class="recent-desc" data-i18n data-en={item.descriptionEn}>{item.description}</span>
                 </a>
               </li>
             ))}
@@ -703,9 +710,9 @@ const jsonLd = {
         </section>
 
         <section class="hub-section" id="explorar" aria-labelledby="browse-heading">
-          <span class="hub-kicker">Explorar</span>
-          <h2 id="browse-heading">Catálogo completo</h2>
-          <p class="hub-section-lead">
+          <span class="hub-kicker" data-i18n data-en="Browse">Explorar</span>
+          <h2 id="browse-heading" data-i18n data-en="Full catalog">Catálogo completo</h2>
+          <p class="hub-section-lead" data-i18n data-en="Pieces are grouped by country. Filter by issuer, year, denomination, type, material, condition, and catalog reference.">
             Las piezas se agrupan por país. Filtra por emisor, año, denominación, tipo, material, condición y referencia de catálogo.
           </p>
 
@@ -713,55 +720,58 @@ const jsonLd = {
             <form id="catalog-filters" class="filter-toolbar" action="/coleccion/" method="get">
               <div class="filter-grid">
                 <div class="filter-field" style="grid-column: 1 / -1;">
-                  <label for="catalog-search">Búsqueda</label>
+                  <label for="catalog-search" data-i18n data-en="Search">Búsqueda</label>
                   <input
                     id="catalog-search"
                     name="q"
                     type="search"
                     value={selectedQ}
                     placeholder="Texto libre…"
+                    data-i18n
+                    data-i18n-target="placeholder"
+                    data-en="Free text…"
                     autocomplete="off"
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-pais">País</label>
+                  <label for="filter-pais" data-i18n data-en="Country">País</label>
                   <select id="filter-pais" name="pais">
-                    <option value="">Todos</option>
+                    <option value="" data-i18n data-en="All">Todos</option>
                     {countryOptions.map((name) => (
                       <option value={name} selected={selectedPais === name}>{name}</option>
                     ))}
                   </select>
                 </div>
                 <div class="filter-field">
-                  <label for="filter-emisor">Emisor</label>
+                  <label for="filter-emisor" data-i18n data-en="Issuer">Emisor</label>
                   <select id="filter-emisor" name="emisor">
-                    <option value="">Todos</option>
+                    <option value="" data-i18n data-en="All">Todos</option>
                     {issuerOptions.map((name) => (
                       <option value={name} selected={selectedEmisor === name}>{name}</option>
                     ))}
                   </select>
                 </div>
                 <div class="filter-field">
-                  <label for="filter-tipo">Tipo</label>
+                  <label for="filter-tipo" data-i18n data-en="Type">Tipo</label>
                   <select id="filter-tipo" name="tipo">
                     <option value="" selected={selectedTipo === ''}>Todos</option>
-                    <option value="banknote" selected={selectedTipo === 'banknote'}>Billete</option>
-                    <option value="coin" selected={selectedTipo === 'coin'}>Moneda</option>
+                    <option value="banknote" selected={selectedTipo === 'banknote'} data-i18n data-en="Banknote">Billete</option>
+                    <option value="coin" selected={selectedTipo === 'coin'} data-i18n data-en="Coin">Moneda</option>
                     <option value="specimen" selected={selectedTipo === 'specimen'}>Specimen</option>
-                    <option value="error" selected={selectedTipo === 'error'}>Error</option>
+                    <option value="error" selected={selectedTipo === 'error'} data-i18n data-en="Error">Error</option>
                   </select>
                 </div>
                 <div class="filter-field">
-                  <label for="filter-material">Material</label>
+                  <label for="filter-material" data-i18n data-en="Material">Material</label>
                   <select id="filter-material" name="material">
-                    <option value="">Todos</option>
+                    <option value="" data-i18n data-en="All">Todos</option>
                     {materialOptions.map((name) => (
                       <option value={name} selected={selectedMaterial === name}>{name}</option>
                     ))}
                   </select>
                 </div>
                 <div class="filter-field">
-                  <label for="filter-desde">Año desde</label>
+                  <label for="filter-desde" data-i18n data-en="Year from">Año desde</label>
                   <input
                     id="filter-desde"
                     name="desde"
@@ -774,7 +784,7 @@ const jsonLd = {
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-hasta">Año hasta</label>
+                  <label for="filter-hasta" data-i18n data-en="Year to">Año hasta</label>
                   <input
                     id="filter-hasta"
                     name="hasta"
@@ -787,7 +797,7 @@ const jsonLd = {
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-denom">Denominación</label>
+                  <label for="filter-denom" data-i18n data-en="Denomination">Denominación</label>
                   <input
                     id="filter-denom"
                     name="denom"
@@ -797,7 +807,7 @@ const jsonLd = {
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-condicion">Condición</label>
+                  <label for="filter-condicion" data-i18n data-en="Condition">Condición</label>
                   <input
                     id="filter-condicion"
                     name="condicion"
@@ -807,7 +817,7 @@ const jsonLd = {
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-catalogo">Referencia de catálogo</label>
+                  <label for="filter-catalogo" data-i18n data-en="Catalog reference">Referencia de catálogo</label>
                   <input
                     id="filter-catalogo"
                     name="catalogo"
@@ -817,28 +827,28 @@ const jsonLd = {
                   />
                 </div>
                 <div class="filter-field">
-                  <label for="filter-orden">Orden</label>
+                  <label for="filter-orden" data-i18n data-en="Sort">Orden</label>
                   <select id="filter-orden" name="orden">
-                    <option value="newest" selected={selectedOrden === 'newest'}>Más recientes (año)</option>
-                    <option value="year" selected={selectedOrden === 'year'}>Fecha de emisión</option>
-                    <option value="country" selected={selectedOrden === 'country'}>País</option>
-                    <option value="denom" selected={selectedOrden === 'denom'}>Denominación</option>
+                    <option value="newest" selected={selectedOrden === 'newest'} data-i18n data-en="Newest (year)">Más recientes (año)</option>
+                    <option value="year" selected={selectedOrden === 'year'} data-i18n data-en="Issue date">Fecha de emisión</option>
+                    <option value="country" selected={selectedOrden === 'country'} data-i18n data-en="Country">País</option>
+                    <option value="denom" selected={selectedOrden === 'denom'} data-i18n data-en="Denomination">Denominación</option>
                   </select>
                 </div>
               </div>
               <div class="filter-actions">
-                <button type="button" id="catalog-clear-filters">Limpiar filtros</button>
-                <div class="view-toggle" role="group" aria-label="Vista de resultados">
-                  <button type="button" data-view="grid" aria-pressed={selectedVista === 'grid' ? 'true' : 'false'}>Cuadrícula</button>
-                  <button type="button" data-view="list" aria-pressed={selectedVista === 'list' ? 'true' : 'false'}>Lista</button>
+                <button type="button" id="catalog-clear-filters" data-i18n data-en="Clear filters">Limpiar filtros</button>
+                <div class="view-toggle" role="group" aria-label="Vista de resultados" data-i18n data-i18n-target="aria-label" data-en="Results view">
+                  <button type="button" data-view="grid" aria-pressed={selectedVista === 'grid' ? 'true' : 'false'} data-i18n data-en="Grid">Cuadrícula</button>
+                  <button type="button" data-view="list" aria-pressed={selectedVista === 'list' ? 'true' : 'false'} data-i18n data-en="List">Lista</button>
                 </div>
               </div>
             </form>
 
             <div class="result-meta-row">
-              <p id="catalog-result-count" aria-live="polite">Cargando…</p>
+              <p id="catalog-result-count" aria-live="polite" data-i18n data-en="Loading…">Cargando…</p>
             </div>
-            <p id="catalog-empty" hidden>No hay piezas con esos criterios. Prueba a ampliar el filtro.</p>
+            <p id="catalog-empty" hidden data-i18n data-en="No pieces match those criteria. Try widening the filter.">No hay piezas con esos criterios. Prueba a ampliar el filtro.</p>
             <div id="catalog-results" class="catalog-results" data-view="grid"></div>
           </div>
         </section>

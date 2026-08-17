@@ -56,6 +56,20 @@ for (const pageDef of PAGES) {
   });
 }
 
+test('nepal showcase uses primary sources and visible no confirmado fields', async ({ page }) => {
+  await page.goto('/coleccion/polimero-mundial/nepal-10-rupias-2005/');
+  await expect(page.getByRole('heading', { name: 'Nepal Rastra Bank', exact: true }).first()).toBeVisible();
+  await expect(page.getByText('Emisiones nepalíes en polímero')).toBeVisible();
+  await expect(page.getByText('Los únicos billetes de polímero de Nepal')).toHaveCount(0);
+  await expect(page.getByText('Banknote World')).toHaveCount(0);
+  await expect(page.getByText('Tirada').first()).toBeVisible();
+  await expect(page.getByText('no confirmado').first()).toBeVisible();
+  await expect(page.getByText('Fecha de última revisión factual').first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Reserve Bank of Australia, Annual Report 2003/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Nepal Rastra Bank — sitio oficial/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Fuentes' })).toBeVisible();
+});
+
 test('catalog piece exposes research chrome', async ({ page }) => {
   await page.goto('/coleccion/reserva-federal/cien-dolares-1990-cleveland/');
   await expect(page.getByText('Identificador permanente')).toBeVisible();
@@ -70,6 +84,154 @@ test('country hub renders native cards without BanknoteCard imports', async ({ p
   await page.goto('/coleccion/colombia/');
   await expect(page.locator('dc-import')).toHaveCount(0);
   await expect(page.locator('.catalog-banknote-card').first()).toBeVisible();
+});
+
+test('Colombia catalog cards open fichas with data, not only the image', async ({ page }) => {
+  const samples = [
+    {
+      href: '/coleccion/colombia/cartagena-1-real-1813/',
+      spec: 'Pick #S101',
+    },
+    {
+      href: '/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/',
+      spec: 'Pick P-384s',
+    },
+    {
+      href: '/coleccion/colombia/nueva-granada-1-peso-1861/',
+      spec: 'Denominación',
+    },
+  ];
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+
+  for (const sample of samples) {
+    const card = page.locator(`a.catalog-banknote-card[href="${sample.href}"]`);
+    await expect(card).toBeVisible();
+    await card.click();
+    await expect(page).toHaveURL(new RegExp(`${sample.href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`));
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+    await expect(page.getByText(sample.spec).first()).toBeInViewport();
+    const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
+    const count = await dialogs.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(dialogs.nth(i)).toBeHidden();
+    }
+    await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+  }
+});
+
+test('catalog fichas outside Colombia also show spec data before the scan', async ({ page }) => {
+  const samples = [
+    {
+      path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
+      spec: 'D 79155860 A',
+    },
+    {
+      path: '/coleccion/polimero-mundial/mexico-20-50-100-pesos/',
+      spec: 'Pick-116',
+    },
+    {
+      path: '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
+      spec: 'Tirada',
+    },
+    {
+      path: '/coleccion/ecuador/100-sucres-1993/',
+      spec: '00000002',
+    },
+    {
+      path: '/coleccion/diez-dolares-1934-distritos/',
+      spec: 'D — Cleveland, Ohio',
+    },
+  ];
+  for (const sample of samples) {
+    const response = await page.goto(sample.path, { waitUntil: 'domcontentloaded' });
+    expect(response?.ok()).toBeTruthy();
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+    await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+    await expect(page.getByText(sample.spec).first()).toBeVisible();
+    const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
+    const count = await dialogs.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(dialogs.nth(i)).toBeHidden();
+    }
+  }
+});
+
+test('Colombia catalog card for 10.000 pesos opens the ficha data, not only the image', async ({
+  page,
+}) => {
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+  const card = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/"]',
+  );
+  await expect(card).toContainText('Diez Mil Pesos (Specimen)');
+  await card.click();
+  await expect(page).toHaveURL(/\/coleccion\/colombia\/banco-de-la-republica-10000-pesos-specimen\/$/);
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeInViewport();
+  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeInViewport();
+  await expect(page.locator('[data-zoom-dialog]').first()).toBeHidden();
+});
+
+test('Colombia 10.000 pesos specimen ficha lists both notes and their details', async ({
+  page,
+}) => {
+  const response = await page.goto('/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'El Banco de la República' }),
+  ).toBeVisible();
+  await expect(page.getByText('Diez Mil Pesos · 15 de octubre de 1994')).toBeVisible();
+  await expect(page.getByText('Diez Mil Pesos · 1 de marzo de 1995')).toBeVisible();
+  await expect(page.getByText('Pick P-440 (variante conmemorativa)', { exact: true })).toBeVisible();
+  await expect(page.getByText('Pick P-441 (variante por fecha)', { exact: true })).toBeVisible();
+  await expect(page.getByText(/retrato de una mujer del pueblo emberá/i)).toBeVisible();
+  await expect(page.getByText(/Policarpa Salavarrieta/i).first()).toBeVisible();
+
+  const embera = page.locator(
+    'img[src="/uploads/colombia-banco-de-la-republica-10000-pesos-1994-embera-specimen.jpg"]',
+  );
+  const laPola = page.locator(
+    'img[src="/uploads/colombia-banco-de-la-republica-10000-pesos-1995-la-pola-specimen.jpg"]',
+  );
+  await expect(embera.first()).toBeVisible();
+  await expect(laPola.first()).toBeVisible();
+
+  const dialogs = page.locator('[data-zoom-dialog]');
+  await expect(dialogs).toHaveCount(2);
+  await expect(dialogs.nth(0)).toBeHidden();
+  await expect(dialogs.nth(1)).toBeHidden();
+
+  await page.getByRole('button', { name: /Ampliar imagen del billete: Diez Mil Pesos · 15 de octubre de 1994/ }).click();
+  const emberaDialog = page.locator('[data-zoom-dialog="1994-embera"]');
+  await expect(emberaDialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(emberaDialog).toBeHidden();
+
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeVisible();
+  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeVisible();
+  await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
+  await expect(page.locator('sc-for')).toHaveCount(0);
+});
+
+test('Colombia 1.000 pesos gallery still lists Bolívar, Gaitán, and the printing error', async ({
+  page,
+}) => {
+  const response = await page.goto('/coleccion/colombia/banco-de-la-republica-1000-pesos/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+  await expect(page.getByText('1 de enero de 1990', { exact: true })).toBeVisible();
+  await expect(page.getByText('Pick #433 (tipo temprano)').first()).toBeVisible();
+  await expect(page.getByText('Pick #448').first()).toBeVisible();
+  await expect(page.getByText(/Gruesa barra de tinta negra/)).toBeVisible();
+  await expect(page.locator('[data-zoom-trigger]')).toHaveCount(19);
+  await expect(page.locator('sc-for')).toHaveCount(0);
 });
 
 test('colombia catalog lists banknotes by issue date', async ({ page }) => {
@@ -161,10 +323,10 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(card).toContainText('1969–1970');
 
   await page.goto('/coleccion/certificados-de-pago-militar/1-dolar-serie-681/');
-  await expect(page.getByRole('heading', { level: 1, name: 'Un Dólar — Serie 681' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'MPC Serie 681 — Un Dólar (Vietnam, 1969–1970)' })).toBeVisible();
   const ficha = page.locator('#main-content');
   await expect(ficha.getByText('Fr. M915 · Schwan S915-1 · Pick M79').first()).toBeVisible();
-  await expect(ficha.getByText('C10102047C').first()).toBeVisible();
+  await expect(ficha.getByText('C10102847C').first()).toBeVisible();
   await expect(ficha.getByText('22.400.000').first()).toBeVisible();
   await expect(ficha.getByText('S915-1r').first()).toBeVisible();
   await expect(ficha.getByText('C22400000C').first()).toBeVisible();
@@ -177,7 +339,7 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(ficha.getByRole('heading', { name: 'Sobre este valor' })).toBeVisible();
   await expect(ficha.getByText('Valoración de catálogo').first()).toBeVisible();
   await expect(ficha.getByRole('heading', { name: 'Este ejemplar' })).toBeVisible();
-  await expect(ficha.getByText('14 ejemplares certificados').first()).toBeVisible();
+  await expect(ficha.getByText('14 certificados').first()).toBeVisible();
   const fuentes = ficha.locator('section').filter({ has: page.getByRole('heading', { name: 'Fuentes' }) });
   await expect(fuentes.getByRole('heading', { name: 'Fuentes' })).toBeVisible();
   const sourceHrefs = [
@@ -202,6 +364,12 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(fuentes.getByText('S915-1 (regular) y S915-1r (reemplazo)')).toBeVisible();
   await expect(fuentes.getByText('ISBN 0-931960-54-1')).toBeVisible();
   await expect(fuentes.locator('a[target="_blank"][rel="noopener noreferrer"]')).toHaveCount(sourceHrefs.length);
+  await expect(ficha.getByText('veteranos de Vietnam reconocen de inmediato').first()).toBeVisible();
+  await expect(ficha.locator('a[href="/glosario/#c-day"]')).toHaveCount(1);
+  await expect(ficha.getByText('puerta de entrada al programa MPC')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toHaveCount(0);
+  await expect(page.locator('meta[name="keywords"]')).toHaveCount(0);
+  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveCount(1);
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });

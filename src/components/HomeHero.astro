@@ -1,8 +1,11 @@
 ---
 /**
  * Full-bleed homepage hero: rotating banknote slides, brand lockup,
- * task-oriented CTAs, and language toggle.
+ * and task-oriented CTAs. Interface language lives in SiteHeader.
  */
+import type { CollectionStats } from '../lib/stats';
+import { formatStatsEn, formatStatsEs } from '../lib/stats';
+
 export interface HeroSlide {
   base: string;
   alt: string;
@@ -10,9 +13,12 @@ export interface HeroSlide {
 
 export interface Props {
   slides: HeroSlide[];
+  stats: CollectionStats;
 }
 
-const { slides } = Astro.props;
+const { slides, stats } = Astro.props;
+const statsEs = formatStatsEs(stats);
+const statsEn = formatStatsEn(stats);
 const transparentPixel =
   'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ---
@@ -52,36 +58,7 @@ const transparentPixel =
   <div
     class="absolute inset-0"
     style="background:linear-gradient(180deg, rgba(6,6,5,0.55) 0%, rgba(6,6,5,0.15) 22%, rgba(6,6,5,0.15) 78%, rgba(6,6,5,0.6) 100%);"
-  ></div>
-
-  <div
-    role="group"
-    aria-label="Idioma de la interfaz / Interface language"
-    class="absolute top-[78px] right-7 z-[2] flex flex-col items-end gap-1"
-  >
-    <span
-      id="interface-lang-label"
-      class="font-serif text-[11px] tracking-[0.12em] uppercase text-cream-dim/90 px-1"
-    >Idioma de la interfaz</span>
-    <div class="flex items-center bg-bg/35 border border-line-input rounded-full p-[3px]">
-      <button
-        id="lang-es"
-        type="button"
-        aria-pressed="true"
-        aria-describedby="interface-lang-label"
-        aria-label="Interfaz en español"
-        class="border-none bg-cream/92 text-bg font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer min-h-[44px]"
-      >ES</button>
-      <button
-        id="lang-en"
-        type="button"
-        aria-pressed="false"
-        aria-describedby="interface-lang-label"
-        aria-label="Interface in English"
-        class="border-none bg-transparent text-cream font-serif font-semibold text-[13px] tracking-[0.14em] px-[18px] py-[11px] rounded-full cursor-pointer min-h-[44px]"
-      >EN</button>
-    </div>
-  </div>
+  >  </div>
 
   <div
     class="relative z-[1] min-h-screen flex flex-col items-center justify-center text-center px-6 py-16 outline-none"
@@ -106,9 +83,14 @@ const transparentPixel =
     >Una colección privada de billetes y monedas históricas</h1>
     <p
       data-i18n
-      data-en="Detailed images, catalog references, and monetary histories from Colombia, the United States, Puerto Rico, and the world."
+      data-en="Detailed images, catalog references, and monetary histories from around the world."
       class="font-serif text-[clamp(16px,1.5vw,19px)] leading-[1.6] text-cream-dim mt-4 mb-0 max-w-[40rem]"
     >Imágenes detalladas, referencias de catálogo e historias monetarias de Colombia, Estados Unidos, Puerto Rico y el mundo.</p>
+    <p
+      data-i18n
+      data-en={statsEn}
+      class="font-serif text-[clamp(15px,1.4vw,17px)] tracking-[0.06em] text-cream-dim mt-3 mb-0"
+    >{statsEs}</p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
       <a
         href="/coleccion/"

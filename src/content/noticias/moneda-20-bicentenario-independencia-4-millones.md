@@ -26,7 +26,7 @@ relatedLinks:
   - href: "/noticias/luis-lanza-ceca-valor-moneda-antigua/"
     title: "Ceca, fecha y conservación: claves del valor"
 updatedAt: 2026-08-14
-reviewedBy: "Equipo editorial de Notofilia"
+reviewedBy: "Yezid Acosta"
 claimKind: seller_asking
 claimCurrency: MXN
 claimValuationDate: 2026-08-12

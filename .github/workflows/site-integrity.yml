@@ -36,6 +36,9 @@ jobs:
       - name: Build production site and search index
         run: npm run build
 
+      - name: Fail the build on unresolved Mustache in shipped HTML
+        run: npm run check:mustache
+
       - name: Fail on unresolved template placeholders in shipped output
         run: npm run check:placeholders
 
@@ -44,6 +47,12 @@ jobs:
 
       - name: Check sitemap, redirects, search, and canonicals
         run: npm run check:drift
+
+      - name: Fail on hard-coded inventory counts
+        run: npm run check:inventory
+
+      - name: Fail if re-sourced fichas have a retail citation majority
+        run: npm run check:citations
 
       - name: Ensure generated sitemap is committed
         run: git diff --exit-code -- public/sitemap.xml

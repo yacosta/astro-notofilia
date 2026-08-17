@@ -21,11 +21,56 @@ export const catalogLinkSchema = z.object({
   title: z.string().min(1),
 });
 
+/** Visible sentinel when a ficha fact is unknown. Honesty is an authority signal. */
+export const UNCONFIRMED_VALUE = 'no confirmado';
+
+export const CATALOG_SOURCE_KINDS = [
+  'central_bank',
+  'printer',
+  'museum',
+  'auction',
+  'catalog',
+  'press',
+  'specimen',
+  'retail',
+  'secondary',
+] as const;
+
+export type CatalogSourceKind = (typeof CATALOG_SOURCE_KINDS)[number];
+
+export const catalogSourceKindSchema = z.enum(CATALOG_SOURCE_KINDS);
+
 export const catalogSourceSchema = z.object({
   label: z.string().min(1),
   url: z.string().url().optional(),
   note: z.string().optional(),
+  /**
+   * Citation class for the primary-to-commercial floor.
+   * Required on re-sourced fichas (`record.resourced`).
+   */
+  kind: catalogSourceKindSchema.optional(),
 });
+
+/** Ficha fields that must remain visible even when the value is “no confirmado”. */
+export const HONESTY_FIELD_KEYS = [
+  'printRun',
+  'knownVarieties',
+  'circulationDates',
+  'rarityBasis',
+  'shownSpecimenState',
+  'factualReviewDate',
+] as const;
+
+export type HonestyFieldKey = (typeof HONESTY_FIELD_KEYS)[number];
+
+export const HONESTY_FIELD_LABELS: Record<HonestyFieldKey, string> = {
+  printRun: 'Tirada',
+  knownVarieties: 'Variedades conocidas',
+  circulationDates: 'Fechas de circulación',
+  rarityBasis: 'Base de la rareza',
+  shownSpecimenState: 'Estado del ejemplar mostrado',
+  factualReviewDate: 'Fecha de última revisión factual',
+};
 
 export const catalogCardSchema = z.object({
   href: z.string().min(1),
@@ -71,6 +116,14 @@ export const catalogMetadataSchema = z.object({
   weight: z.string().optional(),
   diameter: z.string().optional(),
   edge: z.string().optional(),
+  /** Print run. Use `UNCONFIRMED_VALUE` when unknown — do not omit on re-sourced fichas. */
+  printRun: z.string().optional(),
+  knownVarieties: z.string().optional(),
+  circulationDates: z.string().optional(),
+  rarityBasis: z.string().optional(),
+  shownSpecimenState: z.string().optional(),
+  /** ISO date (YYYY-MM-DD) or `UNCONFIRMED_VALUE`. */
+  factualReviewDate: z.string().optional(),
 });
 
 export const catalogRecordSchema = z.object({
@@ -101,7 +154,13 @@ export const catalogRecordSchema = z.object({
       population: z.string().optional(),
     })
     .optional(),
-  sources: z.array(catalogSourceSchema).max(20).optional(),
+  sources: z.array(catalogSourceSchema).max(24).optional(),
+  /**
+   * When true, this ficha has been through the catalog-sourcing pass:
+   * honesty fields filled (including “no confirmado”) and citations classified.
+   * Re-sourced pages must not ship with a majority of retail citations.
+   */
+  resourced: z.boolean().optional(),
   related: z.array(catalogLinkSchema).max(12).optional(),
   previous: catalogLinkSchema.optional(),
   next: catalogLinkSchema.optional(),
@@ -122,6 +181,28 @@ export type CatalogImage = z.infer<typeof catalogImageSchema>;
 export type CatalogRecord = z.infer<typeof catalogRecordSchema>;
 export type CatalogMetadata = z.infer<typeof catalogMetadataSchema>;
 export type CatalogCard = z.infer<typeof catalogCardSchema>;
+export type MetadataRow = { label: string; value: string; unconfirmed?: boolean };
+
+export function isUnconfirmedValue(value: string): boolean {
+  return value.trim().toLowerCase() === UNCONFIRMED_VALUE;
+}
+
+/** Format an ISO factual-review date for the Spanish ficha; leave sentinels and free text. */
+export function formatFactualReviewDate(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  const trimmed = value.trim();
+  if (!trimmed || isUnconfirmedValue(trimmed)) return trimmed || undefined;
+  const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trimmed);
+  if (!iso) return trimmed;
+  const date = new Date(`${trimmed}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return trimmed;
+  return new Intl.DateTimeFormat('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+}
 
 const STATUS_LABELS: Record<NonNullable<CatalogMetadata['status']>, string> = {
   specimen: 'Specimen',
@@ -147,11 +228,17 @@ export function absoluteUpload(src: string): string {
   return `${SITE}${path}`;
 }
 
+function toMetadataRow(label: string, value: string | undefined): MetadataRow | null {
+  if (typeof value !== 'string' || value.trim().length === 0) return null;
+  const trimmed = value.trim();
+  return { label, value: trimmed, unconfirmed: isUnconfirmedValue(trimmed) };
+}
+
 /** Ordered rows for the structured metadata definition list. */
 export function metadataRows(
   meta: CatalogMetadata | undefined,
   extras?: { country?: string; issuer?: string },
-): Array<{ label: string; value: string }> {
+): MetadataRow[] {
   if (!meta && !extras?.country && !extras?.issuer) return [];
 
   const m = meta ?? {};
@@ -182,11 +269,17 @@ export function metadataRows(
     { label: 'Estado de la pieza', value: m.status ? STATUS_LABELS[m.status] : undefined },
     { label: 'Adquisición', value: m.acquisition },
     { label: 'Procedencia', value: m.provenance },
+    { label: HONESTY_FIELD_LABELS.printRun, value: m.printRun },
+    { label: HONESTY_FIELD_LABELS.knownVarieties, value: m.knownVarieties },
+    { label: HONESTY_FIELD_LABELS.circulationDates, value: m.circulationDates },
+    { label: HONESTY_FIELD_LABELS.rarityBasis, value: m.rarityBasis },
+    { label: HONESTY_FIELD_LABELS.shownSpecimenState, value: m.shownSpecimenState },
+    { label: HONESTY_FIELD_LABELS.factualReviewDate, value: formatFactualReviewDate(m.factualReviewDate) },
   ];
 
   return rows
-    .filter((r): r is { label: string; value: string } => typeof r.value === 'string' && r.value.trim().length > 0)
-    .map((r) => ({ label: r.label, value: r.value.trim() }));
+    .map((r) => toMetadataRow(r.label, r.value))
+    .filter((r): r is MetadataRow => r !== null);
 }
 
 /** Chicago-ish citation suitable for researchers (Spanish site default). */
@@ -198,6 +291,16 @@ export function formatCitation(
   const url = `${SITE}${path.endsWith('/') ? path : `${path}/`}`;
   const iso = accessed.toISOString().slice(0, 10);
   return `Notofilia. «${record.title}». Colección Virtual (${record.id}). ${url} (acceso ${iso}).`;
+}
+
+export function formatCitationEn(
+  record: Pick<CatalogRecord, 'title' | 'id'>,
+  path: string,
+  accessed: Date = new Date(),
+): string {
+  const url = `${SITE}${path.endsWith('/') ? path : `${path}/`}`;
+  const iso = accessed.toISOString().slice(0, 10);
+  return `Notofilia. “${record.title}”. Virtual Collection (${record.id}). ${url} (accessed ${iso}).`;
 }
 
 export function reportMailto(record: Pick<CatalogRecord, 'title' | 'id'>, path: string): string {

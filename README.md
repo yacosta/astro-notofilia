@@ -114,9 +114,11 @@ Legacy `/sitemap-news.xml` 301s to `/news-sitemap.xml` for old Search Console su
 ## Deploying (Cloudflare Pages)
 
 - Framework preset: **Astro**
-- Build command: `npm run build`
+- Build command: `npm run build` (ends with a Mustache guard: any `{{ … }}` left in `dist/**/*.html` fails the build before deploy)
 - Output directory: `dist`
 - `functions/` is picked up automatically for Pages Functions.
+
+Canonical catalog and standalone URLs are extensionless (`/contacto/`, `/j-s-g-boggs/`, `/coleccion/…/`). Legacy `*.dc` / `*.dc.html` paths 301 to those URLs.
 
 ## Migrating a catalog page into Astro (future work)
 

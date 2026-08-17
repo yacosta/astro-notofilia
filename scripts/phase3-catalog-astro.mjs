@@ -2,10 +2,15 @@
  * Phase 3 — freeze legacy catalog templates into static HTML and structured
  * `record` overlays so pages can render without the dc-runtime.
  *
+ * Multi-note pages expand `<sc-for>` loops from DCLogic `noteData` (see
+ * `scripts/lib/catalog-freeze.mjs`). Do not re-strip Mustache to empty
+ * strings before those loops have been expanded.
+ *
  * Usage: node scripts/phase3-catalog-astro.mjs
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { freezeTemplate } from './lib/catalog-freeze.mjs';
 
 const CATALOG_DIR = path.join(process.cwd(), 'src/content/catalog');
 const SITE = 'https://notofilia.com';
@@ -134,60 +139,6 @@ function extractCards(template) {
     });
   }
   return cards;
-}
-
-function freezeTemplate(template, logic) {
-  let html = template;
-
-  // Drop dc-import cards (rendered by Astro instead).
-  html = html.replace(/<dc-import\s+name="BanknoteCard"[\s\S]*?(?:\/>|><\/dc-import>)/gi, '');
-
-  // Unwrap sc-if so dialogs exist in the static DOM.
-  html = html.replace(/<sc-if\b[^>]*>/gi, '');
-  html = html.replace(/<\/sc-if>/gi, '');
-
-  // Remove mustache event handlers.
-  html = html.replace(/\s+on[A-Za-z]+="\{\{[^"]*\}\}"/g, '');
-
-  // Substitute common image bindings from first upload pair in logic/template.
-  const uploads = extractUploads(`${template}\n${logic}`);
-  const jpg = uploads.find((u) => /\.jpe?g$/i.test(u) || /\.png$/i.test(u));
-  const webp = uploads.find((u) => u.endsWith('.webp') && !u.includes('-640.'));
-  const webp640 = uploads.find((u) => u.includes('-640.webp'));
-  if (jpg) {
-    html = html.replace(/\{\{\s*note\.jpg\s*\}\}/g, jpg);
-    html = html.replace(/\{\{\s*activeNoteJpg\s*\}\}/g, jpg);
-    html = html.replace(/\{\{\s*errorNote\.jpg\s*\}\}/g, jpg);
-  }
-  if (webp) {
-    html = html.replace(/\{\{\s*note\.webp\s*\}\}/g, webp);
-    html = html.replace(/\{\{\s*activeNoteWebp\s*\}\}/g, webp);
-    html = html.replace(/\{\{\s*errorNote\.webp\s*\}\}/g, webp);
-  }
-  if (webp640) {
-    html = html.replace(/\{\{\s*note\.webp640\s*\}\}/g, webp640);
-    html = html.replace(/\{\{\s*errorNote\.webp640\s*\}\}/g, webp640);
-  }
-
-  // Zoom UI placeholders → neutral static defaults (JS drives live values).
-  html = html.replace(/\{\{\s*imgTransform\s*\}\}/g, '');
-  html = html.replace(/\{\{\s*imgCursor\s*\}\}/g, 'zoom-in');
-  html = html.replace(/\{\{\s*zoomPercent\s*\}\}/g, '100%');
-  html = html.replace(/\{\{\s*zoomOpen\s*\}\}/g, 'false');
-  html = html.replace(/\{\{\s*false\s*\}\}/g, 'false');
-  html = html.replace(/\{\{\s*stopPropagation\s*\}\}/g, '');
-  html = html.replace(/\{\{\s*zoomInDisabled\s*\}\}/g, 'false');
-  html = html.replace(/\{\{\s*zoomOutDisabled\s*\}\}/g, 'true');
-  html = html.replace(/\{\{\s*note\.[a-zA-Z0-9_]+\s*\}\}/g, '');
-  html = html.replace(/\{\{\s*[^}]+\s*\}\}/g, '');
-
-  // Hide zoom dialogs until catalog-zoom.js opens them.
-  html = html.replace(
-    /(data-zoom-dialog="[^"]*")/g,
-    '$1 hidden style="display:none"',
-  );
-
-  return html;
 }
 
 function buildMetadata(template, kind) {

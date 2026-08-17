@@ -1,7 +1,14 @@
 {
-  "generatedAt": "2026-08-15T18:33:18.737Z",
+  "generatedAt": "2026-08-16T20:25:59.319Z",
   "count": 129,
   "pieceCount": 113,
+  "stats": {
+    "billetes": 215,
+    "monedas": 7,
+    "paises": 33,
+    "fichas": 113,
+    "paginas": 144
+  },
   "countries": [
     {
       "name": "Colombia",
@@ -501,14 +508,14 @@
       "country": "Estados Unidos",
       "issuer": "The Adrian Insurance Company, Adrian, Míchigan (capital declarado: $250,000)",
       "denomination": "$2.00 (Dos Dólares)",
-      "catalogRef": "Sin número Haxby confirmado en las fuentes consultadas; catalogado en la literatura numismática como emisión de la era de banca libre de Míchigan (1837–1857)",
+      "catalogRef": "Sin número Haxby confirmado en las fuentes consultadas; catalogado en la literatura numismática como emisión de la era de banca libre de Míchigan (1837&ndash;1857)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "billete $2 the adrian insurance company ficha de catálogo numismático: billete obsoleto de $2 de the adrian insurance company, adrian, michigan, hacia 1852–1856… estados unidos the adrian insurance company, adrian, míchigan (capital declarado: $250,000) $2.00 (dos dólares) sin número haxby confirmado en las fuentes consultadas; catalogado en la literatura numismática como emisión de la era de banca libre de míchigan (1837–1857) banknote adrian insurance company michigan obsoleto wildcat banking notafilia numismática michigan billete de dos dólares banca libre de michigan"
+      "searchText": "billete $2 the adrian insurance company ficha de catálogo numismático: billete obsoleto de $2 de the adrian insurance company, adrian, michigan, hacia 1852–1856… estados unidos the adrian insurance company, adrian, míchigan (capital declarado: $250,000) $2.00 (dos dólares) sin número haxby confirmado en las fuentes consultadas; catalogado en la literatura numismática como emisión de la era de banca libre de míchigan (1837&ndash;1857) banknote adrian insurance company michigan obsoleto wildcat banking notafilia numismática michigan billete de dos dólares banca libre de michigan"
     },
     {
       "id": "certificado-de-oro-10-dolares-1928",
@@ -529,7 +536,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury )",
+      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury",
       "denomination": "$10.00 (Diez Dólares)",
       "catalogRef": "Friedberg FR-2400",
       "condition": "",
@@ -538,49 +545,29 @@
       "year": 1928,
       "material": "",
       "kind": "banknote",
-      "searchText": "certificado de oro $10 de 1928 ficha de catálogo numismático: certificado de oro de $10, serie de 1928, departamento del tesoro de ee. uu. referencia friedberg fr-2400. estados unidos departamento del tesoro de los estados unidos ( united states treasury ) $10.00 (diez dólares) friedberg fr-2400 banknote certificado de oro gold certificate friedberg fr-2400 notafilia numismática billete de diez dólares tesoro de estados unidos"
+      "searchText": "certificado de oro $10 de 1928 ficha de catálogo numismático: certificado de oro de $10, serie de 1928, departamento del tesoro de ee. uu. referencia friedberg fr-2400. estados unidos departamento del tesoro de los estados unidos ( united states treasury $10.00 (diez dólares) friedberg fr-2400 banknote certificado de oro gold certificate friedberg fr-2400 notafilia numismática billete de diez dólares tesoro de estados unidos"
     },
     {
       "id": "certificados-de-pago-militar--1-dolar-serie-681",
       "path": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
-      "title": "MPC Serie 681 $1 Fr. M915 Vietnam",
+      "title": "MPC Serie 681 — Un Dólar (Vietnam, 1969–1970)",
       "description": "MPC Serie 681 $1 Vietnam (1969–1970): Fr. M915, UNC 67 escaso / 68 muy raro. Notofilia.",
-      "keywords": [
-        "military payment certificate",
-        "MPC serie 681",
-        "friedberg m915",
-        "schwan s915-1",
-        "s915-1r",
-        "pick m79",
-        "billete vietnam",
-        "certificado de pago militar",
-        "un dólar MPC",
-        "F-100 Super Sabre",
-        "Thunderbirds",
-        "piloto USAF",
-        "notafilia",
-        "numismática",
-        "pmg 67",
-        "pmg 68 epq",
-        "greysheet",
-        "uncirculated",
-        "s915-1"
-      ],
+      "keywords": [],
       "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
-      "image": "/uploads/mpc-series-681-1-dollar.jpg",
+      "image": "/uploads/mpc-series-681-1-dollar-c10102847.jpg",
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense )",
+      "issuer": "Departamento de Defensa de los EE. UU. (U.S. Department of Defense)",
       "denomination": "$1.00 (Un Dólar)",
       "catalogRef": "Fr. M915 · Schwan S915-1 · Pick M79",
       "condition": "",
       "emissionType": "Certificado de Pago Militar ( Military Payment Certificate , MPC) — scrip para personal autorizado; no billete del Tesoro",
       "dateLabel": "",
-      "year": null,
+      "year": 1969,
       "material": "",
       "kind": "banknote",
-      "searchText": "mpc serie 681 $1 fr. m915 vietnam mpc serie 681 $1 vietnam (1969–1970): fr. m915, unc 67 escaso / 68 muy raro. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $1.00 (un dólar) fr. m915 · schwan s915-1 · pick m79 banknote military payment certificate mpc serie 681 friedberg m915 schwan s915-1 s915-1r pick m79 billete vietnam certificado de pago militar un dólar mpc f-100 super sabre thunderbirds piloto usaf notafilia numismática pmg 67 pmg 68 epq greysheet uncirculated s915-1"
+      "searchText": "mpc serie 681 — un dólar (vietnam, 1969–1970) mpc serie 681 $1 vietnam (1969–1970): fr. m915, unc 67 escaso / 68 muy raro. notofilia. estados unidos departamento de defensa de los ee. uu. (u.s. department of defense) $1.00 (un dólar) fr. m915 · schwan s915-1 · pick m79 banknote"
     },
     {
       "id": "certificados-de-pago-militar--10-dolares-serie-641",
@@ -606,7 +593,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense )",
+      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense",
       "denomination": "$10.00 (Diez Dólares)",
       "catalogRef": "Schwan-887 · Pick M63",
       "condition": "",
@@ -615,7 +602,7 @@
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "mpc serie 641 $10 ee. uu. vietnam mpc serie 641 $10 vietnam (1965–1968): schwan-887 / pick m63, pmg 53 au. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $10.00 (diez dólares) schwan-887 · pick m63 banknote military payment certificate mpc serie 641 schwan 887 pick m63 billete vietnam certificado de pago militar diez dólares mpc estatua de la libertad notafilia numismática pmg 53 about uncirculated"
+      "searchText": "mpc serie 641 $10 ee. uu. vietnam mpc serie 641 $10 vietnam (1965–1968): schwan-887 / pick m63, pmg 53 au. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense $10.00 (diez dólares) schwan-887 · pick m63 banknote military payment certificate mpc serie 641 schwan 887 pick m63 billete vietnam certificado de pago militar diez dólares mpc estatua de la libertad notafilia numismática pmg 53 about uncirculated"
     },
     {
       "id": "certificados-de-pago-militar--20-dolares-serie-692",
@@ -640,7 +627,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense )",
+      "issuer": "Departamento de Defensa de los EE. UU. ( U.S. Department of Defense",
       "denomination": "$20.00 (Veinte Dólares)",
       "catalogRef": "Schwan-938 · Pick M98",
       "condition": "",
@@ -649,7 +636,7 @@
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "mpc serie 692 $20 ee. uu. vietnam mpc serie 692 $20 de vietnam (1970–1973): schwan-938 / pick m98, jefe ouray y presa hoover. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense ) $20.00 (veinte dólares) schwan-938 · pick m98 banknote military payment certificate mpc serie 692 schwan 938 pick m98 billete vietnam certificado de pago militar veinte dólares mpc chief ouray hoover dam notafilia numismática"
+      "searchText": "mpc serie 692 $20 ee. uu. vietnam mpc serie 692 $20 de vietnam (1970–1973): schwan-938 / pick m98, jefe ouray y presa hoover. notofilia. estados unidos departamento de defensa de los ee. uu. ( u.s. department of defense $20.00 (veinte dólares) schwan-938 · pick m98 banknote military payment certificate mpc serie 692 schwan 938 pick m98 billete vietnam certificado de pago militar veinte dólares mpc chief ouray hoover dam notafilia numismática"
     },
     {
       "id": "certificados-de-pago-militar--perfil-jefe-ouray",
@@ -691,7 +678,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Banco de la Reserva Federal de Minneapolis, Minnesota (noveno distrito, letra “I”)",
+      "issuer": "Banco de la Reserva Federal de Minneapolis, Minnesota (noveno distrito, letra &ldquo;I&rdquo;)",
       "denomination": "$100.00 (Cien Dólares)",
       "catalogRef": "Friedberg FR-1890-I",
       "condition": "",
@@ -700,7 +687,7 @@
       "year": 1929,
       "material": "",
       "kind": "banknote",
-      "searchText": "$100 federal reserve bank note, minneapolis 1929 ficha de catálogo numismático: billete de banco de la reserva federal de $100, serie de 1929, minneapolis. referencia friedberg fr-1890-i. estados unidos banco de la reserva federal de minneapolis, minnesota (noveno distrito, letra “i”) $100.00 (cien dólares) friedberg fr-1890-i banknote federal reserve bank note national currency minneapolis serie de 1929 friedberg fr-1890 notafilia numismática billete de cien dólares"
+      "searchText": "$100 federal reserve bank note, minneapolis 1929 ficha de catálogo numismático: billete de banco de la reserva federal de $100, serie de 1929, minneapolis. referencia friedberg fr-1890-i. estados unidos banco de la reserva federal de minneapolis, minnesota (noveno distrito, letra &ldquo;i&rdquo;) $100.00 (cien dólares) friedberg fr-1890-i banknote federal reserve bank note national currency minneapolis serie de 1929 friedberg fr-1890 notafilia numismática billete de cien dólares"
     },
     {
       "id": "cien-dolares-sello-rojo-1966",
@@ -727,7 +714,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury )",
+      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury",
       "denomination": "$100.00 (Cien Dólares)",
       "catalogRef": "Friedberg FR-1550",
       "condition": "",
@@ -736,7 +723,7 @@
       "year": 1966,
       "material": "",
       "kind": "banknote",
-      "searchText": "$100 united states note, sello rojo 1966 united states note $100 sello rojo 1966 (fr-1550): tirada 896.000; emisión nacional del tesoro. estados unidos departamento del tesoro de los estados unidos ( united states treasury ) $100.00 (cien dólares) friedberg fr-1550 banknote united states note legal tender sello rojo red seal friedberg fr-1550 benjamin franklin independence hall notafilia numismática serie 1966 tirada 896000 fr-1550 granahan fowler"
+      "searchText": "$100 united states note, sello rojo 1966 united states note $100 sello rojo 1966 (fr-1550): tirada 896.000; emisión nacional del tesoro. estados unidos departamento del tesoro de los estados unidos ( united states treasury $100.00 (cien dólares) friedberg fr-1550 banknote united states note legal tender sello rojo red seal friedberg fr-1550 benjamin franklin independence hall notafilia numismática serie 1966 tirada 896000 fr-1550 granahan fowler"
     },
     {
       "id": "citizens-bank-of-louisiana--5-dolares",
@@ -757,7 +744,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Citizens' Bank of Louisiana — sucursal de Shreveport ( Banque des Citoyens de la Louisiane )",
+      "issuer": "Citizens' Bank of Louisiana — sucursal de Shreveport ( Banque des Citoyens de la Louisiane",
       "denomination": "$5.00 (Cinco Dólares)",
       "catalogRef": "Haxby LA-15-G60a / Numista N# 334799",
       "condition": "",
@@ -766,7 +753,7 @@
       "year": 1860,
       "material": "",
       "kind": "banknote",
-      "searchText": "billete $5 citizens bank of louisiana ficha de catálogo numismático: billete obsoleto de $5 del citizens' bank of louisiana, sucursal de shreveport, 1860. referencia haxby la-15-g60a. estados unidos citizens' bank of louisiana — sucursal de shreveport ( banque des citoyens de la louisiane ) $5.00 (cinco dólares) haxby la-15-g60a / numista n# 334799 banknote billete obsoleto citizens bank of louisiana shreveport redback haxby la-15 notafilia numismática luisiana"
+      "searchText": "billete $5 citizens bank of louisiana ficha de catálogo numismático: billete obsoleto de $5 del citizens' bank of louisiana, sucursal de shreveport, 1860. referencia haxby la-15-g60a. estados unidos citizens' bank of louisiana — sucursal de shreveport ( banque des citoyens de la louisiane $5.00 (cinco dólares) haxby la-15-g60a / numista n# 334799 banknote billete obsoleto citizens bank of louisiana shreveport redback haxby la-15 notafilia numismática luisiana"
     },
     {
       "id": "city-bank-new-haven--5-dolares",
@@ -847,15 +834,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
+      "denomination": "Dos Mil Pesos",
       "catalogRef": "",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
-      "year": 2000,
+      "dateLabel": "Bogotá, 7 de marzo de 2005",
+      "year": 2005,
       "material": "",
       "kind": "banknote",
-      "searchText": "dos mil pesos, error de corte descentrado ficha de catálogo numismático: billetes de dos mil pesos de el banco de la república, colombia (2005, 2009)… colombia banknote banco de la república dos mil pesos error corte descentrado billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
+      "searchText": "dos mil pesos, error de corte descentrado ficha de catálogo numismático: billetes de dos mil pesos de el banco de la república, colombia (2005, 2009)… colombia dos mil pesos banknote banco de la república dos mil pesos error corte descentrado billete colombiano francisco de paula santander notafilia colombiana numismática de errores"
     },
     {
       "id": "colombia--2000-pesos-error-mariposa",
@@ -1056,15 +1043,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
-      "catalogRef": "",
+      "denomination": "Un Peso Oro · Un Peso Plata (Certificado de Plata)",
+      "catalogRef": "Pick #P-380s (variante); listados estándar de la serie 1929–1954 de Un Peso Oro · Pick #P-382s; The Banknote Book B932",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "20 de julio de 1929 (Serie R)",
+      "year": 1929,
       "material": "",
-      "kind": "banknote",
-      "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia banknote banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
+      "kind": "specimen",
+      "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia un peso oro · un peso plata (certificado de plata) pick #p-380s (variante); listados estándar de la serie 1929–1954 de un peso oro · pick #p-382s; the banknote book b932 specimen banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-10-pesos-oro",
@@ -1087,14 +1074,14 @@
       "country": "Colombia",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Serie previa a Thomas De La Rue (1949) · Pick #400 (tipo, 1953&ndash;1961)",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "12 de octubre de 1949",
+      "year": 1949,
       "material": "",
       "kind": "banknote",
-      "searchText": "diez pesos oro, banco de la república ficha de catálogo numismático: billetes de diez pesos oro de el banco de la república, colombia, con el retrato de antonio nariño, de 1949 a 1961. colombia banknote banco de la república diez pesos oro antonio nariño billete thomas de la rue american bank note company notafilia colombiana numismática colombiana"
+      "searchText": "diez pesos oro, banco de la república ficha de catálogo numismático: billetes de diez pesos oro de el banco de la república, colombia, con el retrato de antonio nariño, de 1949 a 1961. colombia serie previa a thomas de la rue (1949) · pick #400 (tipo, 1953&ndash;1961) banknote banco de la república diez pesos oro antonio nariño billete thomas de la rue american bank note company notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-100-pesos-oro",
@@ -1117,14 +1104,14 @@
       "country": "Colombia",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Pick #391s (variante) · Pick #410s · Pick #418b (tipo) · Pick #422 (tipo, serie 1980s)",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "7 de agosto de 1947",
+      "year": 1947,
       "material": "",
       "kind": "banknote",
-      "searchText": "cien pesos oro, banco de la república ficha de catálogo numismático: billetes de cien pesos oro de el banco de la república, colombia (1947, 1969, 1980, 1983), con el retrato de santander. colombia banknote banco de la república cien pesos oro santander billete thomas de la rue capitolio nacional bogotá notafilia colombiana numismática colombiana"
+      "searchText": "cien pesos oro, banco de la república ficha de catálogo numismático: billetes de cien pesos oro de el banco de la república, colombia (1947, 1969, 1980, 1983), con el retrato de santander. colombia pick #391s (variante) · pick #410s · pick #418b (tipo) · pick #422 (tipo, serie 1980s) banknote banco de la república cien pesos oro santander billete thomas de la rue capitolio nacional bogotá notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-1000-pesos",
@@ -1147,14 +1134,14 @@
       "country": "Colombia",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Pick #433 (tipo temprano) · Pick #433a (firma Urrutia) · Pick #448",
       "condition": "",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "30 de mayo de 2003",
+      "year": 2003,
       "material": "",
       "kind": "banknote",
-      "searchText": "mil pesos, banco de la república ficha de catálogo numismático: billetes de mil pesos de el banco de la república, colombia — la serie simón bolívar (1990–1996)… colombia banknote banco de la república mil pesos colombia simón bolívar billete pantano de vargas jorge eliécer gaitán billete notafilia colombiana numismática colombiana"
+      "searchText": "mil pesos, banco de la república ficha de catálogo numismático: billetes de mil pesos de el banco de la república, colombia — la serie simón bolívar (1990–1996)… colombia pick #433 (tipo temprano) · pick #433a (firma urrutia) · pick #448 banknote banco de la república mil pesos colombia simón bolívar billete pantano de vargas jorge eliécer gaitán billete notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-10000-pesos-specimen",
@@ -1176,15 +1163,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
-      "catalogRef": "",
-      "condition": "",
+      "denomination": "Diez Mil Pesos",
+      "catalogRef": "Pick P-440 (variante conmemorativa) · Pick P-441 (variante por fecha)",
+      "condition": "Gema sin circular, con perforaciones de cancelación características. Colores vivos y muy bien conservados.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "15 de octubre de 1994",
+      "year": 1994,
       "material": "",
-      "kind": "banknote",
-      "searchText": "diez mil pesos specimen, banco de la república ficha de catálogo numismático: especímenes de diez mil pesos (1994 y 1995)… colombia banknote banco de la república diez mil pesos specimen mujer embera billete policarpa salavarrieta billete la pola billete muestra sin valor numismática colombiana"
+      "kind": "specimen",
+      "searchText": "diez mil pesos specimen, banco de la república ficha de catálogo numismático: especímenes de diez mil pesos (1994 y 1995)… colombia diez mil pesos pick p-440 (variante conmemorativa) · pick p-441 (variante por fecha) gema sin circular, con perforaciones de cancelación características. colores vivos y muy bien conservados. specimen banco de la república diez mil pesos specimen mujer embera billete policarpa salavarrieta billete la pola billete muestra sin valor numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2-pesos-oro",
@@ -1207,15 +1194,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
-      "catalogRef": "",
-      "condition": "",
+      "denomination": "Dos Pesos Oro · Dos Pesos Oro (Muestra)",
+      "catalogRef": "Pick #385 (tipo, serie 1923–1955) · Pick #413 (tipo, serie 1972–1973)",
+      "condition": "Muy buen grado circulado: manejo ligero, colores intensos y papel de buena calidad.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "7 de agosto de 1947",
+      "year": 1947,
       "material": "",
       "kind": "banknote",
-      "searchText": "dos pesos oro, banco de la república ficha de catálogo numismático: dos pesos oro de el banco de la república, colombia — billete de 1947 con camilo torres y espécimen de 1972… colombia banknote banco de la república dos pesos oro camilo torres tenorio billete policarpa salavarrieta billete mariana de la libertad balsa muisca notafilia colombiana numismática colombiana"
+      "searchText": "dos pesos oro, banco de la república ficha de catálogo numismático: dos pesos oro de el banco de la república, colombia — billete de 1947 con camilo torres y espécimen de 1972… colombia dos pesos oro · dos pesos oro (muestra) pick #385 (tipo, serie 1923–1955) · pick #413 (tipo, serie 1972–1973) muy buen grado circulado: manejo ligero, colores intensos y papel de buena calidad. banknote banco de la república dos pesos oro camilo torres tenorio billete policarpa salavarrieta billete mariana de la libertad balsa muisca notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-200-pesos-oro-specimen",
@@ -1238,15 +1225,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
+      "denomination": "Doscientos Pesos Oro",
       "catalogRef": "",
-      "condition": "",
+      "condition": "Espécimen sin circular, con perforaciones de cancelación características y numeración en ceros.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "1 de enero de 1982",
+      "year": 1982,
       "material": "",
-      "kind": "banknote",
-      "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia banknote banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
+      "kind": "specimen",
+      "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia doscientos pesos oro espécimen sin circular, con perforaciones de cancelación características y numeración en ceros. specimen banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2000-pesos-oro",
@@ -1270,15 +1257,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
-      "catalogRef": "",
-      "condition": "",
+      "denomination": "Dos Mil Pesos Oro",
+      "catalogRef": "Pick #436a · Pick #436b · Pick #436c · Pick #436d (tipo, subserie por fecha)",
+      "condition": "Espécimen sin circular, con perforaciones de cancelación características y numeración en ceros.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": 2000,
+      "dateLabel": "24 de julio de 1984",
+      "year": 1984,
       "material": "",
       "kind": "banknote",
-      "searchText": "dos mil pesos oro, banco de la república ficha de catálogo numismático: especímenes de dos mil pesos oro (1984, 1985, 1986, 1993)… colombia banknote banco de la república dos mil pesos oro 2000 pesos colombia simón bolívar billete pantano de vargas specimen muestra sin valor notafilia colombiana numismática colombiana"
+      "searchText": "dos mil pesos oro, banco de la república ficha de catálogo numismático: especímenes de dos mil pesos oro (1984, 1985, 1986, 1993)… colombia dos mil pesos oro pick #436a · pick #436b · pick #436c · pick #436d (tipo, subserie por fecha) espécimen sin circular, con perforaciones de cancelación características y numeración en ceros. banknote banco de la república dos mil pesos oro 2000 pesos colombia simón bolívar billete pantano de vargas specimen muestra sin valor notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-5-pesos-plata-1941",
@@ -1301,14 +1288,14 @@
       "country": "Colombia",
       "issuer": "El Banco de la República, Bogotá, Colombia",
       "denomination": "Cinco Pesos Plata",
-      "catalogRef": "Pick #385 / P-388s (variante); serie Certificado de Plata, 1933–1942",
+      "catalogRef": "Pick #385 / P-388s (variante); serie Certificado de Plata, 1933&ndash;1942",
       "condition": "De regular a gema sin circular. Perforación de cancelación característica (dos perforaciones visibles), papel de excelente calidad, colores intensos y grabado nítido.",
       "emissionType": "",
       "dateLabel": "1 de enero de 1941",
       "year": 1941,
       "material": "",
       "kind": "banknote",
-      "searchText": "cinco pesos plata 1941, banco de la república ficha de catálogo numismático: certificado de plata de cinco pesos (1 de enero de 1941)… colombia el banco de la república, bogotá, colombia cinco pesos plata pick #385 / p-388s (variante); serie certificado de plata, 1933–1942 de regular a gema sin circular. perforación de cancelación característica (dos perforaciones visibles), papel de excelente calidad, colores intensos y grabado nítido. banknote banco de la república cinco pesos plata 1941 certificado de plata colombia simón bolívar billete american bank note company notafilia colombiana numismática colombiana"
+      "searchText": "cinco pesos plata 1941, banco de la república ficha de catálogo numismático: certificado de plata de cinco pesos (1 de enero de 1941)… colombia el banco de la república, bogotá, colombia cinco pesos plata pick #385 / p-388s (variante); serie certificado de plata, 1933&ndash;1942 de regular a gema sin circular. perforación de cancelación característica (dos perforaciones visibles), papel de excelente calidad, colores intensos y grabado nítido. banknote banco de la república cinco pesos plata 1941 certificado de plata colombia simón bolívar billete american bank note company notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-50-pesos-oro-specimen",
@@ -1330,15 +1317,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
-      "catalogRef": "",
-      "condition": "",
+      "denomination": "Cincuenta Pesos Oro",
+      "catalogRef": "Pick #407 (tipo, serie 1960–1970) · Pick #425 (tipo, serie 1984–1986)",
+      "condition": "Espécimen sin circular, con perforaciones de cancelación características y numeración en ceros.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "1 de enero de 1964 (Serie Z)",
+      "year": 1964,
       "material": "",
-      "kind": "banknote",
-      "searchText": "cincuenta pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cincuenta pesos oro (1964, bolívar) y (1985, camilo torres) de el banco de la república, colombia. colombia banknote banco de la república cincuenta pesos oro specimen muestra sin valor simón bolívar billete camilo torres billete notafilia colombiana numismática colombiana"
+      "kind": "specimen",
+      "searchText": "cincuenta pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cincuenta pesos oro (1964, bolívar) y (1985, camilo torres) de el banco de la república, colombia. colombia cincuenta pesos oro pick #407 (tipo, serie 1960–1970) · pick #425 (tipo, serie 1984–1986) espécimen sin circular, con perforaciones de cancelación características y numeración en ceros. specimen banco de la república cincuenta pesos oro specimen muestra sin valor simón bolívar billete camilo torres billete notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-500-pesos-oro-specimen",
@@ -1360,15 +1347,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
+      "denomination": "Quinientos Pesos Oro",
       "catalogRef": "",
-      "condition": "",
+      "condition": "Gema sin circular, con perforaciones de cancelación características.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "7 de agosto de 1947",
+      "year": 1947,
       "material": "",
-      "kind": "banknote",
-      "searchText": "quinientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de quinientos pesos oro (1947, 1984, 1989 y 1993)… colombia banknote banco de la república quinientos pesos oro specimen muestra sin valor francisco de paula santander billete casa de la moneda bogotá notafilia colombiana numismática colombiana"
+      "kind": "specimen",
+      "searchText": "quinientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de quinientos pesos oro (1947, 1984, 1989 y 1993)… colombia quinientos pesos oro gema sin circular, con perforaciones de cancelación características. specimen banco de la república quinientos pesos oro specimen muestra sin valor francisco de paula santander billete casa de la moneda bogotá notafilia colombiana numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-5000-pesos-oro-specimen",
@@ -1389,15 +1376,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "",
-      "denomination": "",
+      "denomination": "Cinco Mil Pesos Oro",
       "catalogRef": "Pick P-439 (subtipo por fecha)",
-      "condition": "",
+      "condition": "Gema sin circular, con perforaciones de cancelación características.",
       "emissionType": "",
-      "dateLabel": "",
-      "year": null,
+      "dateLabel": "5 de agosto de 1986",
+      "year": 1986,
       "material": "",
-      "kind": "banknote",
-      "searchText": "cinco mil pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cinco mil pesos oro (1986, 1987 y 1993)… colombia pick p-439 (subtipo por fecha) banknote banco de la república cinco mil pesos oro specimen rafael núñez billete miguel antonio caro billete muestra sin valor numismática colombiana"
+      "kind": "specimen",
+      "searchText": "cinco mil pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de cinco mil pesos oro (1986, 1987 y 1993)… colombia cinco mil pesos oro pick p-439 (subtipo por fecha) gema sin circular, con perforaciones de cancelación características. specimen banco de la república cinco mil pesos oro specimen rafael núñez billete miguel antonio caro billete muestra sin valor numismática colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-50000-pesos",
@@ -1567,14 +1554,14 @@
       "country": "Colombia",
       "issuer": "El Banco de Pamplona, fundado en 1872",
       "denomination": "Un Peso, pagadero al portador a la vista",
-      "catalogRef": "Un Peso: Pick n.&deg; S711. Diez Pesos: sin número Pick confirmado en las fuentes consultadas; catalogado en la literatura numismática regional como emisión de la banca libre santandereana (1870–1885)",
+      "catalogRef": "Un Peso: Pick n.&deg; S711. Diez Pesos: sin número Pick confirmado en las fuentes consultadas; catalogado en la literatura numismática regional como emisión de la banca libre santandereana (1870&ndash;1885)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 1884,
       "material": "",
       "kind": "banknote",
-      "searchText": "un peso y diez pesos, el banco de pamplona ficha de catálogo numismático: billetes de un peso (1883) y diez pesos (1884) de el banco de pamplona, colombia, impresos por bradbury, wilkinson &… colombia el banco de pamplona, fundado en 1872 un peso, pagadero al portador a la vista un peso: pick n.&deg; s711. diez pesos: sin número pick confirmado en las fuentes consultadas; catalogado en la literatura numismática regional como emisión de la banca libre santandereana (1870–1885) banknote banco de pamplona norte de santander billete colombiano 1883 billete colombiano 1884 bradbury wilkinson banca libre colombia notafilia colombiana"
+      "searchText": "un peso y diez pesos, el banco de pamplona ficha de catálogo numismático: billetes de un peso (1883) y diez pesos (1884) de el banco de pamplona, colombia, impresos por bradbury, wilkinson &… colombia el banco de pamplona, fundado en 1872 un peso, pagadero al portador a la vista un peso: pick n.&deg; s711. diez pesos: sin número pick confirmado en las fuentes consultadas; catalogado en la literatura numismática regional como emisión de la banca libre santandereana (1870&ndash;1885) banknote banco de pamplona norte de santander billete colombiano 1883 billete colombiano 1884 bradbury wilkinson banca libre colombia notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-panama-1-5-pesos",
@@ -1720,15 +1707,15 @@
       "role": "piece",
       "country": "Colombia",
       "issuer": "El Banco Nacional de la República de Colombia, banco estatal de emisión creado por la Ley 39 de 1880",
-      "denomination": "Diez Centavos",
-      "catalogRef": "Sin número Pick confirmado en las fuentes consultadas",
+      "denomination": "Veinticinco Pesos, en moneda corriente",
+      "catalogRef": "Pick n.° 237",
       "condition": "",
       "emissionType": "Billete al portador de curso forzoso, moneda legal de la República desde 1886",
       "dateLabel": "",
       "year": 1895,
       "material": "",
       "kind": "banknote",
-      "searchText": "banco nacional de colombia: serie 1895 ficha de catálogo numismático: billetes de diez centavos (1885, 1893), un peso y cinco pesos (guerra de los mil días, 1899–1900)… colombia el banco nacional de la república de colombia, banco estatal de emisión creado por la ley 39 de 1880 diez centavos sin número pick confirmado en las fuentes consultadas banknote banco nacional colombia billete colombiano siglo xix curso forzoso rafael nuñez veinticinco pesos 1895 diez centavos 1893 diez centavos 1885 specimen regeneracion american bank note company homer lee bank note"
+      "searchText": "banco nacional de colombia: serie 1895 ficha de catálogo numismático: billetes de diez centavos (1885, 1893), un peso y cinco pesos (guerra de los mil días, 1899–1900)… colombia el banco nacional de la república de colombia, banco estatal de emisión creado por la ley 39 de 1880 veinticinco pesos, en moneda corriente pick n.° 237 banknote banco nacional colombia billete colombiano siglo xix curso forzoso rafael nuñez veinticinco pesos 1895 diez centavos 1893 diez centavos 1885 specimen regeneracion american bank note company homer lee bank note"
     },
     {
       "id": "colombia--banco-union-cartagena-1-peso-1880s",
@@ -1874,14 +1861,14 @@
       "country": "Colombia",
       "issuer": "El Estado Soberano del Cauca, uno de los nueve estados federales de los Estados Unidos de Colombia",
       "denomination": "Cinco Pesos, Clase B",
-      "catalogRef": "Pick n.&deg; S142 1 (S141: 1 Peso — S143: 10 Pesos, misma serie de Litografía Paredes)",
+      "catalogRef": "Pick n.&deg; S142 1",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 1882,
       "material": "papel",
       "kind": "banknote",
-      "searchText": "cinco pesos, el estado soberano del cauca (1882) ficha de catálogo numismático: vale al portador de 5 pesos de el estado soberano del cauca, popayán, 1882… colombia el estado soberano del cauca, uno de los nueve estados federales de los estados unidos de colombia cinco pesos, clase b pick n.&deg; s142 1 (s141: 1 peso — s143: 10 pesos, misma serie de litografía paredes) papel banknote estado soberano del cauca popayan billete colombiano siglo xix vale al portador cinco pesos 1882 estados unidos de colombia litografia paredes pick s142"
+      "searchText": "cinco pesos, el estado soberano del cauca (1882) ficha de catálogo numismático: vale al portador de 5 pesos de el estado soberano del cauca, popayán, 1882… colombia el estado soberano del cauca, uno de los nueve estados federales de los estados unidos de colombia cinco pesos, clase b pick n.&deg; s142 1 papel banknote estado soberano del cauca popayan billete colombiano siglo xix vale al portador cinco pesos 1882 estados unidos de colombia litografia paredes pick s142"
     },
     {
       "id": "colombia--estado-soberano-cundinamarca-1-peso-1870",
@@ -2246,14 +2233,14 @@
       "country": "Estados Unidos",
       "issuer": "",
       "denomination": "",
-      "catalogRef": "",
+      "catalogRef": "Friedberg FR-2006D · Friedberg FR-2009E · Friedberg FR-2004G · Friedberg FR-2006L",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 1934,
       "material": "",
       "kind": "banknote",
-      "searchText": "$10 reserva federal 1934 — cuatro distritos tiradas serie 1934 por distrito y cuatro billetes de $10 frn (cleveland, richmond, chicago, san francisco). estados unidos banknote federal reserve note billete de diez dólares serie de 1934 distritos de la reserva federal notafilia numismática hamilton chicago fr-2004g serie 1934 julian morgenthau tirada serie 1934 impresión por distrito"
+      "searchText": "$10 reserva federal 1934 — cuatro distritos tiradas serie 1934 por distrito y cuatro billetes de $10 frn (cleveland, richmond, chicago, san francisco). estados unidos friedberg fr-2006d · friedberg fr-2009e · friedberg fr-2004g · friedberg fr-2006l banknote federal reserve note billete de diez dólares serie de 1934 distritos de la reserva federal notafilia numismática hamilton chicago fr-2004g serie 1934 julian morgenthau tirada serie 1934 impresión por distrito"
     },
     {
       "id": "ecuador--100-sucres-1993",
@@ -2309,7 +2296,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture , USDA)",
+      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture",
       "denomination": "Un Dólar (VALUE 1 DOLLAR)",
       "catalogRef": "",
       "condition": "",
@@ -2318,7 +2305,7 @@
       "year": 2000,
       "material": "",
       "kind": "banknote",
-      "searchText": "food coupon usda, un dólar (serie 2000-b) ficha de catálogo: cupón de alimentos (food coupon) de un dólar del departamento de agricultura de ee. uu., serie 2000-b. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture , usda) un dólar (value 1 dollar) banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 2000 notafilia numismática declaration of independence liberty bell"
+      "searchText": "food coupon usda, un dólar (serie 2000-b) ficha de catálogo: cupón de alimentos (food coupon) de un dólar del departamento de agricultura de ee. uu., serie 2000-b. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture un dólar (value 1 dollar) banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 2000 notafilia numismática declaration of independence liberty bell"
     },
     {
       "id": "emisiones-promocionales--food-coupon-10-dolares-2000",
@@ -2343,7 +2330,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture , USDA)",
+      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture",
       "denomination": "Diez Dólares (VALUE 10 DOLLARS)",
       "catalogRef": "",
       "condition": "",
@@ -2352,7 +2339,7 @@
       "year": 2000,
       "material": "",
       "kind": "banknote",
-      "searchText": "food coupon usda, diez dólares (serie 2000-b) cupón de alimentos usda de diez dólares, serie 2000-b, n.º e07421176u. colección notofilia. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture , usda) diez dólares (value 10 dollars) banknote food coupon food stamp usda serie 2000 b cupon de alimentos diez dólares hamilton aguila 10 dolares american bank note company notafilia"
+      "searchText": "food coupon usda, diez dólares (serie 2000-b) cupón de alimentos usda de diez dólares, serie 2000-b, n.º e07421176u. colección notofilia. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture diez dólares (value 10 dollars) banknote food coupon food stamp usda serie 2000 b cupon de alimentos diez dólares hamilton aguila 10 dolares american bank note company notafilia"
     },
     {
       "id": "emisiones-promocionales--food-coupon-2-dolares-1967",
@@ -2377,7 +2364,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture , USDA)",
+      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture",
       "denomination": "VALUE 2 DOLLARS",
       "catalogRef": "",
       "condition": "",
@@ -2386,7 +2373,7 @@
       "year": 1967,
       "material": "",
       "kind": "banknote",
-      "searchText": "food coupon usda, dos dólares (serie 1967) ficha de catálogo: cupón de alimentos usda de dos dólares, serie 1967, impreso por el bureau of engraving and printing. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture , usda) value 2 dollars banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 1967 notafilia numismática agricultural abundance healthier families"
+      "searchText": "food coupon usda, dos dólares (serie 1967) ficha de catálogo: cupón de alimentos usda de dos dólares, serie 1967, impreso por el bureau of engraving and printing. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture value 2 dollars banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 1967 notafilia numismática agricultural abundance healthier families"
     },
     {
       "id": "emisiones-promocionales--food-coupon-5-dolares-2000",
@@ -2411,7 +2398,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture , USDA)",
+      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture",
       "denomination": "Cinco Dólares (VALUE 5 DOLLARS)",
       "catalogRef": "",
       "condition": "",
@@ -2420,7 +2407,7 @@
       "year": 2000,
       "material": "",
       "kind": "banknote",
-      "searchText": "food coupon usda, cinco dólares (serie 2000-b) cupón de alimentos usda de cinco dólares, serie 2000-b, n.º b02732959u. colección notofilia. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture , usda) cinco dólares (value 5 dollars) banknote food coupon food stamp usda serie 2000 b cupon de alimentos cinco dólares jefferson monticello 5 dolares american bank note company notafilia"
+      "searchText": "food coupon usda, cinco dólares (serie 2000-b) cupón de alimentos usda de cinco dólares, serie 2000-b, n.º b02732959u. colección notofilia. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture cinco dólares (value 5 dollars) banknote food coupon food stamp usda serie 2000 b cupon de alimentos cinco dólares jefferson monticello 5 dolares american bank note company notafilia"
     },
     {
       "id": "emisiones-promocionales--food-coupon-50-centavos-1967",
@@ -2445,7 +2432,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture , USDA)",
+      "issuer": "Departamento de Agricultura de los EE. UU. ( U.S. Department of Agriculture",
       "denomination": "VALUE 50 CENTS",
       "catalogRef": "",
       "condition": "",
@@ -2454,7 +2441,7 @@
       "year": 1967,
       "material": "",
       "kind": "banknote",
-      "searchText": "food coupon usda, cincuenta centavos (serie 1967) ficha de catálogo: cupón de alimentos usda de cincuenta centavos, serie 1967, impreso por el bureau of engraving and printing. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture , usda) value 50 cents banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 1967 notafilia numismática agricultural abundance healthier families"
+      "searchText": "food coupon usda, cincuenta centavos (serie 1967) ficha de catálogo: cupón de alimentos usda de cincuenta centavos, serie 1967, impreso por el bureau of engraving and printing. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture value 50 cents banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 1967 notafilia numismática agricultural abundance healthier families"
     },
     {
       "id": "giori-press-test-note",
@@ -2476,14 +2463,14 @@
       "country": "Estados Unidos",
       "issuer": "",
       "denomination": "Ninguna — no es un billete de curso legal, sino una plancha de prueba técnica",
-      "catalogRef": "Sin número Friedberg ni Pick; catalogada en la literatura especializada de exonumia como “Giori Press Test Note”",
+      "catalogRef": "Sin número Friedberg ni Pick; catalogada en la literatura especializada de exonumia como &ldquo;Giori Press Test Note&rdquo;",
       "condition": "",
       "emissionType": "Nota de prueba de imprenta ( press test note ), sin curso legal ni respaldo alguno",
       "dateLabel": "",
       "year": null,
       "material": "",
       "kind": "banknote",
-      "searchText": "nota de prueba de la prensa giori ficha de catálogo numismático: nota de prueba de la prensa giori, estados unidos, con los retratos de lincoln, washington y grant, sin denominación. estados unidos ninguna — no es un billete de curso legal, sino una plancha de prueba técnica sin número friedberg ni pick; catalogada en la literatura especializada de exonumia como “giori press test note” banknote giori press test note nota de prueba bureau of engraving and printing american can company notafilia numismática de estados unidos"
+      "searchText": "nota de prueba de la prensa giori ficha de catálogo numismático: nota de prueba de la prensa giori, estados unidos, con los retratos de lincoln, washington y grant, sin denominación. estados unidos ninguna — no es un billete de curso legal, sino una plancha de prueba técnica sin número friedberg ni pick; catalogada en la literatura especializada de exonumia como &ldquo;giori press test note&rdquo; banknote giori press test note nota de prueba bureau of engraving and printing american can company notafilia numismática de estados unidos"
     },
     {
       "id": "hagerstown-bank-maryland",
@@ -2667,7 +2654,7 @@
       "role": "piece",
       "country": "Estados Unidos",
       "issuer": "Asamblea General de Pensilvania, bajo el reinado de Jorge III",
-      "denomination": "Dos Chelines y Seis Peniques (equivalente a “HALF-A-CROWN”, media corona) · No. 21251",
+      "denomination": "Dos Chelines y Seis Peniques (equivalente a &ldquo;HALF-A-CROWN&rdquo;, media corona) · No. 21251",
       "catalogRef": "Friedberg Fr. PA-165",
       "condition": "",
       "emissionType": "",
@@ -2675,7 +2662,7 @@
       "year": 1773,
       "material": "",
       "kind": "banknote",
-      "searchText": "moneda colonial de pensilvania, 1773 ficha de catálogo numismático: billetes de moneda colonial de la provincia de pensilvania, 1773… estados unidos asamblea general de pensilvania, bajo el reinado de jorge iii dos chelines y seis peniques (equivalente a “half-a-crown”, media corona) · no. 21251 friedberg fr. pa-165 banknote pensilvania colonial moneda colonial americana five shillings 1773 two shillings six pence half a crown hall and sellers notafilia fr pa-165 fr pa-166"
+      "searchText": "moneda colonial de pensilvania, 1773 ficha de catálogo numismático: billetes de moneda colonial de la provincia de pensilvania, 1773… estados unidos asamblea general de pensilvania, bajo el reinado de jorge iii dos chelines y seis peniques (equivalente a &ldquo;half-a-crown&rdquo;, media corona) · no. 21251 friedberg fr. pa-165 banknote pensilvania colonial moneda colonial americana five shillings 1773 two shillings six pence half a crown hall and sellers notafilia fr pa-165 fr pa-166"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-carlos-iii-1774",
@@ -2697,7 +2684,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "España",
-      "issuer": "Santa Fe de Bogotá (marca “NR”) · Ensayador VJ (Victoriano del Valle y Juan José de Francisco) o JJ",
+      "issuer": "Ceca de Santa Fe de Bogotá",
       "denomination": "1 Escudo de oro",
       "catalogRef": "KM #48.1 · Restrepo M68 · Friedberg Fr-32 · Numista N# 52835",
       "condition": "",
@@ -2706,7 +2693,7 @@
       "year": 1774,
       "material": "metal",
       "kind": "coin",
-      "searchText": "carlos iii — 1 escudo de oro, bogotá 1774 ficha numismática: 1 escudo de oro de carlos iii, 1774… españa santa fe de bogotá (marca “nr”) · ensayador vj (victoriano del valle y juan josé de francisco) o jj 1 escudo de oro km #48.1 · restrepo m68 · friedberg fr-32 · numista n# 52835 metal coin 1 escudo carlos iii bogota 1774 retrato oficial km 48.1 restrepo m68 friedberg fr-32 ensayador vj moneda colonial española"
+      "searchText": "carlos iii — 1 escudo de oro, bogotá 1774 ficha numismática: 1 escudo de oro de carlos iii, 1774… españa ceca de santa fe de bogotá 1 escudo de oro km #48.1 · restrepo m68 · friedberg fr-32 · numista n# 52835 metal coin 1 escudo carlos iii bogota 1774 retrato oficial km 48.1 restrepo m68 friedberg fr-32 ensayador vj moneda colonial española"
     },
     {
       "id": "moneda-colonial-espanola--1-escudo-carlos-iii-1787",
@@ -2884,15 +2871,15 @@
       "role": "piece",
       "country": "España",
       "issuer": "",
-      "denomination": "2 Escudos de oro (“doblón”)",
-      "catalogRef": "KM #17.2 · Restrepo M80 · Calicó Tipo 243 · Friedberg Fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador)",
+      "denomination": "2 Escudos de oro (&ldquo;doblón&rdquo;)",
+      "catalogRef": "KM #17.2 · Restrepo M80 · Calicó Tipo 243 · Friedberg Fr-8 (tipo general 1714&ndash;1743; el subtipo exacto depende del año y ensayador)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": null,
       "material": "metal",
       "kind": "coin",
-      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. españa 2 escudos de oro (“doblón”) km #17.2 · restrepo m80 · calicó tipo 243 · friedberg fr-8 (tipo general 1714–1743; el subtipo exacto depende del año y ensayador) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
+      "searchText": "felipe v — doblón de 2 escudos, santa fe de ficha numismática: doblón de oro de 2 escudos de felipe v, macuquina acuñada a mano en la ceca de santa fe de bogotá, virreinato de la nueva granada. españa 2 escudos de oro (&ldquo;doblón&rdquo;) km #17.2 · restrepo m80 · calicó tipo 243 · friedberg fr-8 (tipo general 1714&ndash;1743; el subtipo exacto depende del año y ensayador) metal coin 2 escudos felipe v doblon de oro macuquina santa fe de bogota km 17.2 restrepo m80 calico 243 friedberg fr-8 moneda colonial española"
     },
     {
       "id": "polimero-mundial--bangladesh-10-taka-2000",
@@ -2943,14 +2930,14 @@
       "country": "Brasil",
       "issuer": "Banco Central do Brasil (BCB)",
       "denomination": "Diez Reais (10 Reais) — billete conmemorativo",
-      "catalogRef": "Pick-248a, Standard Catalog of World Paper Money (variante “PEDRO A. CABRAL” abreviado; existe la P-248b con el nombre completo) 3",
+      "catalogRef": "Pick-248a, Standard Catalog of World Paper Money (variante &ldquo;PEDRO A. CABRAL&rdquo; abreviado; existe la P-248b con el nombre completo) 3",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 2000,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "10 reais, banco central do brasil, polímero ficha de catálogo numismático: billete conmemorativo de 10 reais de brasil, polímero, 500 años del descubrimiento, retrato de pedro álvares cabral. brasil banco central do brasil (bcb) diez reais (10 reais) — billete conmemorativo pick-248a, standard catalog of world paper money (variante “pedro a. cabral” abreviado; existe la p-248b con el nombre completo) 3 polímero banknote banco central do brasil 10 reais billete de polimero pedro alvares cabral pick 248a billetes de polimero mundial"
+      "searchText": "10 reais, banco central do brasil, polímero ficha de catálogo numismático: billete conmemorativo de 10 reais de brasil, polímero, 500 años del descubrimiento, retrato de pedro álvares cabral. brasil banco central do brasil (bcb) diez reais (10 reais) — billete conmemorativo pick-248a, standard catalog of world paper money (variante &ldquo;pedro a. cabral&rdquo; abreviado; existe la p-248b con el nombre completo) 3 polímero banknote banco central do brasil 10 reais billete de polimero pedro alvares cabral pick 248a billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--brunei-ringgit",
@@ -3012,14 +2999,14 @@
       "country": "Bulgaria",
       "issuer": "Българска народна банка (Banco Nacional de Bulgaria, BNB)",
       "denomination": "Veinte Leva (ДВАДЕСЕТ ЛЕВА)",
-      "catalogRef": "Pick-121 (P-121a); B230 en The Banknote Book 3",
+      "catalogRef": "Pick-121 (P-121a); B230 en The Banknote Book",
       "condition": "",
       "emissionType": "",
       "dateLabel": "15 de septiembre de 2005, por el 120 aniversario del Lev búlgaro y la fundación del BNB (1885–2005) 2",
       "year": 2005,
       "material": "híbrido",
       "kind": "banknote",
-      "searchText": "20 leva híbridos de bulgaria (2005) ficha de catálogo numismático: billete conmemorativo de 20 leva del banco nacional de bulgaria, 2005, sustrato híbrido de polímero por el 120… bulgaria българска народна банка (banco nacional de bulgaria, bnb) veinte leva (двадесет лева) pick-121 (p-121a); b230 en the banknote book 3 híbrido banknote bulgaria banco nacional de bulgaria bnb 20 leva billete hibrido billete de polimero ivan iskrov 120 aniversario del lev pick 121 billetes de polimero mundial"
+      "searchText": "20 leva híbridos de bulgaria (2005) ficha de catálogo numismático: billete conmemorativo de 20 leva del banco nacional de bulgaria, 2005, sustrato híbrido de polímero por el 120… bulgaria българска народна банка (banco nacional de bulgaria, bnb) veinte leva (двадесет лева) pick-121 (p-121a); b230 en the banknote book híbrido banknote bulgaria banco nacional de bulgaria bnb 20 leva billete hibrido billete de polimero ivan iskrov 120 aniversario del lev pick 121 billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--catar-100-riyals",
@@ -3241,14 +3228,14 @@
       "country": "Hong Kong",
       "issuer": "Gobierno de la RAE de Hong Kong, a través de la Autoridad Monetaria de Hong Kong (HKMA) 1",
       "denomination": "Diez Dólares de Hong Kong (10 HKD)",
-      "catalogRef": "Pick-401, Standard Catalog of World Paper Money (con subvariedades a–d) 5",
+      "catalogRef": "Pick-401, Standard Catalog of World Paper Money (con subvariedades a&ndash;d) 5",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 2007,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "10 dólares, gobierno de hong kong, polímero ficha de catálogo numismático: billete de 10 dólares de hong kong, polímero, emitido por el gobierno de la rae de hong kong desde 2007. pick-401. hong kong gobierno de la rae de hong kong, a través de la autoridad monetaria de hong kong (hkma) 1 diez dólares de hong kong (10 hkd) pick-401, standard catalog of world paper money (con subvariedades a–d) 5 polímero banknote hong kong 10 dolares hong kong billete de polimero hkma pick 401 hknpl billetes de polimero mundial"
+      "searchText": "10 dólares, gobierno de hong kong, polímero ficha de catálogo numismático: billete de 10 dólares de hong kong, polímero, emitido por el gobierno de la rae de hong kong desde 2007. pick-401. hong kong gobierno de la rae de hong kong, a través de la autoridad monetaria de hong kong (hkma) 1 diez dólares de hong kong (10 hkd) pick-401, standard catalog of world paper money (con subvariedades a&ndash;d) 5 polímero banknote hong kong 10 dolares hong kong billete de polimero hkma pick 401 hknpl billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--islas-salomon-2-dolares-2001",
@@ -3433,16 +3420,16 @@
       "ogType": "article",
       "role": "piece",
       "country": "Nepal",
-      "issuer": "Nepal Rastra Bank (Banco Central de Nepal) 1",
+      "issuer": "Nepal Rastra Bank (Banco Central de Nepal)",
       "denomination": "Diez Rupias Nepalesas (10 NPR)",
-      "catalogRef": "Pick-54, Standard Catalog of World Paper Money 5",
+      "catalogRef": "Pick-54, Standard Catalog of World Paper Money",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 2005,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "nepal rastra bank — 10 rupias, polímero (2005) ficha de catálogo numismático: billete de 10 rupias de nepal, polímero, con el retrato del rey gyanendra, emitido por el nepal rastra bank en 2005. nepal nepal rastra bank (banco central de nepal) 1 diez rupias nepalesas (10 npr) pick-54, standard catalog of world paper money 5 polímero banknote nepal 10 rupias nepal billete de polimero nepal rastra bank rey gyanendra pick 54 billetes de polimero mundial"
+      "searchText": "nepal rastra bank — 10 rupias, polímero (2005) ficha de catálogo numismático: billete de 10 rupias de nepal, polímero, con el retrato del rey gyanendra, emitido por el nepal rastra bank en 2005. nepal nepal rastra bank (banco central de nepal) diez rupias nepalesas (10 npr) pick-54, standard catalog of world paper money polímero banknote nepal 10 rupias nepal billete de polimero nepal rastra bank rey gyanendra pick 54 billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--nicaragua-10-20-cordobas",
@@ -3501,7 +3488,7 @@
       "role": "piece",
       "country": "Nigeria",
       "issuer": "Central Bank of Nigeria (CBN)",
-      "denomination": "Cinco Naira (₦5)",
+      "denomination": "Cinco Naira (&#8358;5)",
       "catalogRef": "Pick-38b (Pick-38b.2 para el formato de 7 dígitos), Standard Catalog of World Paper Money",
       "condition": "",
       "emissionType": "",
@@ -3509,7 +3496,7 @@
       "year": null,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "5 y 10 naira de polímero, nigeria ficha de catálogo numismático: billetes de polímero del banco central de nigeria — 5 naira (tafawa balewa) y 10 naira (alvan ikoku). nigeria central bank of nigeria (cbn) cinco naira (₦5) pick-38b (pick-38b.2 para el formato de 7 dígitos), standard catalog of world paper money polímero banknote central bank of nigeria 5 naira 10 naira billete de polimero tafawa balewa alvan ikoku nkpokiti fulani pick 38b pick 39b billetes de polimero mundial"
+      "searchText": "5 y 10 naira de polímero, nigeria ficha de catálogo numismático: billetes de polímero del banco central de nigeria — 5 naira (tafawa balewa) y 10 naira (alvan ikoku). nigeria central bank of nigeria (cbn) cinco naira (&#8358;5) pick-38b (pick-38b.2 para el formato de 7 dígitos), standard catalog of world paper money polímero banknote central bank of nigeria 5 naira 10 naira billete de polimero tafawa balewa alvan ikoku nkpokiti fulani pick 38b pick 39b billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--oman-5-rials-2010",
@@ -3535,14 +3522,14 @@
       "country": "Omán",
       "issuer": "البنك المركزي العماني (Banco Central de Omán)",
       "denomination": "Cinco Rials (خمسة ريالات)",
-      "catalogRef": "Pick-44a (B233a en The Banknote Book )",
+      "catalogRef": "Pick-44a (B233a en The Banknote Book",
       "condition": "",
       "emissionType": "",
       "dateLabel": "",
       "year": 2010,
       "material": "híbrido",
       "kind": "banknote",
-      "searchText": "5 riales híbridos de omán (2010) ficha de catálogo: billete conmemorativo de 5 rials del banco central de omán, 40º… omán البنك المركزي العماني (banco central de omán) cinco rials (خمسة ريالات) pick-44a (b233a en the banknote book ) híbrido banknote oman banco central de oman 5 rials sultan qaboos 40 dia nacional giesecke devrient sustrato hibrido varifeye pick 44 billetes de polimero mundial"
+      "searchText": "5 riales híbridos de omán (2010) ficha de catálogo: billete conmemorativo de 5 rials del banco central de omán, 40º… omán البنك المركزي العماني (banco central de omán) cinco rials (خمسة ريالات) pick-44a (b233a en the banknote book híbrido banknote oman banco central de oman 5 rials sultan qaboos 40 dia nacional giesecke devrient sustrato hibrido varifeye pick 44 billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--papua-nueva-guinea-kina",
@@ -3704,14 +3691,14 @@
       "country": "Samoa",
       "issuer": "Central Bank of Samoa (Faletupe Tutotonu o Samoa)",
       "denomination": "Dos Tala (Lua Tala / Two Tala) — ejemplar specimen, no de circulación",
-      "catalogRef": "Pick-31 (variantes a–e según año de reimpresión)",
+      "catalogRef": "Pick-31 (variantes a&ndash;e según año de reimpresión)",
       "condition": "",
       "emissionType": "",
       "dateLabel": "29 de septiembre de 1991 (fechado 1990 ND en la nota original) 1",
       "year": 1991,
       "material": "polímero",
       "kind": "banknote",
-      "searchText": "2 tala, central bank of samoa, polímero ficha de catálogo numismático: billete specimen de 2 tala de polímero del central bank of samoa (1990/91)… samoa central bank of samoa (faletupe tutotonu o samoa) dos tala (lua tala / two tala) — ejemplar specimen, no de circulación pick-31 (variantes a–e según año de reimpresión) polímero banknote samoa western samoa central bank of samoa 2 tala billete de polimero specimen malietoa tanumafili ii note printing australia billetes de polimero mundial pick 31"
+      "searchText": "2 tala, central bank of samoa, polímero ficha de catálogo numismático: billete specimen de 2 tala de polímero del central bank of samoa (1990/91)… samoa central bank of samoa (faletupe tutotonu o samoa) dos tala (lua tala / two tala) — ejemplar specimen, no de circulación pick-31 (variantes a&ndash;e según año de reimpresión) polímero banknote samoa western samoa central bank of samoa 2 tala billete de polimero specimen malietoa tanumafili ii note printing australia billetes de polimero mundial pick 31"
     },
     {
       "id": "polimero-mundial--sri-lanka-200-rupias-1998",
@@ -4268,7 +4255,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury )",
+      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury",
       "denomination": "$1.00 (Un Dólar)",
       "catalogRef": "Friedberg FR-2306",
       "condition": "",
@@ -4277,7 +4264,7 @@
       "year": 1935,
       "material": "",
       "kind": "banknote",
-      "searchText": "$1 certificado de plata “norte de áfrica” 1935-a ficha de catálogo numismático: certificado de plata de $1, serie de 1935-a, sello amarillo de emergencia “north africa”, segunda guerra mundial. estados unidos departamento del tesoro de los estados unidos ( united states treasury ) $1.00 (un dólar) friedberg fr-2306 banknote north africa note yellow seal certificado de plata operation torch friedberg fr-2306 notafilia numismática segunda guerra mundial"
+      "searchText": "$1 certificado de plata “norte de áfrica” 1935-a ficha de catálogo numismático: certificado de plata de $1, serie de 1935-a, sello amarillo de emergencia “north africa”, segunda guerra mundial. estados unidos departamento del tesoro de los estados unidos ( united states treasury $1.00 (un dólar) friedberg fr-2306 banknote north africa note yellow seal certificado de plata operation torch friedberg fr-2306 notafilia numismática segunda guerra mundial"
     },
     {
       "id": "un-dolar-sello-rojo-1928",
@@ -4303,7 +4290,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury )",
+      "issuer": "Departamento del Tesoro de los Estados Unidos ( United States Treasury",
       "denomination": "$1.00 (Un Dólar)",
       "catalogRef": "Friedberg FR-1500",
       "condition": "",
@@ -4312,7 +4299,7 @@
       "year": 1928,
       "material": "",
       "kind": "banknote",
-      "searchText": "$1 united states note, sello rojo, serie 1928 united states note $1 sello rojo 1928 (fr. 1500): tirada 1.872.012 y reverso “funny back”. estados unidos departamento del tesoro de los estados unidos ( united states treasury ) $1.00 (un dólar) friedberg fr-1500 banknote united states note legal tender sello rojo red seal funny back friedberg fr-1500 notafilia numismática puerto rico fr-1500 tirada 1872012 woods woodin"
+      "searchText": "$1 united states note, sello rojo, serie 1928 united states note $1 sello rojo 1928 (fr. 1500): tirada 1.872.012 y reverso “funny back”. estados unidos departamento del tesoro de los estados unidos ( united states treasury $1.00 (un dólar) friedberg fr-1500 banknote united states note legal tender sello rojo red seal funny back friedberg fr-1500 notafilia numismática puerto rico fr-1500 tirada 1872012 woods woodin"
     },
     {
       "id": "veinte-dolares-hawaii-1934",
@@ -4334,7 +4321,7 @@
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
-      "issuer": "Banco de la Reserva Federal de San Francisco (distrito “L”, duodécimo distrito)",
+      "issuer": "Banco de la Reserva Federal de San Francisco (distrito &ldquo;L&rdquo;, duodécimo distrito)",
       "denomination": "$20.00 (Veinte Dólares)",
       "catalogRef": "Friedberg FR-2305",
       "condition": "",
@@ -4343,7 +4330,7 @@
       "year": 1934,
       "material": "",
       "kind": "banknote",
-      "searchText": "$20 reserva federal, emisión hawái 1934 ficha de catálogo numismático: billete de reserva federal de $20, serie de 1934-a, con sobreimpresión de emergencia hawaii. estados unidos banco de la reserva federal de san francisco (distrito “l”, duodécimo distrito) $20.00 (veinte dólares) friedberg fr-2305 banknote billete hawaii hawaii overprint note friedberg fr-2305 notafilia numismática billete de veinte dólares segunda guerra mundial reserva federal"
+      "searchText": "$20 reserva federal, emisión hawái 1934 ficha de catálogo numismático: billete de reserva federal de $20, serie de 1934-a, con sobreimpresión de emergencia hawaii. estados unidos banco de la reserva federal de san francisco (distrito &ldquo;l&rdquo;, duodécimo distrito) $20.00 (veinte dólares) friedberg fr-2305 banknote billete hawaii hawaii overprint note friedberg fr-2305 notafilia numismática billete de veinte dólares segunda guerra mundial reserva federal"
     }
   ]
 }

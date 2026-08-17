@@ -9,12 +9,14 @@ import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
 import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
 import { withColombiaGroup } from '../lib/colombia-catalog';
 import { compareByFirstYear } from '../lib/catalog-year';
+import { absoluteUrl } from '../lib/site';
+import { withI18nMarkup } from '../lib/html-i18n';
+import { UI } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
   description: string;
   path: string;
-  keywords?: string[];
   robots?: string;
   ogType?: 'website' | 'article' | 'profile';
   ogTitle?: string;
@@ -42,7 +44,8 @@ const cards =
   props.path === '/coleccion/colombia/' ? colombiaHubCards(rawCards) : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
-const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
+const catalogShell = `<div class="catalog-shell">${withI18nMarkup(props.template)}</div>`;
+const canonical = absoluteUrl(props.path);
 ---
 <!doctype html>
 <html lang="es">
@@ -51,7 +54,6 @@ const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
       title={props.title}
       description={props.description}
       path={props.path}
-      keywords={props.keywords}
       robots={props.robots}
       ogType={props.ogType}
       ogTitle={props.ogTitle}
@@ -59,7 +61,10 @@ const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
       ogImage={props.ogImage}
       jsonLd={props.jsonLd}
       loadDcRuntime={false}
-    />
+    >
+      <link rel="alternate" hreflang="es" href={canonical} />
+      <link rel="alternate" hreflang="x-default" href={canonical} />
+    </BaseHead>
     <link rel="stylesheet" href="/catalog-fonts.css" />
     <script src="/catalog-zoom.js" defer is:inline></script>
     {props.styles && <style is:global set:html={props.styles} />}
@@ -164,6 +169,29 @@ const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
         outline: 2px solid var(--text-primary) !important;
         outline-offset: 4px !important;
       }
+      .catalog-record-meta--visually-hidden {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+      [data-zoom-dialog]:not([data-open="true"]),
+      .catalog-zoom-dialog:not([data-open="true"]),
+      .catalog-shell [role="dialog"][aria-modal="true"]:not([data-open="true"]) {
+        display: none !important;
+      }
+      [data-zoom-dialog][data-open="true"] {
+        display: flex !important;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 120 !important;
+        background: rgba(5, 5, 4, 0.94) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
       @media (max-width: 640px) {
         .catalog-shell [style*="background:#d8d2cd"],
         .catalog-shell [style*="background: rgb(216, 210, 205)"] {
@@ -185,7 +213,9 @@ const catalogShell = `<div class="catalog-shell">${props.template}</div>`;
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
-    >Saltar al contenido principal</a>
+      data-i18n
+      data-en={UI.skipMain.en}
+    >{UI.skipMain.es}</a>
     <SiteHeader />
     {
       record ? (

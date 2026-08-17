@@ -4,6 +4,8 @@
  * Separate face assets are preferred; stacked composites remain supported.
  */
 import type { CatalogImage, CatalogRecord } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
@@ -11,10 +13,40 @@ interface Props {
 
 const { record } = Astro.props;
 const images = record.images;
-const views: Array<{ id: 'front' | 'reverse' | 'stacked'; label: string; image: CatalogImage }> = [];
-if (images?.front) views.push({ id: 'front', label: 'Ver anverso', image: images.front });
-if (images?.reverse) views.push({ id: 'reverse', label: 'Ver reverso', image: images.reverse });
-if (images?.stacked) views.push({ id: 'stacked', label: 'Vista apilada', image: images.stacked });
+const views: Array<{
+  id: 'front' | 'reverse' | 'stacked';
+  label: string;
+  labelEn: string;
+  image: CatalogImage;
+  altEn?: string;
+}> = [];
+if (images?.front) {
+  views.push({
+    id: 'front',
+    label: UI.obverse.es,
+    labelEn: UI.obverse.en,
+    image: images.front,
+    altEn: lookupEn(images.front.alt),
+  });
+}
+if (images?.reverse) {
+  views.push({
+    id: 'reverse',
+    label: UI.reverse.es,
+    labelEn: UI.reverse.en,
+    image: images.reverse,
+    altEn: lookupEn(images.reverse.alt),
+  });
+}
+if (images?.stacked) {
+  views.push({
+    id: 'stacked',
+    label: UI.stacked.es,
+    labelEn: UI.stacked.en,
+    image: images.stacked,
+    altEn: lookupEn(images.stacked.alt),
+  });
+}
 
 const defaultView =
   images?.defaultView && views.some((v) => v.id === images.defaultView)
@@ -30,12 +62,14 @@ const viewsJson = JSON.stringify(views);
         <h2
           id="catalog-media-heading"
           class="m-0 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+          data-i18n
+          data-en={UI.images.en}
         >
-          Imágenes
+          {UI.images.es}
         </h2>
         {
           views.length > 1 && (
-            <div class="flex flex-wrap gap-2" role="group" aria-label="Vista de la pieza">
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Vista de la pieza" data-i18n data-i18n-target="aria-label" data-en={UI.viewFace.en}>
               {
                 views.map((view) => (
                   <button
@@ -43,6 +77,8 @@ const viewsJson = JSON.stringify(views);
                     class="min-h-11 px-4 py-2 text-[13px] tracking-[0.08em] uppercase border border-line text-muted bg-transparent cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px] aria-pressed:border-cream aria-pressed:text-cream"
                     data-catalog-view={view.id}
                     aria-pressed={view.id === initial.id ? 'true' : 'false'}
+                    data-i18n
+                    data-en={view.labelEn}
                   >
                     {view.label}
                   </button>
@@ -61,6 +97,9 @@ const viewsJson = JSON.stringify(views);
           aria-haspopup="dialog"
           aria-controls="catalog-media-dialog"
           aria-label="Ampliar imagen de la pieza"
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en={UI.enlargeAria.en}
         >
           <picture>
             {
@@ -72,6 +111,9 @@ const viewsJson = JSON.stringify(views);
               data-catalog-img
               src={initial.image.src}
               alt={initial.image.alt}
+              data-i18n
+              data-i18n-target="alt"
+              data-en={lookupEn(initial.image.alt)}
               width={initial.image.width}
               height={initial.image.height}
               loading="eager"
@@ -79,11 +121,11 @@ const viewsJson = JSON.stringify(views);
               class="block w-full h-auto"
             />
           </picture>
-          <span class="absolute bottom-4 right-4 inline-flex min-h-11 items-center px-4 text-[13px] tracking-[0.08em] uppercase bg-[rgba(10,10,9,0.82)] text-cream pointer-events-none">
-            Ampliar
+          <span class="absolute bottom-4 right-4 inline-flex min-h-11 items-center px-4 text-[13px] tracking-[0.08em] uppercase bg-[rgba(10,10,9,0.82)] text-cream pointer-events-none" data-i18n data-en={UI.enlarge.en}>
+            {UI.enlarge.es}
           </span>
         </button>
-        <figcaption class="mt-3 text-[14px] text-muted" data-catalog-caption>
+        <figcaption class="mt-3 text-[14px] text-muted" data-catalog-caption data-i18n={lookupEn(initial.image.alt) ? true : undefined} data-en={lookupEn(initial.image.alt)}>
           {initial.image.alt}
         </figcaption>
       </figure>
@@ -98,8 +140,10 @@ const viewsJson = JSON.stringify(views);
             type="button"
             class="absolute top-4 right-4 z-10 min-h-11 min-w-11 px-4 border border-line bg-bg text-cream cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
             data-catalog-zoom-close
+            data-i18n
+            data-en={UI.close.en}
           >
-            Cerrar
+            {UI.close.es}
           </button>
           <img
             data-catalog-dialog-img
@@ -124,19 +168,24 @@ const viewsJson = JSON.stringify(views);
           const closeBtn = root.querySelector('[data-catalog-zoom-close]');
           const buttons = Array.from(root.querySelectorAll('[data-catalog-view]'));
 
+          function currentAlt(view) {
+            var en = document.documentElement.getAttribute('data-interface-lang') === 'en';
+            return (en && view.altEn) ? view.altEn : view.image.alt;
+          }
+
           function applyView(id) {
             const view = views.find(function (v) { return v.id === id; });
             if (!view || !img) return;
             img.src = view.image.src;
-            img.alt = view.image.alt;
+            img.alt = currentAlt(view);
             if (webp) {
               if (view.image.srcWebp) webp.setAttribute('srcset', view.image.srcWebp);
               else webp.removeAttribute('srcset');
             }
-            if (caption) caption.textContent = view.image.alt;
+            if (caption) caption.textContent = currentAlt(view);
             if (dialogImg) {
               dialogImg.src = view.image.src;
-              dialogImg.alt = view.image.alt;
+              dialogImg.alt = currentAlt(view);
             }
             buttons.forEach(function (btn) {
               btn.setAttribute(
@@ -160,6 +209,12 @@ const viewsJson = JSON.stringify(views);
           });
           dialog && dialog.addEventListener('click', function (event) {
             if (event.target === dialog) dialog.close();
+          });
+          document.addEventListener('notofilia:interface-lang', function () {
+            const pressed = buttons.find(function (btn) {
+              return btn.getAttribute('aria-pressed') === 'true';
+            });
+            applyView((pressed && pressed.getAttribute('data-catalog-view')) || views[0].id);
           });
         })();
       </script>

@@ -24,20 +24,42 @@ export type NavSection = {
   labelEn?: string;
   href?: string;
   description?: string;
+  descriptionEn?: string;
   links: NavLink[];
   groups?: NavGroup[];
 };
 
-/** Top-level links always reachable without JavaScript. */
+/** Trailing drawer items — after collection accordions. */
+export const GLOSSARY_LINK: NavLink = {
+  href: '/glosario/',
+  label: 'Glosario',
+  labelEn: 'Glossary',
+};
+
+export const CONTACT_LINK: NavLink = {
+  href: '/contacto/',
+  label: 'Contacto',
+  labelEn: 'Contact',
+};
+
+/** Top-level links always reachable without JavaScript. Contacto stays last. */
 export const PRIMARY_LINKS: NavLink[] = [
   { href: '/', label: 'Inicio', labelEn: 'Home' },
   { href: '/coleccion/', label: 'Colección', labelEn: 'Collection' },
   { href: '/buscar/', label: 'Buscar', labelEn: 'Search' },
   { href: '/blog/', label: 'Blog', labelEn: 'Blog' },
   { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
-  { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
-  { href: '/contacto/', label: 'Contacto', labelEn: 'Contact' },
+  { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
+  GLOSSARY_LINK,
+  CONTACT_LINK,
 ];
+
+const DRAWER_TRAILING_HREFS = new Set([GLOSSARY_LINK.href, CONTACT_LINK.href]);
+
+/** Drawer destinations above the collection accordions (Glosario and Contacto render after). */
+export const DRAWER_PRIMARY_LINKS: NavLink[] = PRIMARY_LINKS.filter(
+  (link) => !DRAWER_TRAILING_HREFS.has(link.href),
+);
 
 /** Featured notafilia destinations (coins live under the Numismática accordion). */
 export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
@@ -45,6 +67,7 @@ export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
 ).map((entry) => ({
   href: entry.href,
   label: entry.title,
+  labelEn: entry.titleEn,
 }));
 
 export const NUMISMATICA_LINKS: NavLink[] = [
@@ -57,10 +80,12 @@ export const NUMISMATICA_LINKS: NavLink[] = [
   {
     href: '/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/',
     label: 'Felipe V — Doblón de 2 Escudos, Bogotá',
+    labelEn: 'Felipe V — 2 Escudos doubloon, Bogotá',
   },
   {
     href: '/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/',
     label: 'Carlos IV — 2 Escudos, Bogotá 1791',
+    labelEn: 'Carlos IV — 2 Escudos, Bogotá 1791',
   },
   {
     href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/',
@@ -88,10 +113,11 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
   {
     id: 'colombia',
     label: 'Colombia',
+    labelEn: 'Colombia',
     links: [
-      { href: '/coleccion/colombia/', label: 'Catálogo de Billetes de Colombia', lead: true },
-      { href: '/coleccion/colombia/cartagena-1-real-1813/', label: 'Cartagena de Indias — 1 Real (1813)' },
-      { href: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones en el extranjero' },
+      { href: '/coleccion/colombia/', label: 'Catálogo de Billetes de Colombia', labelEn: 'Colombia banknote catalog', lead: true },
+      { href: '/coleccion/colombia/cartagena-1-real-1813/', label: 'Cartagena de Indias — 1 Real (1813)', labelEn: 'Cartagena de Indias — 1 Real (1813)' },
+      { href: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones en el extranjero', labelEn: 'Issues printed abroad' },
     ],
   },
   {
@@ -105,29 +131,30 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
         labelEn: 'United States catalog',
         lead: true,
       },
-      { href: '/coleccion/billete-obsoleto-estados-unidos/', label: 'Billetes obsoletos de EE. UU.' },
-      { href: '/coleccion/certificados-de-pago-militar/', label: 'Certificados de Pago Militar' },
+      { href: '/coleccion/billete-obsoleto-estados-unidos/', label: 'Billetes obsoletos de EE. UU.', labelEn: 'U.S. obsolete banknotes' },
+      { href: '/coleccion/certificados-de-pago-militar/', label: 'Certificados de Pago Militar', labelEn: 'Military Payment Certificates' },
       { href: '/coleccion/pop-art/', label: 'Pop-art currency' },
     ],
   },
   {
     id: 'puerto-rico',
     label: 'Puerto Rico',
-    links: [{ href: '/coleccion/puerto-rico/', label: 'Catálogo de Billetes de Puerto Rico', lead: true }],
+    links: [{ href: '/coleccion/puerto-rico/', label: 'Catálogo de Billetes de Puerto Rico', labelEn: 'Puerto Rico banknote catalog', lead: true }],
   },
   {
     id: 'ecuador',
     label: 'Ecuador',
-    links: [{ href: '/coleccion/ecuador/', label: 'Catálogo de Billetes de Ecuador', lead: true }],
+    links: [{ href: '/coleccion/ecuador/', label: 'Catálogo de Billetes de Ecuador', labelEn: 'Ecuador banknote catalog', lead: true }],
   },
   {
     id: 'polimero',
     label: 'Billetes de polímero mundial',
     labelEn: 'World polymer notes',
-    links: [{ href: '/coleccion/polimero-mundial/', label: 'Catálogo de polímero mundial', lead: true }],
+    links: [{ href: '/coleccion/polimero-mundial/', label: 'Catálogo de polímero mundial', labelEn: 'World polymer catalog', lead: true }],
   },
 ];
 
+/** Collection accordions only — Blog, Noticias, Glosario, and Logros live in PRIMARY_LINKS. */
 export const NAV_SECTIONS: NavSection[] = [
   {
     id: 'numismatica',
@@ -142,22 +169,12 @@ export const NAV_SECTIONS: NavSection[] = [
     labelEn: 'Virtual collection - Notaphily',
     href: '/coleccion/',
     description: 'Catálogo global con búsqueda y filtros por país, tipo y material.',
+    descriptionEn: 'Global catalog with search and filters by country, type, and material.',
     links: [
       { href: '/coleccion/', label: 'Explorar la colección', labelEn: 'Browse the collection', lead: true },
       { href: '/coleccion/?tipo=specimen#explorar', label: 'Specimens' },
       { href: '/coleccion/?tipo=error#explorar', label: 'Errores de imprenta', labelEn: 'Printing errors' },
     ],
     groups: NOTAFILIA_GROUPS,
-  },
-  {
-    id: 'editorial',
-    label: 'Editorial',
-    labelEn: 'Editorial',
-    links: [
-      { href: '/blog/', label: 'Blog' },
-      { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
-      { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
-      { href: '/glosario/', label: 'Glosario', labelEn: 'Glossary' },
-    ],
   },
 ];

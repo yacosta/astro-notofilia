@@ -1,7 +1,7 @@
 /**
  * Fail the build if unresolved template placeholders remain in shipped
- * Astro HTML / catalog data. Intentionally skips legacy `*.dc.html` shells
- * and `support.js`, which still use Mustache for the dc-runtime.
+ * Astro HTML / catalog data. Legacy `*.dc.html` shells are no longer
+ * published; `support.js` still uses Mustache internally and is skipped.
  */
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -34,11 +34,39 @@ const TARGETS = [
 
 function shouldSkipFile(filePath) {
   const base = path.basename(filePath);
-  // Legacy dc-runtime pages and shared fragments keep Mustache by design.
-  if (/\.dc\.html$/i.test(base)) return true;
   if (/^support(\.min)?\.js$/i.test(base)) return true;
   if (/^coleccion-hub\.js$/i.test(base)) return true;
   return false;
+}
+
+function catalogFichaLayoutIssues(data) {
+  const template = data.template || '';
+  const record = data.record || {};
+  if (record.render === 'astro-hub' || (record.cards && record.cards.length)) return [];
+  if (String(data.path || '').includes('/perfil-')) return [];
+  const issues = [];
+  const dialogs = [...template.matchAll(/<div[^>]*(?:role="dialog"|data-zoom-dialog)[^>]*>/gi)].map(
+    (match) => match[0],
+  );
+  if (dialogs.some((dialog) => !/\bhidden\b/i.test(dialog) || /display\s*:\s*flex/i.test(dialog))) {
+    issues.push('zoom dialog would cover the ficha on load');
+  }
+  const triggerAt = template.search(/data-zoom-trigger/i);
+  const imgAt = template.search(/<img\b/i);
+  const denomAt = template.search(/>Denominación</i);
+  const paisAt = template.search(/>País</i);
+  const distritoAt = template.search(/>Distrito</i);
+  const serieAt = template.search(/>N\.(?:&deg;|º|°)? de Serie</i);
+  const specAt =
+    [denomAt, paisAt, distritoAt, serieAt].filter((index) => index >= 0).sort((a, b) => a - b)[0] ??
+    -1;
+  if (
+    specAt >= 0 &&
+    ((triggerAt >= 0 && triggerAt < specAt) || (imgAt >= 0 && imgAt < specAt))
+  ) {
+    issues.push('spec table sits below the stacked scan');
+  }
+  return issues;
 }
 
 async function walk(filePath, out) {
@@ -73,7 +101,22 @@ for (const file of files) {
   if (file.includes(`${path.sep}src${path.sep}content${path.sep}catalog${path.sep}`) && file.endsWith('.json')) {
     try {
       const data = JSON.parse(text);
-      text = JSON.stringify(data.record ?? {});
+      if (/<sc-for/i.test(data.template || '')) {
+        hits.push({
+          file: path.relative(root, file),
+          count: 1,
+          samples: ['<sc-for> (note loop was not expanded into static HTML)'],
+        });
+      }
+      const layout = catalogFichaLayoutIssues(data);
+      if (layout.length) {
+        hits.push({
+          file: path.relative(root, file),
+          count: layout.length,
+          samples: layout,
+        });
+      }
+      text = `${data.template || ''}\n${JSON.stringify(data.record ?? {})}`;
     } catch {
       // fall through to full-file scan
     }

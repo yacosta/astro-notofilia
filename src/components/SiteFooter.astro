@@ -1,12 +1,12 @@
 ---
 /**
  * Shared site footer for natively-Astro pages (homepage + BlogLayout + CatalogLayout).
- * Catalog (.dc.html) pages keep the inline equivalent in public/SiteFooter.dc.html.
+ * Catalog pages used to keep an inline equivalent in public/SiteFooter.dc.html.
  *
- * Always shows the Colección Virtual stats line (build-time from sitemap.xml).
+ * Always shows the Colección Virtual stats line (build-time from the catalog collection).
  */
 import {
-  computeCollectionStats,
+  getCollectionStats,
   formatStatsEn,
   formatStatsEs,
 } from '../lib/stats';
@@ -24,13 +24,13 @@ export interface Props {
 
 const {
   taglineEs = 'Numismática y Notafilia — un catálogo y colección virtual de billetes y monedas históricas.',
-  taglineEn,
+  taglineEn = 'Numismatics and Notaphily — a catalog and virtual collection of historical banknotes and coins.',
   statsLineEs,
   statsLineEn,
   variant = 'editorial',
 } = Astro.props;
 
-const computed = computeCollectionStats();
+const computed = await getCollectionStats();
 const statsEs = statsLineEs ?? formatStatsEs(computed);
 const statsEn = statsLineEn ?? formatStatsEn(computed);
 
@@ -107,7 +107,7 @@ const isHome = variant === 'home';
       {' '}
       <span data-i18n data-en="with much">con mucho</span>
       {' '}
-      <span class="footer-heart" role="img" aria-label="amor">
+      <span class="footer-heart" role="img" aria-label="amor" data-i18n data-i18n-target="aria-label" data-en="love">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
           <path
             fill="#e07a6a"

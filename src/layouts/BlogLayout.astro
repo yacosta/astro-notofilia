@@ -7,6 +7,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { EDITORIAL_TEAM } from '../lib/editorial';
 
 export interface Props {
   title: string;
@@ -15,10 +16,18 @@ export interface Props {
   ogType?: 'website' | 'article';
   ogImage?: string;
   jsonLd?: unknown;
-  keywords?: string[];
+  author?: string;
 }
 
-const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  ogType = 'website',
+  ogImage,
+  jsonLd,
+  author = EDITORIAL_TEAM.name,
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
@@ -30,7 +39,7 @@ const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords 
       ogType={ogType}
       ogImage={ogImage}
       jsonLd={jsonLd}
-      keywords={keywords}
+      author={author}
       loadDcRuntime={false}
     />
     <style is:global>
@@ -45,6 +54,8 @@ const { title, description, path, ogType = 'website', ogImage, jsonLd, keywords 
     <a
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
       href="#main-content"
+      data-i18n
+      data-en="Skip to content"
     >Saltar al contenido</a>
     <SiteHeader />
     <main id="main-content" class="min-h-[60vh]" tabindex="-1">
