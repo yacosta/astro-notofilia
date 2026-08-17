@@ -1,0 +1,8 @@
+---
+description: After production deploys, purge all Cloudflare cache for notofilia.com
+alwaysApply: true
+---
+
+# Purge Cloudflare cache after deploy
+
+After a production deploy to notofilia.com succeeds, purge all Cloudflare edge cache for the `notofilia.com` zone (`POST /zones/{id}/purge_cache` with `purge_everything: true`). Wait until the production Pages deployment is live. Token needs **Zone → Cache Purge**.

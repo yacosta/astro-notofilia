@@ -11,6 +11,8 @@ Apply this by default without being asked again.
 
 **Performance measurement:** use `npm run lighthouse:ci` (see `lighthouserc.json`) against homepage, `/coleccion/`, a large catalog record, and a news article. Budgets target Performance ≥90, Accessibility/Best Practices/SEO ≥95, LCP ≤2.5s, CLS ≤0.1, TBT ≤200ms, transferred JS ≤180KB. Treat Lighthouse as lab data; confirm Core Web Vitals with CrUX after deploy.
 
+**Cache after deploy:** when a production deploy to notofilia.com succeeds, purge all Cloudflare edge cache for the zone (`purge_everything`). Wait until the production Pages deployment is live first. Token needs Zone → Cache Purge.
+
 **Noticias — no duplicates:** do not publish a second `/noticias/` post for the same story from a different outlet unless it adds material new facts. Prefer updating the existing piece (and citing the extra source) over parallel summaries.
 
 **Valuation / editorial trust:** every price-related post must set `claimKind` (`seller_asking` | `dealer_retail` | `catalog_valuation` | `melt_value` | `auction_result` | `auction_record` | `media_claim`) so the “Sobre este valor” callout renders. Prefer also `claimCurrency`, `claimValuationDate`, `claimEvidenceUrl` / primary sources, `updatedAt`, `reviewedBy`, and `corrections` when applicable. Public policy lives at `/editorial/`. Structured data: `NewsArticle` for noticias, `BlogPosting` for blog/logros, `CreativeWork` + `additionalProperty` (never `Product`) for collection pieces, `ItemList` for catalog indexes.
