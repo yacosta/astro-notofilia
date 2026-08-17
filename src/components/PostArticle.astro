@@ -72,15 +72,25 @@ const corrections = d.corrections ?? [];
     <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n={titleEn ? true : undefined} data-en={titleEn}>
       {d.title}
     </h1>
-    <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-5 leading-[1.5]" data-i18n={excerptEn ? true : undefined} data-en={excerptEn}>{d.excerpt}</p>
+    <p
+      class:list={[
+        'italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 leading-[1.5]',
+        collection === 'noticias' && !(updatedFmt && updatedIso) ? 'mb-9' : 'mb-5',
+      ]}
+      data-i18n={excerptEn ? true : undefined}
+      data-en={excerptEn}
+    >{d.excerpt}</p>
 
+    {(collection !== 'noticias' || (updatedFmt && updatedIso)) && (
     <dl class="m-0 mb-9 grid gap-1 text-[14px] tracking-[0.02em] text-muted not-italic">
+      {collection !== 'noticias' && (
       <div class="flex flex-wrap gap-x-2">
         <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.reviewedBy.en}>{UI.reviewedBy.es}</dt>
         <dd class="m-0">
           <a class="text-muted hover:text-cream" href="/editorial/equipo/">{reviewedBy}</a>
         </dd>
       </div>
+      )}
       {updatedFmt && updatedIso && (
         <div class="flex flex-wrap gap-x-2">
           <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.lastUpdated.en}>{UI.lastUpdated.es}</dt>
@@ -88,6 +98,7 @@ const corrections = d.corrections ?? [];
         </div>
       )}
     </dl>
+    )}
   </header>
 
   {d.cover && (

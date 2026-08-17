@@ -21,6 +21,9 @@ test('noticia article states Fuente with the original source link', async ({ pag
     await expect(link).toContainText('Diario El Telégrafo');
     await expect(link).toContainText('se abre en una pestaña nueva');
   }
+
+  await expect(page.getByText('Revisado por')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Yezid Acosta' })).toHaveCount(0);
 });
 
 test('homepage featured news states Fuente with external source links', async ({ page }) => {
