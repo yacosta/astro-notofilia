@@ -1,6 +1,6 @@
 /**
- * Put ficha spec tables above stacked scans and hide leftover zoom overlays
- * on every catalog template (not only the Phase 3 <sc-for> restores).
+ * Hide leftover zoom overlays and put each stacked scan under the title
+ * (before spec tables) on every catalog template.
  *
  * Usage: node scripts/sanitize-catalog-fichas.mjs
  */

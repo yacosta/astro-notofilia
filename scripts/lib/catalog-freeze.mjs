@@ -229,60 +229,90 @@ function slugFromUploads(chunk, fallback) {
   return fallback;
 }
 
-/** Move each note's País/Denominación table above its stacked scan. */
-export function moveAllSpecTablesBeforeImages(html) {
+const CAPTION_AFTER_BUTTON =
+  /^\s*<span\b[^>]*(?:font-style:\s*italic|text-align:\s*center)[^>]*>[\s\S]*?<\/span>/i;
+
+function findImageCluster(html, button) {
+  let end = button.end;
+  const after = html.slice(button.end);
+  const caption = after.match(CAPTION_AFTER_BUTTON);
+  if (caption && !/role="dialog"|data-zoom-dialog=/i.test(caption[0])) {
+    end = button.end + caption[0].length;
+  }
+  return { start: button.start, end, html: html.slice(button.start, end) };
+}
+
+function findTitleBlockEnd(html) {
+  const h1At = html.search(/<h1\b/i);
+  if (h1At < 0) return -1;
+  const before = html.slice(0, h1At);
+  const centerAt = before.lastIndexOf('text-align:center');
+  if (centerAt !== -1) {
+    const divAt = before.lastIndexOf('<div', centerAt);
+    const sliced = sliceBalancedDivAt(html, divAt);
+    if (sliced && sliced.start < h1At && sliced.end > h1At) return sliced.end;
+  }
+  const h1Close = html.toLowerCase().indexOf('</h1>', h1At);
+  if (h1Close === -1) return -1;
+  let end = h1Close + 5;
+  const rest = html.slice(end);
+  const sub = rest.match(/^\s*<p\b[^>]*>[\s\S]*?<\/p>/i);
+  if (sub) end += sub[0].length;
+  return end;
+}
+
+/** Move each stacked scan above its País/Denominación table. */
+export function moveAllImagesBeforeSpecTables(html) {
   const buttons = findZoomButtons(html);
   if (buttons.length === 0) {
     const spec = findSpecTableIn(html);
-    const imgAt = html.search(/<img\b/i);
-    if (!spec || imgAt === -1 || spec.start < imgAt) return html;
-    const block = spec.html;
-    html = html.slice(0, spec.start) + html.slice(spec.end);
-    const nextImg = html.search(/<img\b/i);
-    if (nextImg === -1) return html;
-    return `${html.slice(0, nextImg)}${block}\n${html.slice(nextImg)}`;
+    const imgMatch = html.match(/<picture\b[\s\S]*?<\/picture>|<img\b[^>]*>/i);
+    if (!spec || !imgMatch) return html;
+    const imgAt = html.indexOf(imgMatch[0]);
+    if (imgAt < spec.start) return html;
+    const block = imgMatch[0];
+    html = html.slice(0, imgAt) + html.slice(imgAt + block.length);
+    return `${html.slice(0, spec.start)}${block}\n${html.slice(spec.start)}`;
   }
 
   for (let i = buttons.length - 1; i >= 0; i -= 1) {
     const button = buttons[i];
-    const regionEnd = i + 1 < buttons.length ? buttons[i + 1].start : html.length;
-    const region = html.slice(button.end, regionEnd);
+    const cluster = findImageCluster(html, button);
+    const regionStart = i === 0 ? 0 : buttons[i - 1].end;
+    const region = html.slice(regionStart, cluster.start);
     const spec = findSpecTableIn(region);
     if (!spec) continue;
-    const afterSpec = region.slice(spec.end);
-    if (i + 1 < buttons.length && /^\s*$/.test(afterSpec)) continue;
-    const absStart = button.end + spec.start;
-    const absEnd = button.end + spec.end;
-    const block = html.slice(absStart, absEnd);
-    html = html.slice(0, absStart) + html.slice(absEnd);
-    html = `${html.slice(0, button.start)}${block}\n${html.slice(button.start)}`;
+    const gap = region.slice(spec.end);
+    const wrappersOnly = gap
+      .replace(/<\/?div\b[^>]*>/gi, '')
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace(/\s+/g, '');
+    if (wrappersOnly || gap.length > 280 || /flex-direction:|grid-template-columns|minmax\(/i.test(gap)) continue;
+    const absSpecStart = regionStart + spec.start;
+    const block = cluster.html;
+    html = html.slice(0, cluster.start) + html.slice(cluster.end);
+    html = `${html.slice(0, absSpecStart)}${block}\n${html.slice(absSpecStart)}`;
   }
   return html;
 }
 
-function moveSpecTableBeforeImage(html) {
-  const spec = sliceBalancedDiv(
-    html,
-    '<div style="display:flex; flex-direction:column; margin-top:8px;">',
-  );
-  const buttonRe = /<button\b[^>]*data-zoom-trigger[\s\S]*?<\/button>/i;
-  const buttonMatch = html.match(buttonRe);
-  if (!spec || !buttonMatch) return html;
-  const buttonAt = html.indexOf(buttonMatch[0]);
-  if (spec.start < buttonAt) return html;
-
-  let block = spec.html;
-  const after = html.slice(spec.end).match(/^\s*<p\b[\s\S]*?<\/p>/);
-  let end = spec.end;
-  if (after) {
-    block += after[0];
-    end += after[0].length;
-  }
-
-  html = html.slice(0, spec.start) + html.slice(end);
-  const nextButtonAt = html.search(buttonRe);
-  if (nextButtonAt === -1) return html;
-  return `${html.slice(0, nextButtonAt)}${block}\n${html.slice(nextButtonAt)}`;
+/** Pull the first piece scan to sit directly under the page title. */
+export function moveFirstImageAfterTitle(html) {
+  const titleEnd = findTitleBlockEnd(html);
+  const buttons = findZoomButtons(html);
+  if (titleEnd < 0 || buttons.length === 0) return html;
+  const cluster = findImageCluster(html, buttons[0]);
+  if (cluster.start <= titleEnd) return html;
+  const between = html.slice(titleEnd, cluster.start);
+  if (/^\s*$/.test(between)) return html;
+  const needsHoist =
+    SPEC_LABEL.test(between) ||
+    /<p\b[^>]*line-height:\s*1\.7/i.test(between) ||
+    /<h2\b/i.test(between);
+  if (!needsHoist) return html;
+  const wrapped = `<div style="width:100%; max-width:760px; display:flex; flex-direction:column; gap:14px; margin:0 auto 40px;">\n${cluster.html}\n</div>`;
+  html = html.slice(0, cluster.start) + html.slice(cluster.end);
+  return `${html.slice(0, titleEnd)}\n${wrapped}${html.slice(titleEnd)}`;
 }
 
 function noteTriggerHtml(itemHtml, note) {
@@ -297,7 +327,7 @@ function noteTriggerHtml(itemHtml, note) {
     `aria-label="${escapeAttr(`Ampliar imagen del billete: ${label}`)}"`,
   );
   html = substAlias(html, 'note', note);
-  return moveSpecTableBeforeImage(html);
+  return moveAllImagesBeforeSpecTables(html);
 }
 
 function freezeZoomDialog(dialogHtml, note) {
@@ -388,11 +418,12 @@ function wireZoomTriggers(html) {
   return html;
 }
 
-/** Hide zoom overlays and put ficha spec tables above stacked scans. */
+/** Hide zoom overlays and put each stacked scan under the title, before spec tables. */
 export function sanitizeCatalogTemplate(html) {
   let next = wireZoomTriggers(html);
   next = hideZoomDialogs(next);
-  next = moveAllSpecTablesBeforeImages(next);
+  next = moveAllImagesBeforeSpecTables(next);
+  next = moveFirstImageAfterTitle(next);
   next = prefixUploadPaths(next);
   next = addNewWindowHints(next);
   return next;
