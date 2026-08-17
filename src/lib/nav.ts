@@ -188,7 +188,6 @@ export const NAV_SECTIONS: NavSection[] = [
     links: [
       { href: '/coleccion/', label: 'Explorar la colección', labelEn: 'Browse the collection', lead: true },
       { href: '/coleccion/?tipo=specimen#explorar', label: 'Specimens' },
-      { href: '/coleccion/?tipo=error#explorar', label: 'Errores de imprenta', labelEn: 'Printing errors' },
     ],
     groups: NOTAFILIA_GROUPS,
   },

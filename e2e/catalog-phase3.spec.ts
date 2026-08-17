@@ -404,6 +404,9 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await notafilia.locator(':scope > summary').click();
   await expect(notafilia).toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Printing errors' })).toHaveCount(0);
 
   const colombia = page.locator('#nav-sec-colombia');
   await expect(colombia).not.toHaveAttribute('open');
