@@ -29,7 +29,7 @@ const isFooter = variant === 'footer';
 ---
 <p
   class:list={[
-    'source-credit m-0',
+    'source-credit m-0 flex flex-wrap items-center gap-x-1.5',
     isFooter
       ? 'mt-10 pt-6 border-t border-line text-[16px] leading-[1.5]'
       : 'text-[13px] leading-[1.4] tracking-[0.04em]',
@@ -39,15 +39,15 @@ const isFooter = variant === 'footer';
 >
   <span
     class:list={[
+      'shrink-0',
       isFooter ? 'font-semibold text-cream-soft' : onCream ? 'text-gold-dark' : 'text-muted',
     ]}
     data-i18n
     data-en={UI.fuente.en}
   >{UI.fuente.es}</span>
-  {' '}
   <a
     class:list={[
-      'inline-flex items-center min-h-[44px] underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px]',
+      'inline-flex min-h-[44px] min-w-0 max-w-full flex-wrap items-center gap-x-1 underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px]',
       onCream
         ? 'text-gold-deep [text-decoration-color:rgba(107,82,31,0.45)] focus-visible:outline-panel'
         : 'text-cream [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light focus-visible:outline-cream',
