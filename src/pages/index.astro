@@ -29,6 +29,7 @@ function toStripItems(
     url: `/${base}/${p.id}/`,
     title: p.data.title,
     source: p.data.source ?? 'Notofilia',
+    sourceUrl: p.data.sourceUrl,
     iso: toIsoDate(p.data.publishedAt),
     dateLabel: formatDateShortEs(p.data.publishedAt),
     dateLabelEn: formatDateShortEn(p.data.publishedAt),

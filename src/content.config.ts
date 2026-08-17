@@ -69,11 +69,14 @@ const postSchema = z.object({
 });
 
 // "Noticias" — curated news. Each post is a Markdown file in
-// src/content/noticias/ → /noticias/<id>/. Typically a short summary that
-// points to an external source (set `source` + `sourceUrl`).
+// src/content/noticias/ → /noticias/<id>/. Short summaries that must
+// credit the original outlet (`source` + `sourceUrl` render as “Fuente:”).
 const noticias = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/noticias' }),
-  schema: postSchema,
+  schema: postSchema.extend({
+    source: z.string().min(1),
+    sourceUrl: z.string().url(),
+  }),
 });
 
 // "Blog" — original evergreen guides. Each post is a Markdown file in

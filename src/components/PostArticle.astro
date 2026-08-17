@@ -6,6 +6,7 @@ import { render, type CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
 import ClaimCallout from './ClaimCallout.astro';
+import SourceCredit from './SourceCredit.astro';
 import { COLLECTIONS } from '../lib/collections';
 import { EDITORIAL_TEAM } from '../lib/editorial';
 import { isClaimKind } from '../lib/claims';
@@ -61,21 +62,35 @@ const corrections = d.corrections ?? [];
         {' '}
         <time datetime={iso} data-i18n data-en={fmtEn}>{fmt}</time>
       </span>
-      {d.source && <span aria-hidden="true">·</span>}
-      {d.source && <span>{d.source}</span>}
     </div>
+    {collection === 'noticias' && d.source && d.sourceUrl && (
+      <SourceCredit source={d.source} sourceUrl={d.sourceUrl} class="mb-3" />
+    )}
+    {collection !== 'noticias' && d.source && (
+      <p class="m-0 mb-3 text-[13px] tracking-[0.08em] uppercase text-muted">{d.source}</p>
+    )}
     <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n={titleEn ? true : undefined} data-en={titleEn}>
       {d.title}
     </h1>
-    <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-5 leading-[1.5]" data-i18n={excerptEn ? true : undefined} data-en={excerptEn}>{d.excerpt}</p>
+    <p
+      class:list={[
+        'italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 leading-[1.5]',
+        collection === 'noticias' && !(updatedFmt && updatedIso) ? 'mb-9' : 'mb-5',
+      ]}
+      data-i18n={excerptEn ? true : undefined}
+      data-en={excerptEn}
+    >{d.excerpt}</p>
 
+    {(collection !== 'noticias' || (updatedFmt && updatedIso)) && (
     <dl class="m-0 mb-9 grid gap-1 text-[14px] tracking-[0.02em] text-muted not-italic">
+      {collection !== 'noticias' && (
       <div class="flex flex-wrap gap-x-2">
         <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.reviewedBy.en}>{UI.reviewedBy.es}</dt>
         <dd class="m-0">
           <a class="text-muted hover:text-cream" href="/editorial/equipo/">{reviewedBy}</a>
         </dd>
       </div>
+      )}
       {updatedFmt && updatedIso && (
         <div class="flex flex-wrap gap-x-2">
           <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.lastUpdated.en}>{UI.lastUpdated.es}</dt>
@@ -83,6 +98,7 @@ const corrections = d.corrections ?? [];
         </div>
       )}
     </dl>
+    )}
   </header>
 
   {d.cover && (
@@ -119,6 +135,10 @@ const corrections = d.corrections ?? [];
     </div>
     <div data-lang-panel="en" lang="en" hidden set:html={bodyEnHtml} />
   </div>
+
+  {collection === 'noticias' && d.source && d.sourceUrl && (
+    <SourceCredit source={d.source} sourceUrl={d.sourceUrl} variant="footer" />
+  )}
 
   {primarySources.length > 0 && (
     <aside class="mt-12 border-t border-line pt-8" aria-labelledby="primary-sources-heading">
@@ -171,7 +191,7 @@ const corrections = d.corrections ?? [];
     </aside>
   )}
 
-  {d.sourceUrl && (
+  {collection !== 'noticias' && d.sourceUrl && (
     <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
       <a
         class="text-muted font-semibold hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"

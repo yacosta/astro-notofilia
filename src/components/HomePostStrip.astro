@@ -3,11 +3,14 @@
  * Homepage cream-band post strip (noticias or blog). Uses a 4-up grid on
  * desktop and horizontal snap-scroll on mobile — pure Tailwind utilities.
  */
+import SourceCredit from './SourceCredit.astro';
+
 export interface StripItem {
   url: string;
   title: string;
   titleEn?: string;
   source: string;
+  sourceUrl?: string;
   iso: string;
   dateLabel: string;
   dateLabelEn?: string;
@@ -65,9 +68,18 @@ const {
                 />
               </picture>
             )}
-            <div class="flex flex-wrap items-baseline gap-[10px] mb-1.5">
+            <div class="mb-1.5">
               <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep" data-i18n={it.dateLabelEn ? true : undefined} data-en={it.dateLabelEn}>{it.dateLabel}</time>
-              <span class="text-[13px] text-gold-dark">&middot; {it.source}</span>
+              {it.sourceUrl ? (
+                <SourceCredit
+                  source={it.source}
+                  sourceUrl={it.sourceUrl}
+                  tone="on-cream"
+                  class="mt-0"
+                />
+              ) : (
+                <span class="text-[13px] text-gold-dark"> &middot; {it.source}</span>
+              )}
             </div>
             <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words" data-i18n={it.titleEn ? true : undefined} data-en={it.titleEn}>
               {it.title}

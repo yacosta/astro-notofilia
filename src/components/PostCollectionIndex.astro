@@ -3,6 +3,7 @@
  * Shared listing page for blog / noticias collections.
  */
 import Cover from './Cover.astro';
+import SourceCredit from './SourceCredit.astro';
 import { COLLECTIONS } from '../lib/collections';
 import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
 import { lookupEn } from '../lib/html-i18n';
@@ -15,7 +16,7 @@ export interface Props {
   intro: string;
   emptyMessage: string;
   posts: PublishedPost[];
-  /** Show source next to the date (noticias). */
+  /** Show “Fuente:” with a link to the original outlet (noticias). */
   showSource?: boolean;
 }
 
@@ -49,25 +50,30 @@ const label = meta.label;
     <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
       {posts.map((post) => (
         <li class="card">
-          <a class="group block no-underline text-inherit h-full" href={`${basePath}${post.id}/`}>
-            {post.data.cover && (
-              <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
+          {post.data.cover && (
+            <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
+          )}
+          <div class="pt-4 mt-4 border-t-2 border-muted">
+            <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
+              <time datetime={toIsoDate(post.data.publishedAt)} data-i18n data-en={formatDateLongEn(post.data.publishedAt)}>
+                {formatDateLongEs(post.data.publishedAt)}
+              </time>
+            </div>
+            {showSource && post.data.source && post.data.sourceUrl && (
+              <SourceCredit
+                source={post.data.source}
+                sourceUrl={post.data.sourceUrl}
+                class="mb-2"
+              />
             )}
-            <div class="pt-4 mt-4 border-t-2 border-muted">
-              <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
-                <time datetime={toIsoDate(post.data.publishedAt)} data-i18n data-en={formatDateLongEn(post.data.publishedAt)}>
-                  {formatDateLongEs(post.data.publishedAt)}
-                </time>
-                {showSource && post.data.source && <span aria-hidden="true">·</span>}
-                {showSource && post.data.source && <span>{post.data.source}</span>}
-              </div>
+            <a class="group block no-underline text-inherit" href={`${basePath}${post.id}/`}>
               <h2 class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white" data-i18n={lookupEn(post.data.title) ? true : undefined} data-en={lookupEn(post.data.title)}>
                 {post.data.title}
               </h2>
               <p class="text-[16px] text-cream-dim mt-0 mb-3" data-i18n={lookupEn(post.data.excerpt) ? true : undefined} data-en={lookupEn(post.data.excerpt)}>{post.data.excerpt}</p>
               <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold" data-i18n data-en={UI.readMore.en}>{UI.readMore.es}</span>
-            </div>
-          </a>
+            </a>
+          </div>
         </li>
       ))}
     </ul>
@@ -78,4 +84,8 @@ const label = meta.label;
   .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }
   .card :global(img) { transition: transform 0.4s ease; }
   .card:hover :global(img) { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) {
+    .card :global(img) { transition: none; }
+    .card:hover :global(img) { transform: none; }
+  }
 </style>

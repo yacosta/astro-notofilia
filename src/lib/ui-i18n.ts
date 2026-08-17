@@ -72,6 +72,7 @@ export const UI = {
   viewCollection: { es: 'Ver la colección', en: 'View the collection' },
   search: { es: 'Buscar', en: 'Search' },
   readMore: { es: 'Leer más →', en: 'Read more →' },
+  fuente: { es: 'Fuente:', en: 'Source:' },
   publishedOn: { es: 'Publicado el', en: 'Published' },
   reviewedBy: { es: 'Revisado por', en: 'Reviewed by' },
   lastUpdated: { es: 'Última actualización', en: 'Last updated' },
