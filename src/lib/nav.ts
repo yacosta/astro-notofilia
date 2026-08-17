@@ -185,10 +185,7 @@ export const NAV_SECTIONS: NavSection[] = [
     href: '/coleccion/',
     description: 'Catálogo global con búsqueda y filtros por país, tipo y material.',
     descriptionEn: 'Global catalog with search and filters by country, type, and material.',
-    links: [
-      { href: '/coleccion/', label: 'Explorar la colección', labelEn: 'Browse the collection', lead: true },
-      { href: '/coleccion/?tipo=specimen#explorar', label: 'Specimens' },
-    ],
+    links: [],
     groups: NOTAFILIA_GROUPS,
   },
 ];

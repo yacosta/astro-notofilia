@@ -394,7 +394,8 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await expect(numismatica).not.toHaveAttribute('open');
   await expect(notafilia).not.toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeHidden();
-  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toBeHidden();
+  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
 
   await numismatica.locator(':scope > summary').click();
   await expect(numismatica).toHaveAttribute('open');
@@ -403,8 +404,8 @@ test('menu drawer restores collection accordions', async ({ page }) => {
 
   await notafilia.locator(':scope > summary').click();
   await expect(notafilia).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Printing errors' })).toHaveCount(0);
 
