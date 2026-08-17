@@ -29,7 +29,19 @@ export type NavSection = {
   groups?: NavGroup[];
 };
 
-/** Trailing drawer items — after collection accordions. */
+/** Trailing drawer items — after collection accordions. Contacto stays last. */
+export const BLOG_LINK: NavLink = {
+  href: '/blog/',
+  label: 'Blog',
+  labelEn: 'Blog',
+};
+
+export const NEWS_LINK: NavLink = {
+  href: '/noticias/',
+  label: 'Noticias',
+  labelEn: 'News',
+};
+
 export const GLOSSARY_LINK: NavLink = {
   href: '/glosario/',
   label: 'Glosario',
@@ -42,21 +54,24 @@ export const CONTACT_LINK: NavLink = {
   labelEn: 'Contact',
 };
 
-/** Top-level links always reachable without JavaScript. Contacto stays last. */
-export const PRIMARY_LINKS: NavLink[] = [
-  { href: '/', label: 'Inicio', labelEn: 'Home' },
-  { href: '/coleccion/', label: 'Colección', labelEn: 'Collection' },
-  { href: '/buscar/', label: 'Buscar', labelEn: 'Search' },
-  { href: '/blog/', label: 'Blog', labelEn: 'Blog' },
-  { href: '/noticias/', label: 'Noticias', labelEn: 'News' },
-  { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
+export const DRAWER_TRAILING_LINKS: NavLink[] = [
+  BLOG_LINK,
+  NEWS_LINK,
   GLOSSARY_LINK,
   CONTACT_LINK,
 ];
 
-const DRAWER_TRAILING_HREFS = new Set([GLOSSARY_LINK.href, CONTACT_LINK.href]);
+/** Top-level links always reachable without JavaScript. Contacto stays last. */
+export const PRIMARY_LINKS: NavLink[] = [
+  { href: '/', label: 'Inicio', labelEn: 'Home' },
+  { href: '/coleccion/', label: 'Colección', labelEn: 'Collection' },
+  { href: '/#logros-heading', label: 'Logros del Mes', labelEn: 'Monthly milestones' },
+  ...DRAWER_TRAILING_LINKS,
+];
 
-/** Drawer destinations above the collection accordions (Glosario and Contacto render after). */
+const DRAWER_TRAILING_HREFS = new Set(DRAWER_TRAILING_LINKS.map((link) => link.href));
+
+/** Drawer destinations above the collection accordions (Blog through Contacto render after). */
 export const DRAWER_PRIMARY_LINKS: NavLink[] = PRIMARY_LINKS.filter(
   (link) => !DRAWER_TRAILING_HREFS.has(link.href),
 );

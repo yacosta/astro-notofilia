@@ -166,24 +166,34 @@ if (/id:\s*'editorial'/.test(navTs)) {
   fail('Primary nav must not duplicate Blog/Noticias/Glosario under an Editorial accordion');
 }
 if (!navTs.includes('/#logros-heading')) fail('Primary nav is missing Logros del Mes');
+if (/href:\s*'\/buscar\/'/.test(navTs)) fail('Primary nav must not include Search / Buscar');
 if (!nativeHeader.includes('site-header__accordion')) fail('Native SiteHeader is missing collection accordion markup');
-const drawerContactIdx = nativeHeader.indexOf('CONTACT_LINK.href');
-const drawerGlossaryIdx = nativeHeader.indexOf('GLOSSARY_LINK.href');
+const drawerTrailingIdx = nativeHeader.lastIndexOf('DRAWER_TRAILING_LINKS');
 const drawerSectionsIdx = nativeHeader.indexOf('NAV_SECTIONS.map');
-if (drawerContactIdx === -1 || drawerSectionsIdx === -1 || drawerContactIdx < drawerSectionsIdx) {
-  fail('Native SiteHeader must render Contacto after the collection accordions');
+if (drawerTrailingIdx === -1 || drawerSectionsIdx === -1 || drawerTrailingIdx < drawerSectionsIdx) {
+  fail('Native SiteHeader must render Blog, Noticias, Glosario, and Contacto after the collection accordions');
 }
-if (drawerGlossaryIdx === -1 || drawerGlossaryIdx < drawerSectionsIdx || drawerGlossaryIdx > drawerContactIdx) {
-  fail('Native SiteHeader must render Glosario immediately above Contacto after the collection accordions');
+const trailingOrder = ["href: '/blog/'", "href: '/noticias/'", "href: '/glosario/'", "href: '/contacto/'"];
+const trailingPositions = trailingOrder.map((needle) => navTs.lastIndexOf(needle));
+if (trailingPositions.some((idx) => idx === -1) || trailingPositions.some((idx, i) => i > 0 && idx < trailingPositions[i - 1])) {
+  fail('Primary nav trailing order must be Blog, Noticias, Glosario, Contacto');
 }
+const legacyBlogIdx = header.lastIndexOf('href="/blog/"');
+const legacyNewsIdx = header.lastIndexOf('href="/noticias/"');
 const legacyContactIdx = header.lastIndexOf('href="/contacto/"');
 const legacyGlossaryIdx = header.lastIndexOf('href="/glosario/"');
 const legacyPerfilBtnIdx = header.indexOf('onClick="{{ togglePerfil }}"');
 if (legacyContactIdx === -1 || legacyPerfilBtnIdx === -1 || legacyContactIdx < legacyPerfilBtnIdx) {
   fail('Legacy SiteHeader must render Contacto after the last collection accordion');
 }
-if (legacyGlossaryIdx === -1 || legacyGlossaryIdx < legacyPerfilBtnIdx || legacyGlossaryIdx > legacyContactIdx) {
-  fail('Legacy SiteHeader must render Glosario immediately above Contacto after the last collection accordion');
+if (
+  legacyBlogIdx === -1 ||
+  legacyNewsIdx === -1 ||
+  legacyGlossaryIdx === -1 ||
+  legacyBlogIdx < legacyPerfilBtnIdx ||
+  !(legacyBlogIdx < legacyNewsIdx && legacyNewsIdx < legacyGlossaryIdx && legacyGlossaryIdx < legacyContactIdx)
+) {
+  fail('Legacy SiteHeader must render Blog, Noticias, Glosario, then Contacto after the last collection accordion');
 }
 if (!sitemap.has('/coleccion/numismatica/')) fail('sitemap.xml is missing /coleccion/numismatica/');
 if (!sitemap.has('/glosario/')) fail('sitemap.xml is missing /glosario/');
