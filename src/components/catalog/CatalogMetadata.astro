@@ -4,15 +4,18 @@
  */
 import { metadataRows, type CatalogRecord } from '../../lib/catalog-record';
 import { lookupEn } from '../../lib/html-i18n';
-import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI } from '../../lib/ui-i18n';
+import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI, t, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
   /** Keep markup for crawlers/citation, hide the visual duplicate of the spec table. */
   visuallyHidden?: boolean;
+  locale?: Locale;
 }
 
-const { record, visuallyHidden = false } = Astro.props;
+const { record, visuallyHidden = false, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const metaHeading = t('catalogMeta', locale);
 const rows = metadataRows(record.metadata, {
   country: record.country,
   issuer: record.issuer,
@@ -28,10 +31,10 @@ const rows = metadataRows(record.metadata, {
       <h2
         id="catalog-meta-heading"
         class="m-0 mb-4 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
-        data-i18n
-        data-en={UI.catalogMeta.en}
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : UI.catalogMeta.en}
       >
-        {UI.catalogMeta.es}
+        {metaHeading}
       </h2>
       <dl class="m-0 grid gap-0 border-t border-line">
         {
@@ -40,22 +43,26 @@ const rows = metadataRows(record.metadata, {
             const valueEn = row.unconfirmed
               ? UI.unconfirmed.en
               : (STATUS_LABEL_EN[row.value] ?? lookupEn(row.value));
+            const labelVisible = isEn ? (labelEn ?? row.label) : row.label;
+            const valueVisible = isEn
+              ? (row.unconfirmed ? UI.unconfirmed.en : (valueEn ?? row.value))
+              : (row.unconfirmed ? UI.unconfirmed.es : row.value);
             return (
             <div class="grid grid-cols-1 sm:grid-cols-[minmax(10rem,14rem)_1fr] gap-1 sm:gap-4 py-3 border-b border-line">
               <dt
                 class="m-0 text-[13px] tracking-[0.08em] uppercase text-muted"
-                data-i18n={labelEn ? true : undefined}
-                data-en={labelEn}
-              >{row.label}</dt>
+                data-i18n={!isEn && labelEn ? true : undefined}
+                data-en={!isEn ? labelEn : undefined}
+              >{labelVisible}</dt>
               <dd
                 class:list={[
                   'm-0 text-[16px] leading-[1.55] text-cream-dim',
                   row.unconfirmed && 'italic',
                 ]}
-                data-i18n={valueEn ? true : undefined}
-                data-en={valueEn}
+                data-i18n={!isEn && valueEn ? true : undefined}
+                data-en={!isEn ? valueEn : undefined}
               >
-                {row.unconfirmed ? UI.unconfirmed.es : row.value}
+                {valueVisible}
               </dd>
             </div>
             );

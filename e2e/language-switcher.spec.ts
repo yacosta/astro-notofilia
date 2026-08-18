@@ -4,6 +4,10 @@ const SWITCHER_PAGES = [
   { path: '/', enHref: '/en/' },
   { path: '/coleccion/', enHref: '/en/collection/' },
   { path: '/coleccion/colombia/', enHref: '/en/collection/colombia/' },
+  {
+    path: '/coleccion/pop-art/pele-bicycle-kick-the-king/',
+    enHref: '/en/collection/pop-art/pele-bicycle-kick-the-king/',
+  },
   { path: '/glosario/', enHref: '/en/glossary/' },
   { path: '/editorial/', enHref: '/en/editorial/' },
   { path: '/editorial/equipo/', enHref: '/en/editorial/team/' },
@@ -45,6 +49,22 @@ test('homepage ES → /en/ and EN → / without localStorage', async ({ page }) 
   await es.click();
   await expect(page).toHaveURL('/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+});
+
+test('Pelé ficha is a reciprocal pair with English body copy', async ({ page }) => {
+  await page.goto('/coleccion/pop-art/pele-bicycle-kick-the-king/', {
+    waitUntil: 'domcontentloaded',
+  });
+  await page.getByRole('group', { name: 'Idioma' }).getByRole('link', { name: /EN/ }).click();
+  await expect(page).toHaveURL(/\/en\/collection\/pop-art\/pele-bicycle-kick-the-king\/?$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pelé — The King');
+  await expect(page.getByRole('heading', { name: 'About the Work' })).toBeVisible();
+  await expect(page.locator('main')).toContainText('hand-signed by Rency');
+  await expect(page.locator('main')).not.toContainText('firmado a mano por Rency');
+  await expect(
+    page.getByRole('group', { name: 'Language' }).getByRole('link', { name: /ES/ }),
+  ).toHaveAttribute('href', '/coleccion/pop-art/pele-bicycle-kick-the-king/');
 });
 
 test('Colombia hub is a reciprocal pair', async ({ page }) => {
