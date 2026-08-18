@@ -83,7 +83,8 @@
         "year": "1933",
         "image": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
         "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents-640.webp",
-        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, cinco centavos, anverso, 1933"
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, cinco centavos, anverso, 1933",
+        "altEn": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, cinco centavos, obverse, 1933"
       },
       {
         "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#10-centavos",
@@ -92,7 +93,8 @@
         "year": "1933",
         "image": "/uploads/ringling-bros-50th-anniversary-baraboo-10-cents.jpg",
         "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-10-cents-640.webp",
-        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, diez centavos, anverso, 1933"
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, diez centavos, anverso, 1933",
+        "altEn": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, diez centavos, obverse, 1933"
       },
       {
         "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#15-centavos",
@@ -101,7 +103,8 @@
         "year": "1933",
         "image": "/uploads/ringling-bros-50th-anniversary-baraboo-15-cents.jpg",
         "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-15-cents-640.webp",
-        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, quince centavos, anverso y reverso, 1933"
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, quince centavos, anverso y reverso, 1933",
+        "altEn": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, quince centavos, obverse and reverse, 1933"
       },
       {
         "href": "/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar",
@@ -110,11 +113,24 @@
         "year": "1933",
         "image": "/uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.jpg",
         "imageWebp": "/uploads/ringling-bros-50th-anniversary-baraboo-1-dollar-card.webp",
-        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, un dólar, anverso y reverso, 1933"
+        "alt": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, un dólar, anverso y reverso, 1933",
+        "altEn": "Scrip del 50º aniversario de Ringling Bros., Baraboo, Wisconsin, un dólar, obverse and reverse, 1933"
       }
     ],
     "eyebrow": "Contexto Histórico"
   },
   "legacyFile": "catalogo-emisiones-promocionales.dc.html",
-  "sourceHash": "f8df3d8cce018126"
+  "sourceHash": "f8df3d8cce018126",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/promotional-issues/",
+      "title": "U.S. Promotional Scrip Catalog | Notofilia",
+      "description": "U.S. promotional scrip: the Ringling Bros. 50th-anniversary scrip from Baraboo, Wisconsin (1933). A Notofilia catalog.",
+      "ogTitle": "U.S. Promotional Scrip Catalog — Notofilia",
+      "ogDescription": "U.S. promotional scrip and ephemeral issues from the Notofilia collection.",
+      "recordTitle": "Promotional Scrip and Ephemeral Issues",
+      "eyebrow": "Historical Context",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/promotional-issues/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Promotional Scrip and Ephemeral Issues</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Substitute currency issued outside the banking system &mdash;by chambers of commerce, local celebrations, or promotional campaigns&mdash; and intended to circulate briefly before being redeemed or collected as a souvenir.</p>\n\n    <section style=\"margin:0 0 80px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">The &ldquo;Scrip&rdquo; of the Great Depression</h2>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 14px;\">During the Great Depression of the 1930s, a shortage of circulating money led hundreds of U.S. municipalities, chambers of commerce, and merchants to issue their own &ldquo;scrip&rdquo; &mdash;substitute paper money, without federal government backing, redeemable at local businesses or by the issuing entity itself within a set period.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">A particular subgenre of this phenomenon is <em>commemorative or promotional scrip</em>: issued not out of strict monetary necessity, but to celebrate an anniversary, festival, or civic event, combining the function of temporary currency with that of a collectible souvenir. The Ringling Bros. 50th-anniversary scrip in Baraboo, Wisconsin, is a characteristic example of this category.</p>\n    </section>\n\n    <section id=\"ringling-bros-50-aniversario-baraboo\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Ringling Bros. 50th Anniversary &mdash; Baraboo, Wisconsin</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Baraboo Chamber of Commerce, Wisconsin &middot; Golden Jubilee, 1933 &middot; series of 5&cent;, 10&cent;, 15&cent;, and $1.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n        \n        \n      </div>\n    </section>\n\n            \n\n  </main>\n\n  \n\n</div>"
+    }
+  }
 }

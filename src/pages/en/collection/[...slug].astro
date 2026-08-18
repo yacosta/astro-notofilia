@@ -4,6 +4,8 @@ import CatalogLayout from '../../../layouts/CatalogLayout.astro';
 import { SITE } from '../../../lib/site';
 import { alternateUrl } from '../../../i18n/pairs';
 import type { CatalogRecord } from '../../../lib/catalog-record';
+import { enrichCatalogJsonLd, localizeCatalogJsonLdForEn } from '../../../lib/catalog-jsonld';
+import { lookupEn } from '../../../lib/html-i18n';
 
 export async function getStaticPaths() {
   const prefix = '/en/collection/';
@@ -43,23 +45,49 @@ const record: CatalogRecord | undefined = page.data.record
       ...page.data.record,
       title: en.recordTitle ?? en.title,
       eyebrow: en.eyebrow ?? page.data.record.eyebrow,
+      country: lookupEn(page.data.record.country) ?? page.data.record.country,
+      dateOrSeries: en.eyebrow ?? page.data.record.dateOrSeries,
+      metadata: page.data.record.metadata
+        ? {
+            ...page.data.record.metadata,
+            dimensions: page.data.record.metadata.dimensions
+              ? (lookupEn(page.data.record.metadata.dimensions) ??
+                page.data.record.metadata.dimensions
+                  .replaceAll('Aprox.', 'Approx.')
+                  .replaceAll('2,5', '2.5'))
+              : undefined,
+          }
+        : undefined,
       breadcrumb: page.data.record.breadcrumb.map((crumb, index, all) => {
         const isLast = index === all.length - 1;
-        if (isLast) return { name: crumb.name };
+        if (isLast) return { name: en.recordTitle ?? crumb.name };
         const href =
           crumb.href === '/'
             ? '/en/'
             : crumb.href
               ? (alternateUrl(crumb.href, 'en') ?? crumb.href)
               : undefined;
-        return href ? { name: crumb.name, href } : { name: crumb.name };
+        const name = lookupEn(crumb.name) ?? crumb.name;
+        return href ? { name, href } : { name };
       }),
     }
   : undefined;
 
 const hubName = (en.recordTitle ?? en.title).replace(/\s*[|·].*$/, '').trim();
 const collectionIndex = alternateUrl('/coleccion/', 'en');
-const jsonLd = {
+const isHub = Array.isArray((page.data.jsonLd as { '@graph'?: unknown[] } | undefined)?.['@graph'])
+  ? ((page.data.jsonLd as { '@graph': unknown[] })['@graph'] as { '@type'?: string }[]).some(
+      (node) => node && node['@type'] === 'CollectionPage',
+    )
+  : false;
+const pieceJsonLd = localizeCatalogJsonLdForEn(page.data.jsonLd, {
+  esPath: page.data.path,
+  enPath: en.path,
+  name: en.recordTitle ?? hubName,
+  description: en.description,
+  creditText: 'Private collection of Notofilia.com — not for sale',
+});
+const hubJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -122,6 +150,9 @@ const jsonLd = {
     },
   ],
 };
+const jsonLd = isHub
+  ? hubJsonLd
+  : enrichCatalogJsonLd(pieceJsonLd, record, 'en');
 ---
 <CatalogLayout
   locale="en"

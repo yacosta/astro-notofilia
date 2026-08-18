@@ -15,29 +15,13 @@ When a piece is translated:
 
 ## Individual catalog fichas (~144)
 
-**Defer.** Country hubs (Colombia, Puerto Rico, Ecuador) and the collection / numismatics indexes are English; untranslated ficha hrefs stay Spanish on purpose.
+**Done.** Every catalog JSON in `src/content/catalog/` now has `i18n.en` (`path` + `template`). English URLs follow `docs/i18n/AUDIT.md` Appendix A / §6.2. Spanish `path` and `template` are unchanged. Gate: `npm run check:en-pairs`.
 
-Do not bulk-machine `titleEn` onto every JSON. Translate a ficha only when the whole page (title, description, `template`, alts, JSON-LD) is human English, then set `i18n.en` on the **same** JSON (never a second file).
+Hub prose (Colombia, Puerto Rico, Ecuador, and the remaining collection hubs) is human-authored English. Piece overlays reuse `catalog-es-en.json` plus `catalog-es-en-supplement.json`. Proper nouns and issuer names stay in the original language.
 
 ## Remaining collection hubs
 
-Spanish URLs stay canonical until a full English `i18n.en.template` exists.
-Suggested English slugs follow `docs/i18n/AUDIT.md` §6:
-
-| Spanish | Suggested English |
-|---|---|
-| `/coleccion/billete-obsoleto-estados-unidos/` | `/en/collection/obsolete-united-states-banknotes/` |
-| `/coleccion/reserva-federal/` | `/en/collection/federal-reserve/` |
-| `/coleccion/departamento-del-tesoro-de-ee-uu/` | `/en/collection/us-department-of-the-treasury/` |
-| `/coleccion/moneda-colonial-espanola/` | `/en/collection/spanish-colonial-coinage/` |
-| `/coleccion/polimero-mundial/` | `/en/collection/world-polymer/` |
-| `/coleccion/certificados-de-pago-militar/` | `/en/collection/military-payment-certificates/` |
-| `/coleccion/pop-art/` | `/en/collection/pop-art/` |
-| `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` |
-| `/coleccion/colombia/banca-libre/` | `/en/collection/colombia/free-banking/` |
-| `/coleccion/colombia/emisiones-en-el-extranjero/` | `/en/collection/colombia/issues-printed-abroad/` |
-
-On `/en/collection/` those hubs still link to the Spanish URL (honest).
+**Done.** English slugs follow `docs/i18n/AUDIT.md` §6. On `/en/collection/` paired hubs now link to their English URLs via the pair registry.
 
 ## Search
 
@@ -54,4 +38,4 @@ English term pages still point at the **Spanish** Wikipedia URLs stored on each 
 ## Known chrome leftovers (not A4-owned)
 
 - English search (`/en/search/`) remains deferred; header search `action` stays `/buscar/` on both trees.
-- Unpaired catalog fichas and individual noticias still use Spanish hrefs on English pages (honest partial coverage).
+- Individual noticias still use Spanish hrefs on English pages (honest partial coverage). Catalog fichas are paired.

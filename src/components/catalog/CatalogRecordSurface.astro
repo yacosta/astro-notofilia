@@ -75,7 +75,7 @@ const permanentLabel = t('permanentId', locale);
 
       <div class="grid gap-12">
         {showMedia && <CatalogMedia record={record} />}
-        <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+        <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} locale={locale} />
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
         <CatalogCitation record={record} path={path} locale={locale} />
@@ -97,7 +97,7 @@ const permanentLabel = t('permanentId', locale);
         {
           metadataBeforeTemplate && (
             <div class="mt-8">
-              <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+              <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} locale={locale} />
             </div>
           )
         }
@@ -115,7 +115,7 @@ const permanentLabel = t('permanentId', locale);
         {showMedia && <CatalogMedia record={record} />}
         {
           !metadataBeforeTemplate && (
-            <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
+            <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} locale={locale} />
           )
         }
         <CatalogContext record={record} />
