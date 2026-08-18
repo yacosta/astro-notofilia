@@ -78,7 +78,7 @@
     var el = document.getElementById(id);
     if (!el) return;
     var current = selected || '';
-    var opts = ['<option value="">Todos</option>'];
+    var opts = ['<option value="">' + (isEn() ? 'All' : 'Todos') + '</option>'];
     values.forEach(function (value) {
       var sel = value === current ? ' selected' : '';
       opts.push(
@@ -117,7 +117,8 @@
   }
 
   function isEn() {
-    return document.documentElement.getAttribute('data-interface-lang') === 'en';
+    var root = document.documentElement;
+    return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en';
   }
 
   function kindLabel(kind) {
@@ -484,10 +485,6 @@
       if (searchInput) searchInput.focus();
     });
   }
-
-  document.addEventListener('notofilia:interface-lang', function () {
-    render();
-  });
 
   document.querySelectorAll('[data-filter-pais]').forEach(function (link) {
     link.addEventListener('click', function (event) {

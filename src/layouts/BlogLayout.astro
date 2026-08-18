@@ -8,6 +8,7 @@ import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { EDITORIAL_TEAM } from '../lib/editorial';
+import { t } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
@@ -57,10 +58,8 @@ const {
     <a
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
       href="#main-content"
-      data-i18n
-      data-en="Skip to content"
-    >Saltar al contenido</a>
-    <SiteHeader locale={locale} />
+    >{t('skip', locale)}</a>
+    <SiteHeader locale={locale} path={path} />
     <main id="main-content" class="min-h-[60vh]" tabindex="-1">
       <slot />
     </main>

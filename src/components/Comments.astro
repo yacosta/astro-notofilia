@@ -96,11 +96,15 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
       sendFail: 'The comment could not be sent.',
     },
   };
+  function isEn() {
+    return document.documentElement.getAttribute('data-page-locale') === 'en'
+      || document.documentElement.lang === 'en';
+  }
   function langCopy() {
-    return document.documentElement.getAttribute('data-interface-lang') === 'en' ? copy.en : copy.es;
+    return isEn() ? copy.en : copy.es;
   }
   function dateLocale() {
-    return document.documentElement.getAttribute('data-interface-lang') === 'en' ? 'en' : 'es';
+    return isEn() ? 'en' : 'es';
   }
 
   const renderComments = (comments) => {

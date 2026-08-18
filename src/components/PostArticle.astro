@@ -11,8 +11,7 @@ import { COLLECTIONS } from '../lib/collections';
 import { EDITORIAL_TEAM } from '../lib/editorial';
 import { isClaimKind } from '../lib/claims';
 import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
-import { lookupEn, translateMarkdown } from '../lib/html-i18n';
-import { markdownToHtml } from '../lib/markdown-lite';
+import { lookupEn } from '../lib/html-i18n';
 import type { PostCollection } from '../lib/posts';
 import { UI } from '../lib/ui-i18n';
 
@@ -42,7 +41,6 @@ const fmtEn = formatDateLongEn(d.publishedAt);
 const updatedFmtEn = d.updatedAt ? formatDateLongEn(d.updatedAt) : undefined;
 const titleEn = lookupEn(d.title);
 const excerptEn = lookupEn(d.excerpt);
-const bodyEnHtml = markdownToHtml(translateMarkdown(post.body));
 const coverFit = d.coverFit ?? 'cover';
 const claimKind = d.claimKind && isClaimKind(d.claimKind) ? d.claimKind : undefined;
 const primarySources = d.primarySources ?? [];
@@ -130,10 +128,7 @@ const corrections = d.corrections ?? [];
   )}
 
   <div class="prose-notofilia text-[20px] leading-[1.75] text-cream-dim">
-    <div data-lang-panel="es">
-      <Content />
-    </div>
-    <div data-lang-panel="en" lang="en" hidden set:html={bodyEnHtml} />
+    <Content />
   </div>
 
   {collection === 'noticias' && d.source && d.sourceUrl && (

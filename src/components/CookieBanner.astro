@@ -11,6 +11,7 @@
  * and opening is deferred until after `load` + idle so it stays off the LCP path.
  */
 import { t, type Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
 
 interface Props {
   locale?: Locale;
@@ -18,6 +19,9 @@ interface Props {
 
 const { locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
+const privacyHref = isEn
+  ? (alternateUrl('/politica-privacidad-cookies/', 'en') ?? '/politica-privacidad-cookies/')
+  : '/politica-privacidad-cookies/';
 ---
 <div
   id="cookie-banner"
@@ -36,7 +40,7 @@ const isEn = locale === 'en';
         data-i18n={isEn ? undefined : true}
         data-en={isEn ? undefined : t('cookiesBody', 'en')}
       >{t('cookiesBody', locale)}</span>
-      <a href="/politica-privacidad-cookies/" class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('cookiesPolicy', 'en')}>{t('cookiesPolicy', locale)}</a>.
+      <a href={privacyHref} class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('cookiesPolicy', 'en')}>{t('cookiesPolicy', locale)}</a>.
     </p>
     <div class="flex flex-wrap gap-[10px] justify-end">
       <button

@@ -7,6 +7,7 @@
 import BaseHead from '../../components/BaseHead.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { t } from '../../lib/ui-i18n';
+import { alternateUrl } from '../../i18n/pairs';
 
 const title = 'Page not found · Notofilia';
 const description =
@@ -33,7 +34,7 @@ const path = '/en/404/';
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
       href="#main-content"
     >{t('skip', 'en')}</a>
-    <SiteHeader locale="en" />
+    <SiteHeader locale="en" path={path} />
     <main id="main-content" class="min-h-[60vh] flex items-center justify-center text-center p-8" tabindex="-1">
       <div class="max-w-[40rem]" data-pagefind-ignore>
         <p
@@ -53,7 +54,7 @@ const path = '/en/404/';
           >{t('goHome', 'en')}</a>
           <a
             class="inline-block px-[1.4rem] py-[0.7rem] min-h-[44px] border border-gold rounded-[2px] text-cream no-underline text-[1.05rem] tracking-[0.03em] transition-colors duration-200 hover:bg-gold hover:text-bg focus-visible:bg-gold focus-visible:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-            href="/en/collection/colombia/"
+            href={alternateUrl('/coleccion/', 'en') ?? '/en/'}
           >{t('viewCollection', 'en')}</a>
         </div>
       </div>

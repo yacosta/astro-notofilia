@@ -6,6 +6,7 @@
 import type { CollectionStats } from '../lib/stats';
 import { formatStatsEn, formatStatsEs } from '../lib/stats';
 import type { Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
 
 export interface HeroSlide {
   base: string;
@@ -23,7 +24,9 @@ const { slides, stats, locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 const statsEs = formatStatsEs(stats);
 const statsEn = formatStatsEn(stats);
-const collectionHref = isEn ? '/en/collection/colombia/' : '/coleccion/';
+const collectionHref = isEn
+  ? (alternateUrl('/coleccion/', 'en') ?? '/coleccion/')
+  : '/coleccion/';
 const transparentPixel =
   'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ---

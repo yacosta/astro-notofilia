@@ -53,7 +53,7 @@ const items = FEATURED_ENTRIES.slice(0, 8);
     </ul>
     <p class="text-center mt-10 mb-0">
       <a
-        href="/coleccion/"
+        href={isEn ? (alternateUrl('/coleccion/', 'en') ?? '/coleccion/') : '/coleccion/'}
         data-i18n={isEn ? undefined : true}
         data-en={isEn ? undefined : 'See the full catalog'}
         class="inline-flex items-center min-h-[44px] border border-cream text-cream no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3"

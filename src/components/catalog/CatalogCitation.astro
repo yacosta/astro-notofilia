@@ -48,7 +48,8 @@ const copyLabel = t('copyCite', locale);
       const text = root.querySelector('[data-catalog-citation]');
       const status = root.querySelector('[data-catalog-copy-status]');
       function isEn() {
-        return document.documentElement.getAttribute('data-interface-lang') === 'en';
+        var root = document.documentElement;
+        return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en';
       }
       btn && btn.addEventListener('click', async function () {
         const value = text ? text.textContent || '' : '';

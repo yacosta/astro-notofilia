@@ -58,3 +58,12 @@ entries; do not rewrite history — add a new dated item instead.
 - **Pairs:** generators `fromGlossary` / `fromBlogEn` / `fromNoticiasEn` plus SEED indexes. Catalog still via `fromCatalog()`.
 - **A6 follow-up:** EN Collection nav still pointed at `/en/collection/colombia/` after A3; should now target `/en/collection/`.
 - **Full write-up:** `docs/i18n/A4-REPORT.md`.
+
+## 2026-08-18 — Phase 4 A6 (language switcher)
+
+- **Switcher:** server-rendered `<a href>` from `switchUrl(path, locale)` in `src/i18n/pairs.ts`. Current language is `<span aria-current="page">`; the other is the link. Visible text **ES** / **EN** plus sr-only ` — Español` / ` — English` (WCAG 2.5.3). No `#lang-es`/`#lang-en` buttons. No `interface-lang.js`.
+- **Fallback:** exact pair → paired section index → homepage of target locale. Unpaired noticias → `/en/news/`. `/buscar/` → `/en/` because `/en/search/` is still unpaired. `/404` → `/en/`; `/en/404/` → `/`. Optional `data-i18n-fallback` + `title` when not an exact pair.
+- **EN nav:** `hrefFor` uses `alternateUrl(href, 'en') ?? href`. Collection is `/en/collection/` (A4 pair). `/#logros-heading` → `/en/#logros-heading`. Search `action` stays `/buscar/` on both trees. CookieBanner / footer privacy → `/en/privacy-cookies/`.
+- **No redirects:** no geo / Accept-Language; no last-language persist that forces `/` → `/en/`; no suggestion banner (CLS). Spanish `data-i18n` left inert. Hidden EN panels on editorial/privacy/PostArticle removed.
+- **html lang:** EN pages stay `lang="en"`; nothing forces `es`. Spanish 404 keeps `/en/` path-sniff boot only.
+- **Full write-up:** `docs/i18n/A6-REPORT.md`.

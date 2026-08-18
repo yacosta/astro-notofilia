@@ -10,6 +10,7 @@ import {
   formatStatsEn,
   formatStatsEs,
 } from '../lib/stats';
+import { alternateUrl } from '../i18n/pairs';
 
 export interface Props {
   /** Extra tagline under the copyright line. */
@@ -36,6 +37,12 @@ const computed = await getCollectionStats();
 const statsEs = statsLineEs ?? formatStatsEs(computed);
 const statsEn = statsLineEn ?? formatStatsEn(computed);
 const isEn = locale === 'en';
+const editorialHref = isEn
+  ? (alternateUrl('/editorial/', 'en') ?? '/editorial/')
+  : '/editorial/';
+const privacyHref = isEn
+  ? (alternateUrl('/politica-privacidad-cookies/', 'en') ?? '/politica-privacidad-cookies/')
+  : '/politica-privacidad-cookies/';
 
 const isHome = variant === 'home';
 ---
@@ -70,7 +77,7 @@ const isHome = variant === 'home';
       ]}
     >
       <a
-        href="/editorial/"
+        href={editorialHref}
         data-i18n={isEn ? undefined : true}
         data-en={isEn ? undefined : 'Editorial &amp; valuation policy'}
         class:list={[
@@ -79,7 +86,7 @@ const isHome = variant === 'home';
         ]}
       >{isEn ? 'Editorial & valuation policy' : 'Política editorial y valoración'}</a>
       <a
-        href="/politica-privacidad-cookies/"
+        href={privacyHref}
         data-i18n={isEn ? undefined : true}
         data-en={isEn ? undefined : 'Privacy &amp; Cookie Policy'}
         class:list={[

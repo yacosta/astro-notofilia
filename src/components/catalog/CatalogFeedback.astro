@@ -4,6 +4,7 @@
  */
 import { reportMailto, type CatalogRecord } from '../../lib/catalog-record';
 import { t, type Locale } from '../../lib/ui-i18n';
+import { alternateUrl } from '../../i18n/pairs';
 
 interface Props {
   record: CatalogRecord;
@@ -14,6 +15,10 @@ interface Props {
 const { record, path, locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 const mailto = reportMailto(record, path);
+const contactHref = isEn ? (alternateUrl('/contacto/', 'en') ?? '/contacto/') : '/contacto/';
+const editorialHref = isEn
+  ? `${alternateUrl('/editorial/', 'en') ?? '/editorial/'}#corrections`
+  : '/editorial/#como-reportar-un-error';
 ---
 <section class="catalog-record-feedback" aria-labelledby="catalog-feedback-heading">
   <h2
@@ -38,7 +43,7 @@ const mailto = reportMailto(record, path);
     </a>
     <a
       class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-      href="/contacto/"
+      href={contactHref}
       data-i18n={isEn ? undefined : true}
       data-en={isEn ? undefined : t('contactForm', 'en')}
     >
@@ -46,7 +51,7 @@ const mailto = reportMailto(record, path);
     </a>
     <a
       class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-      href="/editorial/#como-reportar-un-error"
+      href={editorialHref}
       data-i18n={isEn ? undefined : true}
       data-en={isEn ? undefined : t('editorialPolicy', 'en')}
     >

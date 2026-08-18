@@ -218,7 +218,7 @@ const skipLabel = t('skipMain', locale);
       data-i18n={locale === 'es' ? true : undefined}
       data-en={locale === 'es' ? t('skipMain', 'en') : undefined}
     >{skipLabel}</a>
-    <SiteHeader locale={locale} />
+    <SiteHeader locale={locale} path={props.path} />
     {
       record ? (
         <CatalogRecordSurface record={record} path={props.path} mode="augment" locale={locale}>

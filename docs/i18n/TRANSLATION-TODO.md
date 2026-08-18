@@ -52,6 +52,5 @@ English term pages still point at the **Spanish** Wikipedia URLs stored on each 
 
 ## Known chrome leftovers (not A4-owned)
 
-- `public/coleccion-hub.js` `fillSelect` still injects the Spanish option label `Todos` even when `data-interface-lang="en"`. Counts and kind labels already branch. A5/A6 should localise that string.
-- `BlogLayout` skip link is still Spanish (`Saltar al contenido`) in source. A4 cannot edit `src/layouts/`. CatalogLayout skip **does** bake via `t()`.
-- `SiteHeader` Collection nav on English pages still points at `/en/collection/colombia/` (A3). It should move to `/en/collection/` now that the index exists — A5/A6.
+- English search (`/en/search/`) remains deferred; header search `action` stays `/buscar/` on both trees.
+- Unpaired catalog fichas and individual noticias still use Spanish hrefs on English pages (honest partial coverage).

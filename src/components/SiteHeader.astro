@@ -4,31 +4,48 @@
  * and Pagefind loaded only when search is opened.
  *
  * Optional `locale` bakes English chrome on `/en/` pages (crawlers, no-JS).
- * The ES/EN pill stays until A6 replaces it with a pair-registry switcher.
- * Collection on English pages points at `/en/collection/colombia/` — the only
- * paired catalog hub in A3; `/coleccion/` itself is unpaired.
+ * Language switcher is an `<a href>` from `switchUrl()` — works with JS off.
+ * EN nav uses `alternateUrl(href, 'en') ?? href` (unpaired fichas stay Spanish).
  */
 import { DRAWER_PRIMARY_LINKS, DRAWER_TRAILING_LINKS, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
 import { lookupEn } from '../lib/html-i18n';
-import { alternateUrl, type Locale } from '../i18n/pairs';
+import { alternateUrl, getPair, switchUrl, type Locale } from '../i18n/pairs';
 import { t } from '../lib/ui-i18n';
 
 export interface Props {
   /** When true, header overlays the hero (homepage). Otherwise in normal flow. */
   overlay?: boolean;
   locale?: Locale;
+  /** Same pathname passed to BaseHead (trailing slash, `/` for Spanish home). */
+  path: string;
 }
 
-const { overlay = false, locale = 'es' } = Astro.props;
+const { overlay = false, locale = 'es', path } = Astro.props;
 const isEn = locale === 'en';
+const switchTarget: Locale = isEn ? 'es' : 'en';
+const switchHref = switchUrl(path, switchTarget);
+const pair = getPair(path);
+const homeOfTarget = switchTarget === 'en' ? '/en/' : '/';
+const fallbackKind = pair ? undefined : switchHref === homeOfTarget ? 'home' : 'section';
+const fallbackTitle = fallbackKind === 'home'
+  ? (switchTarget === 'en' ? 'English homepage' : 'Inicio en español')
+  : fallbackKind === 'section'
+    ? (switchTarget === 'en' ? 'English version of this section' : 'Versión en español de esta sección')
+    : undefined;
 
-/** Honest nav targets: paired URLs when they exist; Colombia hub is the EN collection entry. */
+/** Honest nav: paired English URL when it exists; unpaired fichas stay Spanish. */
 function hrefFor(href: string): string {
   if (!isEn) return href;
-  if (href === '/') return '/en/';
-  if (href === '/coleccion/') return '/en/collection/colombia/';
-  if (href === '/#logros-heading') return '/en/#logros-heading';
-  return alternateUrl(href, 'en') ?? href;
+  const queryIdx = href.indexOf('?');
+  const hashIdx = href.indexOf('#');
+  let cut = href.length;
+  if (queryIdx >= 0) cut = Math.min(cut, queryIdx);
+  if (hashIdx >= 0) cut = Math.min(cut, hashIdx);
+  const pathPart = href.slice(0, cut) || '/';
+  const rest = href.slice(cut);
+  const mapped = alternateUrl(pathPart, 'en');
+  if (!mapped) return href;
+  return mapped + rest;
 }
 
 function labelFor(label: string, labelEn?: string): string {
@@ -65,6 +82,7 @@ function labelFor(label: string, labelEn?: string): string {
         </svg>
       </button>
       <div id="site-search-panel" class="site-header__search-panel" hidden>
+        {/* /en/search/ is deferred; keep the Spanish search page even on EN chrome. */}
         <form class="site-header__search-form" action="/buscar/" method="get" role="search">
           <label class="sr-only" for="site-search-input" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Search the site'}>{isEn ? 'Search the site' : 'Buscar en el sitio'}</label>
           <input
@@ -103,26 +121,32 @@ function labelFor(label: string, labelEn?: string): string {
       <div
         class="site-header__lang"
         role="group"
-        aria-label="Idioma de la interfaz / Interface language"
+        aria-label={isEn ? 'Language' : 'Idioma'}
       >
-        <span id="interface-lang-label" class="sr-only">Idioma de la interfaz</span>
-        <button
-          id="lang-es"
-          type="button"
-          class="site-header__lang-btn is-active"
-          aria-pressed="true"
-          aria-describedby="interface-lang-label"
-          aria-label="Interfaz en español"
-        >ES</button>
-        <button
-          id="lang-en"
-          type="button"
-          class="site-header__lang-btn"
-          aria-pressed="false"
-          aria-describedby="interface-lang-label"
-          aria-label="Interface in English"
-          lang="en"
-        >EN</button>
+        {isEn ? (
+          <a
+            class="site-header__lang-btn"
+            href={switchHref}
+            hreflang="es"
+            lang="es"
+            title={fallbackTitle}
+            data-i18n-fallback={fallbackKind}
+          >ES<span class="sr-only"> — Español</span></a>
+        ) : (
+          <span class="site-header__lang-btn is-active" aria-current="page" lang="es">ES<span class="sr-only"> — Español</span></span>
+        )}
+        {isEn ? (
+          <span class="site-header__lang-btn is-active" aria-current="page" lang="en">EN<span class="sr-only"> — English</span></span>
+        ) : (
+          <a
+            class="site-header__lang-btn"
+            href={switchHref}
+            hreflang="en"
+            lang="en"
+            title={fallbackTitle}
+            data-i18n-fallback={fallbackKind}
+          >EN<span class="sr-only"> — English</span></a>
+        )}
       </div>
       <button
         type="button"
@@ -258,7 +282,6 @@ function labelFor(label: string, labelEn?: string): string {
 </noscript>
 
 <script src="../client/site-header.js"></script>
-<script src="../client/interface-lang.js"></script>
 
 <style>
   .sr-only {
@@ -368,6 +391,10 @@ function labelFor(label: string, labelEn?: string): string {
     padding: 3px;
   }
   .site-header__lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     border: none;
     background: transparent;
     color: #e7ddc4;
@@ -376,8 +403,13 @@ function labelFor(label: string, labelEn?: string): string {
     font-size: 13px;
     letter-spacing: 0.14em;
     padding: 0 16px;
+    min-width: 44px;
     min-height: 44px;
     border-radius: 999px;
+    text-decoration: none;
+    line-height: 1;
+  }
+  a.site-header__lang-btn {
     cursor: pointer;
   }
   .site-header__lang-btn.is-active {
