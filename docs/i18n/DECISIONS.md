@@ -16,3 +16,18 @@ entries; do not rewrite history — add a new dated item instead.
 - **Non-negotiable:** Spanish root URLs must not change, redirect, or break.
 - **No geo / Accept-Language redirects.** Optional dismissible suggestion only.
 - **QA truth:** built `dist/` HTML, not the dev server.
+
+## 2026-08-18 — Phase 1 A2 (i18n architect)
+
+- **Routing:** manual `src/pages/en/` tree. Do **not** add Astro `i18n` to
+  `astro.config.mjs` (`prefixDefaultLocale: false` still prefixes the *same*
+  slug → `/en/coleccion/`, not `/en/collection/`). Docs:
+  https://v7.docs.astro.build/en/guides/internationalization/
+- **Slugs:** section map in `docs/i18n/ARCHITECTURE.md` §2; A3 seed pair
+  `/coleccion/colombia/` ↔ `/en/collection/colombia/`.
+- **Content:** catalog keeps one JSON entry + optional `i18n.en`; editorial
+  later uses parallel `blog-en` / `noticias-en` / `logros-en`; glossary stays
+  one bilingual file. No English files inside Spanish globs.
+- **Registry:** `src/i18n/pairs.ts` is the only ES↔EN map (hreflang, switcher,
+  sitemap). `html lang` flips to `en` on English URLs.
+- **Full write-up:** `docs/i18n/ARCHITECTURE.md`.
