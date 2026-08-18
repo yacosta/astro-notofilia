@@ -1,0 +1,129 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import CatalogLayout from '../../../layouts/CatalogLayout.astro';
+import { SITE } from '../../../lib/site';
+import { alternateUrl } from '../../../i18n/pairs';
+import type { CatalogRecord } from '../../../lib/catalog-record';
+
+export async function getStaticPaths() {
+  const prefix = '/en/collection/';
+  const pages = await getCollection('catalog');
+  return pages.flatMap((page) => {
+    const en = page.data.i18n?.en;
+    if (!en?.path) return [];
+    const render = page.data.record?.render ?? 'astro-static';
+    if ((render === 'astro-hub' || render === 'astro-static') && !en.template) {
+      return [];
+    }
+    if (!en.path.startsWith(prefix) || !en.path.endsWith('/')) {
+      return [];
+    }
+    const slug = en.path.slice(prefix.length, -1);
+    if (!slug) return [];
+    return [{ params: { slug }, props: { page } }];
+  });
+}
+
+const { page } = Astro.props as { page: CollectionEntry<'catalog'> };
+const en = page.data.i18n!.en;
+const spanishHasPart = (() => {
+  const jsonLd = page.data.jsonLd;
+  if (!jsonLd || typeof jsonLd !== 'object') return [];
+  const graph = Array.isArray((jsonLd as Record<string, unknown>)['@graph'])
+    ? ((jsonLd as Record<string, unknown>)['@graph'] as unknown[])
+    : [];
+  const collectionPage = graph.find(
+    (node) => node && typeof node === 'object' && (node as { '@type'?: string })['@type'] === 'CollectionPage',
+  ) as { hasPart?: unknown } | undefined;
+  return Array.isArray(collectionPage?.hasPart) ? collectionPage.hasPart : [];
+})();
+
+const record: CatalogRecord | undefined = page.data.record
+  ? {
+      ...page.data.record,
+      title: en.recordTitle ?? en.title,
+      eyebrow: en.eyebrow ?? page.data.record.eyebrow,
+      breadcrumb: page.data.record.breadcrumb.map((crumb, index, all) => {
+        const isLast = index === all.length - 1;
+        if (isLast) return { name: crumb.name };
+        const href =
+          crumb.href === '/'
+            ? '/en/'
+            : crumb.href
+              ? (alternateUrl(crumb.href, 'en') ?? crumb.href)
+              : undefined;
+        return href ? { name: crumb.name, href } : { name: crumb.name };
+      }),
+    }
+  : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Notofilia',
+          item: `${SITE}/en/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Colombia',
+          item: `${SITE}${en.path}`,
+        },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE}${en.path}#page`,
+      name: en.recordTitle ?? en.title,
+      url: `${SITE}${en.path}`,
+      description: en.description,
+      inLanguage: 'en',
+      hasPart: spanishHasPart,
+    },
+    {
+      '@type': 'ItemList',
+      name: `Index: ${en.recordTitle ?? en.title}`,
+      numberOfItems: spanishHasPart.length,
+      itemListElement: spanishHasPart.map((part, index) => {
+        const p = (part && typeof part === 'object' ? part : {}) as {
+          name?: string;
+          url?: string;
+        };
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          name: p.name,
+          url: p.url,
+          item: {
+            '@type': 'CreativeWork',
+            name: p.name,
+            url: p.url,
+          },
+        };
+      }),
+    },
+  ],
+};
+---
+<CatalogLayout
+  locale="en"
+  title={en.title}
+  description={en.description}
+  path={en.path}
+  robots={page.data.robots}
+  ogType={page.data.ogType}
+  ogTitle={en.ogTitle}
+  ogDescription={en.ogDescription}
+  ogImage={page.data.ogImage}
+  jsonLd={jsonLd}
+  styles={page.data.styles}
+  template={en.template!}
+  logic={page.data.logic}
+  record={record}
+/>

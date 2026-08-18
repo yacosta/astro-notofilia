@@ -1,25 +1,22 @@
 ---
-// Server-rendered homepage. Content is baked into HTML at build time; small
-// Vanilla scripts handle the hero crossfade. The ES/EN chrome toggle lives in
-// SiteHeader on every page; `[data-i18n]` strings swap and those nodes get
-// `lang="en"` when needed. Document language stays Spanish (`lang=es`).
-import { getPublishedPosts, type PublishedPost } from '../lib/posts';
-import { formatDateShortEn, formatDateShortEs, toIsoDate } from '../lib/dates';
-import { SITE } from '../lib/site';
-import { founderJsonLd } from '../lib/editorial';
-import { getCollectionStats, inventoryProperties } from '../lib/stats';
-import { lookupEn } from '../lib/html-i18n';
-import BaseHead from '../components/BaseHead.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import HomeHero from '../components/HomeHero.astro';
-import HomeStatsBar from '../components/HomeStatsBar.astro';
-import HomeBrowseStrip from '../components/HomeBrowseStrip.astro';
-import HomePostStrip from '../components/HomePostStrip.astro';
-import HomeLogrosStrip from '../components/HomeLogrosStrip.astro';
-import PreFooter from '../components/PreFooter.astro';
-import SiteFooter from '../components/SiteFooter.astro';
-import CookieBanner from '../components/CookieBanner.astro';
-import type { StripItem } from '../components/HomePostStrip.astro';
+// English homepage — real translation at `/en/`. Spanish root `/` is unchanged.
+import { getPublishedPosts, type PublishedPost } from '../../lib/posts';
+import { formatDateShortEn, formatDateShortEs, toIsoDate } from '../../lib/dates';
+import { SITE } from '../../lib/site';
+import { founderJsonLd } from '../../lib/editorial';
+import { getCollectionStats, inventoryProperties } from '../../lib/stats';
+import { lookupEn } from '../../lib/html-i18n';
+import BaseHead from '../../components/BaseHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import HomeHero from '../../components/HomeHero.astro';
+import HomeStatsBar from '../../components/HomeStatsBar.astro';
+import HomeBrowseStrip from '../../components/HomeBrowseStrip.astro';
+import HomePostStrip from '../../components/HomePostStrip.astro';
+import HomeLogrosStrip from '../../components/HomeLogrosStrip.astro';
+import PreFooter from '../../components/PreFooter.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
+import type { StripItem } from '../../components/HomePostStrip.astro';
 
 function toStripItems(
   posts: PublishedPost[],
@@ -45,11 +42,30 @@ const stats = await getCollectionStats();
 
 const heroImg = `${SITE}/uploads/hero-engraving-01.jpg`;
 const heroes = [
-  { base: 'hero-slide-guatemala-quetzal', alt: 'Primer plano de un billete de 5 quetzales de Guatemala, con el ave quetzal, estilo numismática y notafilia' },
-  { base: 'hero-slide-oman-sultan', alt: 'Primer plano de un billete de 5 riales de Omán, con el retrato del sultán, estilo numismática y notafilia' },
-  { base: 'hero-slide-brasil-10', alt: 'Primer plano de un billete de 10 de Brasil, con un retrato grabado y veleros, estilo numismática y notafilia' },
-  { base: 'hero-slide-mexico-tren', alt: 'Primer plano de un billete de 100 pesos mexicanos, con la viñeta de un tren de vapor, estilo numismática y notafilia' },
+  {
+    base: 'hero-slide-guatemala-quetzal',
+    alt: 'Primer plano de un billete de 5 quetzales de Guatemala, con el ave quetzal, estilo numismática y notafilia',
+    altEn: 'Close-up of a Guatemala 5 quetzales banknote, with the quetzal bird, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-oman-sultan',
+    alt: 'Primer plano de un billete de 5 riales de Omán, con el retrato del sultán, estilo numismática y notafilia',
+    altEn: 'Close-up of an Oman 5 rials banknote, with the sultan’s portrait, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-brasil-10',
+    alt: 'Primer plano de un billete de 10 de Brasil, con un retrato grabado y veleros, estilo numismática y notafilia',
+    altEn: 'Close-up of a Brazil 10 banknote, with an engraved portrait and sailing ships, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-mexico-tren',
+    alt: 'Primer plano de un billete de 100 pesos mexicanos, con la viñeta de un tren de vapor, estilo numismática y notafilia',
+    altEn: 'Close-up of a Mexican 100-peso banknote, with a steam-train vignette, in a numismatics and notaphily style',
+  },
 ];
+
+const title = 'Notofilia: Banknotes and Numismatics | Catalog';
+const description = `Notaphily and numismatics: ${stats.billetes} banknotes and ${stats.monedas} coins from ${stats.paises} countries. Catalogs and guides.`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -60,46 +76,42 @@ const jsonLd = {
       name: 'Notofilia',
       url: `${SITE}/`,
       logo: `${SITE}/favicon.png`,
-      description: 'Colección privada de billetes históricos dedicada al coleccionismo de monedas y billetes (numismática y notafilia) en español.',
+      description:
+        'Private collection of historical banknotes dedicated to coin and banknote collecting (numismatics and notaphily).',
       founder: founderJsonLd(),
     },
     {
       '@type': 'WebSite',
-      '@id': `${SITE}/#website`,
+      '@id': `${SITE}/en/#website`,
       name: 'Notofilia',
-      url: `${SITE}/`,
+      url: `${SITE}/en/`,
       publisher: { '@id': `${SITE}/#organization` },
-      inLanguage: ['es', 'en'],
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${SITE}/buscar/?q={search_term_string}`,
-        'query-input': 'required name=search_term_string',
-      },
+      inLanguage: 'en',
     },
     {
       '@type': 'WebPage',
-      '@id': `${SITE}/#webpage`,
-      url: `${SITE}/`,
-      name: 'Notofilia — Numismática y Notafilia',
-      isPartOf: { '@id': `${SITE}/#website` },
+      '@id': `${SITE}/en/#webpage`,
+      url: `${SITE}/en/`,
+      name: 'Notofilia — Numismatics and Notaphily',
+      isPartOf: { '@id': `${SITE}/en/#website` },
       primaryImageOfPage: heroImg,
-      inLanguage: 'es',
+      inLanguage: 'en',
       additionalProperty: inventoryProperties(stats),
     },
   ],
 };
 ---
 <!doctype html>
-<html lang="es" data-page-locale="es">
+<html lang="en" data-page-locale="en">
   <head>
     <BaseHead
-      title="Notofilia: Billetes y Numismática | Catálogo y Guías"
-      description={`Notafilia y numismática: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Catálogos y guías en español.`}
-      path="/"
-      locale="es"
+      title={title}
+      description={description}
+      path="/en/"
+      locale="en"
       ogImage="/uploads/hero-engraving-01.jpg"
-      ogTitle="Notofilia — Numismática y coleccionismo de billetes"
-      ogDescription={`Colección privada: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Specimens, errores y piezas raras.`}
+      ogTitle="Notofilia — Numismatics and banknote collecting"
+      ogDescription={`Private collection: ${stats.billetes} banknotes and ${stats.monedas} coins from ${stats.paises} countries. Specimens, errors, and rare pieces.`}
       robots="index, follow, max-image-preview:large"
       jsonLd={jsonLd}
       loadDcRuntime={false}
@@ -120,22 +132,21 @@ const jsonLd = {
     <a
       href="#main-content"
       class="absolute top-[-60px] left-4 z-20 bg-cream-dim text-bg font-serif font-semibold text-[15px] tracking-[0.05em] px-5 py-3 rounded-[2px] no-underline transition-[top] duration-150 focus:top-4"
-      data-i18n
-      data-en="Skip to main content"
-    >Saltar al contenido principal</a>
+    >Skip to main content</a>
 
-    <SiteHeader overlay />
+    <SiteHeader overlay locale="en" />
 
     <main id="main-content" tabindex="-1" class="relative w-full bg-bg outline-none">
-      <HomeHero slides={heroes} stats={stats} />
+      <HomeHero slides={heroes} stats={stats} locale="en" />
 
-      <HomeStatsBar stats={stats} />
+      <HomeStatsBar stats={stats} locale="en" />
 
-      <HomeBrowseStrip />
+      <HomeBrowseStrip locale="en" />
 
-      <HomeLogrosStrip />
+      <HomeLogrosStrip locale="en" />
 
       <HomePostStrip
+        locale="en"
         headingId="blog-heading"
         heading="Artículos originales"
         headingEn="Original articles"
@@ -149,6 +160,7 @@ const jsonLd = {
       />
 
       <HomePostStrip
+        locale="en"
         headingId="news-heading"
         heading="Noticias seleccionadas"
         headingEn="Curated news"
@@ -161,30 +173,30 @@ const jsonLd = {
       />
 
       <section class="max-w-content mx-auto pt-[88px] px-6 pb-14 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-12 border-t border-line" aria-labelledby="defs-heading">
-        <h2 id="defs-heading" class="sr-only">Definiciones</h2>
+        <h2 id="defs-heading" class="sr-only">Definitions</h2>
         <div>
-          <h3 data-i18n data-en="Numismatics" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismática</h3>
-          <p data-i18n data-en="A discipline dedicated to the study and collection of coins, medals, and, in its broadest sense, any object used as a means of payment throughout history. It covers the historical, artistic, and technical analysis of minted pieces." class="text-[19px] leading-[1.75] text-cream-dim m-0">Disciplina dedicada al estudio y la colección de monedas, medallas y, en su sentido más amplio, de todo objeto utilizado como medio de pago a lo largo de la historia. Abarca el análisis histórico, artístico y técnico de las piezas acuñadas.</p>
+          <h3 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismatics</h3>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">A discipline dedicated to the study and collection of coins, medals, and, in its broadest sense, any object used as a means of payment throughout history. It covers the historical, artistic, and technical analysis of minted pieces.</p>
         </div>
         <div>
-          <h3 data-i18n data-en="Notaphily" class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notafilia</h3>
-          <p data-i18n data-en="A specialized branch of numismatics focused specifically on the study and collection of banknotes and paper money, including their history, design, engraving, and issues from both public and private entities." class="text-[19px] leading-[1.75] text-cream-dim m-0">Rama especializada de la numismática centrada específicamente en el estudio y la colección de billetes y papel moneda, incluyendo su historia, diseño, grabado y las emisiones de entidades tanto públicas como privadas.</p>
+          <h3 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notaphily</h3>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">A specialized branch of numismatics focused specifically on the study and collection of banknotes and paper money, including their history, design, engraving, and issues from both public and private entities.</p>
         </div>
       </section>
 
-      <PreFooter />
+      <PreFooter locale="en" />
 
       <SiteFooter
+        locale="en"
         variant="home"
         taglineEs="Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo."
         taglineEn="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world."
       />
     </main>
 
-    <CookieBanner />
+    <CookieBanner locale="en" />
 
     <script is:inline>
-      // --- Hero crossfade rotation ---
       (function () {
         var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
         if (slides.length < 2) return;
@@ -208,9 +220,6 @@ const jsonLd = {
             if (image) {
               image.src = image.getAttribute('data-src');
               image.removeAttribute('data-src');
-              if (!image.getAttribute('alt')) {
-                // Keep deferred slides decorative until shown; alts stay empty.
-              }
             }
             picture.removeAttribute('data-deferred-hero');
           });
@@ -232,16 +241,11 @@ const jsonLd = {
         }
         function setToggleLabel(isPaused) {
           if (!toggle) return;
-          var iface = document.documentElement.getAttribute('data-interface-lang') || 'es';
-          var pauseEs = 'Pausar diapositivas';
-          var playEs = 'Reanudar diapositivas';
           var pauseEn = 'Pause slideshow';
           var playEn = 'Resume slideshow';
-          var text = isPaused
-            ? (iface === 'en' ? playEn : playEs)
-            : (iface === 'en' ? pauseEn : pauseEs);
+          var text = isPaused ? playEn : pauseEn;
           toggle.textContent = text;
-          toggle.setAttribute('lang', iface === 'en' ? 'en' : 'es');
+          toggle.setAttribute('lang', 'en');
           toggle.setAttribute('aria-pressed', String(isPaused));
           toggle.setAttribute('aria-label', text);
         }
@@ -270,7 +274,6 @@ const jsonLd = {
           });
         }
 
-        // Do not auto-rotate when the user prefers reduced motion.
         if (reduceMotion) {
           if (toggle) toggle.hidden = true;
           stopRotation();

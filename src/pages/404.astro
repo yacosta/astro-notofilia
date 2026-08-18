@@ -8,12 +8,13 @@ const description = 'La página que buscas no existe o fue movida. Vuelve a la c
 const path = '/404';
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page-locale="es">
   <head>
     <BaseHead
       title={title}
       description={description}
       path={path}
+      locale="es"
       robots="noindex, follow"
     />
     <style is:global>
@@ -57,5 +58,25 @@ const path = '/404';
         </div>
       </div>
     </main>
+    <script is:inline>
+      (function () {
+        var path = location.pathname || '';
+        if (path !== '/en' && path.indexOf('/en/') !== 0) return;
+        document.documentElement.lang = 'en';
+        document.documentElement.setAttribute('data-page-locale', 'en');
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var en = el.getAttribute('data-en');
+          if (!en) return;
+          var target = el.getAttribute('data-i18n-target');
+          if (target) el.setAttribute(target, en);
+          else el.innerHTML = en;
+          if (!el.getAttribute('lang')) el.setAttribute('lang', 'en');
+        });
+        var home = document.querySelector('main a[href="/"]');
+        if (home) home.setAttribute('href', '/en/');
+        var collection = document.querySelector('main a[href="/coleccion/"]');
+        if (collection) collection.setAttribute('href', '/en/collection/colombia/');
+      })();
+    </script>
   </body>
 </html>

@@ -9,14 +9,14 @@ import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
 import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
 import { withColombiaGroup } from '../lib/colombia-catalog';
 import { compareByFirstYear } from '../lib/catalog-year';
-import { absoluteUrl } from '../lib/site';
 import { withI18nMarkup } from '../lib/html-i18n';
-import { UI } from '../lib/ui-i18n';
+import { t, type Locale } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
   description: string;
   path: string;
+  locale?: Locale;
   robots?: string;
   ogType?: 'website' | 'article' | 'profile';
   ogTitle?: string;
@@ -37,23 +37,28 @@ function colombiaHubCards(cards: CatalogCard[]): CatalogCard[] {
     .map(({ card }) => card);
 }
 
+const COLOMBIA_HUB_PATHS = new Set(['/coleccion/colombia/', '/en/collection/colombia/']);
+
 const props = Astro.props;
+const locale: Locale = props.locale ?? 'es';
 const record = props.record;
 const rawCards = record?.cards ?? [];
-const cards =
-  props.path === '/coleccion/colombia/' ? colombiaHubCards(rawCards) : rawCards;
+const cards = COLOMBIA_HUB_PATHS.has(props.path) ? colombiaHubCards(rawCards) : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
-const catalogShell = `<div class="catalog-shell">${withI18nMarkup(props.template)}</div>`;
-const canonical = absoluteUrl(props.path);
+// English URLs must receive a human English `template` — never wrap Spanish HTML.
+const catalogBody = locale === 'en' ? props.template : withI18nMarkup(props.template);
+const catalogShell = `<div class="catalog-shell">${catalogBody}</div>`;
+const skipLabel = t('skipMain', locale);
 ---
 <!doctype html>
-<html lang="es">
+<html lang={locale} data-page-locale={locale}>
   <head>
     <BaseHead
       title={props.title}
       description={props.description}
       path={props.path}
+      locale={locale}
       robots={props.robots}
       ogType={props.ogType}
       ogTitle={props.ogTitle}
@@ -61,10 +66,7 @@ const canonical = absoluteUrl(props.path);
       ogImage={props.ogImage}
       jsonLd={props.jsonLd}
       loadDcRuntime={false}
-    >
-      <link rel="alternate" hreflang="es" href={canonical} />
-      <link rel="alternate" hreflang="x-default" href={canonical} />
-    </BaseHead>
+    />
     <link rel="stylesheet" href="/catalog-fonts.css" />
     <script src="/catalog-zoom.js" defer is:inline></script>
     {props.styles && <style is:global set:html={props.styles} />}
@@ -213,25 +215,25 @@ const canonical = absoluteUrl(props.path);
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
-      data-i18n
-      data-en={UI.skipMain.en}
-    >{UI.skipMain.es}</a>
-    <SiteHeader />
+      data-i18n={locale === 'es' ? true : undefined}
+      data-en={locale === 'es' ? t('skipMain', 'en') : undefined}
+    >{skipLabel}</a>
+    <SiteHeader locale={locale} />
     {
       record ? (
-        <CatalogRecordSurface record={record} path={props.path} mode="augment">
+        <CatalogRecordSurface record={record} path={props.path} mode="augment" locale={locale}>
           <div set:html={catalogShell} />
-          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+          {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} />}
         </CatalogRecordSurface>
       ) : (
         <>
           <div set:html={catalogShell} />
-          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+          {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} />}
         </>
       )
     }
-    <PreFooter />
-    <SiteFooter variant="editorial" />
-    <CookieBanner />
+    <PreFooter locale={locale} />
+    <SiteFooter variant="editorial" locale={locale} />
+    <CookieBanner locale={locale} />
   </body>
 </html>

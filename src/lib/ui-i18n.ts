@@ -1,7 +1,12 @@
 /**
  * Shared ES/EN chrome copy. Page bodies use [data-i18n] plus this map for
  * components that cannot take a literal English attribute inline.
+ *
+ * English URL pages call `t(key, locale)` at build time so crawlers see
+ * English in the HTML source. Do not add a second dictionary file.
  */
+export type Locale = 'es' | 'en';
+
 export const UI = {
   skip: { es: 'Saltar al contenido', en: 'Skip to content' },
   skipMain: { es: 'Saltar al contenido principal', en: 'Skip to main content' },
@@ -166,3 +171,23 @@ export const CLAIM_NOTES_EN: Record<string, string> = {
   media_claim:
     'The figure comes from a secondary outlet or spokesperson and has not been verified by Notofilia as a closed sale. Real value depends on authenticity, variety, grade, and demand.',
 };
+
+/**
+ * Look up chrome copy for a locale. Special-cases the unpaired cookie body
+ * strings so callers use `t('cookiesBody', locale)` in both languages.
+ */
+export function t(key: keyof typeof UI, locale: Locale): string {
+  if (key === 'cookiesBody' || key === 'cookiesBodyEn') {
+    return locale === 'en' ? UI.cookiesBodyEn : UI.cookiesBody;
+  }
+  const value = UI[key];
+  if (typeof value === 'object' && value !== null && 'es' in value && 'en' in value) {
+    return locale === 'en' ? value.en : value.es;
+  }
+  return String(value);
+}
+
+/** Bound translator for a page locale: `const t = useTranslations('en')`. */
+export function useTranslations(locale: Locale) {
+  return (key: keyof typeof UI): string => t(key, locale);
+}

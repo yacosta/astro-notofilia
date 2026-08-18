@@ -116,6 +116,22 @@ const catalog = defineCollection({
     legacyFile: z.string(),
     sourceHash: z.string(),
     record: catalogRecordSchema.optional(),
+    /** English overlay. Absent → no `/en/` catalog route. */
+    i18n: z
+      .object({
+        en: z.object({
+          path: z.string().startsWith('/en/').endsWith('/'),
+          title: z.string(),
+          description: z.string(),
+          ogTitle: z.string().optional(),
+          ogDescription: z.string().optional(),
+          /** Required to publish EN for astro-hub / astro-static pages. Human-authored HTML. */
+          template: z.string().optional(),
+          recordTitle: z.string().optional(),
+          eyebrow: z.string().optional(),
+        }),
+      })
+      .optional(),
   }),
 });
 

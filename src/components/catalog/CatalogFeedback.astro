@@ -3,52 +3,54 @@
  * Per-record CTA to report an error or submit additional information.
  */
 import { reportMailto, type CatalogRecord } from '../../lib/catalog-record';
-import { UI } from '../../lib/ui-i18n';
+import { t, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
   path: string;
+  locale?: Locale;
 }
 
-const { record, path } = Astro.props;
+const { record, path, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const mailto = reportMailto(record, path);
 ---
 <section class="catalog-record-feedback" aria-labelledby="catalog-feedback-heading">
   <h2
     id="catalog-feedback-heading"
     class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
-    data-i18n
-    data-en={UI.feedbackHeading.en}
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : t('feedbackHeading', 'en')}
   >
-    {UI.feedbackHeading.es}
+    {t('feedbackHeading', locale)}
   </h2>
-  <p class="m-0 mb-4 text-[16px] leading-[1.65] text-cream-dim" data-i18n data-en={UI.feedbackBody.en}>
-    {UI.feedbackBody.es}
+  <p class="m-0 mb-4 text-[16px] leading-[1.65] text-cream-dim" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('feedbackBody', 'en')}>
+    {t('feedbackBody', locale)}
   </p>
   <div class="flex flex-wrap gap-3">
     <a
       class="inline-flex min-h-11 items-center px-5 border border-cream text-cream no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       href={mailto}
-      data-i18n
-      data-en={UI.writeEmail.en}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('writeEmail', 'en')}
     >
-      {UI.writeEmail.es}
+      {t('writeEmail', locale)}
     </a>
     <a
       class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       href="/contacto/"
-      data-i18n
-      data-en={UI.contactForm.en}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('contactForm', 'en')}
     >
-      {UI.contactForm.es}
+      {t('contactForm', locale)}
     </a>
     <a
       class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       href="/editorial/#como-reportar-un-error"
-      data-i18n
-      data-en={UI.editorialPolicy.en}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('editorialPolicy', 'en')}
     >
-      {UI.editorialPolicy.es}
+      {t('editorialPolicy', locale)}
     </a>
   </div>
 </section>

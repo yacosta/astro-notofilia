@@ -3,37 +3,41 @@
  * Suggested citation block for researchers.
  */
 import { formatCitation, formatCitationEn, type CatalogRecord } from '../../lib/catalog-record';
-import { UI } from '../../lib/ui-i18n';
+import { t, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
   path: string;
+  locale?: Locale;
 }
 
-const { record, path } = Astro.props;
-const citation = formatCitation(record, path);
+const { record, path, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const citation = isEn ? formatCitationEn(record, path) : formatCitation(record, path);
 const citationEn = formatCitationEn(record, path);
+const heading = t('citeHeading', locale);
+const copyLabel = t('copyCite', locale);
 ---
 <section class="catalog-record-citation" aria-labelledby="catalog-citation-heading">
   <h2
     id="catalog-citation-heading"
     class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
-    data-i18n
-    data-en={UI.citeHeading.en}
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : t('citeHeading', 'en')}
   >
-    {UI.citeHeading.es}
+    {heading}
   </h2>
   <blockquote class="m-0 border-l-2 border-line pl-4 text-[16px] leading-[1.65] text-cream-dim">
-    <p class="m-0" data-catalog-citation data-i18n data-en={citationEn}>{citation}</p>
+    <p class="m-0" data-catalog-citation data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : citationEn}>{citation}</p>
   </blockquote>
   <button
     type="button"
     class="mt-4 min-h-11 px-4 py-2 text-[13px] tracking-[0.08em] uppercase border border-line text-muted bg-transparent cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
     data-catalog-copy-citation
-    data-i18n
-    data-en={UI.copyCite.en}
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : t('copyCite', 'en')}
   >
-    {UI.copyCite.es}
+    {copyLabel}
   </button>
   <p class="m-0 mt-2 text-[14px] text-muted" data-catalog-copy-status role="status" aria-live="polite"></p>
   <script is:inline>

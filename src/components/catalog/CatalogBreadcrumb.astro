@@ -4,38 +4,54 @@
  */
 import type { CatalogRecord } from '../../lib/catalog-record';
 import { lookupEn } from '../../lib/html-i18n';
-import { UI } from '../../lib/ui-i18n';
+import { t, type Locale } from '../../lib/ui-i18n';
+import { alternateUrl } from '../../i18n/pairs';
 
 interface Props {
   crumbs: CatalogRecord['breadcrumb'];
+  locale?: Locale;
 }
 
-const { crumbs } = Astro.props;
+const { crumbs, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const crumbsLabel = t('crumbs', locale);
 ---
-<nav class="catalog-record-crumbs" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en={UI.crumbs.en}>
+<nav
+  class="catalog-record-crumbs"
+  aria-label={crumbsLabel}
+  data-i18n={isEn ? undefined : true}
+  data-i18n-target={isEn ? undefined : 'aria-label'}
+  data-en={isEn ? undefined : t('crumbs', 'en')}
+>
   <ol class="m-0 p-0 list-none flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] tracking-[0.06em] text-muted">
     {
       crumbs.map((crumb, index) => {
         const isLast = index === crumbs.length - 1;
-        const en = lookupEn(crumb.name);
+        const en = crumb.name === 'Notofilia' || crumb.name === 'Colombia' ? crumb.name : lookupEn(crumb.name);
+        const href = crumb.href
+          ? isEn
+            ? (alternateUrl(crumb.href, 'en') ?? crumb.href)
+            : crumb.href
+          : undefined;
+        const label = isEn ? (en ?? crumb.name) : crumb.name;
         return (
           <li class="inline-flex items-center gap-x-2">
             {index > 0 && <span aria-hidden="true">/</span>}
-            {crumb.href && !isLast ? (
+            {href && !isLast ? (
               <a
                 class="text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-                href={crumb.href}
-                data-i18n={en ? true : undefined}
-                data-en={en}
+                href={href}
+                data-i18n={!isEn && en ? true : undefined}
+                data-en={!isEn ? en : undefined}
               >
-                {crumb.name}
+                {label}
               </a>
             ) : (
               <span
                 aria-current={isLast ? 'page' : undefined}
-                data-i18n={en ? true : undefined}
-                data-en={en}
-              >{crumb.name}</span>
+                data-i18n={!isEn && en ? true : undefined}
+                data-en={!isEn ? en : undefined}
+              >{label}</span>
             )}
           </li>
         );

@@ -3,26 +3,39 @@
  * Native replacement for BanknoteCard.dc.html (no dc-runtime).
  */
 import type { CatalogCard } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { alternateUrl } from '../../i18n/pairs';
+import type { Locale } from '../../lib/ui-i18n';
 
 interface Props {
   card: CatalogCard;
+  locale?: Locale;
 }
 
-const { card } = Astro.props;
+const { card, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const image = card.image?.startsWith('/') ? card.image : card.image ? `/${card.image}` : undefined;
 const imageWebp = card.imageWebp?.startsWith('/')
   ? card.imageWebp
   : card.imageWebp
     ? `/${card.imageWebp}`
     : undefined;
-const heading = card.denomination || card.title;
-const kicker = card.denomination
+const titleVisible = isEn ? (card.titleEn ?? lookupEn(card.title) ?? card.title) : card.title;
+const denominationVisible = isEn
+  ? (card.denomination ? (lookupEn(card.denomination) ?? card.denomination) : undefined)
+  : card.denomination;
+const heading = denominationVisible || titleVisible;
+const kicker = denominationVisible
   ? card.year
-  : [card.denomination, card.year].filter(Boolean).join(' · ');
-const showIssuer = Boolean(card.denomination && card.title && card.title !== card.denomination);
+  : [denominationVisible, card.year].filter(Boolean).join(' · ');
+const showIssuer = Boolean(denominationVisible && titleVisible && titleVisible !== denominationVisible);
+const alt = isEn
+  ? (card.altEn ?? lookupEn(card.alt) ?? card.alt ?? heading)
+  : (card.alt || heading);
+const href = isEn ? (alternateUrl(card.href, 'en') ?? card.href) : card.href;
 ---
 <a
-  href={card.href}
+  href={href}
   class="catalog-banknote-card group flex h-full flex-col no-underline overflow-hidden border border-[rgba(10,10,9,0.1)] bg-[#d8d2cd] shadow-[0_14px_34px_rgba(0,0,0,0.35)] transition-transform duration-150 hover:-translate-y-[3px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a15] focus-visible:outline-offset-4"
 >
   <div class="relative aspect-[4/3] overflow-hidden border-b border-[rgba(10,10,9,0.08)] bg-white p-3.5 box-border">
@@ -32,7 +45,7 @@ const showIssuer = Boolean(card.denomination && card.title && card.title !== car
           {imageWebp && <source srcset={imageWebp} type="image/webp" />}
           <img
             src={image}
-            alt={card.alt || heading}
+            alt={alt}
             width="400"
             height="300"
             loading="lazy"
@@ -54,7 +67,7 @@ const showIssuer = Boolean(card.denomination && card.title && card.title !== car
     <span class="font-display text-[22px] leading-[1.15] text-[#1c1a15]">{heading}</span>
     {
       showIssuer && (
-        <span class="font-serif text-[15px] leading-[1.35] text-[#5c4e33]">{card.title}</span>
+        <span class="font-serif text-[15px] leading-[1.35] text-[#5c4e33]">{titleVisible}</span>
       )
     }
   </div>
