@@ -8,6 +8,23 @@ const SWITCHER_PAGES = [
     path: '/coleccion/pop-art/pele-bicycle-kick-the-king/',
     enHref: '/en/collection/pop-art/pele-bicycle-kick-the-king/',
   },
+  { path: '/coleccion/pop-art/', enHref: '/en/collection/pop-art/' },
+  {
+    path: '/coleccion/colombia/cartagena-1-real-1813/',
+    enHref: '/en/collection/colombia/cartagena-1-real-1813/',
+  },
+  {
+    path: '/coleccion/un-dolar-sello-rojo-1928/',
+    enHref: '/en/collection/one-dollar-red-seal-1928/',
+  },
+  {
+    path: '/coleccion/food-coupons-usda/',
+    enHref: '/en/collection/usda-food-coupons/',
+  },
+  {
+    path: '/coleccion/polimero-mundial/',
+    enHref: '/en/collection/world-polymer/',
+  },
   { path: '/glosario/', enHref: '/en/glossary/' },
   { path: '/editorial/', enHref: '/en/editorial/' },
   { path: '/editorial/equipo/', enHref: '/en/editorial/team/' },
@@ -75,6 +92,29 @@ test('Colombia hub is a reciprocal pair', async ({ page }) => {
   await expect(
     page.getByRole('group', { name: 'Language' }).getByRole('link', { name: /ES/ }),
   ).toHaveAttribute('href', '/coleccion/colombia/');
+});
+
+test('Cartagena ficha is a reciprocal pair with English body copy', async ({ page }) => {
+  await page.goto('/coleccion/colombia/cartagena-1-real-1813/', {
+    waitUntil: 'domcontentloaded',
+  });
+  await page.getByRole('group', { name: 'Idioma' }).getByRole('link', { name: /EN/ }).click();
+  await expect(page).toHaveURL(/\/en\/collection\/colombia\/cartagena-1-real-1813\/?$/);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('main')).not.toContainText('Ampliar imagen');
+  await expect(
+    page.getByRole('group', { name: 'Language' }).getByRole('link', { name: /ES/ }),
+  ).toHaveAttribute('href', '/coleccion/colombia/cartagena-1-real-1813/');
+});
+
+test('Pop Art hub EN switcher does not fall back to the collection index', async ({ page }) => {
+  await page.goto('/coleccion/pop-art/', { waitUntil: 'domcontentloaded' });
+  await page.getByRole('group', { name: 'Idioma' }).getByRole('link', { name: /EN/ }).click();
+  await expect(page).toHaveURL(/\/en\/collection\/pop-art\/?$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Pop Art');
+  await expect(
+    page.getByRole('group', { name: 'Language' }).getByRole('link', { name: /ES/ }),
+  ).toHaveAttribute('href', '/coleccion/pop-art/');
 });
 
 test('unpaired noticia falls back to the news index', async ({ page }) => {
