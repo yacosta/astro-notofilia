@@ -376,9 +376,18 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(ficha.getByText('puerta de entrada al programa MPC')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toHaveCount(0);
   await expect(page.locator('meta[name="keywords"]')).toHaveCount(0);
-  // Unpaired fichas emit canonical only — no lone hreflang="es".
-  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveCount(0);
-  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
+  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
+  );
+  await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/en/collection/military-payment-certificates/1-dollar-series-681/',
+  );
+  await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
+  );
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });
