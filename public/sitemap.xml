@@ -1,73 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://notofilia.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/como-empezar-coleccion-billetes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/como-empezar-coleccion-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/how-to-start-a-banknote-collection/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/como-empezar-coleccion-billetes/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/como-identificar-billetes-falsos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/como-identificar-billetes-falsos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/how-to-identify-counterfeit-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/como-identificar-billetes-falsos/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/diferencia-numismatica-notafilia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/diferencia-numismatica-notafilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/difference-between-numismatics-and-notaphily/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/diferencia-numismatica-notafilia/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/mylar-yes-plastic-no-how-to-store-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/numeros-serie-especiales-billetes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/numeros-serie-especiales-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/fancy-serial-numbers-on-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/numeros-serie-especiales-billetes/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/origins-of-commercial-banking-in-colombia-free-banking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/origenes-banca-comercial-puerto-rico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/origenes-banca-comercial-puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/origins-of-commercial-banking-in-puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/origenes-banca-comercial-puerto-rico/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/personajes-billetes-colombia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/personajes-billetes-colombia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/figures-on-colombia-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/personajes-billetes-colombia/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/three-printers-imprint-mystery-colombian-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -146,6 +192,9 @@
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/colombia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -470,6 +519,9 @@
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/ecuador/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/ecuador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/ecuador/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/ecuador/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -632,6 +684,9 @@
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/numismatica/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/numismatica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/numismatics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/numismatica/" />
     <lastmod>2026-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -860,6 +915,9 @@
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/puerto-rico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/puerto-rico/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -944,606 +1002,1962 @@
   </url>
   <url>
     <loc>https://notofilia.com/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/contacto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/contacto/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://notofilia.com/editorial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/editorial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/editorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/editorial/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/editorial/equipo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/editorial/equipo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/editorial/team/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/editorial/equipo/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/difference-between-numismatics-and-notaphily/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/diferencia-numismatica-notafilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/difference-between-numismatics-and-notaphily/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/diferencia-numismatica-notafilia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/fancy-serial-numbers-on-banknotes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/numeros-serie-especiales-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/fancy-serial-numbers-on-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/numeros-serie-especiales-billetes/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/figures-on-colombia-banknotes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/personajes-billetes-colombia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/figures-on-colombia-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/personajes-billetes-colombia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/how-to-identify-counterfeit-banknotes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/como-identificar-billetes-falsos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/how-to-identify-counterfeit-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/como-identificar-billetes-falsos/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/how-to-start-a-banknote-collection/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/como-empezar-coleccion-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/how-to-start-a-banknote-collection/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/como-empezar-coleccion-billetes/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/mylar-yes-plastic-no-how-to-store-banknotes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/mylar-yes-plastic-no-how-to-store-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/mylar-si-plastico-no-como-guardar-billetes/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/origins-of-commercial-banking-in-colombia-free-banking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/origins-of-commercial-banking-in-colombia-free-banking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/origenes-banca-comercial-colombia-banca-libre/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/origins-of-commercial-banking-in-puerto-rico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/origenes-banca-comercial-puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/origins-of-commercial-banking-in-puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/origenes-banca-comercial-puerto-rico/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/blog/three-printers-imprint-mystery-colombian-banknotes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/blog/three-printers-imprint-mystery-colombian-banknotes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/blog/tres-imprentas-misterio-pie-imprenta-billetes-colombianos/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/ecuador/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/ecuador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/ecuador/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/ecuador/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/numismatics/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/numismatica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/numismatics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/numismatica/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/puerto-rico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/puerto-rico/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/puerto-rico/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/contacto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/contacto/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/editorial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/editorial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/editorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/editorial/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/editorial/team/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/editorial/equipo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/editorial/team/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/editorial/equipo/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/10-mil/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/diez-milesimas-10-mils/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/10-mil/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/diez-milesimas-10-mils/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/abrasions/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/abrasiones/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/abrasions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/abrasiones/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/accumulation/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/acumulacion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/accumulation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/acumulacion/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/adjustment-marks/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-ajuste/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/adjustment-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-ajuste/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/album-slide-marks/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-funda-de-album/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/album-slide-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-funda-de-album/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/altered-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-alterado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/altered-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-alterado/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/altered-surfaces/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/superficies-alteradas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/altered-surfaces/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/superficies-alteradas/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/ancients/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/monedas-antiguas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/ancients/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/monedas-antiguas/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/anepigraphic/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/anepigrafico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/anepigraphic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/anepigrafico/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/annealing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/recocido/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/annealing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/recocido/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/appraised/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tasado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/appraised/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tasado/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/as-made-crease/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/pliegue-de-fabrica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/as-made-crease/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/pliegue-de-fabrica/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/assayer/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ensayador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/assayer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ensayador/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/bag-marks/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-bolsa/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/bag-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-bolsa/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/basal-state/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/estado-basal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/basal-state/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/estado-basal/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/bearer-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/vale-al-portador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/bearer-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/vale-al-portador/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/billon/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billon/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/billon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billon/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/border-frame/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/orla/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/border-frame/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/orla/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/brick/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/fajo-ladrillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/brick/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/fajo-ladrillo/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/brilliant-uncirculated-bu/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sin-circular-brillante-bu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/brilliant-uncirculated-bu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sin-circular-brillante-bu/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/clear-window/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ventana-transparente/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/clear-window/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ventana-transparente/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/coat-of-arms/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escudo-de-armas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/coat-of-arms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escudo-de-armas/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/cobs/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/macuquina-cob/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cobs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/macuquina-cob/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/commemorative-issue/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/emision-conmemorativa/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/commemorative-issue/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/emision-conmemorativa/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/conversion-day/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/c-day/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/conversion-day/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/c-day/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/cordoncillo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cordoncillo/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/cospel/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cospel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cospel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cospel/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/countermark/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/resello/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/countermark/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/resello/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/demonetized/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/desmonetizado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/demonetized/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/desmonetizado/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/die-marriage/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/apareamiento-de-troqueles/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/die-marriage/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/apareamiento-de-troqueles/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/drachm/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/dracma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/drachm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/dracma/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/emalangeni-lilangeni/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/emalangeni-lilangeni/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/emalangeni-lilangeni/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/emalangeni-lilangeni/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/epq-exceptional-paper-quality/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/epq-exceptional-paper-quality/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/escripofilia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escripofilia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/exonumia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/exonumia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/exonumia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/exonumia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/extremely-fine-ef/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/extremadamente-fino-ebc-ef/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/extremely-fine-ef/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/extremadamente-fino-ebc-ef/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/fancy-serial-number/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion-especial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/fancy-serial-number/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion-especial/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/floating-debt-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/deuda-flotante/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/floating-debt-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/deuda-flotante/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/fractional-currency/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/papel-moneda-fraccionario/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/fractional-currency/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/papel-moneda-fraccionario/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/free-banking/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/banca-libre/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/free-banking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/banca-libre/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/friedberg-catalog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/friedberg/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/friedberg-catalog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/friedberg/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/guilloche/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/guilloche/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/guilloche/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/guilloche/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/hybrid-substrate/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sustrato-hibrido/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/hybrid-substrate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sustrato-hibrido/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/intaglio-printing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/intaglio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/intaglio-printing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/intaglio/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/iridescent-metallic-ink/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tinta-iridiscente/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/iridescent-metallic-ink/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tinta-iridiscente/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/issuing-bank-authority/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/banco-emisor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/issuing-bank-authority/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/banco-emisor/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/kopek/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/kopek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/kopek/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/kopek/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/kwacha/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/kwacha/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/kwacha/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/kwacha/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/legal-tender/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/curso-legal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/legal-tender/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/curso-legal/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/legend/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/leyenda/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/legend/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/leyenda/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/leu-lei/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/leu-lei/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/leu-lei/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/leu-lei/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/lithography/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/litografia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/lithography/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/litografia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/microprinting/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/microimpresion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/microprinting/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/microimpresion/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/mortgage-bond-certificate/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cedula-hipotecaria/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/mortgage-bond-certificate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cedula-hipotecaria/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/mule-notes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-mula/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/mule-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-mula/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/notaphily/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/notafilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/notaphily/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/notafilia/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/numismatics/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numismatica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/numismatics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numismatica/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/obsolete-bank-notes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-de-banco-obsoleto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/obsolete-bank-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-de-banco-obsoleto/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/obverse/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/anverso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/obverse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/anverso/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/optically-variable-device-ovd/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/dispositivo-opticamente-variable-ovd/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/optically-variable-device-ovd/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/dispositivo-opticamente-variable-ovd/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/overprint/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sobresello/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/overprint/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sobresello/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/peso/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/peso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/peso/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/peso/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/pick-number/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/pick/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/pick-number/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/pick/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/planchet/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/planchuela/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/planchet/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/planchuela/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/polymer/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/polimero/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/polymer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/polimero/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/portrait/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/retrato/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/portrait/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/retrato/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/printing-error/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/error-de-impresion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/printing-error/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/error-de-impresion/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/provisional-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-provisional/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/provisional-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-provisional/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/quetzal/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/quetzal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/quetzal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/quetzal/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/radar-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion-radar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/radar-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion-radar/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/real/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/real/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/real/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/real/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/replacement-star-note/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-de-reemplazo-estrella/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/replacement-star-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-de-reemplazo-estrella/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/reverse/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/reverso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/reverse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/reverso/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/ringgit/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ringgit/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/ringgit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ringgit/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/rosette/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/roseton/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/rosette/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/roseton/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/security-thread/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/hilo-de-seguridad/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/security-thread/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/hilo-de-seguridad/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/see-through-register/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/registro-perfecto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/see-through-register/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/registro-perfecto/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/serial-numbering/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/serial-numbering/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/series/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/serie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/series/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/serie/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/sheldon-scale/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escala-sheldon/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/sheldon-scale/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escala-sheldon/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/signature/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/firma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/signature/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/firma/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/sovereign-state-issue/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/estado-soberano/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/sovereign-state-issue/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/estado-soberano/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/specimen/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/specimen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/specimen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/specimen/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/steel-copper-engraving/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/talla-dulce/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/steel-copper-engraving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/talla-dulce/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/strap/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/faja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/strap/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/faja/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/substrate/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sustrato/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/substrate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sustrato/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/tala/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tala/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tala/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tala/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/tenge/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tenge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tenge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tenge/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/toning/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/patina/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/toning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/patina/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/tyvek/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tyvek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tyvek/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tyvek/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/uncirculated-unc/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-sin-circular/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/uncirculated-unc/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-sin-circular/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/uv-fluorescent-ink/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tinta-fluorescente-uv/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/uv-fluorescent-ink/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tinta-fluorescente-uv/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/vignette/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/vineta/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/vignette/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/vineta/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/watermark/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/filigrana/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/watermark/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/filigrana/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/web-notes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-web/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/web-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-web/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/j-s-g-boggs/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/j-s-g-boggs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/j-s-g-boggs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/j-s-g-boggs/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/news/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/noticias/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/news/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/noticias/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/privacy-cookies/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/politica-privacidad-cookies/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/privacy-cookies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/politica-privacidad-cookies/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/glosario/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/abrasiones/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/abrasiones/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/abrasions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/abrasiones/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/acumulacion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/acumulacion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/accumulation/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/acumulacion/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/anepigrafico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/anepigrafico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/anepigraphic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/anepigrafico/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/anverso/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/anverso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/obverse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/anverso/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/apareamiento-de-troqueles/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/apareamiento-de-troqueles/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/die-marriage/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/apareamiento-de-troqueles/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/banca-libre/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/banca-libre/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/free-banking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/banca-libre/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/banco-emisor/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/banco-emisor/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/issuing-bank-authority/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/banco-emisor/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-alterado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-alterado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/altered-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-alterado/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-de-banco-obsoleto/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-de-banco-obsoleto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/obsolete-bank-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-de-banco-obsoleto/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-de-reemplazo-estrella/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-de-reemplazo-estrella/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/replacement-star-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-de-reemplazo-estrella/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-mula/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-mula/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/mule-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-mula/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-provisional/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-provisional/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/provisional-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-provisional/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-sin-circular/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-sin-circular/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/uncirculated-unc/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-sin-circular/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billete-web/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-web/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/web-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billete-web/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/billon/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billon/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/billon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/billon/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/c-day/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/c-day/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/conversion-day/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/c-day/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/cedula-hipotecaria/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cedula-hipotecaria/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/mortgage-bond-certificate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cedula-hipotecaria/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/cordoncillo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cordoncillo/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/cospel/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cospel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cospel/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cospel/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/curso-legal/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/curso-legal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/legal-tender/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/curso-legal/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/desmonetizado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/desmonetizado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/demonetized/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/desmonetizado/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/deuda-flotante/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/deuda-flotante/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/floating-debt-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/deuda-flotante/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/diez-milesimas-10-mils/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/diez-milesimas-10-mils/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/10-mil/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/diez-milesimas-10-mils/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/dispositivo-opticamente-variable-ovd/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/dispositivo-opticamente-variable-ovd/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/optically-variable-device-ovd/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/dispositivo-opticamente-variable-ovd/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/dracma/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/dracma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/drachm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/dracma/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/emalangeni-lilangeni/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/emalangeni-lilangeni/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/emalangeni-lilangeni/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/emalangeni-lilangeni/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/emision-conmemorativa/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/emision-conmemorativa/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/commemorative-issue/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/emision-conmemorativa/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/ensayador/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ensayador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/assayer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ensayador/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/epq-exceptional-paper-quality/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/error-de-impresion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/error-de-impresion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/printing-error/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/error-de-impresion/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/escala-sheldon/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escala-sheldon/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/sheldon-scale/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escala-sheldon/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/escripofilia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escripofilia/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/escudo-de-armas/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escudo-de-armas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/coat-of-arms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escudo-de-armas/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/estado-basal/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/estado-basal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/basal-state/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/estado-basal/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/estado-soberano/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/estado-soberano/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/sovereign-state-issue/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/estado-soberano/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/exonumia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/exonumia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/exonumia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/exonumia/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/extremadamente-fino-ebc-ef/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/extremadamente-fino-ebc-ef/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/extremely-fine-ef/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/extremadamente-fino-ebc-ef/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/faja/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/faja/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/strap/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/faja/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/fajo-ladrillo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/fajo-ladrillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/brick/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/fajo-ladrillo/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/filigrana/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/filigrana/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/watermark/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/filigrana/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/firma/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/firma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/signature/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/firma/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/friedberg/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/friedberg/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/friedberg-catalog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/friedberg/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/guilloche/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/guilloche/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/guilloche/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/guilloche/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/hilo-de-seguridad/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/hilo-de-seguridad/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/security-thread/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/hilo-de-seguridad/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/intaglio/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/intaglio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/intaglio-printing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/intaglio/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/kopek/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/kopek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/kopek/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/kopek/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/kwacha/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/kwacha/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/kwacha/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/kwacha/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/leu-lei/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/leu-lei/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/leu-lei/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/leu-lei/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/leyenda/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/leyenda/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/legend/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/leyenda/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/litografia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/litografia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/lithography/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/litografia/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/macuquina-cob/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/macuquina-cob/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cobs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/macuquina-cob/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/marcas-de-ajuste/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-ajuste/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/adjustment-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-ajuste/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/marcas-de-bolsa/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-bolsa/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/bag-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-bolsa/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/marcas-de-funda-de-album/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/marcas-de-funda-de-album/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/album-slide-marks/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/marcas-de-funda-de-album/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/microimpresion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/microimpresion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/microprinting/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/microimpresion/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/monedas-antiguas/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/monedas-antiguas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/ancients/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/monedas-antiguas/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/notafilia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/notafilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/notaphily/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/notafilia/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/numeracion-especial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion-especial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/fancy-serial-number/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion-especial/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/numeracion-radar/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion-radar/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/radar-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion-radar/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/numeracion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numeracion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/serial-numbering/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numeracion/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/numismatica/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/numismatica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/numismatics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/numismatica/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/orla/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/orla/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/border-frame/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/orla/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/papel-moneda-fraccionario/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/papel-moneda-fraccionario/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/fractional-currency/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/papel-moneda-fraccionario/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/patina/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/patina/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/toning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/patina/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/peso/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/peso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/peso/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/peso/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/pick/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/pick/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/pick-number/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/pick/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/planchuela/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/planchuela/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/planchet/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/planchuela/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/pliegue-de-fabrica/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/pliegue-de-fabrica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/as-made-crease/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/pliegue-de-fabrica/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/polimero/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/polimero/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/polymer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/polimero/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/quetzal/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/quetzal/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/quetzal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/quetzal/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/real/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/real/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/real/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/real/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/recocido/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/recocido/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/annealing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/recocido/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/registro-perfecto/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/registro-perfecto/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/see-through-register/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/registro-perfecto/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/resello/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/resello/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/countermark/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/resello/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/retrato/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/retrato/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/portrait/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/retrato/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/reverso/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/reverso/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/reverse/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/reverso/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/ringgit/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ringgit/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/ringgit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ringgit/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/roseton/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/roseton/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/rosette/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/roseton/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/serie/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/serie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/series/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/serie/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/sin-circular-brillante-bu/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sin-circular-brillante-bu/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/brilliant-uncirculated-bu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sin-circular-brillante-bu/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/sobresello/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sobresello/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/overprint/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sobresello/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/specimen/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/specimen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/specimen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/specimen/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/superficies-alteradas/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/superficies-alteradas/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/altered-surfaces/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/superficies-alteradas/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/sustrato-hibrido/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sustrato-hibrido/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/hybrid-substrate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sustrato-hibrido/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/sustrato/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/sustrato/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/substrate/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/sustrato/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tala/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tala/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tala/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tala/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/talla-dulce/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/talla-dulce/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/steel-copper-engraving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/talla-dulce/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tasado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tasado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/appraised/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tasado/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tenge/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tenge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tenge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tenge/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tinta-fluorescente-uv/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tinta-fluorescente-uv/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/uv-fluorescent-ink/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tinta-fluorescente-uv/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tinta-iridiscente/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tinta-iridiscente/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/iridescent-metallic-ink/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tinta-iridiscente/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/tyvek/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/tyvek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/tyvek/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/tyvek/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/vale-al-portador/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/vale-al-portador/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/bearer-note/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/vale-al-portador/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/ventana-transparente/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/ventana-transparente/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/clear-window/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/ventana-transparente/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/glosario/vineta/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/vineta/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/vignette/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/vineta/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://notofilia.com/j-s-g-boggs/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/j-s-g-boggs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/j-s-g-boggs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/j-s-g-boggs/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://notofilia.com/noticias/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/noticias/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/news/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/noticias/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1880,6 +3294,9 @@
   </url>
   <url>
     <loc>https://notofilia.com/politica-privacidad-cookies/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/politica-privacidad-cookies/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/privacy-cookies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/politica-privacidad-cookies/" />
     <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

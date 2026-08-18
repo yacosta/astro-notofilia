@@ -42,3 +42,19 @@ entries; do not rewrite history — add a new dated item instead.
 - **EN homepage JSON-LD:** `inLanguage: 'en'`; `SearchAction` omitted until `/en/search/` exists.
 - **Not done (later agents):** remaining catalog/editorial/glossary English (A4); sitemap/robots/GA (A5); replace ES/EN pill + stop `interface-lang.js` forcing `lang="es"` on `/en/` (A6).
 - **Full write-up:** `docs/i18n/A3-REPORT.md`.
+
+## 2026-08-18 — Phase 3 A5 (SEO plumbing / discovery)
+
+- **RSS:** there is still no feed in the repo (AUDIT §1.5 / §5.4). **Do not add RSS as part of i18n.** The site remains sitemap-only. If a feed is added later, ship two separate files — `/rss.xml` (Spanish) and `/en/rss.xml` (English) — not a combined bilingual feed.
+- **GA / analytics:** there is **no gtag/GA4 measurement ID** in source (privacy copy mentions GA4; CookieBanner gates `notofilia_cookie_consent`; WebVitals POSTs to `/api/web-vitals`). Do not invent a GA ID. Once GA lands, segment English as path prefix `/en/` **or** a `content_language` dimension. Web Vitals now send `content_language: 'en' | 'es'` from the path (`/en` or `/en/…` → `en`). WebVitals stays in BaseHead on both trees.
+- **Cloudflare:** `public/_redirects` has no language-negotiation or `/en/` aliases (do not add `/en/coleccion/` → `/en/collection/`). `functions/_middleware.js` only 301s www→apex and, for `/en/*` misses, optionally serves prerendered `/en/404/` HTML with HTTP 404 via `env.ASSETS`. **No Accept-Language / geo redirects in repo.** Human dashboard: do **not** add a Bulk Redirect or Transform Rule that inspects `Accept-Language` or country. www→apex at the host level is already OK.
+- **Sitemap:** `scripts/generate-sitemap.mjs` imports `allPairs()` (via `scripts/load-pairs.mjs` → `src/i18n/pairs.ts`). English `<loc>` values are `pair.en` **when** `src/pages/en/` has a static or `[slug]`/`[...slug]` builder (so registry-only glossary/static pairs are not advertised as 404s). Reciprocal `xhtml:link` hreflang (`es`, `en`, `x-default`→Spanish) only when **both** URLs are in the sitemap. `/buscar/`, `/en/search/`, `/404`, `/en/404/` omitted. News sitemap: Spanish noticias `news:language` `es`; paired English news articles (not `/en/news/` index) `en`.
+- **Full write-up:** `docs/i18n/A5-REPORT.md`.
+
+## 2026-08-18 — Phase 3 A4 (content translator; parallel with A5)
+
+- **Shipped EN tree:** collection index + numismatics; Puerto Rico and Ecuador hubs (`i18n.en` overlay); full glossary (95 terms via existing `termEn`/`definitionEn`); 9 evergreen `blog-en` posts; news **index only**; contact, editorial, editorial/team, privacy-cookies, J.S.G. Boggs.
+- **Deferred:** 55 individual noticias (time-stamped; bulk translation would be thin), ~144 catalog fichas, remaining hubs, `/en/search/`. See `docs/i18n/TRANSLATION-TODO.md`.
+- **Pairs:** generators `fromGlossary` / `fromBlogEn` / `fromNoticiasEn` plus SEED indexes. Catalog still via `fromCatalog()`.
+- **A6 follow-up:** EN Collection nav still pointed at `/en/collection/colombia/` after A3; should now target `/en/collection/`.
+- **Full write-up:** `docs/i18n/A4-REPORT.md`.
