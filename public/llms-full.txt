@@ -10,7 +10,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*
 
-**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN del encabezado cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.
+**Idioma:** el español es el idioma principal y vive en las URLs raíz (`lang=es`, p. ej. `/coleccion/`, `/noticias/`). El inglés vive bajo `/en/` con slugs traducidos (`lang=en`, p. ej. `/en/collection/colombia/`, `/en/news/`). Las páginas emparejadas emiten hreflang recíproco (`es`, `en`, `x-default` → URL española). El selector de idioma del encabezado es un enlace `<a href>` al equivalente; no hay redirección por `Accept-Language` ni por país. La cobertura inglesa es parcial: fichas y noticias individuales pueden seguir solo en español.
 
 **Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.
 
@@ -3292,8 +3292,8 @@ Aún no hay resúmenes mensuales publicados.
 - [C-Day](https://notofilia.com/glosario/c-day/): Conversion Day — Día de conversión del programa MPC: las bases se cerraban sin aviso y las tropas canjeaban la serie vigente por la…
 - [Catálogo Friedberg](https://notofilia.com/glosario/friedberg/): Friedberg catalog — Sistema de referencia especializado en billetes de Estados Unidos, alternativo y complementario al catálogo Pick.
 - [Cédula hipotecaria](https://notofilia.com/glosario/cedula-hipotecaria/): Mortgage bond / certificate — Título de deuda respaldado por hipotecas inmobiliarias, autorizado a circular con fuerza fiduciaria bajo un marco legal…
-- [Cordoncillo](https://notofilia.com/glosario/cordoncillo/): Cordoncillo — Diseño decorativo o acanalado aplicado al canto de una moneda para impedir su recorte o el raspado ilegal de metal.
-- [Cospel](https://notofilia.com/glosario/cospel/): Cospel — Disco de metal en bruto, también llamado planchuela, preparado y pesado antes de ser acuñado entre los troqueles.
+- [Cordoncillo](https://notofilia.com/glosario/cordoncillo/): Reeded edge — Diseño decorativo o acanalado aplicado al canto de una moneda para impedir su recorte o el raspado ilegal de metal.
+- [Cospel](https://notofilia.com/glosario/cospel/): Coin blank — Disco de metal en bruto, también llamado planchuela, preparado y pesado antes de ser acuñado entre los troqueles.
 - [Curso legal](https://notofilia.com/glosario/curso-legal/): Legal tender — Condición de un billete o moneda de ser aceptado obligatoriamente como medio de pago dentro de un territorio.
 - [Desmonetizado](https://notofilia.com/glosario/desmonetizado/): Demonetized — Dicho de un billete que ha perdido su curso legal y ya no puede canjearse ni usarse como medio de pago corriente.
 - [Deuda flotante](https://notofilia.com/glosario/deuda-flotante/): Floating debt note — Vale de deuda de corto plazo emitido por un tesoro público, a menudo resultante de la conversión de créditos previos,…
@@ -3306,7 +3306,7 @@ Aún no hay resúmenes mensuales publicados.
 - [EPQ (Calidad de Papel Excepcional)](https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/): EPQ (Exceptional Paper Quality) — Designación de grado usada por PMG para señalar que un billete es completamente original y no ha sufrido modificaciones…
 - [Error de impresión](https://notofilia.com/glosario/error-de-impresion/): Printing error — Billete que salió de la imprenta con un defecto no intencional —corte descentrado, doblez de papel, color faltante— y…
 - [Escala Sheldon](https://notofilia.com/glosario/escala-sheldon/): Sheldon Scale — Sistema numérico estándar de 70 puntos usado en numismática para calificar el desgaste y el estado de conservación de…
-- [Escripofilia](https://notofilia.com/glosario/escripofilia/): Escripofilia — Estudio y coleccionismo de títulos financieros históricos, en particular certificados de acciones, bonos y warrants.
+- [Escripofilia](https://notofilia.com/glosario/escripofilia/): Scripophily — Estudio y coleccionismo de títulos financieros históricos, en particular certificados de acciones, bonos y warrants.
 - [Escudo de armas](https://notofilia.com/glosario/escudo-de-armas/): Coat of arms — Emblema heráldico oficial de un país o entidad, incluido con frecuencia como sello de autenticidad institucional.
 - [Estado basal](https://notofilia.com/glosario/estado-basal/): Basal State — El grado de conservación más bajo posible, en el que una moneda solo es identificable por su tipo de diseño principal,…
 - [Estado soberano](https://notofilia.com/glosario/estado-soberano/): Sovereign state issue — Billete o vale emitido por un estado federal con autonomía fiscal propia dentro de una república federada, en lugar de…

@@ -21,20 +21,21 @@ Do not bulk-machine `titleEn` onto every JSON. Translate a ficha only when the w
 
 ## Remaining collection hubs
 
-Spanish URLs stay canonical until a full English `i18n.en.template` exists:
+Spanish URLs stay canonical until a full English `i18n.en.template` exists.
+Suggested English slugs follow `docs/i18n/AUDIT.md` §6:
 
 | Spanish | Suggested English |
 |---|---|
-| `/coleccion/estados-unidos-obsolete/` | `/en/collection/united-states-obsolete/` |
-| `/coleccion/federal-reserve/` | `/en/collection/federal-reserve/` |
-| `/coleccion/tesoro-estados-unidos/` | `/en/collection/united-states-treasury/` |
+| `/coleccion/billete-obsoleto-estados-unidos/` | `/en/collection/obsolete-united-states-banknotes/` |
+| `/coleccion/reserva-federal/` | `/en/collection/federal-reserve/` |
+| `/coleccion/departamento-del-tesoro-de-ee-uu/` | `/en/collection/us-department-of-the-treasury/` |
 | `/coleccion/moneda-colonial-espanola/` | `/en/collection/spanish-colonial-coinage/` |
-| `/coleccion/billetes-plasticos/` | `/en/collection/polymer-banknotes/` |
-| `/coleccion/military-payment-certificate/` | `/en/collection/military-payment-certificate/` |
-| `/coleccion/arte-pop/` | `/en/collection/pop-art/` |
-| `/coleccion/cupones-de-alimentos/` | `/en/collection/food-coupons/` |
-| `/coleccion/banca-libre/` | `/en/collection/free-banking/` |
-| `/coleccion/emisiones-en-el-extranjero/` | `/en/collection/notes-issued-abroad/` |
+| `/coleccion/polimero-mundial/` | `/en/collection/world-polymer/` |
+| `/coleccion/certificados-de-pago-militar/` | `/en/collection/military-payment-certificates/` |
+| `/coleccion/pop-art/` | `/en/collection/pop-art/` |
+| `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` |
+| `/coleccion/colombia/banca-libre/` | `/en/collection/colombia/free-banking/` |
+| `/coleccion/colombia/emisiones-en-el-extranjero/` | `/en/collection/colombia/issues-printed-abroad/` |
 
 On `/en/collection/` those hubs still link to the Spanish URL (honest).
 

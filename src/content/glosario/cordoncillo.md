@@ -1,6 +1,6 @@
 ---
 termEs: "Cordoncillo"
-termEn: "Cordoncillo"
+termEn: "Reeded edge"
 definitionEn: "The decorative or ridged edge design applied to a coin to prevent clipping or illegal shaving of its metal."
 category: "Diseño"
 source: "suggested"

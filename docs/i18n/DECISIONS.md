@@ -67,3 +67,11 @@ entries; do not rewrite history — add a new dated item instead.
 - **No redirects:** no geo / Accept-Language; no last-language persist that forces `/` → `/en/`; no suggestion banner (CLS). Spanish `data-i18n` left inert. Hidden EN panels on editorial/privacy/PostArticle removed.
 - **html lang:** EN pages stay `lang="en"`; nothing forces `es`. Spanish 404 keeps `/en/` path-sniff boot only.
 - **Full write-up:** `docs/i18n/A6-REPORT.md`.
+
+## 2026-08-18 — Phase 6 (orchestrator wrap-up)
+
+- **A7:** `docs/i18n/QA-REPORT.md` — checks 1–10 PASS, **0 blockers**.
+- **Warning fixes shipped:** `llms.txt` language paragraph updated; EN JSON-LD inventory property names via `inventoryProperties(stats, 'en')`; glossary `termEn` for Escripofilia→Scripophily, Cordoncillo→Reeded edge, Cospel→Coin blank (unique slugs; `Planchet` already used by Planchuela).
+- **Left as deferred:** Spanish `catalog-index.json` filter keys on `/en/collection/` (W3); `/en/search/` (W4).
+- **Launch:** `docs/i18n/LAUNCH-CHECKLIST.md`.
+

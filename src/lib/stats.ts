@@ -77,12 +77,28 @@ export function formatStatsEn(s: CollectionStats): string {
   return `${s.billetes} banknotes · ${s.monedas} coins · ${s.paises} countries · ${s.fichas} catalog entries · ${s.paginas} pages`;
 }
 
-export function inventoryProperties(s: CollectionStats) {
+export function inventoryProperties(s: CollectionStats, locale: 'es' | 'en' = 'es') {
+  const names =
+    locale === 'en'
+      ? {
+          billetes: 'Banknotes',
+          monedas: 'Coins',
+          paises: 'Countries',
+          fichas: 'Catalog entries',
+          paginas: 'Pages',
+        }
+      : {
+          billetes: 'Billetes',
+          monedas: 'Monedas',
+          paises: 'Países',
+          fichas: 'Fichas',
+          paginas: 'Páginas',
+        };
   return [
-    { '@type': 'PropertyValue', name: 'Billetes', value: String(s.billetes) },
-    { '@type': 'PropertyValue', name: 'Monedas', value: String(s.monedas) },
-    { '@type': 'PropertyValue', name: 'Países', value: String(s.paises) },
-    { '@type': 'PropertyValue', name: 'Fichas', value: String(s.fichas) },
-    { '@type': 'PropertyValue', name: 'Páginas', value: String(s.paginas) },
+    { '@type': 'PropertyValue', name: names.billetes, value: String(s.billetes) },
+    { '@type': 'PropertyValue', name: names.monedas, value: String(s.monedas) },
+    { '@type': 'PropertyValue', name: names.paises, value: String(s.paises) },
+    { '@type': 'PropertyValue', name: names.fichas, value: String(s.fichas) },
+    { '@type': 'PropertyValue', name: names.paginas, value: String(s.paginas) },
   ];
 }

@@ -1406,6 +1406,15 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/en/glossary/coin-blank/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cospel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/coin-blank/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cospel/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/en/glossary/commemorative-issue/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/emision-conmemorativa/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/commemorative-issue/" />
@@ -1419,24 +1428,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/c-day/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/conversion-day/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/c-day/" />
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://notofilia.com/en/glossary/cordoncillo/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cordoncillo/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cordoncillo/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cordoncillo/" />
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://notofilia.com/en/glossary/cospel/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cospel/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cospel/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cospel/" />
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1491,15 +1482,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/epq-exceptional-paper-quality/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/" />
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://notofilia.com/en/glossary/escripofilia/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escripofilia/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/escripofilia/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escripofilia/" />
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1838,6 +1820,15 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/en/glossary/reeded-edge/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/reeded-edge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cordoncillo/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/en/glossary/replacement-star-note/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/billete-de-reemplazo-estrella/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/replacement-star-note/" />
@@ -1869,6 +1860,15 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/roseton/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/rosette/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/roseton/" />
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/glossary/scripophily/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/scripophily/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escripofilia/" />
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2245,7 +2245,7 @@
   <url>
     <loc>https://notofilia.com/glosario/cordoncillo/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cordoncillo/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cordoncillo/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/reeded-edge/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cordoncillo/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -2254,7 +2254,7 @@
   <url>
     <loc>https://notofilia.com/glosario/cospel/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/cospel/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/cospel/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/coin-blank/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/cospel/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -2371,7 +2371,7 @@
   <url>
     <loc>https://notofilia.com/glosario/escripofilia/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/glosario/escripofilia/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/escripofilia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/glossary/scripophily/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/glosario/escripofilia/" />
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
