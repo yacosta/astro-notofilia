@@ -19,10 +19,10 @@ for (const { path, enHref } of SWITCHER_PAGES) {
     const response = await page.goto(path, { waitUntil: 'domcontentloaded' });
     expect(response?.ok()).toBeTruthy();
     await expect(page.locator('#lang-es, #lang-en')).toHaveCount(0);
-    await expect(page.getByRole('button', { name: 'EN' })).toHaveCount(0);
 
     const nav = page.getByRole('group', { name: 'Idioma' });
     await expect(nav).toBeVisible();
+    await expect(nav.getByRole('button')).toHaveCount(0);
     await expect(nav.locator('[aria-current="page"]')).toHaveText(/ES/);
     const en = nav.getByRole('link', { name: /EN/ });
     await expect(en).toBeVisible();
