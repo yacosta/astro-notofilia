@@ -8,11 +8,13 @@ import CookieBanner from '../components/CookieBanner.astro';
 import PreFooter from '../components/PreFooter.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { EDITORIAL_TEAM } from '../lib/editorial';
+import { t } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
   description: string;
   path: string;
+  locale?: import('../lib/ui-i18n').Locale;
   ogType?: 'website' | 'article';
   ogImage?: string;
   jsonLd?: unknown;
@@ -23,6 +25,7 @@ const {
   title,
   description,
   path,
+  locale = 'es',
   ogType = 'website',
   ogImage,
   jsonLd,
@@ -30,12 +33,13 @@ const {
 } = Astro.props;
 ---
 <!doctype html>
-<html lang="es">
+<html lang={locale} data-page-locale={locale}>
   <head>
     <BaseHead
       title={title}
       description={description}
       path={path}
+      locale={locale}
       ogType={ogType}
       ogImage={ogImage}
       jsonLd={jsonLd}
@@ -54,15 +58,13 @@ const {
     <a
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
       href="#main-content"
-      data-i18n
-      data-en="Skip to content"
-    >Saltar al contenido</a>
-    <SiteHeader />
+    >{t('skip', locale)}</a>
+    <SiteHeader locale={locale} path={path} />
     <main id="main-content" class="min-h-[60vh]" tabindex="-1">
       <slot />
     </main>
-    <PreFooter />
-    <SiteFooter variant="editorial" />
-    <CookieBanner />
+    <PreFooter locale={locale} />
+    <SiteFooter variant="editorial" locale={locale} />
+    <CookieBanner locale={locale} />
   </body>
 </html>

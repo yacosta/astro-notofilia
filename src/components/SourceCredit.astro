@@ -4,7 +4,7 @@
  * Used on noticia pages, the homepage feature strip, and the news index.
  */
 import NewWindowHint from './NewWindowHint.astro';
-import { UI } from '../lib/ui-i18n';
+import { UI, type Locale } from '../lib/ui-i18n';
 
 export interface Props {
   source: string;
@@ -14,6 +14,7 @@ export interface Props {
   /** Compact byline vs the full-width line after the article body. */
   variant?: 'meta' | 'footer';
   class?: string;
+  locale?: Locale;
 }
 
 const {
@@ -22,10 +23,12 @@ const {
   tone = 'on-dark',
   variant = 'meta',
   class: className,
+  locale = 'es',
 } = Astro.props;
 
 const onCream = tone === 'on-cream';
 const isFooter = variant === 'footer';
+const isEn = locale === 'en';
 ---
 <p
   class:list={[
@@ -42,9 +45,9 @@ const isFooter = variant === 'footer';
       'shrink-0',
       isFooter ? 'font-semibold text-cream-soft' : onCream ? 'text-gold-dark' : 'text-muted',
     ]}
-    data-i18n
-    data-en={UI.fuente.en}
-  >{UI.fuente.es}</span>
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : UI.fuente.en}
+  >{isEn ? UI.fuente.en : UI.fuente.es}</span>
   <a
     class:list={[
       'inline-flex min-h-[44px] min-w-0 max-w-full flex-wrap items-center gap-x-1 underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px]',
@@ -56,6 +59,6 @@ const isFooter = variant === 'footer';
     target="_blank"
     rel="noopener noreferrer"
   >
-    {source}<NewWindowHint />
+    {source}<NewWindowHint lang={isEn ? 'en' : 'es'} />
   </a>
 </p>

@@ -16,15 +16,17 @@ import CatalogRelated from './CatalogRelated.astro';
 import CatalogCitation from './CatalogCitation.astro';
 import CatalogFeedback from './CatalogFeedback.astro';
 import { lookupEn } from '../../lib/html-i18n';
-import { UI } from '../../lib/ui-i18n';
+import { t, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
   path: string;
   mode?: 'augment' | 'primary';
+  locale?: Locale;
 }
 
-const { record, path, mode = 'augment' } = Astro.props;
+const { record, path, mode = 'augment', locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const isPrimary = mode === 'primary';
 const isHub = record.render === 'astro-hub' || Boolean(record.cards?.length);
 const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse);
@@ -34,6 +36,7 @@ const hideDuplicateFicha =
 const isPiece = record.kind === 'coin' || record.kind === 'banknote';
 /** Coins and banknotes open with title + scan; spec chrome follows the legacy body. */
 const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
+const permanentLabel = t('permanentId', locale);
 ---
 {
   isPrimary ? (
@@ -43,7 +46,7 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
       data-catalog-record={record.id}
       data-catalog-mode="primary"
     >
-      <CatalogBreadcrumb crumbs={record.breadcrumb} />
+      <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
 
       <header class="mt-6 mb-8 max-w-[46rem]">
         <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">
@@ -52,20 +55,20 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
         <h1
           id="catalog-record-title"
           class="m-0 mb-3 font-display font-normal text-[clamp(30px,4.5vw,46px)] leading-[1.1] text-cream"
-          data-i18n={lookupEn(record.title) ? true : undefined}
-          data-en={lookupEn(record.title)}
+          data-i18n={!isEn && lookupEn(record.title) ? true : undefined}
+          data-en={!isEn ? lookupEn(record.title) : undefined}
         >
           {record.title}
         </h1>
         {
           record.subtitle && (
-            <p class="m-0 italic text-[clamp(18px,2.2vw,22px)] leading-[1.45] text-cream-dim" data-i18n={lookupEn(record.subtitle) ? true : undefined} data-en={lookupEn(record.subtitle)}>
+            <p class="m-0 italic text-[clamp(18px,2.2vw,22px)] leading-[1.45] text-cream-dim" data-i18n={!isEn && lookupEn(record.subtitle) ? true : undefined} data-en={!isEn ? lookupEn(record.subtitle) : undefined}>
               {record.subtitle}
             </p>
           )
         }
         <p class="m-0 mt-4 text-[13px] tracking-[0.1em] uppercase text-muted">
-          <span data-i18n data-en={UI.permanentId.en}>{UI.permanentId.es}</span>
+          <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('permanentId', 'en')}>{permanentLabel}</span>
           <code class="ml-1 tracking-normal normal-case text-cream-dim">{record.id}</code>
         </p>
       </header>
@@ -75,8 +78,8 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
         <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} />
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
-        <CatalogCitation record={record} path={path} />
-        <CatalogFeedback record={record} path={path} />
+        <CatalogCitation record={record} path={path} locale={locale} />
+        <CatalogFeedback record={record} path={path} locale={locale} />
       </div>
     </section>
   ) : (
@@ -86,9 +89,9 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
         data-catalog-record={record.id}
         data-catalog-mode="augment"
       >
-        <CatalogBreadcrumb crumbs={record.breadcrumb} />
+        <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
         <p class="m-0 mt-4 text-[13px] tracking-[0.1em] uppercase text-muted">
-          <span data-i18n data-en={UI.permanentId.en}>{UI.permanentId.es}</span>
+          <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('permanentId', 'en')}>{permanentLabel}</span>
           <code class="ml-1 tracking-normal normal-case text-cream-dim">{record.id}</code>
         </p>
         {
@@ -104,10 +107,10 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
 
       <section
         class="catalog-record-surface max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pt-4 pb-12 grid gap-12"
-        aria-label="Registro estructurado de la ficha"
-        data-i18n
-        data-i18n-target="aria-label"
-        data-en="Structured catalog record"
+      aria-label={isEn ? 'Structured catalog record' : 'Registro estructurado de la ficha'}
+      data-i18n={isEn ? undefined : true}
+      data-i18n-target={isEn ? undefined : 'aria-label'}
+      data-en={isEn ? undefined : 'Structured catalog record'}
       >
         {showMedia && <CatalogMedia record={record} />}
         {
@@ -117,8 +120,8 @@ const metadataBeforeTemplate = !isPrimary && !isHub && !isPiece;
         }
         <CatalogContext record={record} />
         <CatalogRelated record={record} />
-        <CatalogCitation record={record} path={path} />
-        <CatalogFeedback record={record} path={path} />
+        <CatalogCitation record={record} path={path} locale={locale} />
+        <CatalogFeedback record={record} path={path} locale={locale} />
       </section>
     </>
   )

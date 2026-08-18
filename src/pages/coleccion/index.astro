@@ -138,12 +138,13 @@ const jsonLd = {
 };
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page-locale="es">
   <head>
     <BaseHead
       title={title}
       description={description}
       path="/coleccion/"
+      locale="es"
       robots="index, follow, max-image-preview:large"
       ogType="website"
       ogTitle="Colección Virtual de Billetes y Monedas — Notofilia"
@@ -593,7 +594,7 @@ const jsonLd = {
       data-en="Skip to main content"
     >Saltar al contenido principal</a>
 
-    <SiteHeader />
+    <SiteHeader path="/coleccion/" />
 
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/coleccion/">

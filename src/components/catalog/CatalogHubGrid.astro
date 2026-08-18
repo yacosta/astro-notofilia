@@ -6,7 +6,7 @@
 import type { CatalogCard } from '../../lib/catalog-record';
 import CatalogBanknoteCard from './CatalogBanknoteCard.astro';
 import { lookupEn } from '../../lib/html-i18n';
-import { UI } from '../../lib/ui-i18n';
+import { t, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   cards: CatalogCard[];
@@ -14,25 +14,33 @@ interface Props {
   labelledBy?: string;
   /** Group headings. Use 3 when this grid sits under an existing page h2. */
   headingLevel?: 2 | 3;
+  locale?: Locale;
 }
 
-const { cards, thinNote = false, labelledBy, headingLevel = 2 } = Astro.props;
+const { cards, thinNote = false, labelledBy, headingLevel = 2, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const GroupHeading = headingLevel === 3 ? 'h3' : 'h2';
 const showThinNote = thinNote && cards.length > 0 && cards.length <= 2;
-const inventoryLabel = cards.length === 1 ? UI.onePiece.es : `${cards.length} ${UI.pieces.es}`;
-const inventoryLabelEn = cards.length === 1 ? UI.onePiece.en : `${cards.length} ${UI.pieces.en}`;
+const inventoryLabel = cards.length === 1 ? t('onePiece', locale) : `${cards.length} ${t('pieces', locale)}`;
+const inventoryLabelEn = cards.length === 1 ? t('onePiece', 'en') : `${cards.length} ${t('pieces', 'en')}`;
 const hasGroups = cards.some((card) => Boolean(card.group));
 
-type CardGroup = { name: string; kicker?: string; cards: CatalogCard[] };
+type CardGroup = { name: string; nameEn?: string; kicker?: string; kickerEn?: string; cards: CatalogCard[] };
 
 const groups: CardGroup[] = [];
 if (hasGroups) {
   const seen = new Map<string, CardGroup>();
   for (const card of cards) {
-    const name = card.group || UI.otherPieces.es;
+    const name = card.group || t('otherPieces', 'es');
     let group = seen.get(name);
     if (!group) {
-      group = { name, kicker: card.groupKicker, cards: [] };
+      group = {
+        name,
+        nameEn: card.groupEn ?? lookupEn(name),
+        kicker: card.groupKicker,
+        kickerEn: card.groupKickerEn ?? (card.groupKicker ? lookupEn(card.groupKicker) : undefined),
+        cards: [],
+      };
       seen.set(name, group);
       groups.push(group);
     }
@@ -41,42 +49,63 @@ if (hasGroups) {
 } else {
   groups.push({ name: '', cards });
 }
+
+function groupLabel(group: CardGroup): string {
+  if (!isEn) return group.name;
+  return group.nameEn ?? lookupEn(group.name) ?? group.name;
+}
+
+function kickerLabel(group: CardGroup): string | undefined {
+  if (!group.kicker) return undefined;
+  if (!isEn) return group.kicker;
+  return group.kickerEn ?? lookupEn(group.kicker) ?? group.kicker;
+}
 ---
 {
   cards.length > 0 ? (
     <section
       class="catalog-hub-grid max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pb-16"
-      aria-label={labelledBy ? undefined : UI.hubCards.es}
-      data-i18n={labelledBy ? undefined : true}
-      data-i18n-target={labelledBy ? undefined : 'aria-label'}
-      data-en={labelledBy ? undefined : UI.hubCards.en}
+      aria-label={labelledBy ? undefined : t('hubCards', locale)}
+      data-i18n={labelledBy || isEn ? undefined : true}
+      data-i18n-target={labelledBy || isEn ? undefined : 'aria-label'}
+      data-en={labelledBy || isEn ? undefined : t('hubCards', 'en')}
       aria-labelledby={labelledBy}
     >
       {showThinNote ? (
         <aside
           class="catalog-inventory-status mb-8"
-          aria-label={UI.catalogStatus.es}
-          data-i18n
-          data-i18n-target="aria-label"
-          data-en={UI.catalogStatus.en}
+          aria-label={t('catalogStatus', locale)}
+          data-i18n={isEn ? undefined : true}
+          data-i18n-target={isEn ? undefined : 'aria-label'}
+          data-en={isEn ? undefined : t('catalogStatus', 'en')}
           data-pagefind-ignore
         >
-          <span data-i18n data-en={UI.growing.en}>{UI.growing.es}</span>
-          <strong data-i18n data-en={inventoryLabelEn}>{inventoryLabel}</strong>
-          <p data-i18n data-en={UI.thinNote.en}>
-            {UI.thinNote.es}
+          <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('growing', 'en')}>{t('growing', locale)}</span>
+          <strong data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : inventoryLabelEn}>{inventoryLabel}</strong>
+          <p data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('thinNote', 'en')}>
+            {t('thinNote', locale)}
           </p>
         </aside>
       ) : null}
       {groups.map((group) => (
         group.name ? (
           <section class="catalog-hub-group">
-            {group.kicker ? <span class="catalog-hub-kicker" data-i18n={lookupEn(group.kicker) ? true : undefined} data-en={lookupEn(group.kicker)}>{group.kicker}</span> : null}
-            <GroupHeading class="catalog-hub-group-title" data-i18n={lookupEn(group.name) ? true : undefined} data-en={lookupEn(group.name)}>{group.name}</GroupHeading>
+            {group.kicker ? (
+              <span
+                class="catalog-hub-kicker"
+                data-i18n={!isEn && (group.kickerEn || lookupEn(group.kicker)) ? true : undefined}
+                data-en={!isEn ? (group.kickerEn || lookupEn(group.kicker)) : undefined}
+              >{kickerLabel(group)}</span>
+            ) : null}
+            <GroupHeading
+              class="catalog-hub-group-title"
+              data-i18n={!isEn && (group.nameEn || lookupEn(group.name)) ? true : undefined}
+              data-en={!isEn ? (group.nameEn || lookupEn(group.name)) : undefined}
+            >{groupLabel(group)}</GroupHeading>
             <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
               {group.cards.map((card) => (
                 <li>
-                  <CatalogBanknoteCard card={card} />
+                  <CatalogBanknoteCard card={card} locale={locale} />
                 </li>
               ))}
             </ul>
@@ -85,7 +114,7 @@ if (hasGroups) {
           <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
             {group.cards.map((card) => (
               <li>
-                <CatalogBanknoteCard card={card} />
+                <CatalogBanknoteCard card={card} locale={locale} />
               </li>
             ))}
           </ul>

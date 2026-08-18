@@ -31,20 +31,23 @@ export interface Props {
   moreLabelEn?: string;
   /** Top border between stacked cream bands. */
   bordered?: boolean;
+  locale?: import('../lib/ui-i18n').Locale;
 }
 
 const {
   headingId, heading, headingEn, items, emptyMessage, emptyMessageEn,
   moreHref, moreLabel, moreLabelEn, bordered = false,
+  locale = 'es',
 } = Astro.props;
+const isEn = locale === 'en';
 ---
 <section
   aria-labelledby={headingId}
   class:list={['bg-cream-dim py-[72px] px-6', bordered && 'border-t border-ink/12']}
 >
   <div class="max-w-content mx-auto">
-    <h2 id={headingId} data-i18n={headingEn ? true : undefined} data-en={headingEn} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
-      {heading}
+    <h2 id={headingId} data-i18n={!isEn && headingEn ? true : undefined} data-en={!isEn ? headingEn : undefined} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
+      {isEn ? (headingEn ?? heading) : heading}
     </h2>
     {items.length > 0 ? (
       <div class="mb-8 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-4 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
@@ -69,35 +72,36 @@ const {
               </picture>
             )}
             <div class="mb-1.5">
-              <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep" data-i18n={it.dateLabelEn ? true : undefined} data-en={it.dateLabelEn}>{it.dateLabel}</time>
+              <time datetime={it.iso} class="text-[13px] tracking-[0.08em] uppercase text-gold-deep" data-i18n={!isEn && it.dateLabelEn ? true : undefined} data-en={!isEn ? it.dateLabelEn : undefined}>{isEn ? (it.dateLabelEn ?? it.dateLabel) : it.dateLabel}</time>
               {it.sourceUrl ? (
                 <SourceCredit
                   source={it.source}
                   sourceUrl={it.sourceUrl}
                   tone="on-cream"
                   class="mt-0"
+                  locale={locale}
                 />
               ) : (
                 <span class="text-[13px] text-gold-dark"> &middot; {it.source}</span>
               )}
             </div>
-            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words" data-i18n={it.titleEn ? true : undefined} data-en={it.titleEn}>
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,19px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words" lang={isEn ? 'es' : undefined} data-i18n={!isEn && it.titleEn ? true : undefined} data-en={!isEn ? it.titleEn : undefined}>
               {it.title}
             </h3>
-            <a href={it.url} data-i18n data-en="Read more &rarr;" class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">Leer más &rarr;</a>
+            <a href={it.url} data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Read more &rarr;'} class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]">{isEn ? 'Read more →' : 'Leer más →'}</a>
           </article>
         ))}
       </div>
     ) : (
-      <p data-i18n={emptyMessageEn ? true : undefined} data-en={emptyMessageEn} class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8">{emptyMessage}</p>
+      <p data-i18n={!isEn && emptyMessageEn ? true : undefined} data-en={!isEn ? emptyMessageEn : undefined} class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8">{isEn ? (emptyMessageEn ?? emptyMessage) : emptyMessage}</p>
     )}
     <p class="text-center m-0">
       <a
         href={moreHref}
-        data-i18n={moreLabelEn ? true : undefined}
-        data-en={moreLabelEn}
+        data-i18n={!isEn && moreLabelEn ? true : undefined}
+        data-en={!isEn ? moreLabelEn : undefined}
         class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"
-      >{moreLabel}</a>
+      >{isEn ? (moreLabelEn ?? moreLabel) : moreLabel}</a>
     </p>
   </div>
 </section>

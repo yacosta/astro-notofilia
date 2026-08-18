@@ -37,6 +37,7 @@ export async function onRequest(context) {
         value: parsed.value,
         rating: parsed.rating,
         path: parsed.path,
+        content_language: parsed.content_language,
         id: parsed.id,
         timestamp: new Date().toISOString(),
       }),

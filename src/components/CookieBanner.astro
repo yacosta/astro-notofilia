@@ -10,41 +10,53 @@
  * Markup is server-rendered into the initial HTML; JS only toggles visibility,
  * and opening is deferred until after `load` + idle so it stays off the LCP path.
  */
+import { t, type Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const privacyHref = isEn
+  ? (alternateUrl('/politica-privacidad-cookies/', 'en') ?? '/politica-privacidad-cookies/')
+  : '/politica-privacidad-cookies/';
 ---
 <div
   id="cookie-banner"
   role="dialog"
   aria-modal="false"
-  aria-label="Aviso de cookies"
-  data-i18n
-  data-i18n-target="aria-label"
-  data-en="Cookie notice"
+  aria-label={t('cookiesAria', locale)}
+  data-i18n={isEn ? undefined : true}
+  data-i18n-target={isEn ? undefined : 'aria-label'}
+  data-en={isEn ? undefined : t('cookiesAria', 'en')}
   class="fixed left-0 right-0 bottom-0 z-[80] flex justify-center p-4"
   style="position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;justify-content:center;padding:16px;box-sizing:border-box;"
 >
   <div class="w-full max-w-[720px] bg-panel border border-line rounded-lg shadow-[0_24px_60px_rgba(0,0,0,0.55)] px-6 py-[22px] flex flex-col gap-4">
     <p class="font-serif text-[16px] leading-[1.6] text-cream-dim m-0">
       <span
-        data-i18n
-        data-en="We use necessary technical cookies to run the Site and, only with your permission, analytics cookies (Google Analytics 4) to understand how the content is used. You can accept all, reject non-essential cookies, or read more in our"
-      >Usamos cookies técnicas necesarias para el funcionamiento del Sitio y, solo con su permiso, cookies analíticas (Google Analytics 4) para entender cómo se usa el contenido. Puede aceptar todas, rechazar las no esenciales, o leer más en nuestra</span>
-      <a href="/politica-privacidad-cookies/" class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]" data-i18n data-en="Privacy and Cookie Policy">Política de Privacidad y Cookies</a>.
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : t('cookiesBody', 'en')}
+      >{t('cookiesBody', locale)}</span>
+      <a href={privacyHref} class="text-cream [text-decoration-color:rgba(231,222,201,0.4)]" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('cookiesPolicy', 'en')}>{t('cookiesPolicy', locale)}</a>.
     </p>
     <div class="flex flex-wrap gap-[10px] justify-end">
       <button
         id="cookie-reject"
         type="button"
         class="min-h-[44px] px-[22px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-cream-dim bg-transparent border border-line-input rounded-full cursor-pointer"
-        data-i18n
-        data-en="Reject non-essential"
-      >Rechazar no esenciales</button>
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : t('cookiesReject', 'en')}
+      >{t('cookiesReject', locale)}</button>
       <button
         id="cookie-accept"
         type="button"
         class="min-h-[44px] px-[26px] py-[11px] font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-bg bg-cream border border-cream rounded-full cursor-pointer"
-        data-i18n
-        data-en="Accept all"
-      >Aceptar todas</button>
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : t('cookiesAccept', 'en')}
+      >{t('cookiesAccept', locale)}</button>
     </div>
   </div>
 </div>

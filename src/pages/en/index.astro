@@ -1,0 +1,308 @@
+---
+// English homepage — real translation at `/en/`. Spanish root `/` is unchanged.
+import { getPublishedPosts, type PublishedPost } from '../../lib/posts';
+import { formatDateShortEn, formatDateShortEs, toIsoDate } from '../../lib/dates';
+import { SITE } from '../../lib/site';
+import { founderJsonLd } from '../../lib/editorial';
+import { getCollectionStats, inventoryProperties } from '../../lib/stats';
+import { lookupEn } from '../../lib/html-i18n';
+import BaseHead from '../../components/BaseHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import HomeHero from '../../components/HomeHero.astro';
+import HomeStatsBar from '../../components/HomeStatsBar.astro';
+import HomeBrowseStrip from '../../components/HomeBrowseStrip.astro';
+import HomePostStrip from '../../components/HomePostStrip.astro';
+import HomeLogrosStrip from '../../components/HomeLogrosStrip.astro';
+import PreFooter from '../../components/PreFooter.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
+import type { StripItem } from '../../components/HomePostStrip.astro';
+import { alternateUrl } from '../../i18n/pairs';
+
+function toStripItems(
+  posts: PublishedPost[],
+  base: 'noticias' | 'blog',
+): StripItem[] {
+  return posts.slice(0, 4).map((p) => ({
+    url: alternateUrl(`/${base}/${p.id}/`, 'en') ?? `/${base}/${p.id}/`,
+    title: p.data.title,
+    source: p.data.source ?? 'Notofilia',
+    sourceUrl: p.data.sourceUrl,
+    iso: toIsoDate(p.data.publishedAt),
+    dateLabel: formatDateShortEs(p.data.publishedAt),
+    dateLabelEn: formatDateShortEn(p.data.publishedAt),
+    titleEn: lookupEn(p.data.title),
+    cover: p.data.cover,
+    coverAlt: p.data.coverAlt ?? '',
+  }));
+}
+
+const posts = toStripItems(await getPublishedPosts('noticias'), 'noticias');
+const blogPosts = toStripItems(await getPublishedPosts('blog'), 'blog');
+const stats = await getCollectionStats();
+
+const heroImg = `${SITE}/uploads/hero-engraving-01.jpg`;
+const heroes = [
+  {
+    base: 'hero-slide-guatemala-quetzal',
+    alt: 'Primer plano de un billete de 5 quetzales de Guatemala, con el ave quetzal, estilo numismática y notafilia',
+    altEn: 'Close-up of a Guatemala 5 quetzales banknote, with the quetzal bird, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-oman-sultan',
+    alt: 'Primer plano de un billete de 5 riales de Omán, con el retrato del sultán, estilo numismática y notafilia',
+    altEn: 'Close-up of an Oman 5 rials banknote, with the sultan’s portrait, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-brasil-10',
+    alt: 'Primer plano de un billete de 10 de Brasil, con un retrato grabado y veleros, estilo numismática y notafilia',
+    altEn: 'Close-up of a Brazil 10 banknote, with an engraved portrait and sailing ships, in a numismatics and notaphily style',
+  },
+  {
+    base: 'hero-slide-mexico-tren',
+    alt: 'Primer plano de un billete de 100 pesos mexicanos, con la viñeta de un tren de vapor, estilo numismática y notafilia',
+    altEn: 'Close-up of a Mexican 100-peso banknote, with a steam-train vignette, in a numismatics and notaphily style',
+  },
+];
+
+const title = 'Notofilia: Banknotes and Numismatics | Catalog';
+const description = `Notaphily and numismatics: ${stats.billetes} banknotes and ${stats.monedas} coins from ${stats.paises} countries. Catalogs and guides.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE}/#organization`,
+      name: 'Notofilia',
+      url: `${SITE}/`,
+      logo: `${SITE}/favicon.png`,
+      description:
+        'Private collection of historical banknotes dedicated to coin and banknote collecting (numismatics and notaphily).',
+      founder: founderJsonLd(),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/en/#website`,
+      name: 'Notofilia',
+      url: `${SITE}/en/`,
+      publisher: { '@id': `${SITE}/#organization` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE}/en/#webpage`,
+      url: `${SITE}/en/`,
+      name: 'Notofilia — Numismatics and Notaphily',
+      isPartOf: { '@id': `${SITE}/en/#website` },
+      primaryImageOfPage: heroImg,
+      inLanguage: 'en',
+      additionalProperty: inventoryProperties(stats, 'en'),
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="en" data-page-locale="en">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      path="/en/"
+      locale="en"
+      ogImage="/uploads/hero-engraving-01.jpg"
+      ogTitle="Notofilia — Numismatics and banknote collecting"
+      ogDescription={`Private collection: ${stats.billetes} banknotes and ${stats.monedas} coins from ${stats.paises} countries. Specimens, errors, and rare pieces.`}
+      robots="index, follow, max-image-preview:large"
+      jsonLd={jsonLd}
+      loadDcRuntime={false}
+    >
+      <link rel="apple-touch-icon" href="/favicon.png" />
+    </BaseHead>
+    <style is:global>
+      * { box-sizing: border-box; }
+      html, body { height: auto !important; }
+      .hero-slide { transition: opacity 1.6s ease; }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-slide { transition: none; }
+      }
+      ::selection { background: rgba(231, 222, 201, 0.3); }
+    </style>
+  </head>
+  <body class="m-0 bg-bg font-serif">
+    <a
+      href="#main-content"
+      class="absolute top-[-60px] left-4 z-20 bg-cream-dim text-bg font-serif font-semibold text-[15px] tracking-[0.05em] px-5 py-3 rounded-[2px] no-underline transition-[top] duration-150 focus:top-4"
+    >Skip to main content</a>
+
+    <SiteHeader overlay locale="en" path="/en/" />
+
+    <main id="main-content" tabindex="-1" class="relative w-full bg-bg outline-none">
+      <HomeHero slides={heroes} stats={stats} locale="en" />
+
+      <HomeStatsBar stats={stats} locale="en" />
+
+      <HomeBrowseStrip locale="en" />
+
+      <HomeLogrosStrip locale="en" />
+
+      <HomePostStrip
+        locale="en"
+        headingId="blog-heading"
+        heading="Artículos originales"
+        headingEn="Original articles"
+        items={blogPosts}
+        emptyMessage="Muy pronto publicaremos las primeras guías del blog."
+        emptyMessageEn="Coming soon: our first blog guides."
+        moreHref="/en/blog/"
+        moreLabel="Ver todo el blog"
+        moreLabelEn="See the full blog"
+        bordered
+      />
+
+      <HomePostStrip
+        locale="en"
+        headingId="news-heading"
+        heading="Noticias seleccionadas"
+        headingEn="Curated news"
+        items={posts}
+        emptyMessage="Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos."
+        emptyMessageEn="Coming soon: the latest news on auctions, new issues, and numismatic discoveries."
+        moreHref="/en/news/"
+        moreLabel="Ver todas las noticias"
+        moreLabelEn="See all news"
+      />
+
+      <section class="max-w-content mx-auto pt-[88px] px-6 pb-14 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-12 border-t border-line" aria-labelledby="defs-heading">
+        <h2 id="defs-heading" class="sr-only">Definitions</h2>
+        <div>
+          <h3 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Numismatics</h3>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">A discipline dedicated to the study and collection of coins, medals, and, in its broadest sense, any object used as a means of payment throughout history. It covers the historical, artistic, and technical analysis of minted pieces.</p>
+        </div>
+        <div>
+          <h3 class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-4">Notaphily</h3>
+          <p class="text-[19px] leading-[1.75] text-cream-dim m-0">A specialized branch of numismatics focused specifically on the study and collection of banknotes and paper money, including their history, design, engraving, and issues from both public and private entities.</p>
+        </div>
+      </section>
+
+      <PreFooter locale="en" />
+
+      <SiteFooter
+        locale="en"
+        variant="home"
+        taglineEs="Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta. Simplemente comparto mi pasión por este pasatiempo con el mundo."
+        taglineEn="All the banknotes shown on this site are from my private collection. None of these banknotes are for sale. I'm just sharing the love of my hobby with the world."
+      />
+    </main>
+
+    <CookieBanner locale="en" />
+
+    <script is:inline>
+      (function () {
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+        if (slides.length < 2) return;
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var toggle = document.getElementById('hero-motion-toggle');
+        var secondaryIndexes = slides.slice(1).map(function (_, i) { return i + 1; });
+        function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+        var order = [0].concat(shuffle(secondaryIndexes.slice()));
+        var active = 0;
+        var timer = null;
+        var paused = true;
+        function show(idx) { slides.forEach(function (el, i) { el.style.opacity = i === idx ? '1' : '0'; }); }
+        function loadDeferredSlides() {
+          document.querySelectorAll('[data-deferred-hero]').forEach(function (picture) {
+            var source = picture.querySelector('source[data-srcset]');
+            var image = picture.querySelector('img[data-src]');
+            if (source) {
+              source.srcset = source.getAttribute('data-srcset');
+              source.removeAttribute('data-srcset');
+            }
+            if (image) {
+              image.src = image.getAttribute('data-src');
+              image.removeAttribute('data-src');
+            }
+            picture.removeAttribute('data-deferred-hero');
+          });
+        }
+        function scheduleDeferredSlides() {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadDeferredSlides, { timeout: 2000 });
+          } else {
+            setTimeout(loadDeferredSlides, 500);
+          }
+        }
+        function nextSlide() {
+          active++;
+          if (active >= order.length) {
+            order = [0].concat(shuffle(secondaryIndexes.slice()));
+            active = 0;
+          }
+          show(order[active]);
+        }
+        function setToggleLabel(isPaused) {
+          if (!toggle) return;
+          var pauseEn = 'Pause slideshow';
+          var playEn = 'Resume slideshow';
+          var text = isPaused ? playEn : pauseEn;
+          toggle.textContent = text;
+          toggle.setAttribute('lang', 'en');
+          toggle.setAttribute('aria-pressed', String(isPaused));
+          toggle.setAttribute('aria-label', text);
+        }
+        function stopRotation() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+          paused = true;
+          setToggleLabel(true);
+        }
+        function startRotation() {
+          if (reduceMotion || timer) return;
+          paused = false;
+          timer = setInterval(nextSlide, 6000);
+          setToggleLabel(false);
+        }
+        show(0);
+        if (document.readyState === 'complete') scheduleDeferredSlides();
+        else window.addEventListener('load', scheduleDeferredSlides, { once: true });
+
+        if (toggle) {
+          toggle.addEventListener('click', function () {
+            if (paused) startRotation();
+            else stopRotation();
+          });
+        }
+
+        if (reduceMotion) {
+          if (toggle) toggle.hidden = true;
+          stopRotation();
+        } else {
+          if (toggle) toggle.hidden = false;
+          startRotation();
+        }
+
+        if (window.matchMedia) {
+          var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+          var onMotionChange = function (event) {
+            reduceMotion = event.matches;
+            if (reduceMotion) {
+              if (toggle) toggle.hidden = true;
+              stopRotation();
+            } else {
+              if (toggle) toggle.hidden = false;
+              if (paused) startRotation();
+            }
+          };
+          if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onMotionChange);
+          else if (typeof mq.addListener === 'function') mq.addListener(onMotionChange);
+        }
+
+        window.__notofiliaHeroMotion = {
+          syncLabels: function () { setToggleLabel(paused); }
+        };
+      })();
+    </script>
+  </body>
+</html>

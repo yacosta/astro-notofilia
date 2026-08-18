@@ -190,10 +190,13 @@ const jsonLd = {
         },
       };
 
-      function langCopy() {
-        const lang = document.documentElement.getAttribute('data-interface-lang') === 'en' ? 'en' : 'es';
-        return copy[lang];
-      }
+        function langCopy() {
+          const lang = document.documentElement.getAttribute('data-page-locale') === 'en'
+            || document.documentElement.lang === 'en'
+            ? 'en'
+            : 'es';
+          return copy[lang];
+        }
 
       function showStatus(kind, message) {
         status.hidden = false;

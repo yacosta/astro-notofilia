@@ -1,0 +1,302 @@
+---
+/**
+ * English coins catalog — /en/collection/numismatics/
+ * Spanish /coleccion/numismatica/ is unchanged.
+ */
+import BaseHead from '../../../../components/BaseHead.astro';
+import SiteHeader from '../../../../components/SiteHeader.astro';
+import CookieBanner from '../../../../components/CookieBanner.astro';
+import PreFooter from '../../../../components/PreFooter.astro';
+import SiteFooter from '../../../../components/SiteFooter.astro';
+import CatalogHubGrid from '../../../../components/catalog/CatalogHubGrid.astro';
+import { SITE } from '../../../../lib/site';
+import { coinCatalogCards, groupedCoinCards } from '../../../../lib/coins-catalog';
+import type { CatalogCard } from '../../../../lib/catalog-record';
+
+const REIGN_EN: Record<string, string> = {
+  'Reinado de Felipe V': 'Reign of Felipe V',
+  'Reinado de Carlos III': 'Reign of Carlos III',
+  'Reinado de Carlos IV': 'Reign of Carlos IV',
+  'Reinado de Fernando VII': 'Reign of Fernando VII',
+};
+const COLONIAL_KICKER_EN = 'Viceroyalty of New Granada · Santa Fe de Bogotá mint';
+
+const cardsRaw = coinCatalogCards();
+const cards: CatalogCard[] = cardsRaw.map((card) => ({
+  ...card,
+  groupEn: (card.group && REIGN_EN[card.group]) || card.groupEn,
+  groupKickerEn: COLONIAL_KICKER_EN,
+}));
+const groups = groupedCoinCards(cardsRaw);
+const count = cards.length;
+const title = 'Numismatics Catalog | Notofilia';
+const description =
+  `Catalog of ${count} colonial gold coins from Santa Fe de Bogotá: cobs and escudos from Felipe V to Fernando VII.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'Virtual Collection', item: `${SITE}/en/collection/` },
+        { '@type': 'ListItem', position: 3, name: 'Numismatics', item: `${SITE}/en/collection/numismatics/` },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE}/en/collection/numismatics/#page`,
+      name: 'Numismatics Catalog',
+      url: `${SITE}/en/collection/numismatics/`,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE}/en/#website` },
+      about: { '@type': 'Thing', name: 'Numismatics' },
+      mainEntity: { '@id': `${SITE}/en/collection/numismatics/#itemlist` },
+      additionalProperty: [
+        {
+          '@type': 'PropertyValue',
+          name: 'Availability',
+          value: 'Not for sale — documented private collection',
+        },
+        {
+          '@type': 'PropertyValue',
+          name: 'Record type',
+          value: 'Virtual collection record',
+        },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${SITE}/en/collection/numismatics/#itemlist`,
+      name: 'Index of coins in the Virtual Collection',
+      numberOfItems: count,
+      itemListElement: cards.map((card, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: card.title,
+        url: `${SITE}${card.href}`,
+        item: {
+          '@type': 'CreativeWork',
+          name: card.title,
+          url: `${SITE}${card.href}`,
+        },
+      })),
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="en" data-page-locale="en">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      path="/en/collection/numismatics/"
+      locale="en"
+      robots="index, follow, max-image-preview:large"
+      ogType="website"
+      ogTitle="Numismatics Catalog — Notofilia"
+      ogDescription={description}
+      ogImage="/uploads/colombia-2-escudos-felipe-v-santa-fe-bogota.jpg"
+      jsonLd={jsonLd}
+      loadDcRuntime={false}
+    />
+    <link rel="stylesheet" href="/catalog-fonts.css" />
+    <style is:global>
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body { margin: 0; background: #0a0a09; }
+      img { max-width: 100%; height: auto; }
+      ::selection { background: rgba(138, 109, 59, 0.25); }
+    </style>
+    <style>
+      .hub {
+        color: var(--color-cream-dim);
+        background:
+          radial-gradient(circle at 50% -8%, rgba(138, 109, 59, 0.12), transparent 34rem),
+          var(--color-bg);
+        font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+      }
+      .hub-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 64px var(--page-gutter, 24px) 96px;
+      }
+      .hub h1 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.05;
+        color: #d8d2cd;
+        margin: 0 0 20px;
+        max-width: 18ch;
+      }
+      .hub-lead {
+        font-size: clamp(18px, 1.8vw, 21px);
+        line-height: 1.7;
+        color: #d8d2cd;
+        max-width: 42rem;
+        margin: 0 0 20px;
+      }
+      .hub-note {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #b7ab8a;
+        max-width: 46rem;
+        margin: 0 0 40px;
+      }
+      .hub-note a {
+        color: #d8d2cd;
+        text-decoration: underline;
+        text-decoration-color: rgba(216, 210, 205, 0.4);
+      }
+      .hub-note a:focus-visible,
+      .split-grid a:focus-visible,
+      .hub-more:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 4px;
+      }
+      .split-grid {
+        list-style: none;
+        margin: 0 0 56px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px 28px;
+      }
+      .split-grid a {
+        display: block;
+        min-height: 44px;
+        padding-top: 14px;
+        border-top: 2px solid rgba(216, 210, 205, 0.35);
+        color: inherit;
+        text-decoration: none;
+      }
+      .split-grid a:hover { border-color: #e7ddc4; }
+      .split-title {
+        display: block;
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-size: clamp(18px, 1.2vw, 22px);
+        color: #d8d2cd;
+        margin-bottom: 6px;
+      }
+      .split-desc {
+        display: block;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #b7ab8a;
+      }
+      .hub-section {
+        margin: 0 0 72px;
+        padding-top: 48px;
+        border-top: 1px solid rgba(231, 222, 201, 0.18);
+      }
+      .hub-kicker {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+        margin-bottom: 14px;
+      }
+      .hub h2 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(24px, 3vw, 32px);
+        line-height: 1.15;
+        color: #d8d2cd;
+        margin: 0 0 12px;
+      }
+      .hub-section-lead {
+        font-size: 18px;
+        line-height: 1.65;
+        color: #b7ab8a;
+        max-width: 40rem;
+        margin: 0 0 28px;
+      }
+      .hub-more {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 8px;
+        color: #e7ddc4;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hub-more:hover { color: #fff; }
+      .catalog-hub-grid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="absolute left-[-10000px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+    >Skip to main content</a>
+
+    <SiteHeader locale="en" path="/en/collection/numismatics/" />
+
+    <div class="hub">
+      <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/en/collection/numismatics/">
+        <h1>Numismatics catalog</h1>
+        <p class="hub-lead">
+          {count} colonial gold coins documented with images, mint, assayer, and catalog references.
+        </p>
+        <p class="hub-note">
+          The Virtual Collection separates
+          {' '}
+          <strong>numismatics</strong>
+          {' '}
+          (struck coins) from
+          {' '}
+          <a href="/en/collection/">notaphily</a>
+          {' '}
+          (banknotes and paper money). These pieces came from the Santa Fe de Bogotá mint, from Felipe V cobs to milled escudos of Fernando VII. Source:
+          {' '}
+          <a
+            href="https://www.enumismatic.com/mints-history/santa-fe/es/la-ceca-de-santa-fe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >“The Santa Fe Mint”, eNumismatic <span class="new-window-hint"> (opens in a new tab)</span></a>.
+        </p>
+
+        <ul class="split-grid">
+          <li>
+            <a href="/coleccion/moneda-colonial-espanola/">
+              <span class="split-title">Spanish colonial coinage</span>
+              <span class="split-desc">Thematic catalog of the Santa Fe de Bogotá mint.</span>
+            </a>
+          </li>
+          <li>
+            <a href="/en/collection/">
+              <span class="split-title">Notaphily catalog</span>
+              <span class="split-desc">Banknotes, specimens, errors, and paper money of the world.</span>
+            </a>
+          </li>
+        </ul>
+
+        <section class="hub-section" aria-labelledby="coins-heading">
+          <span class="hub-kicker">Coin collection</span>
+          <h2 id="coins-heading">Colonial gold of Santa Fe</h2>
+          <p class="hub-section-lead">
+            {groups.length} reigns. Each record links the piece, the mint, and KM, Restrepo, and Friedberg references.
+          </p>
+          <CatalogHubGrid cards={cards} labelledBy="coins-heading" headingLevel={3} locale="en" />
+          <a class="hub-more" href="/coleccion/moneda-colonial-espanola/">See the Spanish colonial catalog</a>
+        </section>
+      </main>
+    </div>
+
+    <PreFooter locale="en" />
+    <SiteFooter variant="editorial" locale="en" />
+    <CookieBanner locale="en" />
+  </body>
+</html>

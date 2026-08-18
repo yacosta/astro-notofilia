@@ -5,20 +5,28 @@
  */
 import type { CollectionStats } from '../lib/stats';
 import { formatStatsEn, formatStatsEs } from '../lib/stats';
+import type { Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
 
 export interface HeroSlide {
   base: string;
   alt: string;
+  altEn?: string;
 }
 
 export interface Props {
   slides: HeroSlide[];
   stats: CollectionStats;
+  locale?: Locale;
 }
 
-const { slides, stats } = Astro.props;
+const { slides, stats, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const statsEs = formatStatsEs(stats);
 const statsEn = formatStatsEn(stats);
+const collectionHref = isEn
+  ? (alternateUrl('/coleccion/', 'en') ?? '/coleccion/')
+  : '/coleccion/';
 const transparentPixel =
   'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 ---
@@ -41,7 +49,7 @@ const transparentPixel =
           data-hero={i}
           src={i === 0 ? imageSrc : transparentPixel}
           data-src={i > 0 ? imageSrc : undefined}
-          alt={i === 0 ? h.alt : ''}
+          alt={i === 0 ? (isEn ? (h.altEn ?? h.alt) : h.alt) : ''}
           width="768"
           height="284"
           fetchpriority={i === 0 ? 'high' : 'low'}
@@ -77,33 +85,33 @@ const transparentPixel =
       <span class="w-[34px] h-px bg-cream-faint/80"></span>
     </div>
     <h1
-      data-i18n
-      data-en="A private collection of historical banknotes and coins"
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'A private collection of historical banknotes and coins'}
       class="font-serif font-medium text-[clamp(22px,2.8vw,34px)] leading-[1.25] text-cream m-0 max-w-[22ch]"
-    >Una colección privada de billetes y monedas históricas</h1>
+    >{isEn ? 'A private collection of historical banknotes and coins' : 'Una colección privada de billetes y monedas históricas'}</h1>
     <p
-      data-i18n
-      data-en="Detailed images, catalog references, and monetary histories from around the world."
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Detailed images, catalog references, and monetary histories from around the world.'}
       class="font-serif text-[clamp(16px,1.5vw,19px)] leading-[1.6] text-cream-dim mt-4 mb-0 max-w-[40rem]"
-    >Imágenes detalladas, referencias de catálogo e historias monetarias de Colombia, Estados Unidos, Puerto Rico y el mundo.</p>
+    >{isEn ? 'Detailed images, catalog references, and monetary histories from around the world.' : 'Imágenes detalladas, referencias de catálogo e historias monetarias de Colombia, Estados Unidos, Puerto Rico y el mundo.'}</p>
     <p
-      data-i18n
-      data-en={statsEn}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : statsEn}
       class="font-serif text-[clamp(15px,1.4vw,17px)] tracking-[0.06em] text-cream-dim mt-3 mb-0"
-    >{statsEs}</p>
+    >{isEn ? statsEn : statsEs}</p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
       <a
-        href="/coleccion/"
-        data-i18n
-        data-en="Explore the collection"
+        href={collectionHref}
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : 'Explore the collection'}
         class="inline-flex items-center justify-center min-h-[48px] px-7 py-3 bg-cream text-bg no-underline font-serif font-semibold text-[15px] tracking-[0.1em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-      >Explorar la colección</a>
+      >{isEn ? 'Explore the collection' : 'Explorar la colección'}</a>
       <a
         href="/buscar/"
-        data-i18n
-        data-en="Search for a piece"
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : 'Search for a piece'}
         class="inline-flex items-center justify-center min-h-[48px] px-7 py-3 border border-cream text-cream no-underline font-serif font-semibold text-[15px] tracking-[0.1em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-      >Buscar una pieza</a>
+      >{isEn ? 'Search for a piece' : 'Buscar una pieza'}</a>
     </div>
   </div>
 
@@ -114,6 +122,6 @@ const transparentPixel =
       class="hero-motion-toggle inline-flex items-center justify-center gap-2 min-h-[44px] px-4 py-2 border border-line-input bg-bg/45 text-cream font-serif text-[13px] tracking-[0.08em] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       aria-pressed="false"
       hidden
-    >Pausar diapositivas</button>
+    >{isEn ? 'Pause slideshow' : 'Pausar diapositivas'}</button>
   </div>
 </div>

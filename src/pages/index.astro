@@ -1,8 +1,7 @@
 ---
 // Server-rendered homepage. Content is baked into HTML at build time; small
-// Vanilla scripts handle the hero crossfade. The ES/EN chrome toggle lives in
-// SiteHeader on every page; `[data-i18n]` strings swap and those nodes get
-// `lang="en"` when needed. Document language stays Spanish (`lang=es`).
+// Vanilla scripts handle the hero crossfade. Language is the URL tree:
+// Spanish at `/`, English at `/en/`. The header switcher is a real `<a href>`.
 import { getPublishedPosts, type PublishedPost } from '../lib/posts';
 import { formatDateShortEn, formatDateShortEs, toIsoDate } from '../lib/dates';
 import { SITE } from '../lib/site';
@@ -90,12 +89,13 @@ const jsonLd = {
 };
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page-locale="es">
   <head>
     <BaseHead
       title="Notofilia: Billetes y Numismática | Catálogo y Guías"
       description={`Notafilia y numismática: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Catálogos y guías en español.`}
       path="/"
+      locale="es"
       ogImage="/uploads/hero-engraving-01.jpg"
       ogTitle="Notofilia — Numismática y coleccionismo de billetes"
       ogDescription={`Colección privada: ${stats.billetes} billetes y ${stats.monedas} monedas de ${stats.paises} países. Specimens, errores y piezas raras.`}
@@ -104,8 +104,6 @@ const jsonLd = {
       loadDcRuntime={false}
     >
       <link rel="apple-touch-icon" href="/favicon.png" />
-      <link rel="alternate" hreflang="es" href={`${SITE}/`} />
-      <link rel="alternate" hreflang="x-default" href={`${SITE}/`} />
     </BaseHead>
     <style is:global>
       * { box-sizing: border-box; }
@@ -125,7 +123,7 @@ const jsonLd = {
       data-en="Skip to main content"
     >Saltar al contenido principal</a>
 
-    <SiteHeader overlay />
+    <SiteHeader overlay path="/" />
 
     <main id="main-content" tabindex="-1" class="relative w-full bg-bg outline-none">
       <HomeHero slides={heroes} stats={stats} />
@@ -233,7 +231,9 @@ const jsonLd = {
         }
         function setToggleLabel(isPaused) {
           if (!toggle) return;
-          var iface = document.documentElement.getAttribute('data-interface-lang') || 'es';
+          var iface = document.documentElement.getAttribute('data-page-locale')
+            || document.documentElement.lang
+            || 'es';
           var pauseEs = 'Pausar diapositivas';
           var playEs = 'Reanudar diapositivas';
           var pauseEn = 'Pause slideshow';

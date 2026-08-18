@@ -169,7 +169,8 @@ const viewsJson = JSON.stringify(views);
           const buttons = Array.from(root.querySelectorAll('[data-catalog-view]'));
 
           function currentAlt(view) {
-            var en = document.documentElement.getAttribute('data-interface-lang') === 'en';
+            var en = document.documentElement.getAttribute('data-page-locale') === 'en'
+              || document.documentElement.lang === 'en';
             return (en && view.altEn) ? view.altEn : view.image.alt;
           }
 
@@ -209,12 +210,6 @@ const viewsJson = JSON.stringify(views);
           });
           dialog && dialog.addEventListener('click', function (event) {
             if (event.target === dialog) dialog.close();
-          });
-          document.addEventListener('notofilia:interface-lang', function () {
-            const pressed = buttons.find(function (btn) {
-              return btn.getAttribute('aria-pressed') === 'true';
-            });
-            applyView((pressed && pressed.getAttribute('data-catalog-view')) || views[0].id);
           });
         })();
       </script>

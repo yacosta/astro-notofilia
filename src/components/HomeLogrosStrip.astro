@@ -3,6 +3,16 @@
  * Homepage cream-band for Logros del Mes — featured Colección Virtual pieces.
  * Cards are interaction containers (link + image), matching HomePostStrip rhythm.
  */
+import type { Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+
 const highlights = [
   {
     href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
@@ -12,6 +22,7 @@ const highlights = [
     descriptionEn: 'Vietnam Military Payment Certificate (1969–1970): USAF pilot and F-100 Super Sabre, Fr. M915 / Schwan S915-1.',
     imageBase: 'mpc-series-681-1-dollar-c10102847',
     imageAlt: 'Anverso y reverso del MPC Serie 681 de un dólar con piloto USAF y F-100 Super Sabre',
+    imageAltEn: 'Obverse and reverse of the Series 681 one-dollar MPC with a USAF pilot and F-100 Super Sabre',
   },
   {
     href: '/coleccion/diez-dolares-1934-distritos/',
@@ -21,6 +32,7 @@ const highlights = [
     descriptionEn: 'Series 1934, district G (Chicago), serial G30986728A. Friedberg FR-2004G.',
     imageBase: 'us-federal-reserve-note-10-dollars-1934-chicago',
     imageAlt: 'Anverso del billete de diez dólares de la Reserva Federal de Chicago, serie 1934',
+    imageAltEn: 'Obverse of the Chicago Federal Reserve ten-dollar note, series 1934',
   },
   {
     href: '/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar',
@@ -30,6 +42,7 @@ const highlights = [
     descriptionEn: '50th-anniversary scrip (1933): ONE DOLLAR, Shafer WI-100-1a, Series A No. 2002.',
     imageBase: 'ringling-bros-50th-anniversary-baraboo-1-dollar',
     imageAlt: 'Anverso y reverso del scrip de un dólar Ringling Bros. Baraboo 1933',
+    imageAltEn: 'Obverse and reverse of the Ringling Bros. Baraboo one-dollar scrip, 1933',
   },
   {
     href: '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/',
@@ -39,6 +52,7 @@ const highlights = [
     descriptionEn: 'Last official MPC series (1970–1973): Chief Ouray on the obverse and Hoover Dam on the reverse.',
     imageBase: 'mpc-series-692-20-dollars',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
+    imageAltEn: 'Obverse and reverse of the Series 692 twenty-dollar MPC with Chief Ouray',
   },
 ] as const;
 ---
@@ -49,18 +63,18 @@ const highlights = [
   <div class="max-w-content mx-auto">
     <h2
       id="logros-heading"
-      data-i18n
-      data-en="Monthly Milestones — Virtual Collection"
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Monthly Milestones — Virtual Collection'}
       class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-3 text-center"
     >
-      Logros del Mes — Colección Virtual
+      {isEn ? 'Monthly Milestones — Virtual Collection' : 'Logros del Mes — Colección Virtual'}
     </h2>
     <p
-      data-i18n
-      data-en="Recent pieces and catalogs added to the Virtual Collection."
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Recent pieces and catalogs added to the Virtual Collection.'}
       class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8 max-w-[52ch] mx-auto"
     >
-      Piezas y catálogos recientes incorporados a la Colección Virtual.
+      {isEn ? 'Recent pieces and catalogs added to the Virtual Collection.' : 'Piezas y catálogos recientes incorporados a la Colección Virtual.'}
     </p>
     <ul class="list-none m-0 mb-8 p-0 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-2 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
       {highlights.map((item) => (
@@ -77,7 +91,7 @@ const highlights = [
               />
               <img
                 src={`/uploads/${item.imageBase}-card.jpg`}
-                alt={item.imageAlt}
+                alt={isEn ? item.imageAltEn : item.imageAlt}
                 loading="lazy"
                 decoding="async"
                 width="440"
@@ -85,16 +99,16 @@ const highlights = [
                 class="block w-full h-[180px] object-cover rounded-[3px] mb-3"
               />
             </picture>
-            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n data-en={item.titleEn}>
-              {item.title}
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.titleEn}>
+              {isEn ? item.titleEn : item.title}
             </h3>
-            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3" data-i18n data-en={item.descriptionEn}>{item.description}</p>
+            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.descriptionEn}>{isEn ? item.descriptionEn : item.description}</p>
             <span
-              data-i18n
-              data-en="View in the catalog &rarr;"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : 'View in the catalog &rarr;'}
               class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]"
             >
-              Ver en el catálogo &rarr;
+              {isEn ? 'View in the catalog →' : 'Ver en el catálogo →'}
             </span>
           </a>
         </li>
@@ -102,11 +116,11 @@ const highlights = [
     </ul>
     <p class="text-center m-0">
       <a
-        href="/coleccion/"
-        data-i18n
-        data-en="Explore the collection"
+        href={isEn ? (alternateUrl('/coleccion/', 'en') ?? '/coleccion/') : '/coleccion/'}
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : 'Explore the collection'}
         class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"
-      >Explorar la colección</a>
+      >{isEn ? 'Explore the collection' : 'Explorar la colección'}</a>
     </p>
   </div>
 </section>

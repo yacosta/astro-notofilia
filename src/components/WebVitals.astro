@@ -2,6 +2,8 @@
 /**
  * Consent-gated Web Vitals reporter (CLS, INP, LCP, FCP, TTFB).
  * Loads the self-hosted bootstrap only after analytics consent.
+ * Loaded on both `/` and `/en/` trees via BaseHead. The beacon includes
+ * `path` and `content_language` (`en` when the path is `/en` or `/en/…`).
  */
 ---
 <script is:inline>

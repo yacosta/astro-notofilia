@@ -18,12 +18,13 @@ const description = q
   : 'Busca billetes, monedas, perfiles e historias en la colección virtual de Notofilia.';
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page-locale="es">
   <head>
     <BaseHead
       title={title}
       description={description}
       path="/buscar/"
+      locale="es"
       robots="noindex, follow"
       loadDcRuntime={false}
     />
@@ -75,7 +76,7 @@ const description = q
       data-i18n
       data-en="Skip to main content"
     >Saltar al contenido principal</a>
-    <SiteHeader />
+    <SiteHeader path="/buscar/" />
     <main id="main-content" class="buscar-main" tabindex="-1" data-pagefind-ignore>
       <h1 data-i18n data-en="Search">Buscar</h1>
       <p class="buscar-lead">
@@ -133,7 +134,8 @@ const description = q
           },
         };
         function currentLang() {
-          return document.documentElement.getAttribute('data-interface-lang') === 'en' ? 'en' : 'es';
+          var root = document.documentElement;
+          return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en' ? 'en' : 'es';
         }
         function boot() {
           var copy = translations[currentLang()];
@@ -161,9 +163,6 @@ const description = q
         } else {
           boot();
         }
-        document.addEventListener('notofilia:interface-lang', function () {
-          boot();
-        });
       })();
     </script>
   </body>

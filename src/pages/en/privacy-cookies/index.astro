@@ -1,0 +1,132 @@
+---
+/**
+ * English privacy and cookie policy. Spanish /politica-privacidad-cookies/ is unchanged.
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { SITE } from '../../../lib/site';
+
+const title = 'Privacy and Cookie Policy | Notofilia';
+const description =
+  'Privacy and cookie policy for notofilia.com: what data we collect, for what purpose, and how to exercise your rights (GDPR, LOPDGDD, Law 1581).';
+const path = '/en/privacy-cookies/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/en/` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Privacy and Cookie Policy',
+          item: `${SITE}${path}`,
+        },
+      ],
+    },
+    {
+      '@type': 'WebPage',
+      name: 'Privacy and Cookie Policy',
+      url: `${SITE}${path}`,
+      inLanguage: 'en',
+      isPartOf: { '@type': 'WebSite', name: 'Notofilia', url: `${SITE}/en/` },
+    },
+  ],
+};
+
+const articleClass =
+  'text-cream-dim bg-[var(--surface-artifact)] border border-[var(--rule-artifact)] rounded-[var(--radius-surface)] p-[clamp(24px,4vw,44px)]';
+const h2Class = 'font-display font-normal text-[24px] text-cream mt-8 mb-3';
+const pClass = 'text-[17px] leading-[1.7] m-0 mb-2.5';
+const tableHead = 'text-left px-3 py-2.5 font-semibold';
+const td = 'px-3 py-2.5';
+---
+<BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
+  <div class="max-w-[840px] mx-auto px-5 pt-16 pb-10" data-pagefind-meta="url:/en/privacy-cookies/">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
+      <a class="text-muted" href="/en/">Notofilia</a>
+      <span class="text-muted mx-2" aria-hidden="true">/</span>
+      <span>Privacy and Cookie Policy</span>
+    </nav>
+
+    <h1 class="font-display font-normal text-[clamp(28px,4vw,42px)] text-cream m-0 mb-2.5">
+      Privacy and Cookie Policy
+    </h1>
+    <p class="text-[16px] text-muted m-0 mb-9">Last updated: July 13, 2026</p>
+
+    <article class={articleClass}>
+      <p class="text-[18px] leading-[1.65] m-0 mb-6">
+        This Privacy and Cookie Policy (the &ldquo;Policy&rdquo;) explains how notofilia.com (&ldquo;the Site,&rdquo; &ldquo;we&rdquo;) collects, uses, and protects the personal data of visitors, in compliance with Regulation (EU) 2016/679 (GDPR), Spain&rsquo;s LOPDGDD, and, for users in Colombia, Law 1581 of 2012.
+      </p>
+      <h2 class={h2Class}>1. Data controller</h2>
+      <ul class="text-[17px] leading-[1.7] m-0 mb-2 pl-[22px]">
+        <li><strong>Owner:</strong> Notofilia</li>
+        <li><strong>Address:</strong> 407 Lincoln Rd. Suite 6H PMB 7209, Miami Beach, Florida, 33139, United States</li>
+        <li><strong>Contact email:</strong> info@notofilia.com</li>
+      </ul>
+      <h2 class={h2Class}>2. Data we collect and purposes</h2>
+      <p class={pClass}><strong>Subscription form:</strong> first name and email, to send Site updates. Managed by our email marketing provider, <strong>Mailchimp (Intuit Inc., USA)</strong>. By subscribing, your data is transferred to the USA under Mailchimp&rsquo;s contractual safeguards.</p>
+      <p class={pClass}><strong>Google Analytics 4:</strong> if you accept analytics cookies, we collect cookie identifiers (_ga, _ga_*), truncated IP, device/browser, pages visited, session duration, and referral source.</p>
+      <p class={pClass}><strong>Cloudflare Web Analytics:</strong> cookie-free analytics with no personal identifiers; only aggregated metrics. No consent required.</p>
+      <p class="text-[17px] leading-[1.7] m-0"><strong>Technical security cookies:</strong> Cloudflare places strictly necessary cookies (e.g. __cf_bm) for Site security, exempt from consent.</p>
+      <h2 class={h2Class}>3. Legal basis for each processing activity</h2>
+      <div class="overflow-x-auto mb-2">
+        <table class="w-full border-collapse text-[16px]">
+          <thead>
+            <tr class="border-b-2 border-[rgba(231,222,201,0.25)]">
+              <th scope="col" class={tableHead}>Processing activity</th>
+              <th scope="col" class={tableHead}>Legal basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Newsletter sending</td><td class={td}>Consent (Art. 6(1)(a) GDPR)</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Analytics cookies (GA4)</td><td class={td}>Consent (Art. 6(1)(a) GDPR)</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Cloudflare Web Analytics</td><td class={td}>Not applicable (no personal data)</td></tr>
+            <tr><td class={td}>Technical security cookies</td><td class={td}>Legitimate interest (Art. 6(1)(f) GDPR)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class={h2Class}>4. Recipients and data processors</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Your data may be processed by <strong>Mailchimp — Intuit Inc.</strong> (newsletter), <strong>Google LLC</strong> (Google Analytics 4), and <strong>Cloudflare, Inc.</strong> (hosting, security, aggregated analytics). We do not sell or share your data with third parties for commercial purposes.</p>
+      <h2 class={h2Class}>5. International data transfers</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Transfers to Google LLC (U.S.) rely on the EU-U.S. Data Privacy Framework, recognized by the European Commission as providing adequate protection (Art. 45 GDPR). If the email marketing provider is based outside the EEA, the transfer relies on Standard Contractual Clauses or an equivalent mechanism.</p>
+      <h2 class={h2Class}>6. Data retention periods</h2>
+      <ul class="text-[17px] leading-[1.7] m-0 pl-[22px]">
+        <li>Subscriber data: while the subscription is active; deleted or anonymized within 30 days of unsubscribing.</li>
+        <li>Google Analytics cookies (_ga, _ga_*): up to 2 years.</li>
+        <li>Technical security cookies (__cf_bm): up to 30 minutes.</li>
+        <li>Server logs kept for security purposes: up to 12 months.</li>
+      </ul>
+      <h2 class={h2Class}>7. User rights</h2>
+      <p class={pClass}>You may access, rectify, erase, object to, request portability of, restrict processing of, and withdraw consent for your data at any time, by writing to <strong>info@notofilia.com</strong>.</p>
+      <p class="text-[17px] leading-[1.7] m-0">If your rights are not adequately addressed, you may file a complaint with the <strong>Spanish Data Protection Agency (AEPD)</strong> — aepd.es, the <strong>Superintendence of Industry and Commerce (SIC)</strong> of Colombia — sic.gov.co, or your country&rsquo;s data protection authority.</p>
+      <h2 class={h2Class}>8. Cookie policy</h2>
+      <div class="overflow-x-auto mb-3.5">
+        <table class="w-full border-collapse text-[15px]">
+          <thead>
+            <tr class="border-b-2 border-[rgba(231,222,201,0.25)]">
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Name</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Provider</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Purpose</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Duration</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">_ga</td><td class="px-2.5 py-2.5">Google Analytics</td><td class="px-2.5 py-2.5">Distinguishes unique users</td><td class="px-2.5 py-2.5">2 years</td><td class="px-2.5 py-2.5">Analytics</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">_ga_*</td><td class="px-2.5 py-2.5">Google Analytics</td><td class="px-2.5 py-2.5">Session state and visit counts</td><td class="px-2.5 py-2.5">2 years</td><td class="px-2.5 py-2.5">Analytics</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">__cf_bm</td><td class="px-2.5 py-2.5">Cloudflare</td><td class="px-2.5 py-2.5">Security, mitigates malicious traffic</td><td class="px-2.5 py-2.5">30 min</td><td class="px-2.5 py-2.5">Necessary</td></tr>
+            <tr><td class="px-2.5 py-2.5">—</td><td class="px-2.5 py-2.5">Cloudflare Web Analytics</td><td class="px-2.5 py-2.5">Aggregated metrics, no identifiers</td><td class="px-2.5 py-2.5">Not applicable</td><td class="px-2.5 py-2.5">No consent required</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class={pClass}>You can withdraw consent via &ldquo;Cookie Settings&rdquo; in the footer, or by clearing this domain&rsquo;s cookies from your browser. You can also block cookies via Chrome, Firefox, Safari, or Edge settings, though this may affect strictly necessary cookies.</p>
+      <h2 class={h2Class}>9. Newsletter unsubscribe</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Every email includes an &ldquo;unsubscribe&rdquo; link at the bottom. Clicking it stops our communications immediately.</p>
+      <h2 class={h2Class}>10. Changes to this policy</h2>
+      <p class="text-[17px] leading-[1.7] m-0">We may update this Policy to reflect legislative, technical, or service changes. Any changes will be published on this same page, indicating the last update date.</p>
+      <p class="text-[14px] leading-[1.6] text-muted mt-9 mb-0 italic">Note: this document is a general informational template and does not constitute legal advice. Review by a data-protection legal professional is recommended.</p>
+    </article>
+  </div>
+</BlogLayout>

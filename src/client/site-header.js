@@ -19,7 +19,8 @@
   var lastFocus = null;
 
   function isEn() {
-    return document.documentElement.getAttribute('data-interface-lang') === 'en';
+    var root = document.documentElement;
+    return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en';
   }
 
   function setHidden(el, hidden) {

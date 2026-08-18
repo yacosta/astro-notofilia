@@ -95,7 +95,9 @@
         "year": "1813",
         "image": "/uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.jpg",
         "imageWebp": "/uploads/puerto-rico-tesoreria-nacional-25-pesos-1813.webp",
-        "alt": "Vale de la Tesorería Nacional de Puerto Rico por veinticinco pesos, 1813, anverso y reverso"
+        "alt": "Vale de la Tesorería Nacional de Puerto Rico por veinticinco pesos, 1813, anverso y reverso",
+        "titleEn": "National Treasury of Puerto Rico",
+        "altEn": "National Treasury of Puerto Rico warrant for twenty-five pesos, 1813, obverse and reverse"
       },
       {
         "href": "/coleccion/puerto-rico/junta-central-cuba-1869/",
@@ -104,7 +106,9 @@
         "year": "1869",
         "image": "/uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.jpg",
         "imageWebp": "/uploads/puerto-rico-junta-central-cuba-1500-pesos-1869.webp",
-        "alt": "Recibo de contribución de mil quinientos pesos de la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869"
+        "alt": "Recibo de contribución de mil quinientos pesos de la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869",
+        "titleEn": "Central Junta of Cuba and Puerto Rico",
+        "altEn": "Receipt for a contribution of one thousand five hundred pesos of the Republican Central Junta of Cuba and Puerto Rico, obverse and reverse, 1869"
       },
       {
         "href": "/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
@@ -113,7 +117,9 @@
         "year": "1869",
         "image": "/uploads/puerto-rico-republica-de-cuba-1-peso-1869.jpg",
         "imageWebp": "/uploads/puerto-rico-republica-de-cuba-1-peso-1869.webp",
-        "alt": "Billete de Un Peso de La República de Cuba emitido por la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869"
+        "alt": "Billete de Un Peso de La República de Cuba emitido por la Junta Central Republicana de Cuba y Puerto Rico, anverso y reverso, 1869",
+        "titleEn": "The Republic of Cuba",
+        "altEn": "One-peso banknote of the Republic of Cuba issued by the Republican Central Junta of Cuba and Puerto Rico, obverse and reverse, 1869"
       },
       {
         "href": "/coleccion/puerto-rico/billete-de-canje-1-peso-1895/",
@@ -122,11 +128,25 @@
         "year": "1895",
         "image": "/uploads/puerto-rico-billete-de-canje-1-peso-1895.jpg",
         "imageWebp": "/uploads/puerto-rico-billete-de-canje-1-peso-1895.webp",
-        "alt": "Billete de Canje de Un Peso del Ministerio de Ultramar, Puerto Rico, anverso y reverso, 1895"
+        "alt": "Billete de Canje de Un Peso del Ministerio de Ultramar, Puerto Rico, anverso y reverso, 1895",
+        "titleEn": "Exchange Note",
+        "altEn": "One-peso Exchange Note of the Ministerio de Ultramar, Puerto Rico, obverse and reverse, 1895"
       }
     ],
     "eyebrow": "Contexto Histórico"
   },
   "legacyFile": "catalogo-puerto-rico.dc.html",
-  "sourceHash": "b4a572e0656358b3"
+  "sourceHash": "b4a572e0656358b3",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/puerto-rico/",
+      "title": "Puerto Rico Banknote Catalog | Notofilia",
+      "description": "Historical Puerto Rican banknotes and warrants: the National Treasury and the 1813 papeletas. A Notofilia notaphily catalog.",
+      "ogTitle": "Puerto Rico Banknote Catalog — Notofilia",
+      "ogDescription": "Historical Puerto Rican banknotes and warrants from the Notofilia collection.",
+      "recordTitle": "Puerto Rico Banknote Catalog",
+      "eyebrow": "Historical Context",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  <main data-pagefind-meta=\"url:/en/collection/puerto-rico/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Puerto Rico Banknote Catalog</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Puerto Rico’s First Paper Money</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">When the wars of independence broke out on the American continent, the annual subsidy the Spanish Crown sent from Mexico —the “situado”— stopped reaching Puerto Rico, precipitating a severe fiscal crisis. Faced with a shortage of coin, Governor Salvador Meléndez Bruna authorized by royal order of 31 August 1812 the issue of a provincial paper currency known as “papeletas”, which circulated to the amount of 500,000 pesos during 1813.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">The arrival of intendant Alejandro Ramírez in February 1813 marked the start of a rigorous rehabilitation of the Real Hacienda: under his administration, the papeleta issue was fully redeemed by about 1816. Because of their fragile material and early withdrawal from circulation, these documents —together with the later 3- and 5-peso notes— rank today among the rarest and most sought-after pieces in Puerto Rican numismatics.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Fiscal Crisis and Papeletas</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">National Treasury of Puerto Rico (1813)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Ten Years’ War</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Republican Central Junta of Cuba and Puerto Rico (1869)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">End of the Spanish Colonial Era</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Exchange Note (1895)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n</div>"
+    }
+  }
 }

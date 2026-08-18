@@ -1,6 +1,6 @@
 ---
 termEs: "Cospel"
-termEn: "Cospel"
+termEn: "Coin blank"
 definitionEn: "The raw metal disk, also called a planchet or blank, prepared and weighed before being struck between dies."
 category: "Producción"
 source: "suggested"

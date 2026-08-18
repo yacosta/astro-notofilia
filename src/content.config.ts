@@ -87,6 +87,26 @@ const blog = defineCollection({
   schema: postSchema,
 });
 
+const enPairSchema = {
+  /** Spanish counterpart path, e.g. `/blog/some-slug/`. */
+  pairEs: z.string().startsWith('/').endsWith('/'),
+};
+
+// Parallel English editorial collections — never nested inside Spanish globs.
+const blogEn = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog-en' }),
+  schema: postSchema.extend(enPairSchema),
+});
+
+const noticiasEn = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/noticias-en' }),
+  schema: postSchema.extend({
+    ...enPairSchema,
+    source: z.string().min(1),
+    sourceUrl: z.string().url(),
+  }),
+});
+
 // "Logros" — monthly milestones for the virtual collection. Each post is a
 // Markdown file in src/content/logros/ → /logros/<id>/.
 const logros = defineCollection({
@@ -116,6 +136,22 @@ const catalog = defineCollection({
     legacyFile: z.string(),
     sourceHash: z.string(),
     record: catalogRecordSchema.optional(),
+    /** English overlay. Absent → no `/en/` catalog route. */
+    i18n: z
+      .object({
+        en: z.object({
+          path: z.string().startsWith('/en/').endsWith('/'),
+          title: z.string(),
+          description: z.string(),
+          ogTitle: z.string().optional(),
+          ogDescription: z.string().optional(),
+          /** Required to publish EN for astro-hub / astro-static pages. Human-authored HTML. */
+          template: z.string().optional(),
+          recordTitle: z.string().optional(),
+          eyebrow: z.string().optional(),
+        }),
+      })
+      .optional(),
   }),
 });
 
@@ -147,4 +183,12 @@ const glosario = defineCollection({
   }),
 });
 
-export const collections = { noticias, blog, logros, catalog, glosario };
+export const collections = {
+  noticias,
+  blog,
+  logros,
+  catalog,
+  glosario,
+  'blog-en': blogEn,
+  'noticias-en': noticiasEn,
+};

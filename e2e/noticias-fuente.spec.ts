@@ -61,9 +61,11 @@ test('noticias index states Fuente with the original source link', async ({ page
   );
 });
 
-test('Fuente label switches to Source with the language pill', async ({ page }) => {
+test('Spanish noticia Fuente stays Spanish; language switcher leaves the article', async ({
+  page,
+}) => {
   await page.goto(PAYSANDU, { waitUntil: 'domcontentloaded' });
-  await page.getByRole('button', { name: 'Interface in English' }).click();
-  await expect(page.locator('.source-credit').first()).toContainText('Source:');
-  await expect(page.locator('.source-credit a').first()).toContainText('opens in a new tab');
+  await expect(page.locator('.source-credit').first()).toContainText('Fuente:');
+  const en = page.getByRole('group', { name: 'Idioma' }).getByRole('link', { name: /EN/ });
+  await expect(en).toHaveAttribute('href', '/en/news/');
 });
