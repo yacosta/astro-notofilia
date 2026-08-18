@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 55 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 57 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -1198,6 +1198,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [BNCR reabre venta de monedas conmemorativas](https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/): El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.…
+- [La Paz exhibe monedas y billetes de Bolivia](https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/): El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad…
 - [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
 - [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
@@ -1255,6 +1257,94 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### BNCR reabre venta de monedas conmemorativas
+
+URL canónica: https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/
+
+> El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.
+
+Fuente externa: [El Financiero](https://www.elfinancierocr.com/finanzas/monedas-conmemorativas-de-costa-rica-banco/5JC53EU3FRGLPDCGYRL6NV7YCI/story/)
+
+El **Banco Nacional de Costa Rica (BNCR)** reabrirá la venta de las monedas
+conmemorativas de la **Anexión del Partido de Nicoya** (lanzada en **2024**)
+y de la **Abolición del Ejército** (**2023**), según *El Financiero* (Randall
+Corella Vargas, 17 de agosto de 2026). Cada pieza de colección cuesta
+**₡9.950** y se entrega en **acrílico**. *CRHoy* confirma las mismas fechas
+y el precio.
+
+No es el valor facial: el **Banco Central de Costa Rica (BCCR)** las emitió
+como monedas de **₡500**, bimetálicas de **28 mm**, en la serie «Hitos de
+nuestra historia». Lo que vuelve a BN Shop es el formato de **colección**.
+
+## Fechas, canal y retiro
+
+La venta regular empieza el **20 de agosto a las 9:30** y corre hasta el
+**31 de diciembre de 2026** o hasta agotar existencias, **solo** en
+[BN Shop](https://bnshop.bncr.fi.cr/). Tras la compra, el retiro es a partir
+del **tercer día hábil** en el primer piso de la **oficina principal**, de
+lunes a viernes, **10:30–12:30** y **13:30–17:30**. Para estas dos monedas
+el tope es de **cinco unidades por diseño** y por persona.
+
+## Ventas sorpresa
+
+La novedad es una **liberación mensual** de inventario limitado de las
+piezas más buscadas. La primera está prevista el **25 de agosto**; qué se
+vende y a qué hora se anunciará solo en las redes del BN y en BN Shop. En
+esa modalidad el límite es **una unidad por persona**.
+
+**Claudia Salas**, directora de Emisión Comercial y Operaciones del BN,
+dijo que el esquema responde a quienes no alcanzaron las emisiones
+originales: más cupo por persona, retiro más ágil y un canal digital.
+
+## Qué conmemoran
+
+La de Nicoya recuerda la incorporación voluntaria del territorio en
+**1824** («De la patria por nuestra voluntad»). La de la Abolición alude a
+la decisión de **1948** de disolver las fuerzas armadas y destinar el
+presupuesto a educación, salud y desarrollo social.
+
+Más detalles en [El Financiero](https://www.elfinancierocr.com/finanzas/monedas-conmemorativas-de-costa-rica-banco/5JC53EU3FRGLPDCGYRL6NV7YCI/story/)
+y [CRHoy](https://crhoy.com/economia/colecciona-monedas-banco-nacional-reabrira-venta-de-piezas-historicas/).
+
+---
+
+### La Paz exhibe monedas y billetes de Bolivia
+
+URL canónica: https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/
+
+> El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad Numismática.
+
+Fuente externa: [Opinión](https://www.opinion.com.bo/articulo/cultura/bolsillo-vitrinas-exposicion-rescata-memoria-monedas-billetes-distintas-epocas-bolivia/20260817171016994882.html)
+
+El **sábado 22 de agosto de 2026**, de **14:00 a 22:00**, el **Museo Fernando
+Montes** de La Paz (calle Fernando Guachalla 476, Sopocachi) reunirá monedas,
+billetes y piezas conmemorativas de distintas épocas de Bolivia. *Opinión*
+reproduce un despacho de la **Agencia Boliviana de Información (ABI)**: la
+muestra conmemora los **50 años** de la **Sociedad Numismática Boliviana** y
+se enmarca en los **98 años** del **Banco Central de Bolivia (BCB)**.
+
+## De la colonia al papel del BCB
+
+El recorrido va de la **época colonial** a la actualidad. Entre las piezas
+anunciadas figuran algunos de los **primeros billetes** impresos por el BCB y
+monedas antiguas cuyos retratos y símbolos muestran cómo el país se
+representó en cada período. También se recupera la etapa en que **bancos
+privados** emitían su propio papel moneda, antes de que el banco central
+concentrara la emisión.
+
+## Custodia del acervo
+
+El presidente del BCB, **David Espinoza**, relató que algunas monedas del
+acervo habían sido objeto de una solicitud para devolverlas a la institución.
+Su decisión, según ABI, fue mantenerlas bajo la **Fundación Cultural del
+BCB**, encargada de preservar, investigar y difundir ese patrimonio:
+«Zapatero a su zapato. Las cosas tienen que estar donde deben estar».
+
+El museo, dependiente de esa fundación, invita a seguir el anuncio por sus
+redes. Más detalles en la nota de [Opinión](https://www.opinion.com.bo/articulo/cultura/bolsillo-vitrinas-exposicion-rescata-memoria-monedas-billetes-distintas-epocas-bolivia/20260817171016994882.html).
+
+---
 
 ### Del quetzal de plata a los pagos electrónicos
 

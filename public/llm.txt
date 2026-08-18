@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 55 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 57 noticias · 0 logros del mes · 95 términos del glosario.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).
 
@@ -79,6 +79,8 @@ Listado completo de 113 fichas (215 billetes, 7 monedas, 33 países): [llms-full
 
 ## Noticias
 
+- [BNCR reabre venta de monedas conmemorativas](https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/): El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.…
+- [La Paz exhibe monedas y billetes de Bolivia](https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/): El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad…
 - [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
 - [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
