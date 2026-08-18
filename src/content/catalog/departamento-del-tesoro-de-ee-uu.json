@@ -99,7 +99,9 @@
         "year": "1928",
         "image": "/uploads/us-treasury-gold-certificate-10-dollars-1928.jpg",
         "imageWebp": "/uploads/us-treasury-gold-certificate-10-dollars-1928.webp",
-        "alt": "Certificado de oro de diez dólares de Estados Unidos, serie de 1928, anverso y reverso"
+        "alt": "Certificado de oro de diez dólares de Estados Unidos, serie de 1928, anverso y reverso",
+        "altEn": "Certificado de oro de ten dollars de United States, serie de 1928, obverse and reverse",
+        "titleEn": "Gold Certificate"
       },
       {
         "href": "/coleccion/un-dolar-sello-rojo-1928/",
@@ -108,7 +110,9 @@
         "year": "1928",
         "image": "/uploads/us-legal-tender-note-1-dollar-red-seal-1928.jpg",
         "imageWebp": "/uploads/us-legal-tender-note-1-dollar-red-seal-1928.webp",
-        "alt": "United States Note de un dólar con sello rojo, serie de 1928, reverso funny back, anverso y reverso"
+        "alt": "United States Note de un dólar con sello rojo, serie de 1928, reverso funny back, anverso y reverso",
+        "altEn": "One-dollar United States Note with red seal, Series of 1928, funny-back reverse, obverse and reverse",
+        "titleEn": "One Dollar &ldquo;Red Seal&rdquo;"
       },
       {
         "href": "/coleccion/giori-press-test-note/",
@@ -117,7 +121,8 @@
         "year": "c. 1970",
         "image": "/uploads/us-giori-press-test-note.jpg",
         "imageWebp": "/uploads/us-giori-press-test-note-640.webp",
-        "alt": "Nota de prueba de la prensa Giori con los retratos de Lincoln, Washington y Grant, anverso y reverso"
+        "alt": "Nota de prueba de la prensa Giori con los retratos de Lincoln, Washington y Grant, anverso y reverso",
+        "altEn": "Nota de prueba de la prensa Giori con los retratos de Lincoln, Washington y Grant, obverse and reverse"
       },
       {
         "href": "/coleccion/cien-dolares-sello-rojo-1966/",
@@ -126,11 +131,25 @@
         "year": "1966",
         "image": "/uploads/us-legal-tender-note-100-dollars-red-seal-1966.jpg",
         "imageWebp": "/uploads/us-legal-tender-note-100-dollars-red-seal-1966.webp",
-        "alt": "United States Note de cien dólares con sello rojo, serie de 1966, anverso con Benjamin Franklin y reverso con Independence Hall"
+        "alt": "United States Note de cien dólares con sello rojo, serie de 1966, anverso con Benjamin Franklin y reverso con Independence Hall",
+        "altEn": "One-hundred-dollar United States Note with red seal, Series of 1966, obverse with Benjamin Franklin and reverse with Independence Hall",
+        "titleEn": "One Hundred Dollars &ldquo;Red Seal&rdquo;"
       }
     ],
     "eyebrow": "Contexto Histórico"
   },
   "legacyFile": "departamento-del-tesoro-de-ee-uu.dc.html",
-  "sourceHash": "e507556655bddb3c"
+  "sourceHash": "e507556655bddb3c",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/us-department-of-the-treasury/",
+      "title": "U.S. Department of the Treasury | Notofilia",
+      "description": "Catalog of notes issued by the U.S. Department of the Treasury: gold certificates and more. Notofilia collection.",
+      "ogTitle": "U.S. Department of the Treasury — Catalog",
+      "ogDescription": "Catalog of notes issued by the U.S. Department of the Treasury.",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/us-department-of-the-treasury/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">U.S. Department of the Treasury</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; margin:0 0 56px;\">Paper money issued directly by the federal government of the United States, backed by its reserves and its sovereign debt &mdash; including the celebrated gold and silver certificates.</p>\n\n    <section style=\"margin:0 0 80px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">History of United States Treasury Notes</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\"><em>United States Treasury Notes</em> represent a crucial evolution in the country’s monetary and financial history, acting as a bridge between public debt and circulating paper money. First issued in periods of extreme fiscal need &mdash;such as the War of 1812, the Texas War, and the Mexican–American War&mdash; these instruments originated not as ordinary money, but as interest-bearing short-term promissory notes, issued to finance the government when gold and silver reserves were scarce. The decisive turning point came during the Civil War with the issue of the <em>Treasury Notes</em> of 1861 (known as <em>Demand Notes</em>) and the later <em>Legal Tender Notes</em> of 1862, through which the federal government assumed full control of paper-money issue to finance the Union war effort, permanently displacing chaotic private state banking. Decades later, the Sherman Silver Purchase Act of 1890 gave rise to the celebrated <em>Treasury Notes of 1890</em> (or <em>Coin Notes</em>), issued specifically to purchase silver bullion and designed with intricate high-security engravings that today are regarded as true works of numismatic art. With the consolidation of the Federal Reserve System in 1913, the term <em>Treasury Note</em> ceased to apply to everyday circulating paper money and came to define exclusively the financial assets of today’s sovereign-debt market (medium-term Treasury notes), closing a chapter in which government debt was used directly to pay for goods in everyday commerce.</p>\n    </section>\n\n    <section>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n        \n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+      "recordTitle": "U.S. Department of the Treasury",
+      "eyebrow": "Historical Context"
+    }
+  }
 }

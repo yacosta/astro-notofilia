@@ -149,7 +149,8 @@
         "year": "188X",
         "image": "/uploads/colombia-vicente-villa-e-hijos-5-pesos.jpg",
         "imageWebp": "/uploads/colombia-vicente-villa-e-hijos-5-pesos.webp",
-        "alt": "Billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, anverso y reverso"
+        "alt": "Billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, anverso y reverso",
+        "altEn": "Banknote of Five Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso",
@@ -158,7 +159,8 @@
         "year": "1883",
         "image": "/uploads/colombia-banco-de-pamplona-1-peso-1883.jpg",
         "imageWebp": "/uploads/colombia-banco-de-pamplona-1-peso-1883.webp",
-        "alt": "Billete de Un Peso de El Banco de Pamplona, anverso y reverso"
+        "alt": "Billete de Un Peso de El Banco de Pamplona, anverso y reverso",
+        "altEn": "Banknote of One Peso de El Banco de Pamplona, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos",
@@ -167,7 +169,8 @@
         "year": "1884",
         "image": "/uploads/colombia-banco-de-pamplona-10-pesos-1884.jpg",
         "imageWebp": "/uploads/colombia-banco-de-pamplona-10-pesos-1884-640.webp",
-        "alt": "Billete de Diez Pesos de El Banco de Pamplona, anverso y reverso"
+        "alt": "Billete de Diez Pesos de El Banco de Pamplona, anverso y reverso",
+        "altEn": "Banknote of Ten Pesos de El Banco de Pamplona, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#cinco-pesos",
@@ -176,7 +179,9 @@
         "year": "1883",
         "image": "/uploads/colombia-banco-de-la-union-5-pesos-1883.jpg",
         "imageWebp": "/uploads/colombia-banco-de-la-union-5-pesos-1883.webp",
-        "alt": "Billete de Cinco Pesos de El Banco de la Unión, anverso y reverso"
+        "alt": "Billete de Cinco Pesos de El Banco de la Unión, anverso y reverso",
+        "altEn": "Banknote of Five Pesos de The Union Bank, obverse and reverse",
+        "titleEn": "The Union Bank"
       },
       {
         "href": "/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#diez-pesos",
@@ -185,7 +190,9 @@
         "year": "1883",
         "image": "/uploads/colombia-banco-de-la-union-10-pesos-1883.jpg",
         "imageWebp": "/uploads/colombia-banco-de-la-union-10-pesos-1883.webp",
-        "alt": "Billete de Diez Pesos de El Banco de la Unión, anverso y reverso"
+        "alt": "Billete de Diez Pesos de El Banco de la Unión, anverso y reverso",
+        "altEn": "Banknote of Ten Pesos de The Union Bank, obverse and reverse",
+        "titleEn": "The Union Bank"
       },
       {
         "href": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso",
@@ -194,7 +201,9 @@
         "year": "1888",
         "image": "/uploads/colombia-banco-del-cauca-1-peso-1888.jpg",
         "imageWebp": "/uploads/colombia-banco-del-cauca-1-peso-1888.webp",
-        "alt": "Billete de Un Peso de El Banco del Cauca, anverso y reverso"
+        "alt": "Billete de Un Peso de El Banco del Cauca, anverso y reverso",
+        "altEn": "Banknote of One Peso de The Bank of Cauca, obverse and reverse",
+        "titleEn": "The Bank of Cauca"
       },
       {
         "href": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#cinco-pesos",
@@ -203,7 +212,9 @@
         "year": "1888",
         "image": "/uploads/colombia-banco-del-cauca-5-pesos-1888.jpg",
         "imageWebp": "/uploads/colombia-banco-del-cauca-5-pesos-1888.webp",
-        "alt": "Billete de Cinco Pesos de El Banco del Cauca, anverso y reverso"
+        "alt": "Billete de Cinco Pesos de El Banco del Cauca, anverso y reverso",
+        "altEn": "Banknote of Five Pesos de The Bank of Cauca, obverse and reverse",
+        "titleEn": "The Bank of Cauca"
       },
       {
         "href": "/coleccion/colombia/banco-union-cartagena-1-peso-1880s/",
@@ -212,7 +223,9 @@
         "year": "188X",
         "image": "/uploads/colombia-banco-union-cartagena-1-peso-1880s.jpg",
         "imageWebp": "/uploads/colombia-banco-union-cartagena-1-peso-1880s.webp",
-        "alt": "Billete de Un Peso de El Banco Unión de Cartagena, anverso y reverso"
+        "alt": "Billete de Un Peso de El Banco Unión de Cartagena, anverso y reverso",
+        "altEn": "Banknote of One Peso de The Union Bank de Cartagena, obverse and reverse",
+        "titleEn": "The Union Bank"
       },
       {
         "href": "/coleccion/colombia/banco-de-caldas-1-peso-1919/",
@@ -221,7 +234,8 @@
         "year": "1919",
         "image": "/uploads/colombia-banco-de-caldas-1-peso-1919-specimen.jpg",
         "imageWebp": "/uploads/colombia-banco-de-caldas-1-peso-1919-specimen.webp",
-        "alt": "Cédula hipotecaria especimen de Un Peso Oro Legal de El Banco de Caldas, Manizales, anverso y reverso"
+        "alt": "Cédula hipotecaria especimen de Un Peso Oro Legal de El Banco de Caldas, Manizales, anverso y reverso",
+        "altEn": "Cédula hipotecaria especimen de One Legal Gold Peso de El Banco de Caldas, Manizales, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",
@@ -230,7 +244,8 @@
         "year": "1900",
         "image": "/uploads/colombia-banco-de-barranquilla-50-centavos-1900.jpg",
         "imageWebp": "/uploads/colombia-banco-de-barranquilla-50-centavos-1900.webp",
-        "alt": "Billete de Cincuenta Centavos del Banco de Barranquilla, anverso y reverso"
+        "alt": "Billete de Cincuenta Centavos del Banco de Barranquilla, anverso y reverso",
+        "altEn": "Banknote of Fifty Cents del Banco de Barranquilla, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-medellin-50-centavos/",
@@ -239,7 +254,9 @@
         "year": "188X",
         "image": "/uploads/colombia-banco-de-medellin-50-centavos.jpg",
         "imageWebp": "/uploads/colombia-banco-de-medellin-50-centavos.webp",
-        "alt": "Billete de Cincuenta Centavos de El Banco de Medellín, anverso y reverso"
+        "alt": "Billete de Cincuenta Centavos de El Banco de Medellín, anverso y reverso",
+        "altEn": "Banknote of Fifty Cents de The Bank of Medellin, obverse and reverse",
+        "titleEn": "The Bank of Medellin"
       },
       {
         "href": "/coleccion/colombia/banco-de-oriente-5-pesos-1888/",
@@ -248,7 +265,8 @@
         "year": "1888",
         "image": "/uploads/colombia-banco-de-oriente-5-pesos-1888.jpg",
         "imageWebp": "/uploads/colombia-banco-de-oriente-5-pesos-1888.webp",
-        "alt": "Billete de Cinco Pesos de El Banco de Oriente, anverso y reverso"
+        "alt": "Billete de Cinco Pesos de El Banco de Oriente, anverso y reverso",
+        "altEn": "Banknote of Five Pesos de El Banco de Oriente, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-internacional-1-peso-1884/",
@@ -257,7 +275,8 @@
         "year": "1884",
         "image": "/uploads/colombia-banco-internacional-1-peso-1884.jpg",
         "imageWebp": "/uploads/colombia-banco-internacional-1-peso-1884.webp",
-        "alt": "Billete de Un Peso de El Banco Internacional, anverso y reverso"
+        "alt": "Billete de Un Peso de El Banco Internacional, anverso y reverso",
+        "altEn": "Banknote of One Peso de El Banco Internacional, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-internacional-1-peso-1884/#diez-pesos",
@@ -266,7 +285,8 @@
         "year": "1884",
         "image": "/uploads/colombia-banco-internacional-10-pesos-1884.jpg",
         "imageWebp": "/uploads/colombia-banco-internacional-10-pesos-1884.webp",
-        "alt": "Billete de Diez Pesos de El Banco Internacional, anverso y reverso"
+        "alt": "Billete de Diez Pesos de El Banco Internacional, anverso y reverso",
+        "altEn": "Banknote of Ten Pesos de El Banco Internacional, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/",
@@ -275,7 +295,8 @@
         "year": "1900",
         "image": "/uploads/colombia-banco-de-antioquia-libranza-10-centavos-1900.jpg",
         "imageWebp": "/uploads/colombia-banco-de-antioquia-libranza-10-centavos-1900.webp",
-        "alt": "Libranza de Diez Centavos del sucesor del Banco de Antioquia, anverso y reverso"
+        "alt": "Libranza de Diez Centavos del sucesor del Banco de Antioquia, anverso y reverso",
+        "altEn": "Libranza de Ten Cents del sucesor del Banco de Antioquia, obverse and reverse"
       },
       {
         "href": "/coleccion/colombia/departamento-de-antioquia-centavos/",
@@ -284,7 +305,9 @@
         "year": "1901, 1961",
         "image": "/uploads/colombia-departamento-de-antioquia-20-centavos-1901.jpg",
         "imageWebp": "/uploads/colombia-departamento-de-antioquia-20-centavos-1901.webp",
-        "alt": "Vales de Veinte y Diez Centavos del Departamento de Antioquia, anverso y reverso"
+        "alt": "Vales de Veinte y Diez Centavos del Departamento de Antioquia, anverso y reverso",
+        "altEn": "Vales de Veinte y Ten Cents del Department of Antioquia, obverse and reverse",
+        "titleEn": "Department of Antioquia"
       },
       {
         "href": "/coleccion/colombia/banco-de-panama-1-5-pesos/#un-peso",
@@ -293,7 +316,9 @@
         "year": "188X",
         "image": "/uploads/colombia-banco-de-panama-1-peso.jpg",
         "imageWebp": "/uploads/colombia-banco-de-panama-1-peso.webp",
-        "alt": "Billete de Un Peso de El Banco de Panamá, anverso y reverso"
+        "alt": "Billete de Un Peso de El Banco de Panamá, anverso y reverso",
+        "altEn": "Banknote of One Peso de The Bank of Panama, obverse and reverse",
+        "titleEn": "The Bank of Panama"
       },
       {
         "href": "/coleccion/colombia/banco-de-panama-1-5-pesos/#cinco-pesos",
@@ -302,7 +327,9 @@
         "year": "188X",
         "image": "/uploads/colombia-banco-de-panama-5-pesos.jpg",
         "imageWebp": "/uploads/colombia-banco-de-panama-5-pesos.webp",
-        "alt": "Billete de Cinco Pesos de El Banco de Panamá, anverso y reverso"
+        "alt": "Billete de Cinco Pesos de El Banco de Panamá, anverso y reverso",
+        "altEn": "Banknote of Five Pesos de The Bank of Panama, obverse and reverse",
+        "titleEn": "The Bank of Panama"
       },
       {
         "href": "/coleccion/colombia/banco-del-norte-5-pesos-1882/",
@@ -311,7 +338,9 @@
         "year": "1882",
         "image": "/uploads/colombia-banco-del-norte-5-pesos-1882.jpg",
         "imageWebp": "/uploads/colombia-banco-del-norte-5-pesos-1882.webp",
-        "alt": "Billete de 5 pesos de El Banco del Norte, anverso y reverso"
+        "alt": "Billete de 5 pesos de El Banco del Norte, anverso y reverso",
+        "altEn": "Banknote of 5 pesos de The North Bank, obverse and reverse",
+        "titleEn": "The North Bank"
       },
       {
         "href": "/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/",
@@ -320,11 +349,24 @@
         "year": "1919",
         "image": "/uploads/colombia-banco-de-colombia-1-peso-oro-1919.jpg",
         "imageWebp": "/uploads/colombia-banco-de-colombia-1-peso-oro-1919.webp",
-        "alt": "Cédula hipotecaria de El Banco de Colombia, anverso y reverso"
+        "alt": "Cédula hipotecaria de El Banco de Colombia, anverso y reverso",
+        "altEn": "Cédula hipotecaria de El Banco de Colombia, obverse and reverse"
       }
     ],
     "eyebrow": "Contexto Histórico"
   },
   "legacyFile": "catalogo-banca-libre.dc.html",
-  "sourceHash": "63bd0bfa9d6dabca"
+  "sourceHash": "63bd0bfa9d6dabca",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/colombia/free-banking/",
+      "title": "Colombian Free Banking Catalog | Notofilia",
+      "description": "Private and free-banking notes of Colombia (1870–1919): Banco de Pamplona, Banco de Caldas, Banco de Medellín. A Notofilia catalog.",
+      "ogTitle": "Colombian Free Banking Catalog — Notofilia",
+      "ogDescription": "Private and free-banking Colombian notes (1870–1919) from the Notofilia collection.",
+      "recordTitle": "Colombian Free Banking",
+      "eyebrow": "Historical Context",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/colombia/free-banking/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <a href=\"/en/collection/colombia/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em; margin-bottom:24px;\">&larr; Colombia catalog</a>\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Colombian Free Banking</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; margin:0 0 56px;\">Between 1870 and the mid-1880s, dozens of private banks and commercial houses issued their own paper money in different regions of Colombia &mdash;an era of &ldquo;free banking&rdquo; that ended with Banco Nacional’s curso forzoso in 1886, although the tradition of regional and private issue continued, in other forms, well into the twentieth century.</p>\n\n    <section style=\"margin:0 0 80px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">A Currency for Each Region</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">In the mid-nineteenth century the Colombian economy still ran mainly on gold and silver coin and on foreign coins. The true boom of modern paper money arrived with the success of the <strong style=\"color:#d8d2cd;\">Banco de Bogotá</strong>, founded in 1870: backed by real reserves and the confidence of local commerce, its banknotes were the first accepted on a large scale in the country.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">After that initial success, a true era of &ldquo;free banking&rdquo; opened: dozens of issuing entities &mdash;among them Banco de Antioquia, Banco de Colombia, Banco de Bolívar, Banco de Bogotá, Banco de Pamplona, and numerous commercial credit houses such as Vicente B. Villa é Hijos in Medellín&mdash; printed their own banknotes in the country’s different commercial plazas, manufactured to high security standards by foreign engraving firms, mainly in London and New York.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">This plurality of issuers ended abruptly with the Regeneración: in 1886 the government decreed the &ldquo;curso forzoso&rdquo; (forced legal tender) of the newly founded Banco Nacional’s banknotes, gradually eliminating the regional private banks’ right of issue. The civil war of 1884&ndash;1885 &mdash;which coincided with the decline of banks such as Pamplona’s&mdash; and the later Thousand Days’ War (1899&ndash;1902) finished off a large part of this first generation of free banking.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">The tradition of regional and private issue did not disappear entirely: decades after the centralization of the currency at Banco de la República (1923), entities such as <strong style=\"color:#d8d2cd;\">El Banco de Caldas</strong> in Manizales continued to issue their own cédulas hipotecarias &mdash;private credit instruments, no longer legal-tender banknotes&mdash; carrying on, in their own way, the spirit of nineteenth-century Colombian regional banking.</p>\n\n      <h3 style=\"font-size:15px; letter-spacing:0.14em; text-transform:uppercase; color:#d8d2cd; font-weight:600; margin:32px 0 14px; font-style:normal;\">Chronology and Scope of the System</h3>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">Historiography places the formal birth of Colombian free banking in 1865, with the enactment of two banking laws: the Law of 7 February (Sovereign State of Cundinamarca) and Law 35 of 6 May (at the national level).<sup style=\"font-size:13px;\">1</sup> Under the Rionegro Constitution of 1863, which reduced the central government to its minimum expression, each of the nine Sovereign States of the Union developed its own banking system, with varying degrees of regulation and competition.<sup style=\"font-size:13px;\">1</sup> The number of issuing banks in the country grew steadily until it reached a peak of 37 entities in 1884, the year the civil war broke out that would hasten the end of the system.<sup style=\"font-size:13px;\">1</sup></p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">The Sovereign State of Santander &mdash;where <strong style=\"color:#d8d2cd;\">El Banco de Pamplona</strong> was founded in 1882&mdash; experienced the highest level of banking deregulation in the country: its 1865 state constitution even allowed units of account other than the peso and the use of foreign currency in commerce.<sup style=\"font-size:13px;\">1</sup> After the closure of the region’s first bank, Banco de Santander (1872&ndash;1879), three entities arose to fill the gap: Banco del Norte (1881), Banco de Pamplona (1882), and Banco Prendario de Soto (1883), the last founded to serve the poorest sectors of society.<sup style=\"font-size:13px;\">1</sup></p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">The system ended in 1886. After the civil war of 1884&ndash;1885, Banco Nacional was declared the official bank of the State and, by Decree 104 of 19 February 1886, President Rafael Núñez’s government established the Banco Nacional note as the sole monetary standard, of curso forzoso (forced legal tender); the following year the private banks’ faculty of issue was suspended entirely, as part of the centralizing project known as the Regeneración.<sup style=\"font-size:13px;\">1</sup></p>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Issuing Commercial Houses &middot; Free Banking</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Vicente B. Villa é Hijos, Medellín (188X)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Regional Free Banking</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Pamplona (1883&ndash;1884)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Bogotá</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de la Unión (1883)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Sovereign State of Cauca</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco del Cauca (1888)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Cartagena de Indias</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Unión (188X)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Regional Mortgage Banking</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Caldas (1919)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Caribbean Coast</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Barranquilla (1900)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Antioquia</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Medellín (188X)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Rionegro, Antioquia</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Oriente (1888)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Bogotá</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Internacional (1884)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking · Thousand Days’ War, Medellín</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Banco de Antioquia, Libranza (1900)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Departmental Issue &middot; Medellín</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Departamento de Antioquia (1961)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-bottom:72px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Department of Panama</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Panamá (late nineteenth century)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Free Banking &middot; Socorro, Santander</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco del Norte (1882)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Securities and Certificates &middot; Bogotá</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco de Colombia (1919)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-top:64px; padding-top:24px; border-top:1px solid rgba(239,231,212,0.12);\">\n      <h2 style=\"font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#b7ab8a; font-weight:600; margin:0 0 12px; font-style:normal;\">Notes</h2>\n      <p style=\"font-size:15px; line-height:1.6; color:#8f8468; margin:0;\">1. Chávez Salazar, Nelson David. &ldquo;Una revisión microeconómica del episodio de Banca Libre en Colombia: 1865&ndash;1886.&rdquo; <em>Procesos de Mercado: Revista Europea de Economía Política</em>, vol. XIV, no. 2, Autumn 2017, pp. 259&ndash;289.</p>\n    </section>\n\n  </main>\n\n  \n\n</div>"
+    }
+  }
 }
