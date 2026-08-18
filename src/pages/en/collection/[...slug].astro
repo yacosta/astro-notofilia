@@ -57,6 +57,8 @@ const record: CatalogRecord | undefined = page.data.record
     }
   : undefined;
 
+const hubName = (en.recordTitle ?? en.title).replace(/\s*[|·].*$/, '').trim();
+const collectionIndex = alternateUrl('/coleccion/', 'en');
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -69,10 +71,20 @@ const jsonLd = {
           name: 'Notofilia',
           item: `${SITE}/en/`,
         },
+        ...(collectionIndex
+          ? [
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Collection',
+                item: `${SITE}${collectionIndex}`,
+              },
+            ]
+          : []),
         {
           '@type': 'ListItem',
-          position: 2,
-          name: 'Colombia',
+          position: collectionIndex ? 3 : 2,
+          name: hubName,
           item: `${SITE}${en.path}`,
         },
       ],

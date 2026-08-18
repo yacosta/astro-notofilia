@@ -1,0 +1,82 @@
+---
+/**
+ * English blog index. Spanish /blog/ is unchanged.
+ */
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import Cover from '../../../components/Cover.astro';
+import { COLLECTIONS, collectionIndexJsonLdEn } from '../../../lib/collections';
+import { formatDateLongEn, toIsoDate } from '../../../lib/dates';
+import { SITE } from '../../../lib/site';
+
+const meta = COLLECTIONS.blog;
+const posts = (await getCollection('blog-en', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+const path = '/en/blog/';
+const title = 'Numismatics and Notaphily Blog | Notofilia';
+const description =
+  'Guides to numismatics and notaphily: how to start a banknote collection, monetary history of Colombia and Puerto Rico, and advice for collectors.';
+const jsonLd = collectionIndexJsonLdEn({
+  label: meta.labelEn,
+  jsonLdName: meta.headingEn,
+  jsonLdDescription: meta.introEn,
+  path,
+  posts: posts.map((post) => ({
+    title: post.data.title,
+    url: `${SITE}/en/blog/${post.id}/`,
+  })),
+});
+---
+<BlogLayout locale="en" title={title} description={description} path={path} jsonLd={jsonLd}>
+  <div class="max-w-content mx-auto px-6 pt-14 pb-6">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/en/">Home</a>
+      <span aria-hidden="true">/</span> <span>Blog</span>
+    </nav>
+    <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]">
+      {meta.headingEn}
+    </h1>
+    <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]">
+      {meta.introEn}
+    </p>
+
+    {posts.length === 0 ? (
+      <p class="text-muted">{meta.emptyMessageEn}</p>
+    ) : (
+      <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
+        {posts.map((post) => (
+          <li class="card">
+            {post.data.cover && (
+              <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
+            )}
+            <div class="pt-4 mt-4 border-t-2 border-muted">
+              <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
+                <time datetime={toIsoDate(post.data.publishedAt)}>
+                  {formatDateLongEn(post.data.publishedAt)}
+                </time>
+              </div>
+              <a class="group block no-underline text-inherit" href={`/en/blog/${post.id}/`}>
+                <h2 class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white">
+                  {post.data.title}
+                </h2>
+                <p class="text-[16px] text-cream-dim mt-0 mb-3">{post.data.excerpt}</p>
+                <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold">Read more →</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BlogLayout>
+
+<style>
+  .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }
+  .card :global(img) { transition: transform 0.4s ease; }
+  .card:hover :global(img) { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) {
+    .card :global(img) { transition: none; }
+    .card:hover :global(img) { transform: none; }
+  }
+</style>

@@ -29,10 +29,20 @@ export type Pair = {
   kind: PairKind;
 };
 
-/** A3 seed pairs. Later agents append via content fields, not a second map. */
+/** A3 seed pairs plus A4 static / section indexes actually shipped in English. */
 export const SEED_PAIRS: readonly Pair[] = [
   { es: '/', en: '/en/', kind: 'home' },
   { es: '/coleccion/colombia/', en: '/en/collection/colombia/', kind: 'collection' },
+  { es: '/coleccion/', en: '/en/collection/', kind: 'collection' },
+  { es: '/coleccion/numismatica/', en: '/en/collection/numismatics/', kind: 'collection' },
+  { es: '/noticias/', en: '/en/news/', kind: 'news' },
+  { es: '/blog/', en: '/en/blog/', kind: 'blog' },
+  { es: '/glosario/', en: '/en/glossary/', kind: 'glossary' },
+  { es: '/editorial/', en: '/en/editorial/', kind: 'static' },
+  { es: '/editorial/equipo/', en: '/en/editorial/team/', kind: 'static' },
+  { es: '/contacto/', en: '/en/contact/', kind: 'static' },
+  { es: '/politica-privacidad-cookies/', en: '/en/privacy-cookies/', kind: 'static' },
+  { es: '/j-s-g-boggs/', en: '/en/j-s-g-boggs/', kind: 'static' },
 ];
 
 /**
@@ -95,6 +105,94 @@ function fromCatalog(): Pair[] {
   return pairs;
 }
 
+/** Same slugify as `src/lib/glossary.ts` — kept local so this module stays fs-only. */
+function slugifyGlossary(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function yamlScalar(raw: string, key: string): string | undefined {
+  const re = new RegExp(`^${key}:\\s*(?:["']([^"']*)["']|(\\S.*))\\s*$`, 'm');
+  const match = raw.match(re);
+  if (!match) return undefined;
+  const value = (match[1] ?? match[2] ?? '').trim();
+  return value || undefined;
+}
+
+function fromGlossary(): Pair[] {
+  const glossaryDir = path.join(process.cwd(), 'src/content/glosario');
+  let files: string[];
+  try {
+    files = readdirSync(glossaryDir).filter((file) => file.endsWith('.md') && !file.startsWith('_'));
+  } catch {
+    return [];
+  }
+
+  const pairs: Pair[] = [];
+  for (const file of files) {
+    let raw: string;
+    try {
+      raw = readFileSync(path.join(glossaryDir, file), 'utf8');
+    } catch {
+      continue;
+    }
+    const termEn = yamlScalar(raw, 'termEn');
+    if (!termEn) continue;
+    const id = file.replace(/\.md$/, '');
+    pairs.push({
+      es: normalizePath(`/glosario/${id}/`),
+      en: normalizePath(`/en/glossary/${slugifyGlossary(termEn)}/`),
+      kind: 'glossary',
+    });
+  }
+  return pairs;
+}
+
+function fromMarkdownCollection(
+  dirName: string,
+  enPrefix: string,
+  kind: PairKind,
+): Pair[] {
+  const dir = path.join(process.cwd(), 'src/content', dirName);
+  let files: string[];
+  try {
+    files = readdirSync(dir).filter((file) => file.endsWith('.md') && !file.startsWith('_'));
+  } catch {
+    return [];
+  }
+
+  const pairs: Pair[] = [];
+  for (const file of files) {
+    let raw: string;
+    try {
+      raw = readFileSync(path.join(dir, file), 'utf8');
+    } catch {
+      continue;
+    }
+    const pairEs = yamlScalar(raw, 'pairEs');
+    if (!pairEs) continue;
+    const slug = file.replace(/\.md$/, '');
+    pairs.push({
+      es: normalizePath(pairEs),
+      en: normalizePath(`${enPrefix}${slug}/`),
+      kind,
+    });
+  }
+  return pairs;
+}
+
+function fromBlogEn(): Pair[] {
+  return fromMarkdownCollection('blog-en', '/en/blog/', 'blog');
+}
+
+function fromNoticiasEn(): Pair[] {
+  return fromMarkdownCollection('noticias-en', '/en/news/', 'news');
+}
+
 /** Strip query/hash; trailing slash; `/en` → `/en/`. Spanish home stays `/`. */
 export function normalizePath(input: string): string {
   let value = (input ?? '').trim();
@@ -151,6 +249,9 @@ const enMap = new Map<string, Pair>();
 
 for (const pair of SEED_PAIRS) registerPair(pair, esMap, enMap);
 for (const pair of fromCatalog()) registerPair(pair, esMap, enMap);
+for (const pair of fromGlossary()) registerPair(pair, esMap, enMap);
+for (const pair of fromBlogEn()) registerPair(pair, esMap, enMap);
+for (const pair of fromNoticiasEn()) registerPair(pair, esMap, enMap);
 
 const ALL_PAIRS: readonly Pair[] = [...esMap.values()];
 

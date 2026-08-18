@@ -2,6 +2,7 @@ import type { PostCollection, PublishedPost } from './posts';
 import { SITE } from './site';
 import { CLAIM_LABELS, claimNoteFor, isClaimKind } from './claims';
 import { EDITORIAL_POLICY_URL, EDITORIAL_TEAM, personJsonLd } from './editorial';
+import { CLAIM_LABELS_EN, CLAIM_NOTES_EN } from './ui-i18n';
 import { toIsoDate } from './dates';
 
 export type CollectionMeta = {
@@ -304,5 +305,165 @@ export function articleJsonLd(meta: CollectionMeta, post: PublishedPost, iso: st
       ],
     },
     publishingPrinciples: EDITORIAL_POLICY_URL,
+  };
+}
+
+const EN_EDITORIAL_POLICY_URL = `${SITE}/en/editorial/`;
+const EN_EDITORIAL_TEAM_URL = `${SITE}/en/editorial/team/`;
+
+/** English collection-index JSON-LD. Does not change Spanish labels on ES routes. */
+export function collectionIndexJsonLdEn(
+  opts: {
+    label: string;
+    jsonLdName: string;
+    jsonLdDescription: string;
+    path: string;
+    posts: Array<{ title: string; url: string }>;
+  },
+) {
+  const url = `${SITE}${opts.path}`;
+  const itemList =
+    opts.posts.length > 0
+      ? {
+          '@type': 'ItemList',
+          name: opts.jsonLdName,
+          numberOfItems: opts.posts.length,
+          itemListElement: opts.posts.slice(0, 40).map((post, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            url: post.url.startsWith('http') ? post.url : `${SITE}${post.url}`,
+            name: post.title,
+          })),
+        }
+      : undefined;
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: opts.jsonLdName,
+        url,
+        description: opts.jsonLdDescription,
+        inLanguage: 'en',
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/en/` },
+            { '@type': 'ListItem', position: 2, name: opts.label, item: url },
+          ],
+        },
+        ...(itemList ? { mainEntity: { '@id': `${url}#itemlist` } } : {}),
+      },
+      ...(itemList ? [{ ...itemList, '@id': `${url}#itemlist` }] : []),
+    ],
+  };
+}
+
+/** English article JSON-LD for `/en/blog/` (and future `/en/news/`) posts. */
+export function articleJsonLdEn(
+  meta: CollectionMeta,
+  post: { data: PostData },
+  iso: string,
+  path: string,
+) {
+  const d = post.data;
+  const pageUrl = SITE + path;
+  const modified = d.updatedAt ? toIsoDate(d.updatedAt) : iso;
+  const authorName = d.reviewedBy?.trim() || EDITORIAL_TEAM.name;
+  const author = {
+    ...personJsonLd(authorName),
+    url: EN_EDITORIAL_TEAM_URL,
+  };
+
+  const citations: Array<string | Record<string, unknown>> = [];
+  if (d.sourceUrl) {
+    citations.push({
+      '@type': 'CreativeWork',
+      name: d.source ? `Source: ${d.source}` : 'Primary source',
+      url: d.sourceUrl,
+    });
+  }
+  for (const src of d.primarySources ?? []) {
+    citations.push({
+      '@type': 'CreativeWork',
+      name: src.label,
+      url: src.url,
+    });
+  }
+  if (d.claimEvidenceUrl) {
+    citations.push({
+      '@type': 'CreativeWork',
+      name: 'Valuation or hammer evidence',
+      url: d.claimEvidenceUrl,
+    });
+  }
+
+  const claimMeta =
+    d.claimKind && isClaimKind(d.claimKind)
+      ? {
+          about: {
+            '@type': 'Thing',
+            name: CLAIM_LABELS_EN[d.claimKind],
+            description: d.claimNote || CLAIM_NOTES_EN[d.claimKind],
+          },
+          ...(d.claimCurrency
+            ? {
+                additionalProperty: [
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'Currency of the cited figure',
+                    value: d.claimCurrency,
+                  },
+                  ...(d.claimValuationDate
+                    ? [
+                        {
+                          '@type': 'PropertyValue',
+                          name: 'Date of the cited valuation',
+                          value: toIsoDate(d.claimValuationDate),
+                        },
+                      ]
+                    : []),
+                ],
+              }
+            : {}),
+        }
+      : {};
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': meta.articleType,
+    headline: d.title,
+    description: d.excerpt,
+    datePublished: iso,
+    dateModified: modified,
+    inLanguage: 'en',
+    ...(d.cover ? { image: `${SITE}/uploads/${d.cover}.jpg` } : {}),
+    author,
+    editor: author,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Notofilia',
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/favicon.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    isPartOf: { '@id': `${SITE}/en/#website` },
+    ...(d.sourceUrl ? { isBasedOn: d.sourceUrl } : {}),
+    ...(citations.length > 0 ? { citation: citations } : {}),
+    ...claimMeta,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.claim-callout'],
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/en/` },
+        { '@type': 'ListItem', position: 2, name: meta.labelEn, item: `${SITE}${path.split('/').slice(0, 3).join('/')}/` },
+        { '@type': 'ListItem', position: 3, name: d.title, item: pageUrl },
+      ],
+    },
+    publishingPrinciples: EN_EDITORIAL_POLICY_URL,
   };
 }

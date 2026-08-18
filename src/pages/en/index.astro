@@ -17,13 +17,14 @@ import PreFooter from '../../components/PreFooter.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import CookieBanner from '../../components/CookieBanner.astro';
 import type { StripItem } from '../../components/HomePostStrip.astro';
+import { alternateUrl } from '../../i18n/pairs';
 
 function toStripItems(
   posts: PublishedPost[],
   base: 'noticias' | 'blog',
 ): StripItem[] {
   return posts.slice(0, 4).map((p) => ({
-    url: `/${base}/${p.id}/`,
+    url: alternateUrl(`/${base}/${p.id}/`, 'en') ?? `/${base}/${p.id}/`,
     title: p.data.title,
     source: p.data.source ?? 'Notofilia',
     sourceUrl: p.data.sourceUrl,
@@ -153,7 +154,7 @@ const jsonLd = {
         items={blogPosts}
         emptyMessage="Muy pronto publicaremos las primeras guías del blog."
         emptyMessageEn="Coming soon: our first blog guides."
-        moreHref="/blog/"
+        moreHref="/en/blog/"
         moreLabel="Ver todo el blog"
         moreLabelEn="See the full blog"
         bordered
@@ -167,7 +168,7 @@ const jsonLd = {
         items={posts}
         emptyMessage="Muy pronto, aquí encontrarás las noticias más recientes de subastas, nuevas emisiones y hallazgos numismáticos."
         emptyMessageEn="Coming soon: the latest news on auctions, new issues, and numismatic discoveries."
-        moreHref="/noticias/"
+        moreHref="/en/news/"
         moreLabel="Ver todas las noticias"
         moreLabelEn="See all news"
       />
