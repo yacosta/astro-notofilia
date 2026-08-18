@@ -5,7 +5,7 @@ This list is the A4 deferral queue for later translators.
 
 ## Individual news (`/noticias/` → `/en/news/{slug}/`)
 
-**Defer all 55 individual noticias.** They are time-stamped curated pieces dated July–August 2026, so the “>12 months old” skip does not apply by age. Bulk-translating 55 news posts in one pass would be thin. The English index at `/en/news/` lists them with Spanish titles (`lang="es"`) and Spanish hrefs.
+**Defer all 57 individual noticias.** They are time-stamped curated pieces dated July–August 2026, so the “>12 months old” skip does not apply by age. Bulk-translating 57 news posts in one pass would be thin. The English index at `/en/news/` lists them with Spanish titles (`lang="es"`) and Spanish hrefs.
 
 When a piece is translated:
 
