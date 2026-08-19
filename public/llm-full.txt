@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 57 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 59 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -1198,6 +1198,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [Brunéi B$10.000: no es el billete más caro](https://notofilia.com/noticias/billete-brunei-10000-dolares/): El Heraldo de México llama «más caro del mundo» al B$10.000 de Brunéi; el facial ronda ese monto, pero no es un récord coleccionista.…
+- [Villejuif: roban 160 napoleones de oro](https://notofilia.com/noticias/robo-napoleones-villejuif-2026/): Falsos fontanero y policías sustrajeron en Villejuif unas 1.800 piezas, entre ellas 160 napoleones; el perjuicio se estima en unos 110.000…
 - [BNCR reabre venta de monedas conmemorativas](https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/): El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.…
 - [La Paz exhibe monedas y billetes de Bolivia](https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/): El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad…
 - [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
@@ -1214,7 +1216,7 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [Medalla heptagonal del Sistema Solar](https://notofilia.com/noticias/medalla-sistema-solar-heptagonal/): Pieza de colección en plata .999 con forma de 50 peniques británicos: Sol, Luna y planetas para numismática temática. Fuente: Cultivarte.
 - [Billete de 10.000 pesos: Banxico explica el canje](https://notofilia.com/noticias/billete-10000-pesos-lazaro-cardenas-canje/): El billete de Lázaro Cárdenas de la antigua unidad vale 10 pesos de canje; Banxico detalla cómo cambiarlo en bancos. Fuente: El Cronista.
 - [Cien años de moneda argentina en Corrientes](https://notofilia.com/noticias/expo-coleccionismo-moneda-argentina-corrientes/): La primera Expo de Coleccionismo en el Colegio Nacional destacó una muestra de un siglo de moneda argentina y series del Mundial 1978.…
-- [Saltillo: convención numismática el 15 y 16 de agosto](https://notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/): Acceso libre en el Museo del Desierto con 40–50 expositores, asesoría de piezas y la muestra Numisarte. Cartografías del signo. Fuente: El…
+- [Saltillo: convención numismática el 15 y 16 de agosto](https://notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/): La primera convención en el Museo del Desierto reunió expositores de varios estados, Numisarte y muestras del Banco de Coahuila. Fuente: El…
 - [Arequipa exhibe 390 piezas en su III Encuentro Numismático](https://notofilia.com/noticias/iii-encuentro-numismatico-arequipa-2026/): Del 7 al 9 de agosto, la Biblioteca Regional Mario Vargas Llosa muestra 206 billetes y 184 monedas con ingreso libre. Fuente: Revelación.pe.
 - [Vaticano emite euros con la imagen del Papa León XIV](https://notofilia.com/noticias/moneda-vaticano-papa-leon-xiv/): La serie vaticana en euros vuelve a mostrar el rostro papal; el escudo figura en 1, 2 y 5 céntimos y el set cuesta 59 euros. Fuente:…
 - [Monedas de $100 chilenas de hasta $800 mil](https://notofilia.com/noticias/monedas-100-chilenas-copihues-coleccionistas/): Errores de cospel, variantes de copihues 2000-2001 y ensayos elevan el interés por algunas monedas de $100 en circulación. Fuente: 24 Horas.
@@ -1257,6 +1259,125 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### Brunéi B$10.000: no es el billete más caro
+
+URL canónica: https://notofilia.com/noticias/billete-brunei-10000-dolares/
+
+> El Heraldo de México llama «más caro del mundo» al B$10.000 de Brunéi; el facial ronda ese monto, pero no es un récord coleccionista.
+
+Fuente externa: [El Heraldo de México](https://heraldodemexico.com.mx/economia/2026/8/18/este-es-el-billete-mas-caro-del-mundo-vale-10-mil-dolares-salio-de-circulacion-hasta-hace-poco-871222.html)
+
+*El Heraldo de México* presenta el **B$10.000** de Brunéi como «el billete más
+caro del mundo» y lo cifra en **10 mil dólares**. Conviene separar tres cosas
+que el texto mezcla: el **valor facial** en dólares de Brunéi, su equivalente
+en dólares estadounidenses y lo que un coleccionista pagaría de más (o de
+menos) por un ejemplar concreto.
+
+## Qué pieza es
+
+Se trata del **B$10.000** de polímero **Pick 33 / TBB B205**, puesto en
+circulación el **28 de diciembre de 2006** (algunos catálogos anotan el 29).
+El anverso muestra al sultán **Hassanal Bolkiah Mu’izzaddin Waddaulah** con
+dastar y la flor **Pangarut timun dendang** (*Passiflora foetida*); el reverso,
+el edificio del **Consejo Legislativo** en Bandar Seri Begawan. Lo imprimió
+**Note Printing Australia** (Melbourne). Mide unos **181 × 90 mm**.
+
+El medio habla a veces de un billete de **«100 mil dólares»** y otras del de
+**10 mil**: la denominación es **diez mil** dólares/ringgit de Brunéi, no
+cien mil.
+
+La fecha **1967** que cita el Heraldo no es la de este tipo: ese año nació el
+dólar de Brunéi y el **acuerdo de intercambiabilidad** con Singapur. El
+plástico de 2006 es una emisión posterior, pensada —como su par de
+**S$10.000**— para operaciones de alto valor cuando la banca electrónica aún
+no las absorbía del todo.
+
+## Retiro, no desmonetización
+
+El **2 de noviembre de 2020**, la entonces **Autoriti Monetari Brunei
+Darussalam (AMBD)** dejó de entregar el BND10.000 a los bancos y lo retiró de
+la circulación para reducir riesgos de lavado, financiación del terrorismo y
+falsificación. El comunicado es explícito: **sigue siendo curso legal** y
+conserva **todo su valor facial**. El mayor denominación que se sigue
+emitiendo es el B$1.000.
+
+## «El más caro» no es el de mayor facial
+
+Mientras circuló, este billete **empató con el S$10.000** de Singapur como
+papel de **mayor valor facial** del mundo (unos **US$7.200–8.100** según el
+año). Eso no lo convierte en el más caro para un coleccionista. Un dólar
+**Flowing Hair de 1794** o un **EID MAR** se han pagado en millones; un
+B$10.000 en UNC se ha anunciado en el comercio especializado por cifras del
+orden de su paridad —por ejemplo, **12.350 €** en un listado minorista, o
+estimaciones de Spink de **£6.000–7.000** para un ejemplar de 2006 en grado
+muy alto—.
+
+El «índice de rareza 91 de 100» que menciona el Heraldo **no es una escala
+numismática estándar** (Pick, PMG o IBNS no la usan). Hay pocos ejemplares
+fuera de bancos y colecciones privadas —la autoridad destruyó existencias no
+emitidas—, pero la rareza se documenta con población certificada y remates,
+no con un número viral.
+
+En el catálogo de Notofilia están los polímeros de **1 a 100 ringgit** de
+2004, misma imprenta y mismo retrato del sultán: sirven para situar la
+familia, no sustituyen al B$10.000.
+
+---
+
+### Villejuif: roban 160 napoleones de oro
+
+URL canónica: https://notofilia.com/noticias/robo-napoleones-villejuif-2026/
+
+> Falsos fontanero y policías sustrajeron en Villejuif unas 1.800 piezas, entre ellas 160 napoleones; el perjuicio se estima en unos 110.000 €.
+
+Fuente externa: [Infobae](https://www.infobae.com/espana/2026/08/18/dos-hombres-se-hacen-pasar-por-agentes-y-simulan-arrestar-a-un-tercero-que-decia-ser-fontanero-para-robar-una-coleccion-de-110000-euros-a-un-septuagenario-frances/)
+
+El jueves **13 de agosto de 2026**, **Guy**, de **79 años**, volvió de
+hacer la compra a su casa de **Villejuif** (Val-de-Marne, Francia) y se
+encontró en el umbral a un hombre que se decía **fontanero** o técnico
+del agua, venido a «revisar una fuga» que el dueño no había pedido.
+*Infobae* resume el relato que ya habían publicado **TF1** y *Le
+Parisien*.
+
+Guy acabó dejándolo entrar. Mientras el impostor lo entretenía en la
+cocina —le pidió cortar el agua y vaciar debajo del fregadero—,
+llamaron **dos hombres de uniforme** que se hicieron pasar por
+policías: el «fontanero», dijeron, era un ladrón conocido. En parte era
+cierto; la detención, no.
+
+## El golpe a dos bandas
+
+Simularon una **altercación violenta**, sacaron al supuesto técnico y
+pidieron ver **cajas fuertes y llaves** «para comprobar que no faltaba
+nada». Guy, que colecciona desde los **13 años** (empezó con un *double
+tournois* de **Enrique IV** que le dio su madre), oyó incluso que le habían
+robado **160 napoleones**: la cifra coincidía con lo que guardaba, y
+eso reforzó la farsa.
+
+Cuando abrió el cofre, **ya estaba vacío**. Los impostores se fueron
+con las llaves «a volver en veinte minutos» y no regresaron. El
+**parquet de Créteil** investiga **robo en banda organizada**; la
+sûreté territoriale del Val-de-Marne lleva el caso. No hay detenciones.
+
+## Qué se llevaron y cómo se cuenta el valor
+
+La prensa habla de unas **1.800 piezas** reunidas en **66 años**
+—numismática histórica, ediciones limitadas, medallas— y, sobre todo,
+**160 napoleones de oro**. Guy estima el perjuicio en **113.440 €** si
+se toma el napoleón a **709 €** el viernes 14 de agosto, cifra que TF1
+redondea a **113.600 €** e Infobae a **unos 110.000 €**. Es una
+**estimación de metal y de mercado inmediato**, no un catálogo pieza a
+pieza; el coleccionista insiste en la **pérdida sentimental** («la
+colección de toda una vida»).
+
+Frédéric Le Coënt (Alliance Police Nationale) describe estos **vols par
+fausse qualité** —suplantación de fontanero, técnico o policía— como
+cada vez más ensayados contra personas mayores. Guy se pregunta si lo
+marcaron por sus **revistas de coleccionista**; por ahora es una
+hipótesis suya, no un hecho acreditado.
+
+---
 
 ### BNCR reabre venta de monedas conmemorativas
 
@@ -1921,47 +2042,55 @@ Más detalles en la nota original de Diario Época.
 
 URL canónica: https://notofilia.com/noticias/convencion-sociedad-numismatica-saltillo-2026/
 
-> Acceso libre en el Museo del Desierto con 40–50 expositores, asesoría de piezas y la muestra Numisarte. Cartografías del signo.
+> La primera convención en el Museo del Desierto reunió expositores de varios estados, Numisarte y muestras del Banco de Coahuila.
 
 Fuente externa: [El Heraldo de Saltillo](https://elheraldodesaltillo.mx/2026/08/07/te-interesa-coleccionar-billetes-y-monedas-asiste-este-15-y-16-de-agosto-a-la-convencion-2026-de-la-sociedad-numismatica-de-saltillo/)
 
-La **Sociedad Numismática de Saltillo** convoca a su **convención 2026**
-los días **15 y 16 de agosto**, de **10:00 a 18:00**, en el lobby del
-**Museo del Desierto**. El acceso es **gratuito**. Entre **40 y 50
-expositores** de distintas partes de México presentarán monedas, billetes,
-medallas, fichas de hacienda, acciones y otro material numismático.
+La **Sociedad Numismática de Saltillo** celebró su **primera Convención
+Numismática Saltillo 2026** los días **15 y 16 de agosto** en el lobby del
+**Museo del Desierto**. El acceso fue **gratuito**. *El Heraldo de Saltillo*
+y *Posta* habían anunciado entre **40 y 50 expositores**; *El Diario de
+Coahuila*, que cubrió el encuentro ya en marcha, sitúa mesas llegadas de
+**Ciudad de México, Guadalajara y Nuevo León**, entre otros estados, con
+monedas, billetes, bonos, acciones, medallas y libros.
 
-## Para coleccionistas y principiantes
+## Intercambio y asesoría
 
-El encuentro espera a coleccionistas de Saltillo y de otras ciudades, a
-quien quiere iniciar una colección y a quien solo desee admirar piezas de
-distintos países y épocas. Habrá compra, venta e intercambio, literatura
-numismática y asesoría de expertos.
+El presidente de la sociedad, **Felipe Orlando García Flores** —el comité
+anunciado también incluía a **Felipe Bravo** y **José Antonio Delgado**—
+resumió el doble eje del fin de semana: el **coleccionismo se da con el
+evento comercial**; el conocimiento, con la exposición y los recorridos
+visuales. Hubo compra, venta e intercambio, literatura numismática y
+asesoría. *Posta* invitó a llevar piezas heredadas: la **antigüedad sola no
+fija el precio**; pesan el año, la tirada, la escasez y la demanda.
 
-*Posta* detalla que el comité organizador —**Felipe García Flores**,
-**Felipe Bravo** y **José Antonio Delgado**— invita a llevar monedas o
-billetes heredados para orientación sobre características e interés
-coleccionable. Subrayan que la **antigüedad sola no fija el precio**:
-pesan el año, la tirada, la escasez, rasgos particulares y la demanda del
-mercado; conviene contrastar con especialistas frente a cifras virales en
-redes.
+Entre los temas que suelen circular en estas mesas figuran **macuquinas**,
+plata, medallas, fichas de hacienda y series temáticas (Revolución,
+imperios, República, animales, países, ciudades, eventos y mundiales de
+fútbol, incluida **México 86**).
 
-Entre los temas y piezas que suelen circular en estas mesas figuran
-**macuquinas**, plata, medallas, fichas de hacienda y series temáticas
-(Revolución, imperios, República, animales, países, ciudades, eventos y
-mundiales de fútbol, incluida **México 86**). Los asistentes podrán
-descargar un **libro digital gratuito** mediante un código **QR**.
+El **biólogo Arturo González**, director del Museo del Desierto, dio la
+bienvenida en el acto inaugural.
 
-## Numisarte en el lobby
+## Numisarte y dos paseos visuales
 
-Como complemento, *Vanguardia* reporta la exposición **«Numisarte.
-Cartografías del signo»**, curada por **Homero Rodríguez** con apoyo de
-**Rafael Blando** y del grupo **PeCA** (con **Baby Solís**). Reúne obra de
-once artistas —entre ellos José Vera Matos, Christian Becerra, Gabriela
-González Leal, Fernando Sepúlveda, Marek Wolfryd, Omar Árcega, Daniel
-Ruanova, Alexis Mata, Cecilia Barreto y Francesco Bartolozzi— que
-intervienen monedas y billetes. Estará abierta el **15 y 16 de agosto**,
-de **10:00 a 18:00**, en el mismo lobby del museo.
+Como complemento, *Vanguardia* había adelantado **«Numisarte. Cartografías
+del signo»**, curada por **Homero Rodríguez** con apoyo de **Rafael Blando**
+y del grupo **PeCA** (con **Baby Solís**). García Flores, en *El Diario de
+Coahuila*, describe **Numis Arte** como una sinergia suya con Rodríguez:
+unas **15 piezas** de alrededor de **diez artistas** —entre ellos José Vera
+Matos, Christian Becerra, Gabriela González Leal, Fernando Sepúlveda,
+Rafael Blando y Alexis Mata— que intervienen monedas y billetes. *Vanguardia*
+había citado once nombres; ambas cuentas coinciden en el núcleo de la
+nómina.
+
+Se sumaron dos recorridos. **«Vive la Numismática»** presenta el **Banco de
+Coahuila**, que comenzó operaciones en **1898**, con sus primeros billetes y
+denominaciones. **«Papel moneda conmemorativo»** trata el billete como
+memoria: emisiones conmemorativas de varios países, la vida útil del papel
+y el **primer billete de polímero del mundo**, el **10 dólares australianos
+de 1988**. Para la ocasión, el **Museo Humanos Fractales** facilitó
+**billetes originales de Egipto**.
 
 ---
 

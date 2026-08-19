@@ -4703,6 +4703,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/noticias/billete-brunei-10000-dolares/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/noticias/billetes-1-dolar-coleccionistas/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -4987,6 +4993,12 @@
   <url>
     <loc>https://notofilia.com/noticias/primera-casa-moneda-filadelfia-firstival/</loc>
     <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/noticias/robo-napoleones-villejuif-2026/</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
