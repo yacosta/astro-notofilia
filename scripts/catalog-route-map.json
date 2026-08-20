@@ -172,6 +172,10 @@
     "legacyFile": "billete-colombia-banco-del-norte-5-pesos-1882.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+    "legacyFile": "billete-colombia-banco-hipotecario-5-pesos-1881.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-internacional-1-peso-1884/",
     "legacyFile": "billete-colombia-banco-internacional-1-peso-1884.dc.html"
   },
