@@ -5,13 +5,17 @@
 import { createHash } from 'node:crypto';
 import { writeFileSync } from 'node:fs';
 import path from 'node:path';
+import sharp from 'sharp';
 
 const SITE = 'https://notofilia.com';
 const ES_PATH = '/coleccion/ducado-oro-utrecht-1761/';
 const EN_PATH = '/en/collection/1761-utrecht-gold-ducat/';
 const IMG = '/uploads/1761-netherland-ducat-utrecht';
-const IMG_WIDTH = 3768;
-const IMG_HEIGHT = 2644;
+const heroMeta = await sharp(
+  path.join(process.cwd(), 'public/uploads/1761-netherland-ducat-utrecht.png'),
+).metadata();
+const IMG_WIDTH = heroMeta.width ?? 3768;
+const IMG_HEIGHT = heroMeta.height ?? 2644;
 const ZOOM_ID = 'utrecht-ducat-1761';
 
 const styles =
@@ -25,7 +29,7 @@ function pictureBlock(lang, alt, eager = true) {
 <button
             data-zoom-trigger="${ZOOM_ID}"
             aria-label="${alt.replace(/"/g, '&quot;')} — ${enlargeAria}"
-            style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in; background:#1c1a15; border-radius:4px; padding:24px;"
+            style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in; background:#ffffff; border-radius:4px; padding:16px;"
           >
             <picture>
               <source srcset="${IMG}-640.webp 640w, ${IMG}.webp ${IMG_WIDTH}w" sizes="(max-width: 792px) 100vw, 712px" type="image/webp" />
