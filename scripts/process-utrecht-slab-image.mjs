@@ -15,20 +15,28 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_BASE = path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht');
-const SOURCE =
-  process.env.SOURCE ||
-  path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht-source.png');
+const SOURCE_CANDIDATES = process.env.SOURCE
+  ? [process.env.SOURCE]
+  : [
+      path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht-source.png'),
+      path.join(ROOT, 'public/images/monedas/1761-netherland-ducat-utrecht.png'),
+      path.join(ROOT, 'images/monedas/1761-netherland-ducat-utrecht.png'),
+    ];
 
-if (!existsSync(SOURCE)) {
+const SOURCE = SOURCE_CANDIDATES.find((p) => existsSync(p));
+
+if (!SOURCE) {
   console.error(
     [
-      'Missing user-submitted slab photo.',
-      `Expected: ${SOURCE}`,
+      'Missing user-submitted slab photo from your collection.',
+      'Checked:',
+      ...SOURCE_CANDIDATES.map((p) => `  - ${p}`),
       '',
-      'Add your collection photo (full NGC slab, both faces) at that path, then re-run:',
+      'Commit your NGC slab photo (full frame, both faces) to any path above, then re-run:',
       '  node scripts/process-utrecht-slab-image.mjs',
       '  node scripts/write-ducado-utrecht-ficha.mjs',
       '',
+      'Chat attachments are not readable in the cloud agent — the file must be in the repo.',
       'Do not substitute NGC cert downloads or stock images for catalog specimen photos.',
     ].join('\n'),
   );
