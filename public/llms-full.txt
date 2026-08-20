@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 57 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -1198,8 +1198,12 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [15 monedas de EE.UU. con récords de subasta](https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/): De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El…
+- [Piden $5.699 por un combo del $1.000 Hidalgo](https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/): En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta…
+- [Coleccionistas de Rancagua y su patrimonio](https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/): El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.…
 - [BNCR reabre venta de monedas conmemorativas](https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/): El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.…
 - [La Paz exhibe monedas y billetes de Bolivia](https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/): El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad…
+- [Raúl Canales y 300 billetes chilenos](https://notofilia.com/noticias/raul-canales-billetes-chilenos-notafilia/): El rancagüino reúne más de 300 billetes: un banco particular de Curicó (c. 1880), un 2 pesos fiscal de 1898 y las «sábanas» de 5.000 pesos…
 - [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
 - [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
@@ -1257,6 +1261,146 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### 15 monedas de EE.UU. con récords de subasta
+
+URL canónica: https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/
+
+> De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El Diario NY.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/08/19/15-monedas-que-podrias-tener-guardadas-y-valen-una-fortuna/)
+
+**El Diario NY** (Raúl Rodríguez Cota, 19 de agosto de 2026) resume
+quince variedades estadounidenses cuyos precios de subasta van de miles
+de dólares a más de **un millón**. La nota recuerda, con **24/7 Wall
+St.**, que el año **no basta**: pesan autenticidad, el error exacto, la
+conservación y la certificación (**PCGS** o **NGC**). Hay falsos,
+retoques y golpes de troquel que imitan variedades.
+
+## De miles a récords
+
+1. **2004-D Wisconsin Extra Leaf High** — hoja extra junto a la mazorca;
+   un **MS65** High Leaf se vendió por **US$18.000** (2020).
+2. **1979-P Wide Rim Susan B. Anthony** — fecha pegada al borde; **MS67+**
+   a **US$8.268,75** (abril de 2025).
+3. **2000-P Cheerios Sacagawea** — unas **5.500** piezas de la promoción
+   de General Mills; un **MS68** a **US$10.200**.
+4. **1983 Doubled Die Reverse Lincoln** — duplicación en UNITED y ONE
+   CENT; **MS68 Red** a **US$7.050**.
+5. **1972 Type 2 Eisenhower** — islas bajo Florida poco definidas;
+   **MS66** a **US$14.400**.
+6. **1992-D Close AM Lincoln** — A y M de AMERICA casi juntas; poco más
+   de **100** conocidos; **MS65 Red** a **US$14.100**.
+7. **1972 Doubled Die Obverse Lincoln** — fecha y LIBERTY; **MS67+ Red**
+   a **US$14.400** (2019).
+8. **1990 No S Proof Lincoln** — prueba de San Francisco sin la **S**;
+   menos de **200**; hasta **US$20.700**.
+9. **1968 No S Proof Roosevelt Dime** — unas decenas; **PR67** a
+   **US$40.250**.
+10. **1937-D Three-Legged Buffalo** — pata del bisonte pulida; **MS66+**
+    a **US$99.875** (2021).
+11. **1955 Doubled Die Lincoln** — duplicación a simple vista; **MS65+
+    Red** a **US$114.000**.
+12. **1969-S Doubled Die Lincoln** — **MS64+ Red** a **US$97.600**
+    (enero de 2026).
+13. **1944-S Steel Lincoln** — dos conocidos sobre plancha de acero;
+    **US$490.500** (2025).
+14. **1975 No S Proof Roosevelt Dime** — dos ejemplares; **US$456.000**
+    (2019) y **US$506.250** (octubre de 2024).
+15. **1943-D Bronze Lincoln** — el único de Denver en bronce; venta
+    privada de **US$1,7 millones** (2010) y **US$840.000** (2021).
+
+Tener un centavo de 1943 o un dime de 1975 **no** implica esos precios:
+las piezas caras unen rareza documentada, grado alto y pedigrí de
+subasta. Más detalles en la nota de
+[El Diario NY](https://eldiariony.com/2026/08/19/15-monedas-que-podrias-tener-guardadas-y-valen-una-fortuna/).
+
+---
+
+### Piden $5.699 por un combo del $1.000 Hidalgo
+
+URL canónica: https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/
+
+> En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta cerrada.
+
+Fuente externa: [El Heraldo de México](https://heraldodemexico.com.mx/economia/2026/8/19/entregan-miles-de-pesos-al-afortunado-dueno-de-este-codiciado-billete-mexicano-871933.html)
+
+*El Heraldo de México* presenta como «miles de pesos» un **anuncio de
+Mercado Libre**: el vendedor **Cris y Damián** pide **$5.699** por un
+**combo** de una **onza de plata Coyolxauhqui** (el aviso indica **2002**)
+y un billete de **1.000 pesos** de **Miguel Hidalgo**. No es un remate
+cerrado ni un canje de Banxico.
+
+## Qué se ve en el ejemplar
+
+La foto del anuncio muestra un **$1.000** de la **Familia D1**: fecha
+**«México, D.F., 26 mar. 2002»**, **Serie A** y serial **B1776625**. El
+anverso lleva a Hidalgo y la **campana de Dolores**. Banxico puso esta
+denominación D1 en circulación el **15 de noviembre de 2004**
+(Circular-Telefax **E-64/2004**); mide **155 × 66 mm** y está impresa en
+**papel de algodón**. Hoy está **en proceso de retiro**: vale **1.000
+pesos** en pagos, pero los bancos ya no la reponen al público.
+
+La nota del Heraldo copia rasgos de seguridad del **$1.000 de la Familia
+F** (hilo 3D, circulación en **2008**). Ese tipo es otro diseño, también
+con Hidalgo y Guanajuato; el papel fotografiado es el D1 de 2002/2004.
+
+## Sobre el precio
+
+El facial del billete es **$1.000**. El resto del pedido cubre la **onza
+de plata** —el anuncio no prueba que sea una Libertad de Banxico— y la
+prima del vendedor. Un D1 corriente en buen estado suele cotizar cerca
+del facial más un recargo de colección, no «miles» por el papel solo.
+Conviene contrastar autenticidad, estado y metal con un especialista
+antes de pagar el combo.
+
+Más detalles en la nota de [El Heraldo de México](https://heraldodemexico.com.mx/economia/2026/8/19/entregan-miles-de-pesos-al-afortunado-dueno-de-este-codiciado-billete-mexicano-871933.html).
+
+---
+
+### Coleccionistas de Rancagua y su patrimonio
+
+URL canónica: https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/
+
+> El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.
+
+Fuente externa: [El Rancagüino](https://www.elrancaguino.cl/2026/08/18/coleccionistas-rancagua-historias-objetos/)
+
+El especial de **Fernando Ávila** en *El Rancagüino* (18 de agosto de
+2026) abre una puerta a **seis colecciones** de Rancagua. Para la
+numismática importan sobre todo las **monedas y medallas** de **Héctor
+Osorio** y el papel moneda de **Raúl Canales** (perfil aparte). El resto
+del reportaje —dispensadores PEZ, figuras de Sailor Moon, vinilos,
+vitrolas y herramientas de carpintería— muestra el mismo hábito de
+guardar memoria, sin ser catálogo de monedas.
+
+## Monedas, medallas y una agrupación
+
+Osorio lleva **tres décadas** reuniendo monedas, **fichas** y medallas
+chilenas. El texto cita piezas ligadas a **O’Higgins**, **El Teniente** y
+el **Mundial de 1962**. El foco, dice el reportaje, está en explicar
+historia a niños y jóvenes, no en exhibir un precio.
+
+El diario identifica a la **Agrupación Cultural y Social de
+Coleccionistas Rancagua**, cercana a **veinte** integrantes. Participa
+en el **Día de los Patrimonios** y busca más espacios para mostrar los
+acervos. La cifra de socios y la agenda conviene confirmarlas con el
+grupo: el propio texto pide esa cautela.
+
+## Familias que heredan el oficio
+
+En la misma casa, el pequeño **Héctor Osorio** continúa los
+dispensadores PEZ de su abuela y **Laura Osorio** (10 años) las figuras
+de Sailor Moon de su madre. **Rodrigo Osorio** recuerda boletos,
+estampillas, Transformers y Los Caballeros del Zodiaco. Son hilos
+familiares, no fichas numismáticas, pero explican por qué el especial
+trata el coleccionismo como patrimonio cotidiano.
+
+Una muestra pública, coinciden los protagonistas, pide identificación,
+procedencia cuando se conoce y una explicación de época. Más detalles
+en [El Rancagüino](https://www.elrancaguino.cl/2026/08/18/coleccionistas-rancagua-historias-objetos/).
+
+---
 
 ### BNCR reabre venta de monedas conmemorativas
 
@@ -1343,6 +1487,56 @@ BCB**, encargada de preservar, investigar y difundir ese patrimonio:
 
 El museo, dependiente de esa fundación, invita a seguir el anuncio por sus
 redes. Más detalles en la nota de [Opinión](https://www.opinion.com.bo/articulo/cultura/bolsillo-vitrinas-exposicion-rescata-memoria-monedas-billetes-distintas-epocas-bolivia/20260817171016994882.html).
+
+---
+
+### Raúl Canales y 300 billetes chilenos
+
+URL canónica: https://notofilia.com/noticias/raul-canales-billetes-chilenos-notafilia/
+
+> El rancagüino reúne más de 300 billetes: un banco particular de Curicó (c. 1880), un 2 pesos fiscal de 1898 y las «sábanas» de 5.000 pesos de 1940.
+
+Fuente externa: [El Rancagüino](https://www.elrancaguino.cl/2026/08/17/raul-canales-billetes-chilenos-antiguos-notafilia/)
+
+**Raúl Canales**, de Rancagua, reúne más de **300 billetes chilenos**.
+*El Rancagüino* (Fernando Ávila, 17 de agosto de 2026) cuenta que el
+primer contacto fueron ejemplares de su **abuelo**; lleva más de una
+década especializado en papel moneda nacional. No busca solo completar
+denominaciones: ordena por **año, firmas, serie, banco emisor, diseño y
+conservación**. Completar todas las series, dice, sería una tarea
+prácticamente interminable.
+
+La **notafilia** estudia billetes y otros documentos de papel moneda.
+Está emparentada con la numismática (monedas y medallas); las
+estampillas corresponden a la **filatelia**.
+
+## Bancos particulares, fiscales y «sábanas»
+
+Entre lo más antiguo conserva un billete de un **banco particular de
+Curicó**, hacia la década de **1880**. El Banco Central documenta que
+los bancos privados quedaron autorizados desde **1860** a emitir
+billetes convertibles, hasta que en **1898** se les prohibió seguir
+emitiendo; el instituto emisor nació en **1925**.
+
+Destaca un **2 pesos** de la **emisión fiscal de 1898**, piezas de la
+**República de Chile** y un **5.000 pesos de 1940** de la serie conocida
+como **«las sábanas»** por su gran formato. Los de bancos particulares
+con **firmas originales**, según su experiencia, son los más difíciles
+de hallar.
+
+## Originales, mercado y presupuesto
+
+Canales afirma que sus ejemplares son originales y reconoce
+**falsificaciones de época**, que algunos coleccionan como documento.
+Compra en tiendas especializadas y en el **Persa Bío-Bío**. Sobre
+precios, habla de piezas desde unos **mil pesos** hasta ejemplares que
+pueden **superar el millón**: son referencias suyas de 2026, no una
+guía. El valor depende de autenticidad, rareza, demanda, estado, firmas
+y procedencia. Subraya que la afición no desplaza otras prioridades
+familiares.
+
+El perfil forma parte del especial de coleccionistas de Rancagua. Más
+detalles en [El Rancagüino](https://www.elrancaguino.cl/2026/08/17/raul-canales-billetes-chilenos-antiguos-notafilia/).
 
 ---
 
