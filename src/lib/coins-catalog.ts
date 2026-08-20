@@ -21,6 +21,7 @@ export type GroupedCoinCards = {
 };
 
 const REIGN_ORDER = [
+  'Provincias Unidas de los Países Bajos',
   'Reinado de Felipe V',
   'Reinado de Carlos III',
   'Reinado de Carlos IV',
@@ -28,6 +29,7 @@ const REIGN_ORDER = [
 ] as const;
 
 const COLONIAL_KICKER = 'Virreinato de la Nueva Granada · Ceca de Santa Fe de Bogotá';
+const NETHERLANDS_KICKER = 'República Neerlandesa · Ceca provincial de Utrecht';
 
 type CatalogIndex = {
   items: Array<{
@@ -53,6 +55,15 @@ type HubFile = {
 
 export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[number] {
   const blob = `${title} ${href}`.toLowerCase();
+  if (
+    blob.includes('utrecht') ||
+    blob.includes('ducado-oro-utrecht') ||
+    blob.includes('paises bajos') ||
+    blob.includes('provincias unidas') ||
+    blob.includes('1761-utrecht-gold-ducat')
+  ) {
+    return 'Provincias Unidas de los Países Bajos';
+  }
   if (blob.includes('felipe')) return 'Reinado de Felipe V';
   if (blob.includes('carlos iii') || blob.includes('carlos-iii')) return 'Reinado de Carlos III';
   if (blob.includes('carlos iv') || blob.includes('carlos-iv')) return 'Reinado de Carlos IV';
@@ -61,10 +72,14 @@ export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[num
 }
 
 export function withCoinGroup(card: CatalogCard): CatalogCard {
+  const group = card.group || coinReignFor(card.title, card.href);
+  const groupKicker =
+    card.groupKicker ||
+    (group === 'Provincias Unidas de los Países Bajos' ? NETHERLANDS_KICKER : COLONIAL_KICKER);
   return {
     ...card,
-    group: card.group || coinReignFor(card.title, card.href),
-    groupKicker: card.groupKicker || COLONIAL_KICKER,
+    group,
+    groupKicker,
   };
 }
 
