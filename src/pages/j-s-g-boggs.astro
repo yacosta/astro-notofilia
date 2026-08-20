@@ -118,7 +118,7 @@ const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing
               >&#43;</button>
             </div>
 
-            <div style="overflow:hidden; max-width:92vw; max-height:74vh; touch-action:none;">
+            <div style="overflow:hidden; max-width:calc(100vw - 16px); max-height:calc(100vh - 16px); touch-action:none;">
               <picture>
                 <source srcset="/uploads/jsg-boggs.webp" type="image/webp" />
                 <img
@@ -126,12 +126,12 @@ const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing
                   src="/uploads/jsg-boggs.jpg"
                   alt="Retrato de J.S.G. Boggs, vista ampliada"
                   draggable="false"
-                  style="display:block; max-width:92vw; max-height:74vh; width:auto; height:auto; cursor:zoom-in; user-select:none;"
+                  style="display:block; max-width:calc(100vw - 16px); max-height:calc(100vh - 16px); width:auto; height:auto; cursor:zoom-in; user-select:none;"
                 />
               </picture>
             </div>
 
-            <span style="margin-top:18px; font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic;">Arrastra para mover &middot; Rueda del ratón para ampliar</span>
+            <span style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic; pointer-events:none;">Arrastra para mover &middot; Rueda del ratón para ampliar</span>
           </div>
         </div>
 
