@@ -26,7 +26,7 @@ test('Boggs zoom percent is a static 100% fallback', async ({ page }) => {
   const response = await page.goto('/j-s-g-boggs/', { waitUntil: 'domcontentloaded' });
   expect(response?.ok()).toBeTruthy();
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
-  await expect(page.locator('script[src="/catalog-zoom.js"]')).toHaveCount(1);
+  await expect(page.locator('script[src^="/catalog-zoom.js"]')).toHaveCount(1);
   await expect(page.locator('[data-zoom-percent]')).toHaveText('100%');
 });
 
