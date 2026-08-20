@@ -412,7 +412,18 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await numismatica.locator(':scope > summary').click();
   await expect(numismatica).toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeVisible();
+
+  const monedasColombia = page.locator('#nav-sec-monedas-colombia');
+  await expect(monedasColombia).not.toHaveAttribute('open');
+  await monedasColombia.locator(':scope > summary').click();
+  await expect(monedasColombia).toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+
+  const monedasMundial = page.locator('#nav-sec-monedas-mundial');
+  await expect(monedasMundial).not.toHaveAttribute('open');
+  await monedasMundial.locator(':scope > summary').click();
+  await expect(monedasMundial).toHaveAttribute('open');
+  await expect(drawer.getByRole('link', { name: /Utrecht, 1761/ })).toBeVisible();
 
   await notafilia.locator(':scope > summary').click();
   await expect(notafilia).toHaveAttribute('open');
