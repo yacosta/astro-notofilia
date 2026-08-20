@@ -1,0 +1,14 @@
+---
+description: Never edit or replace user-submitted catalog specimen images
+alwaysApply: true
+---
+
+# Catalog — submitted images are read-only
+
+When building or updating catalog fichas (`src/content/catalog/`, `/coleccion/`, `/en/collection/`):
+
+- **Do not replace** user-submitted photos with Wikimedia, auction, NGC/PCGS, or other external images.
+- **Do not edit** the photograph (no cropping slabs/holders, no compositing separate faces, no placeholders).
+- **If the file is missing**, ask the user to attach or commit it — do not substitute.
+
+Full workflow: `.cursor/skills/catalog-submitted-images/SKILL.md`
