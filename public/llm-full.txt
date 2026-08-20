@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 215 billetes en 114 fichas, 8 monedas, 33 países, 145 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 216 billetes en 115 fichas, 8 monedas, 33 países, 146 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 114 fichas · 215 billetes · 8 monedas · 33 países · 145 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 115 fichas · 216 billetes · 8 monedas · 33 países · 146 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -103,6 +103,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Un Peso y Cinco Pesos, El Banco de Panamá](https://notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/): Ficha de catálogo numismático: billetes…
 - [Un Peso y Cinco Pesos, El Banco del Cauca (1888)](https://notofilia.com/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/): Ficha de catálogo numismático: billetes de Un Peso y Cinco Pesos de El Banco del Cauca, Cali, 16 de mayo de 1888…
 - [Cinco Pesos, El Banco del Norte, Socorro (1882)](https://notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/): Ficha de catálogo numismático: billete de 5 pesos de El Banco del Norte, Socorro, Santander, 1882, banca libre colombiana del siglo XIX.
+- [Cinco Pesos, Banco Hipotecario (1881)](https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/): Pruebas PMG 61 del 5 pesos del Banco Hipotecario de Bogotá, 1881 (Pick S511p). Colección Notofilia.
 - [Un Peso y Diez Pesos, El Banco Internacional](https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/): Ficha de catálogo numismático: billetes de Un Peso y Diez Pesos de El Banco Internacional, Bogotá, 1884…
 - [Banco Nacional de Colombia: Serie 1895](https://notofilia.com/coleccion/colombia/banco-nacional-25-pesos-1895/): Ficha de catálogo numismático: billetes de Diez Centavos (1885, 1893), Un Peso y Cinco Pesos (Guerra de los Mil Días, 1899–1900)…
 - [Un Peso, El Banco Unión (Cartagena, 188X)](https://notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/): Ficha de catálogo numismático: billete de Un Peso de El Banco Unión, Cartagena, Colombia, década de 1880, con viñeta central de un velero.
