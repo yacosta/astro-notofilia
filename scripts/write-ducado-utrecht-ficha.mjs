@@ -10,6 +10,8 @@ const SITE = 'https://notofilia.com';
 const ES_PATH = '/coleccion/ducado-oro-utrecht-1761/';
 const EN_PATH = '/en/collection/1761-utrecht-gold-ducat/';
 const IMG = '/uploads/1761-netherland-ducat-utrecht';
+const IMG_WIDTH = 3768;
+const IMG_HEIGHT = 2644;
 const ZOOM_ID = 'utrecht-ducat-1761';
 
 const styles =
@@ -26,12 +28,12 @@ function pictureBlock(lang, alt, eager = true) {
             style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in; background:#1c1a15; border-radius:4px; padding:24px;"
           >
             <picture>
-              <source srcset="${IMG}-640.webp 640w, ${IMG}.webp 1576w" sizes="(max-width: 792px) 100vw, 712px" type="image/webp" />
+              <source srcset="${IMG}-640.webp 640w, ${IMG}.webp ${IMG_WIDTH}w" sizes="(max-width: 792px) 100vw, 712px" type="image/webp" />
               <img
                 src="${IMG}.png"
                 alt="${alt.replace(/"/g, '&quot;')}"
-                width="1576"
-                height="1024"
+                width="${IMG_WIDTH}"
+                height="${IMG_HEIGHT}"
                 loading="${loading}"
                 decoding="async"
                 style="display:block; width:100%; height:auto;"
@@ -317,10 +319,10 @@ const data = {
       stacked: {
         src: `${IMG}.png`,
         srcWebp: `${IMG}.webp`,
-        alt: 'Ducado de oro de Utrecht de 1761, anverso con caballero de pie y reverso con tablilla de leyenda',
-        altEn: '1761 Utrecht gold ducat, obverse with standing knight and reverse with inscribed tablet',
-        width: 1576,
-        height: 1024,
+        alt: 'Ducado de oro de Utrecht de 1761 en cápsula NGC, anverso con caballero de pie y reverso con tablilla de leyenda',
+        altEn: '1761 Utrecht gold ducat in NGC holder, obverse with standing knight and reverse with inscribed tablet',
+        width: IMG_WIDTH,
+        height: IMG_HEIGHT,
       },
       defaultView: 'stacked',
     },
