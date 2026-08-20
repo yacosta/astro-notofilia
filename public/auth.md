@@ -108,6 +108,7 @@ Useful discovery documents:
 - OpenAPI: `/openapi.json`
 - MCP Server Card: `/.well-known/mcp/server-card.json`
 - Agent index (DNS-AID HTTP): `/.well-known/agent-index.json`
+- Agent Skills index: `/.well-known/agent-skills/index.json`
 
 ## Step 7 — Revoke
 

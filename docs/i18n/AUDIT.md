@@ -107,7 +107,7 @@ These are treated as hubs (not piece fichas) for inventory stats:
 | `/openapi.json` | static | Allow |
 | `/data/catalog-index.json` | `scripts/generate-catalog-index.mjs` | machine |
 | `/indexnow-key.txt`, `/a3190f98-e644-4a96-bda0-fa87530608ef.txt` | IndexNow | n/a |
-| `/.well-known/mcp.json`, `mcp/server-card.json`, `jwks.json`, `agent-index.json`, key txt | agent/OAuth | mixed |
+| `/.well-known/mcp.json`, `mcp/server-card.json`, `jwks.json`, `agent-index.json`, `agent-skills/index.json`, key txt | agent/OAuth | mixed |
 | `/oauth/authorize/`, `/oauth/claim/` | `public/oauth/*/index.html` | **noindex**; `robots.txt` Disallow `/oauth/` |
 | `/support.js` | legacy dc-runtime (still shipped) | not HTML |
 | `/catalog-zoom.js`, `/coleccion-hub.js`, `/webmcp.js`, `/web-vitals.js` | public JS | not HTML |

@@ -67,6 +67,7 @@ async function handleToolCall(name, args, origin) {
         authMd: 'https://notofilia.com/auth.md',
         openapi: 'https://notofilia.com/openapi.json',
         agentIndex: 'https://notofilia.com/.well-known/agent-index.json',
+        agentSkills: 'https://notofilia.com/.well-known/agent-skills/index.json',
       },
     };
     return {

@@ -14,6 +14,7 @@ This site publishes the machine-readable surfaces scanned by
 | Web Bot Auth JWKS directory | `/.well-known/http-message-signatures-directory` |
 | OpenAPI | `/openapi.json` |
 | Agent index (DNS-AID HTTP) | `/.well-known/agent-index.json` |
+| Agent Skills index | `/.well-known/agent-skills/index.json` |
 | llms.txt (llmstxt.org) | `/llms.txt` (alias `/llm.txt`) |
 | llms-full.txt | `/llms-full.txt` (alias `/llm-full.txt`) |
 | Health | `/api/health` |
@@ -29,6 +30,17 @@ Generated at build time by `scripts/generate-llms-txt.mjs` (wired into `prebuild
 - `/llms-full.txt` — full catalog inventory plus full blog/noticias Markdown bodies.
 
 Both are Spanish-first, state clearly that pieces are **not for sale**, and point agents at `/api/catalog` and `/mcp`.
+
+## Agent Skills
+
+The public MCP/WebMCP/REST tools are listed at
+[`/.well-known/agent-skills/index.json`](https://notofilia.com/.well-known/agent-skills/index.json)
+(Cloudflare Agent Skills Discovery RFC v0.2.0). Each entry points at a
+`SKILL.md` under `public/.well-known/agent-skills/<name>/` with a SHA-256
+`digest` of that file's raw bytes.
+
+`scripts/generate-agent-skills-index.mjs` rebuilds the index from those files
+(wired into `prebuild`). Do not hand-edit `index.json`.
 
 ## Markdown for Agents
 

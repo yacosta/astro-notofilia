@@ -375,6 +375,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
   lines.push(linkLine('MCP (Streamable HTTP)', abs('/mcp'), 'Herramientas de solo lectura: catalog.search, site.info, health.check.'));
   lines.push(linkLine('MCP server card', abs('/.well-known/mcp/server-card.json'), 'Descubrimiento MCP.'));
   lines.push(linkLine('Agent index', abs('/.well-known/agent-index.json'), 'Índice DNS-AID / agentes publicados.'));
+  lines.push(linkLine('Agent Skills index', abs('/.well-known/agent-skills/index.json'), 'Catálogo de habilidades del agente (RFC v0.2.0).'));
   lines.push(linkLine('API Catalog (RFC 9727)', abs('/.well-known/api-catalog'), 'Linkset de servicios.'));
   lines.push(linkLine('Auth notes', abs('/auth.md'), 'Notas de autenticación para agentes.'));
   lines.push(linkLine('Sitemap', abs('/sitemap_index.xml'), 'Mapa completo de URLs indexables.'));

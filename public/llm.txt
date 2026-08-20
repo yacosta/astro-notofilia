@@ -154,6 +154,7 @@ Aún no hay resúmenes mensuales publicados.
 - [MCP (Streamable HTTP)](https://notofilia.com/mcp): Herramientas de solo lectura: catalog.search, site.info, health.check.
 - [MCP server card](https://notofilia.com/.well-known/mcp/server-card.json): Descubrimiento MCP.
 - [Agent index](https://notofilia.com/.well-known/agent-index.json): Índice DNS-AID / agentes publicados.
+- [Agent Skills index](https://notofilia.com/.well-known/agent-skills/index.json): Catálogo de habilidades del agente (RFC v0.2.0).
 - [API Catalog (RFC 9727)](https://notofilia.com/.well-known/api-catalog): Linkset de servicios.
 - [Auth notes](https://notofilia.com/auth.md): Notas de autenticación para agentes.
 - [Sitemap](https://notofilia.com/sitemap_index.xml): Mapa completo de URLs indexables.

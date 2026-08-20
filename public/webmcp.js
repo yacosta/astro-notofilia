@@ -73,6 +73,8 @@
             openapi: '/openapi.json',
             oauthProtectedResource: '/.well-known/oauth-protected-resource',
             oauthAuthorizationServer: '/.well-known/oauth-authorization-server',
+            agentIndex: '/.well-known/agent-index.json',
+            agentSkills: '/.well-known/agent-skills/index.json',
           },
         };
       },

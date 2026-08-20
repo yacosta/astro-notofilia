@@ -11,9 +11,16 @@ const WELL_KNOWN_TYPES = {
   '/.well-known/mcp/server-card.json': 'application/json; charset=utf-8',
   '/.well-known/mcp.json': 'application/json; charset=utf-8',
   '/.well-known/agent-index.json': 'application/json; charset=utf-8',
+  '/.well-known/agent-skills/index.json': 'application/json; charset=utf-8',
   '/auth.md': 'text/markdown; charset=utf-8',
   '/openapi.json': 'application/vnd.oai.openapi+json; charset=utf-8',
 };
+
+const AGENT_SKILL_MD = /^\/\.well-known\/agent-skills\/[a-z0-9]+(?:-[a-z0-9]+)*\/SKILL\.md$/;
+
+function agentSkillMarkdownType(pathname) {
+  return AGENT_SKILL_MD.test(pathname) ? 'text/markdown; charset=utf-8' : null;
+}
 
 /** Baseline security headers. Prefer existing edge values when already set. */
 const SECURITY_HEADERS = {
@@ -78,7 +85,10 @@ export async function onRequest(context) {
 
   const response = await context.next();
 
-  const wellKnownType = WELL_KNOWN_TYPES[pathname] || WELL_KNOWN_TYPES[url.pathname];
+  const wellKnownType =
+    WELL_KNOWN_TYPES[pathname] ||
+    WELL_KNOWN_TYPES[url.pathname] ||
+    agentSkillMarkdownType(pathname);
   if (wellKnownType) {
     return withSecurityHeaders(withContentType(response, wellKnownType));
   }

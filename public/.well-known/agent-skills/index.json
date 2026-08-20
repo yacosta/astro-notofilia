@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "get-site-info",
+      "type": "skill-md",
+      "description": "Return Notofilia site identity and the URLs of agent discovery documents (MCP, OpenAPI, OAuth, llms.txt, skills index). Use when bootstrapping an agent or listing how to talk to the site.",
+      "url": "/.well-known/agent-skills/get-site-info/SKILL.md",
+      "digest": "sha256:80fde70e37c705b313469901fd97bbbc282ccf770e01844dea78589369646fe5"
+    },
+    {
+      "name": "health-check",
+      "type": "skill-md",
+      "description": "Check whether Notofilia agent APIs are healthy. Use before catalog search or when diagnosing a failed MCP/REST call.",
+      "url": "/.well-known/agent-skills/health-check/SKILL.md",
+      "digest": "sha256:d3359ab324f2e59e353988c2e683604e564630ff1aad5c17ccb3dfac19d5a9c4"
+    },
+    {
+      "name": "list-comments",
+      "type": "skill-md",
+      "description": "List approved public comments on a Noticias article by slug. Use for read-only discussion context. Posting a comment is out of scope (Turnstile and/or claimed agent identity).",
+      "url": "/.well-known/agent-skills/list-comments/SKILL.md",
+      "digest": "sha256:b770701ab57a538dc11d8b129d897a8d0a869ebe9aac979d7520ac10b9eae934"
+    },
+    {
+      "name": "open-path",
+      "type": "skill-md",
+      "description": "Navigate a browser already on Notofilia to a site-relative path. Use with WebMCP when a human or browser agent should open a catalog hub, ficha, or editorial page.",
+      "url": "/.well-known/agent-skills/open-path/SKILL.md",
+      "digest": "sha256:2388694f4075a2185531ca03e69d512debe3aaba3cb35b08efa9235d42eaae45"
+    },
+    {
+      "name": "search-catalog",
+      "type": "skill-md",
+      "description": "Search Notofilia's historical banknote and coin catalog by title, path, or keywords. Use when an agent needs to find a ficha, confirm whether a piece is documented, or list matching catalog URLs. Pieces are not for sale.",
+      "url": "/.well-known/agent-skills/search-catalog/SKILL.md",
+      "digest": "sha256:945f352796deeb10b24d229fa94f2ce56616dfd20ccf2f2afd04b9aa01894b7d"
+    }
+  ]
+}
