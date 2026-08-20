@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-token-efficiency": {
+      "source": "Keep-maker/agent-token-efficiency-skill",
+      "sourceType": "github",
+      "skillPath": "skills/agent-token-efficiency/SKILL.md",
+      "computedHash": "19ccd5b066201c4d6e08183a756d32dc9c8894b6f63e10efbfdcb5ee0a481264"
+    }
+  }
+}
