@@ -23,7 +23,7 @@ for (const pageDef of PAGES) {
 
       if (pageDef.path.startsWith('/coleccion/') && pageDef.path !== '/coleccion/') {
         await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
-        await expect(page.locator('script[src="/catalog-zoom.js"]')).toHaveCount(1);
+        await expect(page.locator('script[src^="/catalog-zoom.js"]')).toHaveCount(1);
         await expect(page.locator('[data-catalog-record]').first()).toBeVisible();
       }
     });
