@@ -19,6 +19,7 @@ const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
       path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht-source.png'),
+      path.join(ROOT, 'public/uploads/1761 Netherland Ducat Utrecht.png'),
       path.join(ROOT, 'public/images/monedas/1761-netherland-ducat-utrecht.png'),
       path.join(ROOT, 'images/monedas/1761-netherland-ducat-utrecht.png'),
     ];
