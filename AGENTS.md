@@ -23,3 +23,10 @@
   built HTML is a release blocker (this site has been burned by this before).
 - Do not degrade: existing GA tagging, Cloudflare Image Transformations / srcset /
   lightbox markup, or `astro check` cleanliness.
+
+## Catalog submitted images
+
+When adding or updating a catalog ficha, read and follow `.cursor/skills/catalog-submitted-images/SKILL.md`.
+**Never edit or replace** user-submitted specimen photos (no stock substitutes, compositing, or
+cropping holders). If the attachment is missing in the agent environment, stop and ask for the
+file — do not ship a placeholder image.
