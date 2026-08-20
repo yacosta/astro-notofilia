@@ -20,24 +20,26 @@
     });
     const img = qs(dialog, '[data-zoom-image]') || qs(dialog, 'img');
     if (!img) return;
-    img.style.maxWidth = 'min(96vw, 100%)';
-    img.style.maxHeight = 'min(92vh, 100%)';
+    img.style.maxWidth = 'calc(100vw - 16px)';
+    img.style.maxHeight = 'calc(100vh - 16px)';
     img.style.width = 'auto';
     img.style.height = 'auto';
-    img.removeAttribute('width');
-    img.removeAttribute('height');
     const wrap = img.closest('div');
     if (wrap && wrap !== dialog) {
-      wrap.style.maxWidth = '96vw';
-      wrap.style.maxHeight = '92vh';
+      wrap.style.maxWidth = 'calc(100vw - 16px)';
+      wrap.style.maxHeight = 'calc(100vh - 16px)';
       wrap.style.overflow = 'hidden';
     }
-    // Force a re-evaluation of srcset after sizes change (full-res candidate).
-    if (img.currentSrc || img.src) {
-      const previous = img.getAttribute('src');
-      if (previous) {
-        img.setAttribute('src', previous);
+    // Nudge the browser to re-pick srcset after sizes change (full-res candidate).
+    const picture = img.closest('picture');
+    if (picture) {
+      const source = picture.querySelector('source[srcset]');
+      if (source) {
+        const srcset = source.getAttribute('srcset');
+        source.setAttribute('srcset', srcset);
       }
+    } else if (img.getAttribute('srcset')) {
+      img.setAttribute('srcset', img.getAttribute('srcset'));
     }
   }
 
