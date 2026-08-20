@@ -194,6 +194,23 @@ const skipLabel = t('skipMain', locale);
         align-items: center !important;
         justify-content: center !important;
       }
+      /* Ampliar: use nearly the full viewport; do not cap tall proofs at 74vh
+         (that made portrait images smaller than the in-page 560px display). */
+      [data-zoom-dialog][data-open="true"] img,
+      .catalog-zoom-dialog[data-open="true"] img {
+        max-width: min(96vw, 100%) !important;
+        max-height: min(92vh, 100%) !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+      [data-zoom-dialog][data-open="true"] div:has(> picture),
+      [data-zoom-dialog][data-open="true"] div:has(> img),
+      .catalog-zoom-dialog[data-open="true"] div:has(> picture),
+      .catalog-zoom-dialog[data-open="true"] div:has(> img) {
+        max-width: 96vw !important;
+        max-height: 92vh !important;
+      }
       @media (max-width: 640px) {
         .catalog-shell [style*="background:#d8d2cd"],
         .catalog-shell [style*="background: rgb(216, 210, 205)"] {

@@ -8,8 +8,42 @@
     return root.querySelector(sel);
   }
 
+  /**
+   * Fit the zoomed image to the viewport at native resolution.
+   * Catalog templates historically used max-height:74vh + sizes=560px, which
+   * made tall proofs smaller than the in-page image and loaded the 640w WebP.
+   */
+  function prepareFullSizeImage(dialog) {
+    if (!dialog) return;
+    dialog.querySelectorAll('source[sizes], img[sizes]').forEach(function (el) {
+      el.setAttribute('sizes', 'min(96vw, 100vw)');
+    });
+    const img = qs(dialog, '[data-zoom-image]') || qs(dialog, 'img');
+    if (!img) return;
+    img.style.maxWidth = 'min(96vw, 100%)';
+    img.style.maxHeight = 'min(92vh, 100%)';
+    img.style.width = 'auto';
+    img.style.height = 'auto';
+    img.removeAttribute('width');
+    img.removeAttribute('height');
+    const wrap = img.closest('div');
+    if (wrap && wrap !== dialog) {
+      wrap.style.maxWidth = '96vw';
+      wrap.style.maxHeight = '92vh';
+      wrap.style.overflow = 'hidden';
+    }
+    // Force a re-evaluation of srcset after sizes change (full-res candidate).
+    if (img.currentSrc || img.src) {
+      const previous = img.getAttribute('src');
+      if (previous) {
+        img.setAttribute('src', previous);
+      }
+    }
+  }
+
   function openDialog(dialog, trigger) {
     if (!dialog) return;
+    prepareFullSizeImage(dialog);
     dialog.hidden = false;
     dialog.style.display = 'flex';
     dialog.dataset.open = 'true';

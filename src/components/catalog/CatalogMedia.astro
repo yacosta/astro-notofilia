@@ -147,9 +147,11 @@ const viewsJson = JSON.stringify(views);
           </button>
           <img
             data-catalog-dialog-img
-            src={initial.image.src}
+            src={initial.image.srcWebp || initial.image.src}
             alt={initial.image.alt}
-            class="max-w-[min(1100px,94vw)] max-h-[86vh] w-auto h-auto object-contain"
+            width={initial.image.width}
+            height={initial.image.height}
+            class="max-w-[min(96vw,100%)] max-h-[92vh] w-auto h-auto object-contain"
           />
         </div>
       </dialog>
