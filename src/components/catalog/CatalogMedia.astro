@@ -135,7 +135,7 @@ const viewsJson = JSON.stringify(views);
         class="m-0 p-0 border-0 bg-[rgba(10,10,9,0.94)] text-cream max-w-none max-h-none w-screen h-screen"
         data-catalog-dialog
       >
-        <div class="relative flex h-full w-full items-center justify-center p-4">
+        <div class="relative flex h-full w-full items-center justify-center p-0">
           <button
             type="button"
             class="absolute top-4 right-4 z-10 min-h-11 min-w-11 px-4 border border-line bg-bg text-cream cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
@@ -151,7 +151,7 @@ const viewsJson = JSON.stringify(views);
             alt={initial.image.alt}
             width={initial.image.width}
             height={initial.image.height}
-            class="max-w-[calc(100vw-16px)] max-h-[calc(100vh-16px)] w-auto h-auto object-contain"
+            class="max-w-none max-h-none w-screen h-screen object-contain"
           />
         </div>
       </dialog>
