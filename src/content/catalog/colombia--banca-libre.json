@@ -70,6 +70,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco Hipotecario — Cinco Pesos (1881)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "Banco de Barranquilla — Cincuenta Centavos (1900)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/"
           },
@@ -236,6 +241,17 @@
         "imageWebp": "/uploads/colombia-banco-de-caldas-1-peso-1919-specimen.webp",
         "alt": "Cédula hipotecaria especimen de Un Peso Oro Legal de El Banco de Caldas, Manizales, anverso y reverso",
         "altEn": "Cédula hipotecaria especimen de One Legal Gold Peso de El Banco de Caldas, Manizales, obverse and reverse"
+      },
+      {
+        "href": "/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+        "title": "El Banco Hipotecario",
+        "denomination": "Cinco Pesos (pruebas)",
+        "year": "1881",
+        "image": "/uploads/colombia-banco-hipotecario-5-pesos-1881.jpg",
+        "imageWebp": "/uploads/colombia-banco-hipotecario-5-pesos-1881.webp",
+        "alt": "Pruebas PMG del 5 pesos del Banco Hipotecario de Bogotá, 1881, anverso y reverso encapsulados",
+        "altEn": "PMG proofs of the Banco Hipotecario 5 pesos of Bogotá, 1881, encapsulated obverse and reverse",
+        "titleEn": "El Banco Hipotecario"
       },
       {
         "href": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",

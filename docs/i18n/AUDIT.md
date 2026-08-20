@@ -720,6 +720,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/banco-de-panama-1-5-pesos/` | `/en/collection/colombia/banco-de-panama-1-5-pesos/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/` | `/en/collection/colombia/banco-del-cauca-1-5-pesos-1888/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-del-norte-5-pesos-1882/` | `/en/collection/colombia/banco-del-norte-5-pesos-1882/` | catalog IDs stay untranslated in copy; issuer name kept |
+| banknote | `/coleccion/colombia/banco-hipotecario-5-pesos-1881/` | `/en/collection/colombia/banco-hipotecario-5-pesos-1881/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-internacional-1-peso-1884/` | `/en/collection/colombia/banco-internacional-1-peso-1884/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-nacional-25-pesos-1895/` | `/en/collection/colombia/banco-nacional-25-pesos-1895/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-union-cartagena-1-peso-1880s/` | `/en/collection/colombia/banco-union-cartagena-1-peso-1880s/` | catalog IDs stay untranslated in copy; issuer name kept |

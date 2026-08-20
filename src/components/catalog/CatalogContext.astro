@@ -5,13 +5,15 @@
 import type { CatalogRecord } from '../../lib/catalog-record';
 import NewWindowHint from '../NewWindowHint.astro';
 import { lookupEn } from '../../lib/html-i18n';
-import { UI } from '../../lib/ui-i18n';
+import { UI, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
+  locale?: Locale;
 }
 
-const { record } = Astro.props;
+const { record, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const ctx = record.context;
 const sources = record.sources ?? [];
 const blocks = [
@@ -23,16 +25,34 @@ const blocks = [
 ---
 {
   (blocks.length > 0 || sources.length > 0) && (
-    <section class="catalog-record-context grid gap-8" aria-label="Información de apoyo" data-i18n data-i18n-target="aria-label" data-en={UI.catalogSupport.en}>
+    <section
+      class="catalog-record-context grid gap-8"
+      aria-label={isEn ? UI.catalogSupport.en : UI.catalogSupport.es}
+      data-i18n={isEn ? undefined : true}
+      data-i18n-target={isEn ? undefined : 'aria-label'}
+      data-en={isEn ? undefined : UI.catalogSupport.en}
+    >
       {
-        blocks.map((block) => (
+        blocks.map((block) => {
+          const bodyEn = lookupEn(block.body);
+          const bodyVisible = isEn ? (bodyEn ?? block.body) : block.body;
+          return (
           <div>
-            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream" data-i18n data-en={block.titleEn}>
-              {block.title}
+            <h2
+              class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : block.titleEn}
+            >
+              {isEn ? block.titleEn : block.title}
             </h2>
-            <p class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line" data-i18n={lookupEn(block.body) ? true : undefined} data-en={lookupEn(block.body)}>{block.body}</p>
+            <p
+              class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line"
+              data-i18n={!isEn && bodyEn ? true : undefined}
+              data-en={!isEn ? bodyEn : undefined}
+            >{bodyVisible}</p>
           </div>
-        ))
+          );
+        })
       }
       {
         sources.length > 0 && (
@@ -40,14 +60,21 @@ const blocks = [
             <h2
               id="catalog-sources-heading"
               class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
-              data-i18n
-              data-en={UI.sources.en}
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : UI.sources.en}
             >
-              {UI.sources.es}
+              {isEn ? UI.sources.en : UI.sources.es}
             </h2>
             <ol class="m-0 pl-5 grid gap-2 text-[16px] leading-[1.6] text-cream-dim" aria-labelledby="catalog-sources-heading">
               {
-                sources.map((source, index) => (
+                sources.map((source, index) => {
+                  const labelEn = lookupEn(source.label);
+                  const noteEn = source.note ? lookupEn(source.note) : undefined;
+                  const labelVisible = isEn ? (labelEn ?? source.label) : source.label;
+                  const noteVisible = source.note
+                    ? (isEn ? (noteEn ?? source.note) : source.note)
+                    : undefined;
+                  return (
                   <li id={`catalog-source-${index + 1}`}>
                     {source.url ? (
                       <a
@@ -56,14 +83,15 @@ const blocks = [
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {source.label}<NewWindowHint />
+                        {labelVisible}<NewWindowHint lang={isEn ? 'en' : 'es'} />
                       </a>
                     ) : (
-                      <span>{source.label}</span>
+                      <span>{labelVisible}</span>
                     )}
-                    {source.note ? <span> — {source.note}</span> : null}
+                    {noteVisible ? <span> — {noteVisible}</span> : null}
                   </li>
-                ))
+                  );
+                })
               }
             </ol>
           </div>

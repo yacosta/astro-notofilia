@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-20T10:43:47.045Z",
-  "count": 130,
-  "pieceCount": 114,
+  "generatedAt": "2026-08-20T11:25:07.519Z",
+  "count": 131,
+  "pieceCount": 115,
   "stats": {
-    "billetes": 215,
+    "billetes": 216,
     "monedas": 8,
     "paises": 33,
-    "fichas": 114,
-    "paginas": 145
+    "fichas": 115,
+    "paginas": 146
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 43,
+      "count": 44,
       "slug": "colombia"
     },
     {
@@ -1653,6 +1653,37 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "cinco pesos, el banco del norte, socorro (1882) ficha de catálogo numismático: billete de 5 pesos de el banco del norte, socorro, santander, 1882, banca libre colombiana del siglo xix. colombia el banco del norte, banco privado establecido en la provincia de santander cinco pesos pick n.&deg; s722 papel banknote banco del norte socorro santander billete colombiano siglo xix banca libre colombia cinco pesos 1882 numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-hipotecario-5-pesos-1881",
+      "path": "/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+      "title": "Cinco Pesos, Banco Hipotecario (1881)",
+      "description": "Pruebas PMG 61 del 5 pesos del Banco Hipotecario de Bogotá, 1881 (Pick S511p). Colección Notofilia.",
+      "keywords": [
+        "banco hipotecario",
+        "banco hipotecario bogota",
+        "cinco pesos 1881",
+        "pick s511",
+        "prueba abnc",
+        "banca libre colombia",
+        "american bank note company",
+        "pmg 61"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+      "image": "/uploads/colombia-banco-hipotecario-5-pesos-1881.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco Hipotecario, Bogotá",
+      "denomination": "Cinco Pesos",
+      "catalogRef": "Pick S511p1 (anverso) / S511p2 (reverso)",
+      "condition": "",
+      "emissionType": "Pruebas de imprenta (front proof / back proof) de un billete al portador en moneda corriente. El ejemplar mostrado no es un billete emitido para circulación.",
+      "dateLabel": "",
+      "year": 1881,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "cinco pesos, banco hipotecario (1881) pruebas pmg 61 del 5 pesos del banco hipotecario de bogotá, 1881 (pick s511p). colección notofilia. colombia el banco hipotecario, bogotá cinco pesos pick s511p1 (anverso) / s511p2 (reverso) papel banknote banco hipotecario banco hipotecario bogota cinco pesos 1881 pick s511 prueba abnc banca libre colombia american bank note company pmg 61"
     },
     {
       "id": "colombia--banco-internacional-1-peso-1884",

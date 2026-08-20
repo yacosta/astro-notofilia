@@ -4,30 +4,53 @@
  */
 import type { CatalogRecord } from '../../lib/catalog-record';
 import { lookupEn } from '../../lib/html-i18n';
-import { UI } from '../../lib/ui-i18n';
+import { alternateUrl } from '../../i18n/pairs';
+import { UI, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
+  locale?: Locale;
 }
 
-const { record } = Astro.props;
+const { record, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const related = record.related ?? [];
 const hasNav = Boolean(record.previous || record.next || related.length);
+
+function hrefFor(path: string): string {
+  return isEn ? (alternateUrl(path, 'en') ?? path) : path;
+}
+
+function titleFor(title: string): string {
+  return isEn ? (lookupEn(title) ?? title) : title;
+}
 ---
 {
   hasNav && (
-    <section class="catalog-record-nav grid gap-6" aria-label="Navegación entre fichas" data-i18n data-i18n-target="aria-label" data-en={UI.recordNav.en}>
+    <section
+      class="catalog-record-nav grid gap-6"
+      aria-label={isEn ? UI.recordNav.en : UI.recordNav.es}
+      data-i18n={isEn ? undefined : true}
+      data-i18n-target={isEn ? undefined : 'aria-label'}
+      data-en={isEn ? undefined : UI.recordNav.en}
+    >
       {
         (record.previous || record.next) && (
-          <nav class="flex flex-wrap justify-between gap-4" aria-label="Ficha anterior y siguiente" data-i18n data-i18n-target="aria-label" data-en={UI.prevNext.en}>
+          <nav
+            class="flex flex-wrap justify-between gap-4"
+            aria-label={isEn ? UI.prevNext.en : UI.prevNext.es}
+            data-i18n={isEn ? undefined : true}
+            data-i18n-target={isEn ? undefined : 'aria-label'}
+            data-en={isEn ? undefined : UI.prevNext.en}
+          >
             {
               record.previous ? (
                 <a
                   class="min-h-11 inline-flex items-center text-[15px] text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-                  href={record.previous.href}
+                  href={hrefFor(record.previous.href)}
                   rel="prev"
                 >
-                  ← <span data-i18n={lookupEn(record.previous.title) ? true : undefined} data-en={lookupEn(record.previous.title)}>{record.previous.title}</span>
+                  ← <span data-i18n={!isEn && lookupEn(record.previous.title) ? true : undefined} data-en={!isEn ? lookupEn(record.previous.title) : undefined}>{titleFor(record.previous.title)}</span>
                 </a>
               ) : (
                 <span />
@@ -37,10 +60,10 @@ const hasNav = Boolean(record.previous || record.next || related.length);
               record.next ? (
                 <a
                   class="min-h-11 inline-flex items-center text-[15px] text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-                  href={record.next.href}
+                  href={hrefFor(record.next.href)}
                   rel="next"
                 >
-                  <span data-i18n={lookupEn(record.next.title) ? true : undefined} data-en={lookupEn(record.next.title)}>{record.next.title}</span> →
+                  <span data-i18n={!isEn && lookupEn(record.next.title) ? true : undefined} data-en={!isEn ? lookupEn(record.next.title) : undefined}>{titleFor(record.next.title)}</span> →
                 </a>
               ) : null
             }
@@ -50,8 +73,12 @@ const hasNav = Boolean(record.previous || record.next || related.length);
       {
         related.length > 0 && (
           <div>
-            <h2 class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream" data-i18n data-en={UI.related.en}>
-              {UI.related.es}
+            <h2
+              class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : UI.related.en}
+            >
+              {isEn ? UI.related.en : UI.related.es}
             </h2>
             <ul class="m-0 p-0 list-none grid gap-2">
               {
@@ -59,11 +86,11 @@ const hasNav = Boolean(record.previous || record.next || related.length);
                   <li>
                     <a
                       class="min-h-11 inline-flex items-center text-[16px] text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-                      href={item.href}
-                      data-i18n={lookupEn(item.title) ? true : undefined}
-                      data-en={lookupEn(item.title)}
+                      href={hrefFor(item.href)}
+                      data-i18n={!isEn && lookupEn(item.title) ? true : undefined}
+                      data-en={!isEn ? lookupEn(item.title) : undefined}
                     >
-                      {item.title}
+                      {titleFor(item.title)}
                     </a>
                   </li>
                 ))

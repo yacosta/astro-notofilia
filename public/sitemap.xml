@@ -506,6 +506,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-hipotecario-5-pesos-1881/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-internacional-1-peso-1884/" />
@@ -1861,6 +1870,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-del-norte-5-pesos-1882/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/" />
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/banco-hipotecario-5-pesos-1881/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-hipotecario-5-pesos-1881/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/" />
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
