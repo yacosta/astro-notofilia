@@ -34,6 +34,27 @@ const siteTs = await readFile(path.join(root, 'src/lib/site.ts'), 'utf8');
 if (!siteTs.includes(`SITE = '${SITE_ORIGIN}'`)) fail(`src/lib/site.ts SITE must be '${SITE_ORIGIN}'`);
 if (siteTs.includes(FORBIDDEN_ORIGIN)) fail(`src/lib/site.ts still references ${FORBIDDEN_ORIGIN}`);
 
+{
+  const prmPath = path.join(root, 'public/.well-known/oauth-protected-resource');
+  let prm;
+  try {
+    prm = JSON.parse(await readFile(prmPath, 'utf8'));
+  } catch (error) {
+    fail(`oauth-protected-resource is missing or invalid JSON: ${error.message}`);
+    prm = {};
+  }
+  if (prm.resource !== SITE_ORIGIN) {
+    fail(`oauth-protected-resource.resource must be ${SITE_ORIGIN} (apex, no trailing slash); found ${JSON.stringify(prm.resource)}`);
+  }
+  const servers = prm.authorization_servers;
+  if (!Array.isArray(servers) || !servers.includes(SITE_ORIGIN)) {
+    fail(`oauth-protected-resource.authorization_servers must include ${SITE_ORIGIN}`);
+  }
+  if (!Array.isArray(prm.scopes_supported) || prm.scopes_supported.length === 0) {
+    fail('oauth-protected-resource.scopes_supported must be a non-empty array');
+  }
+}
+
 const sitemapIndexXml = await readFile(path.join(root, 'public/sitemap_index.xml'), 'utf8');
 if (!sitemapIndexXml.includes('<sitemapindex')) fail('sitemap_index.xml is missing <sitemapindex>');
 for (const required of [`${SITE_ORIGIN}/sitemap.xml`, `${SITE_ORIGIN}/news-sitemap.xml`]) {

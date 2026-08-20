@@ -1,9 +1,9 @@
 {
-  "resource": "https://www.notofilia.com/",
+  "resource": "https://notofilia.com",
   "resource_name": "Notofilia",
-  "resource_documentation": "https://www.notofilia.com/auth.md",
+  "resource_documentation": "https://notofilia.com/auth.md",
   "authorization_servers": [
-    "https://www.notofilia.com"
+    "https://notofilia.com"
   ],
   "scopes_supported": [
     "catalog:read",

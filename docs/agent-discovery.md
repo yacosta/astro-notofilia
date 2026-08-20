@@ -30,6 +30,16 @@ Generated at build time by `scripts/generate-llms-txt.mjs` (wired into `prebuild
 
 Both are Spanish-first, state clearly that pieces are **not for sale**, and point agents at `/api/catalog` and `/mcp`.
 
+## OAuth Protected Resource (RFC 9728)
+
+`/.well-known/oauth-protected-resource` must identify the **apex** resource
+`https://notofilia.com` (no `www`, no trailing slash). isitagentready compares
+that `resource` value to the scanned origin and reports “metadata not found”
+on a host mismatch even when the JSON is served as `200 application/json`.
+`authorization_servers` must list the same apex issuer as
+`/.well-known/oauth-authorization-server`. Access tokens already use
+`iss=https://notofilia.com` (`functions/_lib/tokens.js`).
+
 ## Markdown for Agents
 
 Cloudflare Pages middleware (`functions/_middleware.js`) returns
