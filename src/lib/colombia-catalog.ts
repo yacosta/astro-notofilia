@@ -43,8 +43,8 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
   }
   if (href.includes('banco-hipotecario')) {
     return {
-      group: 'Banca Libre Colombiana',
-      groupKicker: 'Banca privada (1870–1919)',
+      group: 'El Banco Hipotecario',
+      groupKicker: 'Banca Libre (1881)',
     };
   }
   if (href.includes('banco-nacional')) {

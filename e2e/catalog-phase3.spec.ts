@@ -261,7 +261,7 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
     hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
 
-  await expect(page.getByRole('heading', { name: 'Banca Libre Colombiana' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
   const hipotecario = page.locator(
     'a.catalog-banknote-card[href="/coleccion/colombia/banco-hipotecario-5-pesos-1881/"]',
   );
@@ -290,7 +290,8 @@ test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async
 test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Colombian Free Banking' })).toBeVisible();
+  await expect(page.locator('.catalog-hub-group-title', { hasText: 'Colombian Free Banking' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
   const card = page.locator(
     'a.catalog-banknote-card[href="/en/collection/colombia/banco-hipotecario-5-pesos-1881/"]',
   );
