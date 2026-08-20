@@ -4673,6 +4673,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/noticias/al-sur-del-mundo-subasta-2500-piezas/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -4693,6 +4699,12 @@
   <url>
     <loc>https://notofilia.com/noticias/bessent-moneda-250-anos-independencia-eeuu/</loc>
     <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4765,6 +4777,12 @@
   <url>
     <loc>https://notofilia.com/noticias/coleccionistas-chaquenos-preservan-memoria/</loc>
     <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5005,6 +5023,12 @@
   <url>
     <loc>https://notofilia.com/noticias/primera-casa-moneda-filadelfia-firstival/</loc>
     <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/noticias/raul-canales-billetes-chilenos-notafilia/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

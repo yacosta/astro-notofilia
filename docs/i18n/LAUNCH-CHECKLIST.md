@@ -56,7 +56,7 @@ When GA4 is added:
 
 See `docs/i18n/TRANSLATION-TODO.md`:
 
-- 57 individual noticias
+- 61 individual noticias
 - ~144 catalog fichas
 - Remaining hubs (US obsolete, Federal Reserve, polymer, etc.)
 - `/en/search/` (header search still posts to `/buscar/`)
