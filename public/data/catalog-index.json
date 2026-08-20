@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-16T20:25:59.319Z",
-  "count": 129,
-  "pieceCount": 113,
+  "generatedAt": "2026-08-20T03:01:10.429Z",
+  "count": 130,
+  "pieceCount": 114,
   "stats": {
     "billetes": 215,
-    "monedas": 7,
+    "monedas": 8,
     "paises": 33,
-    "fichas": 113,
-    "paginas": 144
+    "fichas": 114,
+    "paginas": 145
   },
   "countries": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 30,
+      "count": 31,
       "slug": "estados-unidos"
     },
     {
@@ -2241,6 +2241,39 @@
       "material": "",
       "kind": "banknote",
       "searchText": "$10 reserva federal 1934 — cuatro distritos tiradas serie 1934 por distrito y cuatro billetes de $10 frn (cleveland, richmond, chicago, san francisco). estados unidos friedberg fr-2006d · friedberg fr-2009e · friedberg fr-2004g · friedberg fr-2006l banknote federal reserve note billete de diez dólares serie de 1934 distritos de la reserva federal notafilia numismática hamilton chicago fr-2004g serie 1934 julian morgenthau tirada serie 1934 impresión por distrito"
+    },
+    {
+      "id": "ducado-oro-utrecht-1761",
+      "path": "/coleccion/ducado-oro-utrecht-1761/",
+      "title": "Ducado de oro de Utrecht, 1761",
+      "description": "Ducado de oro comercial de 1761 acuñado en Utrecht, certificado NGC AU Details (Edge Filing). Ficha con datos técnicos, leyendas e historia.",
+      "keywords": [
+        "ducado oro utrecht 1761",
+        "paises bajos",
+        "provincias unidas",
+        "KM-7.4",
+        "friedberg 285",
+        "NGC AU details",
+        "edge filing",
+        "4685927-012",
+        "moneda proclamacion australia",
+        "caballero de pie"
+      ],
+      "url": "https://notofilia.com/coleccion/ducado-oro-utrecht-1761/",
+      "image": "/uploads/1761-netherland-ducat-utrecht.png",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Ceca provincial de Utrecht",
+      "denomination": "1 ducado",
+      "catalogRef": "KM-7.4 · Friedberg 285 · Numista N# 323147",
+      "condition": "",
+      "emissionType": "",
+      "dateLabel": "1761",
+      "year": 1761,
+      "material": "metal",
+      "kind": "coin",
+      "searchText": "ducado de oro de utrecht, 1761 ducado de oro comercial de 1761 acuñado en utrecht, certificado ngc au details (edge filing). ficha con datos técnicos, leyendas e historia. estados unidos ceca provincial de utrecht 1 ducado km-7.4 · friedberg 285 · numista n# 323147 metal coin ducado oro utrecht 1761 paises bajos provincias unidas km-7.4 friedberg 285 ngc au details edge filing 4685927-012 moneda proclamacion australia caballero de pie"
     },
     {
       "id": "ecuador--100-sucres-1993",

@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 215 billetes en 113 fichas, 7 monedas, 33 países, 144 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 215 billetes en 114 fichas, 8 monedas, 33 países, 145 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 114 fichas · 215 billetes · 8 monedas · 33 países · 145 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -126,6 +126,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Colección Virtual
 
 - [$10 Reserva Federal 1934 — Cuatro Distritos](https://notofilia.com/coleccion/diez-dolares-1934-distritos/): Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).
+- [Ducado de oro de Utrecht, 1761](https://notofilia.com/coleccion/ducado-oro-utrecht-1761/): Ducado de oro comercial de 1761 acuñado en Utrecht, certificado NGC AU Details (Edge Filing). Ficha con datos técnicos, leyendas e historia.
 ### Billetes de Ecuador
 
 - [100 Sucres, Banco Central del Ecuador (1993)](https://notofilia.com/coleccion/ecuador/100-sucres-1993/): Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993…

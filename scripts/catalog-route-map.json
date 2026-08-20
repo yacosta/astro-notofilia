@@ -572,6 +572,10 @@
     "legacyFile": "billete-un-dolar-sello-rojo-1928.dc.html"
   },
   {
+    "route": "/coleccion/ducado-oro-utrecht-1761/",
+    "legacyFile": "moneda-ducado-oro-utrecht-1761.dc.html"
+  },
+  {
     "route": "/coleccion/veinte-dolares-hawaii-1934/",
     "legacyFile": "billete-veinte-dolares-hawaii-1934.dc.html"
   }

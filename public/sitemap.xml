@@ -713,6 +713,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/ducado-oro-utrecht-1761/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/ducado-oro-utrecht-1761/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/1761-utrecht-gold-ducat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/ducado-oro-utrecht-1761/" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/ecuador/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/ecuador/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/ecuador/" />
@@ -1548,6 +1557,15 @@
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/1761-utrecht-gold-ducat/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/ducado-oro-utrecht-1761/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/1761-utrecht-gold-ducat/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/ducado-oro-utrecht-1761/" />
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://notofilia.com/en/collection/adrian-insurance-michigan/2-dollars/</loc>

@@ -14,24 +14,33 @@ import { coinCatalogCards, groupedCoinCards } from '../../../../lib/coins-catalo
 import type { CatalogCard } from '../../../../lib/catalog-record';
 
 const REIGN_EN: Record<string, string> = {
+  'Provincias Unidas de los Países Bajos': 'United Provinces of the Netherlands',
   'Reinado de Felipe V': 'Reign of Felipe V',
   'Reinado de Carlos III': 'Reign of Carlos III',
   'Reinado de Carlos IV': 'Reign of Carlos IV',
   'Reinado de Fernando VII': 'Reign of Fernando VII',
 };
 const COLONIAL_KICKER_EN = 'Viceroyalty of New Granada · Santa Fe de Bogotá mint';
+const NETHERLANDS_KICKER_EN = 'Dutch Republic · Utrecht provincial mint';
 
 const cardsRaw = coinCatalogCards();
-const cards: CatalogCard[] = cardsRaw.map((card) => ({
-  ...card,
-  groupEn: (card.group && REIGN_EN[card.group]) || card.groupEn,
-  groupKickerEn: COLONIAL_KICKER_EN,
-}));
+const cards: CatalogCard[] = cardsRaw.map((card) => {
+  const group = card.group && REIGN_EN[card.group] ? REIGN_EN[card.group] : card.groupEn;
+  const groupKickerEn =
+    card.group === 'Provincias Unidas de los Países Bajos'
+      ? NETHERLANDS_KICKER_EN
+      : COLONIAL_KICKER_EN;
+  return {
+    ...card,
+    groupEn: group,
+    groupKickerEn,
+  };
+});
 const groups = groupedCoinCards(cardsRaw);
 const count = cards.length;
 const title = 'Numismatics Catalog | Notofilia';
 const description =
-  `Catalog of ${count} colonial gold coins from Santa Fe de Bogotá: cobs and escudos from Felipe V to Fernando VII.`;
+  `Catalog of ${count} documented coins: colonial Santa Fe de Bogotá gold and international trade pieces.`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -248,7 +257,7 @@ const jsonLd = {
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/en/collection/numismatics/">
         <h1>Numismatics catalog</h1>
         <p class="hub-lead">
-          {count} colonial gold coins documented with images, mint, assayer, and catalog references.
+          {count} coins documented with images, mint data, and catalog references — colonial Bogotá gold and international trade pieces.
         </p>
         <p class="hub-note">
           The Virtual Collection separates
@@ -259,7 +268,7 @@ const jsonLd = {
           {' '}
           <a href="/en/collection/">notaphily</a>
           {' '}
-          (banknotes and paper money). These pieces came from the Santa Fe de Bogotá mint, from Felipe V cobs to milled escudos of Fernando VII. Source:
+          (banknotes and paper money). The colonial Spanish series covers the Santa Fe de Bogotá mint; additional world coinage is listed by region. Source:
           {' '}
           <a
             href="https://www.enumismatic.com/mints-history/santa-fe/es/la-ceca-de-santa-fe"
@@ -285,9 +294,9 @@ const jsonLd = {
 
         <section class="hub-section" aria-labelledby="coins-heading">
           <span class="hub-kicker">Coin collection</span>
-          <h2 id="coins-heading">Colonial gold of Santa Fe</h2>
+          <h2 id="coins-heading">Documented coins</h2>
           <p class="hub-section-lead">
-            {groups.length} reigns. Each record links the piece, the mint, and KM, Restrepo, and Friedberg references.
+            {groups.length} groups. Each record links the piece, mint, and catalog references.
           </p>
           <CatalogHubGrid cards={cards} labelledBy="coins-heading" headingLevel={3} locale="en" />
           <a class="hub-more" href="/coleccion/moneda-colonial-espanola/">See the Spanish colonial catalog</a>
