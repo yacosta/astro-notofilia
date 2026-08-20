@@ -76,8 +76,8 @@ const permanentLabel = t('permanentId', locale);
       <div class="grid gap-12">
         {showMedia && <CatalogMedia record={record} />}
         <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} locale={locale} />
-        <CatalogContext record={record} />
-        <CatalogRelated record={record} />
+        <CatalogContext record={record} locale={locale} />
+        <CatalogRelated record={record} locale={locale} />
         <CatalogCitation record={record} path={path} locale={locale} />
         <CatalogFeedback record={record} path={path} locale={locale} />
       </div>
@@ -118,8 +118,8 @@ const permanentLabel = t('permanentId', locale);
             <CatalogMetadata record={record} visuallyHidden={hideDuplicateFicha} locale={locale} />
           )
         }
-        <CatalogContext record={record} />
-        <CatalogRelated record={record} />
+        <CatalogContext record={record} locale={locale} />
+        <CatalogRelated record={record} locale={locale} />
         <CatalogCitation record={record} path={path} locale={locale} />
         <CatalogFeedback record={record} path={path} locale={locale} />
       </section>
