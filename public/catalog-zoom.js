@@ -8,8 +8,44 @@
     return root.querySelector(sel);
   }
 
+  /**
+   * Fit the zoomed image to the viewport at native resolution.
+   * Catalog templates historically used max-height:74vh + sizes=560px, which
+   * made tall proofs smaller than the in-page image and loaded the 640w WebP.
+   */
+  function prepareFullSizeImage(dialog) {
+    if (!dialog) return;
+    dialog.querySelectorAll('source[sizes], img[sizes]').forEach(function (el) {
+      el.setAttribute('sizes', 'min(96vw, 100vw)');
+    });
+    const img = qs(dialog, '[data-zoom-image]') || qs(dialog, 'img');
+    if (!img) return;
+    img.style.maxWidth = 'calc(100vw - 16px)';
+    img.style.maxHeight = 'calc(100vh - 16px)';
+    img.style.width = 'auto';
+    img.style.height = 'auto';
+    const wrap = img.closest('div');
+    if (wrap && wrap !== dialog) {
+      wrap.style.maxWidth = 'calc(100vw - 16px)';
+      wrap.style.maxHeight = 'calc(100vh - 16px)';
+      wrap.style.overflow = 'hidden';
+    }
+    // Nudge the browser to re-pick srcset after sizes change (full-res candidate).
+    const picture = img.closest('picture');
+    if (picture) {
+      const source = picture.querySelector('source[srcset]');
+      if (source) {
+        const srcset = source.getAttribute('srcset');
+        source.setAttribute('srcset', srcset);
+      }
+    } else if (img.getAttribute('srcset')) {
+      img.setAttribute('srcset', img.getAttribute('srcset'));
+    }
+  }
+
   function openDialog(dialog, trigger) {
     if (!dialog) return;
+    prepareFullSizeImage(dialog);
     dialog.hidden = false;
     dialog.style.display = 'flex';
     dialog.dataset.open = 'true';
