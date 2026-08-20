@@ -1,7 +1,7 @@
 ---
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import BaseHead from '../components/BaseHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
@@ -53,9 +53,10 @@ const isHub = record?.render === 'astro-hub' || cards.length > 0;
 const catalogBody = locale === 'en' ? props.template : withI18nMarkup(props.template);
 const catalogShell = `<div class="catalog-shell">${catalogBody}</div>`;
 const skipLabel = t('skipMain', locale);
-// Bust weekly CDN cache when catalog-zoom.js changes (public/_headers max-age=604800).
+// Bust weekly CDN cache when catalog-zoom.js changes (public/_headers).
+// Resolve from cwd — import.meta.url points inside dist/.prerender at build time.
 const catalogZoomHash = createHash('sha256')
-  .update(readFileSync(fileURLToPath(new URL('../../public/catalog-zoom.js', import.meta.url))))
+  .update(readFileSync(join(process.cwd(), 'public/catalog-zoom.js')))
   .digest('hex')
   .slice(0, 8);
 ---
