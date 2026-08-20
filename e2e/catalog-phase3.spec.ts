@@ -260,6 +260,44 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeLessThan(
     hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
+
+  await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
+  const hipotecario = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-hipotecario-5-pesos-1881/"]',
+  );
+  await expect(hipotecario).toBeVisible();
+  await expect(hipotecario).toContainText('1881');
+  await expect(hipotecario).toContainText('Cinco Pesos');
+  const hipotecarioIdx = hrefs.indexOf('/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
+  expect(hipotecarioIdx).toBeGreaterThan(
+    hrefs.indexOf('/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/') ?? -1,
+  );
+  expect(hipotecarioIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso') ?? Number.POSITIVE_INFINITY,
+  );
+});
+
+test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Banco Hipotecario — 5 pesos, 1881/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
+  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco Hipotecario/);
+});
+
+test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
+  await page.goto('/en/collection/colombia/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
+  await expect(page.locator('.catalog-hub-group-title', { hasText: 'Colombian Free Banking' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
+  const card = page.locator(
+    'a.catalog-banknote-card[href="/en/collection/colombia/banco-hipotecario-5-pesos-1881/"]',
+  );
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Five Pesos (proofs)');
+  await expect(card).toContainText('1881');
 });
 
 test('coins have a dedicated numismática catalog page', async ({ page }) => {
@@ -437,4 +475,5 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await colombia.locator(':scope > summary').click();
   await expect(colombia).toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: 'Catálogo de Billetes de Colombia' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: /Banco Hipotecario — 5 Pesos/ })).toBeVisible();
 });

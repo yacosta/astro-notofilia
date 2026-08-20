@@ -107,6 +107,15 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/',
+    title: 'Banco Hipotecario — 5 pesos, 1881',
+    titleEn: 'Banco Hipotecario — 5 pesos, 1881',
+    description: 'Pruebas PMG 61 del 5 pesos de Bogotá (Pick S511p1 / S511p2), American Bank Note Company.',
+    descriptionEn: 'PMG 61 proofs of the Bogotá 5 pesos (Pick S511p1 / S511p2), American Bank Note Company.',
+    imageBase: 'colombia-banco-hipotecario-5-pesos-1881',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco Hipotecario de Bogotá, 1881, anverso y reverso encapsulados',
+  },
+  {
     href: '/coleccion/ducado-oro-utrecht-1761/',
     title: 'Ducado de oro — Utrecht, 1761',
     titleEn: '1761 Utrecht Gold Ducat',

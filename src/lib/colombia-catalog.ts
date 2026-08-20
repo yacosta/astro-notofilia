@@ -41,6 +41,12 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
       groupKicker: 'Deuda pública estatal',
     };
   }
+  if (href.includes('banco-hipotecario')) {
+    return {
+      group: 'El Banco Hipotecario',
+      groupKicker: 'Banca Libre (1881)',
+    };
+  }
   if (href.includes('banco-nacional')) {
     return {
       group: 'El Banco Nacional',

@@ -15,6 +15,16 @@ const isEn = locale === 'en';
 
 const highlights = [
   {
+    href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/',
+    title: 'Banco Hipotecario — 5 pesos, 1881',
+    titleEn: 'Banco Hipotecario — 5 pesos, 1881',
+    description: 'Pruebas PMG 61 del 5 pesos de Bogotá (Pick S511p1 / S511p2), impresas por American Bank Note Company.',
+    descriptionEn: 'PMG 61 proofs of the Bogotá 5 pesos (Pick S511p1 / S511p2), printed by American Bank Note Company.',
+    imageBase: 'colombia-banco-hipotecario-5-pesos-1881',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco Hipotecario de Bogotá, 1881, anverso y reverso encapsulados',
+    imageAltEn: 'PMG proofs of the Banco Hipotecario 5 pesos of Bogotá, 1881, encapsulated obverse and reverse',
+  },
+  {
     href: '/coleccion/ducado-oro-utrecht-1761/',
     title: 'Ducado de oro — Utrecht, 1761',
     titleEn: '1761 Utrecht Gold Ducat',
@@ -106,7 +116,12 @@ const highlights = [
                 decoding="async"
                 width="440"
                 height="280"
-                class="block w-full h-[180px] object-cover rounded-[3px] mb-3"
+                class:list={[
+                  'block w-full h-[180px] rounded-[3px] mb-3',
+                  item.href.includes('banco-hipotecario')
+                    ? 'object-contain bg-[#d8d2cd]'
+                    : 'object-cover',
+                ]}
               />
             </picture>
             <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.titleEn}>
