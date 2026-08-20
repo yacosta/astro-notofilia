@@ -87,40 +87,69 @@ export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
 
 export const NUMISMATICA_LINKS: NavLink[] = [
   { href: '/coleccion/numismatica/', label: 'Catálogo de Numismática', labelEn: 'Numismatics catalog', lead: true },
+];
+
+export const NUMISMATICA_GROUPS: NavGroup[] = [
   {
-    href: '/coleccion/moneda-colonial-espanola/',
-    label: 'Moneda colonial española',
-    labelEn: 'Spanish colonial coinage',
+    id: 'monedas-colombia',
+    label: 'Colombia',
+    labelEn: 'Colombia',
+    links: [
+      {
+        href: '/coleccion/moneda-colonial-espanola/',
+        label: 'Moneda colonial española',
+        labelEn: 'Spanish colonial coinage',
+        lead: true,
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/',
+        label: 'Felipe V — Doblón de 2 Escudos, Bogotá',
+        labelEn: 'Felipe V — 2 Escudos doubloon, Bogotá',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/',
+        label: 'Carlos IV — 2 Escudos, Bogotá 1791',
+        labelEn: 'Carlos IV — 2 Escudos, Bogotá 1791',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/',
+        label: 'Fernando VII — 1 Escudo, Bogotá 1820',
+        labelEn: 'Fernando VII — 1 Escudo, Bogotá 1820',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
+        label: 'Carlos III — 1 Escudo, Bogotá 1774',
+        labelEn: 'Carlos III — 1 Escudo, Bogotá 1774',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/',
+        label: 'Carlos III — 1 Escudo, Bogotá 1787',
+        labelEn: 'Carlos III — 1 Escudo, Bogotá 1787',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/',
+        label: 'Carlos IV — 1 Escudo, Bogotá 1802',
+        labelEn: 'Carlos IV — 1 Escudo, Bogotá 1802',
+      },
+      {
+        href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/',
+        label: 'Fernando VII — 1 Escudo, Bogotá 1811',
+        labelEn: 'Fernando VII — 1 Escudo, Bogotá 1811',
+      },
+    ],
   },
   {
-    href: '/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/',
-    label: 'Felipe V — Doblón de 2 Escudos, Bogotá',
-    labelEn: 'Felipe V — 2 Escudos doubloon, Bogotá',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/',
-    label: 'Carlos IV — 2 Escudos, Bogotá 1791',
-    labelEn: 'Carlos IV — 2 Escudos, Bogotá 1791',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/',
-    label: 'Fernando VII — 1 Escudo, Bogotá 1820',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
-    label: 'Carlos III — 1 Escudo, Bogotá 1774',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/',
-    label: 'Carlos III — 1 Escudo, Bogotá 1787',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/',
-    label: 'Carlos IV — 1 Escudo, Bogotá 1802',
-  },
-  {
-    href: '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/',
-    label: 'Fernando VII — 1 Escudo, Bogotá 1811',
+    id: 'monedas-mundial',
+    label: 'Mundial',
+    labelEn: 'World',
+    links: [
+      {
+        href: '/coleccion/ducado-oro-utrecht-1761/',
+        label: 'Ducado de oro — Utrecht, 1761',
+        labelEn: '1761 Utrecht Gold Ducat',
+        lead: true,
+      },
+    ],
   },
 ];
 
@@ -177,6 +206,7 @@ export const NAV_SECTIONS: NavSection[] = [
     labelEn: 'Virtual collection - Numismatics',
     href: '/coleccion/numismatica/',
     links: NUMISMATICA_LINKS,
+    groups: NUMISMATICA_GROUPS,
   },
   {
     id: 'notafilia',

@@ -107,6 +107,15 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/ducado-oro-utrecht-1761/',
+    title: 'Ducado de oro — Utrecht, 1761',
+    titleEn: '1761 Utrecht Gold Ducat',
+    description: 'NGC AU Details (Edge Filing), cert. 4685927-012, ceca de Utrecht.',
+    descriptionEn: 'NGC AU Details (Edge Filing), cert. 4685927-012, Utrecht mint.',
+    imageBase: '1761-netherland-ducat-utrecht',
+    imageAlt: 'Ducado de oro de Utrecht de 1761 en cápsula NGC, anverso y reverso',
+  },
+  {
     href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
     title: 'MPC Serie 681 — Un Dólar',
     titleEn: 'MPC Series 681 — One Dollar',
