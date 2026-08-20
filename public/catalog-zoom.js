@@ -9,26 +9,31 @@
   }
 
   /**
-   * Fit the zoomed image to the viewport at native resolution.
-   * Catalog templates historically used max-height:74vh + sizes=560px, which
-   * made tall proofs smaller than the in-page image and loaded the 640w WebP.
+   * Open Ampliar at true fullscreen: image fills the viewport
+   * (object-fit: contain) using the largest available srcset candidate.
    */
   function prepareFullSizeImage(dialog) {
     if (!dialog) return;
     dialog.querySelectorAll('source[sizes], img[sizes]').forEach(function (el) {
-      el.setAttribute('sizes', 'min(96vw, 100vw)');
+      el.setAttribute('sizes', '100vw');
     });
     const img = qs(dialog, '[data-zoom-image]') || qs(dialog, 'img');
     if (!img) return;
-    img.style.maxWidth = 'calc(100vw - 16px)';
-    img.style.maxHeight = 'calc(100vh - 16px)';
-    img.style.width = 'auto';
-    img.style.height = 'auto';
+    img.style.maxWidth = '100vw';
+    img.style.maxHeight = '100vh';
+    img.style.width = '100vw';
+    img.style.height = '100vh';
+    img.style.objectFit = 'contain';
     const wrap = img.closest('div');
     if (wrap && wrap !== dialog) {
-      wrap.style.maxWidth = 'calc(100vw - 16px)';
-      wrap.style.maxHeight = 'calc(100vh - 16px)';
+      wrap.style.maxWidth = '100vw';
+      wrap.style.maxHeight = '100vh';
+      wrap.style.width = '100vw';
+      wrap.style.height = '100vh';
       wrap.style.overflow = 'hidden';
+      wrap.style.display = 'flex';
+      wrap.style.alignItems = 'center';
+      wrap.style.justifyContent = 'center';
     }
     // Nudge the browser to re-pick srcset after sizes change (full-res candidate).
     const picture = img.closest('picture');

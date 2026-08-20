@@ -188,27 +188,38 @@ const skipLabel = t('skipMain', locale);
         display: flex !important;
         position: fixed !important;
         inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
         z-index: 120 !important;
         background: rgba(5, 5, 4, 0.94) !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
       }
-      /* Ampliar: fill the viewport up to the asset’s native size (no 74vh cap). */
+      /* Ampliar: image fills the full viewport (contain, no letterbox gutter). */
       [data-zoom-dialog][data-open="true"] img,
       .catalog-zoom-dialog[data-open="true"] img {
-        max-width: calc(100vw - 16px) !important;
-        max-height: calc(100vh - 16px) !important;
-        width: auto !important;
-        height: auto !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        height: 100vh !important;
         object-fit: contain !important;
       }
       [data-zoom-dialog][data-open="true"] div:has(> picture),
       [data-zoom-dialog][data-open="true"] div:has(> img),
       .catalog-zoom-dialog[data-open="true"] div:has(> picture),
       .catalog-zoom-dialog[data-open="true"] div:has(> img) {
-        max-width: calc(100vw - 16px) !important;
-        max-height: calc(100vh - 16px) !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
       @media (max-width: 640px) {
         .catalog-shell [style*="background:#d8d2cd"],
