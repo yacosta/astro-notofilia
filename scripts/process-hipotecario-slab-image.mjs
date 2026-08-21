@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SLUG = 'colombia-banco-hipotecario-5-pesos-1881';
+const SLUG = 'colombia-banco-hipotecario-5-pesos-1881-38a93057';
 const OUT_BASE = path.join(ROOT, 'public/uploads', SLUG);
 const CREAM = { r: 216, g: 210, b: 205, alpha: 1 };
 
