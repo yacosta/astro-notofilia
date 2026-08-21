@@ -20,6 +20,8 @@
     "check:en-pairs": "node scripts/check-catalog-en-pairs.mjs",
     "check:mustache": "node scripts/check-unresolved-mustache.mjs",
     "check:headers": "node scripts/check-security-headers.mjs",
+    "check:sitemap:live": "node scripts/check-sitemap-live.mjs",
+    "allow:crawlers": "node scripts/allow-search-crawlers.mjs",
     "check:ci": "npm run check && npm run build && npm run check:placeholders && npm run check:headers && npm run check:drift && npm run check:inventory && npm run check:citations && npm run check:en-pairs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "lighthouse:ci": "lhci autorun",

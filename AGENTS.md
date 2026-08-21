@@ -30,3 +30,12 @@ When adding or updating a catalog ficha, read and follow `.cursor/skills/catalog
 **Never edit or replace** user-submitted specimen photos (no stock substitutes, compositing, or
 cropping holders). If the attachment is missing in the agent environment, stop and ask for the
 file — do not ship a placeholder image.
+
+## Search Console / sitemap HTTP errors
+
+If GSC reports **General HTTP error** for `https://notofilia.com/sitemap.xml`, first probe the
+live URL for `cf-mitigated: challenge`. The sitemap artifact in `public/` is usually fine; the
+custom-domain Cloudflare zone (Bot Fight Mode / under-attack) is challenging the fetch.
+`pages.dev` serving 200 XML while the apex returns a challenge confirms this. Fix with IP Access
+**Allow** for Google ASN `AS15169` (or turn Bot Fight Mode off). See
+`docs/search-console-sitemap.md` and `npm run allow:crawlers` / `npm run check:sitemap:live`.
