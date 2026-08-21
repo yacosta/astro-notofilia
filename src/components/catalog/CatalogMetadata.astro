@@ -4,7 +4,7 @@
  */
 import { metadataRows, type CatalogRecord } from '../../lib/catalog-record';
 import { lookupEn } from '../../lib/html-i18n';
-import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI, t, type Locale } from '../../lib/ui-i18n';
+import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI, type Locale } from '../../lib/ui-i18n';
 
 interface Props {
   record: CatalogRecord;
@@ -15,7 +15,6 @@ interface Props {
 
 const { record, visuallyHidden = false, locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
-const metaHeading = t('catalogMeta', locale);
 const rows = metadataRows(record.metadata, {
   country: record.country,
   issuer: record.issuer,
@@ -25,17 +24,8 @@ const rows = metadataRows(record.metadata, {
   rows.length > 0 && (
     <section
       class:list={['catalog-record-meta', visuallyHidden && 'catalog-record-meta--visually-hidden']}
-      aria-labelledby={visuallyHidden ? undefined : 'catalog-meta-heading'}
       aria-hidden={visuallyHidden ? 'true' : undefined}
     >
-      <h2
-        id="catalog-meta-heading"
-        class="m-0 mb-4 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
-        data-i18n={isEn ? undefined : true}
-        data-en={isEn ? undefined : UI.catalogMeta.en}
-      >
-        {metaHeading}
-      </h2>
       <dl class="m-0 grid gap-0 border-t border-line">
         {
           rows.map((row) => {

@@ -73,7 +73,7 @@ test('nepal showcase uses primary sources and visible no confirmado fields', asy
 test('catalog piece exposes research chrome', async ({ page }) => {
   await page.goto('/coleccion/reserva-federal/cien-dolares-1990-cleveland/');
   await expect(page.getByText('Identificador permanente')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Cómo citar esta ficha' })).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'Reportar un error o aportar información' }),
@@ -178,7 +178,7 @@ test('Colombia catalog card for 10.000 pesos opens the scan under the title', as
   await expect(page).toHaveURL(/\/coleccion\/colombia\/banco-de-la-republica-10000-pesos-specimen\/$/);
   await expect(page.locator('h1').first()).toBeInViewport();
   await expect(page.locator('[data-zoom-trigger] img').first()).toBeInViewport();
-  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeVisible();
+  await expect(page.getByText('Pick P-440 (variante conmemorativa)', { exact: true })).toBeVisible();
   await expect(page.locator('[data-zoom-dialog]').first()).toBeHidden();
 });
 
@@ -220,8 +220,8 @@ test('Colombia 10.000 pesos specimen ficha lists both notes and their details', 
   await page.keyboard.press('Escape');
   await expect(emberaDialog).toBeHidden();
 
-  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toBeVisible();
-  await expect(page.locator('.catalog-record-meta').getByText('Pick P-440')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Datos de la ficha' })).toHaveCount(0);
+  await expect(page.getByText('Pick P-440 (variante conmemorativa)', { exact: true })).toBeVisible();
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.locator('sc-for')).toHaveCount(0);
 });
@@ -452,12 +452,11 @@ test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ 
   await expect(page.getByRole('heading', { name: 'Veinticinco Pesos' })).toBeVisible();
   await expect(page.getByText('Serie 1.ª, N.° 170390 · Bogotá, 4 de marzo de 1895')).toBeVisible();
 
-  const meta = page.locator('.catalog-record-meta');
-  await expect(meta.getByText('Veinticinco Pesos, en moneda corriente')).toBeVisible();
-  await expect(meta.getByText('N.° 170390', { exact: true })).toBeVisible();
-  await expect(meta.getByText('Bogotá, 4 de marzo de 1895')).toBeVisible();
-  await expect(meta.getByText('Circulado')).toBeVisible();
-  await expect(meta).not.toContainText(/specimen/i);
+  const veinticinco = page.locator('#veinticinco-pesos');
+  await expect(veinticinco.getByText('Veinticinco Pesos, en moneda corriente')).toBeVisible();
+  await expect(veinticinco.getByText('Serie 1.ª, N.° 170390', { exact: true })).toBeVisible();
+  await expect(veinticinco.getByText('Bogotá, 4 de marzo de 1895', { exact: true })).toBeVisible();
+  await expect(veinticinco).not.toContainText(/specimen/i);
 });
 
 test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915-1', async ({ page }) => {
