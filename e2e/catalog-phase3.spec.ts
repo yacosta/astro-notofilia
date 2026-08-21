@@ -314,7 +314,7 @@ test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async
 
 test('Banco Hipotecario ficha shows landscape side-by-side PMG proofs', async ({ page }) => {
   await page.goto('/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
-  const img = page.locator('main img[src="/uploads/colombia-banco-hipotecario-5-pesos-1881.jpg"]').first();
+  const img = page.locator('main img[src="/uploads/colombia-banco-hipotecario-5-pesos-1881-38a93057.jpg"]').first();
   await expect(img).toHaveAttribute('width', '1821');
   await expect(img).toHaveAttribute('height', '864');
   await expect(img).toHaveAttribute('alt', /izquierda.*derecha/);
@@ -323,7 +323,7 @@ test('Banco Hipotecario ficha shows landscape side-by-side PMG proofs', async ({
 
 test('English Banco Hipotecario ficha shows landscape side-by-side PMG proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/banco-hipotecario-5-pesos-1881/');
-  const img = page.locator('main img[src="/uploads/colombia-banco-hipotecario-5-pesos-1881.jpg"]').first();
+  const img = page.locator('main img[src="/uploads/colombia-banco-hipotecario-5-pesos-1881-38a93057.jpg"]').first();
   await expect(img).toHaveAttribute('width', '1821');
   await expect(img).toHaveAttribute('height', '864');
   await expect(img).toHaveAttribute('alt', /at left.*at right/);
