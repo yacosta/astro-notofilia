@@ -16,7 +16,6 @@ export const UI = {
   newWindow: { es: 'se abre en una pestaña nueva', en: 'opens in a new tab' },
   newWindowShort: { es: 'nueva ventana', en: 'new window' },
   permanentId: { es: 'Identificador permanente:', en: 'Permanent identifier:' },
-  catalogMeta: { es: 'Datos de la ficha', en: 'Record details' },
   catalogSupport: { es: 'Información de apoyo', en: 'Supporting information' },
   historical: { es: 'Contexto histórico', en: 'Historical context' },
   design: { es: 'Diseño y retrato', en: 'Design and portrait' },
