@@ -2,7 +2,9 @@
  * Primary site navigation — shared by SiteHeader and generated from the same
  * curated collection entry points as the /coleccion/ hub.
  */
+import polimeroHub from '../content/catalog/polimero-mundial.json';
 import { FEATURED_ENTRIES } from './catalog-hub';
+import { polymerCountryLabels } from './catalog-inventory.mjs';
 
 export type NavLink = {
   href: string;
@@ -87,6 +89,30 @@ export const COLLECTION_LINKS: NavLink[] = FEATURED_ENTRIES.filter(
 
 export const NUMISMATICA_LINKS: NavLink[] = [
   { href: '/coleccion/numismatica/', label: 'Catálogo de Numismática', labelEn: 'Numismatics catalog', lead: true },
+];
+
+type PolymerHubCard = { href: string };
+
+function polymerNavLinks(cards: PolymerHubCard[]): NavLink[] {
+  return cards
+    .map((card) => {
+      const slug = card.href.split('/').filter(Boolean).pop()?.replace(/\/$/, '') ?? '';
+      const country = polymerCountryLabels(slug);
+      if (!country) return null;
+      return { href: card.href, label: country.es, labelEn: country.en };
+    })
+    .filter((link): link is NavLink => link !== null)
+    .sort((a, b) => a.label.localeCompare(b.label, 'es'));
+}
+
+export const POLIMERO_LINKS: NavLink[] = [
+  {
+    href: '/coleccion/polimero-mundial/',
+    label: 'Catálogo de polímero mundial',
+    labelEn: 'World polymer catalog',
+    lead: true,
+  },
+  ...polymerNavLinks(polimeroHub.record.cards),
 ];
 
 export const NUMISMATICA_GROUPS: NavGroup[] = [
@@ -234,7 +260,7 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
     id: 'polimero',
     label: 'Billetes de polímero mundial',
     labelEn: 'World polymer notes',
-    links: [{ href: '/coleccion/polimero-mundial/', label: 'Catálogo de polímero mundial', labelEn: 'World polymer catalog', lead: true }],
+    links: POLIMERO_LINKS,
   },
 ];
 

@@ -43,6 +43,50 @@ export const POLYMER_COUNTRY = {
   zambia: 'Zambia',
 };
 
+export const POLYMER_COUNTRY_EN = {
+  bangladesh: 'Bangladesh',
+  brazil: 'Brazil',
+  brasil: 'Brazil',
+  brunei: 'Brunei',
+  bulgaria: 'Bulgaria',
+  catar: 'Qatar',
+  chile: 'Chile',
+  'costa-rica': 'Costa Rica',
+  guatemala: 'Guatemala',
+  haiti: 'Haiti',
+  honduras: 'Honduras',
+  'hong-kong': 'Hong Kong',
+  'islas-salomon': 'Solomon Islands',
+  kazajistan: 'Kazakhstan',
+  malasia: 'Malaysia',
+  mexico: 'Mexico',
+  mozambique: 'Mozambique',
+  nepal: 'Nepal',
+  nicaragua: 'Nicaragua',
+  nigeria: 'Nigeria',
+  oman: 'Oman',
+  'papua-nueva-guinea': 'Papua New Guinea',
+  'republica-dominicana': 'Dominican Republic',
+  rumania: 'Romania',
+  samoa: 'Samoa',
+  'sri-lanka': 'Sri Lanka',
+  suazilandia: 'Eswatini',
+  taiwan: 'Taiwan',
+  zambia: 'Zambia',
+};
+
+const POLYMER_COUNTRY_KEYS = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
+
+/** Resolve a polymer ficha slug (e.g. nepal-10-rupias-2005) to ES/EN country labels. */
+export function polymerCountryLabels(slug = '') {
+  for (const key of POLYMER_COUNTRY_KEYS) {
+    if (slug === key || slug.startsWith(`${key}-`)) {
+      return { es: POLYMER_COUNTRY[key], en: POLYMER_COUNTRY_EN[key] ?? POLYMER_COUNTRY[key] };
+    }
+  }
+  return null;
+}
+
 export const HUB_PATHS = new Set([
   '/coleccion/billete-obsoleto-estados-unidos/',
   '/coleccion/reserva-federal/',
@@ -92,11 +136,8 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   if (section === 'ecuador') return 'Ecuador';
   if (section === 'moneda-colonial-espanola') return 'España';
   if (section === 'polimero-mundial') {
-    const slug = segs[2] || '';
-    const known = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
-    for (const key of known) {
-      if (slug === key || slug.startsWith(`${key}-`)) return POLYMER_COUNTRY[key];
-    }
+    const labels = polymerCountryLabels(segs[2] || '');
+    if (labels) return labels.es;
   }
   if (
     [
