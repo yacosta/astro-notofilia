@@ -312,6 +312,24 @@ test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async
   await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco Hipotecario/);
 });
 
+test('Nueva Granada 1861 ficha shows landscape side-by-side banknote photo', async ({ page }) => {
+  await page.goto('/coleccion/colombia/nueva-granada-1-peso-1861/');
+  const img = page.locator('main img[src="/uploads/colombia-nueva-granada-1-peso-1861-92c64225.jpg"]').first();
+  await expect(img).toHaveAttribute('width', '1448');
+  await expect(img).toHaveAttribute('height', '1086');
+  await expect(img).toHaveAttribute('alt', /izquierda.*derecha/);
+  await expect(page.getByText('Anverso (izquierda) y reverso (derecha) — Colección de Notofilia.com')).toBeVisible();
+});
+
+test('English Nueva Granada 1861 ficha shows landscape side-by-side banknote photo', async ({ page }) => {
+  await page.goto('/en/collection/colombia/new-granada-1-peso-1861/');
+  const img = page.locator('main img[src="/uploads/colombia-nueva-granada-1-peso-1861-92c64225.jpg"]').first();
+  await expect(img).toHaveAttribute('width', '1448');
+  await expect(img).toHaveAttribute('height', '1086');
+  await expect(img).toHaveAttribute('alt', /at left.*at right/);
+  await expect(page.getByText('Obverse (left) and reverse (right) — Notofilia.com Collection')).toBeVisible();
+});
+
 test('Banco Hipotecario ficha shows landscape side-by-side PMG proofs', async ({ page }) => {
   await page.goto('/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
   const img = page.locator('main img[src="/uploads/colombia-banco-hipotecario-5-pesos-1881-38a93057.jpg"]').first();
