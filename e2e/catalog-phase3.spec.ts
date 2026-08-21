@@ -272,8 +272,23 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   expect(hipotecarioIdx).toBeGreaterThan(
     hrefs.indexOf('/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/') ?? -1,
   );
-  expect(hipotecarioIdx).toBeLessThan(
+  await expect(hipotecarioIdx).toBeLessThan(
     hrefs.indexOf('/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso') ?? Number.POSITIVE_INFINITY,
+  );
+
+  await expect(page.getByRole('heading', { name: 'El Banco de Rio Hacha' }).last()).toBeVisible();
+  const rioHacha = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/"]',
+  );
+  await expect(rioHacha).toBeVisible();
+  await expect(rioHacha).toContainText('1883');
+  await expect(rioHacha).toContainText('Cinco Pesos');
+  const rioHachaIdx = hrefs.indexOf('/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/');
+  expect(rioHachaIdx).toBeGreaterThan(
+    hrefs.indexOf('/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/') ?? -1,
+  );
+  expect(rioHachaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
 });
 
@@ -298,6 +313,18 @@ test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ pag
   await expect(card).toBeVisible();
   await expect(card).toContainText('Five Pesos (proofs)');
   await expect(card).toContainText('1881');
+});
+
+test('English Colombia catalog lists the Banco de Rio Hacha proofs', async ({ page }) => {
+  await page.goto('/en/collection/colombia/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'El Banco de Rio Hacha' }).last()).toBeVisible();
+  const card = page.locator(
+    'a.catalog-banknote-card[href="/en/collection/colombia/banco-de-rio-hacha-5-pesos-1883/"]',
+  );
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Five Pesos (proofs)');
+  await expect(card).toContainText('1883');
 });
 
 test('coins have a dedicated numismática catalog page', async ({ page }) => {
