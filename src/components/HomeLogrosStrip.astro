@@ -15,6 +15,16 @@ const isEn = locale === 'en';
 
 const highlights = [
   {
+    href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
+    title: 'Banco de Rio Hacha — 5 pesos, 1883',
+    titleEn: 'Banco de Rio Hacha — 5 pesos, 1883',
+    description: 'Pruebas PMG 64 EPQ / 62 del 5 pesos de Riohacha (Pick S819p1 / S819p2), impresas por American Bank Note Company.',
+    descriptionEn: 'PMG 64 EPQ / 62 proofs of the Riohacha 5 pesos (Pick S819p1 / S819p2), printed by American Bank Note Company.',
+    imageBase: 'colombia-banco-de-rio-hacha-5-pesos-1883',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco de Rio Hacha, 1883, anverso y reverso encapsulados',
+    imageAltEn: 'PMG proofs of the Banco de Rio Hacha 5 pesos, 1883, encapsulated obverse and reverse',
+  },
+  {
     href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/',
     title: 'Banco Hipotecario — 5 pesos, 1881',
     titleEn: 'Banco Hipotecario — 5 pesos, 1881',
@@ -118,7 +128,8 @@ const highlights = [
                 height="280"
                 class:list={[
                   'block w-full h-[180px] rounded-[3px] mb-3',
-                  item.href.includes('banco-hipotecario')
+                  item.href.includes('banco-hipotecario') ||
+                  item.href.includes('banco-de-rio-hacha')
                     ? 'object-contain bg-[#d8d2cd]'
                     : 'object-cover',
                 ]}

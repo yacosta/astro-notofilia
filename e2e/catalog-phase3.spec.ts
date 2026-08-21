@@ -292,6 +292,16 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   );
 });
 
+test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Banco de Rio Hacha — 5 pesos, 1883/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/');
+  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco de Rio Hacha/);
+});
+
 test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');

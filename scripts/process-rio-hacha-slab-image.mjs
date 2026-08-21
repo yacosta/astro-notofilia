@@ -26,6 +26,7 @@ const CREAM = { r: 216, g: 210, b: 205, alpha: 1 };
 const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
+      path.join(ROOT, 'public/uploads/Colombia-El Banco de Rio Hacha - 5 pesos.png'),
       path.join(ROOT, 'public/uploads/Colombia - El Banco de Rio Hacha 5 pesos - Proof.png'),
       path.join(ROOT, 'public/uploads/Colombia - El Banco de Rio Hacha 5 pesos - Proof.jpg'),
       path.join(ROOT, 'public/uploads/Colombia - El Banco de Rio Hacha 5 pesos - Proof.jpeg'),
