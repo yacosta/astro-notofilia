@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 63 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -1201,6 +1201,8 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [San Martín en sellos y billetes, Mendoza](https://notofilia.com/noticias/muestra-san-martin-filatelia-mendoza/): Afinumen y La Bancaria muestran estampillas y billetes de San Martín en España 1234, Mendoza, de lunes a viernes de 11 a 14, hasta el 31 de…
+- [Numismática y filatelia gratis en Catamarca](https://notofilia.com/noticias/muestra-numismatica-filatelia-catamarca/): El 22 de agosto, el Club Social 25 de Agosto (Sarmiento 683) exhibe monedas, billetes, medallas y estampillas, de 10 a 22, con entrada…
 - [15 monedas de EE.UU. con récords de subasta](https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/): De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El…
 - [Piden $5.699 por un combo del $1.000 Hidalgo](https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/): En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta…
 - [Coleccionistas de Rancagua y su patrimonio](https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/): El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.…
@@ -1264,6 +1266,70 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### San Martín en sellos y billetes, Mendoza
+
+URL canónica: https://notofilia.com/noticias/muestra-san-martin-filatelia-mendoza/
+
+> Afinumen y La Bancaria muestran estampillas y billetes de San Martín en España 1234, Mendoza, de lunes a viernes de 11 a 14, hasta el 31 de agosto.
+
+Fuente externa: [Los Andes](https://www.losandes.com.ar/san-martin-estampillas-billetes-y-otros-tesoros-los-condimentos-una-cautivante-muestra-n6003059)
+
+*Los Andes* cubre **«San Martín a través de la filatelia y la
+numismática»**, abierta en la **Asociación Bancaria de Mendoza**
+(**España 1.234**, Ciudad) durante el mes sanmartiniano. Cierra el
+**31 de agosto**. Horario: **lunes a viernes, 11:00 a 14:00**. Entrada
+**libre y gratuita**.
+
+Organizan **Afinumen** (Asociación Filatélica y Numismática de Mendoza)
+y el gremio, con coordinación de **Daniel Flores** y **María Luisa
+Jara**. El material es de las colecciones de **Rodolfo Colombano**,
+**Carlos de Jong** y **Duilio Figueroa**. El presidente de Afinumen es
+**Hugo Caranza**; el club se reúne los **sábados de 10:00 a 12:00** en
+**9 de Julio 761**, detrás del Correo Argentino.
+
+## Qué hay para ver
+
+Según *Los Andes*, hay **billetes alegóricos** que circularon entre
+**1960 y 1969** y de otras épocas, más estampillas que recorren
+combates y etapas de San Martín: **Bailén**, **San Lorenzo**,
+**Maipú**, **Ayacucho**, el Protectorado del Perú y la vejez en
+**Boulogne-sur-Mer**. Colombano (73) insiste en llevar la filatelia a
+las escuelas; anuncia además una muestra de numismática en el espacio
+**Julio Le Parc**, organizada desde **San Rafael**.
+
+Más detalles en la nota original de Los Andes.
+
+---
+
+### Numismática y filatelia gratis en Catamarca
+
+URL canónica: https://notofilia.com/noticias/muestra-numismatica-filatelia-catamarca/
+
+> El 22 de agosto, el Club Social 25 de Agosto (Sarmiento 683) exhibe monedas, billetes, medallas y estampillas, de 10 a 22, con entrada libre.
+
+Fuente externa: [Diario Inforama](https://inforama.com.ar/tiempo-libre/2026/08/20/una-muestra-gratuita-reunira-monedas-billetes-y-estampillas-de-distintos-paises-en-catamarca/)
+
+**Diario Inforama** anuncia para el **sábado 22 de agosto de 2026** una
+**Muestra de Numismática y Filatelia** en **San Fernando del Valle de
+Catamarca**. El horario es de **10:00 a 22:00**. La sede es el **Club
+Social 25 de Agosto** (**Sarmiento 683**, frente a la **plaza 25 de
+Mayo**). La entrada es **libre y gratuita**.
+
+## Qué se exhibe
+
+La jornada reúne colecciones de **monedas**, **billetes**, **medallas**,
+**estampillas** y **postales** de distintos países. Inforama presenta el
+recorrido como una forma de ver historia y cultura a través de objetos
+cotidianos, y de conocer el trabajo de quienes los conservan.
+
+No publica el nombre de los expositores ni un listado de piezas. Quien
+vaya debería confirmar en el club, el día del evento, si hay visitas
+guiadas o mesas de intercambio.
+
+Más detalles en la nota original de Diario Inforama.
+
+---
 
 ### 15 monedas de EE.UU. con récords de subasta
 

@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/</loc>
+    <loc>https://notofilia.com/noticias/muestra-san-martin-filatelia-mendoza/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-19</news:publication_date>
-      <news:title>15 monedas de EE.UU. con récords de subasta</news:title>
+      <news:publication_date>2026-08-21</news:publication_date>
+      <news:title>San Martín en sellos y billetes, Mendoza</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/</loc>
+    <loc>https://notofilia.com/noticias/muestra-numismatica-filatelia-catamarca/</loc>
     <news:news>
       <news:publication>
         <news:name>Notofilia</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2026-08-19</news:publication_date>
-      <news:title>Piden $5.699 por un combo del $1.000 Hidalgo</news:title>
+      <news:publication_date>2026-08-20</news:publication_date>
+      <news:title>Numismática y filatelia gratis en Catamarca</news:title>
     </news:news>
   </url>
 </urlset>

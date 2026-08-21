@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 63 noticias · 0 logros del mes · 95 términos del glosario.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).
 
@@ -79,6 +79,8 @@ Listado completo de 116 fichas (217 billetes, 8 monedas, 33 países): [llms-full
 
 ## Noticias
 
+- [San Martín en sellos y billetes, Mendoza](https://notofilia.com/noticias/muestra-san-martin-filatelia-mendoza/): Afinumen y La Bancaria muestran estampillas y billetes de San Martín en España 1234, Mendoza, de lunes a viernes de 11 a 14, hasta el 31 de…
+- [Numismática y filatelia gratis en Catamarca](https://notofilia.com/noticias/muestra-numismatica-filatelia-catamarca/): El 22 de agosto, el Club Social 25 de Agosto (Sarmiento 683) exhibe monedas, billetes, medallas y estampillas, de 10 a 22, con entrada…
 - [15 monedas de EE.UU. con récords de subasta](https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/): De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El…
 - [Piden $5.699 por un combo del $1.000 Hidalgo](https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/): En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta…
 - [Coleccionistas de Rancagua y su patrimonio](https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/): El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.…
