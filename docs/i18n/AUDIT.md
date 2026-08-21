@@ -718,6 +718,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/banco-de-oriente-5-pesos-1888/` | `/en/collection/colombia/banco-de-oriente-5-pesos-1888/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-pamplona-10-pesos-1884/` | `/en/collection/colombia/banco-de-pamplona-10-pesos-1884/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-panama-1-5-pesos/` | `/en/collection/colombia/banco-de-panama-1-5-pesos/` | catalog IDs stay untranslated in copy; issuer name kept |
+| banknote | `/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/` | `/en/collection/colombia/banco-de-rio-hacha-5-pesos-1883/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/` | `/en/collection/colombia/banco-del-cauca-1-5-pesos-1888/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-del-norte-5-pesos-1882/` | `/en/collection/colombia/banco-del-norte-5-pesos-1882/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-hipotecario-5-pesos-1881/` | `/en/collection/colombia/banco-hipotecario-5-pesos-1881/` | catalog IDs stay untranslated in copy; issuer name kept |

@@ -161,6 +161,7 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
     links: [
       { href: '/coleccion/colombia/', label: 'Catálogo de Billetes de Colombia', labelEn: 'Colombia banknote catalog', lead: true },
       { href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/', label: 'Banco Hipotecario — 5 Pesos (1881)', labelEn: 'Banco Hipotecario — 5 Pesos (1881)' },
+      { href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/', label: 'Banco de Rio Hacha — 5 Pesos (1883)', labelEn: 'Banco de Rio Hacha — 5 Pesos (1883)' },
       { href: '/coleccion/colombia/cartagena-1-real-1813/', label: 'Cartagena de Indias — 1 Real (1813)', labelEn: 'Cartagena de Indias — 1 Real (1813)' },
       { href: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones en el extranjero', labelEn: 'Issues printed abroad' },
     ],

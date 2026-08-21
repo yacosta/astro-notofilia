@@ -73,6 +73,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco de Rio Hacha — Cinco Pesos (pruebas, 1883)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "República Bolívar de Colombia — Un Peso (1882)",
             "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso"
           },
@@ -299,6 +304,21 @@
         "altEn": "PMG proofs of the Banco Hipotecario 5 pesos of Bogotá, 1881, encapsulated obverse and reverse",
         "groupEn": "El Banco Hipotecario",
         "groupKickerEn": "Free banking (1881)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/",
+        "title": "El Banco de Rio Hacha",
+        "denomination": "Cinco Pesos (pruebas)",
+        "year": "1883",
+        "image": "/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.webp",
+        "alt": "Pruebas PMG del 5 pesos del Banco de Rio Hacha, 1883, anverso y reverso encapsulados",
+        "group": "El Banco de Rio Hacha",
+        "groupKicker": "Banca Libre (1883)",
+        "titleEn": "El Banco de Rio Hacha",
+        "altEn": "PMG proofs of the Banco de Rio Hacha 5 pesos, 1883, encapsulated obverse and reverse",
+        "groupEn": "El Banco de Rio Hacha",
+        "groupKickerEn": "Free banking (1883)"
       },
       {
         "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",
