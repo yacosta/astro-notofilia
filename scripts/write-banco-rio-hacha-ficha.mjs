@@ -20,6 +20,7 @@ const OUT = path.join(process.cwd(), 'src/content/catalog/colombia--banco-de-rio
 const SOURCE_CANDIDATES = [
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.png'),
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.jpg'),
+  path.join(process.cwd(), 'public/uploads/Colombia-El Banco de Rio Hacha - 5 pesos.png'),
   path.join(process.cwd(), 'public/uploads/Colombia - El Banco de Rio Hacha 5 pesos - Proof.png'),
 ];
 
