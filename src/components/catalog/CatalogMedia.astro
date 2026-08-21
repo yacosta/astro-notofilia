@@ -135,7 +135,7 @@ const viewsJson = JSON.stringify(views);
         class="m-0 p-0 border-0 bg-[rgba(10,10,9,0.94)] text-cream max-w-none max-h-none w-screen h-screen"
         data-catalog-dialog
       >
-        <div class="relative flex h-full w-full items-center justify-center p-0">
+        <div class="relative flex h-full w-full items-center justify-center p-0" data-catalog-dialog-stage>
           <button
             type="button"
             class="absolute top-4 right-4 z-10 min-h-11 min-w-11 px-4 border border-line bg-bg text-cream cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
@@ -151,7 +151,7 @@ const viewsJson = JSON.stringify(views);
             alt={initial.image.alt}
             width={initial.image.width}
             height={initial.image.height}
-            class="max-w-none max-h-none w-screen h-screen object-contain"
+            class="relative z-0 max-h-[100vh] max-w-[100vw] w-auto h-auto object-contain cursor-zoom-out"
           />
         </div>
       </dialog>
@@ -166,6 +166,7 @@ const viewsJson = JSON.stringify(views);
           const caption = root.querySelector('[data-catalog-caption]');
           const dialog = root.querySelector('[data-catalog-dialog]');
           const dialogImg = root.querySelector('[data-catalog-dialog-img]');
+          const dialogStage = root.querySelector('[data-catalog-dialog-stage]');
           const openBtn = root.querySelector('[data-catalog-zoom-open]');
           const closeBtn = root.querySelector('[data-catalog-zoom-close]');
           const buttons = Array.from(root.querySelectorAll('[data-catalog-view]'));
@@ -204,14 +205,22 @@ const viewsJson = JSON.stringify(views);
             });
           });
 
+          function closeMediaDialog() {
+            if (!dialog || !dialog.open) return;
+            dialog.close();
+          }
+
           openBtn && openBtn.addEventListener('click', function () {
             if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
           });
-          closeBtn && closeBtn.addEventListener('click', function () {
-            dialog && dialog.close();
+          closeBtn && closeBtn.addEventListener('click', function (event) {
+            event.stopPropagation();
+            closeMediaDialog();
           });
           dialog && dialog.addEventListener('click', function (event) {
-            if (event.target === dialog) dialog.close();
+            if (event.target === dialog || event.target === dialogStage || event.target === dialogImg) {
+              closeMediaDialog();
+            }
           });
         })();
       </script>
