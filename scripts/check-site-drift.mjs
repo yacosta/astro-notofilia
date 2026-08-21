@@ -161,6 +161,12 @@ const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
 if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
 if (!navTs.includes('Colección virtual - Numismática')) fail('Primary nav is missing the Numismática accordion label');
 if (!navTs.includes('Colección virtual - Notafilia')) fail('Primary nav is missing the Notafilia accordion label');
+if (!navTs.includes('/coleccion/colombia/banca-libre/')) fail('Primary nav is missing the Colombian free-banking catalog');
+if (!navTs.includes('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/')) fail('Primary nav is missing El Banco de Pamplona');
+if (!navTs.includes('/coleccion/colombia/banco-nacional-25-pesos-1895/')) fail('Primary nav is missing El Banco Nacional');
+if (!navTs.includes('/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/')) {
+  fail('Primary nav is missing El Banco de la República');
+}
 if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
 if (/id:\s*'editorial'/.test(navTs)) {
   fail('Primary nav must not duplicate Blog/Noticias/Glosario under an Editorial accordion');
