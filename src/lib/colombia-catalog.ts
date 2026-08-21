@@ -47,6 +47,12 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
       groupKicker: 'Banca Libre (1881)',
     };
   }
+  if (href.includes('banco-de-rio-hacha')) {
+    return {
+      group: 'El Banco de Rio Hacha',
+      groupKicker: 'Banca Libre (1883)',
+    };
+  }
   if (href.includes('banco-nacional')) {
     return {
       group: 'El Banco Nacional',

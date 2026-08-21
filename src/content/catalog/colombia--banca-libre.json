@@ -75,6 +75,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco de Rio Hacha — Cinco Pesos (1883)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "Banco de Barranquilla — Cincuenta Centavos (1900)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/"
           },
@@ -252,6 +257,17 @@
         "alt": "Pruebas PMG del 5 pesos del Banco Hipotecario de Bogotá, 1881, anverso y reverso encapsulados",
         "altEn": "PMG proofs of the Banco Hipotecario 5 pesos of Bogotá, 1881, encapsulated obverse and reverse",
         "titleEn": "El Banco Hipotecario"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/",
+        "title": "El Banco de Rio Hacha",
+        "denomination": "Cinco Pesos (pruebas)",
+        "year": "1883",
+        "image": "/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.webp",
+        "alt": "Pruebas PMG del 5 pesos del Banco de Rio Hacha, 1883, anverso y reverso encapsulados",
+        "altEn": "PMG proofs of the Banco de Rio Hacha 5 pesos, 1883, encapsulated obverse and reverse",
+        "titleEn": "El Banco de Rio Hacha"
       },
       {
         "href": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",
