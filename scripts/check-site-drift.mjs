@@ -167,6 +167,12 @@ if (!navTs.includes('/coleccion/colombia/banco-nacional-25-pesos-1895/')) fail('
 if (!navTs.includes('/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/')) {
   fail('Primary nav is missing El Banco de la República');
 }
+if (!navTs.includes('polymerNavLinks(polimeroHub.record.cards)')) {
+  fail('Primary nav must derive polymer country links from the hub catalog cards');
+}
+if (!navTs.includes('links: POLIMERO_LINKS')) {
+  fail('Primary nav must wire the polymer accordion to POLIMERO_LINKS');
+}
 if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
 if (/id:\s*'editorial'/.test(navTs)) {
   fail('Primary nav must not duplicate Blog/Noticias/Glosario under an Editorial accordion');

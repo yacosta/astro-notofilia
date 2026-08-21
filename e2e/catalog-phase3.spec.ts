@@ -592,4 +592,14 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await expect(drawer.getByRole('link', { name: 'El Banco Colombiano, Guatemala (1900)' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'El Banco Nacional (1895)' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'El Banco de la República' })).toBeVisible();
+
+  const polimero = page.locator('#nav-sec-polimero');
+  await expect(polimero).not.toHaveAttribute('open');
+  await polimero.locator(':scope > summary').click();
+  await expect(polimero).toHaveAttribute('open');
+  await expect(drawer.getByRole('link', { name: 'Catálogo de polímero mundial' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Nepal' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'México' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Chile' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Bangladesh' })).toBeVisible();
 });
