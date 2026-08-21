@@ -107,6 +107,15 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
+    title: 'Banco de Rio Hacha — 5 pesos, 1883',
+    titleEn: 'Banco de Rio Hacha — 5 pesos, 1883',
+    description: 'Pruebas PMG 64 EPQ / 62 del 5 pesos de Riohacha (Pick S819p1 / S819p2), American Bank Note Company.',
+    descriptionEn: 'PMG 64 EPQ / 62 proofs of the Riohacha 5 pesos (Pick S819p1 / S819p2), American Bank Note Company.',
+    imageBase: 'colombia-banco-de-rio-hacha-5-pesos-1883',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco de Rio Hacha, 1883, anverso y reverso encapsulados',
+  },
+  {
     href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/',
     title: 'Banco Hipotecario — 5 pesos, 1881',
     titleEn: 'Banco Hipotecario — 5 pesos, 1881',
