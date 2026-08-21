@@ -95,7 +95,7 @@ type PolymerHubCard = { href: string };
 
 function polymerNavLinks(cards: PolymerHubCard[]): NavLink[] {
   return cards
-    .map((card) => {
+    .map((card): NavLink | null => {
       const slug = card.href.split('/').filter(Boolean).pop()?.replace(/\/$/, '') ?? '';
       const country = polymerCountryLabels(slug);
       if (!country) return null;
