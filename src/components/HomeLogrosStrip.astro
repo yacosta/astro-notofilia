@@ -80,7 +80,7 @@ const highlights = [
     titleEn: 'MPC Series 692 — Twenty Dollars',
     description: 'Última serie oficial de MPC (1970–1973): jefe Ouray en el anverso y la presa Hoover en el reverso.',
     descriptionEn: 'Last official MPC series (1970–1973): Chief Ouray on the obverse and Hoover Dam on the reverse.',
-    imageBase: 'mpc-series-692-20-dollars',
+    imageBase: 'mpc-series-692-20-dollars-dfa4d4f6',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
     imageAltEn: 'Obverse and reverse of the Series 692 twenty-dollar MPC with Chief Ouray',
   },
@@ -129,7 +129,8 @@ const highlights = [
                 class:list={[
                   'block w-full h-[180px] rounded-[3px] mb-3',
                   item.href.includes('banco-hipotecario') ||
-                  item.href.includes('banco-de-rio-hacha')
+                  item.href.includes('banco-de-rio-hacha') ||
+                  item.href.includes('20-dolares-serie-692')
                     ? 'object-contain bg-[#d8d2cd]'
                     : 'object-cover',
                 ]}

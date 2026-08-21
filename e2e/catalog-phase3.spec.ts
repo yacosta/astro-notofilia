@@ -348,6 +348,33 @@ test('English Banco Hipotecario ficha shows landscape side-by-side PMG proofs', 
   await expect(page.getByText('Obverse (left) and reverse (right) — Notofilia.com Collection')).toBeVisible();
 });
 
+test('MPC Serie 692 $20 ficha shows landscape side-by-side photo', async ({ page }) => {
+  await page.goto('/coleccion/certificados-de-pago-militar/20-dolares-serie-692/');
+  const img = page.locator('main img[src="/uploads/mpc-series-692-20-dollars-dfa4d4f6.jpg"]').first();
+  await expect(img).toHaveAttribute('width', '1448');
+  await expect(img).toHaveAttribute('height', '1086');
+  await expect(img).toHaveAttribute('alt', /izquierda.*derecha/);
+  await expect(page.getByText('Anverso (izquierda) y reverso (derecha) — Colección de Notofilia.com')).toBeVisible();
+});
+
+test('English MPC Series 692 $20 ficha shows landscape side-by-side photo', async ({ page }) => {
+  await page.goto('/en/collection/military-payment-certificates/20-dollars-series-692/');
+  const img = page.locator('main img[src="/uploads/mpc-series-692-20-dollars-dfa4d4f6.jpg"]').first();
+  await expect(img).toHaveAttribute('width', '1448');
+  await expect(img).toHaveAttribute('height', '1086');
+  await expect(img).toHaveAttribute('alt', /at left.*at right/);
+  await expect(page.getByText('Obverse (left) and reverse (right) — Notofilia.com Collection')).toBeVisible();
+});
+
+test('homepage Logros del Mes features the MPC Serie 692 $20', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /MPC Serie 692 — Veinte Dólares/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/');
+  await expect(card.getByRole('img')).toHaveAttribute('src', '/uploads/mpc-series-692-20-dollars-dfa4d4f6-card.jpg');
+});
+
 test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
