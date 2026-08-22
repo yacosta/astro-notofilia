@@ -45,13 +45,13 @@
         "hasPart": [
           {
             "@type": "CreativeWork",
-            "name": "1 Peso — Victory Series No. 66 (Pick 94a)",
-            "url": "https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/"
+            "name": "2 Pesos — Victory Series No. 66 (Pick 95a)",
+            "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/"
           },
           {
             "@type": "CreativeWork",
-            "name": "2 Pesos — Victory Series No. 66 (Pick 95a)",
-            "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/"
+            "name": "1 Peso — Victory Series No. 66 (Pick 94a)",
+            "url": "https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/"
           }
         ]
       }
@@ -78,26 +78,26 @@
     "render": "astro-hub",
     "cards": [
       {
-        "href": "/coleccion/filipinas/1-peso-victory-series-66/",
-        "title": "Victory Series No. 66",
-        "denomination": "1 Peso",
-        "year": "1944",
-        "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
-        "imageWebp": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.webp",
-        "alt": "Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso con Mabini y reverso con sobresello VICTORY",
-        "titleEn": "Victory Series No. 66",
-        "altEn": "Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse with Mabini and reverse with VICTORY overprint"
-      },
-      {
         "href": "/coleccion/filipinas/2-pesos-victory-series-66/",
-        "title": "Victory Series No. 66",
+        "title": "2 Pesos Victory Series No. 66",
         "denomination": "2 Pesos",
         "year": "1944",
         "image": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg",
         "imageWebp": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.webp",
         "alt": "Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, anverso con Rizal y reverso azul con sobresello VICTORY",
-        "titleEn": "Victory Series No. 66",
+        "titleEn": "2 Pesos Victory Series No. 66",
         "altEn": "Philippines Treasury Certificate of 2 pesos, Victory Series No. 66, obverse with Rizal and blue reverse with VICTORY overprint"
+      },
+      {
+        "href": "/coleccion/filipinas/1-peso-victory-series-66/",
+        "title": "1 Peso Victory Series No. 66",
+        "denomination": "1 Peso",
+        "year": "1944",
+        "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
+        "imageWebp": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.webp",
+        "alt": "Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso con Mabini y reverso con sobresello VICTORY",
+        "titleEn": "1 Peso Victory Series No. 66",
+        "altEn": "Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse with Mabini and reverse with VICTORY overprint"
       }
     ],
     "eyebrow": "Contexto Histórico",
