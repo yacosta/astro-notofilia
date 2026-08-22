@@ -326,6 +326,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-10-pesos-oro/" />
@@ -1744,6 +1753,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-1-peso-specimen/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/" />
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/" />
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 220 billetes en 120 fichas, 9 monedas, 35 países, 152 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 221 billetes en 121 fichas, 9 monedas, 35 países, 153 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 120 fichas · 220 billetes · 9 monedas · 35 países · 152 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 121 fichas · 221 billetes · 9 monedas · 35 países · 153 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -83,6 +83,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Un Peso Oro 1919, Banco de Caldas](https://notofilia.com/coleccion/colombia/banco-de-caldas-1-peso-1919/): Ficha de catálogo numismático: cédula hipotecaria especimen de Un Peso Oro Legal, El Banco de Caldas, Manizales, Colombia, 1919.
 - [Cédula Hipotecaria de 1 Peso Oro (1919)](https://notofilia.com/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/): Ficha de catálogo: cédula hipotecaria de 1 Peso en Oro Legal de El Banco de Colombia, Bogotá, 1919, título financiero con respaldo inmobiliario.
 - [Un Peso Specimen, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/): Ficha de catálogo numismático: especímenes de Un Peso Oro (1929) y Un Peso Plata (1932)…
+- [Diez Pesos Oro 1943, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/): Billete de 10 pesos oro del 20 de julio de 1943 (Pick 389b), PMG 50 EPQ, retrato de Nariño. Colección Notofilia.
 - [Diez Pesos Oro, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/): Ficha de catálogo numismático: billetes de Diez Pesos Oro de El Banco de la República, Colombia, con el retrato de Antonio Nariño, de 1949 a 1961.
 - [Cien Pesos Oro, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/): Ficha de catálogo numismático: billetes de Cien Pesos Oro de El Banco de la República, Colombia (1947, 1969, 1980, 1983), con el retrato de Santander.
 - [Mil Pesos, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-1000-pesos/): Ficha de catálogo numismático: billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996)…

@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-22T20:45:15.329Z",
-  "count": 136,
-  "pieceCount": 120,
+  "generatedAt": "2026-08-22T23:31:01.452Z",
+  "count": 137,
+  "pieceCount": 121,
   "stats": {
-    "billetes": 220,
+    "billetes": 221,
     "monedas": 9,
     "paises": 35,
-    "fichas": 120,
-    "paginas": 152
+    "fichas": 121,
+    "paginas": 153
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 46,
+      "count": 47,
       "slug": "colombia"
     },
     {
@@ -1080,6 +1080,36 @@
       "material": "",
       "kind": "specimen",
       "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia un peso oro · un peso plata (certificado de plata) pick #p-380s (variante); listados estándar de la serie 1929–1954 de un peso oro · pick #p-382s; the banknote book b932 specimen banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-de-la-republica-10-pesos-oro-1943",
+      "path": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+      "title": "Diez Pesos Oro 1943, Banco de la República",
+      "description": "Billete de 10 pesos oro del 20 de julio de 1943 (Pick 389b), PMG 50 EPQ, retrato de Nariño. Colección Notofilia.",
+      "keywords": [
+        "banco de la república",
+        "diez pesos oro 1943",
+        "pick 389b",
+        "antonio nariño",
+        "american bank note company",
+        "pmg 50 epq",
+        "notafilia colombiana"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+      "image": "/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco de la República, Bogotá, Colombia",
+      "denomination": "Diez Pesos Oro",
+      "catalogRef": "Pick 389b",
+      "condition": "",
+      "emissionType": "Billete de circulación del tipo Pick 389 (pesos oro), impreso por American Bank Note Company.",
+      "dateLabel": "",
+      "year": 1943,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "diez pesos oro 1943, banco de la república billete de 10 pesos oro del 20 de julio de 1943 (pick 389b), pmg 50 epq, retrato de nariño. colección notofilia. colombia el banco de la república, bogotá, colombia diez pesos oro pick 389b papel banknote banco de la república diez pesos oro 1943 pick 389b antonio nariño american bank note company pmg 50 epq notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-10-pesos-oro",
