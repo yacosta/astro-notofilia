@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 217 billetes en 116 fichas, 8 monedas, 33 países, 147 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 218 billetes en 117 fichas, 8 monedas, 34 países, 149 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 117 fichas · 218 billetes · 8 monedas · 34 países · 149 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).
 
@@ -63,7 +63,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 - [2 Tala, Central Bank of Samoa, Polímero](https://notofilia.com/coleccion/polimero-mundial/samoa-2-tala/): Ficha de catálogo numismático: billete specimen de 2 Tala de polímero del Central Bank of Samoa (1990/91)…
 - [The King Pelé — Rency Art $2](https://notofilia.com/coleccion/pop-art/pele-bicycle-kick-the-king/): The King Pelé “The Beautiful Game”: giclée pop art de Rency sobre billete de dos dólares (2024), chilena icónica,…
 
-Listado completo de 116 fichas (217 billetes, 8 monedas, 33 países): [llms-full.txt](https://notofilia.com/llms-full.txt) · API: [GET /api/catalog](https://notofilia.com/api/catalog) · índice JSON: [https://notofilia.com/data/catalog-index.json](https://notofilia.com/data/catalog-index.json).
+Listado completo de 117 fichas (218 billetes, 8 monedas, 34 países): [llms-full.txt](https://notofilia.com/llms-full.txt) · API: [GET /api/catalog](https://notofilia.com/api/catalog) · índice JSON: [https://notofilia.com/data/catalog-index.json](https://notofilia.com/data/catalog-index.json).
 
 ## Guías del blog
 
