@@ -2,7 +2,7 @@
  * Encode catalog hero + responsive variants for the Utrecht ducat slab photo.
  *
  * Requires the user-submitted source at:
- *   public/uploads/1761-netherland-ducat-utrecht-source.png
+ *   public/uploads/1761 Netherland Ducat Utrecht b.png
  * (override with SOURCE=/path/to/file.png)
  *
  * Compress/format only — no cropping, compositing, recoloring, or substitution.
@@ -18,6 +18,7 @@ const OUT_BASE = path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht')
 const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
+      path.join(ROOT, 'public/uploads/1761 Netherland Ducat Utrecht b.png'),
       path.join(ROOT, 'public/uploads/1761-netherland-ducat-utrecht-source.png'),
       path.join(ROOT, 'public/uploads/1761 Netherland Ducat Utrecht.png'),
       path.join(ROOT, 'public/images/monedas/1761-netherland-ducat-utrecht.png'),
