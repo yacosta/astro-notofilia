@@ -13,12 +13,12 @@ interface Props {
 const { locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 
-function hrefFor(href: string): string {
-  if (!isEn) return href;
-  const hashIdx = href.indexOf('#');
-  const hash = hashIdx >= 0 ? href.slice(hashIdx) : '';
-  const pathOnly = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
-  return `${alternateUrl(pathOnly, 'en') ?? pathOnly}${hash}`;
+function featuredHref(href: string): string {
+  const hashIndex = href.indexOf('#');
+  const path = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+  const hash = hashIndex >= 0 ? href.slice(hashIndex) : '';
+  const resolved = isEn ? (alternateUrl(path, 'en') ?? path) : path;
+  return `${resolved}${hash}`;
 }
 
 const highlights = [
@@ -41,6 +41,16 @@ const highlights = [
     imageBase: 'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39',
     imageAlt: 'Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso y reverso',
     imageAltEn: 'Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse and reverse',
+  },
+  {
+    href: '/coleccion/polimero-mundial/china-100-yuan-2000/',
+    title: 'China — 100 yuan de polímero, 2000',
+    titleEn: 'China — polymer 100 yuan, 2000',
+    description: 'Billete conmemorativo del milenio del Banco Popular de China (迎接新世纪纪念钞, Pick 902), ejemplar J04445744.',
+    descriptionEn: 'People’s Bank of China millennium commemorative (迎接新世纪纪念钞, Pick 902), specimen J04445744.',
+    imageBase: 'china-pboc-100-yuan-2000-polimero',
+    imageAlt: 'Billete conmemorativo de 100 yuan de polímero del Banco Popular de China, año 2000, anverso y reverso en fundas',
+    imageAltEn: 'People’s Bank of China commemorative polymer 100-yuan banknote, year 2000, obverse and reverse in sleeves',
   },
   {
     href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
@@ -138,7 +148,7 @@ const highlights = [
       {highlights.map((item) => (
         <li class="logros-card w-[85%] shrink-0 snap-center md:w-auto md:shrink">
           <a
-            href={hrefFor(item.href)}
+            href={featuredHref(item.href)}
             class="group block no-underline text-inherit h-full min-h-[44px] border-t-2 border-panel pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-panel focus-visible:outline-offset-[3px]"
           >
             <picture>
@@ -159,7 +169,8 @@ const highlights = [
                   item.href.includes('banco-hipotecario') ||
                   item.href.includes('banco-de-rio-hacha') ||
                   item.href.includes('20-dolares-serie-692') ||
-                  item.href.includes('victory-series-66')
+                  item.href.includes('victory-series-66') ||
+                  item.href.includes('china-100-yuan-2000')
                     ? 'object-contain bg-[#d8d2cd]'
                     : 'object-cover',
                 ]}

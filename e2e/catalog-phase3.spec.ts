@@ -292,31 +292,32 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   );
 });
 
-test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {
+test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Filipinas — 2 pesos Victory Series 66/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
-  await expect(card.getByRole('img')).toHaveAttribute(
+  const first = section.locator('ul > li > a').first();
+  await expect(first).toBeVisible();
+  await expect(first).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
+  await expect(first).toContainText('Filipinas — 2 pesos Victory Series 66');
+  await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
     /Certificado del Tesoro de Filipinas de 2 pesos/,
   );
-  await expect(card.getByRole('img')).toHaveAttribute(
+  await expect(first.getByRole('img')).toHaveAttribute(
     'src',
     '/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834-card.jpg',
   );
 });
 
-test('English homepage Logros features the Philippines Victory Series 66 2 pesos', async ({ page }) => {
+test('English homepage Logros features the Philippines Victory Series 66 2 pesos first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Philippines — 2 pesos Victory Series 66/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
-  await expect(card.getByRole('img')).toHaveAttribute(
+  const first = section.locator('ul > li > a').first();
+  await expect(first).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
+  await expect(first).toContainText('Philippines — 2 pesos Victory Series 66');
+  await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
     /Philippines Treasury Certificate of 2 pesos/,
   );
@@ -336,6 +337,23 @@ test('English homepage Logros features the Philippines Victory Series 66 1 peso'
   const card = section.getByRole('link', { name: /Philippines — 1 peso Victory Series 66/ });
   await expect(card).toBeVisible();
   await expect(card).toHaveAttribute('href', '/en/collection/philippines/1-peso-victory-series-66/');
+});
+
+test('homepage Logros del Mes still features the China 2000 polymer 100 yuan', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /China — 100 yuan de polímero, 2000/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/polimero-mundial/china-100-yuan-2000/');
+  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco Popular de China/);
+});
+
+test('English homepage Logros still features the China 2000 polymer 100 yuan', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /China — polymer 100 yuan, 2000/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/world-polymer/china-100-yuan-2000/');
 });
 
 test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
