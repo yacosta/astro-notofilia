@@ -114,6 +114,15 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/filipinas/2-pesos-victory-series-66/',
+    title: 'Filipinas — 2 pesos Victory Series 66',
+    titleEn: 'Philippines — 2 pesos Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 95a, serial F13317943. Rizal y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 95a, serial F13317943. Rizal and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, anverso y reverso',
+  },
+  {
     href: '/coleccion/filipinas/1-peso-victory-series-66/',
     title: 'Filipinas — 1 peso Victory Series 66',
     titleEn: 'Philippines — 1 peso Victory Series 66',
