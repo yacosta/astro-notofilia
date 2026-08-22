@@ -704,6 +704,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/santa-marta-quarter-real-1820/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/" />
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/vicente-villa-e-hijos-5-pesos/" />
@@ -2095,6 +2104,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/republica-bolivar-1-2-pesos-1882/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/" />
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/santa-marta-quarter-real-1820/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/santa-marta-quarter-real-1820/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/" />
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

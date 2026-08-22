@@ -768,6 +768,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | profile | `/coleccion/moneda-colonial/perfil-george-washington/` | `/en/collection/colonial-paper-money/profile-george-washington/` | proper-noun profile: translate `perfil` only |
 | profile | `/coleccion/moneda-colonial/perfil-thomas-jefferson/` | `/en/collection/colonial-paper-money/profile-thomas-jefferson/` | proper-noun profile: translate `perfil` only |
 | banknote | `/coleccion/moneda-colonial/provincia-de-pensilvania/` | `/en/collection/colonial-paper-money/province-of-pennsylvania/` | catalog IDs stay untranslated in copy |
+| coin | `/coleccion/colombia/santa-marta-1-4-real-1820/` | `/en/collection/colombia/santa-marta-quarter-real-1820/` | catalog IDs (KM, Restrepo) stay untranslated in copy |
 | coin | `/coleccion/ducado-oro-utrecht-1761/` | `/en/collection/1761-utrecht-gold-ducat/` | catalog IDs stay untranslated in copy |
 | coin | `/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/` | `/en/collection/spanish-colonial-coinage/1-escudo-carlos-iii-1774/` | catalog IDs stay untranslated in copy |
 | coin | `/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/` | `/en/collection/spanish-colonial-coinage/1-escudo-carlos-iii-1787/` | catalog IDs stay untranslated in copy |

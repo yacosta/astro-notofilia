@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-22T02:28:15.982Z",
-  "count": 135,
-  "pieceCount": 119,
+  "generatedAt": "2026-08-22T16:54:00.430Z",
+  "count": 136,
+  "pieceCount": 120,
   "stats": {
     "billetes": 220,
-    "monedas": 8,
+    "monedas": 9,
     "paises": 35,
-    "fichas": 119,
-    "paginas": 151
+    "fichas": 120,
+    "paginas": 152
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 45,
+      "count": 46,
       "slug": "colombia"
     },
     {
@@ -2266,6 +2266,40 @@
       "material": "",
       "kind": "banknote",
       "searchText": "república de bolívar: 1 y 2 pesos (1882) ficha de catálogo numismático: billetes de un peso y dos pesos de la república bolívar de colombia, emitidos en 1882. colección notofilia. colombia república bolívar de colombia un peso pick n.&deg; 5 banknote republica bolivar de colombia billete colombia 1882 un peso colombia dos pesos colombia pick 5 pick 6 notafilia colombiana"
+    },
+    {
+      "id": "colombia--santa-marta-1-4-real-1820",
+      "path": "/coleccion/colombia/santa-marta-1-4-real-1820/",
+      "title": "Cuartillo Santa Marta 1820",
+      "description": "Cuartillo de cobre de 1820, acuñado por las autoridades realistas de Santa Marta. KM# B4, Restrepo 104. Colección Notofilia.",
+      "keywords": [
+        "santa marta",
+        "cuartillo",
+        "1/4 real",
+        "1820",
+        "KM B4",
+        "restrepo 104",
+        "hernandez 11",
+        "cobre",
+        "fernando vii",
+        "moneda de sitio",
+        "nueva granada"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/",
+      "image": "/uploads/colombia-santa-marta-1-4-real-1820.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "Autoridades realistas de Santa Marta, en nombre de Fernando VII",
+      "denomination": "¼ real (cuartillo)",
+      "catalogRef": "KM# B4 · Restrepo #104 / 104.1 · Hernández #11 · Numista N# 18073",
+      "condition": "",
+      "emissionType": "Moneda de emergencia / de sitio, cobre de necesidad",
+      "dateLabel": "1820",
+      "year": 1820,
+      "material": "metal",
+      "kind": "coin",
+      "searchText": "cuartillo santa marta 1820 cuartillo de cobre de 1820, acuñado por las autoridades realistas de santa marta. km# b4, restrepo 104. colección notofilia. colombia autoridades realistas de santa marta, en nombre de fernando vii ¼ real (cuartillo) km# b4 · restrepo #104 / 104.1 · hernández #11 · numista n# 18073 metal coin santa marta cuartillo 1/4 real 1820 km b4 restrepo 104 hernandez 11 cobre fernando vii moneda de sitio nueva granada"
     },
     {
       "id": "colombia--vicente-villa-e-hijos-5-pesos",

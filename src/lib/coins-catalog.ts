@@ -26,10 +26,12 @@ const REIGN_ORDER = [
   'Reinado de Carlos III',
   'Reinado de Carlos IV',
   'Reinado de Fernando VII',
+  'Plaza realista de Santa Marta',
 ] as const;
 
 const COLONIAL_KICKER = 'Virreinato de la Nueva Granada · Ceca de Santa Fe de Bogotá';
 const NETHERLANDS_KICKER = 'República Neerlandesa · Ceca provincial de Utrecht';
+const SANTA_MARTA_KICKER = 'Nueva Granada · Guerra de Independencia · Cobre de necesidad';
 
 type CatalogIndex = {
   items: Array<{
@@ -56,6 +58,13 @@ type HubFile = {
 export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[number] {
   const blob = `${title} ${href}`.toLowerCase();
   if (
+    blob.includes('santa-marta') ||
+    blob.includes('santa marta') ||
+    blob.includes('cuartillo')
+  ) {
+    return 'Plaza realista de Santa Marta';
+  }
+  if (
     blob.includes('utrecht') ||
     blob.includes('ducado-oro-utrecht') ||
     blob.includes('paises bajos') ||
@@ -71,11 +80,15 @@ export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[num
   return 'Reinado de Felipe V';
 }
 
+function kickerForGroup(group: string): string {
+  if (group === 'Provincias Unidas de los Países Bajos') return NETHERLANDS_KICKER;
+  if (group === 'Plaza realista de Santa Marta') return SANTA_MARTA_KICKER;
+  return COLONIAL_KICKER;
+}
+
 export function withCoinGroup(card: CatalogCard): CatalogCard {
   const group = card.group || coinReignFor(card.title, card.href);
-  const groupKicker =
-    card.groupKicker ||
-    (group === 'Provincias Unidas de los Países Bajos' ? NETHERLANDS_KICKER : COLONIAL_KICKER);
+  const groupKicker = card.groupKicker || kickerForGroup(group);
   return {
     ...card,
     group,
@@ -119,10 +132,17 @@ export function coinCatalogCards(): CatalogCard[] {
       withCoinGroup({
         href: piece.path,
         title: piece.title,
+        titleEn: piece.path.includes('/santa-marta-1-4-real-1820/')
+          ? 'Copper ¼ real — Santa Marta, 1820'
+          : undefined,
         denomination: piece.denomination,
         year: piece.year ? String(piece.year) : undefined,
         image: piece.image,
+        imageWebp: piece.image?.replace(/\.(jpe?g|png)$/i, '.webp'),
         alt: piece.title,
+        altEn: piece.path.includes('/santa-marta-1-4-real-1820/')
+          ? 'Santa Marta copper quarter-real, 1820: reverse with crown, 1/4 and date (left) and obverse with cross, S and M (right)'
+          : undefined,
       }),
     );
   return [...hubCards, ...extras];
@@ -131,19 +151,20 @@ export function coinCatalogCards(): CatalogCard[] {
 export function groupedCoinCards(cards = coinCatalogCards()): GroupedCoinCards[] {
   const buckets = new Map<string, GroupedCoinCards>();
   for (const name of REIGN_ORDER) {
-    buckets.set(name, { name, kicker: COLONIAL_KICKER, cards: [] });
+    buckets.set(name, { name, kicker: kickerForGroup(name), cards: [] });
   }
   for (const card of cards) {
     const grouped = withCoinGroup(card);
     const name = grouped.group || 'Otras piezas';
     const existing = buckets.get(name);
     if (existing) {
+      if (grouped.groupKicker) existing.kicker = grouped.groupKicker;
       existing.cards.push(grouped);
       continue;
     }
     buckets.set(name, {
       name,
-      kicker: grouped.groupKicker || COLONIAL_KICKER,
+      kicker: grouped.groupKicker || kickerForGroup(name),
       cards: [grouped],
     });
   }
