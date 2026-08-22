@@ -523,6 +523,8 @@ test('coins have a dedicated numismática catalog page', async ({ page }) => {
   await expect(
     page.locator('a.catalog-banknote-card[href="/coleccion/colombia/santa-marta-1-4-real-1820/"]'),
   ).toBeVisible();
+  // Newest group leads the page
+  await expect(page.locator('.catalog-hub-group-title').first()).toHaveText('Plaza realista de Santa Marta');
   await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Moneda colonial española' }).first()).toBeVisible();
