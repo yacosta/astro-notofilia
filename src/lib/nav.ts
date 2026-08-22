@@ -257,6 +257,12 @@ export const NOTAFILIA_GROUPS: NavGroup[] = [
     links: [{ href: '/coleccion/ecuador/', label: 'Catálogo de Billetes de Ecuador', labelEn: 'Ecuador banknote catalog', lead: true }],
   },
   {
+    id: 'filipinas',
+    label: 'Filipinas',
+    labelEn: 'Philippines',
+    links: [{ href: '/coleccion/filipinas/', label: 'Catálogo de Billetes de Filipinas', labelEn: 'Philippines banknote catalog', lead: true }],
+  },
+  {
     id: 'polimero',
     label: 'Billetes de polímero mundial',
     labelEn: 'World polymer notes',

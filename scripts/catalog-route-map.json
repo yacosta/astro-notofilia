@@ -280,6 +280,14 @@
     "legacyFile": "billete-ecuador-100-sucres-1993.dc.html"
   },
   {
+    "route": "/coleccion/filipinas/",
+    "legacyFile": "catalogo-filipinas.dc.html"
+  },
+  {
+    "route": "/coleccion/filipinas/1-peso-victory-series-66/",
+    "legacyFile": "billete-filipinas-1-peso-victory-series-66.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
