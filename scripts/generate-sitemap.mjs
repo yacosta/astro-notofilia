@@ -220,7 +220,7 @@ for (const section of ['blog', 'noticias', 'logros']) {
   }
 }
 
-add(`${site}/`, { changefreq: 'weekly', priority: '1.0' });
+add(`${site}/`, { changefreq: 'weekly', priority: '1.0', lastmod: today });
 // Global collection hub is a native Astro page (not a catalog JSON entry).
 add(`${site}/coleccion/`, { changefreq: 'weekly', priority: '0.9' });
 add(`${site}/coleccion/numismatica/`, { changefreq: 'weekly', priority: '0.85' });
@@ -257,6 +257,7 @@ for (const pair of pairs) {
   if (pair.kind === 'home' || pair.en === '/en/') {
     options.changefreq = 'weekly';
     options.priority = '1.0';
+    options.lastmod = today;
   } else if (esEntry) {
     options.changefreq = esEntry.changefreq;
     options.priority = esEntry.priority;
