@@ -96,6 +96,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro-1943.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
     "legacyFile": "billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html"
   },

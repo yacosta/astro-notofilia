@@ -702,6 +702,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/` | `/en/collection/colombia/banco-de-colombia-1-peso-oro-1919/` | issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-1-peso-specimen/` | `/en/collection/colombia/banco-de-la-republica-1-peso-specimen/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-10-pesos-oro/` | `/en/collection/colombia/banco-de-la-republica-10-pesos-oro/` | catalog IDs stay untranslated in copy; issuer name kept |
+| banknote | `/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/` | `/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-100-pesos-oro/` | `/en/collection/colombia/banco-de-la-republica-100-pesos-oro/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-1000-pesos/` | `/en/collection/colombia/banco-de-la-republica-1000-pesos/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-10000-pesos-specimen/` | `/en/collection/colombia/banco-de-la-republica-10000-pesos-specimen/` | catalog IDs stay untranslated in copy; issuer name kept |

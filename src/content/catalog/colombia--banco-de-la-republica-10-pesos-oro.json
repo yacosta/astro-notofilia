@@ -93,7 +93,17 @@
     },
     "render": "astro-static",
     "eyebrow": "Bogotá, Colombia · Retrato de Antonio Nariño",
-    "country": "Colombia"
+    "country": "Colombia",
+    "related": [
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+        "title": "Diez Pesos Oro, 20 de julio de 1943 (Pick 389b)"
+      },
+      {
+        "href": "/coleccion/colombia/perfil-antonio-narino/",
+        "title": "Antonio Nariño — perfil histórico"
+      }
+    ]
   },
   "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html",
   "sourceHash": "47f2962a09e29c49",
