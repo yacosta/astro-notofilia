@@ -21,12 +21,12 @@ export type GroupedCoinCards = {
 };
 
 const REIGN_ORDER = [
+  'Plaza realista de Santa Marta',
   'Provincias Unidas de los Países Bajos',
   'Reinado de Felipe V',
   'Reinado de Carlos III',
   'Reinado de Carlos IV',
   'Reinado de Fernando VII',
-  'Plaza realista de Santa Marta',
 ] as const;
 
 const COLONIAL_KICKER = 'Virreinato de la Nueva Granada · Ceca de Santa Fe de Bogotá';
@@ -145,7 +145,8 @@ export function coinCatalogCards(): CatalogCard[] {
           : undefined,
       }),
     );
-  return [...hubCards, ...extras];
+  // Flatten in REIGN_ORDER so CatalogHubGrid (which groups by first appearance) matches.
+  return groupedCoinCards([...hubCards, ...extras]).flatMap((group) => group.cards);
 }
 
 export function groupedCoinCards(cards = coinCatalogCards()): GroupedCoinCards[] {

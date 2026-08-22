@@ -26,8 +26,8 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
     href: '/coleccion/numismatica/',
     title: 'Numismática',
     titleEn: 'Numismatics',
-    description: 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.',
-    descriptionEn: 'Coin catalog: colonial gold from Santa Fe de Bogotá.',
+    description: 'Catálogo de monedas: oro colonial, cobres de necesidad y piezas de comercio.',
+    descriptionEn: 'Coin catalog: colonial gold, necessity copper, and trade pieces.',
   },
   {
     href: '/coleccion/colombia/',
