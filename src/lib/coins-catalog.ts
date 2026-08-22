@@ -145,7 +145,8 @@ export function coinCatalogCards(): CatalogCard[] {
           : undefined,
       }),
     );
-  return [...hubCards, ...extras];
+  // Flatten in REIGN_ORDER so CatalogHubGrid (which groups by first appearance) matches.
+  return groupedCoinCards([...hubCards, ...extras]).flatMap((group) => group.cards);
 }
 
 export function groupedCoinCards(cards = coinCatalogCards()): GroupedCoinCards[] {
