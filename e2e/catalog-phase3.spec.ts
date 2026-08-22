@@ -312,32 +312,62 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos first', async ({ page }) => {
+test('homepage Logros del Mes features the Santa Marta 1820 cuartillo first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toBeVisible();
-  await expect(first).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
-  await expect(first).toContainText('Filipinas — 2 pesos Victory Series 66');
+  await expect(first).toHaveAttribute('href', '/coleccion/colombia/santa-marta-1-4-real-1820/');
+  await expect(first).toContainText('Santa Marta — ¼ real de cobre, 1820');
   await expect(first.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Cuartillo de cobre de Santa Marta, 1820/,
+  );
+  await expect(first.getByRole('img')).toHaveAttribute(
+    'src',
+    '/uploads/colombia-santa-marta-1-4-real-1820-c0225406-card.jpg',
+  );
+});
+
+test('English homepage Logros features the Santa Marta 1820 cuartillo first', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
+  const first = section.locator('ul > li > a').first();
+  await expect(first).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
+  await expect(first).toContainText('Santa Marta — copper ¼ real, 1820');
+  await expect(first.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Santa Marta copper quarter-real, 1820/,
+  );
+});
+
+test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Filipinas — 2 pesos Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
     'alt',
     /Certificado del Tesoro de Filipinas de 2 pesos/,
   );
-  await expect(first.getByRole('img')).toHaveAttribute(
+  await expect(card.getByRole('img')).toHaveAttribute(
     'src',
     '/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834-card.jpg',
   );
 });
 
-test('English homepage Logros features the Philippines Victory Series 66 2 pesos first', async ({ page }) => {
+test('English homepage Logros features the Philippines Victory Series 66 2 pesos', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
-  const first = section.locator('ul > li > a').first();
-  await expect(first).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
-  await expect(first).toContainText('Philippines — 2 pesos Victory Series 66');
-  await expect(first.getByRole('img')).toHaveAttribute(
+  const card = section.getByRole('link', { name: /Philippines — 2 pesos Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
     'alt',
     /Philippines Treasury Certificate of 2 pesos/,
   );
