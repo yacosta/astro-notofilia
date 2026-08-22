@@ -22,6 +22,7 @@ const OUT = path.join(process.cwd(), 'src/content/catalog/colombia--banco-de-la-
 const SOURCE_CANDIDATES = [
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943.png'),
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943.jpg'),
+  path.join(process.cwd(), 'public/uploads/Colombia - BDR 10pesos 1943.png'),
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-source.png'),
   path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-source.jpg'),
 ];
@@ -197,7 +198,7 @@ function buildTemplate(lang) {
         ['Serie / Número', 'Serie N &middot; S/N 6813011'],
         [
           'Firmas',
-          `Títulos visibles de Gerente y Secretario. Banknote World Educational atribuye Julio Caro y Luis Ángel Arango al Pick 389b.2 de 20.7.1944 (también Serie N).<sup style="font-size:12px;">2</sup> Nombres en <em>este</em> ejemplar de 1943: ${unconfirmed}.`,
+          'Julio Caro (Gerente) y Luis Ángel Arango (Secretario), leídas en este ejemplar. Banknote World Educational atribuye las mismas firmas al Pick 389b.2 de 20.7.1944 (también Serie N).<sup style="font-size:12px;">2</sup>',
         ],
         [
           'Dimensiones',
@@ -243,7 +244,7 @@ function buildTemplate(lang) {
         ['Series / Number', 'Series N &middot; S/N 6813011'],
         [
           'Signatures',
-          `Visible titles Gerente and Secretario. Banknote World Educational attributes Julio Caro and Luis Ángel Arango to Pick 389b.2 of 20.7.1944 (also Series N).<sup style="font-size:12px;">2</sup> Names on <em>this</em> 1943 specimen: ${unconfirmed}.`,
+          'Julio Caro (Gerente) and Luis Ángel Arango (Secretario), read on this specimen. Banknote World Educational attributes the same pair to Pick 389b.2 of 20.7.1944 (also Series N).<sup style="font-size:12px;">2</sup>',
         ],
         [
           'Dimensions',
@@ -315,7 +316,7 @@ function buildTemplate(lang) {
   const details = isEs
     ? [
         bullet(
-          '<strong style="color:#1c1a15;">Texto principal:</strong> «EL BANCO DE LA REPÚBLICA» y «DIEZ PESOS ORO», con la fecha «BOGOTÁ, COLOMBIA 20 DE JULIO DE 1943».',
+          '<strong style="color:#1c1a15;">Texto principal:</strong> «EL BANCO DE LA REPÚBLICA» y «DIEZ PESOS ORO»; lugar «BOGOTÁ, COLOMBIA» a la izquierda y fecha «20 DE JULIO DE 1943» a la derecha.',
         ),
         bullet(
           `<strong style="color:#1c1a15;">Retrato:</strong> <a href="${narinoHref}">Antonio Nariño</a> en óvalo a la derecha, con la leyenda «NARIÑO» bajo el marco.`,
@@ -324,7 +325,7 @@ function buildTemplate(lang) {
           '<strong style="color:#1c1a15;">Serie y serial:</strong> «SERIE N» y el número rojo 6813011, repetidos a izquierda y derecha del anverso.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Firmas:</strong> dos firmas manuscritas con los títulos «GERENTE» y «SECRETARIO».',
+          '<strong style="color:#1c1a15;">Firmas:</strong> Julio Caro sobre «GERENTE» y Luis Ángel Arango sobre «SECRETARIO».',
         ),
         bullet(
           '<strong style="color:#1c1a15;">Colorido del anverso:</strong> guilloches en naranja, verde y amarillo, con grandes cifras «10» en las cuatro esquinas y al centro. Pie de imprenta «AMERICAN BANK NOTE COMPANY».',
@@ -338,7 +339,7 @@ function buildTemplate(lang) {
       ]
     : [
         bullet(
-          '<strong style="color:#1c1a15;">Main text:</strong> “EL BANCO DE LA REPÚBLICA” and “DIEZ PESOS ORO,” with the date “BOGOTÁ, COLOMBIA 20 DE JULIO DE 1943.”',
+          '<strong style="color:#1c1a15;">Main text:</strong> “EL BANCO DE LA REPÚBLICA” and “DIEZ PESOS ORO”; place “BOGOTÁ, COLOMBIA” at left and date “20 DE JULIO DE 1943” at right.',
         ),
         bullet(
           `<strong style="color:#1c1a15;">Portrait:</strong> <a href="${narinoHref}">Antonio Nariño</a> in an oval at right, captioned “NARIÑO” below the frame.`,
@@ -347,7 +348,7 @@ function buildTemplate(lang) {
           '<strong style="color:#1c1a15;">Series and serial:</strong> “SERIE N” and the red number 6813011, repeated at left and right on the face.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Signatures:</strong> two manuscript signatures titled “GERENTE” and “SECRETARIO.”',
+          '<strong style="color:#1c1a15;">Signatures:</strong> Julio Caro above “GERENTE” and Luis Ángel Arango above “SECRETARIO.”',
         ),
         bullet(
           '<strong style="color:#1c1a15;">Obverse color:</strong> orange, green, and yellow guilloche, with large “10” numerals in the four corners and at center. Imprint “AMERICAN BANK NOTE COMPANY.”',
@@ -546,6 +547,7 @@ const data = {
       issueDate: '20 de julio de 1943',
       series: 'Serie N',
       serialNumber: 'N 6813011',
+      signatures: 'Julio Caro (Gerente); Luis Ángel Arango (Secretario)',
       catalogNumber: 'Pick 389b',
       material: 'Papel',
       dimensions: '140 × 70 mm (catálogo secundario); medición del ejemplar: no confirmado',
@@ -571,7 +573,7 @@ const data = {
       historical:
         'Billetes en pesos oro del Banco de la República desde 1923; Ley 82 de 1931 les dio poder liberatorio. Este 20 de julio de 1943 es el tipo ABNC con retrato de Nariño (Pick 389), no el rediseño TDLR Pick 400.',
       design:
-        'Anverso: Nariño a la derecha, Serie N 6813011 en rojo, fecha 20 de julio de 1943, firmas de Gerente y Secretario, pie ABNC. Reverso verde: medallón de la Libertad con gorro frigio.',
+        'Anverso: Nariño a la derecha, Serie N 6813011 en rojo, DIEZ PESOS ORO, fecha 20 de julio de 1943, firmas Julio Caro (Gerente) y Luis Ángel Arango (Secretario), pie ABNC. Reverso verde: medallón de la Libertad con gorro frigio.',
       varieties:
         'Pick 389 (1941–1963 ABNC); 389b en esta etiqueta PMG (1943–47); prueba 389p (otro ejemplar); Pick 400 (1953–1961 TDLR) en ficha aparte. Otras: no confirmado.',
       population: 'no confirmado',
@@ -580,7 +582,7 @@ const data = {
       {
         kind: 'specimen',
         label: 'Examen del ejemplar de la colección Notofilia (PMG 50 EPQ, cert. 8011911-013)',
-        note: 'Etiqueta PMG: Pick 389b (dated 1943-47), 10 Pesos Oro, Serie N, S/N 6813011, ABNC; fecha impresa 20 de julio de 1943; pie ABNC en ambas caras',
+        note: 'Etiqueta PMG: Pick 389b (dated 1943-47), 10 Pesos Oro, Serie N, S/N 6813011, ABNC; fecha impresa 20 de julio de 1943; firmas Julio Caro y Luis Ángel Arango; pie ABNC en ambas caras',
       },
       {
         kind: 'printer',
