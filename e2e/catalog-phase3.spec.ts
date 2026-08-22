@@ -602,4 +602,5 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await expect(drawer.getByRole('link', { name: 'México' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Chile' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Bangladesh' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'China' })).toBeVisible();
 });

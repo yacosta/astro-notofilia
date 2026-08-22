@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 217 billetes en 116 fichas, 8 monedas, 33 países, 147 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 218 billetes en 117 fichas, 8 monedas, 34 países, 148 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 116 fichas · 217 billetes · 8 monedas · 33 países · 147 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 117 fichas · 218 billetes · 8 monedas · 34 países · 148 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -170,6 +170,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [20 Leva Híbridos de Bulgaria (2005)](https://notofilia.com/coleccion/polimero-mundial/bulgaria-20-leva-2005/): Ficha de catálogo numismático: billete conmemorativo de 20 Leva del Banco Nacional de Bulgaria, 2005, sustrato híbrido de polímero por el 120…
 - [100 Riyals, Qatar Central Bank, Híbrido/Polímero](https://notofilia.com/coleccion/polimero-mundial/catar-100-riyals/): Ficha de catálogo numismático: billete de 100 Riyals del Qatar Central Bank, 4ª serie, sustrato híbrido con banda y ventana de polímero Optiks®.
 - [Pesos de Polímero de Chile](https://notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/): Ficha de catálogo numismático: billetes de polímero del Banco Central de Chile — 1.000 Pesos (2010), 2.000 Pesos (2004 y 2009) y 5.000 Pesos (2009)…
+- [100 Yuan, China, Polímero (2000)](https://notofilia.com/coleccion/polimero-mundial/china-100-yuan-2000/): Ficha: 100 yuan de polímero del Banco Popular de China, milenio 2000. Pick 902. Colección Notofilia.
 - [Colones de Tyvek y Polímero, Costa Rica](https://notofilia.com/coleccion/polimero-mundial/costa-rica-20-1000-colones/): Ficha de catálogo numismático: billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011)…
 - [1 y 5 Quetzales, Banco de Guatemala, Polímero](https://notofilia.com/coleccion/polimero-mundial/guatemala-1-5-quetzales/): Ficha de catálogo numismático: billetes de polímero del Banco de Guatemala — 1 Quetzal (2007) y 5 Quetzales (2011)…
 - [Gourdes de Tyvek de Haití](https://notofilia.com/coleccion/polimero-mundial/haiti-1-2-50-gourdes/): Ficha de catálogo numismático: billetes experimentales de Tyvek de Haití — 1, 2 y 50 Gourdes (1980)…

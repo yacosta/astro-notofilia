@@ -780,6 +780,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/polimero-mundial/bulgaria-20-leva-2005/` | `/en/collection/world-polymer/bulgaria-20-leva-2005/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/polimero-mundial/catar-100-riyals/` | `/en/collection/world-polymer/qatar-100-riyals/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/polimero-mundial/chile-1000-2000-pesos/` | `/en/collection/world-polymer/chile-1000-2000-pesos/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/polimero-mundial/china-100-yuan-2000/` | `/en/collection/world-polymer/china-100-yuan-2000/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/polimero-mundial/costa-rica-20-1000-colones/` | `/en/collection/world-polymer/costa-rica-20-1000-colones/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/polimero-mundial/guatemala-1-5-quetzales/` | `/en/collection/world-polymer/guatemala-1-5-quetzales/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/polimero-mundial/haiti-1-2-50-gourdes/` | `/en/collection/world-polymer/haiti-1-2-50-gourdes/` | catalog IDs stay untranslated in copy |

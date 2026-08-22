@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-21T02:20:50.061Z",
-  "count": 132,
-  "pieceCount": 116,
+  "generatedAt": "2026-08-22T00:39:44.917Z",
+  "count": 133,
+  "pieceCount": 117,
   "stats": {
-    "billetes": 217,
+    "billetes": 218,
     "monedas": 8,
-    "paises": 33,
-    "fichas": 116,
-    "paginas": 147
+    "paises": 34,
+    "fichas": 117,
+    "paginas": 148
   },
   "countries": [
     {
@@ -59,6 +59,11 @@
       "name": "Chile",
       "count": 1,
       "slug": "chile"
+    },
+    {
+      "name": "China",
+      "count": 1,
+      "slug": "china"
     },
     {
       "name": "Costa Rica",
@@ -3170,6 +3175,35 @@
       "material": "polímero",
       "kind": "banknote",
       "searchText": "pesos de polímero de chile ficha de catálogo numismático: billetes de polímero del banco central de chile — 1.000 pesos (2010), 2.000 pesos (2004 y 2009) y 5.000 pesos (2009)… chile banco central de chile mil pesos pick-161 polímero banknote banco central de chile 1000 pesos 2000 pesos billete de polimero manuel rodriguez ignacio carrera pinto pick 157 pick 161 pick 162 torres del paine reserva nacional nalcas billetes de polimero mundial"
+    },
+    {
+      "id": "polimero-mundial--china-100-yuan-2000",
+      "path": "/coleccion/polimero-mundial/china-100-yuan-2000/",
+      "title": "100 Yuan, China, Polímero (2000)",
+      "description": "Ficha: 100 yuan de polímero del Banco Popular de China, milenio 2000. Pick 902. Colección Notofilia.",
+      "keywords": [
+        "banco popular de china",
+        "100 yuan",
+        "billete de polimero",
+        "milenio 2000",
+        "pick 902",
+        "billetes de polimero mundial"
+      ],
+      "url": "https://notofilia.com/coleccion/polimero-mundial/china-100-yuan-2000/",
+      "image": "/uploads/china-pboc-100-yuan-2000-polimero.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "China",
+      "issuer": "Banco Popular de China (中国人民银行 / People’s Bank of China)",
+      "denomination": "Cien Yuan (100 元 / 壹佰圆)",
+      "catalogRef": "Pick 902, Standard Catalog of World Paper Money",
+      "condition": "",
+      "emissionType": "Billete conmemorativo de curso legal: «迎接新世纪纪念钞» (billete que da la bienvenida al nuevo siglo). 1,2",
+      "dateLabel": "28 de noviembre de 2000 (anuncio del 24 de noviembre de 2000). 1,2",
+      "year": 2000,
+      "material": "polímero",
+      "kind": "banknote",
+      "searchText": "100 yuan, china, polímero (2000) ficha: 100 yuan de polímero del banco popular de china, milenio 2000. pick 902. colección notofilia. china banco popular de china (中国人民银行 / people’s bank of china) cien yuan (100 元 / 壹佰圆) pick 902, standard catalog of world paper money polímero banknote banco popular de china 100 yuan billete de polimero milenio 2000 pick 902 billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--costa-rica-20-1000-colones",
