@@ -408,6 +408,10 @@
     "legacyFile": "billete-chile-2000-pesos-2009-polimero.dc.html"
   },
   {
+    "route": "/coleccion/polimero-mundial/china-100-yuan-2000/",
+    "legacyFile": "billete-china-100-yuan-2000-polimero.dc.html"
+  },
+  {
     "route": "/coleccion/polimero-mundial/costa-rica-20-1000-colones/",
     "legacyFile": "billete-costarica-20-1000-colones-tyvek-polimero.dc.html"
   },
