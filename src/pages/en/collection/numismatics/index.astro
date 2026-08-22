@@ -19,9 +19,11 @@ const REIGN_EN: Record<string, string> = {
   'Reinado de Carlos III': 'Reign of Carlos III',
   'Reinado de Carlos IV': 'Reign of Carlos IV',
   'Reinado de Fernando VII': 'Reign of Fernando VII',
+  'Plaza realista de Santa Marta': 'Royalist Santa Marta',
 };
 const COLONIAL_KICKER_EN = 'Viceroyalty of New Granada · Santa Fe de Bogotá mint';
 const NETHERLANDS_KICKER_EN = 'Dutch Republic · Utrecht provincial mint';
+const SANTA_MARTA_KICKER_EN = 'New Granada · War of Independence · necessity copper';
 
 const cardsRaw = coinCatalogCards();
 const cards: CatalogCard[] = cardsRaw.map((card) => {
@@ -29,7 +31,9 @@ const cards: CatalogCard[] = cardsRaw.map((card) => {
   const groupKickerEn =
     card.group === 'Provincias Unidas de los Países Bajos'
       ? NETHERLANDS_KICKER_EN
-      : COLONIAL_KICKER_EN;
+      : card.group === 'Plaza realista de Santa Marta'
+        ? SANTA_MARTA_KICKER_EN
+        : COLONIAL_KICKER_EN;
   return {
     ...card,
     groupEn: group,
@@ -40,7 +44,7 @@ const groups = groupedCoinCards(cardsRaw);
 const count = cards.length;
 const title = 'Numismatics Catalog | Notofilia';
 const description =
-  `Catalog of ${count} documented coins: colonial Santa Fe de Bogotá gold and international trade pieces.`;
+  `Catalog of ${count} documented coins: colonial Santa Fe gold, independence-era necessity copper, and trade pieces.`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -257,7 +261,7 @@ const jsonLd = {
       <main id="main-content" class="hub-inner" tabindex="-1" data-pagefind-meta="url:/en/collection/numismatics/">
         <h1>Numismatics catalog</h1>
         <p class="hub-lead">
-          {count} coins documented with images, mint data, and catalog references — colonial Bogotá gold and international trade pieces.
+          {count} coins documented with images, mint data, and catalog references — colonial Bogotá gold, independence-era necessity copper, and international trade pieces.
         </p>
         <p class="hub-note">
           The Virtual Collection separates
