@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-22T01:29:59.520Z",
-  "count": 134,
-  "pieceCount": 118,
+  "generatedAt": "2026-08-22T01:46:13.455Z",
+  "count": 135,
+  "pieceCount": 119,
   "stats": {
-    "billetes": 219,
+    "billetes": 220,
     "monedas": 8,
     "paises": 35,
-    "fichas": 118,
-    "paginas": 150
+    "fichas": 119,
+    "paginas": 151
   },
   "countries": [
     {
@@ -29,6 +29,11 @@
       "name": "Puerto Rico",
       "count": 4,
       "slug": "puerto-rico"
+    },
+    {
+      "name": "Filipinas",
+      "count": 2,
+      "slug": "filipinas"
     },
     {
       "name": "Bangladesh",
@@ -74,11 +79,6 @@
       "name": "Ecuador",
       "count": 1,
       "slug": "ecuador"
-    },
-    {
-      "name": "Filipinas",
-      "count": 1,
-      "slug": "filipinas"
     },
     {
       "name": "Guatemala",
@@ -2599,6 +2599,40 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "1 peso victory 66, filipinas (pick 94a) tesoro de filipinas, 1 peso victory series no. 66 (1944), pick 94a: mabini, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 1 peso pick 94a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate apolinario mabini pick 94a pick 117c osmeña un peso"
+    },
+    {
+      "id": "filipinas--2-pesos-victory-series-66",
+      "path": "/coleccion/filipinas/2-pesos-victory-series-66/",
+      "title": "2 Pesos Victory 66, Filipinas (Pick 95a)",
+      "description": "Tesoro de Filipinas, 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, sello azul y VICTORY. Colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "jose rizal",
+        "pick 95a",
+        "pick 118",
+        "osmeña",
+        "dos pesos"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/",
+      "image": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "2 pesos",
+      "catalogRef": "Pick 95a",
+      "condition": "",
+      "emissionType": "Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
     },
     {
       "id": "giori-press-test-note",

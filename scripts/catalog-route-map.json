@@ -288,6 +288,10 @@
     "legacyFile": "billete-filipinas-1-peso-victory-series-66.dc.html"
   },
   {
+    "route": "/coleccion/filipinas/2-pesos-victory-series-66/",
+    "legacyFile": "billete-filipinas-2-pesos-victory-series-66.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
