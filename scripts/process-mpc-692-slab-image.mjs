@@ -1,6 +1,6 @@
 /**
  * Encode catalog hero + responsive variants for the MPC Series 692 $20 photo
- * (side-by-side obverse/reverse). Compress/format only — no crop or substitute.
+ * (obverse above reverse). Compress/format only — no crop or substitute.
  * See .cursor/skills/catalog-submitted-images/SKILL.md
  *
  * Usage:
@@ -19,10 +19,12 @@ const JSON_PATH = path.join(
   ROOT,
   'src/content/catalog/certificados-de-pago-militar--20-dolares-serie-692.json',
 );
+const PREVIOUS_SLUG = 'mpc-series-692-20-dollars-3f285359';
 
 const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
+      path.join(ROOT, 'public/uploads/MPC_Series_692_20_Dollars_Front_Back_6144x40962.png'),
       path.join(ROOT, 'public/uploads/Military Payment Certificate - 20 dollars.png'),
       path.join(ROOT, 'public/uploads/Military Payment Certificate - 20 Dollars.png'),
     ];
@@ -62,7 +64,9 @@ async function letterboxCard(input, width, height, ext) {
 
 const input = await sharp(SOURCE).rotate().toBuffer();
 const meta = await sharp(input).metadata();
-console.log(`Source dimensions: ${meta.width}x${meta.height}`);
+const width = meta.width;
+const height = meta.height;
+console.log(`Source dimensions: ${width}x${height}`);
 
 const png = sharp(input).rotate();
 await png.clone().png({ compressionLevel: 9, adaptiveFiltering: true }).toFile(`${OUT_BASE}.png`);
@@ -78,38 +82,27 @@ await letterboxCard(input, 660, 280, 'jpg');
 
 console.log('Wrote', `${OUT_BASE}.{png,jpg,webp,-640.*,-card.*,-card-2x.*}`);
 
-const OLD = 'mpc-series-692-20-dollars';
-const width = meta.width;
-const height = meta.height;
-
 function replaceHtml(html) {
   return String(html || '')
-    .replaceAll(`/uploads/${OLD}`, `/uploads/${SLUG}`)
-    .replace('width="800"', `width="${width}"`)
-    .replace('height="708"', `height="${height}"`)
-    .replace(
-      'width:100%; max-width:660px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;',
-      'width:100%; max-width:760px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;',
-    )
-    .replace(
-      'Anverso (arriba) y reverso (abajo) — Colección de Notofilia.com',
+    .replaceAll(`/uploads/${PREVIOUS_SLUG}`, `/uploads/${SLUG}`)
+    .replaceAll('width="1448"', `width="${width}"`)
+    .replaceAll('height="1086"', `height="${height}"`)
+    .replaceAll('.webp 1448w', `.webp ${width}w`)
+    .replaceAll(
       'Anverso (izquierda) y reverso (derecha) — Colección de Notofilia.com',
-    )
-    .replace(
-      'Obverse (top) and reverse (bottom) — Notofilia.com Collection',
-      'Obverse (left) and reverse (right) — Notofilia.com Collection',
-    )
-    .replace(
-      'anverso con el retrato del jefe ute Ouray y reverso con la presa Hoover',
-      'anverso a la izquierda con el retrato del jefe ute Ouray y reverso a la derecha con la presa Hoover',
-    )
-    .replace(
-      'obverse con el portrait of Ute Chief Ouray y reverse con la presa Hoover',
-      'obverse at left con el portrait of Ute Chief Ouray y reverse at right con la presa Hoover',
+      'Anverso (arriba) y reverso (abajo) — Colección de Notofilia.com',
     )
     .replaceAll(
-      `<source srcset="/uploads/${SLUG}.webp" type="image/webp" />`,
-      `<source srcset="/uploads/${SLUG}-640.webp 640w, /uploads/${SLUG}.webp ${width}w" sizes="(max-width: 640px) 100vw, 760px" type="image/webp" />`,
+      'Obverse (left) and reverse (right) — Notofilia.com Collection',
+      'Obverse (top) and reverse (bottom) — Notofilia.com Collection',
+    )
+    .replaceAll(
+      'anverso a la izquierda con el retrato del jefe ute Ouray y reverso a la derecha con la presa Hoover',
+      'anverso arriba con el retrato del jefe ute Ouray y reverso abajo con la presa Hoover',
+    )
+    .replaceAll(
+      'obverse at left con el portrait of Ute Chief Ouray y reverse at right con la presa Hoover',
+      'obverse at top con el portrait of Ute Chief Ouray y reverse at bottom con la presa Hoover',
     );
 }
 
@@ -129,9 +122,9 @@ if (existsSync(JSON_PATH) && width && height) {
     data.record.images.stacked.width = width;
     data.record.images.stacked.height = height;
     data.record.images.stacked.alt =
-      'Certificado de pago militar de veinte dólares, Serie 692: anverso a la izquierda con el retrato del jefe ute Ouray y reverso a la derecha con la presa Hoover';
+      'Certificado de pago militar de veinte dólares, Serie 692: anverso arriba con el retrato del jefe ute Ouray y reverso abajo con la presa Hoover';
     data.record.images.stacked.altEn =
-      'Certificado de pago militar de veinte dólares, Seriess 692: obverse at left con el portrait of Ute Chief Ouray y reverse at right con la presa Hoover';
+      'Military Payment Certificate twenty dollars, Series 692: obverse at top with the portrait of Ute Chief Ouray and reverse at bottom with Hoover Dam';
   }
   await writeFile(JSON_PATH, `${JSON.stringify(data, null, 2)}\n`);
   console.log(`Updated ficha to ${SLUG} ${width}x${height}`);
