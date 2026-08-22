@@ -292,6 +292,27 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   );
 });
 
+test('homepage Logros del Mes features the China 2000 polymer 100 yuan first', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const cards = section.locator('ul > li > a');
+  const first = cards.first();
+  await expect(first).toBeVisible();
+  await expect(first).toHaveAttribute('href', '/coleccion/polimero-mundial/china-100-yuan-2000/');
+  await expect(first).toContainText('China — 100 yuan de polímero, 2000');
+  await expect(first.getByRole('img')).toHaveAttribute('alt', /Banco Popular de China/);
+});
+
+test('English homepage Logros strip leads with the China 2000 polymer 100 yuan', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
+  const first = section.locator('ul > li > a').first();
+  await expect(first).toHaveAttribute('href', '/en/collection/world-polymer/china-100-yuan-2000/');
+  await expect(first).toContainText('China — polymer 100 yuan, 2000');
+});
+
 test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
