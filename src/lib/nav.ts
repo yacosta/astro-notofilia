@@ -162,6 +162,11 @@ export const NUMISMATICA_GROUPS: NavGroup[] = [
         label: 'Fernando VII — 1 Escudo, Bogotá 1811',
         labelEn: 'Fernando VII — 1 Escudo, Bogotá 1811',
       },
+      {
+        href: '/coleccion/colombia/santa-marta-1-4-real-1820/',
+        label: 'Santa Marta — ¼ real de cobre, 1820',
+        labelEn: 'Santa Marta — copper ¼ real, 1820',
+      },
     ],
   },
   {

@@ -643,6 +643,12 @@ test('menu drawer restores collection accordions', async ({ page }) => {
   await monedasColombia.locator(':scope > summary').click();
   await expect(monedasColombia).toHaveAttribute('open');
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+  await expect(
+    drawer.getByRole('link', { name: /Santa Marta — ¼ real de cobre, 1820/ }),
+  ).toBeVisible();
+  await expect(
+    drawer.locator('a[href="/coleccion/colombia/santa-marta-1-4-real-1820/"]'),
+  ).toBeVisible();
 
   const monedasMundial = page.locator('#nav-sec-monedas-mundial');
   await expect(monedasMundial).not.toHaveAttribute('open');
