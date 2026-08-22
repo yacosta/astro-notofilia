@@ -21,6 +21,7 @@ const STABLE = 'colombia-santa-marta-1-4-real-1820';
 const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
+      path.join(ROOT, 'public/uploads/1820 Santa Marta ¼ Real (cuartillo).png'),
       path.join(ROOT, `public/uploads/${STABLE}-source.jpg`),
       path.join(ROOT, `public/uploads/${STABLE}-source.png`),
       path.join(ROOT, `public/uploads/${STABLE}-source.jpeg`),
