@@ -292,6 +292,26 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   );
 });
 
+test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
+  await page.goto('/coleccion/filipinas/');
+  const cards = page.locator('.catalog-banknote-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
+  await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
+  await expect(cards.nth(1)).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
+  await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
+});
+
+test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
+  await page.goto('/en/collection/philippines/');
+  const cards = page.locator('.catalog-banknote-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute('href', '/en/collection/philippines/1-peso-victory-series-66/');
+  await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
+  await expect(cards.nth(1)).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
+  await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
+});
+
 test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
