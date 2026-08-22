@@ -309,6 +309,19 @@ test('homepage Logros del Mes features the Philippines Victory Series 66 1 peso'
   );
 });
 
+test('English homepage Logros features the Philippines Victory Series 66 1 peso', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Philippines — 1 peso Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/philippines/1-peso-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Philippines Treasury Certificate of 1 peso/,
+  );
+});
+
 test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
