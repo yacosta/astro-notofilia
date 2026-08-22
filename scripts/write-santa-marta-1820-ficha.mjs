@@ -625,7 +625,7 @@ const data = {
       title: 'Catálogo de Numismática',
     },
   },
-  legacyFile: 'colombia-santa-marta-1-4-real-1820.astro.json',
+  legacyFile: 'moneda-colombia-santa-marta-1-4-real-1820.dc.html',
   sourceHash: '',
   i18n: {
     en: {
