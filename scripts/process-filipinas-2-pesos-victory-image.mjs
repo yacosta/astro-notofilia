@@ -1,6 +1,6 @@
 /**
  * Encode catalog hero + responsive variants for the Philippines Victory
- * Series 66 2 pesos photo (stacked obverse/reverse, no sleeves).
+ * Series 66 2 pesos (Rizal) photo (stacked obverse/reverse).
  * Compress/format only — no crop, composite, or substitute.
  * See .cursor/skills/catalog-submitted-images/SKILL.md
  *
@@ -22,7 +22,6 @@ const SOURCE_CANDIDATES = process.env.SOURCE
   : [
       path.join(ROOT, 'public/uploads/1944 (ND) PHILIPPINES 2 PESO VICTORY RIZAL.png'),
       path.join(ROOT, '1944 (ND) PHILIPPINES 2 PESO VICTORY RIZAL.png'),
-      path.join(ROOT, 'public/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-source.png'),
     ];
 
 const SOURCE = SOURCE_CANDIDATES.find((p) => existsSync(p));
@@ -30,7 +29,7 @@ const SOURCE = SOURCE_CANDIDATES.find((p) => existsSync(p));
 if (!SOURCE) {
   console.error(
     [
-      'Missing user-submitted Philippines 2 pesos Victory Series 66 photo.',
+      'Missing user-submitted Philippines Victory Series 66 2 pesos photo.',
       'Checked:',
       ...SOURCE_CANDIDATES.map((p) => `  - ${p}`),
       '',
