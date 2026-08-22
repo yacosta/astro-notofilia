@@ -488,7 +488,11 @@ test('coins have a dedicated numismática catalog page', async ({ page }) => {
   await page.goto('/coleccion/numismatica/');
   await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 1, name: 'Catálogo de Numismática' })).toBeVisible();
-  await expect(page.locator('.catalog-banknote-card')).toHaveCount(8);
+  await expect(page.locator('.catalog-banknote-card')).toHaveCount(9);
+  await expect(page.getByRole('heading', { name: 'Plaza realista de Santa Marta' })).toBeVisible();
+  await expect(
+    page.locator('a.catalog-banknote-card[href="/coleccion/colombia/santa-marta-1-4-real-1820/"]'),
+  ).toBeVisible();
   await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Moneda colonial española' }).first()).toBeVisible();
