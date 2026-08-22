@@ -193,7 +193,7 @@ export const RECENT_PIECES: RecentPiece[] = [
     titleEn: 'MPC Series 692 — Twenty Dollars',
     description: 'Última serie oficial de MPC (1970–1973), jefe Ouray.',
     descriptionEn: 'Last official MPC series (1970–1973), Chief Ouray.',
-    imageBase: 'mpc-series-692-20-dollars-dfa4d4f6',
+    imageBase: 'mpc-series-692-20-dollars-3f285359',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
   },
 ];
