@@ -59,6 +59,13 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
     descriptionEn: 'Documented sucres from the virtual collection.',
   },
   {
+    href: '/coleccion/filipinas/',
+    title: 'Filipinas',
+    titleEn: 'Philippines',
+    description: 'Certificados del Tesoro y Victory Series No. 66.',
+    descriptionEn: 'Treasury Certificates and Victory Series No. 66.',
+  },
+  {
     href: '/coleccion/polimero-mundial/',
     title: 'Billetes de polímero',
     titleEn: 'Polymer banknotes',
@@ -106,6 +113,15 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
+  {
+    href: '/coleccion/filipinas/1-peso-victory-series-66/',
+    title: 'Filipinas — 1 peso Victory Series 66',
+    titleEn: 'Philippines — 1 peso Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 94a, serial F70618009. Mabini y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 94a, serial F70618009. Mabini and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso y reverso',
+  },
   {
     href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
     title: 'Banco de Rio Hacha — 5 pesos, 1883',

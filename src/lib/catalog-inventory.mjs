@@ -99,6 +99,7 @@ export const HUB_PATHS = new Set([
   '/coleccion/colombia/emisiones-en-el-extranjero/',
   '/coleccion/puerto-rico/',
   '/coleccion/ecuador/',
+  '/coleccion/filipinas/',
   '/coleccion/moneda-colonial-espanola/',
   '/coleccion/numismatica/',
   '/coleccion/polimero-mundial/',
@@ -136,6 +137,7 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   if (section === 'colombia') return 'Colombia';
   if (section === 'puerto-rico') return 'Puerto Rico';
   if (section === 'ecuador') return 'Ecuador';
+  if (section === 'filipinas') return 'Filipinas';
   if (section === 'moneda-colonial-espanola') return 'España';
   if (section === 'polimero-mundial') {
     const labels = polymerCountryLabels(segs[2] || '');
@@ -172,6 +174,7 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   }
   if (lower.includes('puerto rico')) return 'Puerto Rico';
   if (lower.includes('ecuador')) return 'Ecuador';
+  if (lower.includes('filipinas') || lower.includes('philippines')) return 'Filipinas';
   if (lower.includes('guatemala')) return 'Guatemala';
   if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
   if (lower.includes('españa')) return 'España';

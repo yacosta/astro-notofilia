@@ -6,9 +6,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const DICT = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), 'src/i18n/catalog-es-en.json'), 'utf8'),
-) as Record<string, string>;
+const DICT_PATH = path.join(process.cwd(), 'src/i18n/catalog-es-en.json');
+const SUPPLEMENT_PATH = path.join(process.cwd(), 'src/i18n/catalog-es-en-supplement.json');
+
+const DICT = {
+  ...(JSON.parse(fs.readFileSync(DICT_PATH, 'utf8')) as Record<string, string>),
+  ...(fs.existsSync(SUPPLEMENT_PATH)
+    ? (JSON.parse(fs.readFileSync(SUPPLEMENT_PATH, 'utf8')) as Record<string, string>)
+    : {}),
+} as Record<string, string>;
 
 export function lookupEn(spanish: string | undefined): string | undefined {
   if (!spanish) return undefined;

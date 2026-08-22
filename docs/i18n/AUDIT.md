@@ -584,10 +584,11 @@ What **does** exist:
 | `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` |
 | `/coleccion/puerto-rico/` | `/en/collection/puerto-rico/` |
 | `/coleccion/ecuador/` | `/en/collection/ecuador/` |
+| `/coleccion/filipinas/` | `/en/collection/philippines/` |
 
 ### 6.3 Do-not-translate tokens
 
-- Country: Colombia, Chile, Nepal, Ecuador, Puerto Rico (as names).
+- Country: Colombia, Chile, Nepal, Ecuador, Puerto Rico, Filipinas / Philippines (as names).
 - Issuers: Banco de la República, Banco de Caldas, Citizens Bank of Louisiana, Ringling Bros., USDA, MPC, Federal Reserve (as names in titles; URL segment `reserva-federal` **is** translated above).
 - People: Simón Bolívar, Felipe V, Carlos III, J.S.G. Boggs, Jefe/Chief Ouray, etc.
 - Catalog IDs: Pick `#…`, Friedberg `FR-…`, Haxby, Schwan, Shafer, KM, Restrepo, NGC/PCGS grades.
@@ -748,6 +749,8 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/diez-dolares-1934-distritos/` | `/en/collection/ten-dollars-1934-districts/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/ecuador/100-sucres-1993/` | `/en/collection/ecuador/100-sucres-1993/` | catalog IDs stay untranslated in copy |
 | other | `/coleccion/ecuador/` | `/en/collection/ecuador/` | hub/other |
+| banknote | `/coleccion/filipinas/1-peso-victory-series-66/` | `/en/collection/philippines/1-peso-victory-series-66/` | catalog IDs stay untranslated in copy |
+| other | `/coleccion/filipinas/` | `/en/collection/philippines/` | hub/other |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/` | `/en/collection/promotional-issues/food-coupon-1-dollar-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/` | `/en/collection/promotional-issues/food-coupon-10-dollars-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/` | `/en/collection/promotional-issues/food-coupon-2-dollars-1967/` | translated |
