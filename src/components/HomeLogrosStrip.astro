@@ -15,6 +15,16 @@ const isEn = locale === 'en';
 
 const highlights = [
   {
+    href: '/coleccion/filipinas/1-peso-victory-series-66/',
+    title: 'Filipinas — 1 peso Victory Series 66',
+    titleEn: 'Philippines — 1 peso Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 94a, serial F70618009. Mabini y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 94a, serial F70618009. Mabini and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso y reverso',
+    imageAltEn: 'Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse and reverse',
+  },
+  {
     href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
     title: 'Banco de Rio Hacha — 5 pesos, 1883',
     titleEn: 'Banco de Rio Hacha — 5 pesos, 1883',
@@ -130,7 +140,8 @@ const highlights = [
                   'block w-full h-[180px] rounded-[3px] mb-3',
                   item.href.includes('banco-hipotecario') ||
                   item.href.includes('banco-de-rio-hacha') ||
-                  item.href.includes('20-dolares-serie-692')
+                  item.href.includes('20-dolares-serie-692') ||
+                  item.href.includes('1-peso-victory-series-66')
                     ? 'object-contain bg-[#d8d2cd]'
                     : 'object-cover',
                 ]}

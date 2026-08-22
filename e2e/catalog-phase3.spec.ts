@@ -292,6 +292,23 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   );
 });
 
+test('homepage Logros del Mes features the Philippines Victory Series 66 1 peso', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Filipinas — 1 peso Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Certificado del Tesoro de Filipinas de 1 peso/,
+  );
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'src',
+    '/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39-card.jpg',
+  );
+});
+
 test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
