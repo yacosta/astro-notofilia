@@ -666,7 +666,7 @@ test('desktop header shows curated hubs instead of individual records', async ({
 
   const collectionPanel = page.locator('#nav-panel-collection');
   await expect(collectionPanel).toBeHidden();
-  await page.getByRole('button', { name: 'Abrir menú de Colección' }).click();
+  await page.locator('[data-nav-item="collection"]').hover();
   await expect(collectionPanel).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Monedas' })).toBeVisible();

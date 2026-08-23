@@ -53,9 +53,12 @@
     if (!btn) return;
     btn.addEventListener('click', function (event) {
       event.preventDefault();
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      if (open) closeDesktopMenus();
-      else openDesktopItem(item);
+      event.stopPropagation();
+      // Open only. Hover may already have opened the panel; a follow-up
+      // pointer click must not immediately close it.
+      if (btn.getAttribute('aria-expanded') !== 'true') {
+        openDesktopItem(item);
+      }
     });
     item.addEventListener('mouseenter', function () {
       if (window.matchMedia('(min-width: 1024px)').matches) openDesktopItem(item);
