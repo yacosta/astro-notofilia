@@ -655,7 +655,7 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await page.goto('/');
   const desktop = page.locator('#site-desktop-nav');
   await expect(desktop).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Abrir menú' })).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Abrir menú', exact: true })).toBeHidden();
   await expect(desktop.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
     'href',
     '/coleccion/',

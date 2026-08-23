@@ -26,12 +26,12 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Certificado de Oro/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Certificado de Oro/ }).first()).toBeVisible();
 
   await page.goto('/en/collection/spain/', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1, name: 'Spain' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Felipe V/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Felipe V/ }).first()).toBeVisible();
 });
 
 test('collection hub exposes stable recent and countries anchors', async ({ page }) => {
