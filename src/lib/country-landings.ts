@@ -12,18 +12,18 @@ export type CountryLandingCopy = {
   kicker: string;
   lead: string;
   intro: string[];
-  issuersHeading: string;
-  issuers: Array<{ name: string; note: string }>;
-  featuredHeading: string;
-  featuredLead: string;
-  relatedHeading: string;
-  related: Array<{ href: string; title: string; description: string }>;
+  issuersHeading?: string;
+  issuers?: Array<{ name: string; note: string }>;
+  featuredHeading?: string;
+  featuredLead?: string;
+  relatedHeading?: string;
+  related?: Array<{ href: string; title: string; description: string }>;
   catalogHeading: string;
   catalogLead: string;
   catalogFilterHref: string;
   catalogFilterLabel: string;
   countryName: string;
-  featuredPaths: string[];
+  featuredPaths?: string[];
 };
 
 export const COUNTRY_LANDINGS: Record<
@@ -44,36 +44,11 @@ export const COUNTRY_LANDINGS: Record<
         'La colección de Estados Unidos es la segunda más amplia de Notofilia después de Colombia. Reúne papel colonial de las trece colonias, broken banknotes anteriores a la banca nacional, certificados del Tesoro y de la Reserva Federal, scrip militar (MPC) y piezas promocionales o de ensayo.',
         'No es un catálogo completo de la notafilia estadounidense: es el inventario de los ejemplares documentados aquí, con fotografías del espécimen y referencias Friedberg, Haxby, Schwan o Pick cuando existen.',
       ],
-      issuersHeading: 'Emisores y periodos',
-      issuers: [
-        { name: 'Colonias británicas (antes de 1776)', note: 'Papel provincial: Nueva Jersey, Pensilvania y otras emisiones coloniales.' },
-        { name: 'Banca libre y obsoletos (c. 1782–1866)', note: 'Bancos estatales y compañías de seguros anteriores al National Bank Act.' },
-        { name: 'Departamento del Tesoro', note: 'Certificados de oro, legal tender y otras series federales.' },
-        { name: 'Reserva Federal', note: 'Billetes de distrito, incluido el de Minneapolis de 1929.' },
-        { name: 'Departamento de Defensa (MPC)', note: 'Scrip para personal autorizado en bases de ultramar, 1946–1973.' },
-      ],
-      featuredHeading: 'Ejemplares destacados',
-      featuredLead: 'Una muestra de tipos: federal, militar, obsoleto y colonial.',
-      relatedHeading: 'Colecciones especiales relacionadas',
-      related: [
-        { href: '/coleccion/billete-obsoleto-estados-unidos/', title: 'Billetes obsoletos de EE. UU.', description: 'Broken banknotes previos a la banca nacional.' },
-        { href: '/coleccion/certificados-de-pago-militar/', title: 'Certificados de Pago Militar', description: 'Series MPC usadas por las fuerzas armadas.' },
-        { href: '/coleccion/pop-art/', title: 'Pop-art currency', description: 'Reinterpretaciones contemporáneas y piezas artísticas.' },
-        { href: '/coleccion/moneda-colonial/', title: 'Moneda colonial americana', description: 'Papel de las trece colonias británicas.' },
-      ],
       catalogHeading: 'Catálogo de Estados Unidos',
       catalogLead: 'Todas las fichas documentadas con país Estados Unidos. El explorador global permite combinar más filtros.',
       catalogFilterHref: '/coleccion/?pais=Estados%20Unidos#explorar',
       catalogFilterLabel: 'Abrir en el catálogo filtrado',
       countryName: 'Estados Unidos',
-      featuredPaths: [
-        '/coleccion/certificado-de-oro-10-dolares-1928/',
-        '/coleccion/cien-dolares-sello-rojo-1966/',
-        '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
-        '/coleccion/hagerstown-bank-maryland/',
-        '/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/',
-        '/coleccion/giori-press-test-note/',
-      ],
     },
     en: {
       path: '/en/collection/united-states/',
@@ -88,36 +63,11 @@ export const COUNTRY_LANDINGS: Record<
         'The United States holding is Notofilia’s second-largest country collection after Colombia. It brings together colonial paper of the thirteen colonies, broken banknotes from before national banking, Treasury and Federal Reserve certificates, military payment certificates, and promotional or test pieces.',
         'This is not a complete U.S. notaphily catalog. It is the inventory of specimens documented here, with photographs of the piece shown and Friedberg, Haxby, Schwan, or Pick references when they exist.',
       ],
-      issuersHeading: 'Issuers and periods',
-      issuers: [
-        { name: 'British colonies (before 1776)', note: 'Provincial paper: New Jersey, Pennsylvania, and other colonial issues.' },
-        { name: 'Free banking and obsolete notes (c. 1782–1866)', note: 'State banks and insurance companies before the National Bank Act.' },
-        { name: 'United States Treasury', note: 'Gold certificates, legal tender, and other federal series.' },
-        { name: 'Federal Reserve', note: 'District notes, including the 1929 Minneapolis issue.' },
-        { name: 'Department of Defense (MPC)', note: 'Scrip for authorized personnel on overseas bases, 1946–1973.' },
-      ],
-      featuredHeading: 'Featured specimens',
-      featuredLead: 'A cross-section of types: federal, military, obsolete, and colonial.',
-      relatedHeading: 'Related special collections',
-      related: [
-        { href: '/coleccion/billete-obsoleto-estados-unidos/', title: 'U.S. obsolete banknotes', description: 'Broken banknotes from before national banking.' },
-        { href: '/coleccion/certificados-de-pago-militar/', title: 'Military Payment Certificates', description: 'MPC series used by the U.S. armed forces.' },
-        { href: '/coleccion/pop-art/', title: 'Pop-art currency', description: 'Contemporary reinterpretations and art pieces.' },
-        { href: '/coleccion/moneda-colonial/', title: 'American colonial paper money', description: 'Notes of the thirteen British colonies.' },
-      ],
       catalogHeading: 'United States catalog',
       catalogLead: 'Every documented record with country United States. The global browser can combine additional filters.',
       catalogFilterHref: '/en/collection/?pais=Estados%20Unidos#explorar',
       catalogFilterLabel: 'Open in the filtered catalog',
       countryName: 'Estados Unidos',
-      featuredPaths: [
-        '/coleccion/certificado-de-oro-10-dolares-1928/',
-        '/coleccion/cien-dolares-sello-rojo-1966/',
-        '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
-        '/coleccion/hagerstown-bank-maryland/',
-        '/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/',
-        '/coleccion/giori-press-test-note/',
-      ],
     },
   },
   spain: {

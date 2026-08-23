@@ -1,6 +1,6 @@
 ---
 /**
- * Country collection landing — intro, issuers, featured specimens, related hubs, catalog grid.
+ * Country collection landing — intro, optional issuers/featured/related hubs, catalog grid.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -61,7 +61,7 @@ const countryItems = catalogIndex.items
     return ay - by || a.title.localeCompare(b.title, 'es');
   });
 
-const featured = copy.featuredPaths
+const featured = (copy.featuredPaths ?? [])
   .map((featuredPath) => countryItems.find((item) => item.path === featuredPath) ?? catalogIndex.items.find((item) => item.path === featuredPath))
   .filter((item): item is (typeof catalogIndex.items)[number] => Boolean(item));
 
@@ -289,58 +289,64 @@ const jsonLd = {
         <p class="hub-lead">{copy.lead}</p>
         {copy.intro.map((paragraph) => <p>{paragraph}</p>)}
 
-        <section class="hub-section" aria-labelledby="issuers-heading">
-          <h2 id="issuers-heading">{copy.issuersHeading}</h2>
-          <ul class="issuer-list">
-            {copy.issuers.map((issuer) => (
-              <li>
-                <strong>{issuer.name}</strong>
-                <span class="card-desc">{issuer.note}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {copy.issuersHeading && copy.issuers?.length ? (
+          <section class="hub-section" aria-labelledby="issuers-heading">
+            <h2 id="issuers-heading">{copy.issuersHeading}</h2>
+            <ul class="issuer-list">
+              {copy.issuers.map((issuer) => (
+                <li>
+                  <strong>{issuer.name}</strong>
+                  <span class="card-desc">{issuer.note}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        <section class="hub-section" aria-labelledby="featured-heading">
-          <h2 id="featured-heading">{copy.featuredHeading}</h2>
-          <p class="hub-section-lead">{copy.featuredLead}</p>
-          <ul class="featured-grid">
-            {featured.map((item) => (
-              <li>
-                <a href={hrefFor(item.path)}>
-                  {item.image && (
-                    <picture>
-                      <img
-                        src={item.image}
-                        alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
-                        width="440"
-                        height="280"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
-                  )}
-                  <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
-                  <span class="card-desc">{isEn ? (lookupEn(item.description || '') || item.description) : item.description}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {copy.featuredHeading && featured.length ? (
+          <section class="hub-section" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">{copy.featuredHeading}</h2>
+            {copy.featuredLead ? <p class="hub-section-lead">{copy.featuredLead}</p> : null}
+            <ul class="featured-grid">
+              {featured.map((item) => (
+                <li>
+                  <a href={hrefFor(item.path)}>
+                    {item.image && (
+                      <picture>
+                        <img
+                          src={item.image}
+                          alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
+                          width="440"
+                          height="280"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
+                    )}
+                    <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                    <span class="card-desc">{isEn ? (lookupEn(item.description || '') || item.description) : item.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        <section class="hub-section" aria-labelledby="related-heading">
-          <h2 id="related-heading">{copy.relatedHeading}</h2>
-          <ul class="related-grid">
-            {copy.related.map((entry) => (
-              <li>
-                <a href={hrefFor(entry.href)}>
-                  <span class="card-title">{entry.title}</span>
-                  <span class="card-desc">{entry.description}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {copy.relatedHeading && copy.related?.length ? (
+          <section class="hub-section" aria-labelledby="related-heading">
+            <h2 id="related-heading">{copy.relatedHeading}</h2>
+            <ul class="related-grid">
+              {copy.related.map((entry) => (
+                <li>
+                  <a href={hrefFor(entry.href)}>
+                    <span class="card-title">{entry.title}</span>
+                    <span class="card-desc">{entry.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <section class="hub-section" id="catalogo" aria-labelledby="catalog-heading">
           <h2 id="catalog-heading">{copy.catalogHeading}</h2>
