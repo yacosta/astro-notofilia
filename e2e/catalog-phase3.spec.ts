@@ -465,7 +465,9 @@ test('Filipinas Victory Series page shows both collection notes', async ({ page 
     'href',
     '/coleccion/filipinas/2-pesos-victory-series-66/',
   );
-  await expect(page.getByRole('link', { name: /Bangko Sentral ng Pilipinas — English Series/ })).toBeVisible();
+  await expect(
+    page.locator('a[href="https://www.bsp.gov.ph/SitePages/CoinsAndNotes/EnglishSeries.aspx"]').first(),
+  ).toBeVisible();
 });
 
 test('English Philippines Victory Series page shows both collection notes', async ({ page }) => {
