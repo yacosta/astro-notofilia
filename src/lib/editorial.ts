@@ -9,7 +9,6 @@ export const EDITORIAL_TEAM = {
   url: `${SITE}/editorial/equipo/`,
   jobTitle: 'Editor',
   path: '/editorial/equipo/',
-  sameAs: ['https://github.com/yacosta'] as const,
 } as const;
 
 export const EDITORIAL_POLICY_PATH = '/editorial/';
@@ -40,7 +39,6 @@ export function personJsonLd(name: string = EDITORIAL_TEAM.name, url: string = E
           jobTitle: EDITORIAL_TEAM.jobTitle,
           givenName: EDITORIAL_TEAM.givenName,
           familyName: EDITORIAL_TEAM.familyName,
-          sameAs: [...EDITORIAL_TEAM.sameAs],
         }
       : {}),
     worksFor: {

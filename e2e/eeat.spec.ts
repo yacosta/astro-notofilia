@@ -30,14 +30,19 @@ test('named editor profile is Yezid Acosta', async ({ page }) => {
   await page.goto('/editorial/equipo/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Yezid Acosta' })).toBeVisible();
   await expect(page.locator('meta[name="author"]')).toHaveAttribute('content', 'Yezid Acosta');
-  await expect(
-    page.getByRole('link', { name: /github\.com\/yacosta/i }),
-  ).toHaveAttribute('href', 'https://github.com/yacosta');
+  await expect(page.getByRole('heading', { name: 'Perfil público' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /github\.com\/yacosta/i })).toHaveCount(0);
   const jsonLd = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText());
   const person = jsonLd['@graph'].find((node: { '@type': string }) => node['@type'] === 'Person');
   expect(person.name).toBe('Yezid Acosta');
   expect(person.jobTitle).toBe('Editor');
-  expect(person.sameAs).toContain('https://github.com/yacosta');
+  expect(person.sameAs).toBeUndefined();
+});
+
+test('English editor profile does not list GitHub', async ({ page }) => {
+  await page.goto('/en/editorial/team/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'Public profile' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /github\.com\/yacosta/i })).toHaveCount(0);
 });
 
 test('homepage Organization JSON-LD names the founder', async ({ page }) => {
