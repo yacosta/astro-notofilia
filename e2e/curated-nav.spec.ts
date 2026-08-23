@@ -144,6 +144,26 @@ test('United States catalog omits the Utrecht gold ducat', async ({ page }) => {
   await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toHaveCount(0);
 });
 
+test('Banca Libre hub omits issuer section headings above the notes', async ({ page }) => {
+  await page.goto('/coleccion/colombia/banca-libre/', { waitUntil: 'domcontentloaded' });
+  const heading = page.getByRole('heading', { level: 1, name: 'Banca Libre Colombiana' });
+  const cards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  const notes = page.getByRole('heading', { name: 'Notas', exact: true });
+  await expect(heading).toBeVisible();
+  await expect(cards).toHaveCount(22);
+  await expect(page.getByText('Casas Comerciales Emisoras')).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Vicente B. Villa é Hijos, Medellín (188X)' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: /El Banco de Pamplona \(1883/ })).toHaveCount(0);
+  await expect(page.getByText('Banca Hipotecaria Regional')).toHaveCount(0);
+  await expect(page.getByText('Títulos y Cédulas Históricas')).toHaveCount(0);
+  const headingBox = await heading.boundingBox();
+  const cardBox = await cards.first().boundingBox();
+  const notesBox = await notes.boundingBox();
+  expect(headingBox && cardBox && notesBox).toBeTruthy();
+  expect(cardBox!.y).toBeGreaterThan(headingBox!.y);
+  expect(cardBox!.y).toBeLessThan(notesBox!.y);
+});
+
 test('Colombia hub no longer repeats the free-banking promo block', async ({ page }) => {
   await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByText(/Las piezas documentadas se agrupan/)).toHaveCount(0);
