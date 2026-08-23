@@ -162,9 +162,40 @@ export function compareUsCatalogItems(a: UsCatalogItem, b: UsCatalogItem): numbe
   return compareByFirstYear(a, b) || a.title.localeCompare(b.title, 'es');
 }
 
-export function isCatalogBiography(item: Pick<UsCatalogItem, 'role' | 'kind' | 'path'>): boolean {
+/** Portrait pages that must never appear on /coleccion/estados-unidos/. */
+export const US_CATALOG_BIOGRAPHY_PATHS = [
+  '/coleccion/moneda-colonial/perfil-alexander-hamilton/',
+  '/coleccion/moneda-colonial/perfil-andrew-jackson/',
+  '/coleccion/moneda-colonial/perfil-benjamin-franklin/',
+  '/coleccion/moneda-colonial/perfil-george-washington/',
+  '/coleccion/moneda-colonial/perfil-thomas-jefferson/',
+  '/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/',
+  '/coleccion/polimero-mundial/perfil-malietoa-tanumafili-ii/',
+  '/coleccion/polimero-mundial/perfil-manuel-rodriguez/',
+] as const;
+
+const US_CATALOG_BIOGRAPHY_TITLES = new Set([
+  'alexander hamilton',
+  'andrew jackson',
+  'benjamin franklin',
+  'george washington',
+  'thomas jefferson',
+  'jefe ouray',
+  'malietoa tanumafili ii',
+  'manuel rodríguez erdoíza',
+  'manuel rodriguez erdoiza',
+]);
+
+export function isCatalogBiography(
+  item: Pick<UsCatalogItem, 'role' | 'kind' | 'path'> & { title?: string },
+): boolean {
   if (item.role === 'profile' || item.kind === 'profile') return true;
-  return /\/perfil-/.test(item.path);
+  if (/\/perfil-/.test(item.path)) return true;
+  if (US_CATALOG_BIOGRAPHY_PATHS.includes(item.path as (typeof US_CATALOG_BIOGRAPHY_PATHS)[number])) {
+    return true;
+  }
+  const title = item.title?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  return Boolean(title && US_CATALOG_BIOGRAPHY_TITLES.has(title));
 }
 
 export function groupUsCatalogItems<T extends UsCatalogItem>(items: T[]): Array<{

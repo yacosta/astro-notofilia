@@ -36,8 +36,17 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await expect(page.getByRole('heading', { name: 'Pop Art' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Nota de Prueba' })).toBeVisible();
   await expect(page.locator('a[href*="/perfil-"]')).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Alexander Hamilton' })).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'George Washington' })).toHaveCount(0);
+  for (const name of [
+    'Alexander Hamilton',
+    'Andrew Jackson',
+    'Benjamin Franklin',
+    'George Washington',
+    'Jefe Ouray',
+    'Malietoa Tanumafili II',
+    'Thomas Jefferson',
+  ]) {
+    await expect(page.getByRole('link', { name, exact: true })).toHaveCount(0);
+  }
   const foodHeading = page.getByRole('heading', { name: 'Food Coupons USDA' });
   const foodSection = page.locator('#food-coupons-usda');
   const foodTitles = await foodSection.locator('.card-title').allTextContents();

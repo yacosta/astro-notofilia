@@ -82,7 +82,11 @@ const countryItems = catalogIndex.items
 const usGroups = countryId === 'united-states' ? groupUsCatalogItems(countryItems) : null;
 
 const featured = (copy.featuredPaths ?? [])
-  .map((featuredPath) => countryItems.find((item) => item.path === featuredPath) ?? catalogIndex.items.find((item) => item.path === featuredPath))
+  .map(
+    (featuredPath) =>
+      countryItems.find((item) => item.path === featuredPath) ??
+      catalogIndex.items.find((item) => item.path === featuredPath && !isCatalogBiography(item)),
+  )
   .filter((item): item is (typeof catalogIndex.items)[number] => Boolean(item));
 
 const breadcrumbItems = copy.crumbs?.length
