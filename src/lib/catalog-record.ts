@@ -80,6 +80,8 @@ export const catalogCardSchema = z.object({
   titleEn: z.string().min(1).optional(),
   denomination: z.string().optional(),
   year: z.string().optional(),
+  country: z.string().min(1).optional(),
+  countryEn: z.string().min(1).optional(),
   image: z.string().optional(),
   imageWebp: z.string().optional(),
   alt: z.string().optional(),

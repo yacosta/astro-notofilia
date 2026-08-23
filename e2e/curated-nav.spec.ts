@@ -60,6 +60,27 @@ test('desktop collection menu stays open when moving onto a category', async ({ 
   await expect(collectionPanel).toBeVisible();
 });
 
+test('world polymer hub cards show country names in alphabetical order', async ({ page }) => {
+  await page.goto('/coleccion/polimero-mundial/', { waitUntil: 'domcontentloaded' });
+  const cards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  await expect(cards.first()).toContainText('Bangladesh');
+  await expect(cards.first()).not.toContainText('10 Taka');
+  await expect(cards.first()).not.toContainText('2000');
+  const names = await cards.locator('.font-display').allTextContents();
+  expect(names).toEqual(
+    [...names].sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' })),
+  );
+
+  await page.goto('/en/collection/world-polymer/', { waitUntil: 'domcontentloaded' });
+  const enCards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  const enNames = await enCards.locator('.font-display').allTextContents();
+  expect(enNames).toEqual(
+    [...enNames].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+  );
+  await expect(enCards.getByText('Qatar', { exact: true })).toBeVisible();
+  await expect(enCards.getByText('Solomon Islands', { exact: true })).toBeVisible();
+});
+
 test('contact form prefills catalog identifier and URL', async ({ page }) => {
   await page.goto('/contacto/?ficha=NF.test&url=/coleccion/ejemplo/', {
     waitUntil: 'domcontentloaded',

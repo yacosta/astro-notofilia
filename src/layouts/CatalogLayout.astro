@@ -12,6 +12,7 @@ import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
 import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
 import { withColombiaGroup } from '../lib/colombia-catalog';
 import { compareByFirstYear } from '../lib/catalog-year';
+import { polymerCountryLabels } from '../lib/catalog-inventory.mjs';
 import { withI18nMarkup } from '../lib/html-i18n';
 import { t, type Locale } from '../lib/ui-i18n';
 
@@ -40,13 +41,41 @@ function colombiaHubCards(cards: CatalogCard[]): CatalogCard[] {
     .map(({ card }) => card);
 }
 
+function polymerSlug(href: string): string {
+  const trimmed = href.replace(/\/+$/, '');
+  return trimmed.slice(trimmed.lastIndexOf('/') + 1);
+}
+
+function polymerHubCards(cards: CatalogCard[], locale: Locale): CatalogCard[] {
+  const collator = new Intl.Collator(locale === 'en' ? 'en' : 'es', { sensitivity: 'base' });
+  return cards
+    .map((card, index) => {
+      const labels = polymerCountryLabels(polymerSlug(card.href));
+      const countryCard = labels
+        ? { ...card, country: labels.es, countryEn: labels.en }
+        : card;
+      const sortKey = labels ? (locale === 'en' ? labels.en : labels.es) : card.title;
+      return { card: countryCard, index, sortKey };
+    })
+    .sort((a, b) => collator.compare(a.sortKey, b.sortKey) || a.index - b.index)
+    .map(({ card }) => card);
+}
+
 const COLOMBIA_HUB_PATHS = new Set(['/coleccion/colombia/', '/en/collection/colombia/']);
+const POLYMER_HUB_PATHS = new Set([
+  '/coleccion/polimero-mundial/',
+  '/en/collection/world-polymer/',
+]);
 
 const props = Astro.props;
 const locale: Locale = props.locale ?? 'es';
 const record = props.record;
 const rawCards = record?.cards ?? [];
-const cards = COLOMBIA_HUB_PATHS.has(props.path) ? colombiaHubCards(rawCards) : rawCards;
+const cards = COLOMBIA_HUB_PATHS.has(props.path)
+  ? colombiaHubCards(rawCards)
+  : POLYMER_HUB_PATHS.has(props.path)
+    ? polymerHubCards(rawCards, locale)
+    : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 // English URLs must receive a human English `template` — never wrap Spanish HTML.
