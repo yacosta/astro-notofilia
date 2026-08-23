@@ -664,8 +664,9 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(desktop.getByRole('link', { name: /Logros del Mes/ })).toHaveCount(0);
   await expect(desktop.getByRole('link', { name: /Política de Privacidad/ })).toHaveCount(0);
 
-  await page.getByRole('button', { name: 'Abrir menú de Colección' }).click();
   const collectionPanel = page.locator('#nav-panel-collection');
+  await expect(collectionPanel).toBeHidden();
+  await page.getByRole('button', { name: 'Abrir menú de Colección' }).click();
   await expect(collectionPanel).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Monedas' })).toBeVisible();

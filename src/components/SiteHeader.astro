@@ -469,7 +469,10 @@ const searchAction = '/buscar/';
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     z-index: 120;
   }
-  .site-header__panel--mega {
+  .site-header__panel[hidden] {
+    display: none;
+  }
+  .site-header__panel--mega:not([hidden]) {
     display: grid;
     grid-template-columns: repeat(3, minmax(180px, 1fr));
     gap: 8px 32px;
