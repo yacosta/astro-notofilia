@@ -60,7 +60,7 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Colombia' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toBeVisible();
 });
