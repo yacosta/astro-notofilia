@@ -156,8 +156,9 @@ if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertis
 
 const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.astro'), 'utf8');
 if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not load site-header.js');
-if (!nativeHeader.includes('/coleccion/')) fail('Native SiteHeader is missing the collection link');
+if (!nativeHeader.includes('COLLECTION_MENU')) fail('Native SiteHeader does not render the Collection menu');
 const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
+if (!navTs.includes("href: '/coleccion/'")) fail('Primary nav is missing the collection hub');
 if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
 if (!navTs.includes('Catálogo completo')) fail('Primary nav is missing the Full Catalog label');
 if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
