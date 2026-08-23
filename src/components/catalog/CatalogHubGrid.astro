@@ -32,6 +32,7 @@ type CardGroup = {
   nameEn?: string;
   kicker?: string;
   kickerEn?: string;
+  id?: string;
   cards: CatalogCard[];
   subgroups: CardSubgroup[];
 };
@@ -79,6 +80,7 @@ function ensureGroup(
       nameEn: card.groupEn ?? lookupEn(name),
       kicker: card.groupKicker,
       kickerEn: card.groupKickerEn ?? (card.groupKicker ? lookupEn(card.groupKicker) : undefined),
+      id: card.groupId,
       cards: [],
       subgroups: [],
     };
@@ -257,7 +259,7 @@ function headingId(prefix: string, name: string): string {
           })
         : groups.map((group) =>
             group.name ? (
-              <section class="catalog-hub-group">
+              <section class="catalog-hub-group" id={group.id}>
                 {group.kicker ? (
                   <span
                     class="catalog-hub-kicker"
@@ -305,6 +307,9 @@ function headingId(prefix: string, name: string): string {
     line-height: 1.15;
     color: #d8d2cd;
     margin: 0 0 40px;
+  }
+  .catalog-hub-group {
+    scroll-margin-top: 88px;
   }
   .catalog-hub-group + .catalog-hub-group {
     margin-top: 64px;

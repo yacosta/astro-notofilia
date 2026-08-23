@@ -82,6 +82,9 @@ export const catalogCardSchema = z.object({
   year: z.string().optional(),
   country: z.string().min(1).optional(),
   countryEn: z.string().min(1).optional(),
+  /** Secondary line under the card heading (issuer location, bank note, etc.). */
+  description: z.string().min(1).optional(),
+  descriptionEn: z.string().min(1).optional(),
   image: z.string().optional(),
   imageWebp: z.string().optional(),
   alt: z.string().optional(),
@@ -99,6 +102,8 @@ export const catalogCardSchema = z.object({
   /** Optional nested heading under `group` (e.g. a bank inside Banca Libre). */
   subgroup: z.string().min(1).optional(),
   subgroupEn: z.string().min(1).optional(),
+  /** Stable hash target for a hub group (`#state-bank-new-brunswick`). */
+  groupId: z.string().min(1).optional(),
 });
 
 /**

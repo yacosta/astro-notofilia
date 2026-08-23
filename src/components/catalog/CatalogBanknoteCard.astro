@@ -22,17 +22,23 @@ const imageWebp = card.imageWebp?.startsWith('/')
     : undefined;
 const titleVisible = isEn ? (card.titleEn ?? lookupEn(card.title) ?? card.title) : card.title;
 const countryVisible = isEn ? (card.countryEn ?? card.country) : card.country;
-const denominationVisible = countryVisible
-  ? undefined
-  : isEn
-    ? (card.denomination ? (lookupEn(card.denomination) ?? card.denomination) : undefined)
-    : card.denomination;
+const descriptionVisible = isEn
+  ? (card.descriptionEn ?? (card.description ? lookupEn(card.description) ?? card.description : undefined))
+  : card.description;
+const captionByIssuer = Boolean(descriptionVisible);
+const denominationVisible =
+  countryVisible || captionByIssuer
+    ? undefined
+    : isEn
+      ? (card.denomination ? (lookupEn(card.denomination) ?? card.denomination) : undefined)
+      : card.denomination;
 const heading = countryVisible || denominationVisible || titleVisible;
-const kicker = countryVisible
-  ? undefined
-  : denominationVisible
-    ? card.year
-    : [denominationVisible, card.year].filter(Boolean).join(' · ');
+const kicker =
+  countryVisible || captionByIssuer
+    ? undefined
+    : denominationVisible
+      ? card.year
+      : [denominationVisible, card.year].filter(Boolean).join(' · ');
 const showIssuer = Boolean(
   titleVisible && titleVisible !== heading && (countryVisible || denominationVisible),
 );
@@ -83,6 +89,11 @@ function englishCardHref(rawHref: string): string {
     {
       showIssuer && (
         <span class="font-serif text-[15px] leading-[1.35] text-[#5c4e33]">{titleVisible}</span>
+      )
+    }
+    {
+      descriptionVisible && (
+        <span class="font-serif text-[15px] leading-[1.45] text-[#5c4e33]">{descriptionVisible}</span>
       )
     }
   </div>

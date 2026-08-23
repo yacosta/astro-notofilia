@@ -94,15 +94,14 @@ export const COLLECTION_BROWSE: NavGroup = {
 
 export const COLLECTION_COUNTRIES: NavGroup = {
   id: 'major-countries',
-  label: 'Colecciones principales',
-  labelEn: 'Major Collections',
+  label: 'Colección Virtual — Notafilia',
+  labelEn: 'Virtual Collection — Notaphily',
   links: [
     { href: '/coleccion/colombia/', label: 'Colombia', labelEn: 'Colombia' },
     { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
     { href: '/coleccion/espana/', label: 'España', labelEn: 'Spain' },
     { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
     { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
-    { href: '/coleccion/#countries', label: 'Ver todos los países', labelEn: 'View all countries' },
   ],
 };
 

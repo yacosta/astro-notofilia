@@ -861,9 +861,13 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Monedas' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Todos los países' })).toBeVisible();
+  await expect(collectionPanel.getByText('Colección Virtual — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
+  await expect(collectionPanel.getByText('Colecciones principales')).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);
@@ -885,7 +889,9 @@ test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
   await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
   await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Monedas' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Todos los países' })).toBeVisible();
+  await expect(drawer.getByText('Colección Virtual — Notafilia')).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
   await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(0);

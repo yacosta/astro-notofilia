@@ -81,6 +81,27 @@ test('world polymer hub cards show country names in alphabetical order', async (
   await expect(enCards.getByText('Solomon Islands', { exact: true })).toBeVisible();
 });
 
+test('obsolete U.S. hub cards show the issuing bank under each note', async ({ page }) => {
+  await page.goto('/coleccion/billete-obsoleto-estados-unidos/', { waitUntil: 'domcontentloaded' });
+  const cards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  await expect(cards.first().locator('.font-display')).toHaveText('The State Bank at New Brunswick');
+  await expect(cards.first()).toContainText('Nueva Brunswick, Nueva Jersey');
+  await expect(cards.first()).not.toContainText('$1.00');
+  await expect(page.locator('#state-bank-new-brunswick')).toBeVisible();
+  const hagerstown = page.locator('#hagerstown-bank-maryland a.catalog-banknote-card');
+  await expect(hagerstown).toHaveCount(2);
+  await expect(hagerstown.first()).toContainText('The Hagerstown Bank');
+  await expect(hagerstown.first()).toContainText('Hagerstown, Maryland');
+
+  await page.goto('/en/collection/obsolete-united-states-banknotes/', {
+    waitUntil: 'domcontentloaded',
+  });
+  const enCard = page.locator('.catalog-hub-grid a.catalog-banknote-card').first();
+  await expect(enCard.locator('.font-display')).toHaveText('The State Bank at New Brunswick');
+  await expect(enCard).toContainText('New Brunswick, New Jersey');
+  await expect(enCard).not.toContainText('$1.00');
+});
+
 test('contact form prefills catalog identifier and URL', async ({ page }) => {
   await page.goto('/contacto/?ficha=NF.test&url=/coleccion/ejemplo/', {
     waitUntil: 'domcontentloaded',
