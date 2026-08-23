@@ -86,7 +86,7 @@ export function denominationCentRank(path: string): number {
   const slug = path.toLowerCase();
   const cents = slug.match(/(\d+)-centavos?/);
   if (cents) return Number(cents[1]);
-  const dollars = slug.match(/(\d+)-dolares?/);
+  const dollars = slug.match(/(\d+)-dolar(?:es)?/);
   if (dollars) return Number(dollars[1]) * 100;
   return 99_999;
 }
