@@ -23,11 +23,10 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 ## Sitio principal
 
 - [Inicio](https://notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
-- [Catálogo (índice)](https://notofilia.com/coleccion/): Hub global de la Colección Virtual: billetes, filtros y accesos por país.
+- [Catálogo de Colombia](https://notofilia.com/coleccion/colombia/): Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de monedas: oro colonial de Santa Fe de Bogotá.
 - [Guías para coleccionistas](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
 - [Sobre Notofilia](https://notofilia.com/nosotros/): Qué es el proyecto, quién lo edita y cómo citar las fichas.
-- [Añadidos recientes](https://notofilia.com/coleccion/#recent): Piezas destacadas incorporadas a la Colección Virtual.
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
 - [Glosario](https://notofilia.com/glosario/): 95 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
@@ -36,7 +35,6 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 ## Catálogo — secciones
 
-- [Colección Virtual](https://notofilia.com/coleccion/): Colección Virtual
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…

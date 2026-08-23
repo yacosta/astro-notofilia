@@ -7,6 +7,11 @@
 # Logros del Mes lives on the homepage strip, not a separate index
 /logros/  /  301
 /logros  /  301
+# Global catalog hub retired — country hubs and fichas stay
+/coleccion  /  301
+/coleccion/  /  301
+/en/collection  /en/  301
+/en/collection/  /en/  301
 # Native Astro pages: 301 the .dc document URLs to the extensionless canonical
 /perfil-j-s-g-boggs.dc.html  /j-s-g-boggs/  301
 /perfil-j-s-g-boggs.dc  /j-s-g-boggs/  301
@@ -165,6 +170,13 @@
 /billete-filipinas-1-peso-victory-series-66.dc  /coleccion/filipinas/1-peso-victory-series-66/  301
 /billete-filipinas-2-pesos-victory-series-66.dc.html  /coleccion/filipinas/2-pesos-victory-series-66/  301
 /billete-filipinas-2-pesos-victory-series-66.dc  /coleccion/filipinas/2-pesos-victory-series-66/  301
+/billete-filipinas-tesoreria-victory-series.dc.html  /coleccion/filipinas/  301
+/billete-filipinas-tesoreria-victory-series.dc  /coleccion/filipinas/  301
+# Combined Victory Series page retired — Filipinas hub lists both notes
+/coleccion/filipinas/tesoreria-victory-series  /coleccion/filipinas/  301
+/coleccion/filipinas/tesoreria-victory-series/  /coleccion/filipinas/  301
+/en/collection/philippines/treasury-victory-series  /en/collection/philippines/  301
+/en/collection/philippines/treasury-victory-series/  /en/collection/philippines/  301
 /billete-guatemala-banco-colombiano-1-peso-1900.dc.html  /coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/  301
 /billete-guatemala-banco-colombiano-1-peso-1900.dc  /coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/  301
 /billete-colombia-banco-de-colombia-1-peso-oro-1919.dc.html  /coleccion/colombia/banco-de-colombia-1-peso-oro-1919/  301

@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 
 const SWITCHER_PAGES = [
   { path: '/', enHref: '/en/' },
-  { path: '/coleccion/', enHref: '/en/collection/' },
   { path: '/coleccion/colombia/', enHref: '/en/collection/colombia/' },
   {
     path: '/coleccion/pop-art/pele-bicycle-kick-the-king/',
@@ -127,11 +126,11 @@ test('unpaired noticia falls back to the news index', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Paysandú');
 });
 
-test('EN collection nav points at /en/collection/', async ({ page }) => {
+test('EN collection nav points at /en/collection/colombia/', async ({ page }) => {
   await page.goto('/en/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('link', { name: 'Collection', exact: true })).toHaveAttribute(
     'href',
-    '/en/collection/',
+    '/en/collection/colombia/',
   );
 });
 
