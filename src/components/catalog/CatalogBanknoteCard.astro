@@ -39,7 +39,15 @@ const showIssuer = Boolean(
 const alt = isEn
   ? (card.altEn ?? lookupEn(card.alt) ?? card.alt ?? heading)
   : (card.alt || heading);
-const href = isEn ? (alternateUrl(card.href, 'en') ?? card.href) : card.href;
+const href = isEn ? englishCardHref(card.href) : card.href;
+
+function englishCardHref(rawHref: string): string {
+  const hashAt = rawHref.indexOf('#');
+  const path = hashAt >= 0 ? rawHref.slice(0, hashAt) : rawHref;
+  const hash = hashAt >= 0 ? rawHref.slice(hashAt) : '';
+  const alt = alternateUrl(path, 'en');
+  return alt ? `${alt}${hash}` : rawHref;
+}
 ---
 <a
   href={href}

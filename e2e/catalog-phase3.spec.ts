@@ -241,27 +241,72 @@ test('Colombia 1.000 pesos gallery still lists Bolívar, Gaitán, and the printi
   await expect(page.locator('sc-for')).toHaveCount(0);
 });
 
-test('colombia catalog lists banknotes by issue date', async ({ page }) => {
+test('colombia catalog groups banknotes by era, issuer, and denomination', async ({ page }) => {
   await page.goto('/coleccion/colombia/');
   const cards = page.locator('.catalog-banknote-card');
   await expect(cards.first()).toContainText('1813');
   await expect(cards.first()).toContainText('Cartagena');
   await expect(cards.last()).toContainText('2016');
   await expect(cards.last()).toHaveAttribute('href', /50000-pesos/);
-  await expect(page.getByRole('heading', { name: 'Cartagena de Indias (1811–1815)' })).toBeVisible();
+
+  await expect(page.getByRole('heading', { level: 2, name: 'Billetes del Siglo Pasado' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Deuda Pública Estatal' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 2, name: 'Billetes del Banco de la República (Desde 1923)' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 3, name: 'Catálogo de Billetes de Colombia', exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Estados Unidos de Nueva Granada (1861)' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Estados Unidos de Colombia' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Estados soberanos (1882)' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Bonos y Libranzas Fiscales' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Errores de impresión' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Banca Libre', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'El Banco Nacional', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'República de Colombia', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Errores de impresión' })).toHaveCount(0);
+
+  for (const denomination of [
+    '1/2 Peso',
+    '1 Peso',
+    '2 Pesos',
+    '5 Pesos',
+    '10 Pesos',
+    '50 Pesos',
+    '100 Pesos',
+    '200 Pesos',
+    '500 Pesos',
+    '1000 Pesos',
+    '2000 Pesos',
+    '5000 Pesos',
+    '10000 Pesos',
+    '50000 Pesos',
+  ]) {
+    await expect(page.getByRole('heading', { level: 3, name: denomination, exact: true })).toBeVisible();
+  }
+  await expect(page.getByRole('heading', { name: '20000 Pesos' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: '100000 Pesos' })).toHaveCount(0);
 
   const hrefs = await cards.evaluateAll((els) =>
     els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : null)),
   );
   expect(hrefs.at(-1)).not.toContain('libranza');
-  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeGreaterThan(0);
-  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeLessThan(
-    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  const boyacaIdx = hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/');
+  expect(boyacaIdx).toBeGreaterThan(
+    hrefs.indexOf('/coleccion/colombia/republica-1910-1915-emisiones/') ?? -1,
   );
+  expect(boyacaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/') ??
+      Number.POSITIVE_INFINITY,
+  );
+  const deuda = page.locator('#catalog-era-deuda-publica-estatal');
+  await expect(deuda.getByRole('heading', { name: 'Bonos y Libranzas Fiscales' })).toBeVisible();
+  await expect(
+    deuda.locator('a.catalog-banknote-card[href="/coleccion/colombia/boyaca-libranza-500-pesos-1883/"]'),
+  ).toBeVisible();
 
-  await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
+  const sigloPasado = page.locator('#catalog-era-billetes-del-siglo-pasado');
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco Hipotecario' })).toBeVisible();
   const hipotecario = page.locator(
     'a.catalog-banknote-card[href="/coleccion/colombia/banco-hipotecario-5-pesos-1881/"]',
   );
@@ -270,13 +315,13 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   await expect(hipotecario).toContainText('Cinco Pesos');
   const hipotecarioIdx = hrefs.indexOf('/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
   expect(hipotecarioIdx).toBeGreaterThan(
-    hrefs.indexOf('/coleccion/colombia/estado-soberano-cundinamarca-1-peso-1870/') ?? -1,
+    hrefs.indexOf('/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/') ?? -1,
   );
-  await expect(hipotecarioIdx).toBeLessThan(
-    hrefs.indexOf('/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso') ?? Number.POSITIVE_INFINITY,
+  expect(hipotecarioIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
 
-  await expect(page.getByRole('heading', { name: 'El Banco de Rio Hacha' }).last()).toBeVisible();
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco de Rio Hacha' })).toBeVisible();
   const rioHacha = page.locator(
     'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/"]',
   );
@@ -284,12 +329,105 @@ test('colombia catalog lists banknotes by issue date', async ({ page }) => {
   await expect(rioHacha).toContainText('1883');
   await expect(rioHacha).toContainText('Cinco Pesos');
   const rioHachaIdx = hrefs.indexOf('/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/');
-  expect(rioHachaIdx).toBeGreaterThan(
-    hrefs.indexOf('/coleccion/colombia/estado-soberano-cauca-5-pesos-1882/') ?? -1,
-  );
+  expect(rioHachaIdx).toBeGreaterThan(hipotecarioIdx);
   expect(rioHachaIdx).toBeLessThan(
     hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
+
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco del Cauca' })).toBeVisible();
+  const cauca = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso"]',
+  );
+  await expect(cauca).toBeVisible();
+  await expect(cauca).toContainText('1888');
+  await expect(cauca).toContainText('Un Peso');
+  const caucaIdx = hrefs.indexOf('/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso');
+  expect(caucaIdx).toBeGreaterThan(rioHachaIdx);
+  expect(caucaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  );
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#cinco-pesos"]',
+    ),
+  ).toBeVisible();
+
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco de Medellín' })).toBeVisible();
+  const medellin = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-medellin-50-centavos/"]',
+  );
+  await expect(medellin).toBeVisible();
+  await expect(medellin).toContainText('Cincuenta Centavos');
+  const medellinIdx = hrefs.indexOf('/coleccion/colombia/banco-de-medellin-50-centavos/');
+  expect(medellinIdx).toBeGreaterThan(caucaIdx);
+
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco de Pamplona' })).toBeVisible();
+  const pamplona = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso"]',
+  );
+  await expect(pamplona).toBeVisible();
+  await expect(pamplona).toContainText('1883');
+  await expect(pamplona).toContainText('Un Peso');
+  const pamplonaIdx = hrefs.indexOf('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso');
+  expect(pamplonaIdx).toBeGreaterThan(medellinIdx);
+  expect(pamplonaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  );
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos"]',
+    ),
+  ).toBeVisible();
+
+  const missingBancaLibre = [
+    ['El Banco del Norte', '/coleccion/colombia/banco-del-norte-5-pesos-1882/'],
+    ['El Banco de la Unión', '/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/#cinco-pesos'],
+    ['El Banco Internacional', '/coleccion/colombia/banco-internacional-1-peso-1884/#un-peso'],
+    ['Vicente B. Villa é Hijos', '/coleccion/colombia/vicente-villa-e-hijos-5-pesos/'],
+    ['El Banco Unión', '/coleccion/colombia/banco-union-cartagena-1-peso-1880s/'],
+    ['El Banco de Panamá', '/coleccion/colombia/banco-de-panama-1-5-pesos/#un-peso'],
+    ['El Banco de Oriente', '/coleccion/colombia/banco-de-oriente-5-pesos-1888/'],
+    ['Banco de Antioquia', '/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/'],
+    ['El Banco de Barranquilla', '/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/'],
+    ['El Banco de Caldas', '/coleccion/colombia/banco-de-caldas-1-peso-1919/'],
+    ['El Banco de Colombia', '/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/'],
+    ['Departamento de Antioquia', '/coleccion/colombia/departamento-de-antioquia-centavos/'],
+  ] as const;
+  let previousIdx = pamplonaIdx;
+  for (const [heading, href] of missingBancaLibre) {
+    await expect(sigloPasado.getByRole('heading', { name: heading, exact: true })).toBeVisible();
+    await expect(sigloPasado.locator(`a.catalog-banknote-card[href="${href}"]`)).toBeVisible();
+    const idx = hrefs.indexOf(href);
+    expect(idx, heading).toBeGreaterThan(previousIdx);
+    expect(idx, heading).toBeLessThan(
+      hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+    );
+    previousIdx = idx;
+  }
+  await expect(
+    deuda.locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/"]',
+    ),
+  ).toHaveCount(0);
+  await expect(
+    page.locator('#catalog-subgroup-billetes-del-siglo-pasado-banca-libre-el-banco-union').locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-union-cartagena-1-peso-1880s/"]',
+    ),
+  ).toBeVisible();
+
+  const twoThousand = page.locator('#catalog-group-billetes-del-banco-de-la-republica-desde-1923-2000-pesos');
+  await expect(
+    twoThousand.locator('a.catalog-banknote-card[href="/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/"]'),
+  ).toBeVisible();
+  await expect(
+    twoThousand.locator('a.catalog-banknote-card[href="/coleccion/colombia/2000-pesos-error-mariposa/"]'),
+  ).toBeVisible();
+  const halfPesoIdx = hrefs.indexOf(
+    '/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/',
+  );
+  const onePesoIdx = hrefs.indexOf('/coleccion/colombia/banco-de-la-republica-1-peso-specimen/');
+  expect(halfPesoIdx).toBeGreaterThan(-1);
+  expect(onePesoIdx).toBeGreaterThan(halfPesoIdx);
 });
 
 test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
@@ -492,6 +630,9 @@ test('homepage Logros del Mes features the MPC Serie 692 $20', async ({ page }) 
 test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Banknotes of the Last Century' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'State Public Debt' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Free Banking', exact: true })).toBeVisible();
   await expect(page.locator('.catalog-hub-group-title', { hasText: 'Colombian Free Banking' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
   const card = page.locator(
@@ -505,6 +646,9 @@ test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ pag
 test('English Colombia catalog lists the Banco de Rio Hacha proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: 'Banco de la República Banknotes (From 1923)' }),
+  ).toBeVisible();
   await expect(page.getByRole('heading', { name: 'El Banco de Rio Hacha' }).last()).toBeVisible();
   const card = page.locator(
     'a.catalog-banknote-card[href="/en/collection/colombia/banco-de-rio-hacha-5-pesos-1883/"]',
@@ -512,6 +656,52 @@ test('English Colombia catalog lists the Banco de Rio Hacha proofs', async ({ pa
   await expect(card).toBeVisible();
   await expect(card).toContainText('Five Pesos (proofs)');
   await expect(card).toContainText('1883');
+});
+
+test('English Colombia catalog nests Cauca, Medellín, and Pamplona under Free Banking', async ({
+  page,
+}) => {
+  await page.goto('/en/collection/colombia/');
+  const lastCentury = page.locator('#catalog-era-billetes-del-siglo-pasado');
+  await expect(lastCentury.getByRole('heading', { name: 'Free Banking', exact: true })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco del Cauca' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Medellín' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Pamplona' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco del Norte' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de la Unión' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco Internacional' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'Vicente B. Villa é Hijos' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco Unión' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Panamá' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Oriente' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'Banco de Antioquia' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Barranquilla' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Caldas' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Colombia' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'Departamento de Antioquia' })).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso"]',
+    ),
+  ).toBeVisible();
+  await expect(
+    page.locator('a.catalog-banknote-card[href="/en/collection/colombia/banco-de-medellin-50-centavos/"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-de-pamplona-10-pesos-1884/#un-peso"]',
+    ),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-union-cartagena-1-peso-1880s/"]',
+    ),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-de-antioquia-warrant-10-centavos-1900/"]',
+    ),
+  ).toBeVisible();
 });
 
 test('coins have a dedicated numismática catalog page', async ({ page }) => {

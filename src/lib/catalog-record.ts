@@ -91,6 +91,14 @@ export const catalogCardSchema = z.object({
   groupEn: z.string().min(1).optional(),
   groupKicker: z.string().min(1).optional(),
   groupKickerEn: z.string().min(1).optional(),
+  /** Optional parent heading above `group` (era / issuer family). */
+  section: z.string().min(1).optional(),
+  sectionEn: z.string().min(1).optional(),
+  sectionKicker: z.string().min(1).optional(),
+  sectionKickerEn: z.string().min(1).optional(),
+  /** Optional nested heading under `group` (e.g. a bank inside Banca Libre). */
+  subgroup: z.string().min(1).optional(),
+  subgroupEn: z.string().min(1).optional(),
 });
 
 /**
