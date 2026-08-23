@@ -166,7 +166,7 @@ test('Colombia Siglo Pasado and Banco de la República catalogs list era notes',
   await page.goto('/coleccion/colombia/banco-de-la-republica/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Banco de la República' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Catálogo del Banco de la República' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /10 pesos oro/ }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Diez Pesos Oro/ }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: /Cartagena/ })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
 
