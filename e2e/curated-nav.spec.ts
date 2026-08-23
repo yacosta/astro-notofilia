@@ -115,3 +115,12 @@ test('United States catalog omits the Utrecht gold ducat', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toHaveCount(0);
 });
+
+test('Colombia hub no longer repeats the free-banking promo block', async ({ page }) => {
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText(/Las piezas documentadas se agrupan/)).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Banca Libre Colombiana' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Ver el catálogo de Banca Libre/ })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Emisiones Colombianas en el Extranjero' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Banca Libre', exact: true })).toBeVisible();
+});
