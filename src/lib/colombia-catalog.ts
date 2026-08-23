@@ -218,6 +218,10 @@ export function withColombiaGroup(card: CatalogCard): CatalogCard {
   const period = colombiaPeriodFor(card);
   return {
     ...card,
+    groupKicker: undefined,
+    groupKickerEn: undefined,
+    subgroup: undefined,
+    subgroupEn: undefined,
     ...period,
   };
 }
