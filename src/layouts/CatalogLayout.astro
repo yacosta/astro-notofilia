@@ -153,6 +153,21 @@ const catalogZoomHash = createHash('sha256')
         border: 1px solid var(--rule-artifact) !important;
         border-radius: var(--radius-surface) !important;
         box-shadow: var(--shadow-artifact) !important;
+        padding: clamp(40px, 6vw, 80px) !important;
+      }
+      /* Match country-landing intro measure (42rem) on ficha body copy. */
+      .catalog-shell [style*="max-width:760px"],
+      .catalog-shell [style*="max-width: 760px"] {
+        max-width: 42rem !important;
+      }
+      .catalog-shell [style*="background:#d8d2cd"] p,
+      .catalog-shell [style*="background: rgb(216, 210, 205)"] p {
+        max-width: 42rem;
+        margin-bottom: 28px !important;
+      }
+      .catalog-shell [style*="background:#d8d2cd"] p:last-child,
+      .catalog-shell [style*="background: rgb(216, 210, 205)"] p:last-child {
+        margin-bottom: 0 !important;
       }
       .catalog-shell [style*="color:#1c1a15"],
       .catalog-shell [style*="color: #1c1a15"],
