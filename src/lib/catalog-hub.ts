@@ -1,5 +1,3 @@
-import { type CollectionStats } from './stats';
-
 export type FeaturedEntry = {
   href: string;
   title: string;
@@ -86,22 +84,6 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
     descriptionEn: 'MPC series used by the U.S. armed forces.',
   },
   {
-    href: '/coleccion/?tipo=specimen#explorar',
-    title: 'Specimens',
-    titleEn: 'Specimens',
-    description: 'Ejemplares de muestra con cancelaciones y perforaciones.',
-    descriptionEn: 'Specimen notes with cancellations and perforations.',
-    filter: { tipo: 'specimen' },
-  },
-  {
-    href: '/coleccion/?tipo=error#explorar',
-    title: 'Errores de imprenta',
-    titleEn: 'Printing errors',
-    description: 'Cortes descentrados, sobreimpresiones y fallos de color.',
-    descriptionEn: 'Off-center cuts, overprints, and color errors.',
-    filter: { tipo: 'error' },
-  },
-  {
     href: '/coleccion/billete-obsoleto-estados-unidos/',
     title: 'Billetes obsoletos de EE. UU.',
     titleEn: 'U.S. obsolete banknotes',
@@ -119,6 +101,18 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
+  {
+    href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    title: 'Banco de la República — 10 pesos oro, 1943',
+    titleEn: 'Banco de la República — 10 pesos oro, 1943',
+    description:
+      'Pick 389b del 20 de julio de 1943, PMG 50 EPQ, Serie N 6813011. Retrato de Antonio Nariño.',
+    descriptionEn:
+      'Pick 389b dated 20 July 1943, PMG 50 EPQ, Series N 6813011. Portrait of Antonio Nariño.',
+    imageBase: 'colombia-banco-de-la-republica-10-pesos-oro-1943',
+    imageAlt:
+      'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
+  },
   {
     href: '/coleccion/filipinas/2-pesos-victory-series-66/',
     title: 'Filipinas — 2 pesos Victory Series 66',
@@ -203,11 +197,3 @@ export const RECENT_PIECES: RecentPiece[] = [
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
   },
 ];
-
-export function hubLead(stats: CollectionStats): string {
-  return `Explora ${stats.billetes} billetes en ${stats.fichas} fichas, más ${stats.monedas} monedas, de ${stats.paises} países, documentados con imágenes, historia y referencias de catálogo.`;
-}
-
-export function hubLeadEn(stats: CollectionStats): string {
-  return `Explore ${stats.billetes} banknotes across ${stats.fichas} records, plus ${stats.monedas} coins, from ${stats.paises} countries, documented with images, history, and catalog references.`;
-}

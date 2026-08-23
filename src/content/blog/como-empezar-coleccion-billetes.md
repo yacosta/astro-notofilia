@@ -11,7 +11,7 @@ keywords:
   - "colección de billetes"
   - "notafilia"
 relatedLinks:
-  - { href: "/coleccion/", title: "Explorar la colección virtual" }
+  - { href: "/coleccion/colombia/", title: "Explorar la colección de Colombia" }
   - { href: "/glosario/", title: "Glosario de numismática y notafilia" }
   - { href: "/blog/como-identificar-billetes-falsos/", title: "Cómo identificar billetes falsos" }
   - { href: "/blog/diferencia-numismatica-notafilia/", title: "Numismática y notafilia: diferencias" }

@@ -3,7 +3,6 @@ import AxeBuilder from '@axe-core/playwright';
 
 const PAGES = [
   { name: 'home', path: '/' },
-  { name: 'coleccion-hub', path: '/coleccion/' },
   {
     name: 'catalog-piece',
     path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
@@ -21,7 +20,7 @@ for (const pageDef of PAGES) {
       const response = await page.goto(pageDef.path, { waitUntil: 'domcontentloaded' });
       expect(response?.ok()).toBeTruthy();
 
-      if (pageDef.path.startsWith('/coleccion/') && pageDef.path !== '/coleccion/') {
+      if (pageDef.path.startsWith('/coleccion/')) {
         await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
         await expect(page.locator('script[src^="/catalog-zoom.js"]')).toHaveCount(1);
         await expect(page.locator('[data-catalog-record]').first()).toBeVisible();
@@ -450,35 +449,89 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the Santa Marta 1820 cuartillo first', async ({ page }) => {
+test('Filipinas Victory Series page shows both collection notes', async ({ page }) => {
+  await page.goto('/coleccion/filipinas/tesoreria-victory-series/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Tesorería de Filipinas · Victory Series' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Un Peso Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Dos Pesos Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('img', { name: /1 peso/i })).toBeVisible();
+  await expect(page.getByRole('img', { name: /2 pesos/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /ficha completa del 1 peso/i })).toHaveAttribute(
+    'href',
+    '/coleccion/filipinas/1-peso-victory-series-66/',
+  );
+  await expect(page.getByRole('link', { name: /ficha completa del 2 pesos/i })).toHaveAttribute(
+    'href',
+    '/coleccion/filipinas/2-pesos-victory-series-66/',
+  );
+  await expect(
+    page.locator('a[href="https://www.bsp.gov.ph/SitePages/CoinsAndNotes/EnglishSeries.aspx"]').first(),
+  ).toBeVisible();
+});
+
+test('English Philippines Victory Series page shows both collection notes', async ({ page }) => {
+  await page.goto('/en/collection/philippines/treasury-victory-series/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Treasury of the Philippines · Victory Series' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'One Peso Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Two Pesos Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /full 1-peso record/i })).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/1-peso-victory-series-66/',
+  );
+  await expect(page.getByRole('link', { name: /full 2-peso record/i })).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/2-pesos-victory-series-66/',
+  );
+});
+
+test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toBeVisible();
-  await expect(first).toHaveAttribute('href', '/coleccion/colombia/santa-marta-1-4-real-1820/');
-  await expect(first).toContainText('Santa Marta — ¼ real de cobre, 1820');
+  await expect(first).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
+  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Cuartillo de cobre de Santa Marta, 1820/,
+    /10 pesos oro del Banco de la República, 20 de julio de 1943/,
   );
   await expect(first.getByRole('img')).toHaveAttribute(
     'src',
-    '/uploads/colombia-santa-marta-1-4-real-1820-c0225406-card.jpg',
+    '/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-card.jpg',
   );
 });
 
-test('English homepage Logros features the Santa Marta 1820 cuartillo first', async ({ page }) => {
+test('English homepage Logros features the 1943 10 pesos oro first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
-  await expect(first).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
-  await expect(first).toContainText('Santa Marta — copper ¼ real, 1820');
+  await expect(first).toHaveAttribute(
+    'href',
+    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  );
+  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Santa Marta copper quarter-real, 1820/,
+    /Banco de la República 10 pesos oro, 20 July 1943/,
   );
+});
+
+test('homepage Logros del Mes still features the Santa Marta 1820 cuartillo', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Santa Marta — ¼ real de cobre, 1820/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/santa-marta-1-4-real-1820/');
+});
+
+test('English homepage Logros still features the Santa Marta 1820 cuartillo', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Santa Marta — copper ¼ real, 1820/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
 });
 
 test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {
@@ -728,35 +781,6 @@ test('spanish colonial catalog shows grouped coin cards', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Reinado de Carlos III' })).toBeVisible();
 });
 
-test('collection hub points to the coins catalog', async ({ page }) => {
-  await page.goto('/coleccion/');
-  await expect(page.getByRole('link', { name: /Catálogo de numismática/i }).first()).toBeVisible();
-});
-
-test('collection hub groups banknotes by country', async ({ page }) => {
-  await page.goto('/coleccion/');
-  await expect(page.locator('#catalog-browser')).not.toHaveAttribute('data-loading', {
-    timeout: 15_000,
-  });
-  const colombia = page.locator('.catalog-country-group[data-country="Colombia"]');
-  const unitedStates = page.locator('.catalog-country-group[data-country="Estados Unidos"]');
-  await expect(page.getByRole('heading', { level: 3, name: 'Colombia' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Estados Unidos' })).toBeVisible();
-  await expect(colombia.locator('.catalog-result-link').first()).toBeVisible();
-  await expect(unitedStates.locator('.catalog-result-link').first()).toBeVisible();
-
-  const colombiaHrefs = await colombia.locator('.catalog-result-link').evaluateAll((els) =>
-    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
-  );
-  const usHrefs = await unitedStates.locator('.catalog-result-link').evaluateAll((els) =>
-    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
-  );
-  expect(colombiaHrefs.length).toBeGreaterThan(0);
-  expect(usHrefs.length).toBeGreaterThan(0);
-  expect(colombiaHrefs.every((href) => href?.includes('/coleccion/colombia/'))).toBe(true);
-  expect(usHrefs.every((href) => !href?.includes('/coleccion/colombia/'))).toBe(true);
-});
-
 test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ page }) => {
   await page.goto('/coleccion/colombia/banco-nacional-25-pesos-1895/');
   await expect(page.getByRole('heading', { name: 'Veinticinco Pesos' })).toBeVisible();
@@ -848,7 +872,7 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(page.getByRole('button', { name: 'Abrir menú', exact: true })).toBeHidden();
   await expect(desktop.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
     'href',
-    '/coleccion/',
+    '/coleccion/colombia/',
   );
   await expect(desktop.getByRole('link', { name: 'Contacto' })).toBeVisible();
   await expect(desktop.getByRole('link', { name: /Logros del Mes/ })).toHaveCount(0);
@@ -869,7 +893,8 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Ecuador' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);
@@ -885,7 +910,7 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Inicio' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
     'href',
-    '/coleccion/',
+    '/coleccion/colombia/',
   );
 
   await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
@@ -895,6 +920,7 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
   await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(0);

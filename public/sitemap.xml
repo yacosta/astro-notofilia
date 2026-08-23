@@ -110,15 +110,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://notofilia.com/coleccion/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/" />
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://notofilia.com/coleccion/adrian-insurance-michigan/2-dolares/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/adrian-insurance-michigan/2-dolares/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/adrian-insurance-michigan/2-dollars/" />
@@ -871,6 +862,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/philippines/2-pesos-victory-series-66/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/" />
     <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/philippines/treasury-victory-series/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/" />
+    <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1647,15 +1647,6 @@
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://notofilia.com/en/collection/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/" />
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://notofilia.com/en/collection/1761-utrecht-gold-ducat/</loc>
@@ -2455,6 +2446,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/philippines/2-pesos-victory-series-66/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/" />
     <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/philippines/treasury-victory-series/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/philippines/treasury-victory-series/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/" />
+    <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

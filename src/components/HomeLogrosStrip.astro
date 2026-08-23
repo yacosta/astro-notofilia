@@ -23,6 +23,20 @@ function featuredHref(href: string): string {
 
 const highlights = [
   {
+    href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    title: 'Banco de la República — 10 pesos oro, 1943',
+    titleEn: 'Banco de la República — 10 pesos oro, 1943',
+    description:
+      'Pick 389b del 20 de julio de 1943, PMG 50 EPQ, Serie N 6813011. Retrato de Antonio Nariño.',
+    descriptionEn:
+      'Pick 389b dated 20 July 1943, PMG 50 EPQ, Series N 6813011. Portrait of Antonio Nariño.',
+    imageBase: 'colombia-banco-de-la-republica-10-pesos-oro-1943',
+    imageAlt:
+      'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
+    imageAltEn:
+      'PMG-encapsulated Banco de la República 10 pesos oro, 20 July 1943, Pick 389b, obverse and reverse with portrait of Antonio Nariño',
+  },
+  {
     href: '/coleccion/colombia/santa-marta-1-4-real-1820/',
     title: 'Santa Marta — ¼ real de cobre, 1820',
     titleEn: 'Santa Marta — copper ¼ real, 1820',
@@ -185,7 +199,8 @@ const highlights = [
                   item.href.includes('20-dolares-serie-692') ||
                   item.href.includes('victory-series-66') ||
                   item.href.includes('china-100-yuan-2000') ||
-                  item.href.includes('santa-marta-1-4-real-1820')
+                  item.href.includes('santa-marta-1-4-real-1820') ||
+                  item.href.includes('10-pesos-oro-1943')
                     ? 'object-contain bg-[#d8d2cd]'
                     : 'object-cover',
                 ]}
@@ -208,7 +223,7 @@ const highlights = [
     </ul>
     <p class="text-center m-0">
       <a
-        href={isEn ? (alternateUrl('/coleccion/', 'en') ?? '/coleccion/') : '/coleccion/'}
+        href={isEn ? (alternateUrl('/coleccion/colombia/', 'en') ?? '/en/collection/colombia/') : '/coleccion/colombia/'}
         data-i18n={isEn ? undefined : true}
         data-en={isEn ? undefined : 'Explore the collection'}
         class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"

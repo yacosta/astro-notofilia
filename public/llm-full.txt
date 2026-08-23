@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 221 billetes en 121 fichas, 9 monedas, 36 países, 153 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 223 billetes en 122 fichas, 9 monedas, 36 países, 154 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,18 +16,17 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 121 fichas · 221 billetes · 9 monedas · 36 países · 153 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 122 fichas · 223 billetes · 9 monedas · 36 países · 154 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
 ## Sitio principal
 
 - [Inicio](https://notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
-- [Catálogo (índice)](https://notofilia.com/coleccion/): Hub global de la Colección Virtual: billetes, filtros y accesos por país.
+- [Catálogo de Colombia](https://notofilia.com/coleccion/colombia/): Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de monedas: oro colonial de Santa Fe de Bogotá.
 - [Guías para coleccionistas](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
 - [Sobre Notofilia](https://notofilia.com/nosotros/): Qué es el proyecto, quién lo edita y cómo citar las fichas.
-- [Añadidos recientes](https://notofilia.com/coleccion/#recent): Piezas destacadas incorporadas a la Colección Virtual.
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
 - [Glosario](https://notofilia.com/glosario/): 95 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
@@ -36,7 +35,6 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 ## Catálogo — secciones
 
-- [Colección Virtual](https://notofilia.com/coleccion/): Colección Virtual
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
@@ -56,7 +54,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ninguna pieza está a la venta.
 
-### Colección Virtual
+### Billetes de Colombia
 
 - [Billete $2 The Adrian Insurance Company](https://notofilia.com/coleccion/adrian-insurance-michigan/2-dolares/): Ficha de catálogo numismático: billete obsoleto de $2 de The Adrian Insurance Company, Adrian, Michigan, hacia 1852–1856…
 - [Catálogo de Billete Obsoleto EE. UU.](https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/): Catálogo numismático de billetes obsoletos de la colección Notofilia: The State Bank at New Brunswick, Citizens' Bank of Louisiana y más.
@@ -67,14 +65,12 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [MPC Serie 641 $10 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/): MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.
 - [MPC Serie 692 $20 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/): MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.
 - [Jefe Ouray](https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/): Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.
-### Colección Virtual
+### Billetes de Colombia
 
 - [$100 Federal Reserve Bank Note, Minneapolis 1929](https://notofilia.com/coleccion/cien-dolares-minneapolis-1929/): Ficha de catálogo numismático: Billete de Banco de la Reserva Federal de $100, serie de 1929, Minneapolis. Referencia Friedberg FR-1890-I.
 - [$100 United States Note, Sello Rojo 1966](https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/): United States Note $100 sello rojo 1966 (FR-1550): tirada 896.000; emisión nacional del Tesoro.
 - [Billete $5 Citizens Bank of Louisiana](https://notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del Citizens' Bank of Louisiana, sucursal de Shreveport, 1860. Referencia Haxby LA-15-G60a.
 - [Billete $5 City Bank of New Haven](https://notofilia.com/coleccion/city-bank-new-haven/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del City Bank of New Haven, Connecticut, hacia 1850–1860. Referencia Haxby CT-265-G52b.
-### Billetes de Colombia
-
 - [2.000 Pesos de 1996: Corte Descentrado](https://notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/): Ficha de catálogo numismático: billete de Dos Mil Pesos «Mariposa» de El Banco de la República, Colombia, fechado 2 de abril de 1996…
 - [Dos Mil Pesos, Error de Corte Descentrado](https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/): Ficha de catálogo numismático: billetes de Dos Mil Pesos de El Banco de la República, Colombia (2005, 2009)…
 - [Dos Mil Pesos, Error “Mariposa”](https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/): Ficha de catálogo numismático: billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa»…
@@ -128,8 +124,6 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [República de Bolívar: 1 y 2 Pesos (1882)](https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/): Ficha de catálogo numismático: billetes de Un Peso y Dos Pesos de la República Bolívar de Colombia, emitidos en 1882. Colección Notofilia.
 - [Cuartillo Santa Marta 1820](https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/): Cuartillo de cobre de 1820, acuñado por las autoridades realistas de Santa Marta. KM# B4, Restrepo 104. Colección Notofilia.
 - [Cinco Pesos, Vicente B. Villa é Hijos, Medellín](https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/): Ficha de catálogo numismático: billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.
-### Colección Virtual
-
 - [$10 Reserva Federal 1934 — Cuatro Distritos](https://notofilia.com/coleccion/diez-dolares-1934-distritos/): Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).
 - [Ducado de oro de Utrecht, 1761](https://notofilia.com/coleccion/ducado-oro-utrecht-1761/): Ducado de oro comercial de 1761 acuñado en Utrecht, certificado NGC AU Details (Edge Filing). Ficha con datos técnicos, leyendas e historia.
 ### Billetes de Ecuador
@@ -142,11 +136,12 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Food Coupon USDA, Dos Dólares (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/): Ficha de catálogo: cupón de alimentos USDA de dos dólares, Serie 1967, impreso por el Bureau of Engraving and Printing.
 - [Food Coupon USDA, Cinco Dólares (Serie 2000-B)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/): Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.
 - [Food Coupon USDA, Cincuenta Centavos (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/): Ficha de catálogo: cupón de alimentos USDA de cincuenta centavos, Serie 1967, impreso por el Bureau of Engraving and Printing.
-### Colección Virtual
+### Billetes de Colombia
 
 - [Catálogo de Billetes de Filipinas](https://notofilia.com/coleccion/filipinas/): Certificados del Tesoro de Filipinas: Victory Series No. 66 y la liberación de 1944. Colección Notofilia.
 - [1 Peso Victory 66, Filipinas (Pick 94a)](https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/): Tesoro de Filipinas, 1 peso Victory Series No. 66 (1944), Pick 94a: Mabini, sello azul y VICTORY. Colección Notofilia.
 - [2 Pesos Victory 66, Filipinas (Pick 95a)](https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/): Tesoro de Filipinas, 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, sello azul y VICTORY. Colección Notofilia.
+- [Tesorería de Filipinas · Victory Series](https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/): Victory Series 66 de la Tesorería de Filipinas (1944): historia, Pick 94a y 95a, y los 1 y 2 pesos de la colección.
 - [Food Coupons USDA Series 1967 y 2000-B](https://notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.
 - [Nota de Prueba de la Prensa Giori](https://notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
 - [Billetes $5 y $10 Hagerstown Bank, Maryland](https://notofilia.com/coleccion/hagerstown-bank-maryland/): Ficha de catálogo numismático: billetes obsoletos de $5 y $10 de The Hagerstown Bank, Maryland, hacia 1850–1860. Haxby MD-240.
@@ -219,7 +214,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Reserva Federal
 
 - [$100 Federal Reserve Note, Serie 1990, Cleveland](https://notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): FRN $100 Serie 1990, Cleveland: tirada nacional 1.694.464.000 y primer hilo de seguridad.
-### Colección Virtual
+### Billetes de Colombia
 
 - [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.
 - [Billete $1 State Bank New Brunswick](https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/): Ficha de catálogo numismático: billete obsoleto de $1 de The State Bank at New Brunswick, Nueva Jersey, c. 1860. Referencia Haxby NJ-350-G14a.

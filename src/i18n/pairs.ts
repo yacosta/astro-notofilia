@@ -33,7 +33,6 @@ export type Pair = {
 export const SEED_PAIRS: readonly Pair[] = [
   { es: '/', en: '/en/', kind: 'home' },
   { es: '/coleccion/colombia/', en: '/en/collection/colombia/', kind: 'collection' },
-  { es: '/coleccion/', en: '/en/collection/', kind: 'collection' },
   { es: '/coleccion/numismatica/', en: '/en/collection/numismatics/', kind: 'collection' },
   { es: '/noticias/', en: '/en/news/', kind: 'news' },
   { es: '/blog/', en: '/en/blog/', kind: 'blog' },

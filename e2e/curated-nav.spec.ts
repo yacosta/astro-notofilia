@@ -42,12 +42,13 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await expect(page.getByRole('link', { name: /Felipe V/ }).first()).toBeVisible();
 });
 
-test('collection hub exposes stable recent and countries anchors', async ({ page }) => {
-  await page.goto('/coleccion/#recent', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('#recent')).toBeVisible();
-  await expect(page.locator('#countries')).toBeAttached();
-  await page.goto('/en/collection/#countries', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('#countries')).toBeVisible();
+test('retired collection hub is not a live document', async ({ page }) => {
+  const es = await page.goto('/coleccion/', { waitUntil: 'domcontentloaded' });
+  expect(es?.ok()).toBeFalsy();
+  await expect(page.getByRole('heading', { name: /Colección Virtual:/ })).toHaveCount(0);
+  const en = await page.goto('/en/collection/', { waitUntil: 'domcontentloaded' });
+  expect(en?.ok()).toBeFalsy();
+  await expect(page.getByRole('heading', { name: /Virtual Collection:/ })).toHaveCount(0);
 });
 
 test('collection menu no longer includes the Explorar column', async ({ page }) => {
