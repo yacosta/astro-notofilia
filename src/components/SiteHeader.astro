@@ -412,7 +412,8 @@ const searchAction = '/buscar/';
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center;
+    align-self: stretch;
+    align-items: stretch;
     gap: 2px;
     min-width: 0;
   }
@@ -420,6 +421,7 @@ const searchAction = '/buscar/';
     position: relative;
     display: flex;
     align-items: center;
+    align-self: stretch;
   }
   .site-header__top-link {
     display: inline-flex;
@@ -460,7 +462,7 @@ const searchAction = '/buscar/';
   }
   .site-header__panel {
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     left: 0;
     min-width: 240px;
     padding: 16px 20px 18px;
@@ -468,6 +470,14 @@ const searchAction = '/buscar/';
     color: #1c1a15;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     z-index: 120;
+  }
+  .site-header__panel::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 12px;
   }
   .site-header__panel[hidden] {
     display: none;

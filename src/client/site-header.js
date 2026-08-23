@@ -29,6 +29,7 @@
   }
 
   function closeDesktopMenus(exceptItem) {
+    cancelDesktopClose();
     header.querySelectorAll('[data-nav-item]').forEach(function (item) {
       if (exceptItem && item === exceptItem) return;
       item.classList.remove('is-open');
@@ -48,12 +49,26 @@
     setHidden(panel, false);
   }
 
+  var desktopCloseTimer = null;
+
+  function isDesktopNav() {
+    return window.matchMedia('(min-width: 1024px)').matches;
+  }
+
+  function cancelDesktopClose() {
+    if (desktopCloseTimer) {
+      clearTimeout(desktopCloseTimer);
+      desktopCloseTimer = null;
+    }
+  }
+
   header.querySelectorAll('[data-nav-item]').forEach(function (item) {
     var btn = item.querySelector('.site-header__caret-btn');
     if (!btn) return;
     btn.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
+      cancelDesktopClose();
       // Open only. Hover may already have opened the panel; a follow-up
       // pointer click must not immediately close it.
       if (btn.getAttribute('aria-expanded') !== 'true') {
@@ -61,10 +76,17 @@
       }
     });
     item.addEventListener('mouseenter', function () {
-      if (window.matchMedia('(min-width: 1024px)').matches) openDesktopItem(item);
+      if (!isDesktopNav()) return;
+      cancelDesktopClose();
+      openDesktopItem(item);
     });
     item.addEventListener('mouseleave', function () {
-      if (window.matchMedia('(min-width: 1024px)').matches) closeDesktopMenus();
+      if (!isDesktopNav()) return;
+      cancelDesktopClose();
+      desktopCloseTimer = setTimeout(function () {
+        closeDesktopMenus();
+        desktopCloseTimer = null;
+      }, 180);
     });
   });
 
