@@ -62,6 +62,8 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Siglo Pasado', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Banco de la República', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
@@ -142,6 +144,35 @@ test('United States catalog omits the Utrecht gold ducat', async ({ page }) => {
   await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toHaveCount(0);
+});
+
+test('Colombia Siglo Pasado and Banco de la República catalogs list era notes', async ({ page }) => {
+  await page.goto('/coleccion/colombia/siglo-pasado/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await expect(page.getByRole('heading', { level: 1, name: 'Siglo Pasado' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Catálogo del Siglo Pasado' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Cartagena/ }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Banco Hipotecario/ }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Banco de la República — 10 pesos oro, 1943/ })).toHaveCount(0);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/coleccion/colombia/siglo-pasado/',
+  );
+  await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/en/collection/colombia/last-century/',
+  );
+
+  await page.goto('/coleccion/colombia/banco-de-la-republica/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { level: 1, name: 'Banco de la República' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Catálogo del Banco de la República' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Diez Pesos Oro/ }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Cartagena/ })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
+
+  await page.goto('/en/collection/colombia/last-century/', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('heading', { level: 1, name: 'Last Century' })).toBeVisible();
 });
 
 test('Colombia hub no longer repeats the free-banking promo block', async ({ page }) => {

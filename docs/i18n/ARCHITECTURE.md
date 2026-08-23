@@ -76,6 +76,8 @@ Leaf slugs (piece ids, post ids, glossary terms) come from content + `docs/i18n/
 | `/nosotros/` | `/en/about/` | About the project |
 | `/coleccion/estados-unidos/` | `/en/collection/united-states/` | Country hub |
 | `/coleccion/espana/` | `/en/collection/spain/` | Country hub |
+| `/coleccion/colombia/siglo-pasado/` | `/en/collection/colombia/last-century/` | Pre-1923 Colombian notes |
+| `/coleccion/colombia/banco-de-la-republica/` | `/en/collection/colombia/banco-de-la-republica/` | BanRep notes from 1923; issuer name kept |
 | `/buscar/` | `/en/search/` | Utility; stays `noindex`; not in sitemap |
 | `/politica-privacidad-cookies/` | `/en/privacy-cookies/` | |
 | `/j-s-g-boggs/` | `/en/j-s-g-boggs/` | Proper noun; do not translate |

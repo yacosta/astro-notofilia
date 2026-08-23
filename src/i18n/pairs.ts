@@ -43,6 +43,12 @@ export const SEED_PAIRS: readonly Pair[] = [
   { es: '/nosotros/', en: '/en/about/', kind: 'static' },
   { es: '/coleccion/estados-unidos/', en: '/en/collection/united-states/', kind: 'collection' },
   { es: '/coleccion/espana/', en: '/en/collection/spain/', kind: 'collection' },
+  { es: '/coleccion/colombia/siglo-pasado/', en: '/en/collection/colombia/last-century/', kind: 'collection' },
+  {
+    es: '/coleccion/colombia/banco-de-la-republica/',
+    en: '/en/collection/colombia/banco-de-la-republica/',
+    kind: 'collection',
+  },
   { es: '/politica-privacidad-cookies/', en: '/en/privacy-cookies/', kind: 'static' },
   { es: '/j-s-g-boggs/', en: '/en/j-s-g-boggs/', kind: 'static' },
 ];
@@ -56,6 +62,8 @@ const SECTION_INDEXES: ReadonlyArray<{ es: string; en: string }> = [
   { es: '/coleccion/numismatica/', en: '/en/collection/numismatics/' },
   { es: '/coleccion/estados-unidos/', en: '/en/collection/united-states/' },
   { es: '/coleccion/espana/', en: '/en/collection/spain/' },
+  { es: '/coleccion/colombia/siglo-pasado/', en: '/en/collection/colombia/last-century/' },
+  { es: '/coleccion/colombia/banco-de-la-republica/', en: '/en/collection/colombia/banco-de-la-republica/' },
   { es: '/coleccion/', en: '/en/collection/' },
   { es: '/noticias/', en: '/en/news/' },
   { es: '/nosotros/', en: '/en/about/' },

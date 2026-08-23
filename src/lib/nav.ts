@@ -9,6 +9,8 @@ export type NavLink = {
   label: string;
   labelEn?: string;
   lead?: boolean;
+  /** Nested destinations shown under an accordion / indented submenu. */
+  children?: NavLink[];
 };
 
 export type NavGroup = {
@@ -138,7 +140,24 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
   label: 'Colecciones virtuales — Notafilia',
   labelEn: 'Virtual collections — Notaphily',
   links: [
-    { href: '/coleccion/colombia/', label: 'Colombia', labelEn: 'Colombia', lead: true },
+    {
+      href: '/coleccion/colombia/',
+      label: 'Colombia',
+      labelEn: 'Colombia',
+      lead: true,
+      children: [
+        {
+          href: '/coleccion/colombia/siglo-pasado/',
+          label: 'Siglo Pasado',
+          labelEn: 'Last Century',
+        },
+        {
+          href: '/coleccion/colombia/banco-de-la-republica/',
+          label: 'Banco de la República',
+          labelEn: 'Banco de la República',
+        },
+      ],
+    },
     {
       href: '/coleccion/colombia/banca-libre/',
       label: 'Banca Libre (Colombia)',
