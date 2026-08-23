@@ -61,6 +61,8 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toHaveCount(0);
+  await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Notafilia' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
@@ -69,7 +71,15 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toHaveCount(0);
+  await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' }).click();
+  await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Departamento del Tesoro', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toHaveCount(0);
+  await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Numismática' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos de EE. UU.' })).toHaveCount(0);
@@ -84,6 +94,7 @@ test('desktop collection menu stays open when moving onto a category', async ({ 
 
   await collectionItem.hover();
   await expect(collectionPanel).toBeVisible();
+  await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Notafilia' }).click();
   await unitedStates.hover();
   await expect(collectionPanel).toBeVisible();
   await expect(unitedStates).toBeVisible();

@@ -36,6 +36,9 @@
       var panel = panelId ? document.getElementById(panelId) : null;
       setHidden(panel, true);
     });
+    root.querySelectorAll('details.site-header__panel-group[open]').forEach(function (panel) {
+      panel.removeAttribute('open');
+    });
   }
 
   function closeDesktopMenus(exceptItem) {

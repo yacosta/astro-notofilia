@@ -174,6 +174,13 @@ if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the
 if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
 if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/');
 if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');
+if (!navTs.includes('/coleccion/moneda-colonial/')) fail('Primary nav is missing U.S. colonial currency');
+if (!navTs.includes('/coleccion/billete-obsoleto-estados-unidos/')) {
+  fail('Primary nav is missing U.S. obsolete banknotes');
+}
+if (!navTs.includes('/coleccion/departamento-del-tesoro-de-ee-uu/')) {
+  fail('Primary nav is missing the U.S. Treasury catalog');
+}
 if (!navTs.includes('/coleccion/colombia/siglo-pasado/')) fail('Primary nav is missing Colombia Siglo Pasado');
 if (!navTs.includes('/coleccion/colombia/banco-de-la-republica/')) {
   fail('Primary nav is missing Colombia Banco de la República');
@@ -201,7 +208,12 @@ if (navTs.includes('polymerNavLinks')) {
 if (navTs.includes('/#logros-heading')) fail('Primary nav must not keep Monthly Milestones as a top-level link');
 if (/href:\s*'\/buscar\/'/.test(navTs)) fail('Primary nav must not include Search / Buscar');
 if (!nativeHeader.includes('site-header__desktop')) fail('Native SiteHeader is missing desktop primary navigation');
-if (!nativeHeader.includes('site-header__panel--mega')) fail('Native SiteHeader is missing the Collection mega menu');
+if (!nativeHeader.includes('site-header__panel--accordion')) {
+  fail('Native SiteHeader is missing the Collection accordion submenu');
+}
+if (!nativeHeader.includes('site-header__panel-group')) {
+  fail('Native SiteHeader Collection submenu must use group accordions');
+}
 if (!nativeHeader.includes('site-header__drawer-search')) fail('Native SiteHeader is missing the mobile drawer search field');
 if (!nativeHeader.includes('DRAWER_TRAILING_LINKS')) {
   fail('Native SiteHeader must render About, Editorial, and Contacto after Collection/Resources');
