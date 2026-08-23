@@ -78,6 +78,8 @@ test('desktop collection menu stays open when moving onto a category', async ({ 
   await page.getByRole('button', { name: 'Abrir menú de Colección' }).click();
   await unitedStates.hover();
   await expect(collectionPanel).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos de EE. UU.' })).toHaveCount(0);
 });
 
 test('world polymer hub cards show country names in alphabetical order', async ({ page }) => {

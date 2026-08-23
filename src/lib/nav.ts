@@ -102,8 +102,6 @@ export const COLLECTION_SPECIAL: NavGroup = {
     { href: '/coleccion/polimero-mundial/', label: 'Billetes de polímero mundial', labelEn: 'World Polymer Banknotes' },
     { href: '/coleccion/certificados-de-pago-militar/', label: 'Certificados de Pago Militar', labelEn: 'Military Payment Certificates' },
     { href: '/coleccion/?tipo=specimen', label: 'Specimens', labelEn: 'Specimens' },
-    { href: '/coleccion/?tipo=error', label: 'Errores de imprenta', labelEn: 'Printing Errors' },
-    { href: '/coleccion/billete-obsoleto-estados-unidos/', label: 'Billetes obsoletos de EE. UU.', labelEn: 'U.S. Obsolete Banknotes' },
     { href: '/coleccion/pop-art/', label: 'Pop-art currency', labelEn: 'Pop Art Currency' },
   ],
 };
