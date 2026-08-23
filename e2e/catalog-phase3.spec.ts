@@ -875,6 +875,7 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos de EE. UU.' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);

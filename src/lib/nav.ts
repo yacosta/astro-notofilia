@@ -161,11 +161,6 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
       labelEn: 'U.S. Treasury',
     },
     {
-      href: '/coleccion/billete-obsoleto-estados-unidos/',
-      label: 'Billetes obsoletos de EE. UU.',
-      labelEn: 'U.S. Obsolete Banknotes',
-    },
-    {
       href: '/coleccion/certificados-de-pago-militar/',
       label: 'Certificados de Pago Militar',
       labelEn: 'Military Payment Certificates',
