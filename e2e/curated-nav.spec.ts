@@ -88,3 +88,24 @@ test('contact form prefills catalog identifier and URL', async ({ page }) => {
   await expect(page.locator('#cf-message')).toHaveValue(/Ficha: NF.test/);
   await expect(page.locator('#cf-message')).toHaveValue(/URL: \/coleccion\/ejemplo\//);
 });
+
+test('pop art hub lists every note under the title', async ({ page }) => {
+  await page.goto('/coleccion/pop-art/', { waitUntil: 'domcontentloaded' });
+  const heading = page.getByRole('heading', { level: 1, name: 'Pop Art' });
+  const cards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  const history = page.getByRole('heading', { name: 'Breve Historia del Pop Art' });
+  await expect(heading).toBeVisible();
+  await expect(cards).toHaveCount(5);
+  await expect(cards.first().locator('.font-display')).toHaveText('Pelé — The King');
+  await expect(cards.first()).not.toContainText('$2.00');
+  const headingBox = await heading.boundingBox();
+  const cardBox = await cards.first().boundingBox();
+  const historyBox = await history.boundingBox();
+  expect(headingBox && cardBox && historyBox).toBeTruthy();
+  expect(cardBox!.y).toBeGreaterThan(headingBox!.y);
+  expect(cardBox!.y).toBeLessThan(historyBox!.y);
+  await expect(page.getByRole('link', { name: /Lionel Messi/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Donald Trump/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Warhol/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Life Is Beautiful/ })).toBeVisible();
+});
