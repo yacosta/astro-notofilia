@@ -14,6 +14,10 @@ import { lookupEn } from '../lib/html-i18n';
 import { alternateUrl, type Locale } from '../i18n/pairs';
 import { COUNTRY_LANDINGS, type CountryLandingId } from '../lib/country-landings';
 import { groupUsCatalogItems, isCatalogBiography } from '../lib/us-catalog';
+import {
+  isColombiaBanRepCatalogPath,
+  isColombiaSigloPasadoCatalogPath,
+} from '../lib/colombia-catalog';
 
 interface Props {
   countryId: CountryLandingId;
@@ -59,6 +63,14 @@ const countryItems = catalogIndex.items
     if (item.country !== copy.countryName || item.role === 'hub') return false;
     if (isCatalogBiography(item)) return false;
     if (countryId === 'united-states' && item.kind === 'coin') return false;
+    if (countryId === 'colombia-siglo-pasado') {
+      if (item.kind === 'coin' || item.kind === 'profile') return false;
+      return isColombiaSigloPasadoCatalogPath(item.path);
+    }
+    if (countryId === 'colombia-banrep') {
+      if (item.kind === 'coin' || item.kind === 'profile') return false;
+      return isColombiaBanRepCatalogPath(item.path);
+    }
     return true;
   })
   .sort((a, b) => {
@@ -73,16 +85,34 @@ const featured = (copy.featuredPaths ?? [])
   .map((featuredPath) => countryItems.find((item) => item.path === featuredPath) ?? catalogIndex.items.find((item) => item.path === featuredPath))
   .filter((item): item is (typeof catalogIndex.items)[number] => Boolean(item));
 
+const breadcrumbItems = copy.crumbs?.length
+  ? [
+      { '@type': 'ListItem', position: 1, name: 'Notofilia', item: isEn ? `${SITE}/en/` : `${SITE}/` },
+      ...copy.crumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: crumb.name,
+        item: `${SITE}${hrefFor(crumb.href)}`,
+      })),
+      {
+        '@type': 'ListItem',
+        position: copy.crumbs.length + 2,
+        name: copy.h1,
+        item: `${SITE}${copy.path}`,
+      },
+    ]
+  : [
+      { '@type': 'ListItem', position: 1, name: 'Notofilia', item: isEn ? `${SITE}/en/` : `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: isEn ? 'Collection' : 'Colección', item: isEn ? `${SITE}/en/collection/` : `${SITE}/coleccion/` },
+      { '@type': 'ListItem', position: 3, name: copy.h1, item: `${SITE}${copy.path}` },
+    ];
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: isEn ? `${SITE}/en/` : `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: isEn ? 'Collection' : 'Colección', item: isEn ? `${SITE}/en/collection/` : `${SITE}/coleccion/` },
-        { '@type': 'ListItem', position: 3, name: copy.h1, item: `${SITE}${copy.path}` },
-      ],
+      itemListElement: breadcrumbItems,
     },
     {
       '@type': 'CollectionPage',
@@ -305,7 +335,14 @@ const jsonLd = {
     <div class="hub">
       <main id="main-content" class="hub-inner" tabindex="-1">
         <nav class="crumbs" aria-label={isEn ? 'Breadcrumb' : 'Migas de pan'}>
-          <a href={hrefFor('/')}>{isEn ? 'Home' : 'Inicio'}</a> <span aria-hidden="true">/</span>
+          <a href={hrefFor('/')}>{isEn ? 'Home' : 'Inicio'}</a>
+          {(copy.crumbs ?? []).map((crumb) => (
+            <>
+              <span aria-hidden="true"> / </span>
+              <a href={hrefFor(crumb.href)}>{crumb.name}</a>
+            </>
+          ))}
+          <span aria-hidden="true"> / </span>
           <span>{copy.h1}</span>
         </nav>
         <span class="hub-kicker">{copy.kicker}</span>

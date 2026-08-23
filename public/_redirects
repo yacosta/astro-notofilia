@@ -366,3 +366,15 @@
 /coleccion/monedas  /coleccion/numismatica/  301
 /coleccion/catalogo-numismatica/  /coleccion/numismatica/  301
 /coleccion/catalogo-numismatica  /coleccion/numismatica/  301
+
+# Google Search Console 404s (Aug 2026) — sources were 404 on the live site
+/coleccion/colombia/banco-de-barranquilla-50-centavos-1880/  /coleccion/colombia/banco-de-barranquilla-50-centavos-1900/  301
+/billete-colombia-banco-de-barranquilla-50-centavos-1880.dc  /coleccion/colombia/banco-de-barranquilla-50-centavos-1900/  301
+/coleccion/state-bank-new-brunswick/  /coleccion/state-bank-new-brunswick/1-dolar/  301
+/noticias.dc.html  /noticias/  301
+/category/numismatica/noticias.dc.html  /noticias/  301
+/category/notafilia/noticias.dc.html  /noticias/  301
+/category/filatelia/noticias.dc.html  /noticias/  301
+/category/notafilia/politica-privacidad-cookies.dc.html  /politica-privacidad-cookies/  301
+/category/filatelia/politica-privacidad-cookies.dc.html  /politica-privacidad-cookies/  301
+/category/numismatica/politica-privacidad-cookies.dc.html  /politica-privacidad-cookies/  301

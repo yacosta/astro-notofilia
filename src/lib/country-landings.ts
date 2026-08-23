@@ -1,7 +1,11 @@
 /**
- * Copy and related links for country landing pages (US, Spain).
+ * Copy and related links for country landing pages (US, Spain, Colombia eras).
  */
-export type CountryLandingId = 'united-states' | 'spain';
+export type CountryLandingId =
+  | 'united-states'
+  | 'spain'
+  | 'colombia-siglo-pasado'
+  | 'colombia-banrep';
 
 export type CountryLandingCopy = {
   path: string;
@@ -24,6 +28,7 @@ export type CountryLandingCopy = {
   catalogFilterLabel: string;
   countryName: string;
   featuredPaths?: string[];
+  crumbs?: Array<{ href: string; name: string }>;
 };
 
 export const COUNTRY_LANDINGS: Record<
@@ -138,6 +143,156 @@ export const COUNTRY_LANDINGS: Record<
         '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
         '/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/',
       ],
+    },
+  },
+  'colombia-siglo-pasado': {
+    es: {
+      path: '/coleccion/colombia/siglo-pasado/',
+      title: 'Catálogo del Siglo Pasado | Notofilia',
+      description:
+        'Billetes colombianos anteriores a 1923: independencia, estados soberanos, banca libre y el Banco Nacional.',
+      ogTitle: 'Catálogo del Siglo Pasado — Notofilia',
+      h1: 'Siglo Pasado',
+      kicker: 'Colombia',
+      lead: 'Papel moneda colombiano anterior a la fundación del Banco de la República en 1923, documentado en la Colección Virtual.',
+      intro: [
+        'Esta página reúne las fichas de billetes colombianos emitidos antes de 1923: guerra de independencia, estados soberanos, banca libre regional, el Banco Nacional, emisiones de la República y papel impreso en el extranjero para bancos colombianos.',
+        'No es un censo completo de la notafilia del siglo XIX. Es el inventario de los ejemplares fotografiados aquí, con referencias Pick u otras cuando existen. El papel del Banco de la República (desde 1923) está en un catálogo aparte.',
+      ],
+      relatedHeading: 'Otras colecciones de Colombia',
+      related: [
+        {
+          href: '/coleccion/colombia/',
+          title: 'Catálogo de Colombia',
+          description: 'Todas las eras documentadas, agrupadas por periodo y emisor.',
+        },
+        {
+          href: '/coleccion/colombia/banco-de-la-republica/',
+          title: 'Banco de la República',
+          description: 'Billetes de banca central desde 1923 hasta el presente.',
+        },
+        {
+          href: '/coleccion/colombia/banca-libre/',
+          title: 'Banca Libre',
+          description: 'Emisores privados regionales del último tercio del siglo XIX.',
+        },
+      ],
+      catalogHeading: 'Catálogo del Siglo Pasado',
+      catalogLead:
+        'Todas las fichas de billetes colombianos anteriores a 1923. El catálogo de Colombia agrupa las mismas piezas por era y banco.',
+      catalogFilterHref: '/coleccion/colombia/',
+      catalogFilterLabel: 'Abrir el catálogo completo de Colombia',
+      countryName: 'Colombia',
+      crumbs: [{ href: '/coleccion/colombia/', name: 'Colombia' }],
+    },
+    en: {
+      path: '/en/collection/colombia/last-century/',
+      title: 'Last Century Catalog | Notofilia',
+      description:
+        'Colombian banknotes from before 1923: independence, sovereign states, free banking, and El Banco Nacional.',
+      ogTitle: 'Last Century Catalog — Notofilia',
+      h1: 'Last Century',
+      kicker: 'Colombia',
+      lead: 'Colombian paper money issued before the founding of Banco de la República in 1923, documented in the Virtual Collection.',
+      intro: [
+        'This page gathers Colombian banknote records issued before 1923: the war of independence, sovereign-state issues, regional free banking, El Banco Nacional, early Republic notes, and paper printed abroad for Colombian banks.',
+        'It is not a complete nineteenth-century census. It is the inventory of specimens photographed here, with Pick or other references when they exist. Banco de la República notes (from 1923) have their own catalog.',
+      ],
+      relatedHeading: 'Other Colombia collections',
+      related: [
+        {
+          href: '/coleccion/colombia/',
+          title: 'Colombia catalog',
+          description: 'Every documented era, grouped by period and issuer.',
+        },
+        {
+          href: '/coleccion/colombia/banco-de-la-republica/',
+          title: 'Banco de la República',
+          description: 'Central-bank notes from 1923 to the present.',
+        },
+        {
+          href: '/coleccion/colombia/banca-libre/',
+          title: 'Free Banking',
+          description: 'Regional private issuers from the late nineteenth century.',
+        },
+      ],
+      catalogHeading: 'Last Century catalog',
+      catalogLead:
+        'Every documented Colombian banknote from before 1923. The Colombia catalog groups the same pieces by era and bank.',
+      catalogFilterHref: '/en/collection/colombia/',
+      catalogFilterLabel: 'Open the full Colombia catalog',
+      countryName: 'Colombia',
+      crumbs: [{ href: '/coleccion/colombia/', name: 'Colombia' }],
+    },
+  },
+  'colombia-banrep': {
+    es: {
+      path: '/coleccion/colombia/banco-de-la-republica/',
+      title: 'Catálogo del Banco de la República | Notofilia',
+      description:
+        'Billetes del Banco de la República de 1923 a hoy: pesos oro, specimens y errores de la Colección Virtual.',
+      ogTitle: 'Catálogo del Banco de la República — Notofilia',
+      h1: 'Banco de la República',
+      kicker: 'Colombia',
+      lead: 'Papel de banca central colombiana desde 1923 hasta el presente, documentado en la Colección Virtual.',
+      intro: [
+        'El Banco de la República se fundó en 1923 y concentró la emisión de billetes que hasta entonces había estado en manos de bancos privados y del Estado. Esta página lista las fichas de esa emisión continua: pesos oro, specimens y errores de impresión.',
+        'No es el catálogo oficial del banco. Es el inventario de los ejemplares documentados aquí. Los billetes anteriores a 1923 están en el catálogo del Siglo Pasado.',
+      ],
+      relatedHeading: 'Otras colecciones de Colombia',
+      related: [
+        {
+          href: '/coleccion/colombia/',
+          title: 'Catálogo de Colombia',
+          description: 'Todas las eras documentadas, agrupadas por periodo y emisor.',
+        },
+        {
+          href: '/coleccion/colombia/siglo-pasado/',
+          title: 'Siglo Pasado',
+          description: 'Billetes colombianos anteriores a 1923.',
+        },
+      ],
+      catalogHeading: 'Catálogo del Banco de la República',
+      catalogLead:
+        'Todas las fichas de billetes impresos por el Banco de la República desde 1923. El catálogo de Colombia agrupa las mismas piezas por denominación.',
+      catalogFilterHref: '/coleccion/colombia/',
+      catalogFilterLabel: 'Abrir el catálogo completo de Colombia',
+      countryName: 'Colombia',
+      crumbs: [{ href: '/coleccion/colombia/', name: 'Colombia' }],
+    },
+    en: {
+      path: '/en/collection/colombia/banco-de-la-republica/',
+      title: 'Banco de la República Catalog | Notofilia',
+      description:
+        'Banco de la República notes from 1923 to today: pesos oro, specimens, and errors in the Virtual Collection.',
+      ogTitle: 'Banco de la República Catalog — Notofilia',
+      h1: 'Banco de la República',
+      kicker: 'Colombia',
+      lead: 'Colombian central-bank paper from 1923 to the present, documented in the Virtual Collection.',
+      intro: [
+        'Banco de la República was founded in 1923 and concentrated note issue that had previously belonged to private banks and the State. This page lists records of that continuous issue: pesos oro, specimens, and printing errors.',
+        'This is not the bank’s official catalog. It is the inventory of specimens documented here. Notes from before 1923 are in the Last Century catalog.',
+      ],
+      relatedHeading: 'Other Colombia collections',
+      related: [
+        {
+          href: '/coleccion/colombia/',
+          title: 'Colombia catalog',
+          description: 'Every documented era, grouped by period and issuer.',
+        },
+        {
+          href: '/coleccion/colombia/siglo-pasado/',
+          title: 'Last Century',
+          description: 'Colombian banknotes issued before 1923.',
+        },
+      ],
+      catalogHeading: 'Banco de la República catalog',
+      catalogLead:
+        'Every documented note printed by Banco de la República from 1923. The Colombia catalog groups the same pieces by denomination.',
+      catalogFilterHref: '/en/collection/colombia/',
+      catalogFilterLabel: 'Open the full Colombia catalog',
+      countryName: 'Colombia',
+      crumbs: [{ href: '/coleccion/colombia/', name: 'Colombia' }],
     },
   },
 };

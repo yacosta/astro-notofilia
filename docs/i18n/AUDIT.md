@@ -90,7 +90,7 @@ Catalog kinds in the 144 records: **106 banknote**, **16 profile**, **15 other**
 
 These are treated as hubs (not piece fichas) for inventory stats:
 
-`/coleccion/billete-obsoleto-estados-unidos/`, `/coleccion/reserva-federal/`, `/coleccion/departamento-del-tesoro-de-ee-uu/`, `/coleccion/moneda-colonial/`, `/coleccion/colombia/`, `/coleccion/colombia/banca-libre/`, `/coleccion/colombia/emisiones-en-el-extranjero/`, `/coleccion/puerto-rico/`, `/coleccion/ecuador/`, `/coleccion/moneda-colonial-espanola/`, `/coleccion/numismatica/` *(native Astro page, not a catalog JSON)*, `/coleccion/polimero-mundial/`, `/coleccion/pop-art/`, `/coleccion/certificados-de-pago-militar/`, `/coleccion/emisiones-promocionales/`, `/coleccion/food-coupons-usda/`.
+`/coleccion/billete-obsoleto-estados-unidos/`, `/coleccion/reserva-federal/`, `/coleccion/departamento-del-tesoro-de-ee-uu/`, `/coleccion/moneda-colonial/`, `/coleccion/colombia/`, `/coleccion/colombia/banca-libre/`, `/coleccion/colombia/emisiones-en-el-extranjero/`, `/coleccion/colombia/siglo-pasado/` *(native Astro page)*, `/coleccion/colombia/banco-de-la-republica/` *(native Astro page)*, `/coleccion/puerto-rico/`, `/coleccion/ecuador/`, `/coleccion/moneda-colonial-espanola/`, `/coleccion/numismatica/` *(native Astro page, not a catalog JSON)*, `/coleccion/polimero-mundial/`, `/coleccion/pop-art/`, `/coleccion/certificados-de-pago-militar/`, `/coleccion/emisiones-promocionales/`, `/coleccion/food-coupons-usda/`.
 
 `/coleccion/` itself is a native Astro page, not a catalog JSON entry.
 
@@ -581,6 +581,8 @@ What **does** exist:
 | `/coleccion/emisiones-promocionales/` | `/en/collection/promotional-issues/` |
 | `/coleccion/colombia/banca-libre/` | `/en/collection/colombia/free-banking/` |
 | `/coleccion/colombia/emisiones-en-el-extranjero/` | `/en/collection/colombia/issues-printed-abroad/` |
+| `/coleccion/colombia/siglo-pasado/` | `/en/collection/colombia/last-century/` |
+| `/coleccion/colombia/banco-de-la-republica/` | `/en/collection/colombia/banco-de-la-republica/` |
 | `/coleccion/pop-art/` | `/en/collection/pop-art/` |
 | `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` |
 | `/coleccion/puerto-rico/` | `/en/collection/puerto-rico/` |
@@ -698,6 +700,8 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/2000-pesos-error-corte-descentrado/` | `/en/collection/colombia/2000-pesos-off-center-cut-error/` | translated |
 | banknote | `/coleccion/colombia/2000-pesos-error-mariposa/` | `/en/collection/colombia/2000-pesos-butterfly-error/` | translated |
 | other | `/coleccion/colombia/banca-libre/` | `/en/collection/colombia/free-banking/` | hub/other |
+| other | `/coleccion/colombia/siglo-pasado/` | `/en/collection/colombia/last-century/` | hub/other |
+| other | `/coleccion/colombia/banco-de-la-republica/` | `/en/collection/colombia/banco-de-la-republica/` | hub/other; issuer name kept |
 | banknote | `/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/` | `/en/collection/colombia/banco-colombiano-guatemala-1-peso-1900/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/` | `/en/collection/colombia/banco-de-antioquia-warrant-10-centavos-1900/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/` | `/en/collection/colombia/banco-de-barranquilla-50-centavos-1900/` | catalog IDs stay untranslated in copy; issuer name kept |

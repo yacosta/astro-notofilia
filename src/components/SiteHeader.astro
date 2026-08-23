@@ -1,6 +1,6 @@
 ---
 /**
- * Native site header — desktop mega menu + mobile drawer.
+ * Native site header — desktop menus + mobile drawer.
  * Search and ES/EN switching stay server-rendered and work with JS off.
  */
 import {
@@ -87,27 +87,89 @@ const searchAction = '/buscar/';
           </button>
           <div
             id={`nav-panel-${menu.id}`}
-            class:list={['site-header__panel', menu.id === 'collection' && 'site-header__panel--mega']}
+            class:list={[
+              'site-header__panel',
+              menu.id === 'collection' && 'site-header__panel--accordion',
+            ]}
             hidden
           >
             {menu.groups.map((group) => (
-              <div class="site-header__panel-col">
-                <p class="site-header__panel-heading" id={`nav-h-${menu.id}-${group.id}`}>
-                  {labelFor(group.label, group.labelEn)}
-                </p>
-                <ul aria-labelledby={`nav-h-${menu.id}-${group.id}`}>
-                  {group.links.map((link) => (
-                    <li>
-                      <a
-                        class:list={[{ 'site-header__panel-lead': Boolean(link.lead) }]}
-                        href={hrefFor(link.href)}
-                      >
-                        {labelFor(link.label, link.labelEn)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              menu.id === 'collection' ? (
+                <details class="site-header__panel-group">
+                  <summary>
+                    <span id={`nav-h-${menu.id}-${group.id}`}>
+                      {labelFor(group.label, group.labelEn)}
+                    </span>
+                    <span class="site-header__caret" aria-hidden="true">▾</span>
+                  </summary>
+                  <ul aria-labelledby={`nav-h-${menu.id}-${group.id}`}>
+                    {group.links.map((link) => (
+                      <li>
+                        {link.children?.length ? (
+                          <div class="site-header__panel-accordion">
+                            <div class="site-header__panel-split">
+                              <a
+                                class:list={[{ 'site-header__panel-lead': Boolean(link.lead) }]}
+                                href={hrefFor(link.href)}
+                              >
+                                {labelFor(link.label, link.labelEn)}
+                              </a>
+                              <button
+                                type="button"
+                                class="site-header__panel-split-toggle"
+                                aria-expanded="false"
+                                aria-controls={`nav-panel-sub-${link.href.replace(/[^a-z0-9]+/gi, '-')}`}
+                                aria-label={
+                                  isEn
+                                    ? `Show ${link.labelEn || link.label} sections`
+                                    : `Mostrar secciones de ${link.label}`
+                                }
+                              >
+                                <span class="site-header__caret" aria-hidden="true">▾</span>
+                              </button>
+                            </div>
+                            <ul
+                              id={`nav-panel-sub-${link.href.replace(/[^a-z0-9]+/gi, '-')}`}
+                              class="site-header__panel-sub"
+                              hidden
+                            >
+                              {link.children.map((child) => (
+                                <li>
+                                  <a href={hrefFor(child.href)}>
+                                    {labelFor(child.label, child.labelEn)}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : (
+                          <a
+                            class:list={[{ 'site-header__panel-lead': Boolean(link.lead) }]}
+                            href={hrefFor(link.href)}
+                          >
+                            {labelFor(link.label, link.labelEn)}
+                          </a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                <div class="site-header__panel-col">
+                  <p class="site-header__panel-heading" id={`nav-h-${menu.id}-${group.id}`}>
+                    {labelFor(group.label, group.labelEn)}
+                  </p>
+                  <ul aria-labelledby={`nav-h-${menu.id}-${group.id}`}>
+                    {group.links.map((link) => (
+                      <li>
+                        <a href={hrefFor(link.href)}>
+                          {labelFor(link.label, link.labelEn)}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
             ))}
           </div>
         </li>
@@ -259,21 +321,70 @@ const searchAction = '/buscar/';
       </div>
       <div id="nav-drawer-collection" class="site-header__accordion-panel" hidden>
         {COLLECTION_MENU.groups.map((group) => (
-          <div class="site-header__drawer-group">
-            <p class="site-header__drawer-group-label">{labelFor(group.label, group.labelEn)}</p>
-            <ul>
-              {group.links.map((link) => (
-                <li>
-                  <a
-                    class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
-                    href={hrefFor(link.href)}
-                  >
-                    {labelFor(link.label, link.labelEn)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <details class="site-header__accordion site-header__drawer-group-acc">
+            <summary>
+              <span class="site-header__accordion-label">{labelFor(group.label, group.labelEn)}</span>
+              <span class="site-header__caret" aria-hidden="true">▾</span>
+            </summary>
+            <div class="site-header__accordion-panel">
+              <ul>
+                {group.links.map((link) => (
+                  <li>
+                    {link.children?.length ? (
+                      <div class="site-header__accordion--nested">
+                        <div class="site-header__drawer-split">
+                          <a
+                            class:list={[
+                              'site-header__drawer-split-link',
+                              { 'site-header__accordion-lead': Boolean(link.lead) },
+                            ]}
+                            href={hrefFor(link.href)}
+                          >
+                            {labelFor(link.label, link.labelEn)}
+                          </a>
+                          <button
+                            type="button"
+                            class="site-header__drawer-split-toggle"
+                            aria-expanded="false"
+                            aria-controls={`nav-drawer-${link.href.replace(/[^a-z0-9]+/gi, '-')}`}
+                            aria-label={
+                              isEn
+                                ? `Show ${link.labelEn || link.label} sections`
+                                : `Mostrar secciones de ${link.label}`
+                            }
+                          >
+                            <span class="site-header__caret" aria-hidden="true">▾</span>
+                          </button>
+                        </div>
+                        <div
+                          id={`nav-drawer-${link.href.replace(/[^a-z0-9]+/gi, '-')}`}
+                          class="site-header__accordion-panel site-header__nested-panel"
+                          hidden
+                        >
+                          <ul>
+                            {link.children.map((child) => (
+                              <li>
+                                <a href={hrefFor(child.href)}>
+                                  {labelFor(child.label, child.labelEn)}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                        href={hrefFor(link.href)}
+                      >
+                        {labelFor(link.label, link.labelEn)}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
         ))}
       </div>
 
@@ -457,8 +568,13 @@ const searchAction = '/buscar/';
   }
   .site-header__item.is-open > .site-header__caret-btn .site-header__caret,
   .site-header__accordion[open] > summary > .site-header__caret,
-  .site-header__drawer-split-toggle[aria-expanded='true'] .site-header__caret {
+  .site-header__panel-group[open] > summary > .site-header__caret,
+  .site-header__drawer-split-toggle[aria-expanded='true'] .site-header__caret,
+  .site-header__panel-split-toggle[aria-expanded='true'] .site-header__caret {
     transform: rotate(180deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__caret { transition: none; }
   }
   .site-header__panel {
     position: absolute;
@@ -482,16 +598,38 @@ const searchAction = '/buscar/';
   .site-header__panel[hidden] {
     display: none;
   }
-  .site-header__panel--mega:not([hidden]) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    align-items: start;
-    gap: 8px 28px;
-    width: min(720px, 92vw);
+  .site-header__panel--accordion:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: min(380px, 92vw);
     max-height: min(70vh, 36rem);
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 22px 24px 24px;
+    padding: 12px 16px 16px;
+  }
+  .site-header__panel-group > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 44px;
+    padding: 6px 4px;
+    cursor: pointer;
+    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    text-transform: uppercase;
+    color: #5c4e33;
+  }
+  .site-header__panel-group > summary::-webkit-details-marker { display: none; }
+  .site-header__panel-group > summary::marker { content: ''; }
+  .site-header__panel-group > summary:focus-visible {
+    outline: 2px solid #5c4e33;
+    outline-offset: 2px;
   }
   .site-header__panel-col {
     min-width: 0;
@@ -526,9 +664,38 @@ const searchAction = '/buscar/';
   .site-header__panel a:hover {
     color: #5c4e33;
   }
-  .site-header__panel-lead {
+  .site-header__panel a.site-header__panel-lead {
     font-weight: 700;
     color: #1c1a15;
+  }
+  .site-header__panel-split {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    align-items: stretch;
+  }
+  .site-header__panel-split-toggle {
+    border: none;
+    background: transparent;
+    color: #5c4e33;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .site-header__panel-split-toggle:focus-visible {
+    outline: 2px solid #5c4e33;
+    outline-offset: 2px;
+  }
+  .site-header__panel-sub {
+    margin: 0 0 6px;
+    padding: 0 0 0 14px;
+    border-left: 2px solid rgba(92, 78, 51, 0.28);
+  }
+  .site-header__panel-sub[hidden] {
+    display: none;
+  }
+  .site-header__panel-sub a {
+    font-size: 15px;
+    min-height: 44px;
   }
   .site-header__search {
     justify-self: end;
@@ -723,7 +890,8 @@ const searchAction = '/buscar/';
   }
   .site-header__drawer-head button:focus-visible,
   .site-header__drawer-split-toggle:focus-visible,
-  .site-header__accordion > summary:focus-visible {
+  .site-header__accordion > summary:focus-visible,
+  .site-header__panel-group > summary:focus-visible {
     outline: 2px solid #5c4e33;
     outline-offset: 2px;
   }
@@ -814,7 +982,31 @@ const searchAction = '/buscar/';
     text-decoration: none;
     font-size: 16px;
   }
-  .site-header__accordion-lead { font-weight: 600; color: #1c1a15; }
+  .site-header__accordion a.site-header__accordion-lead {
+    font-weight: 700;
+    color: #1c1a15;
+  }
+  .site-header__accordion--nested {
+    margin: 0 -24px;
+  }
+  .site-header__accordion--nested .site-header__drawer-split {
+    border-bottom: 0;
+  }
+  .site-header__accordion--nested .site-header__drawer-split-link {
+    padding-left: 24px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .site-header__nested-panel ul {
+    padding: 0 24px 8px 36px;
+  }
+  .site-header__drawer-group-acc > summary {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+  }
   .site-header__drawer-group-label {
     margin: 8px 24px 0;
     font-size: 12px;

@@ -9,6 +9,8 @@ export type NavLink = {
   label: string;
   labelEn?: string;
   lead?: boolean;
+  /** Nested destinations shown under an accordion / indented submenu. */
+  children?: NavLink[];
 };
 
 export type NavGroup = {
@@ -138,62 +140,86 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
   label: 'Colecciones virtuales — Notafilia',
   labelEn: 'Virtual collections — Notaphily',
   links: [
-    { href: '/coleccion/colombia/', label: 'Colombia', labelEn: 'Colombia', lead: true },
     {
-      href: '/coleccion/colombia/banca-libre/',
-      label: 'Banca Libre (Colombia)',
-      labelEn: 'Free Banking (Colombia)',
+      href: '/coleccion/colombia/',
+      label: 'Colombia',
+      labelEn: 'Colombia',
+      lead: true,
+      children: [
+        {
+          href: '/coleccion/colombia/siglo-pasado/',
+          label: 'Billetes del Siglo Pasado',
+          labelEn: 'Banknotes of the Last Century',
+        },
+        {
+          href: '/coleccion/colombia/banco-de-la-republica/',
+          label: 'Billetes del Banco de la República',
+          labelEn: 'Banco de la República banknotes',
+        },
+        {
+          href: '/coleccion/colombia/emisiones-en-el-extranjero/',
+          label: 'Emisiones colombianas en el extranjero',
+          labelEn: 'Colombian notes issued abroad',
+        },
+      ],
     },
     {
-      href: '/coleccion/colombia/emisiones-en-el-extranjero/',
-      label: 'Emisiones colombianas en el extranjero',
-      labelEn: 'Colombian notes issued abroad',
+      href: '/coleccion/estados-unidos/',
+      label: 'Estados Unidos',
+      labelEn: 'United States',
+      lead: true,
+      children: [
+        {
+          href: '/coleccion/moneda-colonial/',
+          label: 'Moneda Colonial',
+          labelEn: 'Colonial Currency',
+        },
+        {
+          href: '/coleccion/billete-obsoleto-estados-unidos/',
+          label: 'Billetes obsoletos',
+          labelEn: 'Obsolete Banknotes',
+        },
+        {
+          href: '/coleccion/estados-unidos/#united-states-notes',
+          label: 'United States Notes',
+          labelEn: 'United States Notes',
+        },
+        {
+          href: '/coleccion/departamento-del-tesoro-de-ee-uu/',
+          label: 'Departamento del Tesoro',
+          labelEn: 'Department of the Treasury',
+        },
+        {
+          href: '/coleccion/reserva-federal/',
+          label: 'Reserva Federal',
+          labelEn: 'Federal Reserve',
+        },
+        {
+          href: '/coleccion/certificados-de-pago-militar/',
+          label: 'Certificados de Pago Militar',
+          labelEn: 'Military Payment Certificates',
+        },
+        {
+          href: '/coleccion/food-coupons-usda/',
+          label: 'Cupones de alimentos USDA',
+          labelEn: 'USDA Food Coupons',
+        },
+        {
+          href: '/coleccion/emisiones-promocionales/',
+          label: 'Emisiones promocionales',
+          labelEn: 'Promotional issues',
+        },
+      ],
     },
-    { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
-    {
-      href: '/coleccion/estados-unidos/#united-states-notes',
-      label: 'United States Notes',
-      labelEn: 'United States Notes',
-    },
-    {
-      href: '/coleccion/reserva-federal/',
-      label: 'Reserva Federal (EE. UU.)',
-      labelEn: 'Federal Reserve (U.S.)',
-    },
-    {
-      href: '/coleccion/departamento-del-tesoro-de-ee-uu/',
-      label: 'Departamento del Tesoro (EE. UU.)',
-      labelEn: 'U.S. Treasury',
-    },
-    {
-      href: '/coleccion/certificados-de-pago-militar/',
-      label: 'Certificados de Pago Militar',
-      labelEn: 'Military Payment Certificates',
-    },
-    {
-      href: '/coleccion/food-coupons-usda/',
-      label: 'Cupones de alimentos USDA',
-      labelEn: 'USDA Food Coupons',
-    },
-    {
-      href: '/coleccion/emisiones-promocionales/',
-      label: 'Emisiones promocionales (EE. UU.)',
-      labelEn: 'U.S. promotional issues',
-    },
-    {
-      href: '/coleccion/moneda-colonial/',
-      label: 'Moneda colonial americana',
-      labelEn: 'American colonial currency',
-    },
-    { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
-    { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
-    { href: '/coleccion/ecuador/', label: 'Ecuador', labelEn: 'Ecuador' },
+    { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico', lead: true },
+    { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines', lead: true },
+    { href: '/coleccion/ecuador/', label: 'Ecuador', labelEn: 'Ecuador', lead: true },
     {
       href: '/coleccion/polimero-mundial/',
       label: 'Billetes de polímero mundial',
       labelEn: 'World Polymer Banknotes',
+      lead: true,
     },
-    { href: '/coleccion/pop-art/', label: 'Pop-art currency', labelEn: 'Pop Art Currency' },
   ],
 };
 

@@ -443,6 +443,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/colombia/banco-de-la-republica/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica/" />
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-union-5-10-pesos-1883/" />
@@ -711,6 +720,15 @@
     <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/coleccion/colombia/siglo-pasado/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/siglo-pasado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/last-century/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/siglo-pasado/" />
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/</loc>
@@ -1892,6 +1910,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/en/collection/colombia/banco-de-la-republica/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica/" />
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/en/collection/colombia/banco-de-la-union-5-10-pesos-1883/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-union-5-10-pesos-1883/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-union-5-10-pesos-1883/" />
@@ -2043,6 +2070,15 @@
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/last-century/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/siglo-pasado/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/last-century/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/siglo-pasado/" />
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://notofilia.com/en/collection/colombia/new-granada-1-peso-1861/</loc>
