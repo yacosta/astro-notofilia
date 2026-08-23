@@ -3,19 +3,28 @@ import type { CatalogCard } from './catalog-record';
 
 export const COLOMBIA_SIGLO_PASADO = 'Billetes del Siglo Pasado';
 export const COLOMBIA_SIGLO_PASADO_EN = 'Banknotes of the Last Century';
+export const COLOMBIA_DEUDA = 'Deuda Pública Estatal';
+export const COLOMBIA_DEUDA_EN = 'State Public Debt';
 export const COLOMBIA_BANREP = 'Billetes del Banco de la República (Desde 1923)';
 export const COLOMBIA_BANREP_EN = 'Banco de la República Banknotes (From 1923)';
 
+export const COLOMBIA_SECTION_ORDER = [
+  COLOMBIA_SIGLO_PASADO,
+  COLOMBIA_DEUDA,
+  COLOMBIA_BANREP,
+] as const;
+
 export const COLOMBIA_SIGLO_PASADO_GROUPS = [
-  'Cartagena de Indias (1811–1815)',
+  'Catálogo de Billetes de Colombia',
   'Estados Unidos de Nueva Granada (1861)',
   'Estados Unidos de Colombia',
   'Estados soberanos (1882)',
-  'Bonos y Libranzas Fiscales',
   'Banca Libre',
   'El Banco Nacional',
   'República de Colombia',
 ] as const;
+
+export const COLOMBIA_DEUDA_GROUPS = ['Bonos y Libranzas Fiscales'] as const;
 
 /** Denomination headings in catalog order. Empty headings are omitted at render time. */
 export const COLOMBIA_BANREP_GROUPS = [
@@ -58,6 +67,13 @@ const SIGLO_PASADO_FIELDS = {
   sectionEn: COLOMBIA_SIGLO_PASADO_EN,
   sectionKicker: 'Antes del Banco de la República',
   sectionKickerEn: 'Before Banco de la República',
+} as const;
+
+const DEUDA_FIELDS = {
+  section: COLOMBIA_DEUDA,
+  sectionEn: COLOMBIA_DEUDA_EN,
+  sectionKicker: 'Títulos fiscales',
+  sectionKickerEn: 'Fiscal paper',
 } as const;
 
 const BANREP_FIELDS = {
@@ -109,8 +125,8 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
   if (href.includes('cartagena') || firstYear(card.year) === 1813) {
     return {
       ...SIGLO_PASADO_FIELDS,
-      group: 'Cartagena de Indias (1811–1815)',
-      groupEn: 'Cartagena de Indias (1811–1815)',
+      group: 'Catálogo de Billetes de Colombia',
+      groupEn: 'Colombia Banknote Catalog',
       groupKicker: 'Guerra de Independencia',
       groupKickerEn: 'War of Independence',
     };
@@ -144,11 +160,9 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
   }
   if (href.includes('libranza') || href.includes('boyaca')) {
     return {
-      ...SIGLO_PASADO_FIELDS,
+      ...DEUDA_FIELDS,
       group: 'Bonos y Libranzas Fiscales',
       groupEn: 'Fiscal bonds and warrants',
-      groupKicker: 'Deuda pública estatal',
-      groupKickerEn: 'State public debt',
     };
   }
   if (href.includes('banco-hipotecario')) {
@@ -217,12 +231,15 @@ export function compareColombiaCards(
   const periodA = colombiaPeriodFor(a);
   const periodB = colombiaPeriodFor(b);
   const sectionDelta =
-    rankOf([COLOMBIA_SIGLO_PASADO, COLOMBIA_BANREP], periodA.section) -
-    rankOf([COLOMBIA_SIGLO_PASADO, COLOMBIA_BANREP], periodB.section);
+    rankOf(COLOMBIA_SECTION_ORDER, periodA.section) - rankOf(COLOMBIA_SECTION_ORDER, periodB.section);
   if (sectionDelta) return sectionDelta;
 
   const groupOrder =
-    periodA.section === COLOMBIA_BANREP ? COLOMBIA_BANREP_GROUPS : COLOMBIA_SIGLO_PASADO_GROUPS;
+    periodA.section === COLOMBIA_BANREP
+      ? COLOMBIA_BANREP_GROUPS
+      : periodA.section === COLOMBIA_DEUDA
+        ? COLOMBIA_DEUDA_GROUPS
+        : COLOMBIA_SIGLO_PASADO_GROUPS;
   const groupDelta = rankOf(groupOrder, periodA.group) - rankOf(groupOrder, periodB.group);
   if (groupDelta) return groupDelta;
 

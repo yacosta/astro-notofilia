@@ -250,10 +250,13 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
   await expect(cards.last()).toHaveAttribute('href', /50000-pesos/);
 
   await expect(page.getByRole('heading', { level: 2, name: 'Billetes del Siglo Pasado' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Deuda Pública Estatal' })).toBeVisible();
   await expect(
     page.getByRole('heading', { level: 2, name: 'Billetes del Banco de la República (Desde 1923)' }),
   ).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Cartagena de Indias (1811–1815)' })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 3, name: 'Catálogo de Billetes de Colombia', exact: true }),
+  ).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Estados Unidos de Nueva Granada (1861)' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Estados Unidos de Colombia' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Estados soberanos (1882)' })).toBeVisible();
@@ -288,10 +291,19 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
     els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : null)),
   );
   expect(hrefs.at(-1)).not.toContain('libranza');
-  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeGreaterThan(0);
-  expect(hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/')).toBeLessThan(
-    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  const boyacaIdx = hrefs.indexOf('/coleccion/colombia/boyaca-libranza-500-pesos-1883/');
+  expect(boyacaIdx).toBeGreaterThan(
+    hrefs.indexOf('/coleccion/colombia/republica-1910-1915-emisiones/') ?? -1,
   );
+  expect(boyacaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/') ??
+      Number.POSITIVE_INFINITY,
+  );
+  const deuda = page.locator('#catalog-era-deuda-publica-estatal');
+  await expect(deuda.getByRole('heading', { name: 'Bonos y Libranzas Fiscales' })).toBeVisible();
+  await expect(
+    deuda.locator('a.catalog-banknote-card[href="/coleccion/colombia/boyaca-libranza-500-pesos-1883/"]'),
+  ).toBeVisible();
 
   const sigloPasado = page.locator('#catalog-era-billetes-del-siglo-pasado');
   await expect(sigloPasado.getByRole('heading', { name: 'El Banco Hipotecario' })).toBeVisible();
@@ -538,6 +550,7 @@ test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ pag
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Banknotes of the Last Century' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'State Public Debt' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Free Banking', exact: true })).toBeVisible();
   await expect(page.locator('.catalog-hub-group-title', { hasText: 'Colombian Free Banking' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
