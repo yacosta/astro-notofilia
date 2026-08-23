@@ -109,3 +109,9 @@ test('pop art hub lists every note under the title', async ({ page }) => {
   await expect(page.getByRole('link', { name: /Warhol/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /Life Is Beautiful/ })).toBeVisible();
 });
+
+test('United States catalog omits the Utrecht gold ducat', async ({ page }) => {
+  await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toHaveCount(0);
+});
