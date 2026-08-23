@@ -878,6 +878,11 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toHaveCount(0);
+  await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' }).click();
+  await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Departamento del Tesoro', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Ecuador' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toHaveCount(0);
   await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Numismática' }).click();
@@ -919,7 +924,13 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
-  await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(1);
+  await expect(drawer.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Moneda Colonial', exact: true })).toHaveCount(0);
+  await drawer.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' }).click();
+  await expect(drawer.getByRole('link', { name: 'Moneda Colonial', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Billetes obsoletos', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Departamento del Tesoro', exact: true })).toBeVisible();
+  await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(2);
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await drawer.locator('summary', { hasText: 'Colecciones virtuales — Numismática' }).click();
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();

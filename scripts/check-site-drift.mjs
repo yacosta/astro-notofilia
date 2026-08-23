@@ -174,6 +174,13 @@ if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the
 if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
 if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/');
 if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');
+if (!navTs.includes('/coleccion/moneda-colonial/')) fail('Primary nav is missing U.S. colonial currency');
+if (!navTs.includes('/coleccion/billete-obsoleto-estados-unidos/')) {
+  fail('Primary nav is missing U.S. obsolete banknotes');
+}
+if (!navTs.includes('/coleccion/departamento-del-tesoro-de-ee-uu/')) {
+  fail('Primary nav is missing the U.S. Treasury catalog');
+}
 if (!navTs.includes('/coleccion/colombia/siglo-pasado/')) fail('Primary nav is missing Colombia Siglo Pasado');
 if (!navTs.includes('/coleccion/colombia/banco-de-la-republica/')) {
   fail('Primary nav is missing Colombia Banco de la República');

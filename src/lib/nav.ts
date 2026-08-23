@@ -163,16 +163,32 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
         },
       ],
     },
-    { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
+    {
+      href: '/coleccion/estados-unidos/',
+      label: 'Estados Unidos',
+      labelEn: 'United States',
+      children: [
+        {
+          href: '/coleccion/moneda-colonial/',
+          label: 'Moneda Colonial',
+          labelEn: 'Colonial Currency',
+        },
+        {
+          href: '/coleccion/billete-obsoleto-estados-unidos/',
+          label: 'Billetes obsoletos',
+          labelEn: 'Obsolete Banknotes',
+        },
+        {
+          href: '/coleccion/departamento-del-tesoro-de-ee-uu/',
+          label: 'Departamento del Tesoro',
+          labelEn: 'Department of the Treasury',
+        },
+      ],
+    },
     {
       href: '/coleccion/reserva-federal/',
       label: 'Reserva Federal (EE. UU.)',
       labelEn: 'Federal Reserve (U.S.)',
-    },
-    {
-      href: '/coleccion/departamento-del-tesoro-de-ee-uu/',
-      label: 'Departamento del Tesoro (EE. UU.)',
-      labelEn: 'U.S. Treasury',
     },
     {
       href: '/coleccion/certificados-de-pago-militar/',
@@ -188,11 +204,6 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
       href: '/coleccion/emisiones-promocionales/',
       label: 'Emisiones promocionales (EE. UU.)',
       labelEn: 'U.S. promotional issues',
-    },
-    {
-      href: '/coleccion/moneda-colonial/',
-      label: 'Moneda colonial americana',
-      labelEn: 'American colonial currency',
     },
     { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
     { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
