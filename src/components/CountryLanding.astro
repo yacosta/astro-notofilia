@@ -13,7 +13,7 @@ import { SITE } from '../lib/site';
 import { lookupEn } from '../lib/html-i18n';
 import { alternateUrl, type Locale } from '../i18n/pairs';
 import { COUNTRY_LANDINGS, type CountryLandingId } from '../lib/country-landings';
-import { groupUsCatalogItems, isCatalogBiography } from '../lib/us-catalog';
+import { groupUsCatalogItems, isCatalogBiography, usCatalogCardTitle } from '../lib/us-catalog';
 import {
   isColombiaBanRepCatalogPath,
   isColombiaSigloPasadoCatalogPath,
@@ -445,7 +445,7 @@ const jsonLd = {
                             />
                           </picture>
                         )}
-                        <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                        <span class="card-title">{usCatalogCardTitle(item, isEn ? (lookupEn(item.title) || item.title) : item.title)}</span>
                         {item.year ? <span class="card-desc">{item.year}</span> : null}
                       </a>
                     </li>

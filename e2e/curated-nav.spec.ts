@@ -28,6 +28,18 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Moneda Colonial' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'BILLETE OBSOLETO' })).toBeVisible();
+  const obsoleteTitles = await page.locator('#billete-obsoleto .card-title').allTextContents();
+  expect(obsoleteTitles.length).toBeGreaterThan(0);
+  expect(obsoleteTitles.every((title) => !/^Billetes?\s+\$/i.test(title))).toBeTruthy();
+  expect(obsoleteTitles).toEqual(
+    expect.arrayContaining([
+      'The Adrian Insurance Company',
+      'Citizens Bank of Louisiana',
+      'City Bank of New Haven',
+      'Hagerstown Bank, Maryland',
+      'State Bank New Brunswick',
+    ]),
+  );
   await expect(page.getByRole('heading', { name: 'United States Notes' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Gold Certificates' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Federal Reserve Bank' })).toBeVisible();
