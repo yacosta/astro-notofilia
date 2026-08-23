@@ -22,7 +22,6 @@ const GLOSARIO_DIR = path.join(ROOT, 'src/content/glosario');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
-  { path: '/coleccion/', label: 'Colección Virtual' },
   { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
   { path: '/coleccion/estados-unidos/', label: 'Estados Unidos' },
@@ -111,7 +110,7 @@ function sectionForPath(p) {
   }
   if (p.startsWith('/coleccion/pop-art/')) return '/coleccion/pop-art/';
   if (p.startsWith('/coleccion/emisiones-promocionales/')) return '/coleccion/emisiones-promocionales/';
-  return '/coleccion/';
+  return '/coleccion/colombia/';
 }
 
 async function loadCatalog() {
@@ -234,17 +233,16 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
       description: entry?.description || h.label,
       title: entry?.title || h.label,
     };
-  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/' || h.path === '/coleccion/numismatica/');
+  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/numismatica/');
 
   const lines = [];
 
   lines.push('## Sitio principal', '');
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
-  lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Hub global de la Colección Virtual: billetes, filtros y accesos por país.'));
+  lines.push(linkLine('Catálogo de Colombia', abs('/coleccion/colombia/'), 'Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.'));
   lines.push(linkLine('Catálogo de Numismática', abs('/coleccion/numismatica/'), 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.'));
   lines.push(linkLine('Guías para coleccionistas', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
   lines.push(linkLine('Sobre Notofilia', abs('/nosotros/'), 'Qué es el proyecto, quién lo edita y cómo citar las fichas.'));
-  lines.push(linkLine('Añadidos recientes', abs('/coleccion/#recent'), 'Piezas destacadas incorporadas a la Colección Virtual.'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));

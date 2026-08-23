@@ -7,6 +7,11 @@
 # Logros del Mes lives on the homepage strip, not a separate index
 /logros/  /  301
 /logros  /  301
+# Global catalog hub retired — country hubs and fichas stay
+/coleccion  /  301
+/coleccion/  /  301
+/en/collection  /en/  301
+/en/collection/  /en/  301
 # Native Astro pages: 301 the .dc document URLs to the extensionless canonical
 /perfil-j-s-g-boggs.dc.html  /j-s-g-boggs/  301
 /perfil-j-s-g-boggs.dc  /j-s-g-boggs/  301

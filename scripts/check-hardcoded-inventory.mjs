@@ -9,7 +9,6 @@ import { getCollectionStatsFromDisk } from '../src/lib/catalog-inventory.mjs';
 const root = process.cwd();
 const files = [
   'src/pages/index.astro',
-  'src/pages/coleccion/index.astro',
   'src/pages/editorial/index.astro',
   'src/components/HomeHero.astro',
   'src/components/HomeStatsBar.astro',

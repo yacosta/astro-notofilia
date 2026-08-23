@@ -18,6 +18,8 @@ const sitemapXml = await readFile(path.join(root, 'public/sitemap.xml'), 'utf8')
 const sitemapPaths = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => normalizePath(match[1]));
 const sitemap = new Set(sitemapPaths);
 if (sitemap.size !== sitemapPaths.length) fail('sitemap.xml contains duplicate <loc> entries');
+if (sitemap.has('/coleccion/')) fail('Retired /coleccion/ hub must not be in sitemap.xml');
+if (sitemap.has('/en/collection/')) fail('Retired /en/collection/ hub must not be in sitemap.xml');
 if (sitemapXml.includes(FORBIDDEN_ORIGIN)) fail(`sitemap.xml still uses ${FORBIDDEN_ORIGIN}; prefer ${SITE_ORIGIN}`);
 const rawSitemapLocs = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 if (!rawSitemapLocs.every((loc) => loc === SITE_ORIGIN || loc === `${SITE_ORIGIN}/` || loc.startsWith(`${SITE_ORIGIN}/`))) {
@@ -72,6 +74,12 @@ for (const redirect of redirects) {
 
 const rewrites = new Map(redirects.filter(({ status }) => status === '200').map((rule) => [normalizePath(rule.from), rule]));
 const permanentRedirects = redirects.filter(({ status }) => status === '301');
+const hasExactRedirect = (from, to) =>
+  permanentRedirects.some((rule) => rule.from === from && normalizePath(rule.to) === normalizePath(to));
+if (!hasExactRedirect('/coleccion/', '/')) fail('Missing /coleccion/ → / redirect');
+if (!hasExactRedirect('/coleccion', '/')) fail('Missing /coleccion → / redirect');
+if (!hasExactRedirect('/en/collection/', '/en/')) fail('Missing /en/collection/ → /en/ redirect');
+if (!hasExactRedirect('/en/collection', '/en/')) fail('Missing /en/collection → /en/ redirect');
 
 const htmlCache = new Map();
 async function htmlForRoute(route) {
@@ -158,9 +166,11 @@ const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.a
 if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not load site-header.js');
 if (!nativeHeader.includes('COLLECTION_MENU')) fail('Native SiteHeader does not render the Collection menu');
 const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
-if (!navTs.includes("href: '/coleccion/'")) fail('Primary nav is missing the collection hub');
+if (!navTs.includes("href: '/coleccion/colombia/'")) fail('Primary nav is missing the Colombia collection');
+if (/href:\s*'\/coleccion\/(?:[?#][^']*)?'/.test(navTs)) {
+  fail('Primary nav must not link the retired /coleccion/ hub');
+}
 if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
-if (!navTs.includes('Catálogo completo')) fail('Primary nav is missing the Full Catalog label');
 if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
 if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/');
 if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');

@@ -10,7 +10,7 @@ keywords:
   - "numismatics"
   - "notaphily"
 relatedLinks:
-  - { href: "/en/collection/", title: "Virtual banknote collection" }
+  - { href: "/en/collection/colombia/", title: "Colombia banknote collection" }
   - { href: "/coleccion/moneda-colonial-espanola/", title: "Spanish colonial coinage collection" }
   - { href: "/en/glossary/notaphily/", title: "Glossary: notaphily" }
   - { href: "/en/glossary/numismatics/", title: "Glossary: numismatics" }

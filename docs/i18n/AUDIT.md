@@ -551,7 +551,6 @@ What **does** exist:
 | ES (do not change) | Proposed EN |
 |---|---|
 | `/` | `/en/` |
-| `/coleccion/` | `/en/collection/` |
 | `/coleccion/colombia/` | `/en/collection/colombia/` |
 | `/coleccion/numismatica/` | `/en/collection/numismatics/` |
 | `/noticias/` | `/en/news/` |

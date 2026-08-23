@@ -90,7 +90,6 @@ export const COLLECTION_COUNTRIES: NavGroup = {
     { href: '/coleccion/espana/', label: 'España', labelEn: 'Spain' },
     { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
     { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
-    { href: '/coleccion/#countries', label: 'Ver todos los países', labelEn: 'View all countries' },
   ],
 };
 
@@ -101,8 +100,6 @@ export const COLLECTION_SPECIAL: NavGroup = {
   links: [
     { href: '/coleccion/polimero-mundial/', label: 'Billetes de polímero mundial', labelEn: 'World Polymer Banknotes' },
     { href: '/coleccion/certificados-de-pago-militar/', label: 'Certificados de Pago Militar', labelEn: 'Military Payment Certificates' },
-    { href: '/coleccion/?tipo=specimen', label: 'Specimens', labelEn: 'Specimens' },
-    { href: '/coleccion/?tipo=error', label: 'Errores de imprenta', labelEn: 'Printing Errors' },
     { href: '/coleccion/billete-obsoleto-estados-unidos/', label: 'Billetes obsoletos de EE. UU.', labelEn: 'U.S. Obsolete Banknotes' },
     { href: '/coleccion/pop-art/', label: 'Pop-art currency', labelEn: 'Pop Art Currency' },
   ],
@@ -110,11 +107,11 @@ export const COLLECTION_SPECIAL: NavGroup = {
 
 export const COLLECTION_MENU: NavMenu = {
   id: 'collection',
-  href: '/coleccion/',
+  href: '/coleccion/colombia/',
   label: 'Colección',
   labelEn: 'Collection',
-  description: 'Catálogo global con búsqueda y filtros por país, tipo y material.',
-  descriptionEn: 'Global catalog with search and filters by country, type, and material.',
+  description: 'Colecciones por país, material y tema — Colombia, polímero, MPC y más.',
+  descriptionEn: 'Collections by country, material, and theme — Colombia, polymer, MPC, and more.',
   groups: [COLLECTION_COUNTRIES, COLLECTION_SPECIAL],
 };
 
@@ -157,7 +154,7 @@ export const PRIMARY_MENUS: NavMenu[] = [COLLECTION_MENU, RESOURCES_MENU, ABOUT_
 
 /** Always-visible destinations for no-JS and skip-level fallbacks. */
 export const PRIMARY_LINKS: NavLink[] = [
-  { href: '/coleccion/', label: 'Colección', labelEn: 'Collection' },
+  { href: '/coleccion/colombia/', label: 'Colección', labelEn: 'Collection' },
   GUIDES_LINK,
   NEWS_LINK,
   GLOSSARY_LINK,
@@ -175,11 +172,10 @@ export const FOOTER_COLUMNS: NavGroup[] = [
     label: 'Explorar',
     labelEn: 'Explore',
     links: [
-      { href: '/coleccion/', label: 'Catálogo completo', labelEn: 'Full Catalog' },
+      { href: '/coleccion/colombia/', label: 'Colombia', labelEn: 'Colombia' },
       { href: '/coleccion/numismatica/', label: 'Monedas', labelEn: 'Coins' },
       { href: '/coleccion/polimero-mundial/', label: 'Billetes de polímero mundial', labelEn: 'World Polymer Banknotes' },
-      { href: '/coleccion/#recent', label: 'Añadidos recientes', labelEn: 'Recently Added' },
-      { href: '/coleccion/#countries', label: 'Todos los países', labelEn: 'All Countries' },
+      { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
     ],
   },
   {
