@@ -201,7 +201,12 @@ if (navTs.includes('polymerNavLinks')) {
 if (navTs.includes('/#logros-heading')) fail('Primary nav must not keep Monthly Milestones as a top-level link');
 if (/href:\s*'\/buscar\/'/.test(navTs)) fail('Primary nav must not include Search / Buscar');
 if (!nativeHeader.includes('site-header__desktop')) fail('Native SiteHeader is missing desktop primary navigation');
-if (!nativeHeader.includes('site-header__panel--mega')) fail('Native SiteHeader is missing the Collection mega menu');
+if (!nativeHeader.includes('site-header__panel--accordion')) {
+  fail('Native SiteHeader is missing the Collection accordion submenu');
+}
+if (!nativeHeader.includes('site-header__panel-group')) {
+  fail('Native SiteHeader Collection submenu must use group accordions');
+}
 if (!nativeHeader.includes('site-header__drawer-search')) fail('Native SiteHeader is missing the mobile drawer search field');
 if (!nativeHeader.includes('DRAWER_TRAILING_LINKS')) {
   fail('Native SiteHeader must render About, Editorial, and Contacto after Collection/Resources');
