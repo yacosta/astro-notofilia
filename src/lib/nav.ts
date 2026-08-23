@@ -206,15 +206,15 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
         },
       ],
     },
-    { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
-    { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
-    { href: '/coleccion/ecuador/', label: 'Ecuador', labelEn: 'Ecuador' },
+    { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico', lead: true },
+    { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines', lead: true },
+    { href: '/coleccion/ecuador/', label: 'Ecuador', labelEn: 'Ecuador', lead: true },
     {
       href: '/coleccion/polimero-mundial/',
       label: 'Billetes de polímero mundial',
       labelEn: 'World Polymer Banknotes',
+      lead: true,
     },
-    { href: '/coleccion/pop-art/', label: 'Pop-art currency', labelEn: 'Pop Art Currency' },
   ],
 };
 

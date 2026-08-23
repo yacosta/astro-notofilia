@@ -889,6 +889,7 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(collectionPanel.getByRole('link', { name: 'Cupones de alimentos USDA', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Emisiones promocionales', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Ecuador' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: /Pop-art currency|Pop Art Currency/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toHaveCount(0);
   await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Numismática' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
@@ -925,6 +926,11 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toHaveClass(/site-header__accordion-lead/);
   await expect(drawer.getByRole('link', { name: 'Estados Unidos', exact: true })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: 'Puerto Rico', exact: true })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: 'Filipinas', exact: true })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: 'Ecuador', exact: true })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: 'Billetes de polímero mundial' })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: /Pop-art currency|Pop Art Currency/ })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
   await drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' }).click();
