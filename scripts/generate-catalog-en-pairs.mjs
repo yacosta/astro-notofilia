@@ -178,7 +178,6 @@ const EXTRA_PHRASES = [
 export function parseAuditPaths() {
   const md = readFileSync(AUDIT, 'utf8');
   const map = new Map();
-  map.set('/coleccion/', '/en/collection/');
   map.set('/coleccion/numismatica/', '/en/collection/numismatics/');
 
   const tableRe =

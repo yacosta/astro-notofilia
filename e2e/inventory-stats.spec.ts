@@ -8,7 +8,7 @@ type CollectionStats = {
   paginas: number;
 };
 
-test('live inventory counts match across home, coleccion, and llms.txt', async ({
+test('live inventory counts match across home, editorial, and llms.txt', async ({
   page,
   request,
 }) => {
@@ -26,16 +26,6 @@ test('live inventory counts match across home, coleccion, and llms.txt', async (
   await expect(footer).toContainText(`${stats.paises} países`);
   await expect(footer).toContainText(`${stats.fichas} fichas`);
   await expect(page.locator('main')).toContainText(`${stats.billetes} billetes`);
-
-  await page.goto('/coleccion/', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('h1')).toContainText(`${stats.billetes} billetes`);
-  await expect(page.locator('h1')).toContainText(`${stats.monedas} monedas`);
-  await expect(page.locator('h1')).toContainText(`${stats.paises} países`);
-  await expect(page.locator('main')).toContainText(
-    'Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado',
-  );
-  await expect(page.locator('#countries-heading')).toBeVisible();
-  await expect(page.locator('.country-grid li')).toHaveCount(stats.paises);
 
   await page.goto('/editorial/', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('main')).toContainText(

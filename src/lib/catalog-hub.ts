@@ -1,5 +1,3 @@
-import { type CollectionStats } from './stats';
-
 export type FeaturedEntry = {
   href: string;
   title: string;
@@ -84,22 +82,6 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
     titleEn: 'Military Payment Certificates',
     description: 'Series MPC usadas por las fuerzas armadas de EE. UU.',
     descriptionEn: 'MPC series used by the U.S. armed forces.',
-  },
-  {
-    href: '/coleccion/?tipo=specimen#explorar',
-    title: 'Specimens',
-    titleEn: 'Specimens',
-    description: 'Ejemplares de muestra con cancelaciones y perforaciones.',
-    descriptionEn: 'Specimen notes with cancellations and perforations.',
-    filter: { tipo: 'specimen' },
-  },
-  {
-    href: '/coleccion/?tipo=error#explorar',
-    title: 'Errores de imprenta',
-    titleEn: 'Printing errors',
-    description: 'Cortes descentrados, sobreimpresiones y fallos de color.',
-    descriptionEn: 'Off-center cuts, overprints, and color errors.',
-    filter: { tipo: 'error' },
   },
   {
     href: '/coleccion/billete-obsoleto-estados-unidos/',
@@ -215,11 +197,3 @@ export const RECENT_PIECES: RecentPiece[] = [
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
   },
 ];
-
-export function hubLead(stats: CollectionStats): string {
-  return `Explora ${stats.billetes} billetes en ${stats.fichas} fichas, más ${stats.monedas} monedas, de ${stats.paises} países, documentados con imágenes, historia y referencias de catálogo.`;
-}
-
-export function hubLeadEn(stats: CollectionStats): string {
-  return `Explore ${stats.billetes} banknotes across ${stats.fichas} records, plus ${stats.monedas} coins, from ${stats.paises} countries, documented with images, history, and catalog references.`;
-}

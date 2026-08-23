@@ -11,7 +11,7 @@ keywords:
   - "beginner guide banknote collecting"
   - "notaphily"
 relatedLinks:
-  - { href: "/en/collection/", title: "Explore the virtual collection" }
+  - { href: "/en/collection/colombia/", title: "Explore the Colombia collection" }
   - { href: "/en/glossary/", title: "Glossary of numismatics and notaphily" }
   - { href: "/en/blog/how-to-identify-counterfeit-banknotes/", title: "How to identify counterfeit banknotes" }
   - { href: "/en/blog/difference-between-numismatics-and-notaphily/", title: "Numismatics and notaphily: the difference" }

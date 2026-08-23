@@ -3,7 +3,6 @@ import AxeBuilder from '@axe-core/playwright';
 
 const PAGES = [
   { name: 'home', path: '/' },
-  { name: 'coleccion-hub', path: '/coleccion/' },
   {
     name: 'catalog-piece',
     path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
@@ -21,7 +20,7 @@ for (const pageDef of PAGES) {
       const response = await page.goto(pageDef.path, { waitUntil: 'domcontentloaded' });
       expect(response?.ok()).toBeTruthy();
 
-      if (pageDef.path.startsWith('/coleccion/') && pageDef.path !== '/coleccion/') {
+      if (pageDef.path.startsWith('/coleccion/')) {
         await expect(page.locator('script[src="/support.js"]')).toHaveCount(0);
         await expect(page.locator('script[src^="/catalog-zoom.js"]')).toHaveCount(1);
         await expect(page.locator('[data-catalog-record]').first()).toBeVisible();
@@ -782,35 +781,6 @@ test('spanish colonial catalog shows grouped coin cards', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Reinado de Carlos III' })).toBeVisible();
 });
 
-test('collection hub points to the coins catalog', async ({ page }) => {
-  await page.goto('/coleccion/');
-  await expect(page.getByRole('link', { name: /Catálogo de numismática/i }).first()).toBeVisible();
-});
-
-test('collection hub groups banknotes by country', async ({ page }) => {
-  await page.goto('/coleccion/');
-  await expect(page.locator('#catalog-browser')).not.toHaveAttribute('data-loading', {
-    timeout: 15_000,
-  });
-  const colombia = page.locator('.catalog-country-group[data-country="Colombia"]');
-  const unitedStates = page.locator('.catalog-country-group[data-country="Estados Unidos"]');
-  await expect(page.getByRole('heading', { level: 3, name: 'Colombia' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Estados Unidos' })).toBeVisible();
-  await expect(colombia.locator('.catalog-result-link').first()).toBeVisible();
-  await expect(unitedStates.locator('.catalog-result-link').first()).toBeVisible();
-
-  const colombiaHrefs = await colombia.locator('.catalog-result-link').evaluateAll((els) =>
-    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
-  );
-  const usHrefs = await unitedStates.locator('.catalog-result-link').evaluateAll((els) =>
-    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : '')),
-  );
-  expect(colombiaHrefs.length).toBeGreaterThan(0);
-  expect(usHrefs.length).toBeGreaterThan(0);
-  expect(colombiaHrefs.every((href) => href?.includes('/coleccion/colombia/'))).toBe(true);
-  expect(usHrefs.every((href) => !href?.includes('/coleccion/colombia/'))).toBe(true);
-});
-
 test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ page }) => {
   await page.goto('/coleccion/colombia/banco-nacional-25-pesos-1895/');
   await expect(page.getByRole('heading', { name: 'Veinticinco Pesos' })).toBeVisible();
@@ -902,7 +872,7 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(page.getByRole('button', { name: 'Abrir menú', exact: true })).toBeHidden();
   await expect(desktop.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
     'href',
-    '/coleccion/',
+    '/coleccion/colombia/',
   );
   await expect(desktop.getByRole('link', { name: 'Contacto' })).toBeVisible();
   await expect(desktop.getByRole('link', { name: /Logros del Mes/ })).toHaveCount(0);
@@ -918,7 +888,8 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);
@@ -934,14 +905,15 @@ test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
   await expect(drawer.getByRole('link', { name: 'Inicio' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
     'href',
-    '/coleccion/',
+    '/coleccion/colombia/',
   );
 
   await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
   await expect(drawer.getByText('Explorar', { exact: true })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Colombia' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
   await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(0);
