@@ -258,9 +258,9 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
   await expect(page.getByRole('heading', { name: 'Estados Unidos de Colombia' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Estados soberanos (1882)' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Bonos y Libranzas Fiscales' })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 3, name: 'Banca Libre' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'El Banco Nacional' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'República de Colombia' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Banca Libre', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'El Banco Nacional', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'República de Colombia', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Errores de impresión' })).toHaveCount(0);
 
   for (const denomination of [
@@ -279,7 +279,7 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
     '10000 Pesos',
     '50000 Pesos',
   ]) {
-    await expect(page.getByRole('heading', { level: 3, name: denomination })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: denomination, exact: true })).toBeVisible();
   }
   await expect(page.getByRole('heading', { name: '20000 Pesos' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: '100000 Pesos' })).toHaveCount(0);
@@ -538,7 +538,7 @@ test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ pag
   await page.goto('/en/collection/colombia/');
   await expect(page.getByRole('heading', { level: 1, name: 'Colombia Banknote Catalog' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Banknotes of the Last Century' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Free Banking' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Free Banking', exact: true })).toBeVisible();
   await expect(page.locator('.catalog-hub-group-title', { hasText: 'Colombian Free Banking' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'El Banco Hipotecario' }).last()).toBeVisible();
   const card = page.locator(

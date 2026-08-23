@@ -181,15 +181,16 @@ function headingId(prefix: string, name: string): string {
       {hasSections
         ? sections.map((section) => {
             const sectionId = headingId('catalog-era', section.name);
+            const sectionTitleId = `${sectionId}-title`;
             return (
-              <section class="catalog-hub-era" aria-labelledby={sectionId}>
+              <section class="catalog-hub-era" id={sectionId} aria-labelledby={sectionTitleId}>
                 {section.kicker ? (
                   <span class="catalog-hub-kicker" {...i18nAttrs(section.kicker, section.kickerEn)}>
                     {visibleKicker(section.kicker, section.kickerEn)}
                   </span>
                 ) : null}
                 <EraHeading
-                  id={sectionId}
+                  id={sectionTitleId}
                   class="catalog-hub-era-title"
                   {...i18nAttrs(section.name, section.nameEn)}
                 >
@@ -197,15 +198,16 @@ function headingId(prefix: string, name: string): string {
                 </EraHeading>
                 {section.groups.map((group) => {
                   const groupId = headingId('catalog-group', `${section.name}-${group.name}`);
+                  const groupTitleId = `${groupId}-title`;
                   return (
-                    <section class="catalog-hub-group" aria-labelledby={groupId}>
+                    <section class="catalog-hub-group" id={groupId} aria-labelledby={groupTitleId}>
                       {group.kicker ? (
                         <span class="catalog-hub-kicker" {...i18nAttrs(group.kicker, group.kickerEn)}>
                           {visibleKicker(group.kicker, group.kickerEn)}
                         </span>
                       ) : null}
                       <GroupHeading
-                        id={groupId}
+                        id={groupTitleId}
                         class="catalog-hub-group-title"
                         {...i18nAttrs(group.name, group.nameEn)}
                       >
@@ -217,10 +219,11 @@ function headingId(prefix: string, name: string): string {
                               'catalog-subgroup',
                               `${section.name}-${group.name}-${subgroup.name}`,
                             );
+                            const subgroupTitleId = `${subgroupId}-title`;
                             return (
-                              <section class="catalog-hub-subgroup" aria-labelledby={subgroupId}>
+                              <section class="catalog-hub-subgroup" id={subgroupId} aria-labelledby={subgroupTitleId}>
                                 <SubgroupHeading
-                                  id={subgroupId}
+                                  id={subgroupTitleId}
                                   class="catalog-hub-subgroup-title"
                                   {...i18nAttrs(subgroup.name, subgroup.nameEn)}
                                 >
