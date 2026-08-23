@@ -871,8 +871,11 @@ test('desktop header lists virtual notaphily hubs and coin pages', async ({ page
   await expect(collectionPanel.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Siglo Pasado', exact: true })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Banco de la República', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
+  await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' }).click();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Ecuador' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
@@ -904,10 +907,12 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
   await drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' }).click();
-  await expect(drawer.getByRole('link', { name: 'Siglo Pasado', exact: true })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Banco de la República', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
   await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(1);
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);

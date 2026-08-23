@@ -148,25 +148,20 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
       children: [
         {
           href: '/coleccion/colombia/siglo-pasado/',
-          label: 'Siglo Pasado',
-          labelEn: 'Last Century',
+          label: 'Billetes del Siglo Pasado',
+          labelEn: 'Banknotes of the Last Century',
         },
         {
           href: '/coleccion/colombia/banco-de-la-republica/',
-          label: 'Banco de la República',
-          labelEn: 'Banco de la República',
+          label: 'Billetes del Banco de la República',
+          labelEn: 'Banco de la República banknotes',
+        },
+        {
+          href: '/coleccion/colombia/emisiones-en-el-extranjero/',
+          label: 'Emisiones colombianas en el extranjero',
+          labelEn: 'Colombian notes issued abroad',
         },
       ],
-    },
-    {
-      href: '/coleccion/colombia/banca-libre/',
-      label: 'Banca Libre (Colombia)',
-      labelEn: 'Free Banking (Colombia)',
-    },
-    {
-      href: '/coleccion/colombia/emisiones-en-el-extranjero/',
-      label: 'Emisiones colombianas en el extranjero',
-      labelEn: 'Colombian notes issued abroad',
     },
     { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
     {
