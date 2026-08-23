@@ -429,6 +429,21 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
   expect(onePesoIdx).toBeGreaterThan(halfPesoIdx);
 });
 
+test('retired Tesorería Victory Series page is not a live document', async ({ page }) => {
+  const es = await page.goto('/coleccion/filipinas/tesoreria-victory-series/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(es?.ok()).toBeFalsy();
+  await expect(page.getByRole('heading', { name: 'Tesorería de Filipinas · Victory Series' })).toHaveCount(0);
+  const en = await page.goto('/en/collection/philippines/treasury-victory-series/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(en?.ok()).toBeFalsy();
+  await expect(
+    page.getByRole('heading', { name: 'Treasury of the Philippines · Victory Series' }),
+  ).toHaveCount(0);
+});
+
 test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
   await page.goto('/coleccion/filipinas/');
   const cards = page.locator('.catalog-banknote-card');
@@ -447,41 +462,6 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
   await expect(cards.nth(1)).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
-});
-
-test('Filipinas Victory Series page shows both collection notes', async ({ page }) => {
-  await page.goto('/coleccion/filipinas/tesoreria-victory-series/');
-  await expect(page.getByRole('heading', { level: 1, name: 'Tesorería de Filipinas · Victory Series' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Un Peso Victory Series No. 66' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Dos Pesos Victory Series No. 66' })).toBeVisible();
-  await expect(page.getByRole('img', { name: /1 peso/i })).toBeVisible();
-  await expect(page.getByRole('img', { name: /2 pesos/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /ficha completa del 1 peso/i })).toHaveAttribute(
-    'href',
-    '/coleccion/filipinas/1-peso-victory-series-66/',
-  );
-  await expect(page.getByRole('link', { name: /ficha completa del 2 pesos/i })).toHaveAttribute(
-    'href',
-    '/coleccion/filipinas/2-pesos-victory-series-66/',
-  );
-  await expect(
-    page.locator('a[href="https://www.bsp.gov.ph/SitePages/CoinsAndNotes/EnglishSeries.aspx"]').first(),
-  ).toBeVisible();
-});
-
-test('English Philippines Victory Series page shows both collection notes', async ({ page }) => {
-  await page.goto('/en/collection/philippines/treasury-victory-series/');
-  await expect(page.getByRole('heading', { level: 1, name: 'Treasury of the Philippines · Victory Series' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'One Peso Victory Series No. 66' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Two Pesos Victory Series No. 66' })).toBeVisible();
-  await expect(page.getByRole('link', { name: /full 1-peso record/i })).toHaveAttribute(
-    'href',
-    '/en/collection/philippines/1-peso-victory-series-66/',
-  );
-  await expect(page.getByRole('link', { name: /full 2-peso record/i })).toHaveAttribute(
-    'href',
-    '/en/collection/philippines/2-pesos-victory-series-66/',
-  );
 });
 
 test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
