@@ -175,6 +175,23 @@ const jsonLd = {
       const submit = root && root.querySelector('[data-contact-submit]');
       if (!form || !status || !submit) return;
 
+      (function prefillFromQuery() {
+        const params = new URLSearchParams(window.location.search);
+        const ficha = params.get('ficha');
+        const pageUrl = params.get('url');
+        const motivo = params.get('motivo');
+        const message = form.querySelector('#cf-message');
+        if (!message || message.value.trim()) return;
+        const lines = [];
+        if (motivo === 'error') lines.push('Quiero reportar un error o aportar información.');
+        if (ficha) lines.push('Ficha: ' + ficha);
+        if (pageUrl) lines.push('URL: ' + pageUrl);
+        if (lines.length) {
+          lines.push('', 'Describa el error o la información adicional:', '');
+          message.value = lines.join('\n');
+        }
+      })();
+
       const copy = {
         es: {
           sending: 'Enviando…',

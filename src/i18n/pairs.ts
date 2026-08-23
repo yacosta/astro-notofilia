@@ -41,6 +41,9 @@ export const SEED_PAIRS: readonly Pair[] = [
   { es: '/editorial/', en: '/en/editorial/', kind: 'static' },
   { es: '/editorial/equipo/', en: '/en/editorial/team/', kind: 'static' },
   { es: '/contacto/', en: '/en/contact/', kind: 'static' },
+  { es: '/nosotros/', en: '/en/about/', kind: 'static' },
+  { es: '/coleccion/estados-unidos/', en: '/en/collection/united-states/', kind: 'collection' },
+  { es: '/coleccion/espana/', en: '/en/collection/spain/', kind: 'collection' },
   { es: '/politica-privacidad-cookies/', en: '/en/privacy-cookies/', kind: 'static' },
   { es: '/j-s-g-boggs/', en: '/en/j-s-g-boggs/', kind: 'static' },
 ];
@@ -52,8 +55,11 @@ export const SEED_PAIRS: readonly Pair[] = [
  */
 const SECTION_INDEXES: ReadonlyArray<{ es: string; en: string }> = [
   { es: '/coleccion/numismatica/', en: '/en/collection/numismatics/' },
+  { es: '/coleccion/estados-unidos/', en: '/en/collection/united-states/' },
+  { es: '/coleccion/espana/', en: '/en/collection/spain/' },
   { es: '/coleccion/', en: '/en/collection/' },
   { es: '/noticias/', en: '/en/news/' },
+  { es: '/nosotros/', en: '/en/about/' },
   { es: '/blog/', en: '/en/blog/' },
   { es: '/logros/', en: '/en/milestones/' },
   { es: '/glosario/', en: '/en/glossary/' },

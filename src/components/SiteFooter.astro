@@ -1,25 +1,21 @@
 ---
 /**
- * Shared site footer for natively-Astro pages (homepage + BlogLayout + CatalogLayout).
- * Catalog pages used to keep an inline equivalent in public/SiteFooter.dc.html.
- *
- * Always shows the Colección Virtual stats line (build-time from the catalog collection).
+ * Shared site footer — curated hub columns plus collection stats.
  */
 import {
   getCollectionStats,
   formatStatsEn,
   formatStatsEs,
 } from '../lib/stats';
+import { FOOTER_COLUMNS } from '../lib/nav';
 import { alternateUrl } from '../i18n/pairs';
+import { lookupEn } from '../lib/html-i18n';
 
 export interface Props {
-  /** Extra tagline under the copyright line. */
   taglineEs?: string;
   taglineEn?: string;
-  /** Optional override for the Colección Virtual stats line. */
   statsLineEs?: string;
   statsLineEn?: string;
-  /** Compact centered layout (BlogLayout) vs homepage spacing. */
   variant?: 'home' | 'editorial';
   locale?: import('../lib/ui-i18n').Locale;
 }
@@ -37,87 +33,82 @@ const computed = await getCollectionStats();
 const statsEs = statsLineEs ?? formatStatsEs(computed);
 const statsEn = statsLineEn ?? formatStatsEn(computed);
 const isEn = locale === 'en';
-const editorialHref = isEn
-  ? (alternateUrl('/editorial/', 'en') ?? '/editorial/')
-  : '/editorial/';
-const privacyHref = isEn
-  ? (alternateUrl('/politica-privacidad-cookies/', 'en') ?? '/politica-privacidad-cookies/')
-  : '/politica-privacidad-cookies/';
-
 const isHome = variant === 'home';
+
+function hrefFor(href: string): string {
+  if (!isEn) return href;
+  const queryIdx = href.indexOf('?');
+  const hashIdx = href.indexOf('#');
+  let cut = href.length;
+  if (queryIdx >= 0) cut = Math.min(cut, queryIdx);
+  if (hashIdx >= 0) cut = Math.min(cut, hashIdx);
+  const pathPart = href.slice(0, cut) || '/';
+  const rest = href.slice(cut);
+  const mapped = alternateUrl(pathPart, 'en');
+  if (!mapped) return href;
+  return mapped + rest;
+}
+
+function labelFor(label: string, labelEn?: string): string {
+  if (!isEn) return label;
+  return labelEn || lookupEn(label) || label;
+}
+
+const linkClass =
+  'inline-flex items-center min-h-11 text-cream-soft no-underline hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]';
 ---
 <footer
   class:list={[
     isHome
-      ? 'relative z-[1] flex flex-col items-center gap-2 max-w-content mx-auto pt-[72px] px-6 pb-10'
-      : 'border-t border-line mt-24 pt-14 pb-10 text-center',
+      ? 'relative z-[1] max-w-content mx-auto pt-[72px] px-6 pb-10'
+      : 'border-t border-line mt-24 pt-14 pb-10',
   ]}
 >
-  <div class:list={[!isHome && 'max-w-content mx-auto px-6 flex flex-col gap-2 items-center']}>
-    <span
-      data-i18n={isEn ? undefined : true}
-      data-en={isEn ? undefined : 'Copyright 2026 Notofilia. All Rights Reserved.'}
-      class:list={['text-[13px] tracking-[0.18em] uppercase text-muted', isHome && 'font-serif']}
-    >{isEn ? 'Copyright 2026 Notofilia. All Rights Reserved.' : 'Copyright 2026 Notofilia. Todos los derechos reservados.'}</span>
-    {taglineEn ? (
-      <span
-        data-i18n={isEn ? undefined : true}
-        data-en={isEn ? undefined : taglineEn}
-        class:list={['italic text-[14px] text-cream-soft', isHome && 'font-serif max-w-full text-center']}
-      >{isEn ? taglineEn : taglineEs}</span>
-    ) : (
-      <span class:list={['italic text-[14px] text-cream-soft', isHome && 'font-serif max-w-full text-center']}>
-        {taglineEs}
-      </span>
-    )}
-    <p
-      class:list={[
-        'm-0 mt-1 flex flex-wrap justify-center gap-x-3 gap-y-1',
-        isHome && 'font-serif text-[13px]',
-      ]}
-    >
-      <a
-        href={editorialHref}
-        data-i18n={isEn ? undefined : true}
-        data-en={isEn ? undefined : 'Editorial &amp; valuation policy'}
-        class:list={[
-          'text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
-          !isHome && 'text-[13px]',
-        ]}
-      >{isEn ? 'Editorial & valuation policy' : 'Política editorial y valoración'}</a>
-      <a
-        href={privacyHref}
-        data-i18n={isEn ? undefined : true}
-        data-en={isEn ? undefined : 'Privacy &amp; Cookie Policy'}
-        class:list={[
-          'text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]',
-          !isHome && 'text-[13px]',
-        ]}
-      >{isEn ? 'Privacy & Cookie Policy' : 'Política de Privacidad y Cookies'}</a>
-    </p>
+  <nav
+    class:list={['footer-nav', !isHome && 'max-w-content mx-auto px-6']}
+    aria-label={isEn ? 'Footer' : 'Pie de página'}
+  >
+    <div class="footer-nav__grid">
+      {FOOTER_COLUMNS.map((column) => (
+        <div>
+          <p class="footer-nav__heading">{labelFor(column.label, column.labelEn)}</p>
+          <ul class="footer-nav__list">
+            {column.links.map((link) => (
+              <li>
+                <a class={linkClass} href={hrefFor(link.href)}>{labelFor(link.label, link.labelEn)}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </nav>
+
+  <div class:list={['footer-meta', !isHome && 'max-w-content mx-auto px-6']}>
+    <span class:list={['text-[13px] tracking-[0.18em] uppercase text-muted', isHome && 'font-serif']}>
+      {isEn ? 'Copyright 2026 Notofilia. All Rights Reserved.' : 'Copyright 2026 Notofilia. Todos los derechos reservados.'}
+    </span>
+    <span class:list={['italic text-[14px] text-cream-soft', isHome && 'font-serif max-w-full text-center']}>
+      {isEn ? taglineEn : taglineEs}
+    </span>
     <p class:list={['font-serif text-[13px] tracking-[0.1em] text-muted text-center m-0 mt-2', isHome && 'max-w-full']}>
-      <strong data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Virtual Collection:'} class="font-bold text-gold-light">{isEn ? 'Virtual Collection:' : 'Colección Virtual:'}</strong>
+      <strong class="font-bold text-gold-light">{isEn ? 'Virtual Collection:' : 'Colección Virtual:'}</strong>
       {' '}
-      <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : statsEn}>{isEn ? statsEn : statsEs}</span>
+      <span>{isEn ? statsEn : statsEs}</span>
     </p>
-    <p
-      class:list={[
-        'm-0 mt-2 text-center text-[13px] tracking-[0.04em] text-muted',
-        isHome && 'font-serif',
-      ]}
-    >
-      <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Page designed by'}>{isEn ? 'Page designed by' : 'Página diseñada por'}</span>
+    <p class:list={['m-0 mt-2 text-center text-[13px] tracking-[0.04em] text-muted', isHome && 'font-serif']}>
+      <span>{isEn ? 'Page designed by' : 'Página diseñada por'}</span>
       {' '}
       <a
         href="https://cybercon-solutions.com"
         target="_blank"
         rel="noopener noreferrer"
         class="text-cream underline [text-decoration-color:rgba(231,222,201,0.35)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
-      >CYBERCON SOLUTIONS</a>
+      >CYBERCON SOLUTIONS<span class="italic">{isEn ? ' (opens in a new tab)' : ' (se abre en una pestaña nueva)'}</span></a>
       {' '}
-      <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'with much'}>{isEn ? 'with much' : 'con mucho'}</span>
+      <span>{isEn ? 'with much' : 'con mucho'}</span>
       {' '}
-      <span class="footer-heart" role="img" aria-label={isEn ? 'love' : 'amor'} data-i18n={isEn ? undefined : true} data-i18n-target={isEn ? undefined : 'aria-label'} data-en={isEn ? undefined : 'love'}>
+      <span class="footer-heart" role="img" aria-label={isEn ? 'love' : 'amor'}>
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
           <path
             fill="#e07a6a"
@@ -128,3 +119,32 @@ const isHome = variant === 'home';
     </p>
   </div>
 </footer>
+
+<style>
+  .footer-nav__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px 32px;
+    margin-bottom: 40px;
+  }
+  .footer-nav__heading {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #b7ab8a;
+  }
+  .footer-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+</style>

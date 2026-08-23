@@ -1,0 +1,151 @@
+---
+/**
+ * About Notofilia — Spanish. English counterpart: /en/about/
+ */
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { SITE } from '../../lib/site';
+import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL } from '../../lib/editorial';
+import { INVENTORY_VOCABULARY_ES } from '../../lib/stats';
+import NewWindowHint from '../../components/NewWindowHint.astro';
+
+const title = 'Sobre Notofilia | Colección virtual';
+const description =
+  'Colección privada documentada de billetes y monedas: quién la cura, cómo se investiga y cómo citar las fichas.';
+const path = '/nosotros/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': `${SITE}${path}#page`,
+      name: 'Sobre Notofilia',
+      url: `${SITE}${path}`,
+      description,
+      inLanguage: 'es',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: { '@id': `${SITE}/#organization` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Sobre Notofilia', item: `${SITE}${path}` },
+        ],
+      },
+    },
+    personJsonLd(),
+  ],
+};
+---
+<BlogLayout title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
+  <article class="max-w-content mx-auto px-6 pt-12 pb-4">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
+      <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
+      <span>Sobre Notofilia</span>
+    </nav>
+
+    <header class="mb-10">
+      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">Colección privada documentada</p>
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        Sobre Notofilia
+      </h1>
+      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]">
+        Un catálogo y colección virtual de billetes y monedas históricas. Las piezas están documentadas; no se ofrecen a la venta.
+      </p>
+    </header>
+
+    <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
+      <h2>Qué es Notofilia</h2>
+      <p>
+        Notofilia es un proyecto de <strong>notafilia y numismática</strong>: el estudio y el coleccionismo de
+        papel moneda y monedas. El sitio publica un catálogo de una colección privada, con fichas que reúnen
+        fotografías del ejemplar, contexto histórico, referencias de catálogo y, cuando hay cifras, el tipo de
+        valoración que representan.
+      </p>
+      <p>
+        {INVENTORY_VOCABULARY_ES} Las cifras del pie, de la portada y de
+        <a href="/coleccion/">/coleccion/</a> se calculan en el build a partir de la colección.
+      </p>
+
+      <h2>Una colección privada documentada</h2>
+      <p>
+        Cada ficha describe un ejemplar de la colección o un conjunto documentado. El propósito es registrar
+        procedencia visual, emisores, fechas y variantes —no mantener un escaparate comercial.
+        <strong>Las piezas no están a la venta</strong> salvo que una nota lo diga de forma explícita, y eso
+        no ocurre en el catálogo.
+      </p>
+
+      <h2>Historia y propósito</h2>
+      <p>
+        El nombre combina <em>notafilia</em> (del latín <em>nota</em>, billete) con el hábito de documentar.
+        El proyecto empezó como un inventario personal y se publicó para que coleccionistas, investigadores y
+        lectores puedan consultar emisiones poco frecuentes —banca libre colombiana, certificados de pago
+        militar, polímero mundial, errores de imprenta— con fuentes comprobables.
+      </p>
+      <p>
+        El artículo{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notafilia en la Wikipedia en español<NewWindowHint />
+        </a>{' '}
+        menciona Notofilia.com en Enlaces externos. Es una mención enciclopédica; no editamos Wikipedia sobre
+        nosotros mismos.
+      </p>
+
+      <h2>Quién cura e investiga</h2>
+      <p>
+        Notofilia la edita <strong>{EDITORIAL_TEAM.name}</strong>, fundador del catálogo y responsable de la
+        investigación de fichas, el etiquetado de valoraciones y las correcciones. Perfil:
+        <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2>Catálogo, artículos y noticias</h2>
+      <ul>
+        <li>
+          <strong>Fichas de catálogo</strong> en la <a href="/coleccion/">Colección Virtual</a>: un registro
+          por pieza o grupo, con imagen del ejemplar mostrado.
+        </li>
+        <li>
+          <strong>Guías originales</strong> en el <a href="/blog/">blog</a>: conservación, identificación,
+          historia de emisiones y consejos prácticos.
+        </li>
+        <li>
+          <strong>Noticias curadas</strong> en <a href="/noticias/">/noticias/</a>: resúmenes de fuentes
+          externas (medios, subastas, bancos centrales, museos), siempre con enlace a la nota original.
+        </li>
+      </ul>
+      <p>
+        La <a href="/editorial/">política editorial y de valoración</a> explica cómo se etiquetan los precios
+        citados y cómo se corrigen errores de hecho.
+      </p>
+
+      <h2>Cómo se investigan las fichas</h2>
+      <p>
+        El orden de citas privilegia bancos centrales, imprentas y museos; luego archivos de subasta; el
+        comercio minorista, al final. Una afirmación sin fuente en una ficha destacada es peor que un
+        “no confirmado” visible. Las correcciones verificadas se incorporan a la ficha y, si el cambio es
+        material, quedan listadas en su historial.
+      </p>
+      <p>
+        Si detecta un dato incorrecto o puede documentar una variedad, tirada o fuente adicional, use
+        <a href="/contacto/">Contacto</a> o el enlace “Reportar un error o aportar información” al pie de
+        cada ficha. El formulario puede llevar ya el identificador y la URL de la página.
+      </p>
+
+      <h2>Cómo citar una ficha de Notofilia</h2>
+      <p>
+        Cada ficha incluye un bloque “Cómo citar esta ficha” con el título, el identificador permanente
+        (por ejemplo <code>NF.…</code>) y la URL canónica. Un formato breve:
+      </p>
+      <blockquote>
+        <p>
+          Acosta, Yezid. “[Título de la ficha]”. <em>Notofilia</em>. https://notofilia.com/coleccion/…/
+          (consultado [fecha]).
+        </p>
+      </blockquote>
+      <p>
+        Prefiera la URL con barra final. Si cita un valor, indique también el tipo de cifra
+        (resultado de subasta, precio pedido, valoración de catálogo) como aparece en la ficha.
+      </p>
+    </div>
+  </article>
+</BlogLayout>

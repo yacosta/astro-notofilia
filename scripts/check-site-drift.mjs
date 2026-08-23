@@ -159,36 +159,28 @@ if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not l
 if (!nativeHeader.includes('/coleccion/')) fail('Native SiteHeader is missing the collection link');
 const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
 if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
-if (!navTs.includes('Colección virtual - Numismática')) fail('Primary nav is missing the Numismática accordion label');
-if (!navTs.includes('Colección virtual - Notafilia')) fail('Primary nav is missing the Notafilia accordion label');
-if (!navTs.includes('/coleccion/colombia/banca-libre/')) fail('Primary nav is missing the Colombian free-banking catalog');
-if (!navTs.includes('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/')) fail('Primary nav is missing El Banco de Pamplona');
-if (!navTs.includes('/coleccion/colombia/banco-nacional-25-pesos-1895/')) fail('Primary nav is missing El Banco Nacional');
-if (!navTs.includes('/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/')) {
-  fail('Primary nav is missing El Banco de la República');
-}
-if (!navTs.includes('polymerNavLinks(polimeroHub.record.cards)')) {
-  fail('Primary nav must derive polymer country links from the hub catalog cards');
-}
-if (!navTs.includes('links: POLIMERO_LINKS')) {
-  fail('Primary nav must wire the polymer accordion to POLIMERO_LINKS');
-}
+if (!navTs.includes('Catálogo completo')) fail('Primary nav is missing the Full Catalog label');
+if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
+if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/');
+if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');
+if (!navTs.includes('/coleccion/espana/')) fail('Primary nav is missing the Spain landing');
 if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
-if (/id:\s*'editorial'/.test(navTs)) {
-  fail('Primary nav must not duplicate Blog/Noticias/Glosario under an Editorial accordion');
+if (navTs.includes('Colección virtual - Numismática') || navTs.includes('Colección virtual - Notafilia')) {
+  fail('Primary nav must not use specialist Virtual Collection accordion headings');
 }
-if (!navTs.includes('/#logros-heading')) fail('Primary nav is missing Logros del Mes');
+if (navTs.includes('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/')) {
+  fail('Primary nav must not list individual catalog records');
+}
+if (navTs.includes('polymerNavLinks')) {
+  fail('Primary nav must not generate a polymer-country sitemap in the menu');
+}
+if (navTs.includes('/#logros-heading')) fail('Primary nav must not keep Monthly Milestones as a top-level link');
 if (/href:\s*'\/buscar\/'/.test(navTs)) fail('Primary nav must not include Search / Buscar');
-if (!nativeHeader.includes('site-header__accordion')) fail('Native SiteHeader is missing collection accordion markup');
-const drawerTrailingIdx = nativeHeader.lastIndexOf('DRAWER_TRAILING_LINKS');
-const drawerSectionsIdx = nativeHeader.indexOf('NAV_SECTIONS.map');
-if (drawerTrailingIdx === -1 || drawerSectionsIdx === -1 || drawerTrailingIdx < drawerSectionsIdx) {
-  fail('Native SiteHeader must render Blog, Noticias, Glosario, and Contacto after the collection accordions');
-}
-const trailingOrder = ["href: '/blog/'", "href: '/noticias/'", "href: '/glosario/'", "href: '/contacto/'"];
-const trailingPositions = trailingOrder.map((needle) => navTs.lastIndexOf(needle));
-if (trailingPositions.some((idx) => idx === -1) || trailingPositions.some((idx, i) => i > 0 && idx < trailingPositions[i - 1])) {
-  fail('Primary nav trailing order must be Blog, Noticias, Glosario, Contacto');
+if (!nativeHeader.includes('site-header__desktop')) fail('Native SiteHeader is missing desktop primary navigation');
+if (!nativeHeader.includes('site-header__panel--mega')) fail('Native SiteHeader is missing the Collection mega menu');
+if (!nativeHeader.includes('site-header__drawer-search')) fail('Native SiteHeader is missing the mobile drawer search field');
+if (!nativeHeader.includes('DRAWER_TRAILING_LINKS')) {
+  fail('Native SiteHeader must render About, Editorial, and Contacto after Collection/Resources');
 }
 const legacyBlogIdx = header.lastIndexOf('href="/blog/"');
 const legacyNewsIdx = header.lastIndexOf('href="/noticias/"');
@@ -208,6 +200,12 @@ if (
   fail('Legacy SiteHeader must render Blog, Noticias, Glosario, then Contacto after the last collection accordion');
 }
 if (!sitemap.has('/coleccion/numismatica/')) fail('sitemap.xml is missing /coleccion/numismatica/');
+if (!sitemap.has('/nosotros/')) fail('sitemap.xml is missing /nosotros/');
+if (!sitemap.has('/en/about/')) fail('sitemap.xml is missing /en/about/');
+if (!sitemap.has('/coleccion/estados-unidos/')) fail('sitemap.xml is missing /coleccion/estados-unidos/');
+if (!sitemap.has('/en/collection/united-states/')) fail('sitemap.xml is missing /en/collection/united-states/');
+if (!sitemap.has('/coleccion/espana/')) fail('sitemap.xml is missing /coleccion/espana/');
+if (!sitemap.has('/en/collection/spain/')) fail('sitemap.xml is missing /en/collection/spain/');
 if (!sitemap.has('/glosario/')) fail('sitemap.xml is missing /glosario/');
 for (const slug of ['notafilia', 'specimen', 'pick', 'friedberg', 'billete-sin-circular']) {
   if (!sitemap.has(`/glosario/${slug}/`)) fail(`sitemap.xml is missing /glosario/${slug}/`);

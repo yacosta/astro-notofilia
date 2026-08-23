@@ -542,6 +542,9 @@ What **does** exist:
 | `glosario` | `glossary` | |
 | `buscar` | `search` | noindex utility |
 | `contacto` | `contact` | |
+| `nosotros` | `about` | About the project |
+| `estados-unidos` | `united-states` | Country hub under collection |
+| `espana` | `spain` | Country hub under collection |
 | `editorial` | `editorial` | same |
 | `equipo` | `team` | `/editorial/equipo/` → `/en/editorial/team/` |
 | `politica-privacidad-cookies` | `privacy-cookies` | |
@@ -561,6 +564,9 @@ What **does** exist:
 | `/glosario/anverso/` | `/en/glossary/obverse/` |
 | `/buscar/` | `/en/search/` |
 | `/contacto/` | `/en/contact/` |
+| `/nosotros/` | `/en/about/` |
+| `/coleccion/estados-unidos/` | `/en/collection/united-states/` |
+| `/coleccion/espana/` | `/en/collection/spain/` |
 | `/editorial/` | `/en/editorial/` |
 | `/editorial/equipo/` | `/en/editorial/team/` |
 | `/politica-privacidad-cookies/` | `/en/privacy-cookies/` |
@@ -585,6 +591,8 @@ What **does** exist:
 | `/coleccion/puerto-rico/` | `/en/collection/puerto-rico/` |
 | `/coleccion/ecuador/` | `/en/collection/ecuador/` |
 | `/coleccion/filipinas/` | `/en/collection/philippines/` |
+| `/coleccion/estados-unidos/` | `/en/collection/united-states/` |
+| `/coleccion/espana/` | `/en/collection/spain/` |
 
 ### 6.3 Do-not-translate tokens
 

@@ -37,12 +37,18 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
     descriptionEn: 'Free banking, Banco de la República, specimens, and errors.',
   },
   {
-    href: '/coleccion/?pais=Estados%20Unidos#explorar',
+    href: '/coleccion/estados-unidos/',
     title: 'Estados Unidos',
     titleEn: 'United States',
     description: 'Federal, colonial, MPC, obsoletos y emisiones promocionales.',
     descriptionEn: 'Federal, colonial, MPC, obsolete notes, and promotional issues.',
-    filter: { pais: 'Estados Unidos' },
+  },
+  {
+    href: '/coleccion/espana/',
+    title: 'España',
+    titleEn: 'Spain',
+    description: 'Oro colonial de la ceca de Santa Fe de Bogotá.',
+    descriptionEn: 'Colonial gold of the Santa Fe de Bogotá mint.',
   },
   {
     href: '/coleccion/puerto-rico/',

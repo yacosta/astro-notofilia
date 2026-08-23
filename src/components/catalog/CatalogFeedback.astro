@@ -15,7 +15,12 @@ interface Props {
 const { record, path, locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 const mailto = reportMailto(record, path);
-const contactHref = isEn ? (alternateUrl('/contacto/', 'en') ?? '/contacto/') : '/contacto/';
+const contactBase = isEn ? (alternateUrl('/contacto/', 'en') ?? '/contacto/') : '/contacto/';
+const contactParams = new URLSearchParams({
+  ficha: record.id,
+  url: `${path.startsWith('http') ? path : path}`,
+});
+const contactHref = `${contactBase}?${contactParams.toString()}`;
 const editorialHref = isEn
   ? `${alternateUrl('/editorial/', 'en') ?? '/editorial/'}#corrections`
   : '/editorial/#como-reportar-un-error';
