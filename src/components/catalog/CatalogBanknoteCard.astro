@@ -21,14 +21,21 @@ const imageWebp = card.imageWebp?.startsWith('/')
     ? `/${card.imageWebp}`
     : undefined;
 const titleVisible = isEn ? (card.titleEn ?? lookupEn(card.title) ?? card.title) : card.title;
-const denominationVisible = isEn
-  ? (card.denomination ? (lookupEn(card.denomination) ?? card.denomination) : undefined)
-  : card.denomination;
-const heading = denominationVisible || titleVisible;
-const kicker = denominationVisible
-  ? card.year
-  : [denominationVisible, card.year].filter(Boolean).join(' · ');
-const showIssuer = Boolean(denominationVisible && titleVisible && titleVisible !== denominationVisible);
+const countryVisible = isEn ? (card.countryEn ?? card.country) : card.country;
+const denominationVisible = countryVisible
+  ? undefined
+  : isEn
+    ? (card.denomination ? (lookupEn(card.denomination) ?? card.denomination) : undefined)
+    : card.denomination;
+const heading = countryVisible || denominationVisible || titleVisible;
+const kicker = countryVisible
+  ? undefined
+  : denominationVisible
+    ? card.year
+    : [denominationVisible, card.year].filter(Boolean).join(' · ');
+const showIssuer = Boolean(
+  titleVisible && titleVisible !== heading && (countryVisible || denominationVisible),
+);
 const alt = isEn
   ? (card.altEn ?? lookupEn(card.alt) ?? card.alt ?? heading)
   : (card.alt || heading);
