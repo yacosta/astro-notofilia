@@ -9,7 +9,7 @@ interface Props {
 
 const { lang = 'es' } = Astro.props;
 ---
-<span class="new-window-hint" data-i18n data-en=" (opens in a new tab)"> (se abre en una pestaña nueva)</span>
+<span class="new-window-hint" data-i18n={lang === 'es' ? true : undefined} data-en={lang === 'es' ? ' (opens in a new tab)' : undefined}>{lang === 'en' ? ' (opens in a new tab)' : ' (se abre en una pestaña nueva)'}</span>
 
 <style>
   .new-window-hint {

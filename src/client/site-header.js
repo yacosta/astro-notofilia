@@ -1,6 +1,5 @@
 /**
- * Lightweight island for SiteHeader: drawer + lazy Pagefind search.
- * No duplicate document fetch; no dc-runtime dependency.
+ * Lightweight island for SiteHeader: desktop menus, mobile drawer, lazy Pagefind.
  */
 (function () {
   var header = document.getElementById('site-header');
@@ -19,7 +18,8 @@
   var lastFocus = null;
 
   function isEn() {
-    return document.documentElement.getAttribute('data-interface-lang') === 'en';
+    var root = document.documentElement;
+    return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en';
   }
 
   function setHidden(el, hidden) {
@@ -28,13 +28,77 @@
     else el.removeAttribute('hidden');
   }
 
+  function closeDesktopMenus(exceptItem) {
+    cancelDesktopClose();
+    header.querySelectorAll('[data-nav-item]').forEach(function (item) {
+      if (exceptItem && item === exceptItem) return;
+      item.classList.remove('is-open');
+      var btn = item.querySelector('.site-header__caret-btn');
+      var panel = item.querySelector('.site-header__panel');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      setHidden(panel, true);
+    });
+  }
+
+  function openDesktopItem(item) {
+    closeDesktopMenus(item);
+    var btn = item.querySelector('.site-header__caret-btn');
+    var panel = item.querySelector('.site-header__panel');
+    item.classList.add('is-open');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    setHidden(panel, false);
+  }
+
+  var desktopCloseTimer = null;
+
+  function isDesktopNav() {
+    return window.matchMedia('(min-width: 1024px)').matches;
+  }
+
+  function cancelDesktopClose() {
+    if (desktopCloseTimer) {
+      clearTimeout(desktopCloseTimer);
+      desktopCloseTimer = null;
+    }
+  }
+
+  header.querySelectorAll('[data-nav-item]').forEach(function (item) {
+    var btn = item.querySelector('.site-header__caret-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      cancelDesktopClose();
+      // Open only. Hover may already have opened the panel; a follow-up
+      // pointer click must not immediately close it.
+      if (btn.getAttribute('aria-expanded') !== 'true') {
+        openDesktopItem(item);
+      }
+    });
+    item.addEventListener('mouseenter', function () {
+      if (!isDesktopNav()) return;
+      cancelDesktopClose();
+      openDesktopItem(item);
+    });
+    item.addEventListener('mouseleave', function () {
+      if (!isDesktopNav()) return;
+      cancelDesktopClose();
+      desktopCloseTimer = setTimeout(function () {
+        closeDesktopMenus();
+        desktopCloseTimer = null;
+      }, 180);
+    });
+  });
+
   function openDrawer() {
     lastFocus = document.activeElement;
     setHidden(drawer, false);
     setHidden(backdrop, false);
     if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
     document.documentElement.style.overflow = 'hidden';
-    if (menuClose) menuClose.focus();
+    var drawerSearch = document.getElementById('site-drawer-search');
+    if (drawerSearch) drawerSearch.focus();
+    else if (menuClose) menuClose.focus();
   }
 
   function closeDrawer() {
@@ -46,11 +110,16 @@
       drawer.querySelectorAll('details[open]').forEach(function (panel) {
         panel.removeAttribute('open');
       });
+      var collectionPanel = document.getElementById('nav-drawer-collection');
+      var collectionToggle = drawer.querySelector('.site-header__drawer-split-toggle');
+      setHidden(collectionPanel, true);
+      if (collectionToggle) collectionToggle.setAttribute('aria-expanded', 'false');
     }
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   }
 
   function openSearch() {
+    closeDesktopMenus();
     setHidden(searchPanel, false);
     if (searchBtn) searchBtn.setAttribute('aria-expanded', 'true');
     if (searchInput) {
@@ -67,7 +136,6 @@
 
   function loadPagefind() {
     if (!pagefindPromise) {
-      // Built as an absolute runtime URL so Vite/Rollup does not try to bundle Pagefind.
       var pagefindUrl = '/pagefind/' + 'pagefind.js';
       pagefindPromise = import(pagefindUrl).catch(function () {
         pagefindPromise = null;
@@ -160,6 +228,15 @@
       var target = event.target;
       if (target && target.closest && target.closest('a')) closeDrawer();
     });
+    var collectionToggle = drawer.querySelector('.site-header__drawer-split-toggle');
+    var collectionPanel = document.getElementById('nav-drawer-collection');
+    if (collectionToggle && collectionPanel) {
+      collectionToggle.addEventListener('click', function () {
+        var open = collectionToggle.getAttribute('aria-expanded') === 'true';
+        collectionToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+        setHidden(collectionPanel, open);
+      });
+    }
   }
 
   if (searchBtn) {
@@ -184,10 +261,12 @@
     if (event.key === 'Escape') {
       if (drawer && !drawer.hasAttribute('hidden')) closeDrawer();
       else if (searchPanel && !searchPanel.hasAttribute('hidden')) closeSearch();
+      else closeDesktopMenus();
     }
   });
 
   document.addEventListener('click', function (event) {
+    if (!header.contains(event.target)) closeDesktopMenus();
     if (!searchPanel || searchPanel.hasAttribute('hidden')) return;
     if (header.contains(event.target)) return;
     closeSearch();

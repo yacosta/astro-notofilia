@@ -19,6 +19,7 @@ export const POLYMER_COUNTRY = {
   bulgaria: 'Bulgaria',
   catar: 'Catar',
   chile: 'Chile',
+  china: 'China',
   'costa-rica': 'Costa Rica',
   guatemala: 'Guatemala',
   haiti: 'Haití',
@@ -43,6 +44,51 @@ export const POLYMER_COUNTRY = {
   zambia: 'Zambia',
 };
 
+export const POLYMER_COUNTRY_EN = {
+  bangladesh: 'Bangladesh',
+  brazil: 'Brazil',
+  brasil: 'Brazil',
+  brunei: 'Brunei',
+  bulgaria: 'Bulgaria',
+  catar: 'Qatar',
+  chile: 'Chile',
+  china: 'China',
+  'costa-rica': 'Costa Rica',
+  guatemala: 'Guatemala',
+  haiti: 'Haiti',
+  honduras: 'Honduras',
+  'hong-kong': 'Hong Kong',
+  'islas-salomon': 'Solomon Islands',
+  kazajistan: 'Kazakhstan',
+  malasia: 'Malaysia',
+  mexico: 'Mexico',
+  mozambique: 'Mozambique',
+  nepal: 'Nepal',
+  nicaragua: 'Nicaragua',
+  nigeria: 'Nigeria',
+  oman: 'Oman',
+  'papua-nueva-guinea': 'Papua New Guinea',
+  'republica-dominicana': 'Dominican Republic',
+  rumania: 'Romania',
+  samoa: 'Samoa',
+  'sri-lanka': 'Sri Lanka',
+  suazilandia: 'Eswatini',
+  taiwan: 'Taiwan',
+  zambia: 'Zambia',
+};
+
+const POLYMER_COUNTRY_KEYS = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
+
+/** Resolve a polymer ficha slug (e.g. nepal-10-rupias-2005) to ES/EN country labels. */
+export function polymerCountryLabels(slug = '') {
+  for (const key of POLYMER_COUNTRY_KEYS) {
+    if (slug === key || slug.startsWith(`${key}-`)) {
+      return { es: POLYMER_COUNTRY[key], en: POLYMER_COUNTRY_EN[key] ?? POLYMER_COUNTRY[key] };
+    }
+  }
+  return null;
+}
+
 export const HUB_PATHS = new Set([
   '/coleccion/billete-obsoleto-estados-unidos/',
   '/coleccion/reserva-federal/',
@@ -51,8 +97,11 @@ export const HUB_PATHS = new Set([
   '/coleccion/colombia/',
   '/coleccion/colombia/banca-libre/',
   '/coleccion/colombia/emisiones-en-el-extranjero/',
+  '/coleccion/estados-unidos/',
+  '/coleccion/espana/',
   '/coleccion/puerto-rico/',
   '/coleccion/ecuador/',
+  '/coleccion/filipinas/',
   '/coleccion/moneda-colonial-espanola/',
   '/coleccion/numismatica/',
   '/coleccion/polimero-mundial/',
@@ -90,13 +139,11 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   if (section === 'colombia') return 'Colombia';
   if (section === 'puerto-rico') return 'Puerto Rico';
   if (section === 'ecuador') return 'Ecuador';
+  if (section === 'filipinas') return 'Filipinas';
   if (section === 'moneda-colonial-espanola') return 'España';
   if (section === 'polimero-mundial') {
-    const slug = segs[2] || '';
-    const known = Object.keys(POLYMER_COUNTRY).sort((a, b) => b.length - a.length);
-    for (const key of known) {
-      if (slug === key || slug.startsWith(`${key}-`)) return POLYMER_COUNTRY[key];
-    }
+    const labels = polymerCountryLabels(segs[2] || '');
+    if (labels) return labels.es;
   }
   if (
     [
@@ -116,6 +163,16 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   const text = String(raw || '').trim();
   const lower = text.toLowerCase();
   if (
+    lower.includes('países bajos') ||
+    lower.includes('paises bajos') ||
+    lower.includes('netherland') ||
+    lower.includes('provincias unidas') ||
+    section.includes('ducado') ||
+    String(catalogPath || '').includes('utrecht')
+  ) {
+    return 'Provincias Unidas de los Países Bajos';
+  }
+  if (
     lower.includes('estados unidos de colombia') ||
     lower.includes('estados unidos de nueva granada') ||
     lower.includes('nueva granada') ||
@@ -129,12 +186,14 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   }
   if (lower.includes('puerto rico')) return 'Puerto Rico';
   if (lower.includes('ecuador')) return 'Ecuador';
+  if (lower.includes('filipinas') || lower.includes('philippines')) return 'Filipinas';
   if (lower.includes('guatemala')) return 'Guatemala';
   if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
   if (lower.includes('españa')) return 'España';
 
+  if (text) return text;
   if (segs.length >= 2 && !HUB_PATHS.has(catalogPath)) return 'Estados Unidos';
-  return text || 'Otros';
+  return 'Otros';
 }
 
 export function isCoinEntry(catalogPath = '', recordKind = '') {

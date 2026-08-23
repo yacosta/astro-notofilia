@@ -28,17 +28,22 @@ relatedLinks:
   - href: "/coleccion/polimero-mundial/chile-1000-2000-pesos/"
     title: "Billetes de polímero de Chile"
     description: "1.000, 2.000 y 5.000 pesos en el catálogo."
-updatedAt: 2026-08-14
+updatedAt: 2026-08-17
 reviewedBy: "Yezid Acosta"
 claimKind: dealer_retail
 claimCurrency: CLP
-claimValuationDate: 2026-08-07
+claimValuationDate: 2026-08-15
+primarySources:
+  - label: "Meganoticias — ensayo de $100 sin denominación ni fecha"
+    url: "https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html"
+  - label: "La Hora — coleccionistas ofrecen hasta $800.000"
+    url: "https://lahora.cl/tendencias/coleccionistas-ofrecen-hasta-800-000-por-esta-moneda-que-podrias-tener-en-la-cartera/"
 ---
 
 Aunque la moneda de **$100** sigue en el vuelto diario, ciertas variantes —
 errores de fabricación, cambios en el diseño de los **copihues** y ensayos—
 se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
-*Meganoticias* y cuentas especializadas como **Mundo Monedas Chile**.
+*Meganoticias*, *La Hora* y cuentas especializadas como **Mundo Monedas Chile**.
 
 ## Variantes más citadas
 
@@ -49,10 +54,13 @@ se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
 3. **$100 de 2000 con copihues sin escudo nacional:** solo denominación y
    fecha; rango similar, **$700.000–$800.000**.
 4. **Ensayo de copihues** sin denominación ni fecha: alrededor de **$800.000**.
-   *Meganoticias* (10 ago. 2026) insiste en que se trata de una **prueba
-   técnica** de la Casa de Moneda, de tiraje muy limitado y casi imposible de
-   hallar en el vuelto; el precio final depende del estado y de la demanda
-   entre particulares.
+   *Meganoticias* (10 ago. 2026) y *La Hora* (15 ago. 2026) coinciden en que
+   es una **prueba técnica** de la Casa de Moneda —sin el **100** ni el año
+   en las caras, con grabado de copihues—, de tiraje muy limitado y casi
+   imposible de hallar en el vuelto. No hay tarifa regulada: el precio final
+   depende del estado (rayones, corrosión, desgaste) y de la demanda entre
+   particulares; *La Hora* aconseja tasación en tiendas especializadas o
+   agrupaciones de coleccionistas.
 5. **$100 de 2001 con copihues, escudo y «Mapuche»:** la versión más reconocida
    de esa serie; cerca de **$600.000** en buen estado.
 6. **$100 de 1991:** acuñación baja de su serie; valor estimado en torno a
@@ -66,5 +74,6 @@ puede evitar que una pieza interesante termine en el cambio. Un anuncio alto
 no equivale a una venta real: conviene contrastar con especialistas o tiendas
 de numismática.
 
-Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas)
-y [Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html).
+Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas),
+[Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html)
+y [La Hora](https://lahora.cl/tendencias/coleccionistas-ofrecen-hasta-800-000-por-esta-moneda-que-podrias-tener-en-la-cartera/).

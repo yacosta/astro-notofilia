@@ -6,6 +6,7 @@ Allow: /
 # https://notofilia.com/llms-full.txt
 
 # Auth / machine endpoints — not for search indexing
+# The English tree (/en/) is public and indexable — do not Disallow /en.
 Disallow: /oauth/
 Disallow: /api/
 Disallow: /mcp

@@ -1,0 +1,190 @@
+---
+/**
+ * English editorial & sourcing policy. Spanish /editorial/ is unchanged.
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { SITE } from '../../../lib/site';
+import { CLAIM_KINDS } from '../../../lib/claims';
+import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../../lib/editorial';
+import { INVENTORY_VOCABULARY_EN } from '../../../lib/stats';
+import { CLAIM_LABELS_EN, CLAIM_NOTES_EN } from '../../../lib/ui-i18n';
+
+const title = 'Editorial policy and valuation | Notofilia';
+const description =
+  'How Notofilia cites prices, distinguishes valuation kinds, corrects errors, and attributes sources in news, guides, and catalog records.';
+const path = '/en/editorial/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE}${path}#page`,
+      name: 'Editorial policy, sources, and valuation',
+      url: `${SITE}${path}`,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE}/en/#website` },
+      about: {
+        '@type': 'Thing',
+        name: 'Editorial standard for numismatic valuation',
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/en/` },
+          { '@type': 'ListItem', position: 2, name: 'Editorial policy', item: `${SITE}${path}` },
+        ],
+      },
+    },
+    {
+      ...personJsonLd(),
+      url: `${SITE}/en/editorial/team/`,
+    },
+  ],
+};
+---
+<BlogLayout
+  locale="en"
+  title={title}
+  description={description}
+  path={path}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <article class="max-w-content mx-auto px-6 pt-12 pb-4">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
+      <a class="text-muted" href="/en/">Home</a> <span aria-hidden="true">/</span>
+      <span>Editorial policy</span>
+    </nav>
+
+    <header class="mb-10">
+      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">Transparency</p>
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        Editorial policy, sources, and valuation
+      </h1>
+      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]">
+        Notofilia puts the catalog and research first. When a news item cites a price, we say what kind of figure it is — and what it is not.
+      </p>
+    </header>
+
+    <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
+      <h2>What we publish</h2>
+      <p>
+        <a href="/en/news/">News</a> items are curated summaries of external sources (media,
+        auction houses, central banks, museums). Each news item states <strong>Source:</strong>
+        with a link to the original article. The <a href="/en/blog/">blog</a> holds original
+        guides. Collections such as <a href="/en/collection/colombia/">Colombia</a> document
+        private pieces <strong>that are not for sale</strong>.
+      </p>
+      <p>
+        {INVENTORY_VOCABULARY_EN} The figures in the footer and on the homepage are
+        calculated at build time from the collection; they are never typed by hand.
+      </p>
+
+      <h2 id="equipo-editorial">Editor</h2>
+      <p>
+        Notofilia is edited by <strong>{EDITORIAL_TEAM.name}</strong>, founder of the private
+        catalog and responsible for record research, valuation labels, and corrections. When an
+        article says “Reviewed by”, that is this responsibility. Public profile:
+        <a href="/en/editorial/team/">{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2 id="wikipedia">Mention on Wikipedia</h2>
+      <p>
+        The article{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notaphily on Spanish Wikipedia <span class="new-window-hint"> (opens in a new tab)</span>
+        </a>{' '}
+        lists Notofilia.com under External links (verified 16 August 2026). The href points to a{' '}
+        <a href={WIKIPEDIA_NOTOFILIA_ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
+          May 2013 archive.org snapshot <span class="new-window-hint"> (opens in a new tab)</span>
+        </a>{' '}
+        of <code>http://www.notofilia.com/</code>, not to <code>https://notofilia.com/</code>.
+        Like every MediaWiki external link, it carries <code>rel="nofollow"</code>: it is a
+        verifiable encyclopedic mention, not a PageRank backlink. We do not edit Wikipedia about
+        ourselves.
+      </p>
+
+      <h2 id="corrections">Corrections policy</h2>
+      <p>
+        Factual errors, mislabeled figures, or incorrect attributions are corrected on the
+        affected piece. Each material correction is listed in that page’s history (date +
+        description). If the change is substantial, we also update the “Last updated” date.
+      </p>
+
+      <h2>Dates and updates</h2>
+      <ul>
+        <li><strong>Publication date:</strong> when the note appeared on Notofilia.</li>
+        <li><strong>Last updated:</strong> the last substantial review of the content.</li>
+        <li><strong>Correction history:</strong> material changes (figures, attributions, facts) are listed on the piece itself.</li>
+      </ul>
+
+      <h2>Valuation standard</h2>
+      <p>
+        Every price figure in a news item or guide must be labeled with one of these kinds.
+        The <em>About this figure</em> callout appears when the article is price-related:
+      </p>
+      <dl>
+        {CLAIM_KINDS.map((kind) => (
+          <div class="mb-5">
+            <dt class="font-semibold text-cream m-0 mb-1">{CLAIM_LABELS_EN[kind]}</dt>
+            <dd class="m-0 text-[17px] leading-[1.55]">{CLAIM_NOTES_EN[kind]}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Primary sources and hammer evidence</h2>
+      <p>
+        We prefer to link the original outlet, the auction-house archive, the catalog record,
+        or the official release. A viral listing or a sensational headline does not replace a
+        documented hammer. When we cite an auction result we give currency, valuation date,
+        and, when it exists, a link to the evidence.
+      </p>
+
+      <h2 id="fuentes-del-catalogo">Catalog sources</h2>
+      <p>
+        Virtual Collection records are re-documented in Search Console traffic order, not
+        catalog order. We do not try to rewrite the inventory in one pass.
+      </p>
+      <p>Citation order:</p>
+      <ol>
+        <li>Central banks (Nepal Rastra Bank; Banco de la República for Colombian material, the largest group of records).</li>
+        <li>Printers and museums (Note Printing Australia, Reserve Bank of Australia, mint archives).</li>
+        <li>Auction archives.</li>
+        <li>Commercial sites (Banknote World and similar) only as a last resort, never as the default source.</li>
+      </ol>
+      <p>
+        An unsourced fact on a showcase record is worse than “unconfirmed”. That value is valid
+        and visible on Print run, Known varieties, Circulation dates, Basis of rarity, State of
+        the specimen shown, and Date of last factual review. It distinguishes the catalog from
+        sites that invent the figure.
+      </p>
+      <p>
+        Re-documented records are not published if most of their citations are dealer sites.
+        Wikipedia and reseller listings do not replace a central-bank or printer report.
+      </p>
+
+      <h2>What we do not do</h2>
+      <ul>
+        <li>We do not appraise readers’ pieces or issue purchase offers.</li>
+        <li>We do not present asking prices as closed sales.</li>
+        <li>We do not use <code>Product</code> markup on collection records: the pieces are not sold here.</li>
+        <li>We do not duplicate the same news item just because another outlet repeated it; we update the existing piece if it adds new facts.</li>
+      </ul>
+
+      <h2 id="como-reportar-un-error">How to report an error</h2>
+      <p>
+        If you spot a mislabeled figure, a broken source, or an incorrect fact, write to us
+        through Notofilia’s <a href="/en/contact/">contact form</a>. We will publish the correction in the history of
+        the affected piece.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        Personal-data processing is described in the
+        <a href="/en/privacy-cookies/">Privacy and Cookie Policy</a>.
+      </p>
+    </div>
+  </article>
+</BlogLayout>

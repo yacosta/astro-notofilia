@@ -3,7 +3,113 @@
  * Homepage cream-band for Logros del Mes — featured Colección Virtual pieces.
  * Cards are interaction containers (link + image), matching HomePostStrip rhythm.
  */
+import type { Locale } from '../lib/ui-i18n';
+import { alternateUrl } from '../i18n/pairs';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+
+function featuredHref(href: string): string {
+  const hashIndex = href.indexOf('#');
+  const path = hashIndex >= 0 ? href.slice(0, hashIndex) : href;
+  const hash = hashIndex >= 0 ? href.slice(hashIndex) : '';
+  const resolved = isEn ? (alternateUrl(path, 'en') ?? path) : path;
+  return `${resolved}${hash}`;
+}
+
 const highlights = [
+  {
+    href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    title: 'Banco de la República — 10 pesos oro, 1943',
+    titleEn: 'Banco de la República — 10 pesos oro, 1943',
+    description:
+      'Pick 389b del 20 de julio de 1943, PMG 50 EPQ, Serie N 6813011. Retrato de Antonio Nariño.',
+    descriptionEn:
+      'Pick 389b dated 20 July 1943, PMG 50 EPQ, Series N 6813011. Portrait of Antonio Nariño.',
+    imageBase: 'colombia-banco-de-la-republica-10-pesos-oro-1943',
+    imageAlt:
+      'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
+    imageAltEn:
+      'PMG-encapsulated Banco de la República 10 pesos oro, 20 July 1943, Pick 389b, obverse and reverse with portrait of Antonio Nariño',
+  },
+  {
+    href: '/coleccion/colombia/santa-marta-1-4-real-1820/',
+    title: 'Santa Marta — ¼ real de cobre, 1820',
+    titleEn: 'Santa Marta — copper ¼ real, 1820',
+    description:
+      'Cuartillo de necesidad realista (KM# B4 · Restrepo 104): corona y 1/4 a la izquierda; cruz con S y M a la derecha.',
+    descriptionEn:
+      'Royalist necessity cuartillo (KM# B4 · Restrepo 104): crown and 1/4 on the left; cross with S and M on the right.',
+    imageBase: 'colombia-santa-marta-1-4-real-1820-c0225406',
+    imageAlt:
+      'Cuartillo de cobre de Santa Marta, 1820: reverso con corona, 1/4 y fecha (izquierda) y anverso con cruz, S y M (derecha)',
+    imageAltEn:
+      'Santa Marta copper quarter-real, 1820: reverse with crown, 1/4 and date (left) and obverse with cross, S and M (right)',
+  },
+  {
+    href: '/coleccion/filipinas/2-pesos-victory-series-66/',
+    title: 'Filipinas — 2 pesos Victory Series 66',
+    titleEn: 'Philippines — 2 pesos Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 95a, serial F13317943. Rizal y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 95a, serial F13317943. Rizal and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, anverso y reverso',
+    imageAltEn: 'Philippines Treasury Certificate of 2 pesos, Victory Series No. 66, obverse and reverse',
+  },
+  {
+    href: '/coleccion/filipinas/1-peso-victory-series-66/',
+    title: 'Filipinas — 1 peso Victory Series 66',
+    titleEn: 'Philippines — 1 peso Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 94a, serial F70618009. Mabini y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 94a, serial F70618009. Mabini and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso y reverso',
+    imageAltEn: 'Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse and reverse',
+  },
+  {
+    href: '/coleccion/polimero-mundial/china-100-yuan-2000/',
+    title: 'China — 100 yuan de polímero, 2000',
+    titleEn: 'China — polymer 100 yuan, 2000',
+    description: 'Billete conmemorativo del milenio del Banco Popular de China (迎接新世纪纪念钞, Pick 902), ejemplar J04445744.',
+    descriptionEn: 'People’s Bank of China millennium commemorative (迎接新世纪纪念钞, Pick 902), specimen J04445744.',
+    imageBase: 'china-pboc-100-yuan-2000-polimero',
+    imageAlt: 'Billete conmemorativo de 100 yuan de polímero del Banco Popular de China, año 2000, anverso y reverso en fundas',
+    imageAltEn: 'People’s Bank of China commemorative polymer 100-yuan banknote, year 2000, obverse and reverse in sleeves',
+  },
+  {
+    href: '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/',
+    title: 'Banco de Rio Hacha — 5 pesos, 1883',
+    titleEn: 'Banco de Rio Hacha — 5 pesos, 1883',
+    description: 'Pruebas PMG 64 EPQ / 62 del 5 pesos de Riohacha (Pick S819p1 / S819p2), impresas por American Bank Note Company.',
+    descriptionEn: 'PMG 64 EPQ / 62 proofs of the Riohacha 5 pesos (Pick S819p1 / S819p2), printed by American Bank Note Company.',
+    imageBase: 'colombia-banco-de-rio-hacha-5-pesos-1883',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco de Rio Hacha, 1883, anverso y reverso encapsulados',
+    imageAltEn: 'PMG proofs of the Banco de Rio Hacha 5 pesos, 1883, encapsulated obverse and reverse',
+  },
+  {
+    href: '/coleccion/colombia/banco-hipotecario-5-pesos-1881/',
+    title: 'Banco Hipotecario — 5 pesos, 1881',
+    titleEn: 'Banco Hipotecario — 5 pesos, 1881',
+    description: 'Pruebas PMG 61 del 5 pesos de Bogotá (Pick S511p1 / S511p2), impresas por American Bank Note Company.',
+    descriptionEn: 'PMG 61 proofs of the Bogotá 5 pesos (Pick S511p1 / S511p2), printed by American Bank Note Company.',
+    imageBase: 'colombia-banco-hipotecario-5-pesos-1881-38a93057',
+    imageAlt: 'Pruebas PMG del 5 pesos del Banco Hipotecario de Bogotá, 1881, anverso y reverso encapsulados',
+    imageAltEn: 'PMG proofs of the Banco Hipotecario 5 pesos of Bogotá, 1881, encapsulated obverse and reverse',
+  },
+  {
+    href: '/coleccion/ducado-oro-utrecht-1761/',
+    title: 'Ducado de oro — Utrecht, 1761',
+    titleEn: '1761 Utrecht Gold Ducat',
+    description: 'Ducado comercial neerlandés en cápsula NGC AU Details (Edge Filing), cert. 4685927-012.',
+    descriptionEn: 'Dutch trade ducat in NGC AU Details (Edge Filing) holder, cert. 4685927-012.',
+    imageBase: '1761-netherland-ducat-utrecht',
+    imageAlt: 'Ducado de oro de Utrecht de 1761 en cápsula NGC, anverso y reverso',
+    imageAltEn: '1761 Utrecht gold ducat in NGC holder, obverse and reverse',
+  },
   {
     href: '/coleccion/certificados-de-pago-militar/1-dolar-serie-681/',
     title: 'MPC Serie 681 — Un Dólar',
@@ -12,6 +118,7 @@ const highlights = [
     descriptionEn: 'Vietnam Military Payment Certificate (1969–1970): USAF pilot and F-100 Super Sabre, Fr. M915 / Schwan S915-1.',
     imageBase: 'mpc-series-681-1-dollar-c10102847',
     imageAlt: 'Anverso y reverso del MPC Serie 681 de un dólar con piloto USAF y F-100 Super Sabre',
+    imageAltEn: 'Obverse and reverse of the Series 681 one-dollar MPC with a USAF pilot and F-100 Super Sabre',
   },
   {
     href: '/coleccion/diez-dolares-1934-distritos/',
@@ -21,6 +128,7 @@ const highlights = [
     descriptionEn: 'Series 1934, district G (Chicago), serial G30986728A. Friedberg FR-2004G.',
     imageBase: 'us-federal-reserve-note-10-dollars-1934-chicago',
     imageAlt: 'Anverso del billete de diez dólares de la Reserva Federal de Chicago, serie 1934',
+    imageAltEn: 'Obverse of the Chicago Federal Reserve ten-dollar note, series 1934',
   },
   {
     href: '/coleccion/ringling-bros-50-aniversario-baraboo/#1-dolar',
@@ -30,6 +138,7 @@ const highlights = [
     descriptionEn: '50th-anniversary scrip (1933): ONE DOLLAR, Shafer WI-100-1a, Series A No. 2002.',
     imageBase: 'ringling-bros-50th-anniversary-baraboo-1-dollar',
     imageAlt: 'Anverso y reverso del scrip de un dólar Ringling Bros. Baraboo 1933',
+    imageAltEn: 'Obverse and reverse of the Ringling Bros. Baraboo one-dollar scrip, 1933',
   },
   {
     href: '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/',
@@ -37,8 +146,9 @@ const highlights = [
     titleEn: 'MPC Series 692 — Twenty Dollars',
     description: 'Última serie oficial de MPC (1970–1973): jefe Ouray en el anverso y la presa Hoover en el reverso.',
     descriptionEn: 'Last official MPC series (1970–1973): Chief Ouray on the obverse and Hoover Dam on the reverse.',
-    imageBase: 'mpc-series-692-20-dollars',
+    imageBase: 'mpc-series-692-20-dollars-3f285359',
     imageAlt: 'Anverso y reverso del MPC Serie 692 de veinte dólares con el jefe Ouray',
+    imageAltEn: 'Obverse and reverse of the Series 692 twenty-dollar MPC with Chief Ouray',
   },
 ] as const;
 ---
@@ -49,24 +159,24 @@ const highlights = [
   <div class="max-w-content mx-auto">
     <h2
       id="logros-heading"
-      data-i18n
-      data-en="Monthly Milestones — Virtual Collection"
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Monthly Milestones — Virtual Collection'}
       class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-3 text-center"
     >
-      Logros del Mes — Colección Virtual
+      {isEn ? 'Monthly Milestones — Virtual Collection' : 'Logros del Mes — Colección Virtual'}
     </h2>
     <p
-      data-i18n
-      data-en="Recent pieces and catalogs added to the Virtual Collection."
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Recent pieces and catalogs added to the Virtual Collection.'}
       class="text-[18px] leading-[1.6] text-ink text-center mt-0 mb-8 max-w-[52ch] mx-auto"
     >
-      Piezas y catálogos recientes incorporados a la Colección Virtual.
+      {isEn ? 'Recent pieces and catalogs added to the Virtual Collection.' : 'Piezas y catálogos recientes incorporados a la Colección Virtual.'}
     </p>
     <ul class="list-none m-0 mb-8 p-0 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-2 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
       {highlights.map((item) => (
         <li class="logros-card w-[85%] shrink-0 snap-center md:w-auto md:shrink">
           <a
-            href={item.href}
+            href={featuredHref(item.href)}
             class="group block no-underline text-inherit h-full min-h-[44px] border-t-2 border-panel pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-panel focus-visible:outline-offset-[3px]"
           >
             <picture>
@@ -77,24 +187,35 @@ const highlights = [
               />
               <img
                 src={`/uploads/${item.imageBase}-card.jpg`}
-                alt={item.imageAlt}
+                alt={isEn ? item.imageAltEn : item.imageAlt}
                 loading="lazy"
                 decoding="async"
                 width="440"
                 height="280"
-                class="block w-full h-[180px] object-cover rounded-[3px] mb-3"
+                class:list={[
+                  'block w-full h-[180px] rounded-[3px] mb-3',
+                  item.href.includes('banco-hipotecario') ||
+                  item.href.includes('banco-de-rio-hacha') ||
+                  item.href.includes('20-dolares-serie-692') ||
+                  item.href.includes('victory-series-66') ||
+                  item.href.includes('china-100-yuan-2000') ||
+                  item.href.includes('santa-marta-1-4-real-1820') ||
+                  item.href.includes('10-pesos-oro-1943')
+                    ? 'object-contain bg-[#d8d2cd]'
+                    : 'object-cover',
+                ]}
               />
             </picture>
-            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n data-en={item.titleEn}>
-              {item.title}
+            <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.titleEn}>
+              {isEn ? item.titleEn : item.title}
             </h3>
-            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3" data-i18n data-en={item.descriptionEn}>{item.description}</p>
+            <p class="text-[16px] leading-[1.55] text-ink/80 mt-0 mb-3" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.descriptionEn}>{isEn ? item.descriptionEn : item.description}</p>
             <span
-              data-i18n
-              data-en="View in the catalog &rarr;"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : 'View in the catalog &rarr;'}
               class="text-[15px] text-gold-deep [text-decoration-color:rgba(107,82,31,0.4)]"
             >
-              Ver en el catálogo &rarr;
+              {isEn ? 'View in the catalog →' : 'Ver en el catálogo →'}
             </span>
           </a>
         </li>
@@ -102,11 +223,11 @@ const highlights = [
     </ul>
     <p class="text-center m-0">
       <a
-        href="/coleccion/"
-        data-i18n
-        data-en="Explore the collection"
+        href={isEn ? (alternateUrl('/coleccion/colombia/', 'en') ?? '/en/collection/colombia/') : '/coleccion/colombia/'}
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : 'Explore the collection'}
         class="inline-flex items-center min-h-[44px] border border-panel text-panel no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3 rounded-full"
-      >Explorar la colección</a>
+      >{isEn ? 'Explore the collection' : 'Explorar la colección'}</a>
     </p>
   </div>
 </section>

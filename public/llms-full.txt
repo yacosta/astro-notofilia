@@ -4,29 +4,29 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 215 billetes en 113 fichas, 7 monedas, 33 países, 144 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 221 billetes en 121 fichas, 9 monedas, 36 países, 153 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
 **Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*
 
-**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN del encabezado cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.
+**Idioma:** el español es el idioma principal y vive en las URLs raíz (`lang=es`, p. ej. `/coleccion/`, `/noticias/`). El inglés vive bajo `/en/` con slugs traducidos (`lang=en`, p. ej. `/en/collection/colombia/`, `/en/news/`). Las páginas emparejadas emiten hreflang recíproco (`es`, `en`, `x-default` → URL española). El selector de idioma del encabezado es un enlace `<a href>` al equivalente; no hay redirección por `Accept-Language` ni por país. Cada ficha y hub de `/coleccion/` tiene par inglés; las noticias individuales pueden seguir solo en español.
 
 **Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 113 fichas · 215 billetes · 7 monedas · 33 países · 144 páginas · 9 guías de blog · 53 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 121 fichas · 221 billetes · 9 monedas · 36 países · 153 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
 ## Sitio principal
 
 - [Inicio](https://notofilia.com/): Home: definiciones de numismática y notafilia, últimas noticias y guías.
-- [Catálogo (índice)](https://notofilia.com/coleccion/): Hub global de la Colección Virtual: billetes, filtros y accesos por país.
+- [Catálogo de Colombia](https://notofilia.com/coleccion/colombia/): Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de monedas: oro colonial de Santa Fe de Bogotá.
-- [Blog](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
-- [Logros del Mes](https://notofilia.com/#logros-heading): Piezas y avances recientes de la Colección Virtual (sección en la home).
+- [Guías para coleccionistas](https://notofilia.com/blog/): Guías evergreen originales de notafilia y numismática.
+- [Sobre Notofilia](https://notofilia.com/nosotros/): Qué es el proyecto, quién lo edita y cómo citar las fichas.
 - [Noticias](https://notofilia.com/noticias/): Noticias curadas con enlace a la fuente original cuando aplica.
 - [Glosario](https://notofilia.com/glosario/): 95 términos de numismática y notafilia (ES/EN).
 - [Contacto](https://notofilia.com/contacto/): Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.
@@ -35,7 +35,6 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 ## Catálogo — secciones
 
-- [Colección Virtual](https://notofilia.com/coleccion/): Colección Virtual
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
@@ -55,7 +54,7 @@ Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de
 
 Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ninguna pieza está a la venta.
 
-### Colección Virtual
+### Billetes de Colombia
 
 - [Billete $2 The Adrian Insurance Company](https://notofilia.com/coleccion/adrian-insurance-michigan/2-dolares/): Ficha de catálogo numismático: billete obsoleto de $2 de The Adrian Insurance Company, Adrian, Michigan, hacia 1852–1856…
 - [Catálogo de Billete Obsoleto EE. UU.](https://notofilia.com/coleccion/billete-obsoleto-estados-unidos/): Catálogo numismático de billetes obsoletos de la colección Notofilia: The State Bank at New Brunswick, Citizens' Bank of Louisiana y más.
@@ -66,14 +65,12 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [MPC Serie 641 $10 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/10-dolares-serie-641/): MPC Serie 641 $10 Vietnam (1965–1968): Schwan-887 / Pick M63, PMG 53 AU. Notofilia.
 - [MPC Serie 692 $20 EE. UU. Vietnam](https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/): MPC Serie 692 $20 de Vietnam (1970–1973): Schwan-938 / Pick M98, jefe Ouray y presa Hoover. Notofilia.
 - [Jefe Ouray](https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/): Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.
-### Colección Virtual
+### Billetes de Colombia
 
 - [$100 Federal Reserve Bank Note, Minneapolis 1929](https://notofilia.com/coleccion/cien-dolares-minneapolis-1929/): Ficha de catálogo numismático: Billete de Banco de la Reserva Federal de $100, serie de 1929, Minneapolis. Referencia Friedberg FR-1890-I.
 - [$100 United States Note, Sello Rojo 1966](https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/): United States Note $100 sello rojo 1966 (FR-1550): tirada 896.000; emisión nacional del Tesoro.
 - [Billete $5 Citizens Bank of Louisiana](https://notofilia.com/coleccion/citizens-bank-of-louisiana/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del Citizens' Bank of Louisiana, sucursal de Shreveport, 1860. Referencia Haxby LA-15-G60a.
 - [Billete $5 City Bank of New Haven](https://notofilia.com/coleccion/city-bank-new-haven/5-dolares/): Ficha de catálogo numismático: billete obsoleto de $5 del City Bank of New Haven, Connecticut, hacia 1850–1860. Referencia Haxby CT-265-G52b.
-### Billetes de Colombia
-
 - [2.000 Pesos de 1996: Corte Descentrado](https://notofilia.com/coleccion/colombia/2000-pesos-1996-error-mariposa/): Ficha de catálogo numismático: billete de Dos Mil Pesos «Mariposa» de El Banco de la República, Colombia, fechado 2 de abril de 1996…
 - [Dos Mil Pesos, Error de Corte Descentrado](https://notofilia.com/coleccion/colombia/2000-pesos-error-corte-descentrado/): Ficha de catálogo numismático: billetes de Dos Mil Pesos de El Banco de la República, Colombia (2005, 2009)…
 - [Dos Mil Pesos, Error “Mariposa”](https://notofilia.com/coleccion/colombia/2000-pesos-error-mariposa/): Ficha de catálogo numismático: billete de Dos Mil Pesos de El Banco de la República, Colombia, 2009, con error de corte «mariposa»…
@@ -83,6 +80,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Un Peso Oro 1919, Banco de Caldas](https://notofilia.com/coleccion/colombia/banco-de-caldas-1-peso-1919/): Ficha de catálogo numismático: cédula hipotecaria especimen de Un Peso Oro Legal, El Banco de Caldas, Manizales, Colombia, 1919.
 - [Cédula Hipotecaria de 1 Peso Oro (1919)](https://notofilia.com/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/): Ficha de catálogo: cédula hipotecaria de 1 Peso en Oro Legal de El Banco de Colombia, Bogotá, 1919, título financiero con respaldo inmobiliario.
 - [Un Peso Specimen, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-1-peso-specimen/): Ficha de catálogo numismático: especímenes de Un Peso Oro (1929) y Un Peso Plata (1932)…
+- [Diez Pesos Oro 1943, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/): Billete de 10 pesos oro del 20 de julio de 1943 (Pick 389b), PMG 50 EPQ, retrato de Nariño. Colección Notofilia.
 - [Diez Pesos Oro, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro/): Ficha de catálogo numismático: billetes de Diez Pesos Oro de El Banco de la República, Colombia, con el retrato de Antonio Nariño, de 1949 a 1961.
 - [Cien Pesos Oro, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-100-pesos-oro/): Ficha de catálogo numismático: billetes de Cien Pesos Oro de El Banco de la República, Colombia (1947, 1969, 1980, 1983), con el retrato de Santander.
 - [Mil Pesos, Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica-1000-pesos/): Ficha de catálogo numismático: billetes de Mil Pesos de El Banco de la República, Colombia — la serie Simón Bolívar (1990–1996)…
@@ -101,8 +99,10 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Cinco Pesos, El Banco de Oriente (1888)](https://notofilia.com/coleccion/colombia/banco-de-oriente-5-pesos-1888/): Ficha de catálogo numismático: billete de Cinco Pesos de El Banco de Oriente, Rionegro, Antioquia, 1888, era de la banca libre colombiana.
 - [Un Peso y Diez Pesos, El Banco de Pamplona](https://notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/): Ficha de catálogo numismático: billetes de Un Peso (1883) y Diez Pesos (1884) de El Banco de Pamplona, Colombia, impresos por Bradbury, Wilkinson &…
 - [Un Peso y Cinco Pesos, El Banco de Panamá](https://notofilia.com/coleccion/colombia/banco-de-panama-1-5-pesos/): Ficha de catálogo numismático: billetes…
+- [Cinco Pesos, Banco de Rio Hacha (1883)](https://notofilia.com/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/): Pruebas PMG 64 EPQ / 62 del 5 pesos del Banco de Rio Hacha, 1883 (Pick S819p). Colección Notofilia.
 - [Un Peso y Cinco Pesos, El Banco del Cauca (1888)](https://notofilia.com/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/): Ficha de catálogo numismático: billetes de Un Peso y Cinco Pesos de El Banco del Cauca, Cali, 16 de mayo de 1888…
 - [Cinco Pesos, El Banco del Norte, Socorro (1882)](https://notofilia.com/coleccion/colombia/banco-del-norte-5-pesos-1882/): Ficha de catálogo numismático: billete de 5 pesos de El Banco del Norte, Socorro, Santander, 1882, banca libre colombiana del siglo XIX.
+- [Cinco Pesos, Banco Hipotecario (1881)](https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/): Pruebas PMG 61 del 5 pesos del Banco Hipotecario de Bogotá, 1881 (Pick S511p). Colección Notofilia.
 - [Un Peso y Diez Pesos, El Banco Internacional](https://notofilia.com/coleccion/colombia/banco-internacional-1-peso-1884/): Ficha de catálogo numismático: billetes de Un Peso y Diez Pesos de El Banco Internacional, Bogotá, 1884…
 - [Banco Nacional de Colombia: Serie 1895](https://notofilia.com/coleccion/colombia/banco-nacional-25-pesos-1895/): Ficha de catálogo numismático: billetes de Diez Centavos (1885, 1893), Un Peso y Cinco Pesos (Guerra de los Mil Días, 1899–1900)…
 - [Un Peso, El Banco Unión (Cartagena, 188X)](https://notofilia.com/coleccion/colombia/banco-union-cartagena-1-peso-1880s/): Ficha de catálogo numismático: billete de Un Peso de El Banco Unión, Cartagena, Colombia, década de 1880, con viñeta central de un velero.
@@ -122,10 +122,10 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [República de Colombia — Serie de 1904 (1 a 50](https://notofilia.com/coleccion/colombia/republica-1904-serie/): Ficha de catálogo numismático: serie completa de billetes de la República de Colombia, Bogotá, abril de 1904 (1, 2, 5, 10, 25 y 50 Pesos).
 - [República de Colombia — Emisiones de 1910 y 1915](https://notofilia.com/coleccion/colombia/republica-1910-1915-emisiones/): Ficha de catálogo numismático: billetes de la República de Colombia, Dos y Cinco Pesos Oro (Bogotá, 1915) y Cien Pesos (Bogotá, 1910).
 - [República de Bolívar: 1 y 2 Pesos (1882)](https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/): Ficha de catálogo numismático: billetes de Un Peso y Dos Pesos de la República Bolívar de Colombia, emitidos en 1882. Colección Notofilia.
+- [Cuartillo Santa Marta 1820](https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/): Cuartillo de cobre de 1820, acuñado por las autoridades realistas de Santa Marta. KM# B4, Restrepo 104. Colección Notofilia.
 - [Cinco Pesos, Vicente B. Villa é Hijos, Medellín](https://notofilia.com/coleccion/colombia/vicente-villa-e-hijos-5-pesos/): Ficha de catálogo numismático: billete de Cinco Pesos de la casa comercial Vicente B. Villa é Hijos, Medellín, Colombia, década de 1880.
-### Colección Virtual
-
 - [$10 Reserva Federal 1934 — Cuatro Distritos](https://notofilia.com/coleccion/diez-dolares-1934-distritos/): Tiradas Serie 1934 por distrito y cuatro billetes de $10 FRN (Cleveland, Richmond, Chicago, San Francisco).
+- [Ducado de oro de Utrecht, 1761](https://notofilia.com/coleccion/ducado-oro-utrecht-1761/): Ducado de oro comercial de 1761 acuñado en Utrecht, certificado NGC AU Details (Edge Filing). Ficha con datos técnicos, leyendas e historia.
 ### Billetes de Ecuador
 
 - [100 Sucres, Banco Central del Ecuador (1993)](https://notofilia.com/coleccion/ecuador/100-sucres-1993/): Ficha de catálogo numismático: par de billetes de Cien Sucres del Banco Central del Ecuador, serie WF, 20 de agosto de 1993…
@@ -136,8 +136,11 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [Food Coupon USDA, Dos Dólares (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/): Ficha de catálogo: cupón de alimentos USDA de dos dólares, Serie 1967, impreso por el Bureau of Engraving and Printing.
 - [Food Coupon USDA, Cinco Dólares (Serie 2000-B)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/): Cupón de alimentos USDA de cinco dólares, Serie 2000-B, n.º B02732959U. Colección Notofilia.
 - [Food Coupon USDA, Cincuenta Centavos (Serie 1967)](https://notofilia.com/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/): Ficha de catálogo: cupón de alimentos USDA de cincuenta centavos, Serie 1967, impreso por el Bureau of Engraving and Printing.
-### Colección Virtual
+### Billetes de Colombia
 
+- [Catálogo de Billetes de Filipinas](https://notofilia.com/coleccion/filipinas/): Certificados del Tesoro de Filipinas: Victory Series No. 66 y la liberación de 1944. Colección Notofilia.
+- [1 Peso Victory 66, Filipinas (Pick 94a)](https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/): Tesoro de Filipinas, 1 peso Victory Series No. 66 (1944), Pick 94a: Mabini, sello azul y VICTORY. Colección Notofilia.
+- [2 Pesos Victory 66, Filipinas (Pick 95a)](https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/): Tesoro de Filipinas, 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, sello azul y VICTORY. Colección Notofilia.
 - [Food Coupons USDA Series 1967 y 2000-B](https://notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.
 - [Nota de Prueba de la Prensa Giori](https://notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
 - [Billetes $5 y $10 Hagerstown Bank, Maryland](https://notofilia.com/coleccion/hagerstown-bank-maryland/): Ficha de catálogo numismático: billetes obsoletos de $5 y $10 de The Hagerstown Bank, Maryland, hacia 1850–1860. Haxby MD-240.
@@ -167,6 +170,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [20 Leva Híbridos de Bulgaria (2005)](https://notofilia.com/coleccion/polimero-mundial/bulgaria-20-leva-2005/): Ficha de catálogo numismático: billete conmemorativo de 20 Leva del Banco Nacional de Bulgaria, 2005, sustrato híbrido de polímero por el 120…
 - [100 Riyals, Qatar Central Bank, Híbrido/Polímero](https://notofilia.com/coleccion/polimero-mundial/catar-100-riyals/): Ficha de catálogo numismático: billete de 100 Riyals del Qatar Central Bank, 4ª serie, sustrato híbrido con banda y ventana de polímero Optiks®.
 - [Pesos de Polímero de Chile](https://notofilia.com/coleccion/polimero-mundial/chile-1000-2000-pesos/): Ficha de catálogo numismático: billetes de polímero del Banco Central de Chile — 1.000 Pesos (2010), 2.000 Pesos (2004 y 2009) y 5.000 Pesos (2009)…
+- [100 Yuan, China, Polímero (2000)](https://notofilia.com/coleccion/polimero-mundial/china-100-yuan-2000/): Ficha: 100 yuan de polímero del Banco Popular de China, milenio 2000. Pick 902. Colección Notofilia.
 - [Colones de Tyvek y Polímero, Costa Rica](https://notofilia.com/coleccion/polimero-mundial/costa-rica-20-1000-colones/): Ficha de catálogo numismático: billete experimental de Tyvek de 20 Colones (1983) y billete de polímero de 1.000 Colones (2011)…
 - [1 y 5 Quetzales, Banco de Guatemala, Polímero](https://notofilia.com/coleccion/polimero-mundial/guatemala-1-5-quetzales/): Ficha de catálogo numismático: billetes de polímero del Banco de Guatemala — 1 Quetzal (2007) y 5 Quetzales (2011)…
 - [Gourdes de Tyvek de Haití](https://notofilia.com/coleccion/polimero-mundial/haiti-1-2-50-gourdes/): Ficha de catálogo numismático: billetes experimentales de Tyvek de Haití — 1, 2 y 50 Gourdes (1980)…
@@ -209,7 +213,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 ### Reserva Federal
 
 - [$100 Federal Reserve Note, Serie 1990, Cleveland](https://notofilia.com/coleccion/reserva-federal/cien-dolares-1990-cleveland/): FRN $100 Serie 1990, Cleveland: tirada nacional 1.694.464.000 y primer hilo de seguridad.
-### Colección Virtual
+### Billetes de Colombia
 
 - [Scrip Ringling Bros. 50º Aniversario, Baraboo](https://notofilia.com/coleccion/ringling-bros-50-aniversario-baraboo/): Scrip Ringling Bros. Baraboo 1933: 5¢, 10¢, 15¢ y $1 (Shafer WI-100). Golden Jubilee, Cámara de Comercio.
 - [Billete $1 State Bank New Brunswick](https://notofilia.com/coleccion/state-bank-new-brunswick/1-dolar/): Ficha de catálogo numismático: billete obsoleto de $1 de The State Bank at New Brunswick, Nueva Jersey, c. 1860. Referencia Haxby NJ-350-G14a.
@@ -1198,6 +1202,14 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 
 ## Noticias
 
+- [15 monedas de EE.UU. con récords de subasta](https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/): De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El…
+- [Piden $5.699 por un combo del $1.000 Hidalgo](https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/): En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta…
+- [Coleccionistas de Rancagua y su patrimonio](https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/): El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.…
+- [BNCR reabre venta de monedas conmemorativas](https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/): El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.…
+- [La Paz exhibe monedas y billetes de Bolivia](https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/): El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad…
+- [Raúl Canales y 300 billetes chilenos](https://notofilia.com/noticias/raul-canales-billetes-chilenos-notafilia/): El rancagüino reúne más de 300 billetes: un banco particular de Curicó (c. 1880), un 2 pesos fiscal de 1898 y las «sábanas» de 5.000 pesos…
+- [Del quetzal de plata a los pagos electrónicos](https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/): Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo…
+- [Paysandú tuvo su primer encuentro numismático](https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/): El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.…
 - [El $20 del Bicentenario se anuncia hasta en $4 millones](https://notofilia.com/noticias/moneda-20-bicentenario-independencia-4-millones/): Azteca Bajío reporta ofertas online de hasta $4 millones por la C1 dodecagonal; especialistas recuerdan que el precio publicado no es el de…
 - [Tenochtitlan 2021: Ámbito habla de hasta $73.000](https://notofilia.com/noticias/moneda-20-tenochtitlan-banorte-73000/): Ámbito atribuye a Banorte hasta $73.000 por la conmemorativa del Teocalli; Banxico la emitió como $20 de la familia C1. Fuente: Ámbito.
 - [Hallan una moneda de Carausius en el East West Rail](https://notofilia.com/noticias/moneda-carausius-east-west-rail/): Arqueólogos del ferrocarril Oxford–Cambridge descubren un denario de Carausius (~287 d. C.), el «emperador del Norte» que acuñó en…
@@ -1253,6 +1265,371 @@ Puedes ver muchos de estos personajes y emisiones en nuestro
 - [¿Vale 1.000 euros la moneda de 2 € que llevas en la cartera?](https://notofilia.com/noticias/moneda-2-euros-grace-kelly/): Los titulares prometen fortunas por monedas de 2 euros, pero los expertos matizan qué piezas están realmente cotizadas y por qué. Fuente:…
 
 ## Texto completo — noticias
+
+### 15 monedas de EE.UU. con récords de subasta
+
+URL canónica: https://notofilia.com/noticias/15-monedas-eeuu-valen-fortuna/
+
+> De un quarter Wisconsin Extra Leaf a un centavo de bronce 1943-D: 15 variedades de EE.UU. con ventas de miles a US$1,7 millones, según El Diario NY.
+
+Fuente externa: [El Diario NY](https://eldiariony.com/2026/08/19/15-monedas-que-podrias-tener-guardadas-y-valen-una-fortuna/)
+
+**El Diario NY** (Raúl Rodríguez Cota, 19 de agosto de 2026) resume
+quince variedades estadounidenses cuyos precios de subasta van de miles
+de dólares a más de **un millón**. La nota recuerda, con **24/7 Wall
+St.**, que el año **no basta**: pesan autenticidad, el error exacto, la
+conservación y la certificación (**PCGS** o **NGC**). Hay falsos,
+retoques y golpes de troquel que imitan variedades.
+
+## De miles a récords
+
+1. **2004-D Wisconsin Extra Leaf High** — hoja extra junto a la mazorca;
+   un **MS65** High Leaf se vendió por **US$18.000** (2020).
+2. **1979-P Wide Rim Susan B. Anthony** — fecha pegada al borde; **MS67+**
+   a **US$8.268,75** (abril de 2025).
+3. **2000-P Cheerios Sacagawea** — unas **5.500** piezas de la promoción
+   de General Mills; un **MS68** a **US$10.200**.
+4. **1983 Doubled Die Reverse Lincoln** — duplicación en UNITED y ONE
+   CENT; **MS68 Red** a **US$7.050**.
+5. **1972 Type 2 Eisenhower** — islas bajo Florida poco definidas;
+   **MS66** a **US$14.400**.
+6. **1992-D Close AM Lincoln** — A y M de AMERICA casi juntas; poco más
+   de **100** conocidos; **MS65 Red** a **US$14.100**.
+7. **1972 Doubled Die Obverse Lincoln** — fecha y LIBERTY; **MS67+ Red**
+   a **US$14.400** (2019).
+8. **1990 No S Proof Lincoln** — prueba de San Francisco sin la **S**;
+   menos de **200**; hasta **US$20.700**.
+9. **1968 No S Proof Roosevelt Dime** — unas decenas; **PR67** a
+   **US$40.250**.
+10. **1937-D Three-Legged Buffalo** — pata del bisonte pulida; **MS66+**
+    a **US$99.875** (2021).
+11. **1955 Doubled Die Lincoln** — duplicación a simple vista; **MS65+
+    Red** a **US$114.000**.
+12. **1969-S Doubled Die Lincoln** — **MS64+ Red** a **US$97.600**
+    (enero de 2026).
+13. **1944-S Steel Lincoln** — dos conocidos sobre plancha de acero;
+    **US$490.500** (2025).
+14. **1975 No S Proof Roosevelt Dime** — dos ejemplares; **US$456.000**
+    (2019) y **US$506.250** (octubre de 2024).
+15. **1943-D Bronze Lincoln** — el único de Denver en bronce; venta
+    privada de **US$1,7 millones** (2010) y **US$840.000** (2021).
+
+Tener un centavo de 1943 o un dime de 1975 **no** implica esos precios:
+las piezas caras unen rareza documentada, grado alto y pedigrí de
+subasta. Más detalles en la nota de
+[El Diario NY](https://eldiariony.com/2026/08/19/15-monedas-que-podrias-tener-guardadas-y-valen-una-fortuna/).
+
+---
+
+### Piden $5.699 por un combo del $1.000 Hidalgo
+
+URL canónica: https://notofilia.com/noticias/billete-1000-hidalgo-combo-mercado-libre/
+
+> En Mercado Libre piden $5.699 por una onza de plata Coyolxauhqui y un $1.000 de Hidalgo de 2002 (Familia D1); es un anuncio, no una venta cerrada.
+
+Fuente externa: [El Heraldo de México](https://heraldodemexico.com.mx/economia/2026/8/19/entregan-miles-de-pesos-al-afortunado-dueno-de-este-codiciado-billete-mexicano-871933.html)
+
+*El Heraldo de México* presenta como «miles de pesos» un **anuncio de
+Mercado Libre**: el vendedor **Cris y Damián** pide **$5.699** por un
+**combo** de una **onza de plata Coyolxauhqui** (el aviso indica **2002**)
+y un billete de **1.000 pesos** de **Miguel Hidalgo**. No es un remate
+cerrado ni un canje de Banxico.
+
+## Qué se ve en el ejemplar
+
+La foto del anuncio muestra un **$1.000** de la **Familia D1**: fecha
+**«México, D.F., 26 mar. 2002»**, **Serie A** y serial **B1776625**. El
+anverso lleva a Hidalgo y la **campana de Dolores**. Banxico puso esta
+denominación D1 en circulación el **15 de noviembre de 2004**
+(Circular-Telefax **E-64/2004**); mide **155 × 66 mm** y está impresa en
+**papel de algodón**. Hoy está **en proceso de retiro**: vale **1.000
+pesos** en pagos, pero los bancos ya no la reponen al público.
+
+La nota del Heraldo copia rasgos de seguridad del **$1.000 de la Familia
+F** (hilo 3D, circulación en **2008**). Ese tipo es otro diseño, también
+con Hidalgo y Guanajuato; el papel fotografiado es el D1 de 2002/2004.
+
+## Sobre el precio
+
+El facial del billete es **$1.000**. El resto del pedido cubre la **onza
+de plata** —el anuncio no prueba que sea una Libertad de Banxico— y la
+prima del vendedor. Un D1 corriente en buen estado suele cotizar cerca
+del facial más un recargo de colección, no «miles» por el papel solo.
+Conviene contrastar autenticidad, estado y metal con un especialista
+antes de pagar el combo.
+
+Más detalles en la nota de [El Heraldo de México](https://heraldodemexico.com.mx/economia/2026/8/19/entregan-miles-de-pesos-al-afortunado-dueno-de-este-codiciado-billete-mexicano-871933.html).
+
+---
+
+### Coleccionistas de Rancagua y su patrimonio
+
+URL canónica: https://notofilia.com/noticias/coleccionistas-rancagua-historias-objetos/
+
+> El especial de El Rancagüino sigue monedas, billetes y otras colecciones familiares; Héctor Osorio lleva 30 años con piezas chilenas.
+
+Fuente externa: [El Rancagüino](https://www.elrancaguino.cl/2026/08/18/coleccionistas-rancagua-historias-objetos/)
+
+El especial de **Fernando Ávila** en *El Rancagüino* (18 de agosto de
+2026) abre una puerta a **seis colecciones** de Rancagua. Para la
+numismática importan sobre todo las **monedas y medallas** de **Héctor
+Osorio** y el papel moneda de **Raúl Canales** (perfil aparte). El resto
+del reportaje —dispensadores PEZ, figuras de Sailor Moon, vinilos,
+vitrolas y herramientas de carpintería— muestra el mismo hábito de
+guardar memoria, sin ser catálogo de monedas.
+
+## Monedas, medallas y una agrupación
+
+Osorio lleva **tres décadas** reuniendo monedas, **fichas** y medallas
+chilenas. El texto cita piezas ligadas a **O’Higgins**, **El Teniente** y
+el **Mundial de 1962**. El foco, dice el reportaje, está en explicar
+historia a niños y jóvenes, no en exhibir un precio.
+
+El diario identifica a la **Agrupación Cultural y Social de
+Coleccionistas Rancagua**, cercana a **veinte** integrantes. Participa
+en el **Día de los Patrimonios** y busca más espacios para mostrar los
+acervos. La cifra de socios y la agenda conviene confirmarlas con el
+grupo: el propio texto pide esa cautela.
+
+## Familias que heredan el oficio
+
+En la misma casa, el pequeño **Héctor Osorio** continúa los
+dispensadores PEZ de su abuela y **Laura Osorio** (10 años) las figuras
+de Sailor Moon de su madre. **Rodrigo Osorio** recuerda boletos,
+estampillas, Transformers y Los Caballeros del Zodiaco. Son hilos
+familiares, no fichas numismáticas, pero explican por qué el especial
+trata el coleccionismo como patrimonio cotidiano.
+
+Una muestra pública, coinciden los protagonistas, pide identificación,
+procedencia cuando se conoce y una explicación de época. Más detalles
+en [El Rancagüino](https://www.elrancaguino.cl/2026/08/18/coleccionistas-rancagua-historias-objetos/).
+
+---
+
+### BNCR reabre venta de monedas conmemorativas
+
+URL canónica: https://notofilia.com/noticias/bncr-monedas-conmemorativas-nicoya-abolicion/
+
+> El BNCR reabre en BN Shop, a ₡9.950, las monedas de la Anexión de Nicoya y la Abolición del Ejército, del 20 de agosto al 31 de diciembre.
+
+Fuente externa: [El Financiero](https://www.elfinancierocr.com/finanzas/monedas-conmemorativas-de-costa-rica-banco/5JC53EU3FRGLPDCGYRL6NV7YCI/story/)
+
+El **Banco Nacional de Costa Rica (BNCR)** reabrirá la venta de las monedas
+conmemorativas de la **Anexión del Partido de Nicoya** (lanzada en **2024**)
+y de la **Abolición del Ejército** (**2023**), según *El Financiero* (Randall
+Corella Vargas, 17 de agosto de 2026). Cada pieza de colección cuesta
+**₡9.950** y se entrega en **acrílico**. *CRHoy* confirma las mismas fechas
+y el precio.
+
+No es el valor facial: el **Banco Central de Costa Rica (BCCR)** las emitió
+como monedas de **₡500**, bimetálicas de **28 mm**, en la serie «Hitos de
+nuestra historia». Lo que vuelve a BN Shop es el formato de **colección**.
+
+## Fechas, canal y retiro
+
+La venta regular empieza el **20 de agosto a las 9:30** y corre hasta el
+**31 de diciembre de 2026** o hasta agotar existencias, **solo** en
+[BN Shop](https://bnshop.bncr.fi.cr/). Tras la compra, el retiro es a partir
+del **tercer día hábil** en el primer piso de la **oficina principal**, de
+lunes a viernes, **10:30–12:30** y **13:30–17:30**. Para estas dos monedas
+el tope es de **cinco unidades por diseño** y por persona.
+
+## Ventas sorpresa
+
+La novedad es una **liberación mensual** de inventario limitado de las
+piezas más buscadas. La primera está prevista el **25 de agosto**; qué se
+vende y a qué hora se anunciará solo en las redes del BN y en BN Shop. En
+esa modalidad el límite es **una unidad por persona**.
+
+**Claudia Salas**, directora de Emisión Comercial y Operaciones del BN,
+dijo que el esquema responde a quienes no alcanzaron las emisiones
+originales: más cupo por persona, retiro más ágil y un canal digital.
+
+## Qué conmemoran
+
+La de Nicoya recuerda la incorporación voluntaria del territorio en
+**1824** («De la patria por nuestra voluntad»). La de la Abolición alude a
+la decisión de **1948** de disolver las fuerzas armadas y destinar el
+presupuesto a educación, salud y desarrollo social.
+
+Más detalles en [El Financiero](https://www.elfinancierocr.com/finanzas/monedas-conmemorativas-de-costa-rica-banco/5JC53EU3FRGLPDCGYRL6NV7YCI/story/)
+y [CRHoy](https://crhoy.com/economia/colecciona-monedas-banco-nacional-reabrira-venta-de-piezas-historicas/).
+
+---
+
+### La Paz exhibe monedas y billetes de Bolivia
+
+URL canónica: https://notofilia.com/noticias/exposicion-monedas-billetes-la-paz-bolivia/
+
+> El 22 de agosto, el Museo Fernando Montes de La Paz exhibe monedas y billetes de la colonia a hoy, por los 50 años de la Sociedad Numismática.
+
+Fuente externa: [Opinión](https://www.opinion.com.bo/articulo/cultura/bolsillo-vitrinas-exposicion-rescata-memoria-monedas-billetes-distintas-epocas-bolivia/20260817171016994882.html)
+
+El **sábado 22 de agosto de 2026**, de **14:00 a 22:00**, el **Museo Fernando
+Montes** de La Paz (calle Fernando Guachalla 476, Sopocachi) reunirá monedas,
+billetes y piezas conmemorativas de distintas épocas de Bolivia. *Opinión*
+reproduce un despacho de la **Agencia Boliviana de Información (ABI)**: la
+muestra conmemora los **50 años** de la **Sociedad Numismática Boliviana** y
+se enmarca en los **98 años** del **Banco Central de Bolivia (BCB)**.
+
+## De la colonia al papel del BCB
+
+El recorrido va de la **época colonial** a la actualidad. Entre las piezas
+anunciadas figuran algunos de los **primeros billetes** impresos por el BCB y
+monedas antiguas cuyos retratos y símbolos muestran cómo el país se
+representó en cada período. También se recupera la etapa en que **bancos
+privados** emitían su propio papel moneda, antes de que el banco central
+concentrara la emisión.
+
+## Custodia del acervo
+
+El presidente del BCB, **David Espinoza**, relató que algunas monedas del
+acervo habían sido objeto de una solicitud para devolverlas a la institución.
+Su decisión, según ABI, fue mantenerlas bajo la **Fundación Cultural del
+BCB**, encargada de preservar, investigar y difundir ese patrimonio:
+«Zapatero a su zapato. Las cosas tienen que estar donde deben estar».
+
+El museo, dependiente de esa fundación, invita a seguir el anuncio por sus
+redes. Más detalles en la nota de [Opinión](https://www.opinion.com.bo/articulo/cultura/bolsillo-vitrinas-exposicion-rescata-memoria-monedas-billetes-distintas-epocas-bolivia/20260817171016994882.html).
+
+---
+
+### Raúl Canales y 300 billetes chilenos
+
+URL canónica: https://notofilia.com/noticias/raul-canales-billetes-chilenos-notafilia/
+
+> El rancagüino reúne más de 300 billetes: un banco particular de Curicó (c. 1880), un 2 pesos fiscal de 1898 y las «sábanas» de 5.000 pesos de 1940.
+
+Fuente externa: [El Rancagüino](https://www.elrancaguino.cl/2026/08/17/raul-canales-billetes-chilenos-antiguos-notafilia/)
+
+**Raúl Canales**, de Rancagua, reúne más de **300 billetes chilenos**.
+*El Rancagüino* (Fernando Ávila, 17 de agosto de 2026) cuenta que el
+primer contacto fueron ejemplares de su **abuelo**; lleva más de una
+década especializado en papel moneda nacional. No busca solo completar
+denominaciones: ordena por **año, firmas, serie, banco emisor, diseño y
+conservación**. Completar todas las series, dice, sería una tarea
+prácticamente interminable.
+
+La **notafilia** estudia billetes y otros documentos de papel moneda.
+Está emparentada con la numismática (monedas y medallas); las
+estampillas corresponden a la **filatelia**.
+
+## Bancos particulares, fiscales y «sábanas»
+
+Entre lo más antiguo conserva un billete de un **banco particular de
+Curicó**, hacia la década de **1880**. El Banco Central documenta que
+los bancos privados quedaron autorizados desde **1860** a emitir
+billetes convertibles, hasta que en **1898** se les prohibió seguir
+emitiendo; el instituto emisor nació en **1925**.
+
+Destaca un **2 pesos** de la **emisión fiscal de 1898**, piezas de la
+**República de Chile** y un **5.000 pesos de 1940** de la serie conocida
+como **«las sábanas»** por su gran formato. Los de bancos particulares
+con **firmas originales**, según su experiencia, son los más difíciles
+de hallar.
+
+## Originales, mercado y presupuesto
+
+Canales afirma que sus ejemplares son originales y reconoce
+**falsificaciones de época**, que algunos coleccionan como documento.
+Compra en tiendas especializadas y en el **Persa Bío-Bío**. Sobre
+precios, habla de piezas desde unos **mil pesos** hasta ejemplares que
+pueden **superar el millón**: son referencias suyas de 2026, no una
+guía. El valor depende de autenticidad, rareza, demanda, estado, firmas
+y procedencia. Subraya que la afición no desplaza otras prioridades
+familiares.
+
+El perfil forma parte del especial de coleccionistas de Rancagua. Más
+detalles en [El Rancagüino](https://www.elrancaguino.cl/2026/08/17/raul-canales-billetes-chilenos-antiguos-notafilia/).
+
+---
+
+### Del quetzal de plata a los pagos electrónicos
+
+URL canónica: https://notofilia.com/noticias/monedas-guatemala-quetzal-plata-pagos-electronicos/
+
+> Prensa Libre recorre cómo las monedas de Guatemala pasaron de la plata de 1925 al coleccionismo, mientras el efectivo cede terreno a lo digital.
+
+Fuente externa: [Prensa Libre](https://www.prensalibre.com/guatemala/comunitario/monedas-de-guatemala-como-han-cambiado-desde-el-quetzal-de-plata-a-los-pagos-electronicos/)
+
+Las monedas de Guatemala ya no pesan tanto en el vuelto diario: el efectivo
+cede terreno a transferencias, tarjetas y billeteras, y las piezas de metal
+pasan del bolsillo a la vitrina. **Prensa Libre** (Belinda S. Martínez, 16 de
+agosto de 2026) describe ese tránsito —del **quetzal de plata** a los
+**pagos electrónicos**— y el valor que algunas emisiones conservan entre
+coleccionistas.
+
+## De la plata 720 a las aleaciones
+
+La **Ley Monetaria** de **1924** creó el quetzal, a la par del dólar, y en
+**1925** se acuñaron **1**, **½** y **¼** de quetzal, más **10** y **5**
+centavos en plata, según la reseña del **Banco de Guatemala**. El
+**Decreto Ley 265** de **1964** fijó nuevas aleaciones. En el comercio
+numismático capitalino, **José Pinetta** (Numismática Las Argollas) resume
+la regla práctica: «de 1964 para abajo son monedas de plata». Esas piezas
+de **Q0.05**, **Q0.10** y **Q0.25** —la llamada **colección 720** por la
+ley del metal— se ofrecen desde unos **Q25** y, en muy buen estado, entre
+**Q75** y **Q200**, según el año.
+
+Las actuales de baja denominación, de emisión masiva, apenas interesan al
+mercado: a veces se venden **por kilo**. En **2008** la Junta Monetaria
+autorizó dejar de acuñar el **centavo**.
+
+## Piezas buscadas
+
+El **quetzal de 1925** (primera moneda de **Q1**) es, para Pinetta, la que
+«todo coleccionista de Guatemala quiere»: grande, impopular en su día, y
+en gran parte **fundida** por el banco. Sobrevivirían unas **3.000** piezas;
+la cotización citada ronda **US$3.000** (unos **Q23.000**). **Boris
+Herrera** (Antigüedades La Moneda) recuerda que a veces convenía más
+venderla como plata a joyeros que gastar el facial.
+
+Más arriba están los **ocho escudos** coloniales de oro (hasta unos
+**US$12.000**, según estado). Entre las modernas, el **Q1 de 1998** —
+tiradas de unas **2.000** con canto liso y **2.000** con canto estriado,
+parte aún en bóveda— se menciona hacia **Q3.500** en buen estado. Las
+conmemorativas de plata del **Bicentenario de la Independencia** y del
+**Centenario del Quetzal**, de tiraje limitado, se sitúan entre **Q1.000**
+y **Q1.200**.
+
+William Cano, del Banguat, dice que no hay plan de retirar las
+denominaciones chicas; María Antonieta Del Cid de Bonilla, expresidenta
+del banco, apunta inflación, redondeo y pagos electrónicos como causas
+del menor uso. La pandemia de **2020** aceleró lo digital, pero el
+efectivo sigue presente en muchos hogares.
+
+Más detalles en la nota original de Prensa Libre y en la reseña histórica
+del Banco de Guatemala.
+
+---
+
+### Paysandú tuvo su primer encuentro numismático
+
+URL canónica: https://notofilia.com/noticias/paysandu-primer-encuentro-numismatico/
+
+> El Espacio Cultural Gobbi reunió coleccionistas, mesas de intercambio y dos conferencias en el 1.º Encuentro Numismático de Paysandú.
+
+Fuente externa: [Diario El Telégrafo](https://www.eltelegrafo.com/2026/08/paysandu-tuvo-su-primer-encuentro-numismatico/)
+
+El **Espacio Cultural Gobbi** de **Paysandú** (Uruguay) fue sede del **1.º
+Encuentro Numismático** de la ciudad, según **Diario El Telégrafo**. La
+jornada reunió a coleccionistas, comerciantes, expositores y aficionados,
+con una **exposición de colecciones** y mesas para **comprar, vender e
+intercambiar** monedas, billetes y otros materiales coleccionables.
+
+## Conferencias
+
+El programa incluyó dos charlas. **Alejandro Felix** presentó *«Transnistria
+– Construir un país a través de sus monedas»*. **Gustavo Gil** abordó los
+*«Efectos Numismáticos de la Guerra del Paraguay»*.
+
+El Telégrafo subraya el cruce de historia, cultura y afición que estos
+encuentros acercan al público general: no solo el mercado de piezas, sino
+el relato que cada emisión condensa.
+
+Más información en la nota original de Diario El Telégrafo.
+
+---
 
 ### El $20 del Bicentenario se anuncia hasta en $4 millones
 
@@ -1880,7 +2257,7 @@ Fuente externa: [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-c
 Aunque la moneda de **$100** sigue en el vuelto diario, ciertas variantes —
 errores de fabricación, cambios en el diseño de los **copihues** y ensayos—
 se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
-*Meganoticias* y cuentas especializadas como **Mundo Monedas Chile**.
+*Meganoticias*, *La Hora* y cuentas especializadas como **Mundo Monedas Chile**.
 
 ## Variantes más citadas
 
@@ -1891,10 +2268,13 @@ se cotizan muy por encima del facial entre coleccionistas, según *24 Horas*,
 3. **$100 de 2000 con copihues sin escudo nacional:** solo denominación y
    fecha; rango similar, **$700.000–$800.000**.
 4. **Ensayo de copihues** sin denominación ni fecha: alrededor de **$800.000**.
-   *Meganoticias* (10 ago. 2026) insiste en que se trata de una **prueba
-   técnica** de la Casa de Moneda, de tiraje muy limitado y casi imposible de
-   hallar en el vuelto; el precio final depende del estado y de la demanda
-   entre particulares.
+   *Meganoticias* (10 ago. 2026) y *La Hora* (15 ago. 2026) coinciden en que
+   es una **prueba técnica** de la Casa de Moneda —sin el **100** ni el año
+   en las caras, con grabado de copihues—, de tiraje muy limitado y casi
+   imposible de hallar en el vuelto. No hay tarifa regulada: el precio final
+   depende del estado (rayones, corrosión, desgaste) y de la demanda entre
+   particulares; *La Hora* aconseja tasación en tiendas especializadas o
+   agrupaciones de coleccionistas.
 5. **$100 de 2001 con copihues, escudo y «Mapuche»:** la versión más reconocida
    de esa serie; cerca de **$600.000** en buen estado.
 6. **$100 de 1991:** acuñación baja de su serie; valor estimado en torno a
@@ -1908,8 +2288,9 @@ puede evitar que una pieza interesante termine en el cambio. Un anuncio alto
 no equivale a una venta real: conviene contrastar con especialistas o tiendas
 de numismática.
 
-Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas)
-y [Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html).
+Más detalles en las notas originales de [24 Horas](https://www.24horas.cl/tendencias/ocio/-monedas-100-chilenas-dinero-coleccionistas),
+[Meganoticias](https://www.meganoticias.cl/nacional/529036-moneda-100-pesos-ensayo-cuesta-800-mil-caracteristicas-numismatica-10-08-2026.html)
+y [La Hora](https://lahora.cl/tendencias/coleccionistas-ofrecen-hasta-800-000-por-esta-moneda-que-podrias-tener-en-la-cartera/).
 
 ---
 
@@ -3199,8 +3580,8 @@ Aún no hay resúmenes mensuales publicados.
 - [C-Day](https://notofilia.com/glosario/c-day/): Conversion Day — Día de conversión del programa MPC: las bases se cerraban sin aviso y las tropas canjeaban la serie vigente por la…
 - [Catálogo Friedberg](https://notofilia.com/glosario/friedberg/): Friedberg catalog — Sistema de referencia especializado en billetes de Estados Unidos, alternativo y complementario al catálogo Pick.
 - [Cédula hipotecaria](https://notofilia.com/glosario/cedula-hipotecaria/): Mortgage bond / certificate — Título de deuda respaldado por hipotecas inmobiliarias, autorizado a circular con fuerza fiduciaria bajo un marco legal…
-- [Cordoncillo](https://notofilia.com/glosario/cordoncillo/): Cordoncillo — Diseño decorativo o acanalado aplicado al canto de una moneda para impedir su recorte o el raspado ilegal de metal.
-- [Cospel](https://notofilia.com/glosario/cospel/): Cospel — Disco de metal en bruto, también llamado planchuela, preparado y pesado antes de ser acuñado entre los troqueles.
+- [Cordoncillo](https://notofilia.com/glosario/cordoncillo/): Reeded edge — Diseño decorativo o acanalado aplicado al canto de una moneda para impedir su recorte o el raspado ilegal de metal.
+- [Cospel](https://notofilia.com/glosario/cospel/): Coin blank — Disco de metal en bruto, también llamado planchuela, preparado y pesado antes de ser acuñado entre los troqueles.
 - [Curso legal](https://notofilia.com/glosario/curso-legal/): Legal tender — Condición de un billete o moneda de ser aceptado obligatoriamente como medio de pago dentro de un territorio.
 - [Desmonetizado](https://notofilia.com/glosario/desmonetizado/): Demonetized — Dicho de un billete que ha perdido su curso legal y ya no puede canjearse ni usarse como medio de pago corriente.
 - [Deuda flotante](https://notofilia.com/glosario/deuda-flotante/): Floating debt note — Vale de deuda de corto plazo emitido por un tesoro público, a menudo resultante de la conversión de créditos previos,…
@@ -3213,7 +3594,7 @@ Aún no hay resúmenes mensuales publicados.
 - [EPQ (Calidad de Papel Excepcional)](https://notofilia.com/glosario/epq-calidad-de-papel-excepcional/): EPQ (Exceptional Paper Quality) — Designación de grado usada por PMG para señalar que un billete es completamente original y no ha sufrido modificaciones…
 - [Error de impresión](https://notofilia.com/glosario/error-de-impresion/): Printing error — Billete que salió de la imprenta con un defecto no intencional —corte descentrado, doblez de papel, color faltante— y…
 - [Escala Sheldon](https://notofilia.com/glosario/escala-sheldon/): Sheldon Scale — Sistema numérico estándar de 70 puntos usado en numismática para calificar el desgaste y el estado de conservación de…
-- [Escripofilia](https://notofilia.com/glosario/escripofilia/): Escripofilia — Estudio y coleccionismo de títulos financieros históricos, en particular certificados de acciones, bonos y warrants.
+- [Escripofilia](https://notofilia.com/glosario/escripofilia/): Scripophily — Estudio y coleccionismo de títulos financieros históricos, en particular certificados de acciones, bonos y warrants.
 - [Escudo de armas](https://notofilia.com/glosario/escudo-de-armas/): Coat of arms — Emblema heráldico oficial de un país o entidad, incluido con frecuencia como sello de autenticidad institucional.
 - [Estado basal](https://notofilia.com/glosario/estado-basal/): Basal State — El grado de conservación más bajo posible, en el que una moneda solo es identificable por su tipo de diseño principal,…
 - [Estado soberano](https://notofilia.com/glosario/estado-soberano/): Sovereign state issue — Billete o vale emitido por un estado federal con autonomía fiscal propia dentro de una república federada, en lugar de…

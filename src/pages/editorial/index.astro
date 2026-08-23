@@ -6,8 +6,7 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { SITE } from '../../lib/site';
 import { CLAIM_KINDS, CLAIM_LABELS, CLAIM_DEFAULT_NOTES } from '../../lib/claims';
 import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../lib/editorial';
-import { INVENTORY_VOCABULARY_EN, INVENTORY_VOCABULARY_ES } from '../../lib/stats';
-import { CLAIM_LABELS_EN, CLAIM_NOTES_EN } from '../../lib/ui-i18n';
+import { INVENTORY_VOCABULARY_ES } from '../../lib/stats';
 import NewWindowHint from '../../components/NewWindowHint.astro';
 
 const title = 'Política editorial y valoración · Notofilia';
@@ -67,18 +66,17 @@ const jsonLd = {
     </header>
 
     <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
-      <div data-lang-panel="es">
       <h2>Qué publicamos</h2>
       <p>
         Las <a href="/noticias/">noticias</a> son resúmenes curados de fuentes externas (medios,
-        casas de subastas, bancos centrales, museos). El <a href="/blog/">blog</a> reúne guías
-        originales. La <a href="/coleccion/">Colección Virtual</a> documenta piezas privadas
-        <strong>que no están a la venta</strong>.
+        casas de subastas, bancos centrales, museos). Cada noticia indica <strong>Fuente:</strong>
+        con un enlace a la nota original. El <a href="/blog/">blog</a> reúne guías
+        originales. Colecciones como <a href="/coleccion/colombia/">Colombia</a> documentan
+        piezas privadas <strong>que no están a la venta</strong>.
       </p>
       <p>
-        {INVENTORY_VOCABULARY_ES} Las cifras del pie, de la portada y de
-        <a href="/coleccion/">/coleccion/</a> se calculan en el build a partir de la colección,
-        nunca se escriben a mano.
+        {INVENTORY_VOCABULARY_ES} Las cifras del pie y de la portada se calculan en el
+        build a partir de la colección, nunca se escriben a mano.
       </p>
 
       <h2 id="equipo-editorial">Editor</h2>
@@ -187,126 +185,6 @@ const jsonLd = {
         El tratamiento de datos personales se describe en la
         <a href="/politica-privacidad-cookies/">Política de Privacidad y Cookies</a>.
       </p>
-      </div>
-
-      <div data-lang-panel="en" lang="en" hidden>
-      <h2>What we publish</h2>
-      <p>
-        <a href="/noticias/">News</a> items are curated summaries of external sources (media,
-        auction houses, central banks, museums). The <a href="/blog/">blog</a> holds original
-        guides. The <a href="/coleccion/">Virtual Collection</a> documents private pieces
-        <strong>that are not for sale</strong>.
-      </p>
-      <p>
-        {INVENTORY_VOCABULARY_EN} The figures in the footer, on the homepage, and on
-        <a href="/coleccion/">/coleccion/</a> are calculated at build time from the collection;
-        they are never typed by hand.
-      </p>
-
-      <h2>Editor</h2>
-      <p>
-        Notofilia is edited by <strong>{EDITORIAL_TEAM.name}</strong>, founder of the private
-        catalog and responsible for record research, valuation labels, and corrections. When an
-        article says “Reviewed by”, that is this responsibility. Public profile:
-        <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
-      </p>
-
-      <h2>Mention on Wikipedia</h2>
-      <p>
-        The article{' '}
-        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
-          Notaphily on Spanish Wikipedia<NewWindowHint />
-        </a>{' '}
-        lists Notofilia.com under External links (verified 16 August 2026). The href points to a{' '}
-        <a href={WIKIPEDIA_NOTOFILIA_ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
-          May 2013 archive.org snapshot<NewWindowHint />
-        </a>{' '}
-        of <code>http://www.notofilia.com/</code>, not to <code>https://notofilia.com/</code>.
-        Like every MediaWiki external link, it carries <code>rel="nofollow"</code>: it is a
-        verifiable encyclopedic mention, not a PageRank backlink. We do not edit Wikipedia about
-        ourselves.
-      </p>
-
-      <h2>Corrections policy</h2>
-      <p>
-        Factual errors, mislabeled figures, or incorrect attributions are corrected on the
-        affected piece. Each material correction is listed in that page’s history (date +
-        description). If the change is substantial, we also update the “Last updated” date.
-      </p>
-
-      <h2>Dates and updates</h2>
-      <ul>
-        <li><strong>Publication date:</strong> when the note appeared on Notofilia.</li>
-        <li><strong>Last updated:</strong> the last substantial review of the content.</li>
-        <li><strong>Correction history:</strong> material changes (figures, attributions, facts) are listed on the piece itself.</li>
-      </ul>
-
-      <h2>Valuation standard</h2>
-      <p>
-        Every price figure in a news item or guide must be labeled with one of these kinds.
-        The <em>About this figure</em> callout appears when the article is price-related:
-      </p>
-      <dl>
-        {CLAIM_KINDS.map((kind) => (
-          <div class="mb-5">
-            <dt class="font-semibold text-cream m-0 mb-1">{CLAIM_LABELS_EN[kind]}</dt>
-            <dd class="m-0 text-[17px] leading-[1.55]">{CLAIM_NOTES_EN[kind]}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <h2>Primary sources and hammer evidence</h2>
-      <p>
-        We prefer to link the original outlet, the auction-house archive, the catalog record,
-        or the official release. A viral listing or a sensational headline does not replace a
-        documented hammer. When we cite an auction result we give currency, valuation date,
-        and, when it exists, a link to the evidence.
-      </p>
-
-      <h2>Catalog sources</h2>
-      <p>
-        Virtual Collection records are re-documented in Search Console traffic order, not
-        catalog order. We do not try to rewrite the inventory in one pass.
-      </p>
-      <p>Citation order:</p>
-      <ol>
-        <li>Central banks (Nepal Rastra Bank; Banco de la República for Colombian material, the largest group of records).</li>
-        <li>Printers and museums (Note Printing Australia, Reserve Bank of Australia, mint archives).</li>
-        <li>Auction archives.</li>
-        <li>Commercial sites (Banknote World and similar) only as a last resort, never as the default source.</li>
-      </ol>
-      <p>
-        An unsourced fact on a showcase record is worse than “unconfirmed”. That value is valid
-        and visible on Print run, Known varieties, Circulation dates, Basis of rarity, State of
-        the specimen shown, and Date of last factual review. It distinguishes the catalog from
-        sites that invent the figure.
-      </p>
-      <p>
-        Re-documented records are not published if most of their citations are dealer sites.
-        Wikipedia and reseller listings do not replace a central-bank or printer report.
-      </p>
-
-      <h2>What we do not do</h2>
-      <ul>
-        <li>We do not appraise readers’ pieces or issue purchase offers.</li>
-        <li>We do not present asking prices as closed sales.</li>
-        <li>We do not use <code>Product</code> markup on collection records: the pieces are not sold here.</li>
-        <li>We do not duplicate the same news item just because another outlet repeated it; we update the existing piece if it adds new facts.</li>
-      </ul>
-
-      <h2>How to report an error</h2>
-      <p>
-        If you spot a mislabeled figure, a broken source, or an incorrect fact, write to us
-        through Notofilia’s public channels. We will publish the correction in the history of
-        the affected piece.
-      </p>
-
-      <h2>Privacy</h2>
-      <p>
-        Personal-data processing is described in the
-        <a href="/politica-privacidad-cookies/">Privacy and Cookie Policy</a>.
-      </p>
-      </div>
     </div>
   </article>
 </BlogLayout>

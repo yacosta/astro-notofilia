@@ -111,7 +111,45 @@ export async function onRequest(context) {
       cfRay: context.request.headers.get('cf-ray') || '',
       timestamp: new Date().toISOString(),
     }));
+
+    // English-tree misses: serve the prerendered /en/404/ document with
+    // status 404. Pages still uses dist/404.html as the global fallback.
+    // Do not negotiate language from Accept-Language or geo.
+    const en404 = await englishNotFoundResponse(context, url, pathname, response);
+    if (en404) return withSecurityHeaders(en404);
   }
 
   return withSecurityHeaders(response);
+}
+
+function isEnglishTree(pathname) {
+  return pathname === '/en' || pathname.startsWith('/en/');
+}
+
+/**
+ * Fetch the English 404 HTML for `/en/*` misses. Keep HTTP 404.
+ * Prefer `env.ASSETS` so this does not re-enter middleware.
+ */
+async function englishNotFoundResponse(context, url, pathname, original) {
+  if (!isEnglishTree(pathname) || pathname === '/en/404') return null;
+  const notFoundUrl = new URL('/en/404/', url.origin);
+  let assetResponse;
+  try {
+    const assets = context.env && context.env.ASSETS;
+    if (assets && typeof assets.fetch === 'function') {
+      assetResponse = await assets.fetch(new Request(notFoundUrl.toString(), { method: 'GET' }));
+    }
+  } catch {
+    assetResponse = null;
+  }
+  if (!assetResponse || !assetResponse.ok) return null;
+  const headers = new Headers(assetResponse.headers);
+  headers.delete('content-length');
+  headers.delete('content-encoding');
+  headers.delete('etag');
+  return new Response(assetResponse.body, {
+    status: 404,
+    statusText: original.statusText || 'Not Found',
+    headers,
+  });
 }

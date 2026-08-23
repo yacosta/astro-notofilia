@@ -44,7 +44,7 @@ const jsonLd = {
 const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing:border-box;">
   <header>
     <nav aria-label="Ruta de navegación" style="max-width:1180px; margin:0 auto; padding:56px 24px 0;">
-      <a href="/coleccion/" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Colección Virtual — Catálogo General</a>
+      <a href="/coleccion/pop-art/" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Pop Art — catálogo</a>
     </nav>
   </header>
 
@@ -118,7 +118,7 @@ const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing
               >&#43;</button>
             </div>
 
-            <div style="overflow:hidden; max-width:92vw; max-height:74vh; touch-action:none;">
+            <div style="overflow:hidden; max-width:100vw; max-height:100vh; width:100vw; height:100vh; touch-action:none;">
               <picture>
                 <source srcset="/uploads/jsg-boggs.webp" type="image/webp" />
                 <img
@@ -126,12 +126,12 @@ const template = `<div lang="es" style="width:100%; min-height:100vh; box-sizing
                   src="/uploads/jsg-boggs.jpg"
                   alt="Retrato de J.S.G. Boggs, vista ampliada"
                   draggable="false"
-                  style="display:block; max-width:92vw; max-height:74vh; width:auto; height:auto; cursor:zoom-in; user-select:none;"
+                  style="display:block; max-width:100vw; max-height:100vh; width:100vw; height:100vh; object-fit:contain; cursor:zoom-in; user-select:none;"
                 />
               </picture>
             </div>
 
-            <span style="margin-top:18px; font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic;">Arrastra para mover &middot; Rueda del ratón para ampliar</span>
+            <span style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic; pointer-events:none;">Arrastra para mover &middot; Rueda del ratón para ampliar</span>
           </div>
         </div>
 

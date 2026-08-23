@@ -6,6 +6,8 @@ export const catalogImageSchema = z.object({
   src: z.string().min(1),
   srcWebp: z.string().optional(),
   alt: z.string().min(1),
+  /** Visible alt on English catalog URLs; Spanish `alt` is unchanged. */
+  altEn: z.string().min(1).optional(),
   width: z.number().int().positive().optional(),
   height: z.number().int().positive().optional(),
 });
@@ -75,14 +77,28 @@ export const HONESTY_FIELD_LABELS: Record<HonestyFieldKey, string> = {
 export const catalogCardSchema = z.object({
   href: z.string().min(1),
   title: z.string().min(1),
+  titleEn: z.string().min(1).optional(),
   denomination: z.string().optional(),
   year: z.string().optional(),
+  country: z.string().min(1).optional(),
+  countryEn: z.string().min(1).optional(),
   image: z.string().optional(),
   imageWebp: z.string().optional(),
   alt: z.string().optional(),
+  altEn: z.string().optional(),
   /** Optional heading used when a hub renders cards in thematic groups. */
   group: z.string().min(1).optional(),
+  groupEn: z.string().min(1).optional(),
   groupKicker: z.string().min(1).optional(),
+  groupKickerEn: z.string().min(1).optional(),
+  /** Optional parent heading above `group` (era / issuer family). */
+  section: z.string().min(1).optional(),
+  sectionEn: z.string().min(1).optional(),
+  sectionKicker: z.string().min(1).optional(),
+  sectionKickerEn: z.string().min(1).optional(),
+  /** Optional nested heading under `group` (e.g. a bank inside Banca Libre). */
+  subgroup: z.string().min(1).optional(),
+  subgroupEn: z.string().min(1).optional(),
 });
 
 /**

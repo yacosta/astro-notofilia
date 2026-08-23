@@ -1,4 +1,7 @@
 ---
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import BaseHead from '../components/BaseHead.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import CookieBanner from '../components/CookieBanner.astro';
@@ -7,16 +10,17 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CatalogRecordSurface from '../components/catalog/CatalogRecordSurface.astro';
 import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
 import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
-import { withColombiaGroup } from '../lib/colombia-catalog';
-import { compareByFirstYear } from '../lib/catalog-year';
-import { absoluteUrl } from '../lib/site';
+import { compareColombiaCards, withColombiaGroup } from '../lib/colombia-catalog';
+import { polymerCountryLabels } from '../lib/catalog-inventory.mjs';
+import { splitCatalogHubTemplate } from '../lib/catalog-hub-layout';
 import { withI18nMarkup } from '../lib/html-i18n';
-import { UI } from '../lib/ui-i18n';
+import { t, type Locale } from '../lib/ui-i18n';
 
 export interface Props {
   title: string;
   description: string;
   path: string;
+  locale?: Locale;
   robots?: string;
   ogType?: 'website' | 'article' | 'profile';
   ogTitle?: string;
@@ -33,27 +37,77 @@ export interface Props {
 function colombiaHubCards(cards: CatalogCard[]): CatalogCard[] {
   return cards
     .map((card, index) => ({ card: withColombiaGroup(card), index }))
-    .sort((a, b) => compareByFirstYear(a.card, b.card) || a.index - b.index)
+    .sort((a, b) => compareColombiaCards(a.card, b.card, a.index, b.index))
     .map(({ card }) => card);
 }
 
+function polymerSlug(href: string): string {
+  const trimmed = href.replace(/\/+$/, '');
+  return trimmed.slice(trimmed.lastIndexOf('/') + 1);
+}
+
+function polymerHubCards(cards: CatalogCard[], locale: Locale): CatalogCard[] {
+  const collator = new Intl.Collator(locale === 'en' ? 'en' : 'es', { sensitivity: 'base' });
+  return cards
+    .map((card, index) => {
+      const labels = polymerCountryLabels(polymerSlug(card.href));
+      const countryCard = labels
+        ? { ...card, country: labels.es, countryEn: labels.en }
+        : card;
+      const sortKey = labels ? (locale === 'en' ? labels.en : labels.es) : card.title;
+      return { card: countryCard, index, sortKey };
+    })
+    .sort((a, b) => collator.compare(a.sortKey, b.sortKey) || a.index - b.index)
+    .map(({ card }) => card);
+}
+
+function popArtHubCards(cards: CatalogCard[]): CatalogCard[] {
+  return cards.map((card) => ({
+    ...card,
+    denomination: undefined,
+  }));
+}
+
+const COLOMBIA_HUB_PATHS = new Set(['/coleccion/colombia/', '/en/collection/colombia/']);
+const POLYMER_HUB_PATHS = new Set([
+  '/coleccion/polimero-mundial/',
+  '/en/collection/world-polymer/',
+]);
+const POP_ART_HUB_PATHS = new Set(['/coleccion/pop-art/', '/en/collection/pop-art/']);
+
 const props = Astro.props;
+const locale: Locale = props.locale ?? 'es';
 const record = props.record;
 const rawCards = record?.cards ?? [];
-const cards =
-  props.path === '/coleccion/colombia/' ? colombiaHubCards(rawCards) : rawCards;
+const cards = COLOMBIA_HUB_PATHS.has(props.path)
+  ? colombiaHubCards(rawCards)
+  : POLYMER_HUB_PATHS.has(props.path)
+    ? polymerHubCards(rawCards, locale)
+    : POP_ART_HUB_PATHS.has(props.path)
+      ? popArtHubCards(rawCards)
+      : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
-const catalogShell = `<div class="catalog-shell">${withI18nMarkup(props.template)}</div>`;
-const canonical = absoluteUrl(props.path);
+// English URLs must receive a human English `template` — never wrap Spanish HTML.
+const catalogBody = locale === 'en' ? props.template : withI18nMarkup(props.template);
+const hubSplit = splitCatalogHubTemplate(catalogBody);
+const catalogShell = hubSplit ? undefined : `<div class="catalog-shell">${catalogBody}</div>`;
+const skipLabel = t('skipMain', locale);
+// Bust weekly CDN cache when catalog-zoom.js changes (public/_headers).
+// Resolve from cwd — import.meta.url points inside dist/.prerender at build time.
+const catalogZoomHash = createHash('sha256')
+  .update(readFileSync(join(process.cwd(), 'public/catalog-zoom.js')))
+  .digest('hex')
+  .slice(0, 8);
 ---
 <!doctype html>
-<html lang="es">
+<html lang={locale} data-page-locale={locale}>
   <head>
     <BaseHead
       title={props.title}
       description={props.description}
       path={props.path}
+      locale={locale}
       robots={props.robots}
       ogType={props.ogType}
       ogTitle={props.ogTitle}
@@ -61,12 +115,9 @@ const canonical = absoluteUrl(props.path);
       ogImage={props.ogImage}
       jsonLd={props.jsonLd}
       loadDcRuntime={false}
-    >
-      <link rel="alternate" hreflang="es" href={canonical} />
-      <link rel="alternate" hreflang="x-default" href={canonical} />
-    </BaseHead>
+    />
     <link rel="stylesheet" href="/catalog-fonts.css" />
-    <script src="/catalog-zoom.js" defer is:inline></script>
+    <script src={`/catalog-zoom.js?v=${catalogZoomHash}`} defer is:inline></script>
     {props.styles && <style is:global set:html={props.styles} />}
     <style is:global>
       * { box-sizing: border-box; }
@@ -186,11 +237,60 @@ const canonical = absoluteUrl(props.path);
         display: flex !important;
         position: fixed !important;
         inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
         z-index: 120 !important;
         background: rgba(5, 5, 4, 0.94) !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
+        touch-action: none;
+        overscroll-behavior: contain;
+      }
+      /* Photo uses the bitmap box (contain). Full-bleed 100vw×100vh hit-testing
+         covered Close and blocked return to the ficha after extra zoom. */
+      [data-zoom-dialog][data-open="true"] img,
+      .catalog-zoom-dialog[data-open="true"] img {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 0 !important;
+      }
+      [data-zoom-dialog][data-open="true"] div:has(> picture),
+      [data-zoom-dialog][data-open="true"] div:has(> img),
+      .catalog-zoom-dialog[data-open="true"] div:has(> picture),
+      .catalog-zoom-dialog[data-open="true"] div:has(> img) {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        isolation: isolate !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+      }
+      [data-zoom-dialog][data-open="true"] [data-zoom-close],
+      [data-zoom-dialog][data-open="true"] :is(div:has(> [data-zoom-in]), div:has(> [data-zoom-out])) {
+        z-index: 4 !important;
+        pointer-events: auto !important;
+      }
+      [data-zoom-dialog][data-open="true"] [data-zoom-close] {
+        top: max(16px, env(safe-area-inset-top, 0px)) !important;
+        right: max(16px, env(safe-area-inset-right, 0px)) !important;
+        background: rgba(10, 10, 9, 0.88) !important;
+      }
+      [data-zoom-dialog][data-open="true"] :is(div:has(> [data-zoom-in]), div:has(> [data-zoom-out])) {
+        top: max(16px, env(safe-area-inset-top, 0px)) !important;
       }
       @media (max-width: 640px) {
         .catalog-shell [style*="background:#d8d2cd"],
@@ -213,25 +313,41 @@ const canonical = absoluteUrl(props.path);
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
-      data-i18n
-      data-en={UI.skipMain.en}
-    >{UI.skipMain.es}</a>
-    <SiteHeader />
+      data-i18n={locale === 'es' ? true : undefined}
+      data-en={locale === 'es' ? t('skipMain', 'en') : undefined}
+    >{skipLabel}</a>
+    <SiteHeader locale={locale} path={props.path} />
     {
       record ? (
-        <CatalogRecordSurface record={record} path={props.path} mode="augment">
-          <div set:html={catalogShell} />
-          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+        <CatalogRecordSurface record={record} path={props.path} mode="augment" locale={locale}>
+          {hubSplit ? (
+            <div class="catalog-shell">
+              <Fragment set:html={hubSplit.before} />
+              {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} inset />}
+              <Fragment set:html={hubSplit.after} />
+            </div>
+          ) : (
+            <>
+              <div set:html={catalogShell} />
+              {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} />}
+            </>
+          )}
         </CatalogRecordSurface>
+      ) : hubSplit ? (
+        <div class="catalog-shell">
+          <Fragment set:html={hubSplit.before} />
+          {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} inset />}
+          <Fragment set:html={hubSplit.after} />
+        </div>
       ) : (
         <>
           <div set:html={catalogShell} />
-          {isHub && <CatalogHubGrid cards={cards} thinNote />}
+          {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} />}
         </>
       )
     }
-    <PreFooter />
-    <SiteFooter variant="editorial" />
-    <CookieBanner />
+    <PreFooter locale={locale} />
+    <SiteFooter variant="editorial" locale={locale} />
+    <CookieBanner locale={locale} />
   </body>
 </html>

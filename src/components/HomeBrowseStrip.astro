@@ -3,7 +3,15 @@
  * Homepage browse strip — curated country / collection entry points.
  */
 import { FEATURED_ENTRIES } from '../lib/catalog-hub';
+import { alternateUrl } from '../i18n/pairs';
+import type { Locale } from '../lib/ui-i18n';
 
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 const items = FEATURED_ENTRIES.slice(0, 8);
 ---
 <section
@@ -13,31 +21,31 @@ const items = FEATURED_ENTRIES.slice(0, 8);
   <div class="max-w-content mx-auto">
     <h2
       id="browse-heading"
-      data-i18n
-      data-en="Browse by country or collection"
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Browse by country or collection'}
       class="font-display font-normal text-[clamp(24px,3vw,32px)] text-cream-dim mt-0 mb-3 text-center"
     >
-      Explorar por país o colección
+      {isEn ? 'Browse by country or collection' : 'Explorar por país o colección'}
     </h2>
     <p
-      data-i18n
-      data-en="Enter through a country, material, or specialty theme."
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : 'Enter through a country, material, or specialty theme.'}
       class="text-[18px] leading-[1.6] text-muted text-center mt-0 mb-8 max-w-[48ch] mx-auto"
     >
-      Entra por un país, un material o un tema especializado.
+      {isEn ? 'Enter through a country, material, or specialty theme.' : 'Entra por un país, un material o un tema especializado.'}
     </p>
     <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-x-7 gap-y-5">
       {items.map((entry) => (
         <li>
           <a
-            href={entry.href}
+            href={isEn ? (alternateUrl(entry.href, 'en') ?? entry.href) : entry.href}
             class="group block min-h-[44px] pt-3 border-t-2 border-line no-underline text-inherit focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
           >
             <span class="block font-display text-[clamp(17px,1.1vw,21px)] text-cream-dim mb-1.5 group-hover:text-cream">
-              <span data-i18n data-en={entry.titleEn}>{entry.title}</span>
+              <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : entry.titleEn}>{isEn ? entry.titleEn : entry.title}</span>
             </span>
-            <span class="block text-[15px] leading-[1.5] text-muted" data-i18n data-en={entry.descriptionEn}>
-              {entry.description}
+            <span class="block text-[15px] leading-[1.5] text-muted" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : entry.descriptionEn}>
+              {isEn ? entry.descriptionEn : entry.description}
             </span>
           </a>
         </li>
@@ -45,11 +53,11 @@ const items = FEATURED_ENTRIES.slice(0, 8);
     </ul>
     <p class="text-center mt-10 mb-0">
       <a
-        href="/coleccion/"
-        data-i18n
-        data-en="See the full catalog"
+        href={isEn ? (alternateUrl('/coleccion/colombia/', 'en') ?? '/en/collection/colombia/') : '/coleccion/colombia/'}
+        data-i18n={isEn ? undefined : true}
+        data-en={isEn ? undefined : 'See the Colombia collection'}
         class="inline-flex items-center min-h-[44px] border border-cream text-cream no-underline text-[15px] tracking-[0.1em] uppercase font-semibold px-7 py-3"
-      >Ver el catálogo completo</a>
+      >{isEn ? 'See the Colombia collection' : 'Ver la colección de Colombia'}</a>
     </p>
   </div>
 </section>

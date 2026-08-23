@@ -8,6 +8,14 @@
 // The catalog (.dc.html) pages carry an inline-styled equivalent in
 // public/SiteFooter.dc.html.
 import SocialLink from './SocialLink.astro';
+import type { Locale } from '../lib/ui-i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
 ---
 <section class="relative z-[1] bg-bg px-6 py-16">
   <div class="max-w-content mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -37,8 +45,8 @@ import SocialLink from './SocialLink.astro';
       </ul>
     </div>
     <div class="min-h-[120px]">
-      <h3 class="font-display font-normal text-[clamp(20px,2.4vw,26px)] text-cream-dim mt-0 mb-2" data-i18n data-en="Newsletter">Boletín</h3>
-      <p class="text-[14px] leading-[1.5] text-muted mt-0 mb-4" data-i18n data-en="Subscribe for numismatics and notaphily news.">Suscríbase para recibir noticias de numismática y notafilia.</p>
+      <h3 class="font-display font-normal text-[clamp(20px,2.4vw,26px)] text-cream-dim mt-0 mb-2" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Newsletter'}>{isEn ? 'Newsletter' : 'Boletín'}</h3>
+      <p class="text-[14px] leading-[1.5] text-muted mt-0 mb-4" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Subscribe for numismatics and notaphily news.'}>{isEn ? 'Subscribe for numismatics and notaphily news.' : 'Suscríbase para recibir noticias de numismática y notafilia.'}</p>
       <form
         action="https://notofilia.us11.list-manage.com/subscribe/post?u=d039ececd8f9d1edb2a60f524&amp;id=f8827fa42f&amp;f_id=00b2ece1f0"
         method="post"
@@ -46,7 +54,7 @@ import SocialLink from './SocialLink.astro';
         class="flex flex-col gap-3 max-w-[360px]"
       >
         <div>
-          <label for="mce-FNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1" data-i18n data-en="First name">Nombre</label>
+          <label for="mce-FNAME" class="block text-[13px] tracking-[0.04em] text-muted mb-1" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'First name'}>{isEn ? 'First name' : 'Nombre'}</label>
           <input
             type="text"
             name="FNAME"
@@ -57,7 +65,7 @@ import SocialLink from './SocialLink.astro';
         </div>
         <div>
           <label for="mce-EMAIL" class="block text-[13px] tracking-[0.04em] text-muted mb-1">
-            <span data-i18n data-en="Email">Correo electrónico</span> <span class="text-gold-light" aria-hidden="true">*</span>
+            <span data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Email'}>{isEn ? 'Email' : 'Correo electrónico'}</span> <span class="text-gold-light" aria-hidden="true">*</span>
           </label>
           <input
             type="email"
@@ -75,9 +83,9 @@ import SocialLink from './SocialLink.astro';
           type="submit"
           name="subscribe"
           class="min-h-[44px] px-6 py-3 bg-cream text-bg border border-cream rounded-full font-serif font-semibold text-[14px] tracking-[0.1em] uppercase cursor-pointer transition-colors duration-200 hover:bg-cream-dim hover:border-cream-dim"
-          data-i18n
-          data-en="Subscribe"
-        >Suscribirse</button>
+          data-i18n={isEn ? undefined : true}
+          data-en={isEn ? undefined : 'Subscribe'}
+        >{isEn ? 'Subscribe' : 'Suscribirse'}</button>
       </form>
     </div>
   </div>

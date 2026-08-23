@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-16T20:25:59.319Z",
-  "count": 129,
-  "pieceCount": 113,
+  "generatedAt": "2026-08-23T12:13:53.866Z",
+  "count": 137,
+  "pieceCount": 121,
   "stats": {
-    "billetes": 215,
-    "monedas": 7,
-    "paises": 33,
-    "fichas": 113,
-    "paginas": 144
+    "billetes": 221,
+    "monedas": 9,
+    "paises": 36,
+    "fichas": 121,
+    "paginas": 153
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 43,
+      "count": 47,
       "slug": "colombia"
     },
     {
@@ -29,6 +29,11 @@
       "name": "Puerto Rico",
       "count": 4,
       "slug": "puerto-rico"
+    },
+    {
+      "name": "Filipinas",
+      "count": 2,
+      "slug": "filipinas"
     },
     {
       "name": "Bangladesh",
@@ -59,6 +64,11 @@
       "name": "Chile",
       "count": 1,
       "slug": "chile"
+    },
+    {
+      "name": "China",
+      "count": 1,
+      "slug": "china"
     },
     {
       "name": "Costa Rica",
@@ -139,6 +149,11 @@
       "name": "Papúa Nueva Guinea",
       "count": 1,
       "slug": "papua-nueva-guinea"
+    },
+    {
+      "name": "Provincias Unidas de los Países Bajos",
+      "count": 1,
+      "slug": "provincias-unidas-de-los-paises-bajos"
     },
     {
       "name": "República Dominicana",
@@ -336,6 +351,24 @@
       ],
       "url": "https://notofilia.com/coleccion/emisiones-promocionales/",
       "image": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
+      "ogType": "website",
+      "role": "hub"
+    },
+    {
+      "id": "filipinas",
+      "path": "/coleccion/filipinas/",
+      "title": "Catálogo de Billetes de Filipinas",
+      "description": "Certificados del Tesoro de Filipinas: Victory Series No. 66 y la liberación de 1944. Colección Notofilia.",
+      "keywords": [
+        "billetes de filipinas",
+        "philippines banknotes",
+        "victory series 66",
+        "tesorería de filipinas",
+        "notafilia filipina",
+        "numismática filipinas"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/",
+      "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
       "ogType": "website",
       "role": "hub"
     },
@@ -623,7 +656,7 @@
         "numismática"
       ],
       "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
-      "image": "/uploads/mpc-series-692-20-dollars.jpg",
+      "image": "/uploads/mpc-series-692-20-dollars-3f285359.jpg",
       "ogType": "article",
       "role": "piece",
       "country": "Estados Unidos",
@@ -1052,6 +1085,36 @@
       "material": "",
       "kind": "specimen",
       "searchText": "un peso specimen, banco de la república ficha de catálogo numismático: especímenes de un peso oro (1929) y un peso plata (1932)… colombia un peso oro · un peso plata (certificado de plata) pick #p-380s (variante); listados estándar de la serie 1929–1954 de un peso oro · pick #p-382s; the banknote book b932 specimen banco de la república un peso oro specimen certificado de plata santander bolívar billete american bank note company notafilia colombiana numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-de-la-republica-10-pesos-oro-1943",
+      "path": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+      "title": "Diez Pesos Oro 1943, Banco de la República",
+      "description": "Billete de 10 pesos oro del 20 de julio de 1943 (Pick 389b), PMG 50 EPQ, retrato de Nariño. Colección Notofilia.",
+      "keywords": [
+        "banco de la república",
+        "diez pesos oro 1943",
+        "pick 389b",
+        "antonio nariño",
+        "american bank note company",
+        "pmg 50 epq",
+        "notafilia colombiana"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+      "image": "/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco de la República, Bogotá, Colombia",
+      "denomination": "Diez Pesos Oro",
+      "catalogRef": "Pick 389b",
+      "condition": "",
+      "emissionType": "Billete de circulación del tipo Pick 389 (pesos oro), impreso por American Bank Note Company.",
+      "dateLabel": "",
+      "year": 1943,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "diez pesos oro 1943, banco de la república billete de 10 pesos oro del 20 de julio de 1943 (pick 389b), pmg 50 epq, retrato de nariño. colección notofilia. colombia el banco de la república, bogotá, colombia diez pesos oro pick 389b papel banknote banco de la república diez pesos oro 1943 pick 389b antonio nariño american bank note company pmg 50 epq notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-10-pesos-oro",
@@ -1595,6 +1658,37 @@
       "searchText": "un peso y cinco pesos, el banco de panamá ficha de catálogo numismático: billetes… colombia el banco de panamá, establecido en la ciudad de panamá en 1869 un peso, pagadero al portador y a la vista en efectivo pick n.&deg; 6 banknote banco de panama billete de panama siglo xix panama colombia un peso panama cinco pesos panama pick 6 pick 8 banca libre panama"
     },
     {
+      "id": "colombia--banco-de-rio-hacha-5-pesos-1883",
+      "path": "/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/",
+      "title": "Cinco Pesos, Banco de Rio Hacha (1883)",
+      "description": "Pruebas PMG 64 EPQ / 62 del 5 pesos del Banco de Rio Hacha, 1883 (Pick S819p). Colección Notofilia.",
+      "keywords": [
+        "banco de rio hacha",
+        "riohacha",
+        "cinco pesos 1883",
+        "pick s819",
+        "prueba abnc",
+        "banca libre colombia",
+        "american bank note company",
+        "pmg 64 epq"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/",
+      "image": "/uploads/colombia-banco-de-rio-hacha-5-pesos-1883.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco de Rio Hacha",
+      "denomination": "Cinco Pesos",
+      "catalogRef": "Pick S819p1 (anverso) / S819p2 (reverso)",
+      "condition": "",
+      "emissionType": "Pruebas de imprenta (front proof / back proof) de un billete al portador en moneda corriente. El ejemplar mostrado no es un billete emitido para circulación.",
+      "dateLabel": "",
+      "year": 1883,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "cinco pesos, banco de rio hacha (1883) pruebas pmg 64 epq / 62 del 5 pesos del banco de rio hacha, 1883 (pick s819p). colección notofilia. colombia el banco de rio hacha cinco pesos pick s819p1 (anverso) / s819p2 (reverso) papel banknote banco de rio hacha riohacha cinco pesos 1883 pick s819 prueba abnc banca libre colombia american bank note company pmg 64 epq"
+    },
+    {
       "id": "colombia--banco-del-cauca-1-5-pesos-1888",
       "path": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/",
       "title": "Un Peso y Cinco Pesos, El Banco del Cauca (1888)",
@@ -1653,6 +1747,37 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "cinco pesos, el banco del norte, socorro (1882) ficha de catálogo numismático: billete de 5 pesos de el banco del norte, socorro, santander, 1882, banca libre colombiana del siglo xix. colombia el banco del norte, banco privado establecido en la provincia de santander cinco pesos pick n.&deg; s722 papel banknote banco del norte socorro santander billete colombiano siglo xix banca libre colombia cinco pesos 1882 numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-hipotecario-5-pesos-1881",
+      "path": "/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+      "title": "Cinco Pesos, Banco Hipotecario (1881)",
+      "description": "Pruebas PMG 61 del 5 pesos del Banco Hipotecario de Bogotá, 1881 (Pick S511p). Colección Notofilia.",
+      "keywords": [
+        "banco hipotecario",
+        "banco hipotecario bogota",
+        "cinco pesos 1881",
+        "pick s511",
+        "prueba abnc",
+        "banca libre colombia",
+        "american bank note company",
+        "pmg 61"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+      "image": "/uploads/colombia-banco-hipotecario-5-pesos-1881-38a93057.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco Hipotecario, Bogotá",
+      "denomination": "Cinco Pesos",
+      "catalogRef": "Pick S511p1 (anverso) / S511p2 (reverso)",
+      "condition": "",
+      "emissionType": "Pruebas de imprenta (front proof / back proof) de un billete al portador en moneda corriente. El ejemplar mostrado no es un billete emitido para circulación.",
+      "dateLabel": "",
+      "year": 1881,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "cinco pesos, banco hipotecario (1881) pruebas pmg 61 del 5 pesos del banco hipotecario de bogotá, 1881 (pick s511p). colección notofilia. colombia el banco hipotecario, bogotá cinco pesos pick s511p1 (anverso) / s511p2 (reverso) papel banknote banco hipotecario banco hipotecario bogota cinco pesos 1881 pick s511 prueba abnc banca libre colombia american bank note company pmg 61"
     },
     {
       "id": "colombia--banco-internacional-1-peso-1884",
@@ -1946,7 +2071,7 @@
         "numismática colombiana"
       ],
       "url": "https://notofilia.com/coleccion/colombia/nueva-granada-1-peso-1861/",
-      "image": "/uploads/colombia-nueva-granada-1-peso-1861.jpg",
+      "image": "/uploads/colombia-nueva-granada-1-peso-1861-92c64225.jpg",
       "ogType": "article",
       "role": "piece",
       "country": "Colombia",
@@ -2178,6 +2303,40 @@
       "searchText": "república de bolívar: 1 y 2 pesos (1882) ficha de catálogo numismático: billetes de un peso y dos pesos de la república bolívar de colombia, emitidos en 1882. colección notofilia. colombia república bolívar de colombia un peso pick n.&deg; 5 banknote republica bolivar de colombia billete colombia 1882 un peso colombia dos pesos colombia pick 5 pick 6 notafilia colombiana"
     },
     {
+      "id": "colombia--santa-marta-1-4-real-1820",
+      "path": "/coleccion/colombia/santa-marta-1-4-real-1820/",
+      "title": "Cuartillo Santa Marta 1820",
+      "description": "Cuartillo de cobre de 1820, acuñado por las autoridades realistas de Santa Marta. KM# B4, Restrepo 104. Colección Notofilia.",
+      "keywords": [
+        "santa marta",
+        "cuartillo",
+        "1/4 real",
+        "1820",
+        "KM B4",
+        "restrepo 104",
+        "hernandez 11",
+        "cobre",
+        "fernando vii",
+        "moneda de sitio",
+        "nueva granada"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/santa-marta-1-4-real-1820/",
+      "image": "/uploads/colombia-santa-marta-1-4-real-1820-c0225406.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "Autoridades realistas de Santa Marta, en nombre de Fernando VII",
+      "denomination": "¼ real (cuartillo)",
+      "catalogRef": "KM# B4 · Restrepo #104 / 104.1 · Hernández #11 · Numista N# 18073",
+      "condition": "",
+      "emissionType": "Moneda de emergencia / de sitio, cobre de necesidad",
+      "dateLabel": "1820",
+      "year": 1820,
+      "material": "metal",
+      "kind": "coin",
+      "searchText": "cuartillo santa marta 1820 cuartillo de cobre de 1820, acuñado por las autoridades realistas de santa marta. km# b4, restrepo 104. colección notofilia. colombia autoridades realistas de santa marta, en nombre de fernando vii ¼ real (cuartillo) km# b4 · restrepo #104 / 104.1 · hernández #11 · numista n# 18073 metal coin santa marta cuartillo 1/4 real 1820 km b4 restrepo 104 hernandez 11 cobre fernando vii moneda de sitio nueva granada"
+    },
+    {
       "id": "colombia--vicente-villa-e-hijos-5-pesos",
       "path": "/coleccion/colombia/vicente-villa-e-hijos-5-pesos/",
       "title": "Cinco Pesos, Vicente B. Villa é Hijos, Medellín",
@@ -2241,6 +2400,39 @@
       "material": "",
       "kind": "banknote",
       "searchText": "$10 reserva federal 1934 — cuatro distritos tiradas serie 1934 por distrito y cuatro billetes de $10 frn (cleveland, richmond, chicago, san francisco). estados unidos friedberg fr-2006d · friedberg fr-2009e · friedberg fr-2004g · friedberg fr-2006l banknote federal reserve note billete de diez dólares serie de 1934 distritos de la reserva federal notafilia numismática hamilton chicago fr-2004g serie 1934 julian morgenthau tirada serie 1934 impresión por distrito"
+    },
+    {
+      "id": "ducado-oro-utrecht-1761",
+      "path": "/coleccion/ducado-oro-utrecht-1761/",
+      "title": "Ducado de oro de Utrecht, 1761",
+      "description": "Ducado de oro comercial de 1761 acuñado en Utrecht, certificado NGC AU Details (Edge Filing). Ficha con datos técnicos, leyendas e historia.",
+      "keywords": [
+        "ducado oro utrecht 1761",
+        "paises bajos",
+        "provincias unidas",
+        "KM-7.4",
+        "friedberg 285",
+        "NGC AU details",
+        "edge filing",
+        "4685927-012",
+        "moneda proclamacion australia",
+        "caballero de pie"
+      ],
+      "url": "https://notofilia.com/coleccion/ducado-oro-utrecht-1761/",
+      "image": "/uploads/1761-netherland-ducat-utrecht.png",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Provincias Unidas de los Países Bajos",
+      "issuer": "Ceca provincial de Utrecht",
+      "denomination": "1 ducado",
+      "catalogRef": "KM-7.4 · Friedberg 285 · Numista N# 323147",
+      "condition": "",
+      "emissionType": "",
+      "dateLabel": "1761",
+      "year": 1761,
+      "material": "metal",
+      "kind": "coin",
+      "searchText": "ducado de oro de utrecht, 1761 ducado de oro comercial de 1761 acuñado en utrecht, certificado ngc au details (edge filing). ficha con datos técnicos, leyendas e historia. provincias unidas de los países bajos ceca provincial de utrecht 1 ducado km-7.4 · friedberg 285 · numista n# 323147 metal coin ducado oro utrecht 1761 paises bajos provincias unidas km-7.4 friedberg 285 ngc au details edge filing 4685927-012 moneda proclamacion australia caballero de pie"
     },
     {
       "id": "ecuador--100-sucres-1993",
@@ -2442,6 +2634,74 @@
       "material": "",
       "kind": "banknote",
       "searchText": "food coupon usda, cincuenta centavos (serie 1967) ficha de catálogo: cupón de alimentos usda de cincuenta centavos, serie 1967, impreso por el bureau of engraving and printing. estados unidos departamento de agricultura de los ee. uu. ( u.s. department of agriculture value 50 cents banknote food coupon food stamp usda cupon de alimentos escrip fiscal bureau of engraving and printing serie 1967 notafilia numismática agricultural abundance healthier families"
+    },
+    {
+      "id": "filipinas--1-peso-victory-series-66",
+      "path": "/coleccion/filipinas/1-peso-victory-series-66/",
+      "title": "1 Peso Victory 66, Filipinas (Pick 94a)",
+      "description": "Tesoro de Filipinas, 1 peso Victory Series No. 66 (1944), Pick 94a: Mabini, sello azul y VICTORY. Colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "apolinario mabini",
+        "pick 94a",
+        "pick 117c",
+        "osmeña",
+        "un peso"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/",
+      "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "1 peso",
+      "catalogRef": "Pick 94a",
+      "condition": "",
+      "emissionType": "Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "1 peso victory 66, filipinas (pick 94a) tesoro de filipinas, 1 peso victory series no. 66 (1944), pick 94a: mabini, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 1 peso pick 94a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate apolinario mabini pick 94a pick 117c osmeña un peso"
+    },
+    {
+      "id": "filipinas--2-pesos-victory-series-66",
+      "path": "/coleccion/filipinas/2-pesos-victory-series-66/",
+      "title": "2 Pesos Victory 66, Filipinas (Pick 95a)",
+      "description": "Tesoro de Filipinas, 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, sello azul y VICTORY. Colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "jose rizal",
+        "pick 95a",
+        "pick 118",
+        "osmeña",
+        "dos pesos"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/",
+      "image": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "2 pesos",
+      "catalogRef": "Pick 95a",
+      "condition": "",
+      "emissionType": "Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
     },
     {
       "id": "giori-press-test-note",
@@ -3075,6 +3335,35 @@
       "material": "polímero",
       "kind": "banknote",
       "searchText": "pesos de polímero de chile ficha de catálogo numismático: billetes de polímero del banco central de chile — 1.000 pesos (2010), 2.000 pesos (2004 y 2009) y 5.000 pesos (2009)… chile banco central de chile mil pesos pick-161 polímero banknote banco central de chile 1000 pesos 2000 pesos billete de polimero manuel rodriguez ignacio carrera pinto pick 157 pick 161 pick 162 torres del paine reserva nacional nalcas billetes de polimero mundial"
+    },
+    {
+      "id": "polimero-mundial--china-100-yuan-2000",
+      "path": "/coleccion/polimero-mundial/china-100-yuan-2000/",
+      "title": "100 Yuan, China, Polímero (2000)",
+      "description": "Ficha: 100 yuan de polímero del Banco Popular de China, milenio 2000. Pick 902. Colección Notofilia.",
+      "keywords": [
+        "banco popular de china",
+        "100 yuan",
+        "billete de polimero",
+        "milenio 2000",
+        "pick 902",
+        "billetes de polimero mundial"
+      ],
+      "url": "https://notofilia.com/coleccion/polimero-mundial/china-100-yuan-2000/",
+      "image": "/uploads/china-pboc-100-yuan-2000-polimero.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "China",
+      "issuer": "Banco Popular de China (中国人民银行 / People’s Bank of China)",
+      "denomination": "Cien Yuan (100 元 / 壹佰圆)",
+      "catalogRef": "Pick 902, Standard Catalog of World Paper Money",
+      "condition": "",
+      "emissionType": "Billete conmemorativo de curso legal: «迎接新世纪纪念钞» (billete que da la bienvenida al nuevo siglo). 1,2",
+      "dateLabel": "28 de noviembre de 2000 (anuncio del 24 de noviembre de 2000). 1,2",
+      "year": 2000,
+      "material": "polímero",
+      "kind": "banknote",
+      "searchText": "100 yuan, china, polímero (2000) ficha: 100 yuan de polímero del banco popular de china, milenio 2000. pick 902. colección notofilia. china banco popular de china (中国人民银行 / people’s bank of china) cien yuan (100 元 / 壹佰圆) pick 902, standard catalog of world paper money polímero banknote banco popular de china 100 yuan billete de polimero milenio 2000 pick 902 billetes de polimero mundial"
     },
     {
       "id": "polimero-mundial--costa-rica-20-1000-colones",

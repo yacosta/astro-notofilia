@@ -1,0 +1,248 @@
+---
+/**
+ * English contact form. Spanish /contacto/ is unchanged.
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { SITE } from '../../../lib/site';
+
+const title = 'Contact | Notofilia';
+const description =
+  'Write to Notofilia about the catalog, the glossary, or any question on numismatics and notaphily. We reply by email.';
+const path = '/en/contact/';
+const turnstileSiteKey = '0x4AAAAAADvt7AgpnTMnMZh6';
+const web3formsKey = 'ca9bc7d8-b852-43ba-829b-db452413852d';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE}${path}` },
+      ],
+    },
+    {
+      '@type': 'ContactPage',
+      name: 'Contact',
+      url: `${SITE}${path}`,
+      inLanguage: 'en',
+      isPartOf: { '@type': 'WebSite', name: 'Notofilia', url: `${SITE}/en/` },
+    },
+  ],
+};
+---
+<BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
+  <article class="max-w-content mx-auto px-6 pt-12 pb-4" data-pagefind-meta="url:/en/contact/">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
+      <a class="text-muted" href="/en/">Notofilia</a> <span aria-hidden="true">/</span>
+      <span>Contact</span>
+    </nav>
+
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div class="flex justify-center items-center min-h-[280px]">
+        <picture>
+          <source
+            srcset="/uploads/doblones-coloniales-oro-360.webp 360w, /uploads/doblones-coloniales-oro.webp 511w"
+            type="image/webp"
+            sizes="(max-width: 700px) 70vw, 360px"
+          />
+          <source
+            srcset="/uploads/doblones-coloniales-oro-360.png 360w, /uploads/doblones-coloniales-oro.png 511w"
+            type="image/png"
+            sizes="(max-width: 700px) 70vw, 360px"
+          />
+          <img
+            src="/uploads/doblones-coloniales-oro.png"
+            alt="Spanish colonial gold doubloons, cob coins of 8 and 4 escudos"
+            width="511"
+            height="511"
+            class="block w-full max-w-[360px] h-auto drop-shadow-[0_18px_30px_rgba(0,0,0,0.55)]"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+
+      <div data-contact-root>
+        <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+          Contact
+        </h1>
+        <p class="text-[18px] leading-[1.6] text-muted m-0 mb-8">
+          Questions about the catalog, the glossary, or a piece? Write to us and we will reply by email.
+        </p>
+
+        <form
+          id="web3forms-contact-form"
+          name="web3forms-contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          data-contact-form
+          class="grid gap-4"
+        >
+          <input type="hidden" name="access_key" value={web3formsKey} />
+          <input type="hidden" name="subject" value="New contact message — Notofilia.com" />
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="cf-name" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
+                Name <span aria-hidden="true" class="text-gold-deep">*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="cf-name"
+                required
+                autocomplete="name"
+                class="w-full box-border min-h-11 px-3.5 py-3 bg-panel border border-line-input rounded-[2px] text-cream font-serif text-[17px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+              />
+            </div>
+            <div>
+              <label for="cf-email" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
+                Email <span aria-hidden="true" class="text-gold-deep">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="cf-email"
+                required
+                autocomplete="email"
+                class="w-full box-border min-h-11 px-3.5 py-3 bg-panel border border-line-input rounded-[2px] text-cream font-serif text-[17px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="cf-country" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
+              Country you are writing from
+            </label>
+            <input
+              type="text"
+              name="country"
+              id="cf-country"
+              autocomplete="country-name"
+              class="w-full box-border min-h-11 px-3.5 py-3 bg-panel border border-line-input rounded-[2px] text-cream font-serif text-[17px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+            />
+          </div>
+
+          <div>
+            <label for="cf-message" class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2">
+              Message <span aria-hidden="true" class="text-gold-deep">*</span>
+            </label>
+            <textarea
+              name="message"
+              id="cf-message"
+              required
+              rows="6"
+              class="w-full box-border px-3.5 py-3 bg-panel border border-line-input rounded-[2px] text-cream font-serif text-[17px] resize-y focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+            ></textarea>
+          </div>
+
+          <div
+            class="cf-turnstile min-h-[65px] flex justify-center"
+            data-sitekey={turnstileSiteKey}
+            data-theme="dark"
+            data-size="flexible"
+            data-action="contact"
+          ></div>
+
+          <p data-contact-status role="status" aria-live="polite" class="hidden text-[16px] leading-[1.5] m-0 text-center"></p>
+
+          <div>
+            <button
+              type="submit"
+              data-contact-submit
+              class="min-h-11 px-10 py-3.5 border border-cream bg-cream text-bg font-serif font-semibold text-[16px] tracking-[0.14em] uppercase rounded-full cursor-pointer disabled:opacity-60 disabled:cursor-wait focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+            >
+              Send message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
+  <script is:inline>
+    (function () {
+      const root = document.querySelector('[data-contact-root]');
+      const form = root && root.querySelector('[data-contact-form]');
+      const status = root && root.querySelector('[data-contact-status]');
+      const submit = root && root.querySelector('[data-contact-submit]');
+      if (!form || !status || !submit) return;
+
+      (function prefillFromQuery() {
+        const params = new URLSearchParams(window.location.search);
+        const ficha = params.get('ficha');
+        const pageUrl = params.get('url');
+        const motivo = params.get('motivo');
+        const message = form.querySelector('#cf-message');
+        if (!message || message.value.trim()) return;
+        const lines = [];
+        if (motivo === 'error') lines.push('I want to report an error or add information.');
+        if (ficha) lines.push('Record: ' + ficha);
+        if (pageUrl) lines.push('URL: ' + pageUrl);
+        if (lines.length) {
+          lines.push('', 'Describe the error or the additional information:', '');
+          message.value = lines.join('\n');
+        }
+      })();
+
+      const copy = {
+        sending: 'Sending…',
+        success: 'Thank you! Your message was sent.',
+        error: 'There was an error sending the form. Please try again.',
+        turnstile: 'Please complete the security check.',
+      };
+
+      function showStatus(kind, message) {
+        status.hidden = false;
+        status.classList.remove('hidden');
+        status.textContent = message;
+        status.className =
+          kind === 'success'
+            ? 'text-[16px] leading-[1.5] m-0 mb-5 text-center text-[#7fbf82]'
+            : kind === 'info'
+              ? 'text-[16px] leading-[1.5] m-0 mb-5 text-center text-muted'
+              : 'text-[16px] leading-[1.5] m-0 mb-5 text-center text-[#e08a8a]';
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const data = new FormData(form);
+        if (data.get('botcheck')) return;
+        if (!data.get('cf-turnstile-response')) {
+          showStatus('error', copy.turnstile);
+          return;
+        }
+        submit.disabled = true;
+        const idleLabel = submit.textContent;
+        submit.textContent = copy.sending;
+        showStatus('info', copy.sending);
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: data,
+          });
+          const json = await res.json();
+          if (json && json.success) {
+            showStatus('success', copy.success);
+            form.reset();
+            if (window.turnstile) window.turnstile.reset();
+          } else {
+            showStatus('error', copy.error);
+            if (window.turnstile) window.turnstile.reset();
+          }
+        } catch (err) {
+          showStatus('error', copy.error);
+          if (window.turnstile) window.turnstile.reset();
+        } finally {
+          submit.disabled = false;
+          submit.textContent = idleLabel;
+        }
+      });
+    })();
+  </script>
+</BlogLayout>

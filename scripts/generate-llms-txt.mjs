@@ -22,9 +22,10 @@ const GLOSARIO_DIR = path.join(ROOT, 'src/content/glosario');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
-  { path: '/coleccion/', label: 'Colección Virtual' },
   { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
+  { path: '/coleccion/estados-unidos/', label: 'Estados Unidos' },
+  { path: '/coleccion/espana/', label: 'España' },
   { path: '/coleccion/colombia/banca-libre/', label: 'Banca libre colombiana' },
   { path: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones colombianas en el extranjero' },
   { path: '/coleccion/puerto-rico/', label: 'Billetes de Puerto Rico' },
@@ -109,7 +110,7 @@ function sectionForPath(p) {
   }
   if (p.startsWith('/coleccion/pop-art/')) return '/coleccion/pop-art/';
   if (p.startsWith('/coleccion/emisiones-promocionales/')) return '/coleccion/emisiones-promocionales/';
-  return '/coleccion/';
+  return '/coleccion/colombia/';
 }
 
 async function loadCatalog() {
@@ -198,7 +199,7 @@ function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCoun
     '',
     '**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*',
     '',
-    '**Idioma:** contenido editorial en español (`lang=es`). El interruptor ES/EN del encabezado cambia solo el idioma de la interfaz (chrome), no traduce títulos ni fechas; no implica un documento `/en/` con hreflang recíproco.',
+    '**Idioma:** el español es el idioma principal y vive en las URLs raíz (`lang=es`, p. ej. `/coleccion/`, `/noticias/`). El inglés vive bajo `/en/` con slugs traducidos (`lang=en`, p. ej. `/en/collection/colombia/`, `/en/news/`). Las páginas emparejadas emiten hreflang recíproco (`es`, `en`, `x-default` → URL española). El selector de idioma del encabezado es un enlace `<a href>` al equivalente; no hay redirección por `Accept-Language` ni por país. Cada ficha y hub de `/coleccion/` tiene par inglés; las noticias individuales pueden seguir solo en español.',
     '',
     '**Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
     '',
@@ -232,16 +233,16 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
       description: entry?.description || h.label,
       title: entry?.title || h.label,
     };
-  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/' || h.path === '/coleccion/numismatica/');
+  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/numismatica/');
 
   const lines = [];
 
   lines.push('## Sitio principal', '');
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
-  lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Hub global de la Colección Virtual: billetes, filtros y accesos por país.'));
+  lines.push(linkLine('Catálogo de Colombia', abs('/coleccion/colombia/'), 'Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.'));
   lines.push(linkLine('Catálogo de Numismática', abs('/coleccion/numismatica/'), 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.'));
-  lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
-  lines.push(linkLine('Logros del Mes', abs('/#logros-heading'), 'Piezas y avances recientes de la Colección Virtual (sección en la home).'));
+  lines.push(linkLine('Guías para coleccionistas', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
+  lines.push(linkLine('Sobre Notofilia', abs('/nosotros/'), 'Qué es el proyecto, quién lo edita y cómo citar las fichas.'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));

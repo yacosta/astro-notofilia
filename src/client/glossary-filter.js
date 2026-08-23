@@ -15,6 +15,11 @@
   var chips = Array.prototype.slice.call(root.querySelectorAll('[data-glossary-category]'));
   var activeCategory = '';
 
+  function isEn() {
+    var el = document.documentElement;
+    return el.getAttribute('data-page-locale') === 'en' || el.lang === 'en';
+  }
+
   function normalize(text) {
     return (text || '')
       .toLowerCase()
@@ -50,16 +55,16 @@
     if (!status) return;
     if (needle || activeCategory) {
       if (visible === 1) {
-        status.textContent = document.documentElement.getAttribute('data-interface-lang') === 'en'
+        status.textContent = isEn()
           ? '1 result' + (needle ? ' for “' + query.trim() + '”.' : '.')
           : '1 resultado' + (needle ? ' para «' + query.trim() + '».' : '.');
       } else {
-        status.textContent = document.documentElement.getAttribute('data-interface-lang') === 'en'
+        status.textContent = isEn()
           ? visible + ' results' + (needle ? ' for “' + query.trim() + '”.' : '.')
           : visible + ' resultados' + (needle ? ' para «' + query.trim() + '».' : '.');
       }
     } else {
-      status.textContent = document.documentElement.getAttribute('data-interface-lang') === 'en'
+      status.textContent = isEn()
         ? 'Showing all ' + cards.length + ' glossary terms.'
         : 'Mostrando los ' + cards.length + ' términos del glosario.';
     }
@@ -102,6 +107,4 @@
       applyFilter();
     });
   });
-
-  document.addEventListener('notofilia:interface-lang', applyFilter);
 })();

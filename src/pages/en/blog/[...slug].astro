@@ -1,0 +1,127 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import Cover from '../../../components/Cover.astro';
+import { COLLECTIONS, articleJsonLdEn } from '../../../lib/collections';
+import { EDITORIAL_TEAM } from '../../../lib/editorial';
+import { formatDateLongEn, toIsoDate } from '../../../lib/dates';
+import { metaDescription, titleTag } from '../../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog-en', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+type Props = { post: CollectionEntry<'blog-en'> };
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const meta = COLLECTIONS.blog;
+const path = `/en/blog/${post.id}/`;
+const iso = toIsoDate(d.publishedAt);
+const jsonLd = articleJsonLdEn(meta, post, iso, path);
+const reviewedBy = d.reviewedBy?.trim() || EDITORIAL_TEAM.name;
+const updatedIso = d.updatedAt ? toIsoDate(d.updatedAt) : undefined;
+const updatedFmt = d.updatedAt ? formatDateLongEn(d.updatedAt) : undefined;
+const coverFit = d.coverFit ?? 'cover';
+---
+<BlogLayout
+  locale="en"
+  title={titleTag(d.title)}
+  description={metaDescription(d.excerpt)}
+  path={path}
+  ogType="article"
+  ogImage={d.cover ? `/uploads/${d.cover}.jpg` : undefined}
+  jsonLd={jsonLd}
+>
+  <article class="max-w-content mx-auto px-6 pt-12">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
+      <a class="text-muted" href="/en/">Home</a> <span aria-hidden="true">/</span>
+      <a class="text-muted" href="/en/blog/">Blog</a> <span aria-hidden="true">/</span>
+      <span>{d.title}</span>
+    </nav>
+
+    <header>
+      <div class="flex flex-wrap gap-x-2 gap-y-1 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
+        <span>
+          Published
+          {' '}
+          <time datetime={iso}>{formatDateLongEn(d.publishedAt)}</time>
+        </span>
+      </div>
+      {d.source && (
+        <p class="m-0 mb-3 text-[13px] tracking-[0.08em] uppercase text-muted">{d.source}</p>
+      )}
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        {d.title}
+      </h1>
+      <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 leading-[1.5] mb-5">
+        {d.excerpt}
+      </p>
+      <dl class="m-0 mb-9 grid gap-1 text-[14px] tracking-[0.02em] text-muted not-italic">
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="m-0 font-semibold text-cream-soft">Reviewed by</dt>
+          <dd class="m-0">
+            <a class="text-muted hover:text-cream" href="/en/editorial/team/">{reviewedBy}</a>
+          </dd>
+        </div>
+        {updatedFmt && updatedIso && (
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="m-0 font-semibold text-cream-soft">Last updated</dt>
+            <dd class="m-0"><time datetime={updatedIso}>{updatedFmt}</time></dd>
+          </div>
+        )}
+      </dl>
+    </header>
+
+    {d.cover && (
+      <figure class="cover mt-0 mb-10">
+        <Cover
+          base={d.cover}
+          alt={d.coverAlt ?? d.title}
+          eager
+          ratio="16 / 9"
+          fit={coverFit}
+        />
+        {(d.coverCaption || d.coverAlt) && (
+          <figcaption class="text-[13px] text-muted mt-[10px] text-center italic">
+            {d.coverCaption ?? d.coverAlt}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    <div class="prose-notofilia text-[20px] leading-[1.75] text-cream-dim">
+      <Content />
+    </div>
+
+    {d.relatedLinks && d.relatedLinks.length > 0 && (
+      <aside class="mt-12 border border-line rounded-[4px] px-6 py-6" aria-labelledby="related-heading">
+        <h2 id="related-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4">Keep exploring</h2>
+        <ul class="grid gap-4 list-none p-0 m-0 sm:grid-cols-2">
+          {d.relatedLinks.map((link) => (
+            <li>
+              <a class="text-cream font-semibold" href={link.href}>{link.title}</a>
+              {link.description && <p class="text-[16px] leading-[1.5] text-muted mt-1 mb-0">{link.description}</p>}
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+
+    <p class="mt-6 text-[14px] text-muted">
+      <a class="text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] hover:text-cream" href="/en/editorial/">
+        Editorial and valuation policy
+      </a>
+    </p>
+
+    <p class="mt-10"><a class="text-muted" href="/en/blog/">&larr; Back to the Blog</a></p>
+  </article>
+</BlogLayout>
+
+<style>
+  .cover :global(picture) { display: block; border-radius: 4px; overflow: hidden; }
+</style>

@@ -69,11 +69,14 @@ const postSchema = z.object({
 });
 
 // "Noticias" — curated news. Each post is a Markdown file in
-// src/content/noticias/ → /noticias/<id>/. Typically a short summary that
-// points to an external source (set `source` + `sourceUrl`).
+// src/content/noticias/ → /noticias/<id>/. Short summaries that must
+// credit the original outlet (`source` + `sourceUrl` render as “Fuente:”).
 const noticias = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/noticias' }),
-  schema: postSchema,
+  schema: postSchema.extend({
+    source: z.string().min(1),
+    sourceUrl: z.string().url(),
+  }),
 });
 
 // "Blog" — original evergreen guides. Each post is a Markdown file in
@@ -82,6 +85,26 @@ const noticias = defineCollection({
 const blog = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog' }),
   schema: postSchema,
+});
+
+const enPairSchema = {
+  /** Spanish counterpart path, e.g. `/blog/some-slug/`. */
+  pairEs: z.string().startsWith('/').endsWith('/'),
+};
+
+// Parallel English editorial collections — never nested inside Spanish globs.
+const blogEn = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog-en' }),
+  schema: postSchema.extend(enPairSchema),
+});
+
+const noticiasEn = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/noticias-en' }),
+  schema: postSchema.extend({
+    ...enPairSchema,
+    source: z.string().min(1),
+    sourceUrl: z.string().url(),
+  }),
 });
 
 // "Logros" — monthly milestones for the virtual collection. Each post is a
@@ -113,6 +136,22 @@ const catalog = defineCollection({
     legacyFile: z.string(),
     sourceHash: z.string(),
     record: catalogRecordSchema.optional(),
+    /** English overlay. Absent → no `/en/` catalog route. */
+    i18n: z
+      .object({
+        en: z.object({
+          path: z.string().startsWith('/en/').endsWith('/'),
+          title: z.string(),
+          description: z.string(),
+          ogTitle: z.string().optional(),
+          ogDescription: z.string().optional(),
+          /** Required to publish EN for astro-hub / astro-static pages. Human-authored HTML. */
+          template: z.string().optional(),
+          recordTitle: z.string().optional(),
+          eyebrow: z.string().optional(),
+        }),
+      })
+      .optional(),
   }),
 });
 
@@ -144,4 +183,12 @@ const glosario = defineCollection({
   }),
 });
 
-export const collections = { noticias, blog, logros, catalog, glosario };
+export const collections = {
+  noticias,
+  blog,
+  logros,
+  catalog,
+  glosario,
+  'blog-en': blogEn,
+  'noticias-en': noticiasEn,
+};
