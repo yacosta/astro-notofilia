@@ -918,6 +918,8 @@ test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page 
   await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toHaveCount(0);
   await drawer.locator('summary', { hasText: 'Colecciones virtuales — Notafilia' }).click();
   await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Colombia', exact: true })).toHaveClass(/site-header__accordion-lead/);
+  await expect(drawer.getByRole('link', { name: 'Estados Unidos', exact: true })).toHaveClass(/site-header__accordion-lead/);
   await expect(drawer.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
   await drawer.getByRole('button', { name: 'Mostrar secciones de Colombia' }).click();

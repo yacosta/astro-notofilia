@@ -167,6 +167,7 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
       href: '/coleccion/estados-unidos/',
       label: 'Estados Unidos',
       labelEn: 'United States',
+      lead: true,
       children: [
         {
           href: '/coleccion/moneda-colonial/',
