@@ -6,12 +6,12 @@
     "description": "Public catalog, health, comments, and agent registration APIs for Notofilia.com.",
     "contact": {
       "name": "Notofilia",
-      "url": "https://www.notofilia.com/contacto/"
+      "url": "https://notofilia.com/contacto/"
     }
   },
   "servers": [
     {
-      "url": "https://www.notofilia.com"
+      "url": "https://notofilia.com"
     }
   ],
   "paths": {
@@ -66,6 +66,18 @@
                   "type": "object",
                   "properties": {
                     "count": { "type": "integer" },
+                    "total": { "type": "integer" },
+                    "stats": {
+                      "type": "object",
+                      "description": "Live inventory from the catalog collection (ficha / billete / página).",
+                      "properties": {
+                        "billetes": { "type": "integer" },
+                        "monedas": { "type": "integer" },
+                        "paises": { "type": "integer" },
+                        "fichas": { "type": "integer" },
+                        "paginas": { "type": "integer" }
+                      }
+                    },
                     "items": {
                       "type": "array",
                       "items": {

@@ -1,0 +1,66 @@
+---
+/**
+ * Per-record CTA to report an error or submit additional information.
+ */
+import { reportMailto, type CatalogRecord } from '../../lib/catalog-record';
+import { t, type Locale } from '../../lib/ui-i18n';
+import { alternateUrl } from '../../i18n/pairs';
+
+interface Props {
+  record: CatalogRecord;
+  path: string;
+  locale?: Locale;
+}
+
+const { record, path, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const mailto = reportMailto(record, path);
+const contactBase = isEn ? (alternateUrl('/contacto/', 'en') ?? '/contacto/') : '/contacto/';
+const contactParams = new URLSearchParams({
+  ficha: record.id,
+  url: `${path.startsWith('http') ? path : path}`,
+});
+const contactHref = `${contactBase}?${contactParams.toString()}`;
+const editorialHref = isEn
+  ? `${alternateUrl('/editorial/', 'en') ?? '/editorial/'}#corrections`
+  : '/editorial/#como-reportar-un-error';
+---
+<section class="catalog-record-feedback" aria-labelledby="catalog-feedback-heading">
+  <h2
+    id="catalog-feedback-heading"
+    class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : t('feedbackHeading', 'en')}
+  >
+    {t('feedbackHeading', locale)}
+  </h2>
+  <p class="m-0 mb-4 text-[16px] leading-[1.65] text-cream-dim" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : t('feedbackBody', 'en')}>
+    {t('feedbackBody', locale)}
+  </p>
+  <div class="flex flex-wrap gap-3">
+    <a
+      class="inline-flex min-h-11 items-center px-5 border border-cream text-cream no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      href={mailto}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('writeEmail', 'en')}
+    >
+      {t('writeEmail', locale)}
+    </a>
+    <a
+      class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      href={contactHref}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('contactForm', 'en')}
+    >
+      {t('contactForm', locale)}
+    </a>
+    <a
+      class="inline-flex min-h-11 items-center px-5 border border-line text-muted no-underline text-[14px] tracking-[0.08em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      href={editorialHref}
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : t('editorialPolicy', 'en')}
+    >
+      {t('editorialPolicy', locale)}
+    </a>
+  </div>
+</section>

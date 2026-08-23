@@ -2,9 +2,21 @@ User-agent: *
 Allow: /
 
 # LLM / agent context (llmstxt.org)
-# https://www.notofilia.com/llms.txt
-# https://www.notofilia.com/llms-full.txt
+# https://notofilia.com/llms.txt
+# https://notofilia.com/llms-full.txt
 
-Sitemap: https://www.notofilia.com/sitemap_index.xml
-Sitemap: https://www.notofilia.com/sitemap.xml
-Sitemap: https://www.notofilia.com/news-sitemap.xml
+# Auth / machine endpoints — not for search indexing
+# The English tree (/en/) is public and indexable — do not Disallow /en.
+Disallow: /oauth/
+Disallow: /api/
+Disallow: /mcp
+Disallow: /mcp/
+
+# Shared template fragments are archived (not published)
+Disallow: /BanknoteCard.dc.html
+Disallow: /SiteHeader.dc.html
+Disallow: /SiteFooter.dc.html
+
+Sitemap: https://notofilia.com/sitemap_index.xml
+Sitemap: https://notofilia.com/sitemap.xml
+Sitemap: https://notofilia.com/news-sitemap.xml

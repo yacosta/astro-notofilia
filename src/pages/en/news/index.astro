@@ -1,0 +1,94 @@
+---
+/**
+ * English news index. Lists existing Spanish noticias with lang="es" titles.
+ * Individual news translations are deferred.
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import Cover from '../../../components/Cover.astro';
+import { COLLECTIONS, collectionIndexJsonLdEn } from '../../../lib/collections';
+import { getPublishedPosts } from '../../../lib/posts';
+import { formatDateLongEn, toIsoDate } from '../../../lib/dates';
+import { SITE } from '../../../lib/site';
+
+const meta = COLLECTIONS.noticias;
+const posts = await getPublishedPosts('noticias');
+const path = '/en/news/';
+const title = 'Numismatics and Notaphily News | Notofilia';
+const description =
+  'Curated news on numismatics and notaphily: issues, finds, and values of collectible banknotes and coins from Colombia and the world.';
+const jsonLd = collectionIndexJsonLdEn({
+  label: meta.labelEn,
+  jsonLdName: 'Numismatics and Notaphily News',
+  jsonLdDescription: description,
+  path,
+  posts: posts.map((post) => ({
+    title: post.data.title,
+    url: `${SITE}/noticias/${post.id}/`,
+  })),
+});
+---
+<BlogLayout locale="en" title={title} description={description} path={path} jsonLd={jsonLd}>
+  <div class="max-w-content mx-auto px-6 pt-14 pb-6">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
+      <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/en/">Home</a>
+      <span aria-hidden="true">/</span> <span>News</span>
+    </nav>
+    <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]">
+      {meta.headingEn}
+    </h1>
+    <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]">
+      {meta.introEn} Individual articles remain in Spanish until a full English translation is published.
+    </p>
+
+    {posts.length === 0 ? (
+      <p class="text-muted">{meta.emptyMessageEn}</p>
+    ) : (
+      <ul class="list-none m-0 p-0 grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-x-8 gap-y-10">
+        {posts.map((post) => (
+          <li class="card">
+            {post.data.cover && (
+              <Cover base={post.data.cover} alt={post.data.coverAlt ?? ''} ratio="16 / 10" />
+            )}
+            <div class="pt-4 mt-4 border-t-2 border-muted">
+              <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.06em] uppercase text-muted mb-2">
+                <time datetime={toIsoDate(post.data.publishedAt)}>
+                  {formatDateLongEn(post.data.publishedAt)}
+                </time>
+              </div>
+              {post.data.source && post.data.sourceUrl && (
+                <p class="m-0 mb-2 flex flex-wrap items-center gap-x-1.5 text-[13px] leading-[1.4] tracking-[0.04em] text-muted">
+                  <span class="shrink-0">Source:</span>
+                  <a
+                    class="inline-flex min-h-[44px] min-w-0 max-w-full flex-wrap items-center gap-x-1 underline text-cream [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+                    href={post.data.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {post.data.source}<span class="new-window-hint"> (opens in a new tab)</span>
+                  </a>
+                </p>
+              )}
+              <a class="group block no-underline text-inherit" href={`/noticias/${post.id}/`}>
+                <h2 lang="es" class="font-display font-normal text-[clamp(19px,2vw,22px)] text-cream mt-0 mb-2 leading-[1.25] group-hover:text-white">
+                  {post.data.title}
+                </h2>
+                <p lang="es" class="text-[16px] text-cream-dim mt-0 mb-3">{post.data.excerpt}</p>
+                <span class="text-[14px] tracking-[0.08em] uppercase text-muted font-semibold">Read more →</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BlogLayout>
+
+<style>
+  .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }
+  .card :global(img) { transition: transform 0.4s ease; }
+  .card:hover :global(img) { transform: scale(1.03); }
+  @media (prefers-reduced-motion: reduce) {
+    .card :global(img) { transition: none; }
+    .card:hover :global(img) { transform: none; }
+  }
+</style>

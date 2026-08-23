@@ -1,0 +1,169 @@
+---
+/**
+ * Dedicated search results page — works without the header dropdown JS.
+ * Uses Pagefind UI when available; falls back to a GET form + link to /coleccion/.
+ */
+import BaseHead from '../../components/BaseHead.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import PreFooter from '../../components/PreFooter.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
+
+const q = Astro.url.searchParams.get('q')?.trim() ?? '';
+const title = q
+  ? `Buscar: ${q} | Notofilia`
+  : 'Buscar en Notofilia | Billetes y monedas';
+const description = q
+  ? `Resultados de búsqueda para “${q}” en la colección virtual y el archivo editorial de Notofilia.`
+  : 'Busca billetes, monedas, perfiles e historias en la colección virtual de Notofilia.';
+---
+<!doctype html>
+<html lang="es" data-page-locale="es">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      path="/buscar/"
+      locale="es"
+      robots="noindex, follow"
+      loadDcRuntime={false}
+    />
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <style is:global>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #0a0a09; color: #d8d2cd; }
+      .buscar-main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+        font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+      }
+      .buscar-main h1 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(28px, 4vw, 42px);
+        margin: 0 0 16px;
+        color: #d8d2cd;
+      }
+      .buscar-lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #b7ab8a;
+        margin: 0 0 28px;
+        max-width: 40rem;
+      }
+      .buscar-fallback {
+        margin-top: 24px;
+        font-size: 16px;
+        color: #b7ab8a;
+      }
+      .buscar-fallback a { color: #e7ddc4; }
+      #buscar-pagefind .pagefind-ui {
+        --pagefind-ui-primary: #e7ddc4;
+        --pagefind-ui-text: #d8d2cd;
+        --pagefind-ui-background: #161410;
+        --pagefind-ui-border: rgba(231, 222, 201, 0.18);
+        --pagefind-ui-border-width: 1px;
+        --pagefind-ui-border-radius: 4px;
+        --pagefind-ui-font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"
+      data-i18n
+      data-en="Skip to main content"
+    >Saltar al contenido principal</a>
+    <SiteHeader path="/buscar/" />
+    <main id="main-content" class="buscar-main" tabindex="-1" data-pagefind-ignore>
+      <h1 data-i18n data-en="Search">Buscar</h1>
+      <p class="buscar-lead">
+        <span data-i18n data-en="Find collection records, profiles, and articles. You can also">Encuentra fichas de la colección, perfiles e artículos. También puedes</span>
+        {' '}
+        <a href="/coleccion/colombia/" data-i18n data-en="browse the Colombia catalog">explorar el catálogo de Colombia</a>.
+      </p>
+      <div id="buscar-pagefind" data-initial-query={q}></div>
+      <noscript>
+        <form action="/buscar/" method="get" role="search">
+          <label for="buscar-q" data-i18n data-en="Query">Consulta</label>
+          <input id="buscar-q" name="q" type="search" value={q} />
+          <button type="submit" data-i18n data-en="Search">Buscar</button>
+        </form>
+        <p class="buscar-fallback">
+          <span data-i18n data-en="With JavaScript off, use the">Con JavaScript desactivado, usa el</span>
+          {' '}
+          <a href="/coleccion/colombia/" data-i18n data-en="catalog">catálogo</a>
+          {' '}
+          <span data-i18n data-en="or your browser’s find-in-page on site pages.">o el buscador del navegador en las páginas del sitio.</span>
+        </p>
+      </noscript>
+    </main>
+    <PreFooter />
+    <SiteFooter variant="editorial" />
+    <CookieBanner />
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
+    <script is:inline>
+      (function () {
+        var host = document.getElementById('buscar-pagefind');
+        if (!host) return;
+        var initial = host.getAttribute('data-initial-query') || '';
+        var translations = {
+          es: {
+            placeholder: 'Buscar billetes, perfiles, artículos…',
+            clear_search: 'Limpiar',
+            load_more: 'Cargar más',
+            search_label: 'Buscar en Notofilia',
+            filters_label: 'Filtros',
+            zero_results: 'Sin resultados para [SEARCH_TERM]',
+            many_results: '[COUNT] resultados para [SEARCH_TERM]',
+            one_result: '1 resultado para [SEARCH_TERM]',
+            fail: 'No se pudo cargar el índice de búsqueda. <a href="/coleccion/colombia/">Explorar la colección</a>.',
+          },
+          en: {
+            placeholder: 'Search banknotes, profiles, articles…',
+            clear_search: 'Clear',
+            load_more: 'Load more',
+            search_label: 'Search Notofilia',
+            filters_label: 'Filters',
+            zero_results: 'No results for [SEARCH_TERM]',
+            many_results: '[COUNT] results for [SEARCH_TERM]',
+            one_result: '1 result for [SEARCH_TERM]',
+            fail: 'The search index could not be loaded. <a href="/en/collection/colombia/">Browse the collection</a>.',
+          },
+        };
+        function currentLang() {
+          var root = document.documentElement;
+          return root.getAttribute('data-page-locale') === 'en' || root.lang === 'en' ? 'en' : 'es';
+        }
+        function boot() {
+          var copy = translations[currentLang()];
+          if (typeof PagefindUI === 'undefined') {
+            host.innerHTML = '<p class="buscar-fallback">' + copy.fail + '</p>';
+            return;
+          }
+          host.innerHTML = '';
+          new PagefindUI({
+            element: '#buscar-pagefind',
+            showImages: false,
+            showSubResults: false,
+            translations: copy,
+          });
+          if (initial) {
+            var input = host.querySelector('input[type="text"], input[type="search"]');
+            if (input) {
+              input.value = initial;
+              input.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+          }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', boot);
+        } else {
+          boot();
+        }
+      })();
+    </script>
+  </body>
+</html>

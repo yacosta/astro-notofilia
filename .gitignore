@@ -25,3 +25,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Lighthouse CI local output
+.lighthouseci/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

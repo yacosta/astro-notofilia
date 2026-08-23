@@ -1,83 +1,7 @@
 [
   {
-    "route": "/coleccion/",
+    "route": "/coleccion/billete-obsoleto-estados-unidos/",
     "legacyFile": "catalogo.dc.html"
-  },
-  {
-    "route": "/coleccion/reserva-federal/",
-    "legacyFile": "catalogo-reserva-federal.dc.html"
-  },
-  {
-    "route": "/coleccion/departamento-del-tesoro-de-ee-uu/",
-    "legacyFile": "departamento-del-tesoro-de-ee-uu.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial/",
-    "legacyFile": "catalogo-moneda-colonial.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/",
-    "legacyFile": "catalogo-moneda-colonial-espanola.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/",
-    "legacyFile": "moneda-colombia-2-escudos-felipe-v.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/",
-    "legacyFile": "moneda-colombia-2-escudos-carlos-iv-1791.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/",
-    "legacyFile": "moneda-colombia-1-escudo-fernando-vii-1820.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/",
-    "legacyFile": "moneda-colombia-1-escudo-carlos-iii-1774.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/",
-    "legacyFile": "moneda-colombia-1-escudo-carlos-iii-1787.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/",
-    "legacyFile": "moneda-colombia-1-escudo-carlos-iv-1802.dc.html"
-  },
-  {
-    "route": "/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/",
-    "legacyFile": "moneda-colombia-1-escudo-fernando-vii-1811.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/",
-    "legacyFile": "catalogo-colombia.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banca-libre/",
-    "legacyFile": "catalogo-banca-libre.dc.html"
-  },
-  {
-    "route": "/coleccion/puerto-rico/",
-    "legacyFile": "catalogo-puerto-rico.dc.html"
-  },
-  {
-    "route": "/coleccion/ecuador/",
-    "legacyFile": "catalogo-ecuador.dc.html"
-  },
-  {
-    "route": "/coleccion/state-bank-new-brunswick/1-dolar/",
-    "legacyFile": "billete-state-bank-new-brunswick.dc.html"
-  },
-  {
-    "route": "/coleccion/citizens-bank-of-louisiana/5-dolares/",
-    "legacyFile": "billete-citizens-bank-of-louisiana.dc.html"
-  },
-  {
-    "route": "/coleccion/city-bank-new-haven/5-dolares/",
-    "legacyFile": "billete-city-bank-new-haven.dc.html"
-  },
-  {
-    "route": "/coleccion/hagerstown-bank-maryland/",
-    "legacyFile": "billete-hagerstown-bank-maryland.dc.html"
   },
   {
     "route": "/coleccion/adrian-insurance-michigan/2-dolares/",
@@ -88,148 +12,76 @@
     "legacyFile": "billete-certificado-de-oro-10-dolares-1928.dc.html"
   },
   {
-    "route": "/coleccion/un-dolar-sello-rojo-1928/",
-    "legacyFile": "billete-un-dolar-sello-rojo-1928.dc.html"
+    "route": "/coleccion/certificados-de-pago-militar/",
+    "legacyFile": "catalogo-certificados-de-pago-militar.dc.html"
   },
   {
-    "route": "/coleccion/cien-dolares-sello-rojo-1966/",
-    "legacyFile": "billete-cien-dolares-sello-rojo-1966.dc.html"
+    "route": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
+    "legacyFile": "billete-mpc-serie-641-10-dolares.dc.html"
   },
   {
-    "route": "/coleccion/giori-press-test-note/",
-    "legacyFile": "billete-giori-press-test-note.dc.html"
+    "route": "/coleccion/certificados-de-pago-militar/1-dolar-serie-681/",
+    "legacyFile": "billete-mpc-serie-681-1-dolar.dc.html"
   },
   {
-    "route": "/coleccion/diez-dolares-1934-distritos/",
-    "legacyFile": "billete-diez-dolares-1934-distritos.dc.html"
+    "route": "/coleccion/certificados-de-pago-militar/20-dolares-serie-692/",
+    "legacyFile": "billete-mpc-serie-692-20-dolares.dc.html"
   },
   {
-    "route": "/coleccion/veinte-dolares-hawaii-1934/",
-    "legacyFile": "billete-veinte-dolares-hawaii-1934.dc.html"
+    "route": "/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/",
+    "legacyFile": "perfil-jefe-ouray.dc.html"
   },
   {
     "route": "/coleccion/cien-dolares-minneapolis-1929/",
     "legacyFile": "billete-federal-reserve-bank-note-100-dolares-minneapolis-1929.dc.html"
   },
   {
-    "route": "/coleccion/un-dolar-norte-africa-1935a/",
-    "legacyFile": "billete-plata-1-dolar-norte-africa-1935a.dc.html"
+    "route": "/coleccion/cien-dolares-sello-rojo-1966/",
+    "legacyFile": "billete-cien-dolares-sello-rojo-1966.dc.html"
   },
   {
-    "route": "/coleccion/moneda-colonial/provincia-de-pensilvania/",
-    "legacyFile": "billete-provincia-de-pensilvania-colonial.dc.html"
+    "route": "/coleccion/citizens-bank-of-louisiana/5-dolares/",
+    "legacyFile": "billete-citizens-bank-of-louisiana.dc.html"
   },
   {
-    "route": "/coleccion/colombia/cartagena-1-real-1813/",
-    "legacyFile": "billete-colombia-cartagena-1-real-1813.dc.html"
+    "route": "/coleccion/city-bank-new-haven/5-dolares/",
+    "legacyFile": "billete-city-bank-new-haven.dc.html"
   },
   {
-    "route": "/coleccion/colombia/nueva-granada-1-peso-1861/",
-    "legacyFile": "billete-colombia-nueva-granada-1-peso-1861.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-caldas-1-peso-1919/",
-    "legacyFile": "billete-colombia-banco-de-caldas-1-peso-1919.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
-    "legacyFile": "billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
-    "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
-    "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-la-republica-50000-pesos/",
-    "legacyFile": "billete-colombia-banco-de-la-republica-50000-pesos.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/2000-pesos-error-mariposa/",
-    "legacyFile": "billete-colombia-2000-pesos-error-mariposa.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/2000-pesos-error-corte-descentrado/",
-    "legacyFile": "billete-colombia-2000-pesos-error-corte-descentrado.dc.html"
+    "route": "/coleccion/colombia/",
+    "legacyFile": "catalogo-colombia.dc.html"
   },
   {
     "route": "/coleccion/colombia/2000-pesos-1996-error-mariposa/",
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-1996-error-mariposa.dc.html"
   },
   {
-    "route": "/coleccion/colombia/perfil-german-gutierrez-de-pineres/",
-    "legacyFile": "perfil-german-gutierrez-de-pineres.dc.html"
+    "route": "/coleccion/colombia/2000-pesos-error-corte-descentrado/",
+    "legacyFile": "billete-colombia-2000-pesos-error-corte-descentrado.dc.html"
   },
   {
-    "route": "/coleccion/colombia/perfil-rafael-nunez/",
-    "legacyFile": "perfil-rafael-nunez.dc.html"
+    "route": "/coleccion/colombia/2000-pesos-error-mariposa/",
+    "legacyFile": "billete-colombia-2000-pesos-error-mariposa.dc.html"
   },
   {
-    "route": "/coleccion/colombia/vicente-villa-e-hijos-5-pesos/",
-    "legacyFile": "billete-colombia-vicente-villa-e-hijos-5-pesos-1880s.dc.html"
+    "route": "/coleccion/colombia/banca-libre/",
+    "legacyFile": "catalogo-banca-libre.dc.html"
   },
   {
-    "route": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/",
-    "legacyFile": "billete-colombia-banco-de-pamplona-10-pesos-1884.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",
-    "legacyFile": "billete-colombia-banco-de-barranquilla-50-centavos-1900.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-medellin-50-centavos/",
-    "legacyFile": "billete-colombia-banco-de-medellin-50-centavos.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-de-oriente-5-pesos-1888/",
-    "legacyFile": "billete-colombia-banco-de-oriente-5-pesos-1888.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-internacional-1-peso-1884/",
-    "legacyFile": "billete-colombia-banco-internacional-1-peso-1884.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-nacional-25-pesos-1895/",
-    "legacyFile": "billete-colombia-banco-nacional-25-pesos-1895.dc.html"
+    "route": "/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/",
+    "legacyFile": "billete-guatemala-banco-colombiano-1-peso-1900.dc.html"
   },
   {
     "route": "/coleccion/colombia/banco-de-antioquia-libranza-10-centavos-1900/",
     "legacyFile": "billete-colombia-banco-de-antioquia-libranza-10-centavos-1900.dc.html"
   },
   {
-    "route": "/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/",
-    "legacyFile": "billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html"
+    "route": "/coleccion/colombia/banco-de-barranquilla-50-centavos-1900/",
+    "legacyFile": "billete-colombia-banco-de-barranquilla-50-centavos-1900.dc.html"
   },
   {
-    "route": "/coleccion/puerto-rico/perfil-alejandro-ramirez/",
-    "legacyFile": "perfil-alejandro-ramirez.dc.html"
-  },
-  {
-    "route": "/coleccion/puerto-rico/billete-de-canje-1-peso-1895/",
-    "legacyFile": "billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html"
-  },
-  {
-    "route": "/coleccion/puerto-rico/junta-central-cuba-1869/",
-    "legacyFile": "billete-puerto-rico-junta-central-cuba-1869.dc.html"
-  },
-  {
-    "route": "/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
-    "legacyFile": "billete-puerto-rico-republica-de-cuba-1-peso-1869.dc.html"
-  },
-  {
-    "route": "/coleccion/puerto-rico/perfil-jose-morales-lemus/",
-    "legacyFile": "perfil-jose-morales-lemus.dc.html"
-  },
-  {
-    "route": "/coleccion/ecuador/100-sucres-1993/",
-    "legacyFile": "billete-ecuador-100-sucres-1993.dc.html"
-  },
-  {
-    "route": "/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/",
-    "legacyFile": "billete-guatemala-banco-colombiano-1-peso-1900.dc.html"
+    "route": "/coleccion/colombia/banco-de-caldas-1-peso-1919/",
+    "legacyFile": "billete-colombia-banco-de-caldas-1-peso-1919.dc.html"
   },
   {
     "route": "/coleccion/colombia/banco-de-colombia-1-peso-oro-1919/",
@@ -238,6 +90,18 @@
   {
     "route": "/coleccion/colombia/banco-de-la-republica-1-peso-specimen/",
     "legacyFile": "billete-colombia-banco-de-la-republica-1-peso-specimen.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-10-pesos-oro-1943.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-la-republica-100-pesos-oro/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-100-pesos-oro.dc.html"
   },
   {
     "route": "/coleccion/colombia/banco-de-la-republica-1000-pesos/",
@@ -256,6 +120,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-200-pesos-oro-specimen.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/",
     "legacyFile": "billete-colombia-banco-de-la-republica-5-pesos-plata-1941.dc.html"
   },
@@ -272,6 +140,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-5000-pesos-oro-specimen.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-50000-pesos/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-50000-pesos.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/",
     "legacyFile": "billete-colombia-banco-de-la-republica-medio-peso-oro-specimen.dc.html"
   },
@@ -280,8 +152,24 @@
     "legacyFile": "billete-colombia-banco-de-la-union-5-10-pesos-1883.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-medellin-50-centavos/",
+    "legacyFile": "billete-colombia-banco-de-medellin-50-centavos.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-oriente-5-pesos-1888/",
+    "legacyFile": "billete-colombia-banco-de-oriente-5-pesos-1888.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/",
+    "legacyFile": "billete-colombia-banco-de-pamplona-10-pesos-1884.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-panama-1-5-pesos/",
     "legacyFile": "billete-colombia-banco-de-panama-1-5-pesos.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/",
+    "legacyFile": "billete-colombia-banco-de-rio-hacha-5-pesos-1883.dc.html"
   },
   {
     "route": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/",
@@ -292,12 +180,28 @@
     "legacyFile": "billete-colombia-banco-del-norte-5-pesos-1882.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-hipotecario-5-pesos-1881/",
+    "legacyFile": "billete-colombia-banco-hipotecario-5-pesos-1881.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-internacional-1-peso-1884/",
+    "legacyFile": "billete-colombia-banco-internacional-1-peso-1884.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/banco-nacional-25-pesos-1895/",
+    "legacyFile": "billete-colombia-banco-nacional-25-pesos-1895.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-union-cartagena-1-peso-1880s/",
     "legacyFile": "billete-colombia-banco-union-cartagena-1-peso-1880s.dc.html"
   },
   {
     "route": "/coleccion/colombia/boyaca-libranza-500-pesos-1883/",
     "legacyFile": "billete-colombia-boyaca-libranza-500-pesos-1883.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/cartagena-1-real-1813/",
+    "legacyFile": "billete-colombia-cartagena-1-real-1813.dc.html"
   },
   {
     "route": "/coleccion/colombia/departamento-de-antioquia-centavos/",
@@ -320,6 +224,10 @@
     "legacyFile": "billete-colombia-estado-soberano-panama-3-pesos-1865.dc.html"
   },
   {
+    "route": "/coleccion/colombia/nueva-granada-1-peso-1861/",
+    "legacyFile": "billete-colombia-nueva-granada-1-peso-1861.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/perfil-antonio-narino/",
     "legacyFile": "perfil-antonio-narino.dc.html"
   },
@@ -330,6 +238,14 @@
   {
     "route": "/coleccion/colombia/perfil-francisco-de-paula-santander/",
     "legacyFile": "perfil-francisco-de-paula-santander.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/perfil-german-gutierrez-de-pineres/",
+    "legacyFile": "perfil-german-gutierrez-de-pineres.dc.html"
+  },
+  {
+    "route": "/coleccion/colombia/perfil-rafael-nunez/",
+    "legacyFile": "perfil-rafael-nunez.dc.html"
   },
   {
     "route": "/coleccion/colombia/perfil-simon-bolivar/",
@@ -348,24 +264,120 @@
     "legacyFile": "billete-colombia-republica-bolivar-1-2-pesos-1882.dc.html"
   },
   {
-    "route": "/coleccion/certificados-de-pago-militar/",
-    "legacyFile": "catalogo-certificados-de-pago-militar.dc.html"
+    "route": "/coleccion/colombia/santa-marta-1-4-real-1820/",
+    "legacyFile": "moneda-colombia-santa-marta-1-4-real-1820.dc.html"
   },
   {
-    "route": "/coleccion/certificados-de-pago-militar/10-dolares-serie-641/",
-    "legacyFile": "billete-mpc-serie-641-10-dolares.dc.html"
+    "route": "/coleccion/colombia/vicente-villa-e-hijos-5-pesos/",
+    "legacyFile": "billete-colombia-vicente-villa-e-hijos-5-pesos-1880s.dc.html"
+  },
+  {
+    "route": "/coleccion/departamento-del-tesoro-de-ee-uu/",
+    "legacyFile": "departamento-del-tesoro-de-ee-uu.dc.html"
+  },
+  {
+    "route": "/coleccion/diez-dolares-1934-distritos/",
+    "legacyFile": "billete-diez-dolares-1934-distritos.dc.html"
+  },
+  {
+    "route": "/coleccion/ecuador/",
+    "legacyFile": "catalogo-ecuador.dc.html"
+  },
+  {
+    "route": "/coleccion/ecuador/100-sucres-1993/",
+    "legacyFile": "billete-ecuador-100-sucres-1993.dc.html"
+  },
+  {
+    "route": "/coleccion/filipinas/",
+    "legacyFile": "catalogo-filipinas.dc.html"
+  },
+  {
+    "route": "/coleccion/filipinas/1-peso-victory-series-66/",
+    "legacyFile": "billete-filipinas-1-peso-victory-series-66.dc.html"
+  },
+  {
+    "route": "/coleccion/filipinas/2-pesos-victory-series-66/",
+    "legacyFile": "billete-filipinas-2-pesos-victory-series-66.dc.html"
   },
   {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
   {
-    "route": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-1980/",
-    "legacyFile": "billete-usda-food-coupon-1-dolar-1980.dc.html"
+    "route": "/coleccion/emisiones-promocionales/food-coupon-50-centavos-1967/",
+    "legacyFile": "billete-usda-food-coupon-50-centavos-1967.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/",
+    "legacyFile": "billete-usda-food-coupon-2-dolares-1967.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/",
+    "legacyFile": "billete-usda-food-coupon-1-dolar-2000.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/",
+    "legacyFile": "billete-usda-food-coupon-10-dolares-2000.dc.html"
+  },
+  {
+    "route": "/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/",
+    "legacyFile": "billete-usda-food-coupon-5-dolares-2000.dc.html"
+  },
+  {
+    "route": "/coleccion/food-coupons-usda/",
+    "legacyFile": "catalogo-food-coupons-usda.dc.html"
+  },
+  {
+    "route": "/coleccion/giori-press-test-note/",
+    "legacyFile": "billete-giori-press-test-note.dc.html"
+  },
+  {
+    "route": "/coleccion/hagerstown-bank-maryland/",
+    "legacyFile": "billete-hagerstown-bank-maryland.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/",
+    "legacyFile": "catalogo-moneda-colonial-espanola.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/",
+    "legacyFile": "moneda-colombia-1-escudo-carlos-iii-1774.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1787/",
+    "legacyFile": "moneda-colombia-1-escudo-carlos-iii-1787.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/1-escudo-carlos-iv-1802/",
+    "legacyFile": "moneda-colombia-1-escudo-carlos-iv-1802.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1811/",
+    "legacyFile": "moneda-colombia-1-escudo-fernando-vii-1811.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/1-escudo-fernando-vii-1820/",
+    "legacyFile": "moneda-colombia-1-escudo-fernando-vii-1820.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/2-escudos-carlos-iv-1791/",
+    "legacyFile": "moneda-colombia-2-escudos-carlos-iv-1791.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial-espanola/2-escudos-felipe-v-bogota/",
+    "legacyFile": "moneda-colombia-2-escudos-felipe-v.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial/",
+    "legacyFile": "catalogo-moneda-colonial.dc.html"
   },
   {
     "route": "/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
     "legacyFile": "billete-nueva-jersey-6-chelines-1776-colonial.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial/perfil-alexander-hamilton/",
+    "legacyFile": "perfil-alexander-hamilton.dc.html"
   },
   {
     "route": "/coleccion/moneda-colonial/perfil-andrew-jackson/",
@@ -378,6 +390,14 @@
   {
     "route": "/coleccion/moneda-colonial/perfil-george-washington/",
     "legacyFile": "perfil-george-washington.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial/perfil-thomas-jefferson/",
+    "legacyFile": "perfil-thomas-jefferson.dc.html"
+  },
+  {
+    "route": "/coleccion/moneda-colonial/provincia-de-pensilvania/",
+    "legacyFile": "billete-provincia-de-pensilvania-colonial.dc.html"
   },
   {
     "route": "/coleccion/polimero-mundial/",
@@ -406,6 +426,10 @@
   {
     "route": "/coleccion/polimero-mundial/chile-1000-2000-pesos/",
     "legacyFile": "billete-chile-2000-pesos-2009-polimero.dc.html"
+  },
+  {
+    "route": "/coleccion/polimero-mundial/china-100-yuan-2000/",
+    "legacyFile": "billete-china-100-yuan-2000-polimero.dc.html"
   },
   {
     "route": "/coleccion/polimero-mundial/costa-rica-20-1000-colones/",
@@ -504,6 +528,62 @@
     "legacyFile": "billete-zambia-500-1000-kwacha-2003-polimero.dc.html"
   },
   {
+    "route": "/coleccion/pop-art/",
+    "legacyFile": "catalogo-pop-art.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/donald-trump-mugshot/",
+    "legacyFile": "billete-rency-donald-trump-mugshot.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
+    "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/lionel-messi-leo/",
+    "legacyFile": "billete-rency-lionel-messi-leo.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/pele-bicycle-kick-the-king/",
+    "legacyFile": "billete-rency-pele-bicycle-kick-the-king.dc.html"
+  },
+  {
+    "route": "/coleccion/pop-art/warhol-basquiat/",
+    "legacyFile": "billete-rency-warhol-basquiat.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/",
+    "legacyFile": "catalogo-puerto-rico.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/billete-de-canje-1-peso-1895/",
+    "legacyFile": "billete-puerto-rico-billete-de-canje-1-peso-1895.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/junta-central-cuba-1869/",
+    "legacyFile": "billete-puerto-rico-junta-central-cuba-1869.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/perfil-alejandro-ramirez/",
+    "legacyFile": "perfil-alejandro-ramirez.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/perfil-jose-morales-lemus/",
+    "legacyFile": "perfil-jose-morales-lemus.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/republica-de-cuba-1-peso-1869/",
+    "legacyFile": "billete-puerto-rico-republica-de-cuba-1-peso-1869.dc.html"
+  },
+  {
+    "route": "/coleccion/puerto-rico/tesoreria-nacional-25-pesos-1813/",
+    "legacyFile": "billete-puerto-rico-tesoreria-nacional-25-pesos-1813.dc.html"
+  },
+  {
+    "route": "/coleccion/reserva-federal/",
+    "legacyFile": "catalogo-reserva-federal.dc.html"
+  },
+  {
     "route": "/coleccion/reserva-federal/cien-dolares-1990-cleveland/",
     "legacyFile": "billete-federal-reserve-note-100-dolares-1990-cleveland.dc.html"
   },
@@ -512,27 +592,23 @@
     "legacyFile": "billete-ringling-bros-50-aniversario-baraboo.dc.html"
   },
   {
-    "route": "/coleccion/pop-art/",
-    "legacyFile": "catalogo-pop-art.dc.html"
+    "route": "/coleccion/state-bank-new-brunswick/1-dolar/",
+    "legacyFile": "billete-state-bank-new-brunswick.dc.html"
   },
   {
-    "route": "/coleccion/pop-art/pele-bicycle-kick-the-king/",
-    "legacyFile": "billete-rency-pele-bicycle-kick-the-king.dc.html"
+    "route": "/coleccion/un-dolar-norte-africa-1935a/",
+    "legacyFile": "billete-plata-1-dolar-norte-africa-1935a.dc.html"
   },
   {
-    "route": "/coleccion/pop-art/lionel-messi-leo/",
-    "legacyFile": "billete-rency-lionel-messi-leo.dc.html"
+    "route": "/coleccion/un-dolar-sello-rojo-1928/",
+    "legacyFile": "billete-un-dolar-sello-rojo-1928.dc.html"
   },
   {
-    "route": "/coleccion/pop-art/donald-trump-mugshot/",
-    "legacyFile": "billete-rency-donald-trump-mugshot.dc.html"
+    "route": "/coleccion/ducado-oro-utrecht-1761/",
+    "legacyFile": "moneda-ducado-oro-utrecht-1761.dc.html"
   },
   {
-    "route": "/coleccion/pop-art/warhol-basquiat/",
-    "legacyFile": "billete-rency-warhol-basquiat.dc.html"
-  },
-  {
-    "route": "/coleccion/pop-art/life-is-beautiful-spray-cans/",
-    "legacyFile": "billete-rency-life-is-beautiful-spray-cans.dc.html"
+    "route": "/coleccion/veinte-dolares-hawaii-1934/",
+    "legacyFile": "billete-veinte-dolares-hawaii-1934.dc.html"
   }
 ]

@@ -1,0 +1,13 @@
+---
+description: Do not publish duplicate noticias for the same story from different sources
+alwaysApply: true
+---
+
+# Noticias — no duplicate stories
+
+When adding curated `/noticias/` posts from external sources:
+
+- **One story, one post.** Do not create a second noticia for the same event, collection launch, exhibition, or auction just because another outlet covered it.
+- **Different source ≠ new story.** Skip the URL unless it adds material facts the existing post lacks (prices, dates, species list, venues, official names, corrections).
+- **If new facts appear**, update the existing noticia (and cite the additional source in the body or related links) instead of publishing a parallel summary.
+- **Before writing**, search `src/content/noticias/` for the same subject (institution, collection name, event, country + theme).

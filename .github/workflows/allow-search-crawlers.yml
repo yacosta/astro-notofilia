@@ -1,0 +1,44 @@
+name: Allow search crawlers
+
+# Whitelist Google/Bing ASNs in Cloudflare IP Access Rules so Bot Fight Mode
+# does not challenge Search Console fetches of /sitemap.xml.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  allowlist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Allowlist Google / Bing ASNs (IP Access Rules)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_ZONE_NAME: notofilia.com
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN secret is not set."
+            echo "Add a token with Zone → Firewall Services → Edit, Zone → Zone Settings → Edit,"
+            echo "and Zone → Zone → Read for notofilia.com. See docs/search-console-sitemap.md."
+            exit 1
+          fi
+          node scripts/allow-search-crawlers.mjs
+
+      - name: Verify sitemap artifact is reachable (site UA)
+        # Curl-like UAs from GitHub runners are still challenged by Bot Fight Mode;
+        # ASN allowlisting only helps Google/Bing egress, not Actions. Confirm the
+        # file itself is served, then resubmit in Search Console.
+        env:
+          CHECK_SITEMAP_REQUIRE_CURL: '0'
+        run: node scripts/check-sitemap-live.mjs

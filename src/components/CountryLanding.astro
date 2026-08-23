@@ -1,0 +1,389 @@
+---
+/**
+ * Country collection landing — intro, optional issuers/featured/related hubs, catalog grid.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseHead from './BaseHead.astro';
+import SiteHeader from './SiteHeader.astro';
+import CookieBanner from './CookieBanner.astro';
+import PreFooter from './PreFooter.astro';
+import SiteFooter from './SiteFooter.astro';
+import { SITE } from '../lib/site';
+import { lookupEn } from '../lib/html-i18n';
+import { alternateUrl, type Locale } from '../i18n/pairs';
+import { COUNTRY_LANDINGS, type CountryLandingId } from '../lib/country-landings';
+
+interface Props {
+  countryId: CountryLandingId;
+  locale: Locale;
+}
+
+const { countryId, locale } = Astro.props;
+const isEn = locale === 'en';
+const copy = COUNTRY_LANDINGS[countryId][locale];
+
+const catalogIndex = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'public/data/catalog-index.json'), 'utf8'),
+) as {
+  items: Array<{
+    path: string;
+    title: string;
+    description?: string;
+    image?: string;
+    country?: string;
+    year?: number | null;
+    kind?: string;
+    role?: string;
+    i18n?: { en?: { title?: string; path?: string } };
+  }>;
+};
+
+function hrefFor(href: string): string {
+  if (!isEn) return href;
+  const queryIdx = href.indexOf('?');
+  const hashIdx = href.indexOf('#');
+  let cut = href.length;
+  if (queryIdx >= 0) cut = Math.min(cut, queryIdx);
+  if (hashIdx >= 0) cut = Math.min(cut, hashIdx);
+  const pathPart = href.slice(0, cut) || '/';
+  const rest = href.slice(cut);
+  const mapped = alternateUrl(pathPart, 'en');
+  if (!mapped) return href;
+  return mapped + rest;
+}
+
+const countryItems = catalogIndex.items
+  .filter((item) => {
+    if (item.country !== copy.countryName || item.role === 'hub') return false;
+    if (countryId === 'united-states' && item.kind === 'coin') return false;
+    return true;
+  })
+  .sort((a, b) => {
+    const ay = a.year ?? 9999;
+    const by = b.year ?? 9999;
+    return ay - by || a.title.localeCompare(b.title, 'es');
+  });
+
+const featured = (copy.featuredPaths ?? [])
+  .map((featuredPath) => countryItems.find((item) => item.path === featuredPath) ?? catalogIndex.items.find((item) => item.path === featuredPath))
+  .filter((item): item is (typeof catalogIndex.items)[number] => Boolean(item));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: isEn ? `${SITE}/en/` : `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: isEn ? 'Collection' : 'Colección', item: isEn ? `${SITE}/en/collection/` : `${SITE}/coleccion/` },
+        { '@type': 'ListItem', position: 3, name: copy.h1, item: `${SITE}${copy.path}` },
+      ],
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE}${copy.path}#page`,
+      name: copy.h1,
+      url: `${SITE}${copy.path}`,
+      description: copy.description,
+      inLanguage: locale,
+      isPartOf: { '@id': isEn ? `${SITE}/en/#website` : `${SITE}/#website` },
+      additionalProperty: [
+        {
+          '@type': 'PropertyValue',
+          name: isEn ? 'Availability' : 'Disponibilidad',
+          value: isEn ? 'Not for sale — documented private collection' : 'No está a la venta — colección privada documentada',
+        },
+      ],
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang={locale} data-page-locale={locale}>
+  <head>
+    <BaseHead
+      title={copy.title}
+      description={copy.description}
+      path={copy.path}
+      locale={locale}
+      robots="index, follow, max-image-preview:large"
+      ogType="website"
+      ogTitle={copy.ogTitle}
+      ogDescription={copy.description}
+      jsonLd={jsonLd}
+      loadDcRuntime={false}
+    />
+    <link rel="stylesheet" href="/catalog-fonts.css" />
+    <style is:global>
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body { margin: 0; background: #0a0a09; }
+      img { max-width: 100%; height: auto; }
+    </style>
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -10000px;
+        top: 0;
+        z-index: 200;
+        background: #e7ddc4;
+        color: #0a0a09;
+        padding: 10px 16px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .skip-link:focus {
+        left: 0;
+      }
+      .hub {
+        color: var(--color-cream-dim);
+        background:
+          radial-gradient(circle at 50% -8%, rgba(138, 109, 59, 0.12), transparent 34rem),
+          var(--color-bg);
+        font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+      }
+      .hub-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 64px var(--page-gutter, 24px) 96px;
+      }
+      .hub h1 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.05;
+        color: #d8d2cd;
+        margin: 0 0 20px;
+      }
+      .hub-kicker {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b7ab8a;
+        margin-bottom: 14px;
+      }
+      .hub-lead {
+        font-size: clamp(18px, 1.8vw, 21px);
+        line-height: 1.7;
+        color: #d8d2cd;
+        max-width: 42rem;
+        margin: 0 0 28px;
+      }
+      .hub-section {
+        margin: 0 0 64px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(231, 222, 201, 0.18);
+      }
+      .hub h2 {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(24px, 3vw, 32px);
+        line-height: 1.15;
+        color: #d8d2cd;
+        margin: 0 0 12px;
+      }
+      .hub-section-lead,
+      .hub p {
+        font-size: 18px;
+        line-height: 1.65;
+        color: #d8d2cd;
+        max-width: 44rem;
+      }
+      .hub-section-lead { margin: 0 0 24px; }
+      .issuer-list,
+      .featured-grid,
+      .related-grid,
+      .catalog-grid {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .issuer-list li {
+        margin: 0 0 16px;
+        max-width: 44rem;
+      }
+      .issuer-list strong {
+        display: block;
+        color: #d8d2cd;
+        margin-bottom: 4px;
+      }
+      .featured-grid,
+      .related-grid,
+      .catalog-grid {
+        display: grid;
+        gap: 18px 28px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      .featured-grid a,
+      .related-grid a,
+      .catalog-grid a {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-height: 44px;
+        color: inherit;
+        text-decoration: none;
+        padding-top: 14px;
+        border-top: 2px solid rgba(216, 210, 205, 0.35);
+      }
+      .featured-grid a:hover,
+      .related-grid a:hover,
+      .catalog-grid a:hover { border-color: #e7ddc4; }
+      .featured-grid a:focus-visible,
+      .related-grid a:focus-visible,
+      .catalog-grid a:focus-visible,
+      .hub a:focus-visible {
+        outline: 2px solid #e7ddc4;
+        outline-offset: 4px;
+      }
+      .card-title {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-size: clamp(18px, 1.2vw, 22px);
+        color: #d8d2cd;
+      }
+      .card-desc {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #b7ab8a;
+      }
+      .featured-grid picture,
+      .catalog-grid picture {
+        display: block;
+        overflow: hidden;
+        border-radius: 3px;
+        background: #fff;
+        aspect-ratio: 4 / 3;
+      }
+      .featured-grid img,
+      .catalog-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .crumbs {
+        font-size: 14px;
+        letter-spacing: 0.06em;
+        color: #b7ab8a;
+        margin: 0 0 28px;
+      }
+      .crumbs a { color: #b7ab8a; }
+      .filter-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 8px;
+        color: #e7ddc4;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{isEn ? 'Skip to content' : 'Saltar al contenido'}</a>
+    <SiteHeader locale={locale} path={copy.path} />
+    <div class="hub">
+      <main id="main-content" class="hub-inner" tabindex="-1">
+        <nav class="crumbs" aria-label={isEn ? 'Breadcrumb' : 'Migas de pan'}>
+          <a href={hrefFor('/')}>{isEn ? 'Home' : 'Inicio'}</a> <span aria-hidden="true">/</span>
+          <span>{copy.h1}</span>
+        </nav>
+        <span class="hub-kicker">{copy.kicker}</span>
+        <h1>{copy.h1}</h1>
+        <p class="hub-lead">{copy.lead}</p>
+        {copy.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+        {copy.issuersHeading && copy.issuers?.length ? (
+          <section class="hub-section" aria-labelledby="issuers-heading">
+            <h2 id="issuers-heading">{copy.issuersHeading}</h2>
+            <ul class="issuer-list">
+              {copy.issuers.map((issuer) => (
+                <li>
+                  <strong>{issuer.name}</strong>
+                  <span class="card-desc">{issuer.note}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {copy.featuredHeading && featured.length ? (
+          <section class="hub-section" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">{copy.featuredHeading}</h2>
+            {copy.featuredLead ? <p class="hub-section-lead">{copy.featuredLead}</p> : null}
+            <ul class="featured-grid">
+              {featured.map((item) => (
+                <li>
+                  <a href={hrefFor(item.path)}>
+                    {item.image && (
+                      <picture>
+                        <img
+                          src={item.image}
+                          alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
+                          width="440"
+                          height="280"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
+                    )}
+                    <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                    <span class="card-desc">{isEn ? (lookupEn(item.description || '') || item.description) : item.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {copy.relatedHeading && copy.related?.length ? (
+          <section class="hub-section" aria-labelledby="related-heading">
+            <h2 id="related-heading">{copy.relatedHeading}</h2>
+            <ul class="related-grid">
+              {copy.related.map((entry) => (
+                <li>
+                  <a href={hrefFor(entry.href)}>
+                    <span class="card-title">{entry.title}</span>
+                    <span class="card-desc">{entry.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        <section class="hub-section" id="catalogo" aria-labelledby="catalog-heading">
+          <h2 id="catalog-heading">{copy.catalogHeading}</h2>
+          <p class="hub-section-lead">{copy.catalogLead}</p>
+          <p>
+            <a class="filter-link" href={copy.catalogFilterHref}>{copy.catalogFilterLabel}</a>
+          </p>
+          <ul class="catalog-grid">
+            {countryItems.map((item) => (
+              <li>
+                <a href={hrefFor(item.path)}>
+                  {item.image && (
+                    <picture>
+                      <img
+                        src={item.image}
+                        alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
+                        width="440"
+                        height="280"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+                  )}
+                  <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                  {item.year ? <span class="card-desc">{item.year}</span> : null}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </div>
+    <PreFooter locale={locale} />
+    <SiteFooter variant="editorial" locale={locale} />
+    <CookieBanner locale={locale} />
+  </body>
+</html>

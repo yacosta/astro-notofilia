@@ -25,42 +25,89 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Colombia",
-            "item": "https://www.notofilia.com/coleccion/colombia/"
+            "item": "https://notofilia.com/coleccion/colombia/"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Emisiones Colombianas en el Extranjero",
-            "item": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
+            "item": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/#page",
+        "@id": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/#page",
         "name": "Emisiones Colombianas en el Extranjero",
-        "url": "https://www.notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/",
+        "url": "https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/",
         "description": "Billetes emitidos fuera de Colombia por bancos fundados con capital colombiano, de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "El Banco Colombiano — Un Peso (Guatemala, 1900)",
-            "url": "https://www.notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
+            "url": "https://notofilia.com/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/"
           }
         ]
       }
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/colombia/emisiones-en-el-extranjero/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Emisiones Colombianas en el Extranjero\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <a href=\"/coleccion/colombia/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em; margin-bottom:24px;\">&larr; Catálogo de Colombia</a>\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Emisiones Colombianas en el Extranjero</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; margin:0 0 56px;\">Durante el auge de la banca privada y libre, el capital colombiano no se detuvo en las fronteras del país: inversionistas y banqueros colombianos fundaron y sostuvieron bancos emisores en otras naciones de la región, cuyos billetes documentan hoy un capítulo poco conocido de la historia bancaria de Colombia en el extranjero.</p>\n\n    <section style=\"margin:0 0 80px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Capital Colombiano Más Allá de las Fronteras</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">A finales del siglo XIX, mientras la banca libre transformaba el paisaje financiero de Colombia con decenas de emisores regionales, algunos de esos mismos capitales privados buscaron oportunidades fuera del país. Centroamérica, con sus propias economías en formación y escasa infraestructura bancaria local, resultó un destino natural para inversionistas colombianos con experiencia en la emisión y administración de papel moneda.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">Estos bancos operaban bajo las leyes del país anfitrión y emitían billetes en la moneda local &mdash;no en pesos colombianos&mdash;, pero conservaban su vínculo con Colombia a través de sus fundadores, accionistas y, en muchos casos, su propio nombre. Se catalogan aquí por separado de la banca libre interna de Colombia, precisamente porque su papel moneda no circuló nunca dentro del territorio nacional.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guatemala</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Colombiano (1900)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/guatemala-banco-colombiano-1-peso-1900.jpg\"\n          image-webp=\"uploads/guatemala-banco-colombiano-1-peso-1900.webp\"\n          alt=\"Billete de Un Peso de El Banco Colombiano, Guatemala, anverso y reverso\"\n          title=\"El Banco Colombiano\"\n          denomination=\"Un Peso\"\n          year=\"1900\"\n          href=\"/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/colombia/emisiones-en-el-extranjero/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Emisiones Colombianas en el Extranjero\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <a href=\"/coleccion/colombia/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em; margin-bottom:24px;\">&larr; Catálogo de Colombia</a>\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Emisiones Colombianas en el Extranjero</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; margin:0 0 56px;\">Durante el auge de la banca privada y libre, el capital colombiano no se detuvo en las fronteras del país: inversionistas y banqueros colombianos fundaron y sostuvieron bancos emisores en otras naciones de la región, cuyos billetes documentan hoy un capítulo poco conocido de la historia bancaria de Colombia en el extranjero.</p>\n\n    <section style=\"margin:0 0 80px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Capital Colombiano Más Allá de las Fronteras</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">A finales del siglo XIX, mientras la banca libre transformaba el paisaje financiero de Colombia con decenas de emisores regionales, algunos de esos mismos capitales privados buscaron oportunidades fuera del país. Centroamérica, con sus propias economías en formación y escasa infraestructura bancaria local, resultó un destino natural para inversionistas colombianos con experiencia en la emisión y administración de papel moneda.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">Estos bancos operaban bajo las leyes del país anfitrión y emitían billetes en la moneda local &mdash;no en pesos colombianos&mdash;, pero conservaban su vínculo con Colombia a través de sus fundadores, accionistas y, en muchos casos, su propio nombre. Se catalogan aquí por separado de la banca libre interna de Colombia, precisamente porque su papel moneda no circuló nunca dentro del territorio nacional.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guatemala</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Colombiano (1900)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.colombia.emisiones-en-el-extranjero",
+    "kind": "other",
+    "title": "Emisiones Colombianas en el Extranjero",
+    "subtitle": "Durante el auge de la banca privada y libre, el capital colombiano no se detuvo en las fronteras del país: inversionistas y banqueros colombianos fundaron y sostuvieron bancos emisores en otras naciones de la región, cuyos billetes documentan hoy un capítulo poco conocido de la historia bancaria de Colombia en el extranjero.",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Colombia",
+        "href": "/coleccion/colombia/"
+      },
+      {
+        "name": "Emisiones Colombianas en el Extranjero"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/colombia/banco-colombiano-guatemala-1-peso-1900/",
+        "title": "El Banco Colombiano",
+        "denomination": "Un Peso",
+        "year": "1900",
+        "image": "/uploads/guatemala-banco-colombiano-1-peso-1900.jpg",
+        "imageWebp": "/uploads/guatemala-banco-colombiano-1-peso-1900.webp",
+        "alt": "Billete de Un Peso de El Banco Colombiano, Guatemala, anverso y reverso",
+        "altEn": "Banknote of One Peso de El Banco Colombiano, Guatemala, obverse and reverse"
+      }
+    ],
+    "eyebrow": "Contexto Histórico"
+  },
   "legacyFile": "catalogo-emisiones-extranjero.dc.html",
-  "sourceHash": "fbb098c14af8f527"
+  "sourceHash": "fbb098c14af8f527",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/colombia/issues-printed-abroad/",
+      "title": "Colombian Issues Printed Abroad | Notofilia",
+      "description": "Banknotes issued abroad by Colombian banks and capital, including El Banco Colombiano in Guatemala (1900). A Notofilia catalog.",
+      "ogTitle": "Colombian Issues Printed Abroad — Notofilia",
+      "ogDescription": "Banknotes issued abroad by Colombian banks and capital, from the Notofilia collection.",
+      "recordTitle": "Colombian Issues Printed Abroad",
+      "eyebrow": "Historical Context",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/colombia/issues-printed-abroad/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Colombian Issues Printed Abroad\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <a href=\"/en/collection/colombia/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em; margin-bottom:24px;\">&larr; Colombia catalog</a>\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Colombian Issues Printed Abroad</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; margin:0 0 56px;\">During the boom of private and free banking, Colombian capital did not stop at the country’s borders: Colombian investors and bankers founded and sustained issuing banks in other nations of the region, whose banknotes today document a little-known chapter of Colombia’s banking history abroad.</p>\n\n    <section style=\"margin:0 0 80px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Colombian Capital Beyond the Borders</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">At the end of the nineteenth century, while free banking transformed Colombia’s financial landscape with dozens of regional issuers, some of those same private capitals sought opportunities outside the country. Central America, with its own economies in formation and little local banking infrastructure, proved a natural destination for Colombian investors experienced in the issue and administration of paper money.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">These banks operated under the laws of the host country and issued notes in the local currency &mdash;not in Colombian pesos&mdash; but they kept their link to Colombia through their founders, shareholders and, in many cases, their own name. They are cataloged here separately from Colombia’s domestic free banking, precisely because their paper money never circulated within the national territory.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Guatemala</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">El Banco Colombiano (1900)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>"
+    }
+  }
 }

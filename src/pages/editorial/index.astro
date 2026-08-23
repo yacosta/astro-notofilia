@@ -1,0 +1,190 @@
+---
+/**
+ * Public editorial & sourcing policy — valuation standards, corrections, authorship.
+ */
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { SITE } from '../../lib/site';
+import { CLAIM_KINDS, CLAIM_LABELS, CLAIM_DEFAULT_NOTES } from '../../lib/claims';
+import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../lib/editorial';
+import { INVENTORY_VOCABULARY_ES } from '../../lib/stats';
+import NewWindowHint from '../../components/NewWindowHint.astro';
+
+const title = 'Política editorial y valoración · Notofilia';
+const description =
+  'Cómo Notofilia cita precios, distingue tipos de valoración, corrige errores y atribuye fuentes en noticias, guías y fichas de catálogo.';
+const path = '/editorial/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${SITE}${path}#page`,
+      name: 'Política editorial, fuentes y valoración',
+      url: `${SITE}${path}`,
+      description,
+      inLanguage: 'es',
+      isPartOf: { '@id': `${SITE}/#website` },
+      about: {
+        '@type': 'Thing',
+        name: 'Estándar editorial de valoración numismática',
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Política editorial', item: `${SITE}${path}` },
+        ],
+      },
+    },
+    personJsonLd(),
+  ],
+};
+---
+<BlogLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  <article class="max-w-content mx-auto px-6 pt-12 pb-4">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
+      <a class="text-muted" href="/" data-i18n data-en="Home">Inicio</a> <span aria-hidden="true">/</span>
+      <span data-i18n data-en="Editorial policy">Política editorial</span>
+    </nav>
+
+    <header class="mb-10">
+      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted" data-i18n data-en="Transparency">Transparencia</p>
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n data-en="Editorial policy, sources, and valuation">
+        Política editorial, fuentes y valoración
+      </h1>
+      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]" data-i18n data-en="Notofilia puts the catalog and research first. When a news item cites a price, we say what kind of figure it is — and what it is not.">
+        Notofilia prioriza el catálogo y la investigación. Cuando una noticia cita un precio,
+        distinguimos qué tipo de cifra es —y qué no es.
+      </p>
+    </header>
+
+    <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
+      <h2>Qué publicamos</h2>
+      <p>
+        Las <a href="/noticias/">noticias</a> son resúmenes curados de fuentes externas (medios,
+        casas de subastas, bancos centrales, museos). Cada noticia indica <strong>Fuente:</strong>
+        con un enlace a la nota original. El <a href="/blog/">blog</a> reúne guías
+        originales. Colecciones como <a href="/coleccion/colombia/">Colombia</a> documentan
+        piezas privadas <strong>que no están a la venta</strong>.
+      </p>
+      <p>
+        {INVENTORY_VOCABULARY_ES} Las cifras del pie y de la portada se calculan en el
+        build a partir de la colección, nunca se escriben a mano.
+      </p>
+
+      <h2 id="equipo-editorial">Editor</h2>
+      <p>
+        Notofilia la edita <strong>{EDITORIAL_TEAM.name}</strong>, fundador del catálogo privado
+        y responsable de la investigación de fichas, el etiquetado de valoraciones y las
+        correcciones. Cuando un artículo lleva “Revisado por”, indica esa responsabilidad.
+        Perfil público: <a href={EDITORIAL_TEAM.url}>{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2 id="wikipedia">Mención en Wikipedia</h2>
+      <p>
+        El artículo{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notafilia en la Wikipedia en español<NewWindowHint />
+        </a>{' '}
+        incluye Notofilia.com en Enlaces externos (verificado el 16 de agosto de 2026). El
+        href apunta a una captura de{' '}
+        <a href={WIKIPEDIA_NOTOFILIA_ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
+          archive.org de mayo de 2013<NewWindowHint />
+        </a>{' '}
+        de <code>http://www.notofilia.com/</code>, no a <code>https://notofilia.com/</code>.
+        Como todos los enlaces externos de MediaWiki, lleva <code>rel="nofollow"</code>: es
+        una mención enciclopédica verificable, no un backlink de PageRank. No editamos
+        Wikipedia sobre nosotros mismos.
+      </p>
+
+      <h2 id="correcciones">Política de correcciones</h2>
+      <p>
+        Los errores de hecho, cifras mal etiquetadas o atribuciones incorrectas se corrigen en
+        la pieza afectada. Cada corrección material queda listada en el historial de la página
+        (fecha + descripción). Si el cambio es sustancial, actualizamos también la fecha de
+        “Última actualización”.
+      </p>
+
+      <h2>Fechas y actualizaciones</h2>
+      <ul>
+        <li><strong>Fecha de publicación:</strong> cuándo salió la nota en Notofilia.</li>
+        <li><strong>Última actualización:</strong> última revisión sustancial del contenido.</li>
+        <li><strong>Historial de correcciones:</strong> cambios materiales (cifras, atribuciones, errores de hecho) quedan listados en la propia pieza.</li>
+      </ul>
+
+      <h2>Estándar de valoración</h2>
+      <p>
+        Toda cifra de precio en una noticia o guía debe etiquetarse con uno de estos tipos.
+        El recuadro <em>Sobre este valor</em> aparece cuando el artículo es price-related:
+      </p>
+      <dl>
+        {CLAIM_KINDS.map((kind) => (
+          <div class="mb-5">
+            <dt class="font-semibold text-cream m-0 mb-1">{CLAIM_LABELS[kind]}</dt>
+            <dd class="m-0 text-[17px] leading-[1.55]">{CLAIM_DEFAULT_NOTES[kind]}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <h2>Fuentes primarias y evidencia de remate</h2>
+      <p>
+        Preferimos enlazar la nota original del medio, el archivo de la casa de subastas, la
+        ficha de catálogo o el comunicado oficial. Un anuncio viral o un titular sensacionalista
+        no sustituye un remate documentado. Cuando citamos un resultado de subasta, indicamos
+        moneda, fecha de la valoración y, si existe, enlace a la evidencia.
+      </p>
+
+      <h2 id="fuentes-del-catalogo">Fuentes del catálogo</h2>
+      <p>
+        Las fichas de la Colección Virtual se re-documentan en orden de tráfico (Search Console),
+        no en orden de catálogo. No intentamos reescribir el inventario de una sola vez.
+      </p>
+      <p>Orden de citas:</p>
+      <ol>
+        <li>Bancos centrales (Nepal Rastra Bank; Banco de la República para el material colombiano, el mayor grupo de fichas).</li>
+        <li>Imprentas y museos (Note Printing Australia, Reserve Bank of Australia, archivos de ceca).</li>
+        <li>Archivos de subasta.</li>
+        <li>Sitios comerciales (Banknote World y similares) solo como último recurso, nunca como fuente por defecto.</li>
+      </ol>
+      <p>
+        Un hecho sin fuente en la ficha vitrina es peor que un «no confirmado». Ese valor es válido
+        y visible en Tirada, Variedades conocidas, Fechas de circulación, Base de la rareza,
+        Estado del ejemplar mostrado y Fecha de última revisión factual. Distingue el catálogo de
+        los sitios que inventan la cifra.
+      </p>
+      <p>
+        Las fichas ya re-documentadas no se publican si la mayoría de sus citas son de sitios
+        de comercio. Wikipedia y las fichas de revendedores no sustituyen un informe de banco
+        central o de imprenta.
+      </p>
+
+      <h2>Qué no hacemos</h2>
+      <ul>
+        <li>No tasamos piezas de lectores ni emitimos ofertas de compra.</li>
+        <li>No presentamos precios de anuncio como ventas cerradas.</li>
+        <li>No usamos marcado <code>Product</code> en fichas de colección: las piezas no se venden aquí.</li>
+        <li>No duplicamos la misma noticia solo porque otro medio la repitió; actualizamos la existente si aporta hechos nuevos.</li>
+      </ul>
+
+      <h2 id="como-reportar-un-error">Cómo reportar un error</h2>
+      <p>
+        Si detecta una cifra mal etiquetada, una fuente rotunda o un hecho incorrecto, escríbanos
+        a través de los canales públicos de Notofilia. Publicaremos la corrección en el historial
+        de la pieza afectada.
+      </p>
+
+      <h2>Privacidad</h2>
+      <p>
+        El tratamiento de datos personales se describe en la
+        <a href="/politica-privacidad-cookies/">Política de Privacidad y Cookies</a>.
+      </p>
+    </div>
+  </article>
+</BlogLayout>

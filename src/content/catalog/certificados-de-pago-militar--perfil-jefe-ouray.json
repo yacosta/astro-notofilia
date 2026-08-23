@@ -1,0 +1,115 @@
+{
+  "path": "/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/",
+  "title": "Jefe Ouray | Notofilia",
+  "description": "Perfil histórico del jefe ute Ouray (Uncompahgre), retratado en el MPC Serie 692 de $20 usado en Vietnam.",
+  "keywords": [
+    "jefe ouray",
+    "chief ouray",
+    "ute uncompahgre",
+    "mpc serie 692",
+    "military payment certificate",
+    "notafilia estadounidense"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "profile",
+  "ogTitle": "Jefe Ouray — Perfil Histórico",
+  "ogDescription": "Líder ute Uncompahgre retratado en el MPC Serie 692 de veinte dólares, última serie oficial del programa.",
+  "ogImage": "/uploads/jefe-ouray-portrait-nara.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Certificados de Pago Militar",
+            "item": "https://notofilia.com/coleccion/certificados-de-pago-militar/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Jefe Ouray",
+            "item": "https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Ouray",
+        "alternateName": "Jefe Ouray",
+        "url": "https://notofilia.com/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/",
+        "birthDate": "1833",
+        "deathDate": "1880-08-24",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Territorio ute (Colorado)"
+        },
+        "deathPlace": {
+          "@type": "Place",
+          "name": "Ignacio, Colorado"
+        },
+        "jobTitle": "Líder político ute (banda Uncompahgre)",
+        "description": "Líder y negociador ute Uncompahgre, retratado en el MPC Serie 692 de $20.",
+        "nationality": "Ute",
+        "image": "https://notofilia.com/uploads/jefe-ouray-portrait-nara.jpg"
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Ruta de navegación\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/coleccion/certificados-de-pago-militar/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Certificados de Pago Militar (MPC)</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/coleccion/certificados-de-pago-militar/perfil-jefe-ouray/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Perfil Histórico &middot; Certificados de Pago Militar</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Jefe Ouray</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Territorio ute, c. 1833 &mdash; Colorado, 1880</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:897 / 1400; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture style=\"display:block; width:100%; height:100%;\">\n              <source srcset=\"/uploads/jefe-ouray-portrait-nara-480.webp 480w, /uploads/jefe-ouray-portrait-nara.webp 897w\" sizes=\"(max-width: 448px) calc(100vw - 48px), 400px\" type=\"image/webp\" />\n              <img src=\"/uploads/jefe-ouray-portrait-nara.jpg\" alt=\"Grabado histórico de busto del jefe ute Ouray con trenzas y collar de cuentas\" width=\"897\" height=\"1400\" decoding=\"async\" fetchpriority=\"high\" style=\"width:100%; height:100%; object-fit:cover; display:block;\">\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Ouray (Uncompahgre Ute)</span>\n            <span style=\"display:block;\">Grabado histórico &mdash; NARA / dominio público</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Nacimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">c. 1833 &mdash; territorio ute (hoy Colorado)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Fallecimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">24 de agosto de 1880 &mdash; Ignacio, Colorado</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Pueblo</span>\n              <span style=\"font-size:19px; color:#221f19;\">Ute &mdash; banda Uncompahgre</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rol Clave</span>\n              <span style=\"font-size:19px; color:#221f19;\">Líder político y diplomático ute; negociador de tratados con el gobierno de Estados Unidos</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. Líder Uncompahgre</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Ouray (a menudo traducido como &ldquo;la flecha&rdquo;) fue el principal interlocutor de la banda Uncompahgre ante autoridades territoriales y federales en el Colorado del siglo XIX. Dominaba el ute y el español, y aprendió inglés, lo que le permitió mediar en un contexto de presión colonizadora creciente.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Junto a Chipeta, su esposa y consejera política, buscó evitar guerras que consideraba imposibles de ganar, defendiendo al mismo tiempo tierras y derechos de su pueblo frente a minería, ferrocarriles y asentamientos.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. Tratados y desplazamiento</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Participó en negociaciones que culminaron en cesiones territoriales y, tras el conflicto de 1879 en la agencia White River, en la reubicación forzada de los Uncompahgre hacia una reserva en Utah. Murió en 1880; su figura sigue siendo central &mdash;y debatida&mdash; en la memoria ute y en la historia del Oeste estadounidense.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Un perfil numismático no sustituye esa historia completa: conviene leerlo junto a fuentes indígenas y académicas sobre el despojo territorial y la diplomacia forzada de la época.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Legado Numismático</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">El Bureau of Engraving and Printing reutilizó un retrato grabado de Ouray en el anverso del <a href=\"/coleccion/certificados-de-pago-militar/20-dolares-serie-692/\">MPC Serie 692 de $20</a> (1970&ndash;1973), última serie oficial de certificados de pago militar puesta en circulación, usada en Vietnam. El reverso muestra la presa Hoover.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Esa viñeta forma parte del lenguaje visual &ldquo;americano&rdquo; de la Serie 692 &mdash;temas indígenas, fauna e ingeniería&mdash; y convierte el $20 en una de las piezas más reconocibles del programa MPC, aunque el retrato se usara décadas después y en un contexto militar muy distinto al Colorado del siglo XIX.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notas</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biografía basada en referencias históricas estándar sobre los Ute Uncompahgre y en la documentación del BEP / catálogo Schwan sobre MPC Serie 692.</p>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:6px 0 0;\">Retrato: grabado histórico de Ouray (NARA / dominio público vía Wikimedia Commons).</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.certificados-de-pago-militar.perfil-jefe-ouray",
+    "kind": "profile",
+    "title": "Jefe Ouray",
+    "subtitle": "Territorio ute, c. 1833 — Colorado, 1880",
+    "dateOrSeries": "Perfil Histórico · Certificados de Pago Militar",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Certificados de Pago Militar",
+        "href": "/coleccion/certificados-de-pago-militar/"
+      },
+      {
+        "name": "Jefe Ouray"
+      }
+    ],
+    "images": {
+      "stacked": {
+        "src": "/uploads/jefe-ouray-portrait-nara.jpg",
+        "srcWebp": "/uploads/jefe-ouray-portrait-nara.webp",
+        "alt": "Grabado histórico de busto del jefe ute Ouray con trenzas y collar de cuentas",
+        "altEn": "Grabado histórico de busto del Ute Chief Ouray con trenzas y collar de cuentas"
+      },
+      "defaultView": "stacked"
+    },
+    "metadata": {},
+    "render": "astro-static",
+    "eyebrow": "Perfil Histórico · Certificados de Pago Militar"
+  },
+  "legacyFile": "perfil-jefe-ouray.dc.html",
+  "sourceHash": "f193079cd19bf8d6",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/military-payment-certificates/profile-chief-ouray/",
+      "title": "Jefe Ouray | Notofilia",
+      "description": "Historical profile del Ute Chief Ouray (Uncompahgre), retratado en el $20 MPC 692 Seriess usado en Vietnam.",
+      "ogTitle": "Jefe Ouray — Historical Profile",
+      "ogDescription": "Líder ute Uncompahgre retratado en el MPC Seriess 692 de veinte dólares, última serie oficial del programa.",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Breadcrumb\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/en/collection/military-payment-certificates/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Military Payment Certificates (MPC)</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/en/collection/military-payment-certificates/profile-chief-ouray/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Historical Profile &middot; Military Payment Certificates</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Jefe Ouray</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Ute Territory, c. 1833 &mdash; Colorado, 1880</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:897 / 1400; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture style=\"display:block; width:100%; height:100%;\">\n              <source srcset=\"/uploads/jefe-ouray-portrait-nara-480.webp 480w, /uploads/jefe-ouray-portrait-nara.webp 897w\" sizes=\"(max-width: 448px) calc(100vw - 48px), 400px\" type=\"image/webp\" />\n              <img src=\"/uploads/jefe-ouray-portrait-nara.jpg\" alt=\"Grabado histórico de busto del Ute Chief Ouray con trenzas y collar de cuentas\" width=\"897\" height=\"1400\" decoding=\"async\" fetchpriority=\"high\" style=\"width:100%; height:100%; object-fit:cover; display:block;\">\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Ouray (Uncompahgre Ute)</span>\n            <span style=\"display:block;\">Historical engraving &mdash; NARA / public domain</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Birth</span>\n              <span style=\"font-size:19px; color:#221f19;\">c. 1833 &mdash; Ute Territory (now Colorado)</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Death</span>\n              <span style=\"font-size:19px; color:#221f19;\">August 24, 1880 &mdash; Ignacio, Colorado</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">People</span>\n              <span style=\"font-size:19px; color:#221f19;\">Ute &mdash; band Uncompahgre</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Key Role</span>\n              <span style=\"font-size:19px; color:#221f19;\">Ute political and diplomatic leader; treaty negotiator with the United States government</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. Uncompahgre Leader</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Ouray (often translated as &ldquo;the arrow&rdquo;) was the Uncompahgre gang's main interlocutor with territorial and federal authorities in 19th century Colorado. He was fluent in Ute and Spanish, and learned English, which allowed him to mediate in a context of growing colonizing pressure.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Together with Chipeta, his wife and political advisor, he sought to avoid wars that he considered impossible to win, while defending the lands and rights of his people against mining, railroads and settlements.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. Treaties and displacement</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">He took part in negotiations that culminated in territorial cessions and, after the 1879 conflict at the White River Agency, in the forced relocation of the Uncompahgre to a reservation in Utah. He died in 1880; his legacy remains central &mdash;and contested&mdash; in Ute memory and the history of the American West.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">A numismatic profile does not replace that fuller history: it should be read alongside Indigenous and academic sources on the era's territorial dispossession and coerced diplomacy.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Numismatic Legacy</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">The Bureau of Engraving and Printing reused an engraved portrait of Ouray on the obverse of the<a href=\"/en/collection/military-payment-certificates/20-dollars-series-692/\">$20 MPC 692 Series</a>(1970&ndash;1973), the last official series of military payment certificates put into circulation, used in Vietnam. The reverse shows the Hoover Dam.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">That vignette is part of the &ldquo;American visual language&rdquo; of Series 692 &mdash;indigenous themes, fauna and engineering&mdash; and makes the $20 one of the most recognizable pieces of the MPC program, although the portrait was used decades later and in a military context very different from 19th century Colorado.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notes</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biography based on standard historical references on the Ute Uncompahgre and BEP/Schwan catalog documentation on MPC Series 692.</p>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:6px 0 0;\">Portrait: historical engraving of Ouray (NARA / public domain via Wikimedia Commons).</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+      "recordTitle": "Jefe Ouray",
+      "eyebrow": "Historical Profile · Military Payment Certificates"
+    }
+  }
+}

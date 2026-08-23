@@ -7,17 +7,25 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  getCollectionStatsFromDisk,
+  INVENTORY_VOCABULARY_ES,
+} from '../src/lib/catalog-inventory.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = 'https://www.notofilia.com';
+const SITE = 'https://notofilia.com';
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
 const NOTICIAS_DIR = path.join(ROOT, 'src/content/noticias');
+const LOGROS_DIR = path.join(ROOT, 'src/content/logros');
+const GLOSARIO_DIR = path.join(ROOT, 'src/content/glosario');
 const PUBLIC = path.join(ROOT, 'public');
 
 const HUB_ORDER = [
-  { path: '/coleccion/', label: 'Billete obsoleto EE. UU.' },
+  { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
+  { path: '/coleccion/estados-unidos/', label: 'Estados Unidos' },
+  { path: '/coleccion/espana/', label: 'España' },
   { path: '/coleccion/colombia/banca-libre/', label: 'Banca libre colombiana' },
   { path: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones colombianas en el extranjero' },
   { path: '/coleccion/puerto-rico/', label: 'Billetes de Puerto Rico' },
@@ -102,7 +110,7 @@ function sectionForPath(p) {
   }
   if (p.startsWith('/coleccion/pop-art/')) return '/coleccion/pop-art/';
   if (p.startsWith('/coleccion/emisiones-promocionales/')) return '/coleccion/emisiones-promocionales/';
-  return '/coleccion/';
+  return '/coleccion/colombia/';
 }
 
 async function loadCatalog() {
@@ -127,7 +135,12 @@ async function loadCatalog() {
 }
 
 async function loadPosts(dir, base) {
-  const files = (await readdir(dir)).filter((f) => f.endsWith('.md')).sort();
+  let files = [];
+  try {
+    files = (await readdir(dir)).filter((f) => f.endsWith('.md')).sort();
+  } catch {
+    return [];
+  }
   const posts = [];
   for (const file of files) {
     const raw = await readFile(path.join(dir, file), 'utf8');
@@ -148,7 +161,31 @@ async function loadPosts(dir, base) {
   return posts.sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 }
 
-function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
+async function loadGlossary() {
+  let files = [];
+  try {
+    files = (await readdir(GLOSARIO_DIR)).filter((f) => f.endsWith('.md')).sort();
+  } catch {
+    return [];
+  }
+  const terms = [];
+  for (const file of files) {
+    const raw = await readFile(path.join(GLOSARIO_DIR, file), 'utf8');
+    const { data, body } = parseFrontmatter(raw);
+    const slug = file.replace(/\.md$/, '');
+    terms.push({
+      slug,
+      path: `/glosario/${slug}/`,
+      title: data.termEs || slug,
+      termEn: data.termEn || '',
+      category: data.category || '',
+      body,
+    });
+  }
+  return terms.sort((a, b) => a.title.localeCompare(b.title, 'es'));
+}
+
+function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCount, full = false }) {
   const lines = [
     '# Notofilia',
     '',
@@ -156,30 +193,30 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
     '>',
     '> Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.',
     '',
-    'Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero de ~30 países— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia.',
+    `Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: ${stats.billetes} billetes en ${stats.fichas} fichas, ${stats.monedas} monedas, ${stats.paises} países, ${stats.paginas} páginas de catálogo.`,
     '',
-    '**Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe (+90 términos) y perfiles históricos ligados a emisiones.',
+    `**Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. ${INVENTORY_VOCABULARY_ES}`,
     '',
     '**Qué no es:** tienda, casa de subastas, tasador en línea ni servicio de compraventa. El pie de página reitera: *«Todos los billetes mostrados en este sitio pertenecen a mi colección privada. Ninguno está a la venta.»*',
     '',
-    '**Idioma:** contenido principal en español (`lang=es`). La home tiene toggle ES/EN. Citar en el idioma de la página fuente.',
+    '**Idioma:** el español es el idioma principal y vive en las URLs raíz (`lang=es`, p. ej. `/coleccion/`, `/noticias/`). El inglés vive bajo `/en/` con slugs traducidos (`lang=en`, p. ej. `/en/collection/colombia/`, `/en/news/`). Las páginas emparejadas emiten hreflang recíproco (`es`, `en`, `x-default` → URL española). El selector de idioma del encabezado es un enlace `<a href>` al equivalente; no hay redirección por `Accept-Language` ni por país. Cada ficha y hub de `/coleccion/` tiene par inglés; las noticias individuales pueden seguir solo en español.',
     '',
-    '**Cómo citar:** atribuir a Notofilia / Notofilia.com e incluir la URL canónica `https://www.notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista).',
+    '**Cómo citar:** atribuir a Yezid Acosta / Notofilia.com e incluir la URL canónica `https://notofilia.com/...`. Preferir fichas de `/coleccion/` y artículos de `/blog/` como fuentes primarias del sitio; las `/noticias/` suelen resumir fuentes externas (respetar el enlace `sourceUrl` cuando exista). En fichas re-documentadas, citar bancos centrales e imprentas antes que sitios comerciales; `no confirmado` es un valor válido y visible.',
     '',
     '**Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.',
     '',
-    `**Inventario (build):** ~${catalogCount} fichas de catálogo · ${blogCount} guías de blog · ${noticiasCount} noticias · glosario · perfiles.`,
+    `**Inventario (build):** ${stats.fichas} fichas · ${stats.billetes} billetes · ${stats.monedas} monedas · ${stats.paises} países · ${stats.paginas} páginas · ${blogCount} guías de blog · ${noticiasCount} noticias · ${logrosCount} logros del mes · ${glossaryCount} términos del glosario.`,
     '',
   ];
 
   if (full) {
     lines.push(
-      'Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://www.notofilia.com/llms.txt).',
+      'Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).',
       '',
     );
   } else {
     lines.push(
-      'Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://www.notofilia.com/llms-full.txt).',
+      'Índice curado según [llmstxt.org](https://llmstxt.org/). Inventario completo y cuerpos editoriales: [`llms-full.txt`](https://notofilia.com/llms-full.txt).',
       '',
     );
   }
@@ -187,7 +224,7 @@ function buildIntro({ catalogCount, blogCount, noticiasCount, full = false }) {
   return lines.join('\n');
 }
 
-function buildCoreSections({ catalog, blog, noticias, full }) {
+function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full }) {
   const byPath = new Map(catalog.map((c) => [c.path, c]));
   const hubs = HUB_ORDER.map((h) => {
     const entry = byPath.get(h.path);
@@ -196,17 +233,20 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
       description: entry?.description || h.label,
       title: entry?.title || h.label,
     };
-  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/');
+  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/numismatica/');
 
   const lines = [];
 
   lines.push('## Sitio principal', '');
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
-  lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Entrada al catálogo; billete obsoleto EE. UU. y hub de secciones.'));
-  lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
+  lines.push(linkLine('Catálogo de Colombia', abs('/coleccion/colombia/'), 'Hub de billetes colombianos: banca libre, Banco de la República y emisiones en el extranjero.'));
+  lines.push(linkLine('Catálogo de Numismática', abs('/coleccion/numismatica/'), 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.'));
+  lines.push(linkLine('Guías para coleccionistas', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
+  lines.push(linkLine('Sobre Notofilia', abs('/nosotros/'), 'Qué es el proyecto, quién lo edita y cómo citar las fichas.'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
-  lines.push(linkLine('Glosario', abs('/glosario/'), 'Más de 90 términos de numismática y notafilia (ES/EN).'));
+  lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));
+  lines.push(linkLine('Editor — Yezid Acosta', abs('/editorial/equipo/'), 'Fundador y editor: catálogo, valoración y correcciones.'));
   lines.push(linkLine('J.S.G. Boggs', abs('/j-s-g-boggs/'), 'Perfil del artista de los «Boggs bills» dibujados a mano.'));
   lines.push('');
 
@@ -246,6 +286,7 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
       '/coleccion/ecuador/100-sucres-1993/',
       '/coleccion/veinte-dolares-hawaii-1934/',
       '/coleccion/un-dolar-norte-africa-1935a/',
+      '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
       '/coleccion/polimero-mundial/samoa-2-tala/',
       '/coleccion/pop-art/pele-bicycle-kick-the-king/',
     ];
@@ -257,7 +298,7 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
     }
     lines.push(
       '',
-      `Listado completo de ${catalog.length} fichas: [llms-full.txt](${SITE}/llms-full.txt) · API: [GET /api/catalog](${SITE}/api/catalog) · índice JSON: [${SITE}/data/catalog-index.json](${SITE}/data/catalog-index.json).`,
+      `Listado completo de ${stats.fichas} fichas (${stats.billetes} billetes, ${stats.monedas} monedas, ${stats.paises} países): [llms-full.txt](${SITE}/llms-full.txt) · API: [GET /api/catalog](${SITE}/api/catalog) · índice JSON: [${SITE}/data/catalog-index.json](${SITE}/data/catalog-index.json).`,
       '',
     );
   }
@@ -298,6 +339,35 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
     }
   }
 
+  lines.push('## Logros del Mes — Colección Virtual', '');
+  if (logros.length === 0) {
+    lines.push('Aún no hay resúmenes mensuales publicados.', '');
+  } else {
+    for (const post of logros) {
+      lines.push(linkLine(post.title, abs(post.path), clip(post.excerpt, 140)));
+    }
+    lines.push('');
+  }
+
+  if (full && logros.length > 0) {
+    lines.push('## Texto completo — logros del mes', '');
+    for (const post of logros) {
+      lines.push(`### ${post.title}`, '');
+      lines.push(`URL canónica: ${abs(post.path)}`, '');
+      if (post.excerpt) lines.push(`> ${post.excerpt}`, '');
+      lines.push(post.body, '', '---', '');
+    }
+  }
+
+  if (full && glossary.length > 0) {
+    lines.push('## Glosario — términos', '');
+    for (const term of glossary) {
+      const note = [term.termEn, clip(term.body, 120)].filter(Boolean).join(' — ');
+      lines.push(linkLine(term.title, abs(term.path), note));
+    }
+    lines.push('');
+  }
+
   lines.push('## APIs y agentes', '');
   lines.push(linkLine('OpenAPI', abs('/openapi.json'), 'Catálogo, health, comentarios y registro de agentes.'));
   lines.push(linkLine('Catalog search API', abs('/api/catalog'), 'GET ?q=&limit= — búsqueda sobre título/ruta/keywords.'));
@@ -317,6 +387,8 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
   } else {
     lines.push(linkLine('llms.txt', abs('/llms.txt'), 'Índice corto curado (preferir si el contexto es limitado).'));
   }
+  lines.push(linkLine('Política editorial y valoración', abs('/editorial/'), 'Tipos de cifra, fuentes, correcciones y editor.'));
+  lines.push(linkLine('Notafilia (Wikipedia ES)', 'https://es.wikipedia.org/wiki/Notafilia', 'Artículo de la disciplina; Enlaces externos menciona Notofilia.com vía archive.org 2013 (nofollow).'));
   lines.push(linkLine('Política de privacidad y cookies', abs('/politica-privacidad-cookies/'), 'GDPR / LOPDGDD / Ley 1581 Colombia.'));
   lines.push(linkLine('Facebook', 'https://www.facebook.com/NOTOFILIA/', 'Perfil social.'));
   lines.push(linkLine('Instagram', 'https://www.instagram.com/notofilia2026/', 'Perfil social.'));
@@ -330,14 +402,19 @@ function buildCoreSections({ catalog, blog, noticias, full }) {
 const catalog = await loadCatalog();
 const blog = await loadPosts(BLOG_DIR, 'blog');
 const noticias = await loadPosts(NOTICIAS_DIR, 'noticias');
+const logros = await loadPosts(LOGROS_DIR, 'logros');
+const glossary = await loadGlossary();
+const stats = getCollectionStatsFromDisk(CATALOG_DIR);
 const counts = {
-  catalogCount: catalog.length,
+  stats,
   blogCount: blog.length,
   noticiasCount: noticias.length,
+  logrosCount: logros.length,
+  glossaryCount: glossary.length,
 };
 
-const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, full: false })}\n`;
-const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, full: true })}\n`;
+const llmsTxt = `${buildIntro({ ...counts, full: false })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full: false })}\n`;
+const llmsFull = `${buildIntro({ ...counts, full: true })}\n${buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full: true })}\n`;
 
 const targets = [
   ['llms.txt', llmsTxt],
@@ -354,5 +431,5 @@ for (const [name, body] of targets) {
 const kb = (n) => `${(Buffer.byteLength(n, 'utf8') / 1024).toFixed(1)} KiB`;
 console.log(
   `Generated llms.txt (${kb(llmsTxt)}) + llms-full.txt (${kb(llmsFull)}) ` +
-    `from ${catalog.length} catalog · ${blog.length} blog · ${noticias.length} noticias.`,
+    `from ${stats.fichas} fichas · ${stats.billetes} billetes · ${blog.length} blog · ${noticias.length} noticias · ${logros.length} logros · ${glossary.length} glosario.`,
 );

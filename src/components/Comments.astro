@@ -8,20 +8,20 @@ const { slug } = Astro.props;
 const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
 ---
 <section class="mt-16 pt-10 border-t border-line" aria-labelledby="comments-heading" data-comments-root>
-  <h2 id="comments-heading" class="font-display font-normal text-[clamp(25px,3.5vw,34px)] text-cream mt-0 mb-3">
+  <h2 id="comments-heading" class="font-display font-normal text-[clamp(25px,3.5vw,34px)] text-cream mt-0 mb-3" data-i18n data-en="Comments">
     Comentarios
   </h2>
-  <p class="text-[16px] text-muted mt-0 mb-8">
+  <p class="text-[16px] text-muted mt-0 mb-8" data-i18n data-en="Share your view. Comments appear after they are reviewed.">
     Comparte tu opinión. Los comentarios se publican después de ser revisados.
   </p>
 
   <div data-comments-list aria-live="polite" aria-busy="true">
-    <p class="text-[16px] text-muted">Cargando comentarios…</p>
+    <p class="text-[16px] text-muted" data-i18n data-en="Loading comments…">Cargando comentarios…</p>
   </div>
 
   <form data-comment-form class="mt-10 grid gap-5" hidden={!siteKey}>
     <div>
-      <label for={`comment-name-${slug}`} class="block text-[15px] text-cream mb-2">Nombre</label>
+      <label for={`comment-name-${slug}`} class="block text-[15px] text-cream mb-2" data-i18n data-en="Name">Nombre</label>
       <input
         id={`comment-name-${slug}`}
         name="name"
@@ -35,7 +35,7 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
     </div>
 
     <div>
-      <label for={`comment-body-${slug}`} class="block text-[15px] text-cream mb-2">Comentario</label>
+      <label for={`comment-body-${slug}`} class="block text-[15px] text-cream mb-2" data-i18n data-en="Comment">Comentario</label>
       <textarea
         id={`comment-body-${slug}`}
         name="comment"
@@ -59,13 +59,15 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
       <button
         type="submit"
         class="min-h-[48px] px-7 py-3 bg-cream text-bg border border-cream rounded-full font-serif font-semibold text-[15px] tracking-[0.08em] uppercase cursor-pointer disabled:opacity-60 disabled:cursor-wait focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+        data-i18n
+        data-en="Send comment"
       >Enviar comentario</button>
     </div>
     <p data-comment-status class="text-[15px] mt-0" role="status" aria-live="polite"></p>
   </form>
 
   {!siteKey && (
-    <p class="text-[15px] text-muted">Los comentarios estarán disponibles próximamente.</p>
+    <p class="text-[15px] text-muted" data-i18n data-en="Comments will be available soon.">Los comentarios estarán disponibles próximamente.</p>
   )}
 </section>
 
@@ -80,6 +82,31 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
   const status = root?.querySelector('[data-comment-status]');
   const endpoint = `/api/comments/${encodeURIComponent(slug)}`;
 
+  const copy = {
+    es: {
+      empty: 'Aún no hay comentarios publicados.',
+      loadFail: 'No se pudieron cargar los comentarios.',
+      sending: 'Enviando…',
+      sendFail: 'No se pudo enviar el comentario.',
+    },
+    en: {
+      empty: 'No comments have been published yet.',
+      loadFail: 'Comments could not be loaded.',
+      sending: 'Sending…',
+      sendFail: 'The comment could not be sent.',
+    },
+  };
+  function isEn() {
+    return document.documentElement.getAttribute('data-page-locale') === 'en'
+      || document.documentElement.lang === 'en';
+  }
+  function langCopy() {
+    return isEn() ? copy.en : copy.es;
+  }
+  function dateLocale() {
+    return isEn() ? 'en' : 'es';
+  }
+
   const renderComments = (comments) => {
     if (!list) return;
     list.replaceChildren();
@@ -88,7 +115,7 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
     if (!comments.length) {
       const empty = document.createElement('p');
       empty.className = 'text-[16px] text-muted';
-      empty.textContent = 'Aún no hay comentarios publicados.';
+      empty.textContent = langCopy().empty;
       list.append(empty);
       return;
     }
@@ -101,7 +128,7 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
 
       const meta = document.createElement('p');
       meta.className = 'text-[14px] text-muted mt-0 mb-2';
-      const date = new Intl.DateTimeFormat('es', { dateStyle: 'long' })
+      const date = new Intl.DateTimeFormat(dateLocale(), { dateStyle: 'long' })
         .format(new Date(comment.createdAt));
       meta.textContent = `${comment.authorName} · ${date}`;
 
@@ -123,7 +150,7 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
     } catch {
       if (!list) return;
       list.setAttribute('aria-busy', 'false');
-      list.innerHTML = '<p class="text-[16px] text-muted">No se pudieron cargar los comentarios.</p>';
+      list.innerHTML = '<p class="text-[16px] text-muted">' + langCopy().loadFail + '</p>';
     }
   };
 
@@ -134,7 +161,7 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
     const turnstileToken = data.get('cf-turnstile-response');
 
     submit.disabled = true;
-    status.textContent = 'Enviando…';
+    status.textContent = langCopy().sending;
     status.className = 'text-[15px] text-muted mt-0';
 
     try {
@@ -148,14 +175,14 @@ const siteKey = '0x4AAAAAAD40VfPOxkjwgdld';
         }),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || 'No se pudo enviar el comentario.');
+      if (!response.ok) throw new Error(result.error || langCopy().sendFail);
 
       form.reset();
       if (window.turnstile) window.turnstile.reset();
       status.textContent = result.message;
       status.className = 'text-[15px] text-cream mt-0';
     } catch (error) {
-      status.textContent = error.message || 'No se pudo enviar el comentario.';
+      status.textContent = error.message || langCopy().sendFail;
       status.className = 'text-[15px] text-[#ffb4a8] mt-0';
       if (window.turnstile) window.turnstile.reset();
     } finally {

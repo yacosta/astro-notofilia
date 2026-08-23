@@ -155,11 +155,16 @@
     runtime.markFetched(rootName);
     runtime.setRootName(rootName);
     runtime.adoptParsed(rootName, parsed);
-    fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
-      const raw = t ? parseDcText(t) : null;
-      if (raw?.template) runtime.updateHtml(rootName, raw.template);
-    }).catch(() => {
-    });
+    // Astro catalog pages already embed the full template in <x-dc>. Skip the
+    // legacy second fetch of location.href that re-downloads the HTML document.
+    const skipRefetch = !!(doc.documentElement && doc.documentElement.hasAttribute("data-dc-static"));
+    if (!skipRefetch) {
+      fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
+        const raw = t ? parseDcText(t) : null;
+        if (raw?.template) runtime.updateHtml(rootName, raw.template);
+      }).catch(() => {
+      });
+    }
     const dc = doc.querySelector("x-dc");
     const hostEl = doc.createElement("div");
     hostEl.id = "dc-root";

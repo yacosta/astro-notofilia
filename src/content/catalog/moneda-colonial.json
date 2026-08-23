@@ -27,41 +27,96 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Moneda Colonial",
-            "item": "https://www.notofilia.com/coleccion/moneda-colonial/"
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/moneda-colonial/#page",
+        "@id": "https://notofilia.com/coleccion/moneda-colonial/#page",
         "name": "Catálogo de Moneda Colonial Americana",
-        "url": "https://www.notofilia.com/coleccion/moneda-colonial/",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/",
         "description": "Catálogo de moneda colonial americana previa a la independencia de Estados Unidos, de la colección Notofilia.",
         "inLanguage": "es",
         "hasPart": [
           {
             "@type": "CreativeWork",
             "name": "Pensilvania — Cinco Chelines (1773)",
-            "url": "https://www.notofilia.com/coleccion/moneda-colonial/pensilvania-5-chelines-1773/"
+            "url": "https://notofilia.com/coleccion/moneda-colonial/pensilvania-5-chelines-1773/"
           },
           {
             "@type": "CreativeWork",
             "name": "Nueva Jersey — Seis Chelines (1776)",
-            "url": "https://www.notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
+            "url": "https://notofilia.com/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/"
           }
         ]
       }
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/moneda-colonial/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Moneda Colonial Americana</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Papel moneda emitido por las trece colonias británicas de Norteamérica antes de la independencia &mdash;expresado en libras, chelines y peniques, y autorizado por cada asamblea colonial bajo la autoridad nominal de la Corona.</p>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Provincia de Pensilvania</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Vísperas de la Revolución (1773)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/pennsylvania-colonial-5-shillings-1773.jpg\"\n          image-webp=\"uploads/pennsylvania-colonial-5-shillings-1773.webp\"\n          alt=\"Billete colonial de dos chelines y seis peniques y cinco chelines de Pensilvania, 1773, anverso y reverso\"\n          title=\"Provincia de Pensilvania\"\n          denomination=\"2s6d y 5 Chelines\"\n          year=\"1773\"\n          href=\"/coleccion/moneda-colonial/provincia-de-pensilvania/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section style=\"margin-top:64px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Colonia de Nueva Jersey</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Vísperas de la Independencia (1776)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/newjersey-6-shillings-1776-colonial.jpg\"\n          image-webp=\"uploads/newjersey-6-shillings-1776-colonial.webp\"\n          alt=\"Billete colonial de Seis Chelines de Nueva Jersey, 1776, anverso y reverso\"\n          title=\"Colonia de Nueva Jersey\"\n          denomination=\"Seis Chelines\"\n          year=\"1776\"\n          href=\"/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/moneda-colonial/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Moneda Colonial Americana</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Papel moneda emitido por las trece colonias británicas de Norteamérica antes de la independencia &mdash;expresado en libras, chelines y peniques, y autorizado por cada asamblea colonial bajo la autoridad nominal de la Corona.</p>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Provincia de Pensilvania</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Vísperas de la Revolución (1773)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-top:64px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Colonia de Nueva Jersey</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Vísperas de la Independencia (1776)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.moneda-colonial",
+    "kind": "other",
+    "title": "Catálogo de Moneda Colonial Americana",
+    "subtitle": "Papel moneda emitido por las trece colonias británicas de Norteamérica antes de la independencia —expresado en libras, chelines y peniques, y autorizado por cada asamblea colonial bajo la autoridad nominal de la Corona.",
+    "dateOrSeries": "Provincia de Pensilvania",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Moneda Colonial"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/moneda-colonial/provincia-de-pensilvania/",
+        "title": "Provincia de Pensilvania",
+        "denomination": "2s6d y 5 Chelines",
+        "year": "1773",
+        "image": "/uploads/pennsylvania-colonial-5-shillings-1773.jpg",
+        "imageWebp": "/uploads/pennsylvania-colonial-5-shillings-1773.webp",
+        "alt": "Billete colonial de dos chelines y seis peniques y cinco chelines de Pensilvania, 1773, anverso y reverso",
+        "altEn": "Banknote colonial de dos chelines y seis peniques y cinco chelines de Pensilvania, 1773, obverse and reverse",
+        "titleEn": "Province of Pennsylvania"
+      },
+      {
+        "href": "/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/",
+        "title": "Colonia de Nueva Jersey",
+        "denomination": "Seis Chelines",
+        "year": "1776",
+        "image": "/uploads/newjersey-6-shillings-1776-colonial.jpg",
+        "imageWebp": "/uploads/newjersey-6-shillings-1776-colonial.webp",
+        "alt": "Billete colonial de Seis Chelines de Nueva Jersey, 1776, anverso y reverso",
+        "altEn": "Banknote colonial de Seis Chelines de New Jersey, 1776, obverse and reverse",
+        "titleEn": "New Jersey Colony"
+      }
+    ],
+    "eyebrow": "Provincia de Pensilvania"
+  },
   "legacyFile": "catalogo-moneda-colonial.dc.html",
-  "sourceHash": "528bb8efb9fbf578"
+  "sourceHash": "528bb8efb9fbf578",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/colonial-paper-money/",
+      "title": "American Colonial Currency Catalog | Notofilia",
+      "description": "American colonial currency from before U.S. independence: notes of the thirteen British colonies. A Notofilia catalog.",
+      "ogTitle": "American Colonial Currency Catalog — Notofilia",
+      "ogDescription": "American colonial currency from before U.S. independence, from the Notofilia collection.",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/colonial-paper-money/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">American Colonial Currency Catalog</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Paper money issued by the thirteen British colonies of North America before independence &mdash;denominated in pounds, shillings, and pence, and authorized by each colonial assembly under the nominal authority of the Crown.</p>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Province of Pennsylvania</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">On the Eve of the Revolution (1773)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin-top:64px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Colony of New Jersey</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">On the Eve of Independence (1776)</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+      "recordTitle": "American Colonial Currency Catalog",
+      "eyebrow": "Province of Pennsylvania"
+    }
+  }
 }

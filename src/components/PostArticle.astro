@@ -1,16 +1,23 @@
 ---
 /**
- * Shared article page for a single blog / noticias post.
+ * Shared article page for a single blog / noticias / logros post.
  */
-import type { CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
-import { formatDateLongEs, toIsoDate } from '../lib/dates';
+import ClaimCallout from './ClaimCallout.astro';
+import SourceCredit from './SourceCredit.astro';
+import { COLLECTIONS } from '../lib/collections';
+import { EDITORIAL_TEAM } from '../lib/editorial';
+import { isClaimKind } from '../lib/claims';
+import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
+import { lookupEn } from '../lib/html-i18n';
 import type { PostCollection } from '../lib/posts';
+import { UI } from '../lib/ui-i18n';
 
 export interface Props {
   collection: PostCollection;
-  post: CollectionEntry<'blog'> | CollectionEntry<'noticias'>;
+  post: CollectionEntry<'blog'> | CollectionEntry<'noticias'> | CollectionEntry<'logros'>;
   /** CTA label for external source link. */
   sourceLinkLabel: string;
   /** Back-link label under the article. */
@@ -18,31 +25,78 @@ export interface Props {
 }
 
 const { collection, post, sourceLinkLabel, backLabel } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 const d = post.data;
 const iso = toIsoDate(d.publishedAt);
 const fmt = formatDateLongEs(d.publishedAt);
+const updatedIso = d.updatedAt ? toIsoDate(d.updatedAt) : undefined;
+const updatedFmt = d.updatedAt ? formatDateLongEs(d.updatedAt) : undefined;
+const reviewedBy = d.reviewedBy?.trim() || EDITORIAL_TEAM.name;
 const basePath = `/${collection}/`;
-const label = collection === 'blog' ? 'Blog' : 'Noticias';
+const label = COLLECTIONS[collection].label;
+const labelEn = COLLECTIONS[collection].labelEn;
+const sourceLinkLabelEn = COLLECTIONS[collection].sourceLinkLabelEn;
+const backLabelEn = COLLECTIONS[collection].backLabelEn;
+const fmtEn = formatDateLongEn(d.publishedAt);
+const updatedFmtEn = d.updatedAt ? formatDateLongEn(d.updatedAt) : undefined;
+const titleEn = lookupEn(d.title);
+const excerptEn = lookupEn(d.excerpt);
 const coverFit = d.coverFit ?? 'cover';
+const claimKind = d.claimKind && isClaimKind(d.claimKind) ? d.claimKind : undefined;
+const primarySources = d.primarySources ?? [];
+const corrections = d.corrections ?? [];
 ---
 <article class="max-w-content mx-auto px-6 pt-12">
-  <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan">
-    <a class="text-muted" href="/">Inicio</a> <span aria-hidden="true">/</span>
-    <a class="text-muted" href={basePath}>{label}</a> <span aria-hidden="true">/</span>
-    <span>{d.title}</span>
+  <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en={UI.crumbs.en}>
+    <a class="text-muted" href="/" data-i18n data-en={UI.home.en}>{UI.home.es}</a> <span aria-hidden="true">/</span>
+    <a class="text-muted" href={basePath} data-i18n data-en={labelEn}>{label}</a> <span aria-hidden="true">/</span>
+    <span data-i18n={titleEn ? true : undefined} data-en={titleEn}>{d.title}</span>
   </nav>
 
   <header>
-    <div class="flex flex-wrap gap-2 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
-      <time datetime={iso}>{fmt}</time>
-      {d.source && <span aria-hidden="true">·</span>}
-      {d.source && <span>{d.source}</span>}
+    <div class="flex flex-wrap gap-x-2 gap-y-1 items-baseline text-[13px] tracking-[0.08em] uppercase text-muted mb-3">
+      <span>
+        <span data-i18n data-en={UI.publishedOn.en}>{UI.publishedOn.es}</span>
+        {' '}
+        <time datetime={iso} data-i18n data-en={fmtEn}>{fmt}</time>
+      </span>
     </div>
-    <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+    {collection === 'noticias' && d.source && d.sourceUrl && (
+      <SourceCredit source={d.source} sourceUrl={d.sourceUrl} class="mb-3" />
+    )}
+    {collection !== 'noticias' && d.source && (
+      <p class="m-0 mb-3 text-[13px] tracking-[0.08em] uppercase text-muted">{d.source}</p>
+    )}
+    <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]" data-i18n={titleEn ? true : undefined} data-en={titleEn}>
       {d.title}
     </h1>
-    <p class="italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 mb-9 leading-[1.5]">{d.excerpt}</p>
+    <p
+      class:list={[
+        'italic text-[clamp(19px,2.4vw,23px)] text-cream-dim mt-0 leading-[1.5]',
+        collection === 'noticias' && !(updatedFmt && updatedIso) ? 'mb-9' : 'mb-5',
+      ]}
+      data-i18n={excerptEn ? true : undefined}
+      data-en={excerptEn}
+    >{d.excerpt}</p>
+
+    {(collection !== 'noticias' || (updatedFmt && updatedIso)) && (
+    <dl class="m-0 mb-9 grid gap-1 text-[14px] tracking-[0.02em] text-muted not-italic">
+      {collection !== 'noticias' && (
+      <div class="flex flex-wrap gap-x-2">
+        <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.reviewedBy.en}>{UI.reviewedBy.es}</dt>
+        <dd class="m-0">
+          <a class="text-muted hover:text-cream" href="/editorial/equipo/">{reviewedBy}</a>
+        </dd>
+      </div>
+      )}
+      {updatedFmt && updatedIso && (
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="m-0 font-semibold text-cream-soft" data-i18n data-en={UI.lastUpdated.en}>{UI.lastUpdated.es}</dt>
+          <dd class="m-0"><time datetime={updatedIso} data-i18n={updatedFmtEn ? true : undefined} data-en={updatedFmtEn}>{updatedFmt}</time></dd>
+        </div>
+      )}
+    </dl>
+    )}
   </header>
 
   {d.cover && (
@@ -62,35 +116,107 @@ const coverFit = d.coverFit ?? 'cover';
     </figure>
   )}
 
+  {claimKind && (
+    <ClaimCallout
+      kind={claimKind}
+      note={d.claimNote}
+      currency={d.claimCurrency}
+      valuationDate={d.claimValuationDate}
+      evidenceUrl={d.claimEvidenceUrl}
+      evidenceLabel={d.claimEvidenceLabel}
+    />
+  )}
+
   <div class="prose-notofilia text-[20px] leading-[1.75] text-cream-dim">
     <Content />
   </div>
 
-  {d.relatedLinks && d.relatedLinks.length > 0 && (
-    <aside class="mt-12 border border-line rounded-[4px] px-6 py-6" aria-labelledby="related-heading">
-      <h2 id="related-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4">Sigue explorando</h2>
-      <ul class="grid gap-4 list-none p-0 m-0 sm:grid-cols-2">
-        {d.relatedLinks.map((link) => (
-          <li>
-            <a class="text-cream font-semibold" href={link.href}>{link.title}</a>
-            {link.description && <p class="text-[16px] leading-[1.5] text-muted mt-1 mb-0">{link.description}</p>}
+  {collection === 'noticias' && d.source && d.sourceUrl && (
+    <SourceCredit source={d.source} sourceUrl={d.sourceUrl} variant="footer" />
+  )}
+
+  {primarySources.length > 0 && (
+    <aside class="mt-12 border-t border-line pt-8" aria-labelledby="primary-sources-heading">
+      <h2 id="primary-sources-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4" data-i18n data-en="Primary sources">
+        Fuentes primarias
+      </h2>
+      <ul class="m-0 pl-5 text-[17px] leading-[1.6] text-cream-dim">
+        {primarySources.map((src) => (
+          <li class="mb-2">
+            <a
+              class="text-cream underline [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+              href={src.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{src.label} <span class="whitespace-nowrap text-[14px] text-muted" data-i18n data-en="(opens in a new tab)">(se abre en una pestaña nueva)</span></a>
           </li>
         ))}
       </ul>
     </aside>
   )}
 
-  {d.sourceUrl && (
+  {corrections.length > 0 && (
+    <aside class="mt-10 border border-line rounded-[4px] px-6 py-5" aria-labelledby="corrections-heading">
+      <h2 id="corrections-heading" class="font-display font-normal text-[22px] text-cream mt-0 mb-3" data-i18n data-en="Correction history">
+        Historial de correcciones
+      </h2>
+      <ol class="m-0 pl-5 text-[16px] leading-[1.55] text-cream-dim">
+        {corrections.map((c) => (
+          <li class="mb-2">
+            <time datetime={toIsoDate(c.date)} data-i18n data-en={formatDateLongEn(c.date)}>{formatDateLongEs(c.date)}</time>
+            {' — '}
+            {c.text}
+          </li>
+        ))}
+      </ol>
+    </aside>
+  )}
+
+  {d.relatedLinks && d.relatedLinks.length > 0 && (
+    <aside class="mt-12 border border-line rounded-[4px] px-6 py-6" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="font-display font-normal text-[24px] text-cream mt-0 mb-4" data-i18n data-en="Keep exploring">Sigue explorando</h2>
+      <ul class="grid gap-4 list-none p-0 m-0 sm:grid-cols-2">
+        {d.relatedLinks.map((link) => (
+          <li>
+            <a class="text-cream font-semibold" href={link.href} data-i18n={lookupEn(link.title) ? true : undefined} data-en={lookupEn(link.title)}>{link.title}</a>
+            {link.description && <p class="text-[16px] leading-[1.5] text-muted mt-1 mb-0" data-i18n={lookupEn(link.description) ? true : undefined} data-en={lookupEn(link.description)}>{link.description}</p>}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
+
+  {collection !== 'noticias' && d.sourceUrl && (
     <p class="mt-10 pt-6 border-t border-line text-[16px] tracking-[0.04em] uppercase">
-      <a class="text-muted font-semibold hover:text-cream" href={d.sourceUrl} target="_blank" rel="noopener noreferrer">
-        {sourceLinkLabel}{d.source ? ` en ${d.source}` : ''} &rarr;
+      <a
+        class="text-muted font-semibold hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+        href={d.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span data-i18n data-en={sourceLinkLabelEn}>{sourceLinkLabel}</span>
+        {d.source && (
+          <>
+            {' '}
+            <span data-i18n data-en={`in ${d.source}`}>en {d.source}</span>
+          </>
+        )}
+        {' '}
+        <span class="normal-case tracking-normal font-normal" data-i18n data-en="(opens in a new tab)">(se abre en una pestaña nueva)</span>
+        {' '}&rarr;
       </a>
     </p>
   )}
 
-  {collection === 'noticias' && <Comments slug={post.slug} />}
+  <p class="mt-6 text-[14px] text-muted">
+    <a class="text-muted underline [text-decoration-color:rgba(183,171,138,0.4)] hover:text-cream" href="/editorial/" data-i18n data-en="Editorial and valuation policy">
+      Política editorial, fuentes y valoración
+    </a>
+  </p>
 
-  <p class="mt-10"><a class="text-muted" href={basePath}>&larr; {backLabel}</a></p>
+  {collection === 'noticias' && <Comments slug={post.id} />}
+
+  <p class="mt-10"><a class="text-muted" href={basePath}>&larr; <span data-i18n data-en={backLabelEn}>{backLabel}</span></a></p>
 </article>
 
 <style>

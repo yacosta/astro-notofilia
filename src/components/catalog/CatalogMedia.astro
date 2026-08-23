@@ -1,0 +1,229 @@
+---
+/**
+ * Front / reverse / stacked media with a native dialog zoom.
+ * Separate face assets are preferred; stacked composites remain supported.
+ */
+import type { CatalogImage, CatalogRecord } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI } from '../../lib/ui-i18n';
+
+interface Props {
+  record: CatalogRecord;
+}
+
+const { record } = Astro.props;
+const images = record.images;
+const views: Array<{
+  id: 'front' | 'reverse' | 'stacked';
+  label: string;
+  labelEn: string;
+  image: CatalogImage;
+  altEn?: string;
+}> = [];
+if (images?.front) {
+  views.push({
+    id: 'front',
+    label: UI.obverse.es,
+    labelEn: UI.obverse.en,
+    image: images.front,
+    altEn: lookupEn(images.front.alt),
+  });
+}
+if (images?.reverse) {
+  views.push({
+    id: 'reverse',
+    label: UI.reverse.es,
+    labelEn: UI.reverse.en,
+    image: images.reverse,
+    altEn: lookupEn(images.reverse.alt),
+  });
+}
+if (images?.stacked) {
+  views.push({
+    id: 'stacked',
+    label: UI.stacked.es,
+    labelEn: UI.stacked.en,
+    image: images.stacked,
+    altEn: lookupEn(images.stacked.alt),
+  });
+}
+
+const defaultView =
+  images?.defaultView && views.some((v) => v.id === images.defaultView)
+    ? images.defaultView
+    : views[0]?.id;
+const initial = views.find((v) => v.id === defaultView) ?? views[0];
+const viewsJson = JSON.stringify(views);
+---
+{
+  initial && (
+    <section class="catalog-record-media" aria-labelledby="catalog-media-heading" data-catalog-media>
+      <div class="flex flex-wrap items-end justify-between gap-3 mb-4">
+        <h2
+          id="catalog-media-heading"
+          class="m-0 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+          data-i18n
+          data-en={UI.images.en}
+        >
+          {UI.images.es}
+        </h2>
+        {
+          views.length > 1 && (
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Vista de la pieza" data-i18n data-i18n-target="aria-label" data-en={UI.viewFace.en}>
+              {
+                views.map((view) => (
+                  <button
+                    type="button"
+                    class="min-h-11 px-4 py-2 text-[13px] tracking-[0.08em] uppercase border border-line text-muted bg-transparent cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px] aria-pressed:border-cream aria-pressed:text-cream"
+                    data-catalog-view={view.id}
+                    aria-pressed={view.id === initial.id ? 'true' : 'false'}
+                    data-i18n
+                    data-en={view.labelEn}
+                  >
+                    {view.label}
+                  </button>
+                ))
+              }
+            </div>
+          )
+        }
+      </div>
+
+      <figure class="m-0">
+        <button
+          type="button"
+          class="relative block w-full p-0 border-0 bg-transparent cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+          data-catalog-zoom-open
+          aria-haspopup="dialog"
+          aria-controls="catalog-media-dialog"
+          aria-label="Ampliar imagen de la pieza"
+          data-i18n
+          data-i18n-target="aria-label"
+          data-en={UI.enlargeAria.en}
+        >
+          <picture>
+            {
+              initial.image.srcWebp && (
+                <source srcset={initial.image.srcWebp} type="image/webp" data-catalog-webp />
+              )
+            }
+            <img
+              data-catalog-img
+              src={initial.image.src}
+              alt={initial.image.alt}
+              data-i18n
+              data-i18n-target="alt"
+              data-en={lookupEn(initial.image.alt)}
+              width={initial.image.width}
+              height={initial.image.height}
+              loading="eager"
+              decoding="async"
+              class="block w-full h-auto"
+            />
+          </picture>
+          <span class="absolute bottom-4 right-4 inline-flex min-h-11 items-center px-4 text-[13px] tracking-[0.08em] uppercase bg-[rgba(10,10,9,0.82)] text-cream pointer-events-none" data-i18n data-en={UI.enlarge.en}>
+            {UI.enlarge.es}
+          </span>
+        </button>
+        <figcaption class="mt-3 text-[14px] text-muted" data-catalog-caption data-i18n={lookupEn(initial.image.alt) ? true : undefined} data-en={lookupEn(initial.image.alt)}>
+          {initial.image.alt}
+        </figcaption>
+      </figure>
+
+      <dialog
+        id="catalog-media-dialog"
+        class="m-0 p-0 border-0 bg-[rgba(10,10,9,0.94)] text-cream max-w-none max-h-none w-screen h-screen"
+        data-catalog-dialog
+      >
+        <div class="relative flex h-full w-full items-center justify-center p-0" data-catalog-dialog-stage>
+          <button
+            type="button"
+            class="absolute top-4 right-4 z-10 min-h-11 min-w-11 px-4 border border-line bg-bg text-cream cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+            data-catalog-zoom-close
+            data-i18n
+            data-en={UI.close.en}
+          >
+            {UI.close.es}
+          </button>
+          <img
+            data-catalog-dialog-img
+            src={initial.image.srcWebp || initial.image.src}
+            alt={initial.image.alt}
+            width={initial.image.width}
+            height={initial.image.height}
+            class="relative z-0 max-h-[100vh] max-w-[100vw] w-auto h-auto object-contain cursor-zoom-out"
+          />
+        </div>
+      </dialog>
+
+      <script define:vars={{ viewsJson }} is:inline>
+        (function () {
+          const root = document.querySelector('[data-catalog-media]');
+          if (!root) return;
+          const views = JSON.parse(viewsJson);
+          const img = root.querySelector('[data-catalog-img]');
+          const webp = root.querySelector('[data-catalog-webp]');
+          const caption = root.querySelector('[data-catalog-caption]');
+          const dialog = root.querySelector('[data-catalog-dialog]');
+          const dialogImg = root.querySelector('[data-catalog-dialog-img]');
+          const dialogStage = root.querySelector('[data-catalog-dialog-stage]');
+          const openBtn = root.querySelector('[data-catalog-zoom-open]');
+          const closeBtn = root.querySelector('[data-catalog-zoom-close]');
+          const buttons = Array.from(root.querySelectorAll('[data-catalog-view]'));
+
+          function currentAlt(view) {
+            var en = document.documentElement.getAttribute('data-page-locale') === 'en'
+              || document.documentElement.lang === 'en';
+            return (en && view.altEn) ? view.altEn : view.image.alt;
+          }
+
+          function applyView(id) {
+            const view = views.find(function (v) { return v.id === id; });
+            if (!view || !img) return;
+            img.src = view.image.src;
+            img.alt = currentAlt(view);
+            if (webp) {
+              if (view.image.srcWebp) webp.setAttribute('srcset', view.image.srcWebp);
+              else webp.removeAttribute('srcset');
+            }
+            if (caption) caption.textContent = currentAlt(view);
+            if (dialogImg) {
+              dialogImg.src = view.image.src;
+              dialogImg.alt = currentAlt(view);
+            }
+            buttons.forEach(function (btn) {
+              btn.setAttribute(
+                'aria-pressed',
+                btn.getAttribute('data-catalog-view') === id ? 'true' : 'false',
+              );
+            });
+          }
+
+          buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              applyView(btn.getAttribute('data-catalog-view'));
+            });
+          });
+
+          function closeMediaDialog() {
+            if (!dialog || !dialog.open) return;
+            dialog.close();
+          }
+
+          openBtn && openBtn.addEventListener('click', function () {
+            if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+          });
+          closeBtn && closeBtn.addEventListener('click', function (event) {
+            event.stopPropagation();
+            closeMediaDialog();
+          });
+          dialog && dialog.addEventListener('click', function (event) {
+            if (event.target === dialog || event.target === dialogStage || event.target === dialogImg) {
+              closeMediaDialog();
+            }
+          });
+        })();
+      </script>
+    </section>
+  )
+}

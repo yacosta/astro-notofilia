@@ -1,0 +1,64 @@
+---
+/**
+ * “Fuente:” attribution with an external link to the original article.
+ * Used on noticia pages, the homepage feature strip, and the news index.
+ */
+import NewWindowHint from './NewWindowHint.astro';
+import { UI, type Locale } from '../lib/ui-i18n';
+
+export interface Props {
+  source: string;
+  sourceUrl: string;
+  /** Dark editorial pages vs cream homepage cards. */
+  tone?: 'on-dark' | 'on-cream';
+  /** Compact byline vs the full-width line after the article body. */
+  variant?: 'meta' | 'footer';
+  class?: string;
+  locale?: Locale;
+}
+
+const {
+  source,
+  sourceUrl,
+  tone = 'on-dark',
+  variant = 'meta',
+  class: className,
+  locale = 'es',
+} = Astro.props;
+
+const onCream = tone === 'on-cream';
+const isFooter = variant === 'footer';
+const isEn = locale === 'en';
+---
+<p
+  class:list={[
+    'source-credit m-0 flex flex-wrap items-center gap-x-1.5',
+    isFooter
+      ? 'mt-10 pt-6 border-t border-line text-[16px] leading-[1.5]'
+      : 'text-[13px] leading-[1.4] tracking-[0.04em]',
+    onCream ? 'text-gold-dark' : 'text-muted',
+    className,
+  ]}
+>
+  <span
+    class:list={[
+      'shrink-0',
+      isFooter ? 'font-semibold text-cream-soft' : onCream ? 'text-gold-dark' : 'text-muted',
+    ]}
+    data-i18n={isEn ? undefined : true}
+    data-en={isEn ? undefined : UI.fuente.en}
+  >{isEn ? UI.fuente.en : UI.fuente.es}</span>
+  <a
+    class:list={[
+      'inline-flex min-h-[44px] min-w-0 max-w-full flex-wrap items-center gap-x-1 underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px]',
+      onCream
+        ? 'text-gold-deep [text-decoration-color:rgba(107,82,31,0.45)] focus-visible:outline-panel'
+        : 'text-cream [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light focus-visible:outline-cream',
+    ]}
+    href={sourceUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {source}<NewWindowHint lang={isEn ? 'en' : 'es'} />
+  </a>
+</p>

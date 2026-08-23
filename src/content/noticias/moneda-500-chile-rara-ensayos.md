@@ -25,6 +25,11 @@ relatedLinks:
   - href: "/blog/diferencia-numismatica-notafilia/"
     title: "Diferencia entre numismática y notafilia"
     description: "Qué estudia cada disciplina y cómo se relacionan monedas y billetes."
+updatedAt: 2026-08-14
+reviewedBy: "Yezid Acosta"
+claimKind: media_claim
+claimCurrency: CLP
+claimValuationDate: 2026-07-29
 ---
 
 Algunas monedas chilenas de **$500** pueden valer mucho más que su facial por

@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export type PostCollection = 'blog' | 'noticias';
+export type PostCollection = 'blog' | 'noticias' | 'logros';
 
 export type PublishedPost<C extends PostCollection = PostCollection> = CollectionEntry<C>;
 

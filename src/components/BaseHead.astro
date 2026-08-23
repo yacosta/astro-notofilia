@@ -2,52 +2,68 @@
 /**
  * Shared <head> SEO block for natively-Astro pages.
  * Import once per document; callers pass page-specific metadata.
+ *
+ * hreflang is owned here: reciprocal es + en + x-default→Spanish only when
+ * `getPair(path)` hits. Unpaired pages emit canonical only.
  */
 import '../styles/global.css';
-import { absoluteUrl, keywordsContent } from '../lib/site';
+import { absoluteUrl } from '../lib/site';
+import { EDITORIAL_TEAM } from '../lib/editorial';
+import { getPair, type Locale } from '../i18n/pairs';
+import WebVitals from './WebVitals.astro';
 
 export interface Props {
   title: string;
   description: string;
   path: string;
+  /** Document language. Drives og:locale (`es_ES` / `en_US`). */
+  locale: Locale;
   ogType?: 'website' | 'article' | 'profile';
   ogImage?: string;
   /** Override Open Graph / Twitter title when it should differ from <title>. */
   ogTitle?: string;
   ogDescription?: string;
   jsonLd?: unknown;
-  keywords?: string[];
   robots?: string;
-  /** Extra <link rel="alternate" hreflang> etc. via default slot. */
+  /** Extra links only (apple-touch-icon, fonts). Do not slot handwritten hreflang. */
   author?: string;
+  /**
+   * Load the legacy dc-runtime (`support.js`) for pages that still embed
+   * BanknoteCard / other dc-import components. Native Astro chrome does not need it.
+   */
+  loadDcRuntime?: boolean;
 }
 
 const {
   title,
   description,
   path,
+  locale,
   ogType = 'website',
   ogImage,
   ogTitle,
   ogDescription,
   jsonLd,
-  keywords,
   robots = 'index, follow',
-  author = 'Notofilia',
+  author = EDITORIAL_TEAM.name,
+  loadDcRuntime = false,
 } = Astro.props;
 
 const canonical = absoluteUrl(path);
 const image = absoluteUrl(ogImage ?? '/favicon.png');
-const kw = keywordsContent(keywords);
 const shareTitle = ogTitle ?? title;
 const shareDescription = ogDescription ?? description;
+const pair = getPair(path);
+const ogLocale = locale === 'en' ? 'en_US' : 'es_ES';
+const ogLocaleAlternate = pair ? (locale === 'en' ? 'es_ES' : 'en_US') : undefined;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- Nested routes: <base> makes the shared dc-runtime header's relative links resolve from root. -->
 <base href="/" />
-<!-- Critical self-hosted fonts: preload so they arrive before first paint and
-     reduce fallback→webfont swap (and the italic hero subtitle jump). -->
+<!-- Critical self-hosted fonts: preload only the faces used above the fold
+     on most pages (display + body regular). Italic loads via @font-face when
+     first needed, avoiding three competing font preloads on every document. -->
 <link
   rel="preload"
   as="font"
@@ -59,19 +75,12 @@ const shareDescription = ogDescription ?? description;
   rel="preload"
   as="font"
   type="font/woff2"
-  href="/uploads/fonts/SourceSans3-Italic-Variable-Latin.woff2"
-  crossorigin
-/>
-<link
-  rel="preload"
-  as="font"
-  type="font/woff2"
   href="/uploads/fonts/MontenegrinGothicOne-Regular.woff2"
   crossorigin
 />
-<!-- dc-runtime is needed for the imported SiteHeader, but not for first paint.
-     Defer so it downloads in parallel and runs after HTML parse. -->
-<script src="/support.js" defer is:inline></script>
+{loadDcRuntime && (
+  <script src="/support.js" defer is:inline></script>
+)}
 <!-- WebMCP is agent-only — keep it entirely off the critical request chain. -->
 <script is:inline>
   (function () {
@@ -94,21 +103,29 @@ const shareDescription = ogDescription ?? description;
 </script>
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="keywords" content={kw} />
 <meta name="author" content={author} />
 <meta name="robots" content={robots} />
 <link rel="canonical" href={canonical} />
 <link rel="icon" href="/favicon.png" />
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content="Notofilia" />
-<meta property="og:locale" content="es_ES" />
+<meta property="og:locale" content={ogLocale} />
+{ogLocaleAlternate && <meta property="og:locale:alternate" content={ogLocaleAlternate} />}
 <meta property="og:title" content={shareTitle} />
 <meta property="og:description" content={shareDescription} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={image} />
+{pair && (
+  <>
+    <link rel="alternate" hreflang="es" href={absoluteUrl(pair.es)} />
+    <link rel="alternate" hreflang="en" href={absoluteUrl(pair.en)} />
+    <link rel="alternate" hreflang="x-default" href={absoluteUrl(pair.es)} />
+  </>
+)}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={shareTitle} />
 <meta name="twitter:description" content={shareDescription} />
 <meta name="twitter:image" content={image} />
 {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
+<WebVitals />
 <slot />

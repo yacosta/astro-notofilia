@@ -1,0 +1,32 @@
+---
+/**
+ * Compact collection stats strip for the homepage.
+ */
+import { formatStatsEs, formatStatsEn, type CollectionStats } from '../lib/stats';
+import type { Locale } from '../lib/ui-i18n';
+
+export interface Props {
+  stats: CollectionStats;
+  locale?: Locale;
+}
+
+const { stats, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const es = formatStatsEs(stats);
+const en = formatStatsEn(stats);
+---
+<section
+  class="border-t border-line"
+  aria-label={isEn ? 'Collection statistics' : 'Estadísticas de la colección'}
+  data-i18n={isEn ? undefined : true}
+  data-i18n-target={isEn ? undefined : 'aria-label'}
+  data-en={isEn ? undefined : 'Collection statistics'}
+>
+  <div class="max-w-content mx-auto px-6 py-10 text-center">
+    <p
+      data-i18n={isEn ? undefined : true}
+      data-en={isEn ? undefined : en}
+      class="m-0 font-serif text-[clamp(15px,1.4vw,18px)] tracking-[0.08em] text-cream-dim"
+    >{isEn ? en : es}</p>
+  </div>
+</section>

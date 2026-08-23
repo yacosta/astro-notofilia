@@ -1,0 +1,204 @@
+---
+/**
+ * English artist profile — J.S.G. Boggs. Spanish /j-s-g-boggs/ is unchanged.
+ */
+import CatalogLayout from '../../../layouts/CatalogLayout.astro';
+import { SITE } from '../../../lib/site';
+
+const title = 'J.S.G. Boggs — Artist Profile | Notofilia';
+const description =
+  'Profile of J.S.G. Boggs (1955–2017), the American artist known for his hand-drawn banknotes, the celebrated “Boggs bills”.';
+const path = '/en/j-s-g-boggs/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/en/` },
+        { '@type': 'ListItem', position: 2, name: 'J.S.G. Boggs', item: `${SITE}${path}` },
+      ],
+    },
+    {
+      '@type': 'Person',
+      name: 'James Stephen George Boggs',
+      url: `${SITE}${path}`,
+      birthDate: '1955-01-16',
+      deathDate: '2017-01-22',
+      jobTitle: 'Artist',
+      description:
+        'American artist known for his hand-drawn banknotes, exchanged one-for-one at face value.',
+      nationality: 'American',
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'ImageObject',
+      name: 'Portrait of J.S.G. Boggs',
+      contentUrl: `${SITE}/uploads/jsg-boggs.jpg`,
+      creditText: 'Pittsburgh Post-Gazette',
+    },
+  ],
+};
+
+const template = `<div lang="en" style="width:100%; min-height:100vh; box-sizing:border-box;">
+  <header>
+    <nav aria-label="Breadcrumb" style="max-width:1180px; margin:0 auto; padding:56px 24px 0;">
+      <a href="/en/collection/pop-art/" style="display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;">&larr; Pop Art — catalog</a>
+    </nav>
+  </header>
+
+  <main data-pagefind-meta="url:/en/j-s-g-boggs/" id="main-content" tabindex="-1" data-screen-label="J.S.G. Boggs" style="max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;">
+    <div style="background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div style="text-align:center; max-width:720px; margin:0 auto 48px;">
+          <span style="display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;">Artist Profile &middot; Money Art</span>
+          <h1 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;">J.S.G. Boggs</h1>
+          <p style="font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;">16 January 1955 &mdash; 22 January 2017</p>
+        </div>
+
+        <div style="width:100%; max-width:100%; display:flex; flex-direction:column; gap:14px; margin:0 auto 48px;">
+          <button
+            type="button"
+            data-zoom-trigger="jsg-boggs"
+            aria-label="Enlarge portrait of J.S.G. Boggs"
+            style="all:unset; display:block; width:100%; position:relative; cursor:zoom-in;"
+          >
+            <picture>
+              <source srcset="/uploads/jsg-boggs-480.webp 480w, /uploads/jsg-boggs.webp 1140w" sizes="(max-width: 448px) calc(100vw - 48px), 400px" type="image/webp" />
+              <img
+                src="/uploads/jsg-boggs.jpg"
+                alt="J.S.G. Boggs standing in front of an enlarged black-and-white drawing of a 100-dollar bill"
+                width="1140"
+                height="797"
+                loading="eager"
+                decoding="async"
+                style="display:block; width:100%; height:auto; border:1px solid rgba(10,10,9,0.12);"
+              />
+            </picture>
+            <span style="position:absolute; bottom:22px; right:22px; display:flex; align-items:center; gap:8px; background:rgba(10,10,9,0.82); color:#d8d2cd; font-size:13px; letter-spacing:0.08em; padding:8px 14px; border-radius:999px;">
+              <span style="width:6px; height:6px; background:#d8d2cd; transform:rotate(45deg);"></span>
+              Enlarge
+            </span>
+          </button>
+
+          <div style="text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;">
+            <span style="display:block;">Pittsburgh Post-Gazette</span>
+          </div>
+
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Enlarged portrait"
+            data-zoom-dialog="jsg-boggs"
+            hidden
+            style="display:none; position:fixed; inset:0; z-index:50; background:rgba(5,5,4,0.94); flex-direction:column; align-items:center; justify-content:center;"
+          >
+            <button
+              type="button"
+              data-zoom-close
+              aria-label="Close"
+              style="position:absolute; top:24px; right:28px; background:transparent; border:1px solid rgba(231,222,201,0.4); color:#d8d2cd; font-size:22px; line-height:1; width:44px; height:44px; border-radius:50%; cursor:pointer;"
+            >&times;</button>
+
+            <div style="position:absolute; top:24px; left:28px; display:flex; align-items:center; gap:6px; background:rgba(10,10,9,0.5); border:1px solid rgba(231,222,201,0.25); border-radius:999px; padding:6px;">
+              <button
+                type="button"
+                data-zoom-out
+                disabled
+                aria-label="Zoom out"
+                style="width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;"
+              >&minus;</button>
+              <span data-zoom-percent style="min-width:56px; text-align:center; font-size:14px; color:#e7ddc4; letter-spacing:0.05em;">100%</span>
+              <button
+                type="button"
+                data-zoom-in
+                aria-label="Zoom in"
+                style="width:38px; height:38px; border-radius:50%; border:none; background:transparent; color:#d8d2cd; font-size:20px; cursor:pointer;"
+              >&#43;</button>
+            </div>
+
+            <div style="overflow:hidden; max-width:100vw; max-height:100vh; width:100vw; height:100vh; touch-action:none;">
+              <picture>
+                <source srcset="/uploads/jsg-boggs.webp" type="image/webp" />
+                <img
+                  data-zoom-image
+                  src="/uploads/jsg-boggs.jpg"
+                  alt="Portrait of J.S.G. Boggs, enlarged view"
+                  draggable="false"
+                  style="display:block; max-width:100vw; max-height:100vh; width:100vw; height:100vh; object-fit:contain; cursor:zoom-in; user-select:none;"
+                />
+              </picture>
+            </div>
+
+            <span style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:14px; letter-spacing:0.06em; color:#b7ab8a; font-style:italic; pointer-events:none;">Drag to pan &middot; Mouse wheel to zoom</span>
+          </div>
+        </div>
+
+        <div style="width:100%; max-width:760px;">
+          <div style="display:flex; flex-direction:column;">
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Nationality</span>
+              <span style="font-size:19px; color:#221f19;">American</span>
+            </div>
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Profession</span>
+              <span style="font-size:19px; color:#221f19;">Artist</span>
+            </div>
+            <div style="display:grid; grid-template-columns:minmax(140px,200px) 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);">
+              <span style="font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;">Principal work</span>
+              <span style="font-size:19px; color:#221f19;">Hand-drawn banknotes, known as &ldquo;Boggs bills&rdquo;</span>
+            </div>
+          </div>
+
+          <section style="margin-top:44px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">1. An Abstract Bill in a Chicago Diner</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Boggs began drawing money as art in 1984, when a Chicago waitress accepted a &ldquo;very abstract&rdquo; drawing of a one-dollar bill as payment for a 90-cent check. When she handed him ten cents in change, Boggs felt &ldquo;electricity&rdquo; at the exchange &mdash;the instant that would lead him to repeat the operation again and again with his own original art.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">His drawings, which reproduced only one face of the note, came to be known as &ldquo;Boggs bills&rdquo;. Boggs exchanged them only at face value: when he spent a drawing of 100 dollars, he traded it for goods worth exactly that amount.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">2. The Work as Performance</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Each transaction was itself part of the piece. Boggs later sold the change he received, the purchase receipt, and sometimes the goods themselves, usually to art dealers and collectors &mdash;but he never sold the drawn bills directly. Instead he told the collector where and how he had spent each piece, and it was the buyer who had to find the person who held it.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">Boggs noted that after that first transaction his bills were often resold for sums far above their original face value; the resale of a single &ldquo;Boggs bill&rdquo; for 420,000 dollars has been reported.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">3. The FUN Convention Series</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Among his best-known works is a series of notes made for the annual convention of Florida United Numismatists (&ldquo;FUN&rdquo;). The denominations, from 1 to 50 dollars, took up the reverse designs of contemporary U.S. paper money, slightly altered: the legend &ldquo;THE UNITED STATES OF AMERICA&rdquo; became &ldquo;FLORIDA UNITED NUMISMATISTS&rdquo;, and the denomination was occasionally replaced by the acronym &ldquo;FUN&rdquo;.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">He also altered visual details &mdash;the reflection of Monticello on the $2 note, the Supreme Court building instead of the Treasury on the $10, a different angle of the White House on the $20. These notes were printed in bright orange on one side and carried Boggs’s autograph and fingerprint on the other.</p>
+          </section>
+
+          <section style="margin-top:36px;">
+            <h2 style="font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;">4. Other Works and the Legacy of the &ldquo;Patron Saint&rdquo;</h2>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">Among his other creations is the mural <em>All the World's a Stage</em>, loosely inspired by a Bank of England Series D twenty-pound note with Shakespearean motifs, as well as note-sized pieces that showed his own vision of how U.S. currency should look &mdash;including a well-known 100-dollar bill with the portrait of Harriet Tubman.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;">For his philosophical questions about the value of fiat money &mdash;posed years before the rise of Bitcoin&mdash; his early interest in creating his own currency, and his contributions to an &ldquo;online cryptographic currency&rdquo; as early as 2000, Artnet described him as the &ldquo;patron saint of cryptocurrency&rdquo;.</p>
+            <p style="font-size:19px; line-height:1.65; color:#332e22; margin:0;">His life and work are told in <em>Boggs: A Comedy of Values</em>, by Lawrence Weschler, published by University of Chicago Press.</p>
+          </section>
+
+          <section style="margin-top:32px; border-top:1px solid rgba(10,10,9,0.12); padding-top:24px;">
+            <h2 style="font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 12px; font-style:normal;">Sources</h2>
+            <ul style="margin:0; padding:0 0 0 20px; font-size:15px; line-height:1.7; color:#5c4e33; font-style:italic;">
+              <li>Wikipedia. &ldquo;J. S. G. Boggs.&rdquo; <a href="https://en.wikipedia.org/wiki/J._S._G._Boggs" target="_blank" rel="noopener noreferrer" style="color:#6b521f;">en.wikipedia.org/wiki/J._S._G._Boggs <span class="new-window-hint" style="font-style:italic; font-weight:400;"> (opens in a new tab)</span></a></li>
+              <li>Weschler, Lawrence. <em>Boggs: A Comedy of Values.</em> University of Chicago Press.</li>
+              <li>O'Neill, Brian (28 January 2017). &ldquo;Obituary: J.S.G. Boggs / Artist who attracted money and government attention.&rdquo; <em>Pittsburgh Post-Gazette</em>. Accessed 2 February 2017.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>`;
+---
+<CatalogLayout
+  locale="en"
+  title={title}
+  description={description}
+  path={path}
+  ogType="profile"
+  ogTitle="J.S.G. Boggs — Artist Profile"
+  ogDescription="American artist known for his hand-drawn banknotes, the celebrated “Boggs bills”, exchanged one-for-one at face value."
+  ogImage="/uploads/jsg-boggs.jpg"
+  jsonLd={jsonLd}
+  template={template}
+/>

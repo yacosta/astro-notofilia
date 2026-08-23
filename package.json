@@ -3,31 +3,51 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "Astro build of notofilia.com \u2014 digital catalog and virtual collection of historical banknotes and coins.",
+  "description": "Astro build of notofilia.com — digital catalog and virtual collection of historical banknotes and coins.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "migrate:catalog": "node scripts/migrate-catalog-to-astro.mjs",
     "migrate:catalog:finalize": "node scripts/finalize-catalog-migration.mjs",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-catalog-index.mjs && node scripts/generate-llms-txt.mjs && node scripts/build-client-runtime.mjs",
-    "build": "astro build && node scripts/purge-css.mjs && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs",
+    "build": "astro build && node scripts/purge-css.mjs && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs && node scripts/check-unresolved-mustache.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:drift": "node scripts/check-site-drift.mjs",
-    "check:ci": "npm run check && npm run build && npm run check:drift",
+    "check:placeholders": "node scripts/check-placeholders.mjs",
+    "check:inventory": "node scripts/check-hardcoded-inventory.mjs",
+    "check:citations": "node scripts/check-catalog-citations.mjs",
+    "check:en-pairs": "node scripts/check-catalog-en-pairs.mjs",
+    "check:mustache": "node scripts/check-unresolved-mustache.mjs",
+    "check:headers": "node scripts/check-security-headers.mjs",
+    "check:sitemap:live": "node scripts/check-sitemap-live.mjs",
+    "allow:crawlers": "node scripts/allow-search-crawlers.mjs",
+    "check:ci": "npm run check && npm run build && npm run check:placeholders && npm run check:headers && npm run check:drift && npm run check:inventory && npm run check:citations && npm run check:en-pairs",
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "lighthouse:ci": "lhci autorun",
+    "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
+    "migrate:catalog:phase3": "node scripts/phase3-catalog-astro.mjs",
+    "restore:catalog-loops": "node scripts/restore-catalog-note-loops.mjs",
+    "sanitize:catalog-fichas": "node scripts/sanitize-catalog-fichas.mjs",
     "dns:aid": "node scripts/publish-dns-aid.mjs",
     "astro": "astro",
     "purge:css": "node scripts/purge-css.mjs"
   },
   "engines": {
-    "node": ">=20.3.0"
+    "node": ">=22.12.0"
   },
   "dependencies": {
-    "astro": "^4.16.19",
-    "preact": "^10.29.7"
+    "astro": "^7.2.2",
+    "cookie": "^2.0.1",
+    "preact": "^10.29.7",
+    "web-vitals": "^4.2.4"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^26.1.1",
     "esbuild": "^0.28.1",
@@ -35,5 +55,10 @@
     "purgecss": "^8.0.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "astro": {
+      "cookie": "$cookie"
+    }
   }
 }

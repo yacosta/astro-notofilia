@@ -3,6 +3,9 @@ import path from 'node:path';
 
 const root = process.cwd();
 const errors = [];
+/** Live Cloudflare preferred host (www → apex). Keep SEO URLs on apex. */
+const SITE_ORIGIN = 'https://notofilia.com';
+const FORBIDDEN_ORIGIN = 'https://www.notofilia.com';
 
 const fail = (message) => errors.push(message);
 const normalizePath = (value) => {
@@ -15,10 +18,27 @@ const sitemapXml = await readFile(path.join(root, 'public/sitemap.xml'), 'utf8')
 const sitemapPaths = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => normalizePath(match[1]));
 const sitemap = new Set(sitemapPaths);
 if (sitemap.size !== sitemapPaths.length) fail('sitemap.xml contains duplicate <loc> entries');
+if (sitemap.has('/coleccion/')) fail('Retired /coleccion/ hub must not be in sitemap.xml');
+if (sitemap.has('/en/collection/')) fail('Retired /en/collection/ hub must not be in sitemap.xml');
+if (sitemapXml.includes(FORBIDDEN_ORIGIN)) fail(`sitemap.xml still uses ${FORBIDDEN_ORIGIN}; prefer ${SITE_ORIGIN}`);
+const rawSitemapLocs = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+if (!rawSitemapLocs.every((loc) => loc === SITE_ORIGIN || loc === `${SITE_ORIGIN}/` || loc.startsWith(`${SITE_ORIGIN}/`))) {
+  fail(`sitemap.xml <loc> entries must use ${SITE_ORIGIN}`);
+}
+
+const robotsTxt = await readFile(path.join(root, 'public/robots.txt'), 'utf8');
+if (robotsTxt.includes(FORBIDDEN_ORIGIN)) fail(`robots.txt still uses ${FORBIDDEN_ORIGIN}; prefer ${SITE_ORIGIN}`);
+if (!robotsTxt.includes(`Sitemap: ${SITE_ORIGIN}/sitemap_index.xml`)) {
+  fail(`robots.txt must declare Sitemap: ${SITE_ORIGIN}/sitemap_index.xml`);
+}
+
+const siteTs = await readFile(path.join(root, 'src/lib/site.ts'), 'utf8');
+if (!siteTs.includes(`SITE = '${SITE_ORIGIN}'`)) fail(`src/lib/site.ts SITE must be '${SITE_ORIGIN}'`);
+if (siteTs.includes(FORBIDDEN_ORIGIN)) fail(`src/lib/site.ts still references ${FORBIDDEN_ORIGIN}`);
 
 const sitemapIndexXml = await readFile(path.join(root, 'public/sitemap_index.xml'), 'utf8');
 if (!sitemapIndexXml.includes('<sitemapindex')) fail('sitemap_index.xml is missing <sitemapindex>');
-for (const required of [`${'https://www.notofilia.com'}/sitemap.xml`, `${'https://www.notofilia.com'}/news-sitemap.xml`]) {
+for (const required of [`${SITE_ORIGIN}/sitemap.xml`, `${SITE_ORIGIN}/news-sitemap.xml`]) {
   if (!sitemapIndexXml.includes(`<loc>${required}</loc>`)) fail(`sitemap_index.xml does not reference ${required}`);
 }
 
@@ -54,6 +74,12 @@ for (const redirect of redirects) {
 
 const rewrites = new Map(redirects.filter(({ status }) => status === '200').map((rule) => [normalizePath(rule.from), rule]));
 const permanentRedirects = redirects.filter(({ status }) => status === '301');
+const hasExactRedirect = (from, to) =>
+  permanentRedirects.some((rule) => rule.from === from && normalizePath(rule.to) === normalizePath(to));
+if (!hasExactRedirect('/coleccion/', '/')) fail('Missing /coleccion/ → / redirect');
+if (!hasExactRedirect('/coleccion', '/')) fail('Missing /coleccion → / redirect');
+if (!hasExactRedirect('/en/collection/', '/en/')) fail('Missing /en/collection/ → /en/ redirect');
+if (!hasExactRedirect('/en/collection', '/en/')) fail('Missing /en/collection → /en/ redirect');
 
 const htmlCache = new Map();
 async function htmlForRoute(route) {
@@ -120,29 +146,145 @@ for (const { route, legacyFile } of routeMap) {
   const normalized = normalizePath(route);
   if (!catalogPaths.has(normalized)) fail(`Route map path missing from catalog collection: ${normalized}`);
   if (!sitemap.has(normalized)) fail(`Catalog path missing from sitemap: ${normalized}`);
-  const expectedSource = `/${legacyFile}`;
-  const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
-  if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
-  else if (normalizePath(legacyRule.to) !== normalized) fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${normalized}`);
+  const expectedSources = [`/${legacyFile}`];
+  if (legacyFile.endsWith('.dc.html')) {
+    expectedSources.push(`/${legacyFile.slice(0, -5)}`); // name.dc.html -> name.dc
+  }
+  for (const expectedSource of expectedSources) {
+    const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
+    if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
+    else if (normalizePath(legacyRule.to) !== normalized) fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${normalized}`);
+  }
 }
 
-const header = await readFile(path.join(root, 'public/SiteHeader.dc.html'), 'utf8');
-if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared header is not wired to Pagefind');
+const header = await readFile(path.join(root, 'legacy/dc-shells/SiteHeader.dc.html'), 'utf8');
+if (!header.includes('import("/pagefind/pagefind.js")')) fail('Shared legacy header is not wired to Pagefind');
 if (/href:\s*["'][^"']+\.dc\.html/i.test(header)) fail('Shared search/navigation contains a legacy .dc.html target');
 if (/Próximamente|Proximamente/i.test(header)) fail('Shared navigation advertises unavailable catalog entries');
 
-const publicFiles = await readdir(path.join(root, 'public'));
-const standalonePages = publicFiles.filter((file) => file.endsWith('.dc.html') && file === file.toLowerCase());
-for (const file of standalonePages) {
-  const html = await readFile(path.join(root, 'public', file), 'utf8');
-  if (!/^<!doctype html>/i.test(html.trimStart())) continue;
-  if (/<style\b[^>]*>[\s\S]*?<link\b[^>]*catalog-fonts\.css/i.test(html)) {
-    fail(`${file} places the catalog font stylesheet inside a <style> block`);
-  }
-  if (!/<link\s+rel="stylesheet"\s+href="\/catalog-fonts\.css">/i.test(html)) {
-    fail(`${file} does not load the shared catalog font stylesheet`);
+const nativeHeader = await readFile(path.join(root, 'src/components/SiteHeader.astro'), 'utf8');
+if (!nativeHeader.includes('site-header.js')) fail('Native SiteHeader does not load site-header.js');
+if (!nativeHeader.includes('COLLECTION_MENU')) fail('Native SiteHeader does not render the Collection menu');
+const navTs = await readFile(path.join(root, 'src/lib/nav.ts'), 'utf8');
+if (!navTs.includes("href: '/coleccion/colombia/'")) fail('Primary nav is missing the Colombia collection');
+if (/href:\s*'\/coleccion\/(?:[?#][^']*)?'/.test(navTs)) {
+  fail('Primary nav must not link the retired /coleccion/ hub');
+}
+if (!navTs.includes('/coleccion/numismatica/')) fail('Primary nav is missing the dedicated coins catalog');
+if (!navTs.includes('Guías para coleccionistas')) fail('Primary nav is missing Collector Guides');
+if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/');
+if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');
+if (!navTs.includes('/coleccion/espana/')) fail('Primary nav is missing the Spain landing');
+if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
+if (!navTs.includes('Colecciones virtuales — Notafilia')) {
+  fail('Primary nav is missing the virtual Notaphily collection heading');
+}
+if (!navTs.includes('Colecciones virtuales — Numismática')) {
+  fail('Primary nav is missing the virtual Numismatics collection heading');
+}
+if (navTs.includes('Colecciones principales')) {
+  fail('Primary nav must not keep the old Major Collections heading');
+}
+if (navTs.includes('Colección virtual - Numismática') || navTs.includes('Colección virtual - Notafilia')) {
+  fail('Primary nav must not use the old singular Virtual Collection accordion headings');
+}
+if (navTs.includes('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/')) {
+  fail('Primary nav must not list individual catalog records');
+}
+if (navTs.includes('polymerNavLinks')) {
+  fail('Primary nav must not generate a polymer-country sitemap in the menu');
+}
+if (navTs.includes('/#logros-heading')) fail('Primary nav must not keep Monthly Milestones as a top-level link');
+if (/href:\s*'\/buscar\/'/.test(navTs)) fail('Primary nav must not include Search / Buscar');
+if (!nativeHeader.includes('site-header__desktop')) fail('Native SiteHeader is missing desktop primary navigation');
+if (!nativeHeader.includes('site-header__panel--mega')) fail('Native SiteHeader is missing the Collection mega menu');
+if (!nativeHeader.includes('site-header__drawer-search')) fail('Native SiteHeader is missing the mobile drawer search field');
+if (!nativeHeader.includes('DRAWER_TRAILING_LINKS')) {
+  fail('Native SiteHeader must render About, Editorial, and Contacto after Collection/Resources');
+}
+const legacyBlogIdx = header.lastIndexOf('href="/blog/"');
+const legacyNewsIdx = header.lastIndexOf('href="/noticias/"');
+const legacyContactIdx = header.lastIndexOf('href="/contacto/"');
+const legacyGlossaryIdx = header.lastIndexOf('href="/glosario/"');
+const legacyPerfilBtnIdx = header.indexOf('onClick="{{ togglePerfil }}"');
+if (legacyContactIdx === -1 || legacyPerfilBtnIdx === -1 || legacyContactIdx < legacyPerfilBtnIdx) {
+  fail('Legacy SiteHeader must render Contacto after the last collection accordion');
+}
+if (
+  legacyBlogIdx === -1 ||
+  legacyNewsIdx === -1 ||
+  legacyGlossaryIdx === -1 ||
+  legacyBlogIdx < legacyPerfilBtnIdx ||
+  !(legacyBlogIdx < legacyNewsIdx && legacyNewsIdx < legacyGlossaryIdx && legacyGlossaryIdx < legacyContactIdx)
+) {
+  fail('Legacy SiteHeader must render Blog, Noticias, Glosario, then Contacto after the last collection accordion');
+}
+if (!sitemap.has('/coleccion/numismatica/')) fail('sitemap.xml is missing /coleccion/numismatica/');
+if (!sitemap.has('/nosotros/')) fail('sitemap.xml is missing /nosotros/');
+if (!sitemap.has('/en/about/')) fail('sitemap.xml is missing /en/about/');
+if (!sitemap.has('/coleccion/estados-unidos/')) fail('sitemap.xml is missing /coleccion/estados-unidos/');
+if (!sitemap.has('/en/collection/united-states/')) fail('sitemap.xml is missing /en/collection/united-states/');
+if (!sitemap.has('/coleccion/espana/')) fail('sitemap.xml is missing /coleccion/espana/');
+if (!sitemap.has('/en/collection/spain/')) fail('sitemap.xml is missing /en/collection/spain/');
+if (!sitemap.has('/glosario/')) fail('sitemap.xml is missing /glosario/');
+for (const slug of ['notafilia', 'specimen', 'pick', 'friedberg', 'billete-sin-circular']) {
+  if (!sitemap.has(`/glosario/${slug}/`)) fail(`sitemap.xml is missing /glosario/${slug}/`);
+}
+{
+  const { html } = await htmlForRoute('/glosario/');
+  if (html && !/notafilia/i.test(html)) fail('/glosario/ HTML does not contain “notafilia” without depending on JS');
+  if (html && !html.includes('"@type":"DefinedTermSet"') && !html.includes('"@type": "DefinedTermSet"')) {
+    fail('/glosario/ is missing DefinedTermSet JSON-LD');
   }
 }
+const headerIsland = await readFile(path.join(root, 'src/client/site-header.js'), 'utf8');
+if (!headerIsland.includes('/pagefind/') || !headerIsland.includes('pagefind.js')) {
+  fail('Native header island is not wired to Pagefind');
+}
+if (!headerIsland.includes('import(')) fail('Native header island must lazy-import Pagefind');
+
+const publicFiles = await readdir(path.join(root, 'public'));
+const shippedDcHtml = publicFiles.filter((file) => file.toLowerCase().endsWith('.dc.html'));
+if (shippedDcHtml.length) {
+  fail(`public/ still ships .dc.html files (${shippedDcHtml.join(', ')}); serve native Astro routes and 301 the .dc variants`);
+}
+
+const standaloneCanonicals = [
+  { pretty: '/j-s-g-boggs/', dc: 'perfil-j-s-g-boggs.dc.html' },
+  { pretty: '/contacto/', dc: 'contacto.dc.html' },
+  { pretty: '/politica-privacidad-cookies/', dc: 'politica-privacidad-cookies.dc.html' },
+];
+for (const { pretty, dc } of standaloneCanonicals) {
+  if (!sitemap.has(pretty)) fail(`sitemap.xml is missing standalone canonical ${pretty}`);
+  const expectedSources = [`/${dc}`];
+  if (dc.endsWith('.dc.html')) expectedSources.push(`/${dc.slice(0, -5)}`);
+  for (const expectedSource of expectedSources) {
+    const legacyRule = permanentRedirects.find(({ from }) => from === expectedSource);
+    if (!legacyRule) fail(`Missing legacy redirect for ${expectedSource}`);
+    else if (normalizePath(legacyRule.to) !== pretty) {
+      fail(`${expectedSource} redirects to ${legacyRule.to}, expected ${pretty}`);
+    } else if (legacyRule.status !== '301') {
+      fail(`${expectedSource} must 301 to ${pretty}, found ${legacyRule.status}`);
+    }
+  }
+  const rewriteToDc = redirects.find(
+    (rule) => rule.status === '200' && normalizePath(rule.from) === pretty,
+  );
+  if (rewriteToDc) fail(`${pretty} must not 200-rewrite onto a .dc document (${rewriteToDc.line})`);
+  const { html } = await htmlForRoute(pretty);
+  if (html && /\{\{[^}]*\}\}/.test(html)) fail(`${pretty} still contains unresolved Mustache {{ }}`);
+}
+{
+  const { html } = await htmlForRoute('/j-s-g-boggs/');
+  if (html && !html.includes('data-zoom-percent')) fail('/j-s-g-boggs/ is missing data-zoom-percent for catalog-zoom.js');
+  if (html && !html.includes('>100%<')) fail('/j-s-g-boggs/ must ship a static 100% zoom fallback');
+}
+
+const distRoot = path.join(root, 'dist');
+let distEntries = [];
+try { distEntries = await readdir(distRoot); } catch { distEntries = []; }
+const distDcHtml = distEntries.filter((file) => file.toLowerCase().endsWith('.dc.html'));
+if (distDcHtml.length) fail(`dist/ still publishes .dc.html (${distDcHtml.join(', ')})`);
 
 for (const entry of catalogEntries) {
   const cardCount = (entry.template.match(/<dc-import\s+name="BanknoteCard"/g) ?? []).length;

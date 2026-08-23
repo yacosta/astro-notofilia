@@ -1,0 +1,64 @@
+---
+/**
+ * Structured metadata definition list for a catalog record.
+ */
+import { metadataRows, type CatalogRecord } from '../../lib/catalog-record';
+import { lookupEn } from '../../lib/html-i18n';
+import { METADATA_LABEL_EN, STATUS_LABEL_EN, UI, type Locale } from '../../lib/ui-i18n';
+
+interface Props {
+  record: CatalogRecord;
+  /** Keep markup for crawlers/citation, hide the visual duplicate of the spec table. */
+  visuallyHidden?: boolean;
+  locale?: Locale;
+}
+
+const { record, visuallyHidden = false, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const rows = metadataRows(record.metadata, {
+  country: record.country,
+  issuer: record.issuer,
+});
+---
+{
+  rows.length > 0 && (
+    <section
+      class:list={['catalog-record-meta', visuallyHidden && 'catalog-record-meta--visually-hidden']}
+      aria-hidden={visuallyHidden ? 'true' : undefined}
+    >
+      <dl class="m-0 grid gap-0 border-t border-line">
+        {
+          rows.map((row) => {
+            const labelEn = METADATA_LABEL_EN[row.label] ?? lookupEn(row.label);
+            const valueEn = row.unconfirmed
+              ? UI.unconfirmed.en
+              : (STATUS_LABEL_EN[row.value] ?? lookupEn(row.value));
+            const labelVisible = isEn ? (labelEn ?? row.label) : row.label;
+            const valueVisible = isEn
+              ? (row.unconfirmed ? UI.unconfirmed.en : (valueEn ?? row.value))
+              : (row.unconfirmed ? UI.unconfirmed.es : row.value);
+            return (
+            <div class="grid grid-cols-1 sm:grid-cols-[minmax(10rem,14rem)_1fr] gap-1 sm:gap-4 py-3 border-b border-line">
+              <dt
+                class="m-0 text-[13px] tracking-[0.08em] uppercase text-muted"
+                data-i18n={!isEn && labelEn ? true : undefined}
+                data-en={!isEn ? labelEn : undefined}
+              >{labelVisible}</dt>
+              <dd
+                class:list={[
+                  'm-0 text-[16px] leading-[1.55] text-cream-dim',
+                  row.unconfirmed && 'italic',
+                ]}
+                data-i18n={!isEn && valueEn ? true : undefined}
+                data-en={!isEn ? valueEn : undefined}
+              >
+                {valueVisible}
+              </dd>
+            </div>
+            );
+          })
+        }
+      </dl>
+    </section>
+  )
+}

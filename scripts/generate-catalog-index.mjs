@@ -1,15 +1,122 @@
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  HUB_PATHS,
+  computeInventoryStats,
+  normalizeCatalogCountry,
+} from '../src/lib/catalog-inventory.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CATALOG_DIR = path.join(ROOT, 'src/content/catalog');
 const OUT_DIR = path.join(ROOT, 'public/data');
 const OUT_FILE = path.join(OUT_DIR, 'catalog-index.json');
-const SITE = 'https://www.notofilia.com';
+const SITE = 'https://notofilia.com';
+
+function decodeEntities(value = '') {
+  return value
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&ndash;/gi, '–')
+    .replace(/&mdash;/gi, '—')
+    .replace(/&middot;/gi, '·')
+    .replace(/&ldquo;/gi, '“')
+    .replace(/&rdquo;/gi, '”')
+    .replace(/&trade;/gi, '™')
+    .replace(/&reg;/gi, '®')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+}
+
+function stripTags(html = '') {
+  return decodeEntities(html.replace(/<[^>]+>/g, ' '))
+    .replace(/\(\s*se abre en una pestaña nueva\s*\)/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function fact(html, label) {
+  const patterns = [
+    new RegExp(
+      `<span[^>]*>\\s*${label}\\s*</span>\\s*<span[^>]*>([\\s\\S]*?)</span>`,
+      'i',
+    ),
+    new RegExp(`<dt[^>]*>\\s*${label}\\s*</dt>\\s*<dd[^>]*>([\\s\\S]*?)</dd>`, 'i'),
+    new RegExp(
+      `<(?:th|strong)[^>]*>\\s*${label}\\s*</(?:th|strong)>\\s*<(?:td|span)[^>]*>([\\s\\S]*?)</(?:td|span)>`,
+      'i',
+    ),
+  ];
+  for (const pattern of patterns) {
+    const match = html.match(pattern);
+    if (match?.[1]) return stripTags(match[1]);
+  }
+  return '';
+}
+
+function normalizeCountry(raw, catalogPath) {
+  return normalizeCatalogCountry(raw, catalogPath);
+}
+
+function normalizeMaterial(raw, pathValue, keywords, kind) {
+  const blob = `${raw} ${pathValue} ${keywords.join(' ')}`.toLowerCase();
+  if (/h[ií]brido|hybrid|optiks|varifeye/.test(blob)) return 'híbrido';
+  if (/pol[ií]mero|polymer|guardian|safeguard|tyvek/.test(blob)) return 'polímero';
+  if (kind === 'coin') return 'metal';
+  if (/papel|paper|algod[oó]n|trapo/.test(blob)) return 'papel';
+  return raw ? 'papel' : '';
+}
+
+function detectKind(pathValue, title, keywords, emissionType, recordKind, status) {
+  if (status === 'specimen') return 'specimen';
+  if (status === 'error') return 'error';
+  if (status === 'circulated' || status === 'uncirculated') {
+    return recordKind === 'coin' ? 'coin' : 'banknote';
+  }
+  if (recordKind === 'coin' || recordKind === 'banknote' || recordKind === 'profile') {
+    return recordKind;
+  }
+  const blob = `${pathValue} ${title} ${keywords.join(' ')} ${emissionType}`.toLowerCase();
+  if (pathValue.includes('/moneda-colonial-espanola/') && !HUB_PATHS.has(pathValue)) return 'coin';
+  if (/specimen|esp[eé]cimen/.test(blob)) return 'specimen';
+  if (/\berror\b|errores de imprenta|descentrad/.test(blob)) return 'error';
+  return 'banknote';
+}
+
+function extractYear(...values) {
+  for (const value of values) {
+    const match = String(value || '').match(/(1[7-9]\d{2}|20\d{2})/);
+    if (match) return Number(match[1]);
+  }
+  return null;
+}
+
+function titleClean(title = '') {
+  return title.replace(/\s*\|\s*Notofilia\s*$/i, '').trim();
+}
+
+function firstImage(data) {
+  if (data.ogImage) return data.ogImage.startsWith('/') ? data.ogImage : `/${data.ogImage}`;
+  const match = String(data.template || '').match(
+    /(?:image-webp|image|src)=["']([^"']+\.(?:webp|jpe?g|png))["']/i,
+  );
+  if (!match) return '';
+  const src = match[1].replace(/^\.\//, '');
+  if (src.startsWith('/')) return src;
+  if (src.startsWith('uploads/')) return `/${src}`;
+  return `/${src}`;
+}
 
 const files = (await readdir(CATALOG_DIR)).filter((f) => f.endsWith('.json')).sort();
 const items = [];
+const hubs = [];
+const countryCounts = new Map();
+const inventoryEntries = [];
 
 for (const file of files) {
   const raw = await readFile(path.join(CATALOG_DIR, file), 'utf8');
@@ -20,28 +127,147 @@ for (const file of files) {
     continue;
   }
   if (!data.path || !data.title) continue;
-  items.push({
-    id: file.replace(/\.json$/, ''),
+
+  inventoryEntries.push({
     path: data.path,
     title: data.title,
-    description: data.description || '',
+    ogType: data.ogType,
+    template: data.template,
+    jsonLd: data.jsonLd,
+    record: data.record,
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
+  });
+
+  const id = file.replace(/\.json$/, '');
+  const keywords = Array.isArray(data.keywords) ? data.keywords : [];
+  const template = data.template || '';
+  const isProfile = data.path.includes('/perfil-') || data.ogType === 'profile';
+  const isHub = data.ogType === 'website' || HUB_PATHS.has(data.path);
+
+  const base = {
+    id,
+    path: data.path,
+    title: titleClean(data.title),
+    description: data.description || '',
+    keywords,
     url: SITE + data.path,
+    image: firstImage(data),
+    ogType: data.ogType || 'article',
+  };
+
+  if (isHub) {
+    hubs.push({
+      ...base,
+      role: 'hub',
+    });
+    continue;
+  }
+
+  if (isProfile) {
+    items.push({
+      ...base,
+      role: 'profile',
+      country: normalizeCountry(fact(template, 'País'), data.path),
+      kind: 'profile',
+    });
+    continue;
+  }
+
+  const countryRaw =
+    data.record?.country ||
+    fact(template, 'País') ||
+    fact(template, 'País / Virreinato');
+  const issuer =
+    data.record?.metadata?.issuer ||
+    data.record?.issuer ||
+    fact(template, 'Entidad Emisora') ||
+    fact(template, 'Entidad emisora') ||
+    fact(template, 'Ceca / Ensayador') ||
+    '';
+  const denomination = data.record?.metadata?.denomination || fact(template, 'Denominación') || '';
+  const catalogRef =
+    data.record?.metadata?.catalogNumber ||
+    fact(template, 'Referencia de Catálogo') ||
+    fact(template, 'Referencia de catálogo') ||
+    fact(template, 'Referencias catalográficas') ||
+    '';
+  const condition = fact(template, 'Condición');
+  const emissionType = fact(template, 'Tipo de Emisión');
+  const dateLabel =
+    fact(template, 'Fecha de Emisión') ||
+    fact(template, 'Fecha') ||
+    fact(template, 'Año') ||
+    fact(template, 'Año de acuñación');
+  const materialRaw = fact(template, 'Material') || fact(template, 'Composición');
+  const kind = detectKind(
+    data.path,
+    data.title,
+    keywords,
+    emissionType,
+    data.record?.kind,
+    data.record?.metadata?.status,
+  );
+  const material = normalizeMaterial(materialRaw, data.path, keywords, kind);
+  const country = normalizeCountry(countryRaw, data.path);
+  const year = extractYear(dateLabel, denomination, data.title, data.path);
+
+  countryCounts.set(country, (countryCounts.get(country) || 0) + 1);
+
+  items.push({
+    ...base,
+    role: 'piece',
+    country,
+    issuer,
+    denomination,
+    catalogRef,
+    condition,
+    emissionType,
+    dateLabel,
+    year,
+    material,
+    kind,
+    searchText: [
+      titleClean(data.title),
+      data.description,
+      country,
+      issuer,
+      denomination,
+      catalogRef,
+      condition,
+      material,
+      kind,
+      ...keywords,
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase(),
   });
 }
+
+const countries = [...countryCounts.entries()]
+  .map(([name, count]) => ({ name, count, slug: name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') }))
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'es'));
+
+const stats = computeInventoryStats(inventoryEntries);
 
 await mkdir(OUT_DIR, { recursive: true });
 await writeFile(
   OUT_FILE,
-  JSON.stringify(
+  `${JSON.stringify(
     {
       generatedAt: new Date().toISOString(),
       count: items.length,
+      pieceCount: stats.fichas,
+      stats,
+      countries,
+      hubs,
       items,
     },
     null,
     2,
-  ) + '\n',
+  )}\n`,
 );
 
-console.log(`Wrote ${items.length} catalog entries to ${path.relative(ROOT, OUT_FILE)}`);
+console.log(
+  `Wrote ${items.length} catalog entries (${stats.paises} countries, ${stats.fichas} fichas, ${stats.billetes} billetes) to ${path.relative(ROOT, OUT_FILE)}`,
+);

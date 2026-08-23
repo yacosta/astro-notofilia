@@ -37,7 +37,7 @@ const records = [
     type: 'SVCB',
     name: `_mcp._agents.${zoneName}`,
     ttl: 3600,
-    comment: 'DNS-AID MCP agent entrypoint → https://www.notofilia.com/mcp',
+    comment: 'DNS-AID MCP agent entrypoint → https://notofilia.com/mcp',
     data: {
       priority: 1,
       target: zoneName,
@@ -145,4 +145,4 @@ if (!ok) {
   console.log('\nDNS-AID SVCB records are live.');
 }
 
-console.log('Scan: POST https://isitagentready.com/api/scan {"url":"https://www.notofilia.com"}');
+console.log('Scan: POST https://isitagentready.com/api/scan {"url":"https://notofilia.com"}');

@@ -11,9 +11,9 @@ keywords:
   - "billetes falsos"
   - "seguridad billetes"
 relatedLinks:
-  - { href: "/glosario/#filigrana", title: "Glosario: filigrana o marca de agua" }
-  - { href: "/glosario/#microimpresion", title: "Glosario: microimpresión" }
-  - { href: "/glosario/#registro-perfecto", title: "Glosario: registro perfecto" }
+  - { href: "/glosario/filigrana/", title: "Glosario: filigrana o marca de agua" }
+  - { href: "/glosario/microimpresion/", title: "Glosario: microimpresión" }
+  - { href: "/glosario/registro-perfecto/", title: "Glosario: registro perfecto" }
   - { href: "/blog/como-empezar-coleccion-billetes/", title: "Cómo empezar una colección de billetes" }
 ---
 

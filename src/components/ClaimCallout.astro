@@ -1,0 +1,88 @@
+---
+/**
+ * Standardized “Sobre este valor” callout for price-related posts.
+ */
+import {
+  CLAIM_LABELS,
+  claimNoteFor,
+  type ClaimKind,
+} from '../lib/claims';
+import { CLAIM_LABELS_EN, CLAIM_NOTES_EN } from '../lib/ui-i18n';
+import { EDITORIAL_POLICY_PATH } from '../lib/editorial';
+import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
+
+export interface Props {
+  kind: ClaimKind;
+  note?: string;
+  currency?: string;
+  valuationDate?: Date;
+  evidenceUrl?: string;
+  evidenceLabel?: string;
+}
+
+const {
+  kind,
+  note,
+  currency,
+  valuationDate,
+  evidenceUrl,
+  evidenceLabel = 'Evidencia de remate o fuente primaria',
+} = Astro.props;
+
+const body = claimNoteFor(kind, note);
+const bodyEn = note?.trim() ? undefined : CLAIM_NOTES_EN[kind];
+const label = CLAIM_LABELS[kind];
+const valIso = valuationDate ? toIsoDate(valuationDate) : undefined;
+const valFmt = valuationDate ? formatDateLongEs(valuationDate) : undefined;
+---
+<aside
+  class="claim-callout mt-8 mb-10 border border-[rgba(138,109,59,0.35)] bg-[rgba(138,109,59,0.08)] px-5 py-5 sm:px-6"
+  aria-labelledby="claim-callout-heading"
+>
+  <h2 id="claim-callout-heading" class="font-display font-normal text-[22px] text-cream mt-0 mb-3" data-i18n data-en="About this figure">
+    Sobre este valor
+  </h2>
+  <p class="m-0 mb-3 text-[15px] tracking-[0.06em] uppercase text-gold-light">
+    <span data-i18n data-en="Type of figure:">Tipo de cifra:</span> <span class="text-cream normal-case tracking-normal font-semibold" data-i18n data-en={CLAIM_LABELS_EN[kind]}>{label}</span>
+  </p>
+  <p class="m-0 text-[17px] leading-[1.6] text-cream-dim" data-i18n={bodyEn ? true : undefined} data-en={bodyEn}>{body}</p>
+
+  {(currency || valFmt || evidenceUrl) && (
+    <dl class="m-0 mt-4 grid gap-2 text-[15px] text-cream-dim">
+      {currency && (
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="font-semibold text-cream m-0" data-i18n data-en="Currency:">Moneda:</dt>
+          <dd class="m-0">{currency}</dd>
+        </div>
+      )}
+      {valFmt && valIso && (
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="font-semibold text-cream m-0" data-i18n data-en="Date of the cited valuation:">Fecha de la valoración citada:</dt>
+          <dd class="m-0"><time datetime={valIso} data-i18n={valFmt ? true : undefined} data-en={valuationDate ? formatDateLongEn(valuationDate) : undefined}>{valFmt}</time></dd>
+        </div>
+      )}
+      {evidenceUrl && (
+        <div class="flex flex-wrap gap-x-2">
+          <dt class="font-semibold text-cream m-0" data-i18n data-en="Evidence:">Evidencia:</dt>
+          <dd class="m-0">
+            <a
+              class="text-cream underline [text-decoration-color:rgba(231,222,201,0.4)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+              href={evidenceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{evidenceLabel} <span class="whitespace-nowrap" data-i18n data-en="(opens in a new tab)">(se abre en una pestaña nueva)</span></a>
+          </dd>
+        </div>
+      )}
+    </dl>
+  )}
+
+  <p class="m-0 mt-4 text-[15px] text-muted">
+    <a
+      class="text-muted underline [text-decoration-color:rgba(183,171,138,0.45)] hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+      href={EDITORIAL_POLICY_PATH}
+      data-i18n
+      data-en="Editorial and valuation policy"
+    >Política editorial y de valoración</a>
+  </p>
+</aside>

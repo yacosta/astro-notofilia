@@ -1,0 +1,114 @@
+{
+  "path": "/coleccion/moneda-colonial/perfil-thomas-jefferson/",
+  "title": "Thomas Jefferson | Notofilia",
+  "description": "Perfil histórico de Thomas Jefferson, autor de la Declaración de Independencia y tercer presidente, en Food Coupons USDA de $5.",
+  "keywords": [
+    "thomas jefferson",
+    "declaración de independencia",
+    "food coupon jefferson",
+    "billete 2 dolares",
+    "monticello",
+    "notafilia estadounidense"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "profile",
+  "ogTitle": "Thomas Jefferson — Perfil Histórico",
+  "ogDescription": "Autor de la Declaración de Independencia y tercer presidente de EE. UU., retratado en Food Coupons USDA de cinco dólares.",
+  "ogImage": "/uploads/thomas-jefferson-portrait-peale.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Estados Unidos",
+            "item": "https://notofilia.com/coleccion/moneda-colonial/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Thomas Jefferson",
+            "item": "https://notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Thomas Jefferson",
+        "url": "https://notofilia.com/coleccion/moneda-colonial/perfil-thomas-jefferson/",
+        "birthDate": "1743-04-13",
+        "deathDate": "1826-07-04",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Shadwell, Virginia"
+        },
+        "deathPlace": {
+          "@type": "Place",
+          "name": "Monticello, Virginia"
+        },
+        "jobTitle": "Tercer presidente de los Estados Unidos",
+        "description": "Autor principal de la Declaración de Independencia y tercer presidente de los Estados Unidos.",
+        "nationality": "Estadounidense",
+        "image": "https://notofilia.com/uploads/thomas-jefferson-portrait-peale.jpg"
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Ruta de navegación\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/coleccion/moneda-colonial/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Catálogo de Moneda Colonial</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/coleccion/moneda-colonial/perfil-thomas-jefferson/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Perfil Histórico &middot; Estados Unidos</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Thomas Jefferson</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Virginia, 1743 &mdash; Monticello, 1826</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:858 / 1024; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture style=\"display:block; width:100%; height:100%;\">\n              <source srcset=\"/uploads/thomas-jefferson-portrait-peale-480.webp 480w, /uploads/thomas-jefferson-portrait-peale.webp 858w\" sizes=\"(max-width: 448px) calc(100vw - 48px), 400px\" type=\"image/webp\" />\n              <img src=\"/uploads/thomas-jefferson-portrait-peale.jpg\" alt=\"Retrato al óleo de Thomas Jefferson con casaca oscura y corbata blanca, por Rembrandt Peale\" width=\"858\" height=\"1024\" decoding=\"async\" fetchpriority=\"high\" style=\"width:100%; height:100%; object-fit:cover; display:block;\">\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Thomas Jefferson</span>\n            <span style=\"display:block;\">Por Rembrandt Peale, 1800 &mdash; dominio público</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Nacimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">13 de abril de 1743 &mdash; Shadwell, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Fallecimiento</span>\n              <span style=\"font-size:19px; color:#221f19;\">4 de julio de 1826 &mdash; Monticello, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Profesión</span>\n              <span style=\"font-size:19px; color:#221f19;\">Abogado, arquitecto, diplomático y estadista</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Rol Clave</span>\n              <span style=\"font-size:19px; color:#221f19;\">Autor principal de la Declaración de Independencia; tercer presidente de los Estados Unidos (1801&ndash;1809)</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. La Declaración y la República</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Plantador y abogado de Virginia, Jefferson redactó en 1776 el borrador de la Declaración de Independencia aprobado por el Congreso Continental. El texto fijó el lenguaje de derechos naturales y consentimiento popular que aún define la narrativa política estadounidense.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Fue gobernador de Virginia, ministro en Francia y secretario de Estado bajo Washington, antes de fundar con Madison el partido que se opondría al programa hamiltoniano.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. Presidencia y Compra de Luisiana</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Elegido presidente en 1800, impulsó una administración más austera y, al mismo tiempo, amplió el territorio con la Compra de Luisiana (1803). Su mandato también reveló tensiones entre ideales republicanos y la realidad de la esclavitud, de la que fue propietario.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Se retiró a Monticello, donde proyectó la Universidad de Virginia. Murió el 4 de julio de 1826, el mismo día que John Adams y el cincuenta aniversario de la Declaración.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Legado Numismático</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Jefferson es el retrato permanente del billete estadounidense de <strong style=\"color:#1c1a15;\">dos dólares</strong>. En esta colección aparece, con Monticello y la Campana de la Libertad, en el <a href=\"/coleccion/emisiones-promocionales/food-coupon-5-dolares-2000/\">Food Coupon USDA de $5 (Serie 2000-B)</a>, continuación del diseño con retrato adoptado a mediados de los años setenta para esa denominación del programa de cupones de alimentos.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notas</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biografía basada en fuentes históricas estándar sobre la Declaración de Independencia y la administración Jefferson.</p>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:6px 0 0;\">Retrato: Rembrandt Peale, 1800 &mdash; dominio público (Wikimedia Commons).</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.moneda-colonial.perfil-thomas-jefferson",
+    "kind": "profile",
+    "title": "Thomas Jefferson",
+    "subtitle": "Virginia, 1743 — Monticello, 1826",
+    "dateOrSeries": "Perfil Histórico · Estados Unidos",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Estados Unidos",
+        "href": "/coleccion/moneda-colonial/"
+      },
+      {
+        "name": "Thomas Jefferson"
+      }
+    ],
+    "images": {
+      "stacked": {
+        "src": "/uploads/thomas-jefferson-portrait-peale.jpg",
+        "srcWebp": "/uploads/thomas-jefferson-portrait-peale.webp",
+        "alt": "Retrato al óleo de Thomas Jefferson con casaca oscura y corbata blanca, por Rembrandt Peale",
+        "altEn": "Oil portrait of Thomas Jefferson in a dark coat and white cravat, by Rembrandt Peale"
+      },
+      "defaultView": "stacked"
+    },
+    "metadata": {},
+    "render": "astro-static",
+    "eyebrow": "Perfil Histórico · Estados Unidos"
+  },
+  "legacyFile": "perfil-thomas-jefferson.dc.html",
+  "sourceHash": "c47edfb0e00c4571",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/colonial-paper-money/profile-thomas-jefferson/",
+      "title": "Thomas Jefferson | Notofilia",
+      "description": "Historical profile de Thomas Jefferson, autor de la Declaración de Independencia y tercer presidente, en Food Coupons USDA de $5.",
+      "ogTitle": "Thomas Jefferson — Historical Profile",
+      "ogDescription": "Autor de la Declaración de Independencia y tercer presidente de EE. UU., retratado en Food Coupons USDA de cinco dólares.",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <header>\n    <nav aria-label=\"Breadcrumb\" style=\"max-width:1180px; margin:0 auto; padding:56px 24px 0;\">\n      <a href=\"/en/collection/colonial-paper-money/\" style=\"display:inline-block; color:#e7ddc4; text-decoration:none; font-size:15px; letter-spacing:0.08em;\">&larr; Colonial coin catalog</a>\n    </nav>\n  </header>\n\n  <main data-pagefind-meta=\"url:/en/collection/colonial-paper-money/profile-thomas-jefferson/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:24px 24px 80px; outline:none;\">\n\n    <div style=\"background:#d8d2cd; border:1px solid rgba(10,10,9,0.08); border-radius:3px; padding:clamp(28px,4vw,64px); box-shadow:0 30px 70px rgba(0,0,0,0.45);\">\n\n      <div style=\"display:flex; flex-direction:column; align-items:center;\">\n\n        <div style=\"text-align:center; max-width:720px; margin:0 auto 40px;\">\n          <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#5c4e33; margin-bottom:14px;\">Historical Profile &middot; United States</span>\n          <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(28px,4vw,44px); line-height:1.1; letter-spacing:0.01em; color:#1c1a15; margin:0 0 12px;\">Thomas Jefferson</h1>\n          <p style=\"font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;\">Virginia, 1743 &mdash; Monticello, 1826</p>\n        </div>\n\n        <div style=\"width:100%; max-width:400px; display:flex; flex-direction:column; gap:14px; margin:0 auto 56px;\">\n          <div style=\"width:100%; aspect-ratio:858 / 1024; border:1px solid rgba(10,10,9,0.12); overflow:hidden;\">\n            <picture style=\"display:block; width:100%; height:100%;\">\n              <source srcset=\"/uploads/thomas-jefferson-portrait-peale-480.webp 480w, /uploads/thomas-jefferson-portrait-peale.webp 858w\" sizes=\"(max-width: 448px) calc(100vw - 48px), 400px\" type=\"image/webp\" />\n              <img src=\"/uploads/thomas-jefferson-portrait-peale.jpg\" alt=\"Oil portrait of Thomas Jefferson in a dark coat and white cravat, by Rembrandt Peale\" width=\"858\" height=\"1024\" decoding=\"async\" fetchpriority=\"high\" style=\"width:100%; height:100%; object-fit:cover; display:block;\">\n            </picture>\n          </div>\n          <div style=\"text-align:center; font-size:14px; line-height:1.6; color:#5c4e33; font-style:italic;\">\n            <span style=\"display:block;\">Thomas Jefferson</span>\n            <span style=\"display:block;\">By Rembrandt Peale, 1800 &mdash; public domain</span>\n          </div>\n        </div>\n\n        <div style=\"width:100%; max-width:760px;\">\n          <div style=\"display:flex; flex-direction:column;\">\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Birth</span>\n              <span style=\"font-size:19px; color:#221f19;\">April 13, 1743 &mdash; Shadwell, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Death</span>\n              <span style=\"font-size:19px; color:#221f19;\">July 4, 1826 &mdash; Monticello, Virginia</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Profession</span>\n              <span style=\"font-size:19px; color:#221f19;\">Lawyer, architect, diplomat and statesman</span>\n            </div>\n            <div style=\"display:grid; grid-template-columns:200px 1fr; gap:6px 20px; padding:14px 0; border-top:1px solid rgba(10,10,9,0.12); border-bottom:1px solid rgba(10,10,9,0.12);\">\n              <span style=\"font-size:14px; letter-spacing:0.1em; text-transform:uppercase; color:#5c4e33;\">Key Role</span>\n              <span style=\"font-size:19px; color:#221f19;\">Principal author of the Declaration of Independence; third president of the United States (1801&ndash;1809)</span>\n            </div>\n          </div>\n\n          <section style=\"margin-top:44px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">1. The Declaration and the Republic</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">A Virginia planter and lawyer, Jefferson drafted the Declaration of Independence adopted by the Continental Congress in 1776. The text established the language of natural rights and popular consent that still defines the American political narrative.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">He was governor of Virginia, minister in France and secretary of state under Washington, before founding with Madison the party that would oppose the Hamiltonian program.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">2. Presidency and Louisiana Purchase</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0 0 12px;\">Elected president in 1800, he promoted a more austere administration and, at the same time, expanded the territory with the Louisiana Purchase (1803). His mandate also revealed tensions between republican ideals and the reality of slavery, of which he was the owner.</p>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">He retired to Monticello, where he designed the University of Virginia. He died on July 4, 1826, the same day as John Adams and the fiftieth anniversary of the Declaration.</p>\n          </section>\n\n          <section style=\"margin-top:36px;\">\n            <h2 style=\"font-size:15px; letter-spacing:0.2em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 14px; font-style:normal;\">3. Numismatic Legacy</h2>\n            <p style=\"font-size:19px; line-height:1.65; color:#332e22; margin:0;\">Jefferson is the permanent portrait on the U.S.<strong style=\"color:#1c1a15;\">two dollars</strong>. In this collection he appears, with Monticello and the Liberty Bell, in the<a href=\"/en/collection/promotional-issues/food-coupon-5-dollars-2000/\">$5 USDA Food Coupon (Series 2000-B)</a>, a continuation of the portrait design adopted in the mid-1970s for that name of the food stamp program.</p>\n          </section>\n\n          <div style=\"margin-top:44px; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);\">\n            <h2 style=\"font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5c4e33; font-weight:600; margin:0 0 10px; font-style:normal;\">Notes</h2>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:0;\">Biography based on standard historical sources on the Declaration of Independence and the Jefferson administration.</p>\n            <p style=\"font-size:14px; line-height:1.6; color:#5c4e33; margin:6px 0 0;\">Portrait: Rembrandt Peale, 1800 &mdash; public domain (Wikimedia Commons).</p>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </main>\n\n  \n\n</div>",
+      "recordTitle": "Thomas Jefferson",
+      "eyebrow": "Historical Profile · United States"
+    }
+  }
+}

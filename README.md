@@ -1,6 +1,6 @@
 # Notofilia.com — Astro build
 
-Astro 4 build of [notofilia.com](https://www.notofilia.com): a digital catalog
+Astro 4 build of [notofilia.com](https://notofilia.com): a digital catalog
 and virtual collection of historical banknotes and coins — Colombia, Puerto
 Rico, Ecuador, U.S. currency, colonial issues, and world polymer notes — plus
 historical profiles of figures tied to Colombian monetary history.
@@ -52,12 +52,18 @@ top for the pages that benefit most from content collections and shared layouts.
 | `/` | `src/pages/index.astro` |
 | `/noticias/`, `/noticias/<slug>/` | `src/pages/[section]/*` + collection `noticias` |
 | `/blog/`, `/blog/<slug>/` | `src/pages/[section]/*` + collection `blog` |
+| `/#logros-heading`, `/logros/<slug>/` | Homepage strip + collection `logros` (index redirects to `/`) |
 | `/404` | `src/pages/404.astro` |
 
-Editorial posts live as Markdown in `src/content/{noticias,blog}/` with a shared
-Zod schema (`src/content/config.ts`). Shared UI lives under `src/components/`;
+Editorial posts live as Markdown in `src/content/{noticias,blog,logros}/` with a shared
+Zod schema (`src/content.config.ts`). Shared UI lives under `src/components/`;
 design tokens and utilities under `src/styles/global.css` (Tailwind v4
 `@theme`).
+
+Catalog piece pages keep a frozen HTML `template` for narrative fidelity and a structured
+`record` object (`src/lib/catalog-record.ts`) that drives breadcrumb, permanent id, metadata,
+citation, related links, hub card grids, and feedback chrome via `src/components/catalog/*`.
+Catalog pages no longer load the custom dc-runtime (`support.js`); zoom uses `/catalog-zoom.js`.
 
 News articles include a Turnstile-protected comment form backed by Cloudflare
 D1. New comments remain pending until approved. See
@@ -74,10 +80,10 @@ workflow and required Cloudflare bindings.
 │   └── _middleware.js      # Cloudflare Pages Function: logs 404s
 ├── src/
 │   ├── components/         # Cover, PreFooter, SiteFooter, BaseHead, Post*, Home*
-│   ├── content/            # Markdown collections (blog, noticias)
+│   ├── content/            # Markdown collections (blog, noticias, logros)
 │   ├── layouts/            # BlogLayout (editorial shell)
 │   ├── lib/                # site URL, dates, posts helpers, sitemap stats
-│   ├── pages/              # native Astro routes ([section] = blog|noticias)
+│   ├── pages/              # native Astro routes ([section] = blog|noticias|logros)
 │   └── styles/global.css   # Tailwind v4 theme + fonts + prose
 ├── public/                 # catalog site, served verbatim
 │   ├── billete-*.dc.html   # individual banknote pages (~90)
@@ -108,9 +114,11 @@ Legacy `/sitemap-news.xml` 301s to `/news-sitemap.xml` for old Search Console su
 ## Deploying (Cloudflare Pages)
 
 - Framework preset: **Astro**
-- Build command: `npm run build`
+- Build command: `npm run build` (ends with a Mustache guard: any `{{ … }}` left in `dist/**/*.html` fails the build before deploy)
 - Output directory: `dist`
 - `functions/` is picked up automatically for Pages Functions.
+
+Canonical catalog and standalone URLs are extensionless (`/contacto/`, `/j-s-g-boggs/`, `/coleccion/…/`). Legacy `*.dc` / `*.dc.html` paths 301 to those URLs.
 
 ## Migrating a catalog page into Astro (future work)
 

@@ -1,0 +1,133 @@
+---
+/**
+ * Privacy and cookie policy (Spanish). English lives at /en/privacy-cookies/.
+ * Canonical URL is /politica-privacidad-cookies/; legacy .dc variants 301 here.
+ */
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { SITE } from '../lib/site';
+
+const title = 'Política de Privacidad y Cookies | Notofilia';
+const description =
+  'Política de privacidad y cookies de notofilia.com: qué datos recopilamos, con qué finalidad, y cómo ejercer tus derechos (RGPD, LOPDGDD, Ley 1581).';
+const path = '/politica-privacidad-cookies/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Notofilia', item: `${SITE}/` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Política de Privacidad y Cookies',
+          item: `${SITE}${path}`,
+        },
+      ],
+    },
+    {
+      '@type': 'WebPage',
+      name: 'Política de Privacidad y Cookies',
+      url: `${SITE}${path}`,
+      inLanguage: 'es',
+      isPartOf: { '@type': 'WebSite', name: 'Notofilia', url: `${SITE}/` },
+    },
+  ],
+};
+
+const articleClass =
+  'text-cream-dim bg-[var(--surface-artifact)] border border-[var(--rule-artifact)] rounded-[var(--radius-surface)] p-[clamp(24px,4vw,44px)]';
+const h2Class = 'font-display font-normal text-[24px] text-cream mt-8 mb-3';
+const pClass = 'text-[17px] leading-[1.7] m-0 mb-2.5';
+const tableHead = 'text-left px-3 py-2.5 font-semibold';
+const td = 'px-3 py-2.5';
+---
+<BlogLayout title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
+  <div class="max-w-[840px] mx-auto px-5 pt-16 pb-10" data-privacy-root data-pagefind-meta="url:/politica-privacidad-cookies/">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Miga de pan">
+      <a class="text-muted" href="/">Notofilia</a>
+      <span class="text-muted mx-2" aria-hidden="true">/</span>
+      <span data-privacy-crumb>Política de Privacidad y Cookies</span>
+    </nav>
+
+    <h1 data-privacy-title class="font-display font-normal text-[clamp(28px,4vw,42px)] text-cream m-0 mb-2.5">
+        Política de Privacidad y Cookies
+      </h1>
+    <p data-privacy-updated class="text-[16px] text-muted m-0 mb-9">Última actualización: 13 de julio de 2026</p>
+
+    <article class={articleClass}>
+      <p class="text-[18px] leading-[1.65] m-0 mb-6">
+        Esta Política de Privacidad y Cookies (la &laquo;Política&raquo;) explica cómo notofilia.com (&laquo;el Sitio&raquo;, &laquo;nosotros&raquo;) recopila, utiliza y protege los datos personales de quienes visitan o interactúan con el Sitio, en cumplimiento del Reglamento (UE) 2016/679 (RGPD), la Ley Orgánica 3/2018 (LOPDGDD) y, para usuarios en Colombia, la Ley 1581 de 2012.
+      </p>
+      <h2 class={h2Class}>1. Responsable del tratamiento</h2>
+      <ul class="text-[17px] leading-[1.7] m-0 mb-2 pl-[22px]">
+        <li><strong>Titular:</strong> Notofilia</li>
+        <li><strong>Domicilio:</strong> 407 Lincoln Rd. Suite 6H PMB 7209, Miami Beach, Florida, 33139, Estados Unidos</li>
+        <li><strong>Correo de contacto:</strong> info@notofilia.com</li>
+      </ul>
+      <h2 class={h2Class}>2. Datos que recopilamos y finalidades</h2>
+      <p class={pClass}><strong>Formulario de suscripción:</strong> nombre y correo electrónico, con la finalidad de enviarle novedades del Sitio. Gestionado por nuestro proveedor de email marketing, <strong>Mailchimp (Intuit Inc., EE. UU.)</strong>. Al suscribirse, sus datos se transfieren a EE. UU. bajo las salvaguardas contractuales de Mailchimp.</p>
+      <p class={pClass}><strong>Google Analytics 4:</strong> si acepta las cookies analíticas, recopilamos identificadores de cookie (_ga, _ga_*), IP truncada, dispositivo/navegador, páginas visitadas, duración de sesión y fuente de referencia.</p>
+      <p class={pClass}><strong>Cloudflare Web Analytics:</strong> analítica sin cookies ni identificadores personales; solo métricas agregadas. No requiere consentimiento.</p>
+      <p class="text-[17px] leading-[1.7] m-0"><strong>Cookies técnicas de seguridad:</strong> Cloudflare instala cookies estrictamente necesarias (ej. __cf_bm) para la seguridad del Sitio, exentas de consentimiento.</p>
+      <h2 class={h2Class}>3. Base jurídica de cada tratamiento</h2>
+      <div class="overflow-x-auto mb-2">
+        <table class="w-full border-collapse text-[16px]">
+          <thead>
+            <tr class="border-b-2 border-[rgba(231,222,201,0.25)]">
+              <th scope="col" class={tableHead}>Tratamiento</th>
+              <th scope="col" class={tableHead}>Base jurídica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Envío de newsletter</td><td class={td}>Consentimiento (art. 6.1.a RGPD)</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Cookies analíticas (GA4)</td><td class={td}>Consentimiento (art. 6.1.a RGPD)</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class={td}>Cloudflare Web Analytics</td><td class={td}>No aplica (sin datos personales)</td></tr>
+            <tr><td class={td}>Cookies técnicas de seguridad</td><td class={td}>Interés legítimo (art. 6.1.f RGPD)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class={h2Class}>4. Destinatarios y encargados del tratamiento</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Sus datos pueden ser tratados por <strong>Mailchimp — Intuit Inc.</strong> (newsletter), <strong>Google LLC</strong> (Google Analytics 4) y <strong>Cloudflare, Inc.</strong> (alojamiento, seguridad y analítica agregada). No cedemos ni vendemos sus datos a terceros con fines comerciales.</p>
+      <h2 class={h2Class}>5. Transferencias internacionales</h2>
+      <p class="text-[17px] leading-[1.7] m-0">La transferencia de datos a Google LLC (EE. UU.) se ampara en el Marco de Privacidad de Datos UE-EE. UU., reconocido por la Comisión Europea como garantía adecuada (art. 45 RGPD). Si el proveedor de email marketing está fuera del EEE, la transferencia se ampara en las Cláusulas Contractuales Tipo u otro mecanismo equivalente.</p>
+      <h2 class={h2Class}>6. Plazos de conservación</h2>
+      <ul class="text-[17px] leading-[1.7] m-0 pl-[22px]">
+        <li>Datos de suscriptores: mientras la suscripción esté activa; eliminados o anonimizados en 30 días tras la baja.</li>
+        <li>Cookies de Google Analytics (_ga, _ga_*): hasta 2 años.</li>
+        <li>Cookies técnicas de seguridad (__cf_bm): hasta 30 minutos.</li>
+        <li>Registros de servidor con fines de seguridad: hasta 12 meses.</li>
+      </ul>
+      <h2 class={h2Class}>7. Derechos del usuario</h2>
+      <p class={pClass}>Usted tiene derecho a acceder, rectificar, suprimir, oponerse, solicitar la portabilidad, limitar el tratamiento y retirar su consentimiento en cualquier momento. Puede ejercerlos escribiendo a <strong>info@notofilia.com</strong>.</p>
+      <p class="text-[17px] leading-[1.7] m-0">Si considera que sus derechos no han sido atendidos, puede reclamar ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> — aepd.es, la <strong>Superintendencia de Industria y Comercio (SIC)</strong> de Colombia — sic.gov.co, o la autoridad de su país de residencia.</p>
+      <h2 class={h2Class}>8. Política de cookies</h2>
+      <div class="overflow-x-auto mb-3.5">
+        <table class="w-full border-collapse text-[15px]">
+          <thead>
+            <tr class="border-b-2 border-[rgba(231,222,201,0.25)]">
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Nombre</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Proveedor</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Finalidad</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Duración</th>
+              <th scope="col" class="text-left px-2.5 py-2.5 font-semibold">Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">_ga</td><td class="px-2.5 py-2.5">Google Analytics</td><td class="px-2.5 py-2.5">Distinguir usuarios únicos</td><td class="px-2.5 py-2.5">2 años</td><td class="px-2.5 py-2.5">Analítica</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">_ga_*</td><td class="px-2.5 py-2.5">Google Analytics</td><td class="px-2.5 py-2.5">Estado de sesión y visitas</td><td class="px-2.5 py-2.5">2 años</td><td class="px-2.5 py-2.5">Analítica</td></tr>
+            <tr class="border-b border-[rgba(231,222,201,0.12)]"><td class="px-2.5 py-2.5">__cf_bm</td><td class="px-2.5 py-2.5">Cloudflare</td><td class="px-2.5 py-2.5">Seguridad, mitigar tráfico malicioso</td><td class="px-2.5 py-2.5">30 min</td><td class="px-2.5 py-2.5">Necesaria</td></tr>
+            <tr><td class="px-2.5 py-2.5">—</td><td class="px-2.5 py-2.5">Cloudflare Web Analytics</td><td class="px-2.5 py-2.5">Métricas agregadas, sin identificar</td><td class="px-2.5 py-2.5">No aplica</td><td class="px-2.5 py-2.5">No requiere consentimiento</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class={pClass}>Puede retirar su consentimiento en &laquo;Configuración de cookies&raquo; en el pie de página, o eliminando las cookies del navegador para este dominio. También puede bloquearlas desde la configuración de Chrome, Firefox, Safari o Edge, aunque esto puede afectar cookies técnicas necesarias.</p>
+      <h2 class={h2Class}>9. Baja de la newsletter</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Todos los correos incluyen un enlace de &laquo;darse de baja&raquo; al final del mensaje. Al usarlo, dejará de recibir comunicaciones de forma inmediata.</p>
+      <h2 class={h2Class}>10. Cambios en esta política</h2>
+      <p class="text-[17px] leading-[1.7] m-0">Podemos actualizar esta Política ante cambios legislativos, técnicos o de servicio. Publicaremos cualquier cambio en esta misma página, indicando la fecha de la última actualización.</p>
+      <p class="text-[14px] leading-[1.6] text-muted mt-9 mb-0 italic">Nota: este documento es una plantilla informativa general y no constituye asesoramiento jurídico. Se recomienda su revisión por un profesional del derecho especializado en protección de datos.</p>
+    </article>
+  </div>
+</BlogLayout>

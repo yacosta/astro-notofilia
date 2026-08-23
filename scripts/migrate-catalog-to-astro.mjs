@@ -64,7 +64,7 @@ for (const { route, legacyFile } of routes) {
     catch { throw new Error(`${legacyFile}: invalid JSON-LD`); }
   }
 
-  const canonicalPath = new URL(attr(helmet, /<link\s+rel="canonical"\s+href="([^"]+)"/i) || route, 'https://www.notofilia.com').pathname;
+  const canonicalPath = new URL(attr(helmet, /<link\s+rel="canonical"\s+href="([^"]+)"/i) || route, 'https://notofilia.com').pathname;
   if (canonicalPath !== route) throw new Error(`${legacyFile}: route ${route} does not match canonical ${canonicalPath}`);
 
   const ogImageUrl = attr(helmet, /<meta\s+property="og:image"\s+content="([^"]+)"/i);
@@ -79,7 +79,7 @@ for (const { route, legacyFile } of routes) {
     ogType: attr(helmet, /<meta\s+property="og:type"\s+content="([^"]*)"/i) || 'article',
     ogTitle: attr(helmet, /<meta\s+property="og:title"\s+content="([^"]*)"/i),
     ogDescription: attr(helmet, /<meta\s+property="og:description"\s+content="([^"]*)"/i),
-    ogImage: ogImageUrl ? new URL(ogImageUrl, 'https://www.notofilia.com').pathname : '/favicon.png',
+    ogImage: ogImageUrl ? new URL(ogImageUrl, 'https://notofilia.com').pathname : '/favicon.png',
     jsonLd,
     styles,
     template,

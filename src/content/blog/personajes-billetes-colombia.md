@@ -14,7 +14,7 @@ relatedLinks:
   - { href: "/coleccion/colombia/banco-de-la-republica-1000-pesos/", title: "Billetes de 1.000 pesos: Bolívar y Gaitán" }
   - { href: "/coleccion/colombia/perfil-simon-bolivar/", title: "Perfil histórico de Simón Bolívar" }
   - { href: "/coleccion/colombia/perfil-francisco-de-paula-santander/", title: "Perfil de Francisco de Paula Santander" }
-  - { href: "/glosario/#retrato", title: "Glosario: retrato numismático" }
+  - { href: "/glosario/retrato/", title: "Glosario: retrato numismático" }
 ---
 
 Los billetes de un país son una galería de retratos que revela a quién honra su

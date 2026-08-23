@@ -1,0 +1,102 @@
+---
+/**
+ * Supporting narrative blocks from the structured catalog record.
+ */
+import type { CatalogRecord } from '../../lib/catalog-record';
+import NewWindowHint from '../NewWindowHint.astro';
+import { lookupEn } from '../../lib/html-i18n';
+import { UI, type Locale } from '../../lib/ui-i18n';
+
+interface Props {
+  record: CatalogRecord;
+  locale?: Locale;
+}
+
+const { record, locale = 'es' } = Astro.props;
+const isEn = locale === 'en';
+const ctx = record.context;
+const sources = record.sources ?? [];
+const blocks = [
+  ctx?.historical ? { id: 'catalog-ctx-historical', title: UI.historical.es, titleEn: UI.historical.en, body: ctx.historical } : null,
+  ctx?.design ? { id: 'catalog-ctx-design', title: UI.design.es, titleEn: UI.design.en, body: ctx.design } : null,
+  ctx?.varieties ? { id: 'catalog-ctx-varieties', title: UI.varieties.es, titleEn: UI.varieties.en, body: ctx.varieties } : null,
+  ctx?.population ? { id: 'catalog-ctx-population', title: UI.population.es, titleEn: UI.population.en, body: ctx.population } : null,
+].filter(Boolean) as Array<{ id: string; title: string; titleEn: string; body: string }>;
+---
+{
+  (blocks.length > 0 || sources.length > 0) && (
+    <section
+      class="catalog-record-context grid gap-8"
+      aria-label={isEn ? UI.catalogSupport.en : UI.catalogSupport.es}
+      data-i18n={isEn ? undefined : true}
+      data-i18n-target={isEn ? undefined : 'aria-label'}
+      data-en={isEn ? undefined : UI.catalogSupport.en}
+    >
+      {
+        blocks.map((block) => {
+          const bodyEn = lookupEn(block.body);
+          const bodyVisible = isEn ? (bodyEn ?? block.body) : block.body;
+          return (
+          <div>
+            <h2
+              class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : block.titleEn}
+            >
+              {isEn ? block.titleEn : block.title}
+            </h2>
+            <p
+              class="m-0 text-[17px] leading-[1.7] text-cream-dim whitespace-pre-line"
+              data-i18n={!isEn && bodyEn ? true : undefined}
+              data-en={!isEn ? bodyEn : undefined}
+            >{bodyVisible}</p>
+          </div>
+          );
+        })
+      }
+      {
+        sources.length > 0 && (
+          <div>
+            <h2
+              id="catalog-sources-heading"
+              class="m-0 mb-3 font-display font-normal text-[clamp(22px,3vw,28px)] text-cream"
+              data-i18n={isEn ? undefined : true}
+              data-en={isEn ? undefined : UI.sources.en}
+            >
+              {isEn ? UI.sources.en : UI.sources.es}
+            </h2>
+            <ol class="m-0 pl-5 grid gap-2 text-[16px] leading-[1.6] text-cream-dim" aria-labelledby="catalog-sources-heading">
+              {
+                sources.map((source, index) => {
+                  const labelEn = lookupEn(source.label);
+                  const noteEn = source.note ? lookupEn(source.note) : undefined;
+                  const labelVisible = isEn ? (labelEn ?? source.label) : source.label;
+                  const noteVisible = source.note
+                    ? (isEn ? (noteEn ?? source.note) : source.note)
+                    : undefined;
+                  return (
+                  <li id={`catalog-source-${index + 1}`}>
+                    {source.url ? (
+                      <a
+                        class="text-gold-light underline [text-decoration-color:rgba(183,171,138,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {labelVisible}<NewWindowHint lang={isEn ? 'en' : 'es'} />
+                      </a>
+                    ) : (
+                      <span>{labelVisible}</span>
+                    )}
+                    {noteVisible ? <span> — {noteVisible}</span> : null}
+                  </li>
+                  );
+                })
+              }
+            </ol>
+          </div>
+        )
+      }
+    </section>
+  )
+}

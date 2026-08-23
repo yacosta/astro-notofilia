@@ -13,6 +13,15 @@ keywords:
   - "monedas raras de Estados Unidos"
   - "monedas de colección"
   - "numismática"
+updatedAt: 2026-08-14
+reviewedBy: "Yezid Acosta"
+claimKind: catalog_valuation
+claimCurrency: USD
+claimValuationDate: 2026-07-17
+claimNote: "La guía PCGS sitúa el tope en torno a US$1,85 millones; un ejemplar MS65 se vendió por US$1,38 millones (resultado de subasta documentado para esa pieza). Otras calidades cotizan muy por debajo."
+primarySources:
+  - label: "PCGS"
+    url: "https://www.pcgs.com/"
 ---
 
 Una moneda estadounidense de oro de US$2,50, acuñada en Filadelfia en 1796,

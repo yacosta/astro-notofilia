@@ -1,9 +1,9 @@
 # DNS for AI Discovery (DNS-AID)
 
 Notofilia publishes an HTTP agent index at
-[`/.well-known/agent-index.json`](https://www.notofilia.com/.well-known/agent-index.json)
+[`/.well-known/agent-index.json`](https://notofilia.com/.well-known/agent-index.json)
 and an MCP Server Card at
-[`/.well-known/mcp/server-card.json`](https://www.notofilia.com/.well-known/mcp/server-card.json).
+[`/.well-known/mcp/server-card.json`](https://notofilia.com/.well-known/mcp/server-card.json).
 
 DNS-AID **SVCB** records must exist in the Cloudflare DNS zone for `notofilia.com`.
 DNSSEC is already enabled on the zone (`AD=1` over DoH). Application deploys cannot
@@ -61,7 +61,7 @@ curl -sS "https://cloudflare-dns.com/dns-query?name=_index._agents.notofilia.com
 
 curl -sS -X POST https://isitagentready.com/api/scan \
   -H 'content-type: application/json' \
-  -d '{"url":"https://www.notofilia.com"}'
+  -d '{"url":"https://notofilia.com"}'
 ```
 
 Expect `checks.discoverability.dnsAid.status === "pass"`.

@@ -1,0 +1,120 @@
+{
+  "path": "/coleccion/filipinas/",
+  "title": "Catálogo de Billetes de Filipinas | Notofilia",
+  "description": "Certificados del Tesoro de Filipinas: Victory Series No. 66 y la liberación de 1944. Colección Notofilia.",
+  "keywords": [
+    "billetes de filipinas",
+    "philippines banknotes",
+    "victory series 66",
+    "tesorería de filipinas",
+    "notafilia filipina",
+    "numismática filipinas"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "website",
+  "ogTitle": "Catálogo de Billetes de Filipinas — Notofilia",
+  "ogDescription": "Certificados del Tesoro de Filipinas de la colección Notofilia: Victory Series No. 66.",
+  "ogImage": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Filipinas",
+            "item": "https://notofilia.com/coleccion/filipinas/"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://notofilia.com/coleccion/filipinas/#page",
+        "name": "Catálogo de Billetes de Filipinas",
+        "url": "https://notofilia.com/coleccion/filipinas/",
+        "description": "Certificados del Tesoro de Filipinas de la colección Notofilia.",
+        "inLanguage": "es",
+        "hasPart": [
+          {
+            "@type": "CreativeWork",
+            "name": "1 Peso — Victory Series No. 66 (Pick 94a)",
+            "url": "https://notofilia.com/coleccion/filipinas/1-peso-victory-series-66/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "2 Pesos — Victory Series No. 66 (Pick 95a)",
+            "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/"
+          }
+        ]
+      }
+    ]
+  },
+  "styles": "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(183,171,138,0.45); }\n    a:focus-visible { outline: 2px solid #e7ddc4; outline-offset: 3px; }\n    ::selection { background: rgba(138,109,59,0.25); }",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  <main data-pagefind-meta=\"url:/coleccion/filipinas/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Catálogo de Filipinas\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Catálogo de Billetes de Filipinas</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Victory Series No. 66</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">Bajo la Commonwealth, el peso filipino quedó ligado al dólar estadounidense a razón de 2:1. El Bangko Sentral ng Pilipinas registra que, a partir de 1918, los certificados del Tesoro sustituyeron a la serie de certificados de plata, y que se añadió un billete de un peso. Esos certificados &mdash;impresos por el Bureau of Engraving and Printing de Estados Unidos&mdash; fueron el último papel moneda filipino producido bajo administración estadounidense.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">En 1944 las fuerzas de liberación llevaron la Victory Series No. 66: el mismo tipo de certificado, con la leyenda de serie en lugar de fecha y el sobresello negro VICTORY en el reverso. Con la creación del Banco Central de Filipinas en 1949, las denominaciones restantes se sobreimprimieron «Central Bank of the Philippines» y siguieron de curso legal hasta el 30 de julio de 1964.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Liberación de 1944</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Tesorería de Filipinas</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.filipinas",
+    "kind": "other",
+    "title": "Catálogo de Billetes de Filipinas",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Filipinas"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/filipinas/1-peso-victory-series-66/",
+        "title": "1 Peso Victory Series No. 66",
+        "denomination": "1 Peso",
+        "year": "1944",
+        "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
+        "imageWebp": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.webp",
+        "alt": "Certificado del Tesoro de Filipinas de 1 peso, Victory Series No. 66, anverso con Mabini y reverso con sobresello VICTORY",
+        "titleEn": "1 Peso Victory Series No. 66",
+        "altEn": "Philippines Treasury Certificate of 1 peso, Victory Series No. 66, obverse with Mabini and reverse with VICTORY overprint"
+      },
+      {
+        "href": "/coleccion/filipinas/2-pesos-victory-series-66/",
+        "title": "2 Pesos Victory Series No. 66",
+        "denomination": "2 Pesos",
+        "year": "1944",
+        "image": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg",
+        "imageWebp": "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.webp",
+        "alt": "Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, anverso con Rizal y reverso azul con sobresello VICTORY",
+        "titleEn": "2 Pesos Victory Series No. 66",
+        "altEn": "Philippines Treasury Certificate of 2 pesos, Victory Series No. 66, obverse with Rizal and blue reverse with VICTORY overprint"
+      }
+    ],
+    "eyebrow": "Contexto Histórico",
+    "country": "Filipinas"
+  },
+  "legacyFile": "catalogo-filipinas.dc.html",
+  "sourceHash": "a7c3e91f0b24d618",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/philippines/",
+      "title": "Philippines Banknote Catalog | Notofilia",
+      "description": "Philippine Treasury Certificates: Victory Series No. 66 and the 1944 liberation. A Notofilia catalog.",
+      "ogTitle": "Philippines Banknote Catalog — Notofilia",
+      "ogDescription": "Philippine Treasury Certificates from the Notofilia collection: Victory Series No. 66.",
+      "recordTitle": "Philippines Banknote Catalog",
+      "eyebrow": "Historical Context",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  <main data-pagefind-meta=\"url:/en/collection/philippines/\" id=\"main-content\" tabindex=\"-1\" data-screen-label=\"Philippines Catalog\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Philippines Banknote Catalog</h1>\n\n    <section style=\"margin:0 0 80px; padding-top:8px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 24px;\">Victory Series No. 66</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 20px;\">Under the Commonwealth, the Philippine peso was tied to the United States dollar at 2:1. Bangko Sentral ng Pilipinas records that from 1918 Treasury certificates replaced the silver-certificate series, and that a one-peso note was added. Those certificates &mdash;printed by the U.S. Bureau of Engraving and Printing&mdash; were the last Philippine paper money produced under United States administration.</p>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">In 1944 liberation forces brought Victory Series No. 66: the same certificate type, with the series legend in place of a date and a black VICTORY overprint on the reverse. After the Central Bank of the Philippines was created in 1949, remaining denominations were overprinted “Central Bank of the Philippines” and stayed legal tender until 30 July 1964.</p>\n    </section>\n\n    <section>\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">1944 Liberation</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); color:#d8d2cd; margin:0 0 32px;\">Treasury of the Philippines</h2>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n  </main>\n\n</div>"
+    }
+  }
+}

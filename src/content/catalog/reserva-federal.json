@@ -28,21 +28,21 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Notofilia",
-            "item": "https://www.notofilia.com/"
+            "item": "https://notofilia.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Sistema de la Reserva Federal",
-            "item": "https://www.notofilia.com/coleccion/reserva-federal/"
+            "item": "https://notofilia.com/coleccion/reserva-federal/"
           }
         ]
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.notofilia.com/coleccion/reserva-federal/#page",
+        "@id": "https://notofilia.com/coleccion/reserva-federal/#page",
         "name": "Sistema de la Reserva Federal",
-        "url": "https://www.notofilia.com/coleccion/reserva-federal/",
+        "url": "https://notofilia.com/coleccion/reserva-federal/",
         "description": "Catálogo de billetes emitidos por el Sistema de la Reserva Federal de los Estados Unidos.",
         "inLanguage": "es",
         "about": {
@@ -53,25 +53,110 @@
           {
             "@type": "CreativeWork",
             "name": "Billete de $20 — Emisión de Emergencia Hawái, Serie 1934-A",
-            "url": "https://www.notofilia.com/coleccion/veinte-dolares-hawaii-1934/"
+            "url": "https://notofilia.com/coleccion/veinte-dolares-hawaii-1934/"
           },
           {
             "@type": "CreativeWork",
             "name": "Certificado de Plata $1 — Emisión de Emergencia Norte de África, Serie 1935-A",
-            "url": "https://www.notofilia.com/coleccion/un-dolar-norte-africa-1935a/"
+            "url": "https://notofilia.com/coleccion/un-dolar-norte-africa-1935a/"
           },
           {
             "@type": "CreativeWork",
             "name": "Billete de $10 — Serie de 1934, Cuatro Distritos",
-            "url": "https://www.notofilia.com/coleccion/diez-dolares-1934-distritos/"
+            "url": "https://notofilia.com/coleccion/diez-dolares-1934-distritos/"
           }
         ]
       }
     ]
   },
   "styles": "body { margin: 0; }\n    a { color: #6b521f; }\n    ::selection { background: rgba(138,109,59,0.25); }",
-  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/reserva-federal/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Sistema de la Reserva Federal</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Papel moneda emitido por los doce Bancos de la Reserva Federal de los Estados Unidos, incluyendo las emisiones de emergencia acuñadas durante la Segunda Guerra Mundial.</p>\n\n    <section id=\"cien-dolares-minneapolis-1929\" style=\"margin-bottom:72px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Bank Note, Minneapolis (1929)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de Minneapolis &middot; billete de sello marrón, serie de 1929, obligación directa del banco regional emisor.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.jpg\"\n          image-webp=\"uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.webp\"\n          alt=\"Billete de cien dólares del Federal Reserve Bank Note de Minneapolis, serie de 1929, sello marrón, anverso y reverso\"\n          title=\"Cien Dólares — Minneapolis\"\n          denomination=\"$100.00\"\n          year=\"1929\"\n          href=\"/coleccion/cien-dolares-minneapolis-1929/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section id=\"cien-dolares-1990-cleveland\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Note, Cleveland (1990)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de Cleveland, Distrito D &middot; serie de 1990 &middot; el primer billete estadounidense con hilo de seguridad y microimpresión.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/us-federal-reserve-note-100-dollars-1990-cleveland.jpg\"\n          image-webp=\"uploads/us-federal-reserve-note-100-dollars-1990-cleveland.webp\"\n          alt=\"Federal Reserve Note de cien dólares, Distrito D de Cleveland, serie de 1990, anverso y reverso\"\n          title=\"Cien Dólares — Cleveland\"\n          denomination=\"$100.00\"\n          year=\"1990\"\n          href=\"/coleccion/reserva-federal/cien-dolares-1990-cleveland/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section id=\"diez-dolares-1934-distritos\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Diez Dólares, Serie de 1934 &mdash; Cuatro Distritos</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Cleveland, Richmond, Chicago y San Francisco &middot; el mismo billete estándar, cuatro Bancos de la Reserva Federal emisores.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.jpg\"\n          image-webp=\"uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.webp\"\n          alt=\"Billete de diez dólares de la Reserva Federal, serie de 1934, cuatro distritos: Cleveland, Richmond, Chicago y San Francisco\"\n          title=\"Diez Dólares &mdash; Cuatro Distritos\"\n          denomination=\"$10.00\"\n          year=\"1934\"\n          href=\"/coleccion/diez-dolares-1934-distritos/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n    <section style=\"margin:0 0 40px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">Los Billetes &ldquo;Hawái&rdquo;: Moneda de Emergencia de la Segunda Guerra Mundial</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 32px;\">Tras el ataque a Pearl Harbor del 7 de diciembre de 1941, el mando militar estadounidense contempló la posibilidad de una invasión japonesa de las islas hawaianas, en cuyo caso el enemigo tendría acceso a un enorme volumen de dólares corrientes con los que financiar su ocupación. El 10 de enero de 1942, el gobernador militar del territorio, teniente general Delos C. Emmons, ordenó retirar de circulación el efectivo excedente, y a partir del 25 de junio de ese año se emitieron billetes especiales, de $1, $5, $10 y $20, con la palabra &ldquo;HAWAII&rdquo; sobreimpresa y sellos en tinta marrón: en caso de invasión, el gobierno podría declarar sin valor de inmediato cualquier billete identificado de esta forma.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La emisión se extendió hasta octubre de 1944 y su retiro formal comenzó en 1946, aunque numerosos ejemplares sobrevivieron como recuerdos de guerra. Hoy constituyen uno de los episodios más singulares &mdash;y coleccionables&mdash; de la historia del papel moneda estadounidense del siglo XX.</p>\n    </section>\n\n    <section id=\"veinte-dolares-hawaii-1934\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Emisión de Emergencia &ldquo;Hawái&rdquo; (1934&ndash;1935)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de San Francisco &middot; billetes con sobreimpresión &ldquo;HAWAII&rdquo; y sello marrón, moneda de contingencia de la Segunda Guerra Mundial.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/us-federal-reserve-note-20-dollars-hawaii-1934a.jpg\"\n          image-webp=\"uploads/us-federal-reserve-note-20-dollars-hawaii-1934a.webp\"\n          alt=\"Billete de veinte dólares de la Reserva Federal con sobreimpresión de emergencia HAWAII, serie 1934-A, anverso y reverso\"\n          title=\"Veinte Dólares &ldquo;Hawái&rdquo;\"\n          denomination=\"$20.00\"\n          year=\"1934-A\"\n          href=\"/coleccion/veinte-dolares-hawaii-1934/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n        <dc-import name=\"BanknoteCard\"\n          image=\"uploads/us-silver-certificate-1-dollar-north-africa-1935a.jpg\"\n          image-webp=\"uploads/us-silver-certificate-1-dollar-north-africa-1935a.webp\"\n          alt=\"Certificado de plata de un dólar con sello amarillo de emergencia Norte de África, serie 1935-A, anverso y reverso\"\n          title=\"Un Dólar &ldquo;Norte de África&rdquo;\"\n          denomination=\"$1.00\"\n          year=\"1935-A\"\n          href=\"/coleccion/un-dolar-norte-africa-1935a/\"\n          hint-size=\"320px,300px\"\n        ></dc-import>\n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
-  "logic": "class Component extends DCLogic {\n  componentDidMount() {\n    if (typeof document !== \"undefined\" && document.documentElement) {\n      document.documentElement.lang = \"es\";\n    }\n  }\n}",
+  "template": "<div lang=\"es\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/coleccion/reserva-federal/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Sistema de la Reserva Federal</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Papel moneda emitido por los doce Bancos de la Reserva Federal de los Estados Unidos, incluyendo las emisiones de emergencia acuñadas durante la Segunda Guerra Mundial.</p>\n\n    <section id=\"cien-dolares-minneapolis-1929\" style=\"margin-bottom:72px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Bank Note, Minneapolis (1929)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de Minneapolis &middot; billete de sello marrón, serie de 1929, obligación directa del banco regional emisor.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section id=\"cien-dolares-1990-cleveland\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Note, Cleveland (1990)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de Cleveland, Distrito D &middot; serie de 1990 &middot; el primer billete estadounidense con hilo de seguridad y microimpresión.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section id=\"diez-dolares-1934-distritos\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Diez Dólares, Serie de 1934 &mdash; Cuatro Distritos</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Cleveland, Richmond, Chicago y San Francisco &middot; el mismo billete estándar, cuatro Bancos de la Reserva Federal emisores.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin:0 0 40px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Contexto Histórico</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">Los Billetes &ldquo;Hawái&rdquo;: Moneda de Emergencia de la Segunda Guerra Mundial</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 32px;\">Tras el ataque a Pearl Harbor del 7 de diciembre de 1941, el mando militar estadounidense contempló la posibilidad de una invasión japonesa de las islas hawaianas, en cuyo caso el enemigo tendría acceso a un enorme volumen de dólares corrientes con los que financiar su ocupación. El 10 de enero de 1942, el gobernador militar del territorio, teniente general Delos C. Emmons, ordenó retirar de circulación el efectivo excedente, y a partir del 25 de junio de ese año se emitieron billetes especiales, de $1, $5, $10 y $20, con la palabra &ldquo;HAWAII&rdquo; sobreimpresa y sellos en tinta marrón: en caso de invasión, el gobierno podría declarar sin valor de inmediato cualquier billete identificado de esta forma.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">La emisión se extendió hasta octubre de 1944 y su retiro formal comenzó en 1946, aunque numerosos ejemplares sobrevivieron como recuerdos de guerra. Hoy constituyen uno de los episodios más singulares &mdash;y coleccionables&mdash; de la historia del papel moneda estadounidense del siglo XX.</p>\n    </section>\n\n    <section id=\"veinte-dolares-hawaii-1934\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Emisión de Emergencia &ldquo;Hawái&rdquo; (1934&ndash;1935)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Banco de la Reserva Federal de San Francisco &middot; billetes con sobreimpresión &ldquo;HAWAII&rdquo; y sello marrón, moneda de contingencia de la Segunda Guerra Mundial.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+  "logic": "",
+  "record": {
+    "id": "NF.reserva-federal",
+    "kind": "other",
+    "title": "Sistema de la Reserva Federal",
+    "subtitle": "Papel moneda emitido por los doce Bancos de la Reserva Federal de los Estados Unidos, incluyendo las emisiones de emergencia acuñadas durante la Segunda Guerra Mundial.",
+    "dateOrSeries": "Contexto Histórico",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Sistema de la Reserva Federal"
+      }
+    ],
+    "metadata": {},
+    "render": "astro-hub",
+    "cards": [
+      {
+        "href": "/coleccion/cien-dolares-minneapolis-1929/",
+        "title": "Cien Dólares — Minneapolis",
+        "denomination": "$100.00",
+        "year": "1929",
+        "image": "/uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.jpg",
+        "imageWebp": "/uploads/us-federal-reserve-bank-note-100-dollars-minneapolis-1929.webp",
+        "alt": "Billete de cien dólares del Federal Reserve Bank Note de Minneapolis, serie de 1929, sello marrón, anverso y reverso",
+        "altEn": "One-hundred-dollar Federal Reserve Bank Note of Minneapolis, Series of 1929, brown seal, obverse and reverse"
+      },
+      {
+        "href": "/coleccion/reserva-federal/cien-dolares-1990-cleveland/",
+        "title": "Cien Dólares — Cleveland",
+        "denomination": "$100.00",
+        "year": "1990",
+        "image": "/uploads/us-federal-reserve-note-100-dollars-1990-cleveland.jpg",
+        "imageWebp": "/uploads/us-federal-reserve-note-100-dollars-1990-cleveland.webp",
+        "alt": "Federal Reserve Note de cien dólares, Distrito D de Cleveland, serie de 1990, anverso y reverso",
+        "altEn": "Federal Reserve Note de cien dólares, Distrito D de Cleveland, serie de 1990, obverse and reverse"
+      },
+      {
+        "href": "/coleccion/diez-dolares-1934-distritos/",
+        "title": "Diez Dólares &mdash; Cuatro Distritos",
+        "denomination": "$10.00",
+        "year": "1934",
+        "image": "/uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.jpg",
+        "imageWebp": "/uploads/us-federal-reserve-note-10-dollars-1934a-cleveland.webp",
+        "alt": "Billete de diez dólares de la Reserva Federal, serie de 1934, cuatro distritos: Cleveland, Richmond, Chicago y San Francisco",
+        "altEn": "Banknote of ten dollars de la Federal Reserve, serie de 1934, cuatro distritos: Cleveland, Richmond, Chicago y San Francisco"
+      },
+      {
+        "href": "/coleccion/veinte-dolares-hawaii-1934/",
+        "title": "Veinte Dólares &ldquo;Hawái&rdquo;",
+        "denomination": "$20.00",
+        "year": "1934-A",
+        "image": "/uploads/us-federal-reserve-note-20-dollars-hawaii-1934a.jpg",
+        "imageWebp": "/uploads/us-federal-reserve-note-20-dollars-hawaii-1934a.webp",
+        "alt": "Billete de veinte dólares de la Reserva Federal con sobreimpresión de emergencia HAWAII, serie 1934-A, anverso y reverso",
+        "altEn": "Banknote of veinte dólares de la Federal Reserve con overprint de emergencia HAWAII, serie 1934-A, obverse and reverse",
+        "titleEn": "Twenty Dollars &ldquo;Hawaii&rdquo;"
+      },
+      {
+        "href": "/coleccion/un-dolar-norte-africa-1935a/",
+        "title": "Un Dólar &ldquo;Norte de África&rdquo;",
+        "denomination": "$1.00",
+        "year": "1935-A",
+        "image": "/uploads/us-silver-certificate-1-dollar-north-africa-1935a.jpg",
+        "imageWebp": "/uploads/us-silver-certificate-1-dollar-north-africa-1935a.webp",
+        "alt": "Certificado de plata de un dólar con sello amarillo de emergencia Norte de África, serie 1935-A, anverso y reverso",
+        "altEn": "Certificado de plata de un dólar con yellow stamp de emergencia Norte de África, serie 1935-A, obverse and reverse",
+        "titleEn": "One Dollar &ldquo;North Africa&rdquo;"
+      }
+    ],
+    "eyebrow": "Contexto Histórico"
+  },
   "legacyFile": "catalogo-reserva-federal.dc.html",
-  "sourceHash": "737e970d43b9cff4"
+  "sourceHash": "737e970d43b9cff4",
+  "i18n": {
+    "en": {
+      "path": "/en/collection/federal-reserve/",
+      "title": "Federal Reserve System | Notofilia",
+      "description": "Catalog of notes issued by the U.S. Federal Reserve System, including World War II emergency issues.",
+      "ogTitle": "Federal Reserve System — Catalog",
+      "ogDescription": "Catalog of notes issued by the Federal Reserve System of the United States.",
+      "template": "<div lang=\"en\" style=\"width:100%; min-height:100vh; background:#0a0a09; font-family:'Cormorant Garamond', serif; box-sizing:border-box;\">\n\n  \n\n  \n\n  <main data-pagefind-meta=\"url:/en/collection/federal-reserve/\" id=\"main-content\" tabindex=\"-1\" style=\"max-width:1180px; margin:0 auto; padding:64px 24px 96px; outline:none;\">\n\n    <h1 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(34px,5vw,58px); line-height:1.05; color:#d8d2cd; margin:0 0 24px;\">Federal Reserve System</h1>\n\n    <p style=\"font-size:clamp(18px,1.8vw,21px); line-height:1.7; color:#d8d2cd; max-width:680px; margin:0 0 56px;\">Paper money issued by the twelve Federal Reserve Banks of the United States, including the emergency issues produced during World War II.</p>\n\n    <section id=\"cien-dolares-minneapolis-1929\" style=\"margin-bottom:72px; padding-top:48px; border-top:1px solid rgba(231,222,201,0.18);\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Bank Note, Minneapolis (1929)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Federal Reserve Bank of Minneapolis &middot; brown-seal note, series of 1929, a direct obligation of the issuing regional bank.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section id=\"cien-dolares-1990-cleveland\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Federal Reserve Note, Cleveland (1990)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Federal Reserve Bank of Cleveland, District D &middot; series of 1990 &middot; the first U.S. banknote with a security thread and microprinting.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section id=\"diez-dolares-1934-distritos\" style=\"margin-bottom:72px;\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">Ten Dollars, Series of 1934 &mdash; Four Districts</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Cleveland, Richmond, Chicago, and San Francisco &middot; the same standard note, four issuing Federal Reserve Banks.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n      </div>\n    </section>\n\n    <section style=\"margin:0 0 40px;\">\n      <span style=\"display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; color:#b7ab8a; margin-bottom:14px;\">Historical Context</span>\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,32px); line-height:1.15; color:#d8d2cd; margin:0 0 20px;\">The &ldquo;Hawaii&rdquo; Notes: World War II Emergency Currency</h2>\n\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0 0 32px;\">After the attack on Pearl Harbor on 7 December 1941, U.S. military command contemplated the possibility of a Japanese invasion of the Hawaiian Islands, in which case the enemy would have access to an enormous volume of ordinary dollars with which to finance its occupation. On 10 January 1942, the territory’s military governor, Lieutenant General Delos C. Emmons, ordered surplus cash withdrawn from circulation, and from 25 June of that year special notes of $1, $5, $10, and $20 were issued, with the word &ldquo;HAWAII&rdquo; overprinted and seals in brown ink: in the event of invasion, the government could immediately declare worthless any note identified in this way.</p>\n      <p style=\"font-size:19px; line-height:1.75; color:#d8d2cd; margin:0;\">The issue continued until October 1944 and its formal withdrawal began in 1946, although numerous specimens survived as war souvenirs. Today they constitute one of the most distinctive &mdash;and collectible&mdash; episodes in the history of twentieth-century U.S. paper money.</p>\n    </section>\n\n    <section id=\"veinte-dolares-hawaii-1934\">\n      <h2 style=\"font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(24px,3vw,34px); color:#d8d2cd; margin:0 0 12px;\">&ldquo;Hawaii&rdquo; Emergency Issue (1934&ndash;1935)</h2>\n      <p style=\"font-size:18px; line-height:1.7; color:#b7ab8a; max-width:640px; margin:0 0 32px;\">Federal Reserve Bank of San Francisco &middot; notes with a &ldquo;HAWAII&rdquo; overprint and brown seal, World War II contingency currency.</p>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 320px)); gap:28px;\">\n        \n        \n      </div>\n    </section>\n\n  </main>\n\n  \n\n</div>",
+      "recordTitle": "Federal Reserve System",
+      "eyebrow": "Historical Context"
+    }
+  }
 }
