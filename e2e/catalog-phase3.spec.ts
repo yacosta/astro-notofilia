@@ -450,35 +450,54 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the Santa Marta 1820 cuartillo first', async ({ page }) => {
+test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toBeVisible();
-  await expect(first).toHaveAttribute('href', '/coleccion/colombia/santa-marta-1-4-real-1820/');
-  await expect(first).toContainText('Santa Marta — ¼ real de cobre, 1820');
+  await expect(first).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
+  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Cuartillo de cobre de Santa Marta, 1820/,
+    /10 pesos oro del Banco de la República, 20 de julio de 1943/,
   );
   await expect(first.getByRole('img')).toHaveAttribute(
     'src',
-    '/uploads/colombia-santa-marta-1-4-real-1820-c0225406-card.jpg',
+    '/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-card.jpg',
   );
 });
 
-test('English homepage Logros features the Santa Marta 1820 cuartillo first', async ({ page }) => {
+test('English homepage Logros features the 1943 10 pesos oro first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
-  await expect(first).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
-  await expect(first).toContainText('Santa Marta — copper ¼ real, 1820');
+  await expect(first).toHaveAttribute(
+    'href',
+    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  );
+  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Santa Marta copper quarter-real, 1820/,
+    /Banco de la República 10 pesos oro, 20 July 1943/,
   );
+});
+
+test('homepage Logros del Mes still features the Santa Marta 1820 cuartillo', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Santa Marta — ¼ real de cobre, 1820/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/santa-marta-1-4-real-1820/');
+});
+
+test('English homepage Logros still features the Santa Marta 1820 cuartillo', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Santa Marta — copper ¼ real, 1820/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
 });
 
 test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {

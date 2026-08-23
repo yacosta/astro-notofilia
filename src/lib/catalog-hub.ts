@@ -120,6 +120,18 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    title: 'Banco de la República — 10 pesos oro, 1943',
+    titleEn: 'Banco de la República — 10 pesos oro, 1943',
+    description:
+      'Pick 389b del 20 de julio de 1943, PMG 50 EPQ, Serie N 6813011. Retrato de Antonio Nariño.',
+    descriptionEn:
+      'Pick 389b dated 20 July 1943, PMG 50 EPQ, Series N 6813011. Portrait of Antonio Nariño.',
+    imageBase: 'colombia-banco-de-la-republica-10-pesos-oro-1943',
+    imageAlt:
+      'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
+  },
+  {
     href: '/coleccion/filipinas/2-pesos-victory-series-66/',
     title: 'Filipinas — 2 pesos Victory Series 66',
     titleEn: 'Philippines — 2 pesos Victory Series 66',
