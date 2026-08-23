@@ -53,7 +53,42 @@ const BANCA_LIBRE_SUBGROUPS = [
   'El Banco del Cauca',
   'El Banco de Medellín',
   'El Banco de Pamplona',
+  'El Banco del Norte',
+  'El Banco de la Unión',
+  'El Banco Internacional',
+  'Vicente B. Villa é Hijos',
+  'El Banco Unión',
+  'El Banco de Panamá',
+  'El Banco de Oriente',
+  'Banco de Antioquia',
+  'El Banco de Barranquilla',
+  'El Banco de Caldas',
+  'El Banco de Colombia',
+  'Departamento de Antioquia',
 ] as const;
+
+const BANCA_LIBRE_MATCHERS: ReadonlyArray<{
+  needle: string;
+  subgroup: (typeof BANCA_LIBRE_SUBGROUPS)[number];
+}> = [
+  { needle: 'banco-hipotecario', subgroup: 'El Banco Hipotecario' },
+  { needle: 'banco-de-rio-hacha', subgroup: 'El Banco de Rio Hacha' },
+  { needle: 'banco-del-cauca', subgroup: 'El Banco del Cauca' },
+  { needle: 'banco-de-medellin', subgroup: 'El Banco de Medellín' },
+  { needle: 'banco-de-pamplona', subgroup: 'El Banco de Pamplona' },
+  { needle: 'banco-del-norte', subgroup: 'El Banco del Norte' },
+  { needle: 'banco-de-la-union', subgroup: 'El Banco de la Unión' },
+  { needle: 'banco-internacional', subgroup: 'El Banco Internacional' },
+  { needle: 'vicente-villa', subgroup: 'Vicente B. Villa é Hijos' },
+  { needle: 'banco-union-cartagena', subgroup: 'El Banco Unión' },
+  { needle: 'banco-de-panama', subgroup: 'El Banco de Panamá' },
+  { needle: 'banco-de-oriente', subgroup: 'El Banco de Oriente' },
+  { needle: 'banco-de-antioquia', subgroup: 'Banco de Antioquia' },
+  { needle: 'banco-de-barranquilla', subgroup: 'El Banco de Barranquilla' },
+  { needle: 'banco-de-caldas', subgroup: 'El Banco de Caldas' },
+  { needle: 'banco-de-colombia', subgroup: 'El Banco de Colombia' },
+  { needle: 'departamento-de-antioquia', subgroup: 'Departamento de Antioquia' },
+];
 
 export type ColombiaPeriod = {
   section: string;
@@ -138,11 +173,20 @@ export function banrepDenominationFor(href: string): (typeof COLOMBIA_BANREP_GRO
   return null;
 }
 
+function bancaLibrePeriodFor(href: string): ColombiaPeriod | null {
+  for (const { needle, subgroup } of BANCA_LIBRE_MATCHERS) {
+    if (href.includes(needle)) return bancaLibreBank(subgroup);
+  }
+  return null;
+}
+
 /** Catalog sections for /coleccion/colombia/. */
 export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): ColombiaPeriod {
   const href = card.href;
+  const bancaLibre = bancaLibrePeriodFor(href);
+  if (bancaLibre) return bancaLibre;
 
-  if (href.includes('cartagena') || firstYear(card.year) === 1813) {
+  if (href.includes('cartagena-1-real') || firstYear(card.year) === 1813) {
     return {
       ...SIGLO_PASADO_FIELDS,
       group: 'Catálogo de Billetes de Colombia',
@@ -184,21 +228,6 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
       group: 'Bonos y Libranzas Fiscales',
       groupEn: 'Fiscal bonds and warrants',
     };
-  }
-  if (href.includes('banco-hipotecario')) {
-    return bancaLibreBank('El Banco Hipotecario');
-  }
-  if (href.includes('banco-de-rio-hacha')) {
-    return bancaLibreBank('El Banco de Rio Hacha');
-  }
-  if (href.includes('banco-del-cauca')) {
-    return bancaLibreBank('El Banco del Cauca');
-  }
-  if (href.includes('banco-de-medellin')) {
-    return bancaLibreBank('El Banco de Medellín');
-  }
-  if (href.includes('banco-de-pamplona')) {
-    return bancaLibreBank('El Banco de Pamplona');
   }
   if (href.includes('banco-nacional')) {
     return {
