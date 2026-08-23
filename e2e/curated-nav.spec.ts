@@ -26,11 +26,19 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Emisores y periodos' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Ejemplares destacados' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Colecciones especiales relacionadas' })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Certificado de Oro/ }).first()).toBeVisible();
+
+  await page.goto('/coleccion/espana/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { level: 1, name: 'España' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Colecciones especiales relacionadas' })).toHaveCount(0);
 
   await page.goto('/en/collection/spain/', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1, name: 'Spain' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Related special collections' })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Felipe V/ }).first()).toBeVisible();
 });
 
