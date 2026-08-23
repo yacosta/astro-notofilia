@@ -756,6 +756,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | other | `/coleccion/ecuador/` | `/en/collection/ecuador/` | hub/other |
 | banknote | `/coleccion/filipinas/1-peso-victory-series-66/` | `/en/collection/philippines/1-peso-victory-series-66/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/filipinas/2-pesos-victory-series-66/` | `/en/collection/philippines/2-pesos-victory-series-66/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/filipinas/tesoreria-victory-series/` | `/en/collection/philippines/treasury-victory-series/` | translated series slug |
 | other | `/coleccion/filipinas/` | `/en/collection/philippines/` | hub/other |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/` | `/en/collection/promotional-issues/food-coupon-1-dollar-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/` | `/en/collection/promotional-issues/food-coupon-10-dollars-2000/` | translated |

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-23T03:03:27.336Z",
-  "count": 137,
-  "pieceCount": 121,
+  "generatedAt": "2026-08-23T11:42:45.318Z",
+  "count": 138,
+  "pieceCount": 122,
   "stats": {
-    "billetes": 221,
+    "billetes": 223,
     "monedas": 9,
     "paises": 36,
-    "fichas": 121,
-    "paginas": 153
+    "fichas": 122,
+    "paginas": 154
   },
   "countries": [
     {
@@ -32,7 +32,7 @@
     },
     {
       "name": "Filipinas",
-      "count": 2,
+      "count": 3,
       "slug": "filipinas"
     },
     {
@@ -2702,6 +2702,37 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
+    },
+    {
+      "id": "filipinas--tesoreria-victory-series",
+      "path": "/coleccion/filipinas/tesoreria-victory-series/",
+      "title": "Tesorería de Filipinas · Victory Series",
+      "description": "Victory Series 66 de la Tesorería de Filipinas (1944): historia, Pick 94a y 95a, y los 1 y 2 pesos de la colección.",
+      "keywords": [
+        "filipinas",
+        "victory series 66",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "pick 94a",
+        "pick 95a",
+        "leyte 1944",
+        "sobresello victory"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/tesoreria-victory-series/",
+      "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "1 peso y 2 pesos",
+      "catalogRef": "Pick 94a / Pick 95a",
+      "condition": "",
+      "emissionType": "Treasury Certificates — Victory Series No. 66 (ND 1944)",
+      "dateLabel": "",
+      "year": null,
+      "material": "",
+      "kind": "banknote",
+      "searchText": "tesorería de filipinas · victory series victory series 66 de la tesorería de filipinas (1944): historia, pick 94a y 95a, y los 1 y 2 pesos de la colección. filipinas tesorería de filipinas (treasury of the philippines) 1 peso y 2 pesos pick 94a / pick 95a banknote filipinas victory series 66 tesorería de filipinas treasury certificate pick 94a pick 95a leyte 1944 sobresello victory"
     },
     {
       "id": "giori-press-test-note",

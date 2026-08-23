@@ -450,6 +450,39 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
+test('Filipinas Victory Series page shows both collection notes', async ({ page }) => {
+  await page.goto('/coleccion/filipinas/tesoreria-victory-series/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Tesorería de Filipinas · Victory Series' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Un Peso Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Dos Pesos Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('img', { name: /1 peso/i })).toBeVisible();
+  await expect(page.getByRole('img', { name: /2 pesos/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /ficha completa del 1 peso/i })).toHaveAttribute(
+    'href',
+    '/coleccion/filipinas/1-peso-victory-series-66/',
+  );
+  await expect(page.getByRole('link', { name: /ficha completa del 2 pesos/i })).toHaveAttribute(
+    'href',
+    '/coleccion/filipinas/2-pesos-victory-series-66/',
+  );
+  await expect(page.getByRole('link', { name: /Bangko Sentral ng Pilipinas — English Series/ })).toBeVisible();
+});
+
+test('English Philippines Victory Series page shows both collection notes', async ({ page }) => {
+  await page.goto('/en/collection/philippines/treasury-victory-series/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Treasury of the Philippines · Victory Series' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'One Peso Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Two Pesos Victory Series No. 66' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /full 1-peso record/i })).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/1-peso-victory-series-66/',
+  );
+  await expect(page.getByRole('link', { name: /full 2-peso record/i })).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/2-pesos-victory-series-66/',
+  );
+});
+
 test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
