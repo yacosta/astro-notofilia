@@ -166,8 +166,17 @@ if (!navTs.includes('/nosotros/')) fail('Primary nav is missing About /nosotros/
 if (!navTs.includes('/coleccion/estados-unidos/')) fail('Primary nav is missing the United States landing');
 if (!navTs.includes('/coleccion/espana/')) fail('Primary nav is missing the Spain landing');
 if (!navTs.includes("href: '/contacto/'")) fail('Primary nav is missing Contacto');
+if (!navTs.includes('Colecciones virtuales — Notafilia')) {
+  fail('Primary nav is missing the virtual Notaphily collection heading');
+}
+if (!navTs.includes('Colecciones virtuales — Numismática')) {
+  fail('Primary nav is missing the virtual Numismatics collection heading');
+}
+if (navTs.includes('Colecciones principales')) {
+  fail('Primary nav must not keep the old Major Collections heading');
+}
 if (navTs.includes('Colección virtual - Numismática') || navTs.includes('Colección virtual - Notafilia')) {
-  fail('Primary nav must not use specialist Virtual Collection accordion headings');
+  fail('Primary nav must not use the old singular Virtual Collection accordion headings');
 }
 if (navTs.includes('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/')) {
   fail('Primary nav must not list individual catalog records');

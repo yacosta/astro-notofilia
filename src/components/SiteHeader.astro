@@ -484,17 +484,25 @@ const searchAction = '/buscar/';
   }
   .site-header__panel--mega:not([hidden]) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
-    gap: 8px 32px;
-    width: min(560px, 88vw);
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    align-items: start;
+    gap: 8px 28px;
+    width: min(720px, 92vw);
+    max-height: min(70vh, 36rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 22px 24px 24px;
+  }
+  .site-header__panel-col {
+    min-width: 0;
   }
   .site-header__panel-heading {
     margin: 0 0 8px;
     font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
     text-transform: uppercase;
     color: #5c4e33;
   }
@@ -512,6 +520,8 @@ const searchAction = '/buscar/';
     text-decoration: none;
     font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
     font-size: 16px;
+    line-height: 1.35;
+    white-space: normal;
   }
   .site-header__panel a:hover {
     color: #5c4e33;
@@ -808,7 +818,8 @@ const searchAction = '/buscar/';
   .site-header__drawer-group-label {
     margin: 8px 24px 0;
     font-size: 12px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
     text-transform: uppercase;
     font-weight: 700;
     color: #5c4e33;

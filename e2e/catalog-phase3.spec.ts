@@ -840,7 +840,7 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });
 
-test('desktop header shows curated hubs instead of individual records', async ({ page }) => {
+test('desktop header lists virtual notaphily hubs and coin pages', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto('/');
   const desktop = page.locator('#site-desktop-nav');
@@ -858,19 +858,24 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(collectionPanel).toBeHidden();
   await page.locator('[data-nav-item="collection"]').hover();
   await expect(collectionPanel).toBeVisible();
+  await expect(collectionPanel.getByText('Colecciones principales')).toHaveCount(0);
+  await expect(collectionPanel.getByText('Colecciones especiales', { exact: true })).toHaveCount(0);
   await expect(collectionPanel.getByText('Explorar', { exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
+  await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Ecuador' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);
 });
 
-test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
+test('mobile drawer lists virtual notaphily hubs and coin pages', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await page.getByRole('button', { name: 'Abrir menú' }).click();
@@ -885,10 +890,12 @@ test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
 
   await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
   await expect(drawer.getByText('Explorar', { exact: true })).toHaveCount(0);
+  await expect(drawer.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
+  await expect(drawer.getByText('Colecciones virtuales — Numismática')).toBeVisible();
   await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
   await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(0);
 
