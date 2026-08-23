@@ -195,7 +195,8 @@ function noteSection(lang, note) {
   const heading = isEs ? note.headingEs : note.headingEn;
   const sub = isEs ? note.subEs : note.subEn;
   const ficha = isEs ? note.fichaEs : note.fichaEn;
-  return `<section id="${note.id}" style="width:100%; max-width:760px; margin:48px auto 0;">
+  const top = note.eager ? '0' : '48px';
+  return `<section id="${note.id}" style="width:100%; max-width:760px; margin:${top} auto 0;">
           <h2 style="font-family:'Montenegrin Gothic One', serif; font-weight:400; font-size:clamp(22px,2.6vw,28px); color:#1c1a15; margin:0 0 4px; text-align:center;">${heading}</h2>
           <p style="font-size:17px; font-style:italic; color:#4a4331; margin:0 0 20px; text-align:center;">${sub}</p>
           <div style="display:flex; flex-direction:column; gap:14px;">
@@ -394,6 +395,8 @@ function buildTemplate(lang) {
           <p style="font-size:clamp(19px,2vw,23px); font-style:italic; color:#4a4331; margin:0;">${subtitle}</p>
         </div>
 
+        ${NOTES.map((note) => noteSection(lang, note)).join('\n')}
+
         <div style="width:100%; max-width:760px;">
           ${intro}
           ${origin}
@@ -403,8 +406,6 @@ function buildTemplate(lang) {
           ${metaHtml}
           </div>
         </div>
-
-        ${NOTES.map((note) => noteSection(lang, note)).join('\n')}
 
         <div style="width:100%; max-width:760px; margin:44px auto 0; padding-top:20px; border-top:1px solid rgba(10,10,9,0.12);">
           ${h2(notesHeading)}
@@ -465,30 +466,6 @@ const payload = {
             position: 3,
             name: 'Tesorería de Filipinas · Victory Series',
             item: `${SITE}${ES_PATH}`,
-          },
-        ],
-      },
-      {
-        '@type': 'CollectionPage',
-        '@id': `${SITE}${ES_PATH}#page`,
-        name: 'Tesorería de Filipinas · Victory Series',
-        url: `${SITE}${ES_PATH}`,
-        description:
-          'Certificados del Tesoro de Filipinas, Victory Series No. 66 (1944): 1 peso Pick 94a y 2 pesos Pick 95a.',
-        inLanguage: 'es',
-        isPartOf: { '@id': `${SITE}/coleccion/filipinas/#page` },
-        hasPart: [
-          {
-            '@type': 'CreativeWork',
-            name: 'Un Peso Victory Series No. 66 (Pick 94a)',
-            url: `${SITE}/coleccion/filipinas/1-peso-victory-series-66/`,
-            image: `${SITE}/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg`,
-          },
-          {
-            '@type': 'CreativeWork',
-            name: 'Dos Pesos Victory Series No. 66 (Pick 95a)',
-            url: `${SITE}/coleccion/filipinas/2-pesos-victory-series-66/`,
-            image: `${SITE}/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg`,
           },
         ],
       },
