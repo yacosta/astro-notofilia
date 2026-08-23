@@ -42,6 +42,24 @@ test('collection hub exposes stable recent and countries anchors', async ({ page
   await expect(page.locator('#countries')).toBeVisible();
 });
 
+test('desktop collection menu stays open when moving onto a category', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto('/');
+  const collectionItem = page.locator('[data-nav-item="collection"]');
+  const collectionPanel = page.locator('#nav-panel-collection');
+  const unitedStates = collectionPanel.getByRole('link', { name: 'Estados Unidos' });
+
+  await collectionItem.hover();
+  await expect(collectionPanel).toBeVisible();
+  await unitedStates.hover();
+  await expect(collectionPanel).toBeVisible();
+  await expect(unitedStates).toBeVisible();
+
+  await page.getByRole('button', { name: 'Abrir menú de Colección' }).click();
+  await unitedStates.hover();
+  await expect(collectionPanel).toBeVisible();
+});
+
 test('contact form prefills catalog identifier and URL', async ({ page }) => {
   await page.goto('/contacto/?ficha=NF.test&url=/coleccion/ejemplo/', {
     waitUntil: 'domcontentloaded',
