@@ -151,6 +151,11 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
     },
     { href: '/coleccion/estados-unidos/', label: 'Estados Unidos', labelEn: 'United States' },
     {
+      href: '/coleccion/estados-unidos/#united-states-notes',
+      label: 'United States Notes',
+      labelEn: 'United States Notes',
+    },
+    {
       href: '/coleccion/reserva-federal/',
       label: 'Reserva Federal (EE. UU.)',
       labelEn: 'Federal Reserve (U.S.)',

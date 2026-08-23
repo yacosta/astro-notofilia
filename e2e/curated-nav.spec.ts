@@ -26,7 +26,32 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Emisores y periodos' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Moneda Colonial' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'BILLETE OBSOLETO' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'United States Notes' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Gold Certificates' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Federal Reserve Bank' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Food Coupons USDA' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Military Payment Certificates (MPC)' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Pop Art' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Nota de Prueba' })).toBeVisible();
+  await expect(page.locator('a[href*="/perfil-"]')).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Alexander Hamilton' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'George Washington' })).toHaveCount(0);
+  const foodHeading = page.getByRole('heading', { name: 'Food Coupons USDA' });
+  const foodSection = page.locator('#food-coupons-usda');
+  const foodTitles = await foodSection.locator('.card-title').allTextContents();
+  expect(foodTitles).toEqual([
+    'Food Coupon USDA, Cincuenta Centavos (Serie 1967)',
+    'Food Coupon USDA, Dos Dólares (Serie 1967)',
+    'Food Coupon USDA, Un Dólar (Serie 2000-B)',
+    'Food Coupon USDA, Cinco Dólares (Serie 2000-B)',
+    'Food Coupon USDA, Diez Dólares (Serie 2000-B)',
+  ]);
+  const foodBox = await foodHeading.boundingBox();
+  const federalBox = await page.getByRole('heading', { name: 'Federal Reserve Bank' }).boundingBox();
+  expect(foodBox && federalBox).toBeTruthy();
+  expect(foodBox!.y).toBeGreaterThan(federalBox!.y);
   await expect(page.getByRole('heading', { name: 'Ejemplares destacados' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Colecciones especiales relacionadas' })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Certificado de Oro/ }).first()).toBeVisible();
@@ -62,6 +87,7 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'United States Notes' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);

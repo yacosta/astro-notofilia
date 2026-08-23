@@ -13,6 +13,7 @@ import { SITE } from '../lib/site';
 import { lookupEn } from '../lib/html-i18n';
 import { alternateUrl, type Locale } from '../i18n/pairs';
 import { COUNTRY_LANDINGS, type CountryLandingId } from '../lib/country-landings';
+import { groupUsCatalogItems, isCatalogBiography } from '../lib/us-catalog';
 
 interface Props {
   countryId: CountryLandingId;
@@ -56,6 +57,7 @@ function hrefFor(href: string): string {
 const countryItems = catalogIndex.items
   .filter((item) => {
     if (item.country !== copy.countryName || item.role === 'hub') return false;
+    if (isCatalogBiography(item)) return false;
     if (countryId === 'united-states' && item.kind === 'coin') return false;
     return true;
   })
@@ -64,6 +66,8 @@ const countryItems = catalogIndex.items
     const by = b.year ?? 9999;
     return ay - by || a.title.localeCompare(b.title, 'es');
   });
+
+const usGroups = countryId === 'united-states' ? groupUsCatalogItems(countryItems) : null;
 
 const featured = (copy.featuredPaths ?? [])
   .map((featuredPath) => countryItems.find((item) => item.path === featuredPath) ?? catalogIndex.items.find((item) => item.path === featuredPath))
@@ -276,6 +280,23 @@ const jsonLd = {
         margin-top: 8px;
         color: #e7ddc4;
       }
+      .catalog-group {
+        margin: 40px 0 0;
+      }
+      .catalog-group--break {
+        margin-top: 72px;
+        padding-top: 48px;
+        border-top: 1px solid rgba(231, 222, 201, 0.28);
+      }
+      .catalog-group-title {
+        font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(22px, 2.6vw, 30px);
+        line-height: 1.15;
+        color: #d8d2cd;
+        margin: 0 0 24px;
+        scroll-margin-top: 96px;
+      }
     </style>
   </head>
   <body>
@@ -357,28 +378,64 @@ const jsonLd = {
           <p>
             <a class="filter-link" href={copy.catalogFilterHref}>{copy.catalogFilterLabel}</a>
           </p>
-          <ul class="catalog-grid">
-            {countryItems.map((item) => (
-              <li>
-                <a href={hrefFor(item.path)}>
-                  {item.image && (
-                    <picture>
-                      <img
-                        src={item.image}
-                        alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
-                        width="440"
-                        height="280"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
-                  )}
-                  <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
-                  {item.year ? <span class="card-desc">{item.year}</span> : null}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {usGroups ? (
+            usGroups.map((section) => (
+              <section
+                class:list={['catalog-group', section.breakBefore && 'catalog-group--break']}
+                id={section.id}
+                aria-labelledby={`${section.id}-title`}
+              >
+                <h3 class="catalog-group-title" id={`${section.id}-title`}>
+                  {isEn ? section.titleEn : section.group}
+                </h3>
+                <ul class="catalog-grid">
+                  {section.items.map((item) => (
+                    <li>
+                      <a href={hrefFor(item.path)}>
+                        {item.image && (
+                          <picture>
+                            <img
+                              src={item.image}
+                              alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
+                              width="440"
+                              height="280"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </picture>
+                        )}
+                        <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                        {item.year ? <span class="card-desc">{item.year}</span> : null}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))
+          ) : (
+            <ul class="catalog-grid">
+              {countryItems.map((item) => (
+                <li>
+                  <a href={hrefFor(item.path)}>
+                    {item.image && (
+                      <picture>
+                        <img
+                          src={item.image}
+                          alt={isEn ? (lookupEn(item.title) || item.title) : item.title}
+                          width="440"
+                          height="280"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
+                    )}
+                    <span class="card-title">{isEn ? (lookupEn(item.title) || item.title) : item.title}</span>
+                    {item.year ? <span class="card-desc">{item.year}</span> : null}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </main>
     </div>
