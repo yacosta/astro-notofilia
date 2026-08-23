@@ -156,7 +156,7 @@ test('catalog fichas outside Colombia also show the scan under the title', async
     await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
     await expect(page.locator('h1').first()).toBeInViewport();
     await expect(page.locator('[data-zoom-trigger] img').first()).toBeInViewport();
-    await expect(page.getByText(sample.spec).first()).toBeVisible();
+    await expect(page.locator('#main-content').getByText(sample.spec).first()).toBeVisible();
     const dialogs = page.locator('[data-zoom-dialog], .catalog-shell [role="dialog"][aria-modal="true"]');
     const count = await dialogs.count();
     for (let i = 0; i < count; i += 1) {
