@@ -180,6 +180,11 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
           labelEn: 'Obsolete Banknotes',
         },
         {
+          href: '/coleccion/estados-unidos/#united-states-notes',
+          label: 'United States Notes',
+          labelEn: 'United States Notes',
+        },
+        {
           href: '/coleccion/departamento-del-tesoro-de-ee-uu/',
           label: 'Departamento del Tesoro',
           labelEn: 'Department of the Treasury',

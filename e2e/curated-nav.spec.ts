@@ -26,7 +26,41 @@ test('United States and Spain landings list documented pieces', async ({ page })
   await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { level: 1, name: 'Estados Unidos' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Emisores y periodos' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Moneda Colonial' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'BILLETE OBSOLETO' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'United States Notes' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Gold Certificates' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Federal Reserve Bank' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Food Coupons USDA' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Military Payment Certificates (MPC)' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Pop Art' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Nota de Prueba' })).toBeVisible();
+  await expect(page.locator('a[href*="/perfil-"]')).toHaveCount(0);
+  for (const name of [
+    'Alexander Hamilton',
+    'Andrew Jackson',
+    'Benjamin Franklin',
+    'George Washington',
+    'Jefe Ouray',
+    'Malietoa Tanumafili II',
+    'Thomas Jefferson',
+  ]) {
+    await expect(page.getByRole('link', { name, exact: true })).toHaveCount(0);
+  }
+  const foodHeading = page.getByRole('heading', { name: 'Food Coupons USDA' });
+  const foodSection = page.locator('#food-coupons-usda');
+  const foodTitles = await foodSection.locator('.card-title').allTextContents();
+  expect(foodTitles).toEqual([
+    'Food Coupon USDA, Cincuenta Centavos (Serie 1967)',
+    'Food Coupon USDA, Dos Dólares (Serie 1967)',
+    'Food Coupon USDA, Un Dólar (Serie 2000-B)',
+    'Food Coupon USDA, Cinco Dólares (Serie 2000-B)',
+    'Food Coupon USDA, Diez Dólares (Serie 2000-B)',
+  ]);
+  const foodBox = await foodHeading.boundingBox();
+  const federalBox = await page.getByRole('heading', { name: 'Federal Reserve Bank' }).boundingBox();
+  expect(foodBox && federalBox).toBeTruthy();
+  expect(foodBox!.y).toBeGreaterThan(federalBox!.y);
   await expect(page.getByRole('heading', { name: 'Ejemplares destacados' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Colecciones especiales relacionadas' })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Certificado de Oro/ }).first()).toBeVisible();
@@ -80,10 +114,12 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'United States Notes', exact: true })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Reserva Federal', exact: true })).toHaveCount(0);
   await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'United States Notes', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Departamento del Tesoro', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Reserva Federal', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Certificados de Pago Militar', exact: true })).toBeVisible();
