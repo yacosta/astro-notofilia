@@ -73,6 +73,9 @@ Leaf slugs (piece ids, post ids, glossary terms) come from content + `docs/i18n/
 | `/glosario/` | `/en/glossary/` | Index + terms |
 | `/editorial/` | `/en/editorial/` | |
 | `/contacto/` | `/en/contact/` | |
+| `/nosotros/` | `/en/about/` | About the project |
+| `/coleccion/estados-unidos/` | `/en/collection/united-states/` | Country hub |
+| `/coleccion/espana/` | `/en/collection/spain/` | Country hub |
 | `/buscar/` | `/en/search/` | Utility; stays `noindex`; not in sitemap |
 | `/politica-privacidad-cookies/` | `/en/privacy-cookies/` | |
 | `/j-s-g-boggs/` | `/en/j-s-g-boggs/` | Proper noun; do not translate |

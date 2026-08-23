@@ -1,0 +1,153 @@
+---
+/**
+ * About Notofilia — English. Spanish counterpart: /nosotros/
+ */
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+import { SITE } from '../../../lib/site';
+import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL } from '../../../lib/editorial';
+import { INVENTORY_VOCABULARY_EN } from '../../../lib/stats';
+import NewWindowHint from '../../../components/NewWindowHint.astro';
+
+const title = 'About Notofilia | Private collection';
+const description =
+  'A documented private collection of banknotes and coins: who curates it, how records are researched, and how to cite them.';
+const path = '/en/about/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': `${SITE}${path}#page`,
+      name: 'About Notofilia',
+      url: `${SITE}${path}`,
+      description,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE}/en/#website` },
+      about: { '@id': `${SITE}/#organization` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/en/` },
+          { '@type': 'ListItem', position: 2, name: 'About Notofilia', item: `${SITE}${path}` },
+        ],
+      },
+    },
+    {
+      ...personJsonLd(),
+      url: `${SITE}/en/editorial/team/`,
+    },
+  ],
+};
+---
+<BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
+  <article class="max-w-content mx-auto px-6 pt-12 pb-4">
+    <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
+      <a class="text-muted" href="/en/">Home</a> <span aria-hidden="true">/</span>
+      <span>About Notofilia</span>
+    </nav>
+
+    <header class="mb-10">
+      <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">A documented private collection</p>
+      <h1 class="font-display font-normal text-[clamp(28px,4.5vw,42px)] text-cream mt-0 mb-4 leading-[1.12]">
+        About Notofilia
+      </h1>
+      <p class="italic text-[clamp(18px,2.2vw,22px)] text-cream-dim m-0 leading-[1.5]">
+        A catalog and virtual collection of historical banknotes and coins. The pieces are documented; they are not offered for sale.
+      </p>
+    </header>
+
+    <div class="prose-notofilia text-[19px] leading-[1.75] text-cream-dim">
+      <h2>What Notofilia is</h2>
+      <p>
+        Notofilia is a <strong>notaphily and numismatics</strong> project: the study and collecting of paper
+        money and coins. The site publishes a catalog of a private collection. Each record gathers photographs
+        of the specimen, historical context, catalog references, and — when a figure appears — the kind of
+        valuation it represents.
+      </p>
+      <p>
+        {INVENTORY_VOCABULARY_EN} The figures in the footer, on the homepage, and on
+        <a href="/en/collection/">/en/collection/</a> are calculated at build time from the collection.
+      </p>
+
+      <h2>A documented private collection</h2>
+      <p>
+        Each record describes a specimen in the collection or a documented group. The aim is to record visual
+        provenance, issuers, dates, and varieties — not to run a shop.
+        <strong>Items are not for sale</strong> unless a note says so explicitly, and that does not happen
+        in the catalog.
+      </p>
+
+      <h2>History and purpose</h2>
+      <p>
+        The name joins <em>notaphily</em> (from Latin <em>nota</em>, a note) with the habit of documenting.
+        The project began as a personal inventory and was published so collectors, researchers, and readers
+        can consult uncommon issues — Colombian free banking, military payment certificates, world polymer
+        notes, printing errors — with checkable sources.
+      </p>
+      <p>
+        The article{' '}
+        <a href={WIKIPEDIA_NOTAFILIA_URL} target="_blank" rel="noopener noreferrer">
+          Notaphily on Spanish Wikipedia<NewWindowHint lang="en" />
+        </a>{' '}
+        lists Notofilia.com under External links. It is an encyclopedic mention; we do not edit Wikipedia
+        about ourselves.
+      </p>
+
+      <h2>Who curates and researches</h2>
+      <p>
+        Notofilia is edited by <strong>{EDITORIAL_TEAM.name}</strong>, founder of the catalog and responsible
+        for record research, valuation labels, and corrections. Profile:
+        <a href="/en/editorial/team/">{EDITORIAL_TEAM.name}</a>.
+      </p>
+
+      <h2>Catalog records, articles, and news</h2>
+      <ul>
+        <li>
+          <strong>Catalog records</strong> in the <a href="/en/collection/">Virtual Collection</a>: one
+          entry per piece or group, with a photograph of the specimen shown.
+        </li>
+        <li>
+          <strong>Original guides</strong> in the <a href="/en/blog/">blog</a>: conservation, identification,
+          issue history, and practical advice.
+        </li>
+        <li>
+          <strong>Curated news</strong> at <a href="/en/news/">/en/news/</a>: summaries of external sources
+          (media, auctions, central banks, museums), always with a link to the original article.
+        </li>
+      </ul>
+      <p>
+        The <a href="/en/editorial/">editorial and valuation policy</a> explains how cited prices are labeled
+        and how factual errors are corrected.
+      </p>
+
+      <h2>How catalog records are researched</h2>
+      <p>
+        The citation order prefers central banks, printers, and museums; then auction archives; retail last.
+        An unsourced claim on a showcase page is worse than a visible “unconfirmed”. Verified corrections
+        are added to the record and, if material, listed in its history.
+      </p>
+      <p>
+        If you spot an incorrect fact or can document a variety, print run, or extra source, use
+        <a href="/en/contact/">Contact</a> or the “Report an error or add information” link on each record.
+        The form can arrive with the catalog identifier and page URL already filled in.
+      </p>
+
+      <h2>How to cite a Notofilia record</h2>
+      <p>
+        Each record includes a “How to cite this record” block with the title, the permanent identifier
+        (for example <code>NF.…</code>), and the canonical URL. A short form:
+      </p>
+      <blockquote>
+        <p>
+          Acosta, Yezid. “[Record title]”. <em>Notofilia</em>. https://notofilia.com/en/collection/…/
+          (accessed [date]).
+        </p>
+      </blockquote>
+      <p>
+        Prefer the URL with a trailing slash. If you cite a figure, also state the kind of amount
+        (auction result, asking price, catalog valuation) as the record labels it.
+      </p>
+    </div>
+  </article>
+</BlogLayout>

@@ -25,6 +25,8 @@ const HUB_ORDER = [
   { path: '/coleccion/', label: 'Colección Virtual' },
   { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
+  { path: '/coleccion/estados-unidos/', label: 'Estados Unidos' },
+  { path: '/coleccion/espana/', label: 'España' },
   { path: '/coleccion/colombia/banca-libre/', label: 'Banca libre colombiana' },
   { path: '/coleccion/colombia/emisiones-en-el-extranjero/', label: 'Emisiones colombianas en el extranjero' },
   { path: '/coleccion/puerto-rico/', label: 'Billetes de Puerto Rico' },
@@ -240,8 +242,9 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
   lines.push(linkLine('Inicio', abs('/'), 'Home: definiciones de numismática y notafilia, últimas noticias y guías.'));
   lines.push(linkLine('Catálogo (índice)', abs('/coleccion/'), 'Hub global de la Colección Virtual: billetes, filtros y accesos por país.'));
   lines.push(linkLine('Catálogo de Numismática', abs('/coleccion/numismatica/'), 'Catálogo de monedas: oro colonial de Santa Fe de Bogotá.'));
-  lines.push(linkLine('Blog', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
-  lines.push(linkLine('Logros del Mes', abs('/#logros-heading'), 'Piezas y avances recientes de la Colección Virtual (sección en la home).'));
+  lines.push(linkLine('Guías para coleccionistas', abs('/blog/'), 'Guías evergreen originales de notafilia y numismática.'));
+  lines.push(linkLine('Sobre Notofilia', abs('/nosotros/'), 'Qué es el proyecto, quién lo edita y cómo citar las fichas.'));
+  lines.push(linkLine('Añadidos recientes', abs('/coleccion/#recent'), 'Piezas destacadas incorporadas a la Colección Virtual.'));
   lines.push(linkLine('Noticias', abs('/noticias/'), 'Noticias curadas con enlace a la fuente original cuando aplica.'));
   lines.push(linkLine('Glosario', abs('/glosario/'), `${glossary.length} términos de numismática y notafilia (ES/EN).`));
   lines.push(linkLine('Contacto', abs('/contacto/'), 'Formulario (Web3Forms + Turnstile). Email: info@notofilia.com.'));

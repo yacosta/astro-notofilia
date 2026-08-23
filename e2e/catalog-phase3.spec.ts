@@ -650,83 +650,61 @@ test('MPC Serie 681 $1 is listed on the hub and documents Fr. M915 / Schwan S915
   await expect(page.locator('#main-content')).toHaveAttribute('tabindex', '-1');
 });
 
-test('menu drawer restores collection accordions', async ({ page }) => {
+test('desktop header shows curated hubs instead of individual records', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto('/');
+  const desktop = page.locator('#site-desktop-nav');
+  await expect(desktop).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Abrir menú', exact: true })).toBeHidden();
+  await expect(desktop.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
+    'href',
+    '/coleccion/',
+  );
+  await expect(desktop.getByRole('link', { name: 'Contacto' })).toBeVisible();
+  await expect(desktop.getByRole('link', { name: /Logros del Mes/ })).toHaveCount(0);
+  await expect(desktop.getByRole('link', { name: /Política de Privacidad/ })).toHaveCount(0);
+
+  const collectionPanel = page.locator('#nav-panel-collection');
+  await expect(collectionPanel).toBeHidden();
+  await page.locator('[data-nav-item="collection"]').hover();
+  await expect(collectionPanel).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Monedas' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: /Banco de Pamplona/ })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Nepal' })).toHaveCount(0);
+});
+
+test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   await page.getByRole('button', { name: 'Abrir menú' }).click();
   const drawer = page.locator('#site-menu-drawer');
   await expect(drawer).toBeVisible();
+  await expect(drawer.getByLabel('Buscar en la colección')).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Inicio' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Colección', exact: true })).toHaveAttribute(
+    'href',
+    '/coleccion/',
+  );
 
-  const numismatica = page.locator('#nav-sec-numismatica');
-  const notafilia = page.locator('#nav-sec-notafilia');
-  await expect(numismatica.locator(':scope > summary')).toContainText('Colección virtual - Numismática');
-  await expect(notafilia.locator(':scope > summary')).toContainText('Colección virtual - Notafilia');
-  await expect(numismatica).not.toHaveAttribute('open');
-  await expect(notafilia).not.toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeHidden();
-  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
+  await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
+  await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Monedas' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
+  await expect(drawer.locator('.site-header__accordion--nested')).toHaveCount(0);
 
-  await numismatica.locator(':scope > summary').click();
-  await expect(numismatica).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Catálogo de Numismática' })).toBeVisible();
-
-  const monedasColombia = page.locator('#nav-sec-monedas-colombia');
-  await expect(monedasColombia).not.toHaveAttribute('open');
-  await monedasColombia.locator(':scope > summary').click();
-  await expect(monedasColombia).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: /Felipe V/ })).toBeVisible();
-  await expect(
-    drawer.getByRole('link', { name: /Santa Marta — ¼ real de cobre, 1820/ }),
-  ).toBeVisible();
-  await expect(
-    drawer.locator('a[href="/coleccion/colombia/santa-marta-1-4-real-1820/"]'),
-  ).toBeVisible();
-
-  const monedasMundial = page.locator('#nav-sec-monedas-mundial');
-  await expect(monedasMundial).not.toHaveAttribute('open');
-  await monedasMundial.locator(':scope > summary').click();
-  await expect(monedasMundial).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: /Utrecht, 1761/ })).toBeVisible();
-
-  await notafilia.locator(':scope > summary').click();
-  await expect(notafilia).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Explorar la colección' })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Specimens' })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
-  await expect(drawer.getByRole('link', { name: 'Printing errors' })).toHaveCount(0);
-
-  const colombia = page.locator('#nav-sec-colombia');
-  await expect(colombia).not.toHaveAttribute('open');
-  await colombia.locator(':scope > summary').click();
-  await expect(colombia).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Catálogo de Billetes de Colombia' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Catálogo de Banca Libre' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: /Banco Hipotecario — 5 Pesos/ })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Pamplona (1883–1884)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Barranquilla (1900)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Medellín (188X)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Oriente (1888)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco Internacional (1884)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Banco de Antioquia, Libranza (1900)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de la Unión (1883)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco del Cauca (1888)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco Unión (Cartagena, 188X)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Panamá (188X)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco del Norte (1882)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Colombia (1919)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de Caldas (1919)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco Colombiano, Guatemala (1900)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco Nacional (1895)' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'El Banco de la República' })).toBeVisible();
-
-  const polimero = page.locator('#nav-sec-polimero');
-  await expect(polimero).not.toHaveAttribute('open');
-  await polimero.locator(':scope > summary').click();
-  await expect(polimero).toHaveAttribute('open');
-  await expect(drawer.getByRole('link', { name: 'Catálogo de polímero mundial' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Nepal' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'México' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Chile' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Bangladesh' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'China' })).toBeVisible();
+  await page.locator('#nav-sec-resources summary').click();
+  await expect(drawer.getByRole('link', { name: 'Guías para coleccionistas' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Noticias numismáticas' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Glosario' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Sobre Notofilia' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Política editorial y valoración' })).toBeVisible();
+  await expect(drawer.getByRole('link', { name: 'Contacto' })).toBeVisible();
 });

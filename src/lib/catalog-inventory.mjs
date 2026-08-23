@@ -97,6 +97,8 @@ export const HUB_PATHS = new Set([
   '/coleccion/colombia/',
   '/coleccion/colombia/banca-libre/',
   '/coleccion/colombia/emisiones-en-el-extranjero/',
+  '/coleccion/estados-unidos/',
+  '/coleccion/espana/',
   '/coleccion/puerto-rico/',
   '/coleccion/ecuador/',
   '/coleccion/filipinas/',

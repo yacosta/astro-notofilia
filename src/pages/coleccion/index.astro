@@ -247,6 +247,7 @@ const jsonLd = {
         margin: 0 0 72px;
         padding-top: 48px;
         border-top: 1px solid rgba(231, 222, 201, 0.18);
+        scroll-margin-top: 88px;
       }
       .hub-kicker {
         display: block;
@@ -654,7 +655,7 @@ const jsonLd = {
           </ul>
         </section>
 
-        <section class="hub-section" aria-labelledby="countries-heading">
+        <section class="hub-section" id="countries" aria-labelledby="countries-heading">
           <span class="hub-kicker" data-i18n data-en="By country">Por país</span>
           <h2 id="countries-heading" data-i18n data-en="Countries in the collection">Países en la colección</h2>
           <p class="hub-section-lead" data-i18n data-en={`${stats.paises} countries with documented records. The filter opens the browser below.`}>
@@ -677,7 +678,7 @@ const jsonLd = {
           </ul>
         </section>
 
-        <section class="hub-section" aria-labelledby="recent-heading">
+        <section class="hub-section" id="recent" aria-labelledby="recent-heading">
           <span class="hub-kicker" data-i18n data-en="Recent">Recientes</span>
           <h2 id="recent-heading" data-i18n data-en="Recently added pieces">Piezas añadidas recientemente</h2>
           <p class="hub-section-lead" data-i18n data-en="Recent highlights from the Virtual Collection.">

@@ -1,22 +1,24 @@
 ---
 /**
- * Native site header — server-rendered navigation with a lightweight drawer
- * and Pagefind loaded only when search is opened.
- *
- * Optional `locale` bakes English chrome on `/en/` pages (crawlers, no-JS).
- * Language switcher is an `<a href>` from `switchUrl()` — works with JS off.
- * EN nav uses `alternateUrl(href, 'en') ?? href` (unpaired fichas stay Spanish).
+ * Native site header — desktop mega menu + mobile drawer.
+ * Search and ES/EN switching stay server-rendered and work with JS off.
  */
-import { DRAWER_PRIMARY_LINKS, DRAWER_TRAILING_LINKS, NAV_SECTIONS, PRIMARY_LINKS } from '../lib/nav';
+import {
+  COLLECTION_MENU,
+  CONTACT_LINK,
+  DRAWER_TRAILING_LINKS,
+  HOME_LINK,
+  PRIMARY_LINKS,
+  PRIMARY_MENUS,
+  RESOURCES_MENU,
+} from '../lib/nav';
 import { lookupEn } from '../lib/html-i18n';
 import { alternateUrl, getPair, switchUrl, type Locale } from '../i18n/pairs';
 import { t } from '../lib/ui-i18n';
 
 export interface Props {
-  /** When true, header overlays the hero (homepage). Otherwise in normal flow. */
   overlay?: boolean;
   locale?: Locale;
-  /** Same pathname passed to BaseHead (trailing slash, `/` for Spanish home). */
   path: string;
 }
 
@@ -33,7 +35,6 @@ const fallbackTitle = fallbackKind === 'home'
     ? (switchTarget === 'en' ? 'English version of this section' : 'Versión en español de esta sección')
     : undefined;
 
-/** Honest nav: paired English URL when it exists; unpaired fichas stay Spanish. */
 function hrefFor(href: string): string {
   if (!isEn) return href;
   const queryIdx = href.indexOf('?');
@@ -52,6 +53,9 @@ function labelFor(label: string, labelEn?: string): string {
   if (!isEn) return label;
   return labelEn || lookupEn(label) || label;
 }
+
+const searchPlaceholder = isEn ? 'Search banknotes, coins, guides…' : 'Buscar billetes, monedas, guías…';
+const searchAction = '/buscar/';
 ---
 <header
   id="site-header"
@@ -61,8 +65,59 @@ function labelFor(label: string, labelEn?: string): string {
   <nav class="site-header__bar" aria-label={isEn ? 'Main navigation' : 'Navegación principal'}>
     <a class="site-header__brand" href={hrefFor('/')}>
       <span class="site-header__brand-name">NOTOFILIA</span>
-      <span class="site-header__brand-tag" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Numismatics and Notaphily'}>{isEn ? 'Numismatics and Notaphily' : 'Numismática y Notafilia'}</span>
+      <span class="site-header__brand-tag">{isEn ? 'Numismatics and Notaphily' : 'Numismática y Notafilia'}</span>
     </a>
+
+    <ul class="site-header__desktop" id="site-desktop-nav">
+      {PRIMARY_MENUS.map((menu) => (
+        <li class="site-header__item" data-nav-item={menu.id}>
+          <a
+            class="site-header__top-link"
+            href={hrefFor(menu.href)}
+            data-nav-parent={menu.id}
+          >{labelFor(menu.label, menu.labelEn)}</a>
+          <button
+            type="button"
+            class="site-header__caret-btn"
+            aria-expanded="false"
+            aria-controls={`nav-panel-${menu.id}`}
+            aria-label={isEn ? `Open ${menu.labelEn || menu.label} menu` : `Abrir menú de ${menu.label}`}
+          >
+            <span class="site-header__caret" aria-hidden="true">▾</span>
+          </button>
+          <div
+            id={`nav-panel-${menu.id}`}
+            class:list={['site-header__panel', menu.id === 'collection' && 'site-header__panel--mega']}
+            hidden
+          >
+            {menu.groups.map((group) => (
+              <div class="site-header__panel-col">
+                <p class="site-header__panel-heading" id={`nav-h-${menu.id}-${group.id}`}>
+                  {labelFor(group.label, group.labelEn)}
+                </p>
+                <ul aria-labelledby={`nav-h-${menu.id}-${group.id}`}>
+                  {group.links.map((link) => (
+                    <li>
+                      <a
+                        class:list={[{ 'site-header__panel-lead': Boolean(link.lead) }]}
+                        href={hrefFor(link.href)}
+                      >
+                        {labelFor(link.label, link.labelEn)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </li>
+      ))}
+      <li class="site-header__item">
+        <a class="site-header__top-link" href={hrefFor(CONTACT_LINK.href)}>
+          {labelFor(CONTACT_LINK.label, CONTACT_LINK.labelEn)}
+        </a>
+      </li>
+    </ul>
 
     <div class="site-header__search">
       <button
@@ -72,9 +127,6 @@ function labelFor(label: string, labelEn?: string): string {
         aria-expanded="false"
         aria-controls="site-search-panel"
         aria-label={isEn ? 'Open search' : 'Abrir búsqueda'}
-        data-i18n={isEn ? undefined : true}
-        data-i18n-target={isEn ? undefined : 'aria-label'}
-        data-en={isEn ? undefined : 'Open search'}
       >
         <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.3"></circle>
@@ -82,42 +134,29 @@ function labelFor(label: string, labelEn?: string): string {
         </svg>
       </button>
       <div id="site-search-panel" class="site-header__search-panel" hidden>
-        {/* /en/search/ is deferred; keep the Spanish search page even on EN chrome. */}
-        <form class="site-header__search-form" action="/buscar/" method="get" role="search">
-          <label class="sr-only" for="site-search-input" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Search the site'}>{isEn ? 'Search the site' : 'Buscar en el sitio'}</label>
+        <form class="site-header__search-form" action={searchAction} method="get" role="search">
+          <label class="sr-only" for="site-search-input">{isEn ? 'Search the site' : 'Buscar en el sitio'}</label>
           <input
             id="site-search-input"
             name="q"
             type="search"
-            placeholder={isEn ? 'Search banknotes, profiles…' : 'Buscar billetes, perfiles…'}
-            data-i18n={isEn ? undefined : true}
-            data-i18n-target={isEn ? undefined : 'placeholder'}
-            data-en={isEn ? undefined : 'Search banknotes, profiles…'}
+            placeholder={searchPlaceholder}
             autocomplete="off"
             enterkeyhint="search"
           />
-          <button type="submit" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : 'Search'}>{t('search', locale)}</button>
+          <button type="submit">{t('search', locale)}</button>
         </form>
         <div
           id="site-search-results"
           class="site-header__search-results"
           role="listbox"
           aria-label={isEn ? 'Search results' : 'Resultados de búsqueda'}
-          data-i18n={isEn ? undefined : true}
-          data-i18n-target={isEn ? undefined : 'aria-label'}
-          data-en={isEn ? undefined : 'Search results'}
           hidden
         ></div>
       </div>
     </div>
 
     <div class="site-header__actions">
-      <a
-        class="site-header__coleccion-link"
-        href={hrefFor('/coleccion/')}
-        data-i18n={isEn ? undefined : true}
-        data-en={isEn ? undefined : 'Collection'}
-      >{t('collection', locale)}</a>
       <div
         class="site-header__lang"
         role="group"
@@ -156,9 +195,6 @@ function labelFor(label: string, labelEn?: string): string {
         aria-controls="site-menu-drawer"
         aria-haspopup="dialog"
         aria-label={isEn ? 'Open menu' : 'Abrir menú'}
-        data-i18n={isEn ? undefined : true}
-        data-i18n-target={isEn ? undefined : 'aria-label'}
-        data-en={isEn ? undefined : 'Open menu'}
       >
         <span></span>
         <span></span>
@@ -176,9 +212,6 @@ function labelFor(label: string, labelEn?: string): string {
     role="dialog"
     aria-modal="true"
     aria-label={isEn ? 'Site menu' : 'Menú del sitio'}
-    data-i18n={isEn ? undefined : true}
-    data-i18n-target={isEn ? undefined : 'aria-label'}
-    data-en={isEn ? undefined : 'Site menu'}
     hidden
   >
     <div class="site-header__drawer-head">
@@ -187,95 +220,111 @@ function labelFor(label: string, labelEn?: string): string {
         type="button"
         id="site-menu-close"
         aria-label={isEn ? 'Close menu' : 'Cerrar menú'}
-        data-i18n={isEn ? undefined : true}
-        data-i18n-target={isEn ? undefined : 'aria-label'}
-        data-en={isEn ? undefined : 'Close menu'}
       >&times;</button>
     </div>
 
+    <form class="site-header__drawer-search" action={searchAction} method="get" role="search">
+      <label class="sr-only" for="site-drawer-search">{isEn ? 'Search the collection' : 'Buscar en la colección'}</label>
+      <input
+        id="site-drawer-search"
+        name="q"
+        type="search"
+        placeholder={isEn ? 'Search the collection' : 'Buscar en la colección'}
+        autocomplete="off"
+        enterkeyhint="search"
+      />
+      <button type="submit">{t('search', locale)}</button>
+    </form>
+
     <ul class="site-header__primary">
-      {DRAWER_PRIMARY_LINKS.map((link) => (
-        <li>
-          <a href={hrefFor(link.href)} data-i18n={!isEn && link.labelEn ? true : undefined} data-en={!isEn ? link.labelEn : undefined}>{labelFor(link.label, link.labelEn)}</a>
-        </li>
-      ))}
+      <li>
+        <a href={hrefFor(HOME_LINK.href)}>{labelFor(HOME_LINK.label, HOME_LINK.labelEn)}</a>
+      </li>
     </ul>
 
     <div class="site-header__accordions">
-      {NAV_SECTIONS.map((section) => (
-        <details class="site-header__accordion" id={`nav-sec-${section.id}`}>
-          <summary>
-            <span class="site-header__accordion-label" data-i18n={!isEn && section.labelEn ? true : undefined} data-en={!isEn ? section.labelEn : undefined}>{labelFor(section.label, section.labelEn)}</span>
-            <span class="site-header__caret" aria-hidden="true">▾</span>
-          </summary>
-          <div class="site-header__accordion-panel">
-            {section.description && (
-              <p
-                class="site-header__accordion-desc"
-                data-i18n={!isEn && (section.descriptionEn || lookupEn(section.description)) ? true : undefined}
-                data-en={!isEn ? (section.descriptionEn || lookupEn(section.description)) : undefined}
-              >{isEn ? (section.descriptionEn || lookupEn(section.description) || section.description) : section.description}</p>
-            )}
-            {section.links.length > 0 && (
-              <ul>
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
-                      href={hrefFor(link.href)}
-                      data-i18n={!isEn && (link.labelEn || lookupEn(link.label)) ? true : undefined}
-                      data-en={!isEn ? (link.labelEn || lookupEn(link.label)) : undefined}
-                    >
-                      {labelFor(link.label, link.labelEn)}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {section.groups?.map((group) => (
-              <details class="site-header__accordion site-header__accordion--nested" id={`nav-sec-${group.id}`}>
-                <summary>
-                  <span class="site-header__accordion-label" data-i18n={!isEn && (group.labelEn || lookupEn(group.label)) ? true : undefined} data-en={!isEn ? (group.labelEn || lookupEn(group.label)) : undefined}>{labelFor(group.label, group.labelEn)}</span>
-                  <span class="site-header__caret" aria-hidden="true">▾</span>
-                </summary>
-                <ul>
-                  {group.links.map((link) => (
-                    <li>
-                      <a
-                        class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
-                        href={hrefFor(link.href)}
-                        data-i18n={!isEn && (link.labelEn || lookupEn(link.label)) ? true : undefined}
-                        data-en={!isEn ? (link.labelEn || lookupEn(link.label)) : undefined}
-                      >
-                        {labelFor(link.label, link.labelEn)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            ))}
+      <div class="site-header__drawer-split" id={`nav-sec-${COLLECTION_MENU.id}`}>
+        <a class="site-header__drawer-split-link" href={hrefFor(COLLECTION_MENU.href)}>
+          {labelFor(COLLECTION_MENU.label, COLLECTION_MENU.labelEn)}
+        </a>
+        <button
+          type="button"
+          class="site-header__drawer-split-toggle"
+          aria-expanded="false"
+          aria-controls="nav-drawer-collection"
+          aria-label={isEn ? 'Show collection links' : 'Mostrar enlaces de la colección'}
+        >
+          <span class="site-header__caret" aria-hidden="true">▾</span>
+        </button>
+      </div>
+      <div id="nav-drawer-collection" class="site-header__accordion-panel" hidden>
+        {COLLECTION_MENU.groups.map((group) => (
+          <div class="site-header__drawer-group">
+            <p class="site-header__drawer-group-label">{labelFor(group.label, group.labelEn)}</p>
+            <ul>
+              {group.links.map((link) => (
+                <li>
+                  <a
+                    class:list={[{ 'site-header__accordion-lead': Boolean(link.lead) }]}
+                    href={hrefFor(link.href)}
+                  >
+                    {labelFor(link.label, link.labelEn)}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </details>
-      ))}
+        ))}
+      </div>
+
+      <details class="site-header__accordion" id={`nav-sec-${RESOURCES_MENU.id}`}>
+        <summary>
+          <span class="site-header__accordion-label">{labelFor(RESOURCES_MENU.label, RESOURCES_MENU.labelEn)}</span>
+          <span class="site-header__caret" aria-hidden="true">▾</span>
+        </summary>
+        <div class="site-header__accordion-panel">
+          <ul>
+            {RESOURCES_MENU.groups[0].links.map((link) => (
+              <li>
+                <a href={hrefFor(link.href)}>{labelFor(link.label, link.labelEn)}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </details>
     </div>
 
     <ul class="site-header__primary site-header__primary--last">
       {DRAWER_TRAILING_LINKS.map((link) => (
         <li>
-          <a href={hrefFor(link.href)} data-i18n={!isEn && link.labelEn ? true : undefined} data-en={!isEn ? link.labelEn : undefined}>{labelFor(link.label, link.labelEn)}</a>
+          <a href={hrefFor(link.href)}>{labelFor(link.label, link.labelEn)}</a>
         </li>
       ))}
     </ul>
+
+    <div class="site-header__drawer-lang">
+      <p class="site-header__drawer-lang-label">{isEn ? 'Language' : 'Idioma'}</p>
+      <div class="site-header__lang" role="group" aria-label={isEn ? 'Language' : 'Idioma'}>
+        {isEn ? (
+          <a class="site-header__lang-btn" href={switchHref} hreflang="es" lang="es">ES<span class="sr-only"> — Español</span></a>
+        ) : (
+          <span class="site-header__lang-btn is-active" aria-current="page" lang="es">ES<span class="sr-only"> — Español</span></span>
+        )}
+        {isEn ? (
+          <span class="site-header__lang-btn is-active" aria-current="page" lang="en">EN<span class="sr-only"> — English</span></span>
+        ) : (
+          <a class="site-header__lang-btn" href={switchHref} hreflang="en" lang="en">EN<span class="sr-only"> — English</span></a>
+        )}
+      </div>
+    </div>
   </div>
 </header>
 
-{/* No-JS fallback: primary destinations remain in the document via the drawer
-    markup above when opened with CSS :target, plus always-visible Colección. */}
 <noscript>
   <nav class="site-header__noscript" aria-label={isEn ? 'Primary links without JavaScript' : 'Enlaces principales sin JavaScript'}>
     <ul>
       {PRIMARY_LINKS.map((link) => (
-        <li><a href={hrefFor(link.href)} data-i18n={!isEn && link.labelEn ? true : undefined} data-en={!isEn ? link.labelEn : undefined}>{labelFor(link.label, link.labelEn)}</a></li>
+        <li><a href={hrefFor(link.href)}>{labelFor(link.label, link.labelEn)}</a></li>
       ))}
     </ul>
   </nav>
@@ -303,7 +352,7 @@ function labelFor(label: string, labelEn?: string): string {
     z-index: 100;
     height: 68px;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: 12px;
     padding: 0 max(20px, calc((100% - 1400px) / 2 + 20px));
@@ -336,9 +385,14 @@ function labelFor(label: string, labelEn?: string): string {
     min-height: 44px;
     justify-content: center;
   }
-  .site-header__brand:focus-visible {
+  .site-header__brand:focus-visible,
+  .site-header__top-link:focus-visible,
+  .site-header__caret-btn:focus-visible,
+  .site-header__icon-btn:focus-visible,
+  .site-header__menu-btn:focus-visible,
+  .site-header__panel a:focus-visible {
     outline: 2px solid #e7ddc4;
-    outline-offset: 4px;
+    outline-offset: 3px;
   }
   .site-header__brand-name {
     font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
@@ -353,8 +407,111 @@ function labelFor(label: string, labelEn?: string): string {
     margin-top: 3px;
     color: #d8d2cd;
   }
+  .site-header__desktop {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .site-header__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .site-header__top-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 8px 0 12px;
+    color: #e7ddc4;
+    text-decoration: none;
+    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .site-header__caret-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: -8px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #e7ddc4;
+    cursor: pointer;
+  }
+  .site-header__caret {
+    font-size: 13px;
+    line-height: 1;
+    transition: transform 0.15s ease;
+  }
+  .site-header__item.is-open > .site-header__caret-btn .site-header__caret,
+  .site-header__accordion[open] > summary > .site-header__caret,
+  .site-header__drawer-split-toggle[aria-expanded='true'] .site-header__caret {
+    transform: rotate(180deg);
+  }
+  .site-header__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 240px;
+    padding: 16px 20px 18px;
+    background: #d8d2cd;
+    color: #1c1a15;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+    z-index: 120;
+  }
+  .site-header__panel[hidden] {
+    display: none;
+  }
+  .site-header__panel--mega:not([hidden]) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 8px 32px;
+    width: min(760px, 88vw);
+    padding: 22px 24px 24px;
+  }
+  .site-header__panel-heading {
+    margin: 0 0 8px;
+    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5c4e33;
+  }
+  .site-header__panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-header__panel a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 0;
+    color: #332e22;
+    text-decoration: none;
+    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
+    font-size: 16px;
+  }
+  .site-header__panel a:hover {
+    color: #5c4e33;
+  }
+  .site-header__panel-lead {
+    font-weight: 700;
+    color: #1c1a15;
+  }
   .site-header__search {
-    justify-self: center;
+    justify-self: end;
     position: relative;
   }
   .site-header__icon-btn,
@@ -369,12 +526,6 @@ function labelFor(label: string, labelEn?: string): string {
     background: none;
     color: #e7ddc4;
     cursor: pointer;
-  }
-  .site-header__icon-btn:focus-visible,
-  .site-header__menu-btn:focus-visible,
-  .site-header__coleccion-link:focus-visible {
-    outline: 2px solid #e7ddc4;
-    outline-offset: 3px;
   }
   .site-header__actions {
     justify-self: end;
@@ -409,9 +560,7 @@ function labelFor(label: string, labelEn?: string): string {
     text-decoration: none;
     line-height: 1;
   }
-  a.site-header__lang-btn {
-    cursor: pointer;
-  }
+  a.site-header__lang-btn { cursor: pointer; }
   .site-header__lang-btn.is-active {
     background: rgba(231, 222, 201, 0.92);
     color: #0a0a09;
@@ -419,19 +568,6 @@ function labelFor(label: string, labelEn?: string): string {
   .site-header__lang-btn:focus-visible {
     outline: 2px solid #e7ddc4;
     outline-offset: 2px;
-  }
-  .site-header__coleccion-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 12px;
-    color: #e7ddc4;
-    text-decoration: none;
-    font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
   .site-header__menu-btn {
     flex-direction: column;
@@ -452,8 +588,7 @@ function labelFor(label: string, labelEn?: string): string {
   .site-header__search-panel {
     position: absolute;
     top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
     width: min(380px, 88vw);
     background: rgba(10, 10, 9, 0.96);
     border: 1px solid rgba(231, 222, 201, 0.15);
@@ -462,11 +597,13 @@ function labelFor(label: string, labelEn?: string): string {
     padding: 10px;
     z-index: 110;
   }
-  .site-header__search-form {
+  .site-header__search-form,
+  .site-header__drawer-search {
     display: flex;
     gap: 8px;
   }
-  .site-header__search-form input {
+  .site-header__search-form input,
+  .site-header__drawer-search input {
     flex: 1;
     min-height: 44px;
     padding: 8px 12px;
@@ -477,7 +614,13 @@ function labelFor(label: string, labelEn?: string): string {
     font: inherit;
     font-size: 15px;
   }
-  .site-header__search-form button {
+  .site-header__drawer-search input {
+    background: #fff;
+    color: #1c1a15;
+    border-color: rgba(10, 10, 9, 0.18);
+  }
+  .site-header__search-form button,
+  .site-header__drawer-search button {
     min-height: 44px;
     padding: 0 14px;
     border: none;
@@ -545,6 +688,7 @@ function labelFor(label: string, labelEn?: string): string {
     border-bottom: 1px solid rgba(10, 10, 9, 0.1);
     font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
     letter-spacing: 0.1em;
+    z-index: 1;
   }
   .site-header__drawer-head button {
     all: unset;
@@ -557,16 +701,22 @@ function labelFor(label: string, labelEn?: string): string {
     color: #5c4e33;
     font-size: 28px;
   }
-  .site-header__drawer-head button:focus-visible {
+  .site-header__drawer-head button:focus-visible,
+  .site-header__drawer-split-toggle:focus-visible,
+  .site-header__accordion > summary:focus-visible {
     outline: 2px solid #5c4e33;
     outline-offset: 2px;
+  }
+  .site-header__drawer-search {
+    padding: 16px 24px 8px;
   }
   .site-header__primary {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  .site-header__primary a {
+  .site-header__primary a,
+  .site-header__drawer-split-link {
     display: flex;
     align-items: center;
     min-height: 44px;
@@ -579,14 +729,29 @@ function labelFor(label: string, labelEn?: string): string {
     text-transform: uppercase;
     border-bottom: 1px solid rgba(10, 10, 9, 0.08);
   }
+  .site-header__drawer-split {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    align-items: stretch;
+    border-bottom: 1px solid rgba(10, 10, 9, 0.08);
+  }
+  .site-header__drawer-split-link {
+    border-bottom: 0;
+  }
+  .site-header__drawer-split-toggle {
+    border: none;
+    background: transparent;
+    color: #5c4e33;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+  }
   .site-header__primary--last {
     border-top: 1px solid rgba(10, 10, 9, 0.08);
   }
-  .site-header__primary--last a {
-    border-bottom: 0;
-  }
   .site-header__primary a:hover,
-  .site-header__accordion a:hover {
+  .site-header__accordion a:hover,
+  .site-header__drawer-split-link:hover {
     color: #5c4e33;
   }
   .site-header__accordions {
@@ -594,9 +759,6 @@ function labelFor(label: string, labelEn?: string): string {
   }
   .site-header__accordion {
     border-bottom: 1px solid rgba(10, 10, 9, 0.08);
-  }
-  .site-header__accordion:last-child {
-    border-bottom: 0;
   }
   .site-header__accordion > summary {
     list-style: none;
@@ -613,48 +775,17 @@ function labelFor(label: string, labelEn?: string): string {
     font-weight: 600;
     color: #1c1a15;
   }
-  .site-header__accordion > summary::-webkit-details-marker {
-    display: none;
-  }
-  .site-header__accordion > summary::marker {
-    content: '';
-  }
-  .site-header__accordion > summary:hover {
-    color: #5c4e33;
-  }
-  .site-header__accordion > summary:focus-visible {
-    outline: 2px solid #5c4e33;
-    outline-offset: -2px;
-  }
-  .site-header__caret {
-    flex-shrink: 0;
-    font-size: 13px;
-    color: #b7ab8a;
-    transform: rotate(0deg);
-    transition: transform 0.15s ease;
-  }
-  .site-header__accordion[open] > summary > .site-header__caret {
-    transform: rotate(180deg);
-  }
-  .site-header__accordion-panel {
-    padding: 4px 0 10px;
-  }
-  .site-header__accordion-desc {
-    margin: 0;
-    padding: 0 24px 8px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #5c4e33;
-    letter-spacing: 0;
-    text-transform: none;
-    font-weight: 400;
-  }
-  .site-header__accordion ul {
+  .site-header__accordion > summary::-webkit-details-marker { display: none; }
+  .site-header__accordion > summary::marker { content: ''; }
+  .site-header__accordion-panel { padding: 4px 0 10px; }
+  .site-header__accordion ul,
+  .site-header__drawer-group ul {
     list-style: none;
     margin: 0;
     padding: 0 24px 10px;
   }
-  .site-header__accordion a {
+  .site-header__accordion a,
+  .site-header__drawer-group a {
     display: flex;
     align-items: center;
     min-height: 44px;
@@ -662,32 +793,40 @@ function labelFor(label: string, labelEn?: string): string {
     color: #332e22;
     text-decoration: none;
     font-size: 16px;
-    letter-spacing: 0;
-    text-transform: none;
-    font-weight: 400;
   }
-  .site-header__accordion-lead {
-    font-size: 17px;
-    font-weight: 600;
-    color: #1c1a15;
-  }
-  .site-header__accordion--nested {
-    border-top: 1px solid rgba(10, 10, 9, 0.08);
-    border-bottom: 0;
-  }
-  .site-header__accordion--nested > summary {
-    padding: 16px 24px;
-    font-size: 14px;
+  .site-header__accordion-lead { font-weight: 600; color: #1c1a15; }
+  .site-header__drawer-group-label {
+    margin: 8px 24px 0;
+    font-size: 12px;
     letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
     color: #5c4e33;
   }
-  .site-header__accordion--nested > summary:hover {
-    background: rgba(10, 10, 9, 0.03);
+  .site-header__drawer-lang {
+    padding: 20px 24px 32px;
+    border-top: 1px solid rgba(10, 10, 9, 0.08);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .site-header__caret {
-      transition: none;
-    }
+  .site-header__drawer-lang-label {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #5c4e33;
+  }
+  .site-header__drawer-lang .site-header__lang {
+    background: rgba(10, 10, 9, 0.08);
+    border-color: rgba(10, 10, 9, 0.2);
+    width: fit-content;
+  }
+  .site-header__drawer-lang .site-header__lang-btn { color: #1c1a15; }
+  .site-header__drawer-lang .site-header__lang-btn.is-active {
+    background: #1c1a15;
+    color: #e7ddc4;
+  }
+  .site-header__drawer-lang .site-header__lang-btn:focus-visible {
+    outline-color: #5c4e33;
   }
   .site-header__noscript {
     background: #1c1a15;
@@ -710,10 +849,23 @@ function labelFor(label: string, labelEn?: string): string {
     display: inline-flex;
     align-items: center;
   }
+  @media (min-width: 1024px) {
+    .site-header__desktop { display: flex; }
+    .site-header__menu-btn { display: none; }
+    .site-header__search { justify-self: end; }
+  }
+  @media (max-width: 1023px) {
+    .site-header__bar {
+      grid-template-columns: 1fr auto auto;
+    }
+    .site-header__desktop { display: none; }
+  }
   @media (max-width: 640px) {
     .site-header__brand-tag { display: none; }
     .site-header__brand-name { font-size: 22px; }
-    .site-header__coleccion-link { display: none; }
     .site-header__lang-btn { padding: 0 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__caret { transition: none; }
   }
 </style>

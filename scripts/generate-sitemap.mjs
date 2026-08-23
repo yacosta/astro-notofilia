@@ -224,6 +224,9 @@ add(`${site}/`, { changefreq: 'weekly', priority: '1.0', lastmod: today });
 // Global collection hub is a native Astro page (not a catalog JSON entry).
 add(`${site}/coleccion/`, { changefreq: 'weekly', priority: '0.9' });
 add(`${site}/coleccion/numismatica/`, { changefreq: 'weekly', priority: '0.85' });
+add(`${site}/coleccion/estados-unidos/`, { changefreq: 'weekly', priority: '0.8' });
+add(`${site}/coleccion/espana/`, { changefreq: 'weekly', priority: '0.8' });
+add(`${site}/nosotros/`, { changefreq: 'monthly', priority: '0.6' });
 // Public editorial / valuation policy (native Astro page).
 add(`${site}/editorial/`, { changefreq: 'monthly', priority: '0.5' });
 add(`${site}/editorial/equipo/`, { changefreq: 'monthly', priority: '0.4' });

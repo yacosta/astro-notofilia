@@ -218,14 +218,10 @@ Many strings already have `data-en`. The table below flags **visible Spanish tha
 
 | File | Example string | Paired? |
 |---|---|---|
-| `src/lib/nav.ts` | `'Inicio'`, `'Colección'`, `'Logros del Mes'`, `'Noticias'`, `'Glosario'`, `'Contacto'` | yes (`labelEn`) |
-| `src/lib/nav.ts` | `'Fernando VII — 1 Escudo, Bogotá 1820'` (and 4 sibling coin links) | **no `labelEn`** — relies on `lookupEn()` |
+| `src/lib/nav.ts` | `'Inicio'`, `'Colección'`, `'Guías para coleccionistas'`, `'Noticias numismáticas'`, `'Glosario'`, `'Sobre Notofilia'`, `'Contacto'` | yes (`labelEn`) |
 | `src/lib/nav.ts` | `'Pop-art currency'` | already EN; no `labelEn` |
-| `src/lib/nav.ts` | group `'Puerto Rico'`, `'Ecuador'` | no `labelEn` (same in EN; OK) |
-| `src/components/SiteHeader.astro` | `aria-label="Navegación principal"` | **unpaired** |
-| `src/components/SiteHeader.astro` | `aria-label="Enlaces principales sin JavaScript"` | **unpaired** |
-| `src/components/SiteHeader.astro` | `'Idioma de la interfaz'` (`#interface-lang-label`) | swapped in JS, not `data-i18n` |
-| `src/components/SiteHeader.astro` | `'Interfaz en español'` / `'Interface in English'` on buttons | **unpaired** (ES button label never becomes EN) |
+| `src/lib/nav.ts` | group `'Colombia'`, `'Puerto Rico'` | no `labelEn` (same in EN; OK) |
+| `src/components/SiteHeader.astro` | `aria-label` for main nav / drawer / search | paired via `isEn` |
 | `src/components/SiteHeader.astro` | `'Numismática y Notafilia'`, `'Colección'`, `'Buscar'`, `'Abrir menú'`, `'Cerrar menú'`, `'Menú del sitio'` | paired |
 | `src/components/SiteFooter.astro` | `'Todos los derechos reservados.'`, `'Política editorial y valoración'`, `'Colección Virtual:'`, `'Página diseñada por'` | paired |
 | `src/components/PreFooter.astro` | `'Boletín'`, `'Suscríbase para recibir noticias…'`, `'Nombre'`, `'Correo electrónico'`, `'Suscribirse'` | paired |
@@ -262,7 +258,7 @@ Many strings already have `data-en`. The table below flags **visible Spanish tha
 | `src/client/site-header.js` | `'No se pudo cargar la búsqueda. Ir a /buscar/'` | paired in JS; **hardcodes `/buscar/` path** |
 | `src/client/interface-lang.js` | `'Idioma de la interfaz'` / `'Interface language'` | hardcoded in JS |
 
-**`src/lib/nav.ts` is the shared nav source** for `SiteHeader`. hrefs are all Spanish (`/coleccion/`, `/noticias/`, `/glosario/`, `/contacto/`, `/#logros-heading`). Replacing the toggle with `/en/` links requires a locale-aware nav, not just label swaps.
+**`src/lib/nav.ts` is the shared nav source** for `SiteHeader` and `SiteFooter`. hrefs are Spanish hubs (`/coleccion/`, `/nosotros/`, `/blog/`, `/noticias/`, `/glosario/`, `/contacto/`). `SiteHeader` maps them with `alternateUrl`; do not list individual catalog records in the menu.
 
 ### 2.5 Inline / data-file Spanish outside components
 
@@ -542,6 +538,9 @@ What **does** exist:
 | `glosario` | `glossary` | |
 | `buscar` | `search` | noindex utility |
 | `contacto` | `contact` | |
+| `nosotros` | `about` | About the project |
+| `estados-unidos` | `united-states` | Country hub under collection |
+| `espana` | `spain` | Country hub under collection |
 | `editorial` | `editorial` | same |
 | `equipo` | `team` | `/editorial/equipo/` → `/en/editorial/team/` |
 | `politica-privacidad-cookies` | `privacy-cookies` | |
@@ -561,6 +560,9 @@ What **does** exist:
 | `/glosario/anverso/` | `/en/glossary/obverse/` |
 | `/buscar/` | `/en/search/` |
 | `/contacto/` | `/en/contact/` |
+| `/nosotros/` | `/en/about/` |
+| `/coleccion/estados-unidos/` | `/en/collection/united-states/` |
+| `/coleccion/espana/` | `/en/collection/spain/` |
 | `/editorial/` | `/en/editorial/` |
 | `/editorial/equipo/` | `/en/editorial/team/` |
 | `/politica-privacidad-cookies/` | `/en/privacy-cookies/` |
@@ -585,6 +587,8 @@ What **does** exist:
 | `/coleccion/puerto-rico/` | `/en/collection/puerto-rico/` |
 | `/coleccion/ecuador/` | `/en/collection/ecuador/` |
 | `/coleccion/filipinas/` | `/en/collection/philippines/` |
+| `/coleccion/estados-unidos/` | `/en/collection/united-states/` |
+| `/coleccion/espana/` | `/en/collection/spain/` |
 
 ### 6.3 Do-not-translate tokens
 
