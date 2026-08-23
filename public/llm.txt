@@ -37,6 +37,10 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 - [Catálogo de Numismática](https://notofilia.com/coleccion/numismatica/): Catálogo de Numismática
 - [Catálogo de Billetes de Colombia](https://notofilia.com/coleccion/colombia/): Catálogo de billetes históricos de Colombia: emisiones de guerra de independencia, papel moneda provincial y estatal. Colección Notofilia.
+- [Siglo Pasado (Colombia)](https://notofilia.com/coleccion/colombia/siglo-pasado/): Siglo Pasado (Colombia)
+- [Banco de la República](https://notofilia.com/coleccion/colombia/banco-de-la-republica/): Banco de la República
+- [Estados Unidos](https://notofilia.com/coleccion/estados-unidos/): Estados Unidos
+- [España](https://notofilia.com/coleccion/espana/): España
 - [Catálogo de la Banca Libre Colombiana](https://notofilia.com/coleccion/colombia/banca-libre/): Catálogo de billetes de la banca libre y privada colombiana (1870–1919): El Banco de Pamplona, El Banco de Caldas, El Banco de Medellín y…
 - [Emisiones Colombianas en el Extranjero](https://notofilia.com/coleccion/colombia/emisiones-en-el-extranjero/): Billetes emitidos en el extranjero por bancos y capital colombianos, como El Banco Colombiano en Guatemala (1900). Colección Notofilia.
 - [Catálogo de Billetes de Puerto Rico](https://notofilia.com/coleccion/puerto-rico/): Catálogo de billetes y vales históricos de Puerto Rico: la Tesorería Nacional y la emisión de papeletas de 1813. Colección Notofilia.
