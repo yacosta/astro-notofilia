@@ -858,9 +858,10 @@ test('desktop header shows curated hubs instead of individual records', async ({
   await expect(collectionPanel).toBeHidden();
   await page.locator('[data-nav-item="collection"]').hover();
   await expect(collectionPanel).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Monedas' })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toBeVisible();
+  await expect(collectionPanel.getByText('Explorar', { exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Añadidos recientes' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'España' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Specimens' })).toBeVisible();
@@ -883,8 +884,9 @@ test('mobile drawer stays two levels and lists hubs only', async ({ page }) => {
   );
 
   await drawer.getByRole('button', { name: 'Mostrar enlaces de la colección' }).click();
-  await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toBeVisible();
-  await expect(drawer.getByRole('link', { name: 'Monedas' })).toBeVisible();
+  await expect(drawer.getByText('Explorar', { exact: true })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
+  await expect(drawer.getByRole('link', { name: 'Monedas', exact: true })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: 'Ver todos los países' })).toBeVisible();
   await expect(drawer.getByRole('link', { name: /Felipe V/ })).toHaveCount(0);
   await expect(drawer.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
