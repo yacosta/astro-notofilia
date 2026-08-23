@@ -62,8 +62,13 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByText('Colecciones virtuales — Notafilia')).toBeVisible();
   await expect(collectionPanel.getByText('Colecciones virtuales — Numismática')).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Siglo Pasado', exact: true })).toBeVisible();
-  await expect(collectionPanel.getByRole('link', { name: 'Banco de la República', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toHaveCount(0);
+  await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' }).click();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes del Banco de la República', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Errores de imprenta' })).toHaveCount(0);
