@@ -182,7 +182,6 @@ const US_CATALOG_BIOGRAPHY_TITLES = new Set([
   'thomas jefferson',
   'jefe ouray',
   'malietoa tanumafili ii',
-  'manuel rodríguez erdoíza',
   'manuel rodriguez erdoiza',
 ]);
 
