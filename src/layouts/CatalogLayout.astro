@@ -10,8 +10,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CatalogRecordSurface from '../components/catalog/CatalogRecordSurface.astro';
 import CatalogHubGrid from '../components/catalog/CatalogHubGrid.astro';
 import type { CatalogCard, CatalogRecord } from '../lib/catalog-record';
-import { withColombiaGroup } from '../lib/colombia-catalog';
-import { compareByFirstYear } from '../lib/catalog-year';
+import { compareColombiaCards, withColombiaGroup } from '../lib/colombia-catalog';
 import { polymerCountryLabels } from '../lib/catalog-inventory.mjs';
 import { withI18nMarkup } from '../lib/html-i18n';
 import { t, type Locale } from '../lib/ui-i18n';
@@ -37,7 +36,7 @@ export interface Props {
 function colombiaHubCards(cards: CatalogCard[]): CatalogCard[] {
   return cards
     .map((card, index) => ({ card: withColombiaGroup(card), index }))
-    .sort((a, b) => compareByFirstYear(a.card, b.card) || a.index - b.index)
+    .sort((a, b) => compareColombiaCards(a.card, b.card, a.index, b.index))
     .map(({ card }) => card);
 }
 

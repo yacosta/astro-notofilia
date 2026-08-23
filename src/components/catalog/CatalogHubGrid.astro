@@ -2,6 +2,7 @@
 /**
  * Hub card grid — replaces dc-import BanknoteCard lists.
  * Optional `group` / `groupKicker` on cards render reign or theme sections.
+ * Optional `section` nests groups under an era heading; `subgroup` nests banks.
  */
 import type { CatalogCard } from '../../lib/catalog-record';
 import CatalogBanknoteCard from './CatalogBanknoteCard.astro';
@@ -19,52 +20,141 @@ interface Props {
 
 const { cards, thinNote = false, labelledBy, headingLevel = 2, locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
-const GroupHeading = headingLevel === 3 ? 'h3' : 'h2';
 const showThinNote = thinNote && cards.length > 0 && cards.length <= 2;
 const inventoryLabel = cards.length === 1 ? t('onePiece', locale) : `${cards.length} ${t('pieces', locale)}`;
 const inventoryLabelEn = cards.length === 1 ? t('onePiece', 'en') : `${cards.length} ${t('pieces', 'en')}`;
 const hasGroups = cards.some((card) => Boolean(card.group));
+const hasSections = cards.some((card) => Boolean(card.section));
 
-type CardGroup = { name: string; nameEn?: string; kicker?: string; kickerEn?: string; cards: CatalogCard[] };
+type CardSubgroup = { name: string; nameEn?: string; cards: CatalogCard[] };
+type CardGroup = {
+  name: string;
+  nameEn?: string;
+  kicker?: string;
+  kickerEn?: string;
+  cards: CatalogCard[];
+  subgroups: CardSubgroup[];
+};
+type CardSection = {
+  name: string;
+  nameEn?: string;
+  kicker?: string;
+  kickerEn?: string;
+  groups: CardGroup[];
+};
 
+const EraHeading = headingLevel === 3 ? 'h3' : 'h2';
+const GroupHeading = hasSections ? (headingLevel === 3 ? 'h4' : 'h3') : headingLevel === 3 ? 'h3' : 'h2';
+const SubgroupHeading = hasSections ? (headingLevel === 3 ? 'h5' : 'h4') : 'h4';
+
+function visibleName(es: string, en?: string): string {
+  if (!isEn) return es;
+  return en ?? lookupEn(es) ?? es;
+}
+
+function visibleKicker(es?: string, en?: string): string | undefined {
+  if (!es) return undefined;
+  if (!isEn) return es;
+  return en ?? lookupEn(es) ?? es;
+}
+
+function i18nAttrs(es: string | undefined, en: string | undefined) {
+  if (isEn || !es) return {};
+  const translated = en || lookupEn(es);
+  if (!translated) return {};
+  return { 'data-i18n': true, 'data-en': translated };
+}
+
+function ensureGroup(
+  seen: Map<string, CardGroup>,
+  list: CardGroup[],
+  card: CatalogCard,
+  fallback: string,
+): CardGroup {
+  const name = card.group || fallback;
+  let group = seen.get(name);
+  if (!group) {
+    group = {
+      name,
+      nameEn: card.groupEn ?? lookupEn(name),
+      kicker: card.groupKicker,
+      kickerEn: card.groupKickerEn ?? (card.groupKicker ? lookupEn(card.groupKicker) : undefined),
+      cards: [],
+      subgroups: [],
+    };
+    seen.set(name, group);
+    list.push(group);
+  }
+  return group;
+}
+
+function pushCard(group: CardGroup, card: CatalogCard) {
+  const subgroupName = card.subgroup;
+  if (!subgroupName) {
+    group.cards.push(card);
+    return;
+  }
+  let subgroup = group.subgroups.find((entry) => entry.name === subgroupName);
+  if (!subgroup) {
+    subgroup = {
+      name: subgroupName,
+      nameEn: card.subgroupEn ?? lookupEn(subgroupName),
+      cards: [],
+    };
+    group.subgroups.push(subgroup);
+  }
+  subgroup.cards.push(card);
+}
+
+const otherPieces = t('otherPieces', 'es');
+const sections: CardSection[] = [];
 const groups: CardGroup[] = [];
-if (hasGroups) {
+
+if (hasSections) {
+  const seenSections = new Map<string, CardSection>();
+  const seenGroups = new Map<string, Map<string, CardGroup>>();
+  for (const card of cards) {
+    const sectionName = card.section || otherPieces;
+    let section = seenSections.get(sectionName);
+    if (!section) {
+      section = {
+        name: sectionName,
+        nameEn: card.sectionEn ?? lookupEn(sectionName),
+        kicker: card.sectionKicker,
+        kickerEn: card.sectionKickerEn ?? (card.sectionKicker ? lookupEn(card.sectionKicker) : undefined),
+        groups: [],
+      };
+      seenSections.set(sectionName, section);
+      seenGroups.set(sectionName, new Map());
+      sections.push(section);
+    }
+    const group = ensureGroup(seenGroups.get(sectionName)!, section.groups, card, otherPieces);
+    pushCard(group, card);
+  }
+} else if (hasGroups) {
   const seen = new Map<string, CardGroup>();
   for (const card of cards) {
-    const name = card.group || t('otherPieces', 'es');
-    let group = seen.get(name);
-    if (!group) {
-      group = {
-        name,
-        nameEn: card.groupEn ?? lookupEn(name),
-        kicker: card.groupKicker,
-        kickerEn: card.groupKickerEn ?? (card.groupKicker ? lookupEn(card.groupKicker) : undefined),
-        cards: [],
-      };
-      seen.set(name, group);
-      groups.push(group);
-    }
-    group.cards.push(card);
+    const group = ensureGroup(seen, groups, card, otherPieces);
+    pushCard(group, card);
   }
 } else {
-  groups.push({ name: '', cards });
+  groups.push({ name: '', cards, subgroups: [] });
 }
 
-function groupLabel(group: CardGroup): string {
-  if (!isEn) return group.name;
-  return group.nameEn ?? lookupEn(group.name) ?? group.name;
-}
-
-function kickerLabel(group: CardGroup): string | undefined {
-  if (!group.kicker) return undefined;
-  if (!isEn) return group.kicker;
-  return group.kickerEn ?? lookupEn(group.kicker) ?? group.kicker;
+function headingId(prefix: string, name: string): string {
+  const slug = name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return `${prefix}-${slug || 'group'}`;
 }
 ---
 {
   cards.length > 0 ? (
     <section
-      class="catalog-hub-grid max-w-[1180px] mx-auto px-[var(--page-gutter,24px)] pb-16"
+      class:list={['catalog-hub-grid', 'max-w-[1180px]', 'mx-auto', 'px-[var(--page-gutter,24px)]', 'pb-16', hasSections && 'catalog-hub-grid--eras']}
       aria-label={labelledBy ? undefined : t('hubCards', locale)}
       data-i18n={labelledBy || isEn ? undefined : true}
       data-i18n-target={labelledBy || isEn ? undefined : 'aria-label'}
@@ -87,46 +177,137 @@ function kickerLabel(group: CardGroup): string | undefined {
           </p>
         </aside>
       ) : null}
-      {groups.map((group) => (
-        group.name ? (
-          <section class="catalog-hub-group">
-            {group.kicker ? (
-              <span
-                class="catalog-hub-kicker"
-                data-i18n={!isEn && (group.kickerEn || lookupEn(group.kicker)) ? true : undefined}
-                data-en={!isEn ? (group.kickerEn || lookupEn(group.kicker)) : undefined}
-              >{kickerLabel(group)}</span>
-            ) : null}
-            <GroupHeading
-              class="catalog-hub-group-title"
-              data-i18n={!isEn && (group.nameEn || lookupEn(group.name)) ? true : undefined}
-              data-en={!isEn ? (group.nameEn || lookupEn(group.name)) : undefined}
-            >{groupLabel(group)}</GroupHeading>
-            <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
-              {group.cards.map((card) => (
-                <li>
-                  <CatalogBanknoteCard card={card} locale={locale} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : (
-          <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
-            {group.cards.map((card) => (
-              <li>
-                <CatalogBanknoteCard card={card} locale={locale} />
-              </li>
-            ))}
-          </ul>
-        )
-      ))}
+
+      {hasSections
+        ? sections.map((section) => {
+            const sectionId = headingId('catalog-era', section.name);
+            return (
+              <section class="catalog-hub-era" aria-labelledby={sectionId}>
+                {section.kicker ? (
+                  <span class="catalog-hub-kicker" {...i18nAttrs(section.kicker, section.kickerEn)}>
+                    {visibleKicker(section.kicker, section.kickerEn)}
+                  </span>
+                ) : null}
+                <EraHeading
+                  id={sectionId}
+                  class="catalog-hub-era-title"
+                  {...i18nAttrs(section.name, section.nameEn)}
+                >
+                  {visibleName(section.name, section.nameEn)}
+                </EraHeading>
+                {section.groups.map((group) => {
+                  const groupId = headingId('catalog-group', `${section.name}-${group.name}`);
+                  return (
+                    <section class="catalog-hub-group" aria-labelledby={groupId}>
+                      {group.kicker ? (
+                        <span class="catalog-hub-kicker" {...i18nAttrs(group.kicker, group.kickerEn)}>
+                          {visibleKicker(group.kicker, group.kickerEn)}
+                        </span>
+                      ) : null}
+                      <GroupHeading
+                        id={groupId}
+                        class="catalog-hub-group-title"
+                        {...i18nAttrs(group.name, group.nameEn)}
+                      >
+                        {visibleName(group.name, group.nameEn)}
+                      </GroupHeading>
+                      {group.subgroups.length > 0
+                        ? group.subgroups.map((subgroup) => {
+                            const subgroupId = headingId(
+                              'catalog-subgroup',
+                              `${section.name}-${group.name}-${subgroup.name}`,
+                            );
+                            return (
+                              <section class="catalog-hub-subgroup" aria-labelledby={subgroupId}>
+                                <SubgroupHeading
+                                  id={subgroupId}
+                                  class="catalog-hub-subgroup-title"
+                                  {...i18nAttrs(subgroup.name, subgroup.nameEn)}
+                                >
+                                  {visibleName(subgroup.name, subgroup.nameEn)}
+                                </SubgroupHeading>
+                                <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+                                  {subgroup.cards.map((card) => (
+                                    <li>
+                                      <CatalogBanknoteCard card={card} locale={locale} />
+                                    </li>
+                                  ))}
+                                </ul>
+                              </section>
+                            );
+                          })
+                        : null}
+                      {group.cards.length > 0 ? (
+                        <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+                          {group.cards.map((card) => (
+                            <li>
+                              <CatalogBanknoteCard card={card} locale={locale} />
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </section>
+                  );
+                })}
+              </section>
+            );
+          })
+        : groups.map((group) =>
+            group.name ? (
+              <section class="catalog-hub-group">
+                {group.kicker ? (
+                  <span
+                    class="catalog-hub-kicker"
+                    data-i18n={!isEn && (group.kickerEn || lookupEn(group.kicker)) ? true : undefined}
+                    data-en={!isEn ? (group.kickerEn || lookupEn(group.kicker)) : undefined}
+                  >{visibleKicker(group.kicker, group.kickerEn)}</span>
+                ) : null}
+                <GroupHeading
+                  class="catalog-hub-group-title"
+                  data-i18n={!isEn && (group.nameEn || lookupEn(group.name)) ? true : undefined}
+                  data-en={!isEn ? (group.nameEn || lookupEn(group.name)) : undefined}
+                >{visibleName(group.name, group.nameEn)}</GroupHeading>
+                <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+                  {group.cards.map((card) => (
+                    <li>
+                      <CatalogBanknoteCard card={card} locale={locale} />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : (
+              <ul class="m-0 p-0 list-none grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-6">
+                {group.cards.map((card) => (
+                  <li>
+                    <CatalogBanknoteCard card={card} locale={locale} />
+                  </li>
+                ))}
+              </ul>
+            ),
+          )}
     </section>
   ) : null
 }
 
 <style>
+  .catalog-hub-era + .catalog-hub-era {
+    margin-top: 88px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(231, 222, 201, 0.16);
+  }
+  .catalog-hub-era-title {
+    font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 40px);
+    line-height: 1.15;
+    color: #d8d2cd;
+    margin: 0 0 40px;
+  }
   .catalog-hub-group + .catalog-hub-group {
     margin-top: 64px;
+  }
+  .catalog-hub-era .catalog-hub-group + .catalog-hub-group {
+    margin-top: 56px;
   }
   .catalog-hub-kicker {
     display: block;
@@ -142,5 +323,15 @@ function kickerLabel(group: CardGroup): string | undefined {
     font-size: clamp(24px, 3vw, 32px);
     color: #d8d2cd;
     margin: 0 0 32px;
+  }
+  .catalog-hub-subgroup + .catalog-hub-subgroup {
+    margin-top: 36px;
+  }
+  .catalog-hub-subgroup-title {
+    font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: #d8d2cd;
+    margin: 0 0 24px;
   }
 </style>
