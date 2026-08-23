@@ -64,6 +64,8 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toHaveCount(0);
   await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Notafilia' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos', exact: true })).toHaveClass(/site-header__panel-lead/);
   await expect(collectionPanel.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toHaveCount(0);
