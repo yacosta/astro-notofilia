@@ -66,6 +66,11 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Colombia', exact: true })).toHaveClass(/site-header__panel-lead/);
   await expect(collectionPanel.getByRole('link', { name: 'Estados Unidos', exact: true })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: 'Puerto Rico', exact: true })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: 'Filipinas', exact: true })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: 'Ecuador', exact: true })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toHaveClass(/site-header__panel-lead/);
+  await expect(collectionPanel.getByRole('link', { name: /Pop-art currency|Pop Art Currency/ })).toHaveCount(0);
   await expect(collectionPanel.getByRole('link', { name: 'Banca Libre (Colombia)' })).toHaveCount(0);
   await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Colombia' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes del Siglo Pasado', exact: true })).toHaveCount(0);
