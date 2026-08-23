@@ -75,10 +75,15 @@ test('collection menu no longer includes the Explorar column', async ({ page }) 
   await expect(collectionPanel.getByRole('link', { name: 'Emisiones colombianas en el extranjero', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Reserva Federal', exact: true })).toHaveCount(0);
   await collectionPanel.getByRole('button', { name: 'Mostrar secciones de Estados Unidos' }).click();
   await expect(collectionPanel.getByRole('link', { name: 'Moneda Colonial', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes obsoletos', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Departamento del Tesoro', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Reserva Federal', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Certificados de Pago Militar', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Cupones de alimentos USDA', exact: true })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Emisiones promocionales', exact: true })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
   await expect(collectionPanel.getByRole('link', { name: 'Numismática', exact: true })).toHaveCount(0);
   await collectionPanel.locator('summary', { hasText: 'Colecciones virtuales — Numismática' }).click();
