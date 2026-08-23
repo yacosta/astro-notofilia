@@ -54,7 +54,11 @@ function hrefFor(href: string): string {
 }
 
 const countryItems = catalogIndex.items
-  .filter((item) => item.country === copy.countryName && item.role !== 'hub')
+  .filter((item) => {
+    if (item.country !== copy.countryName || item.role === 'hub') return false;
+    if (countryId === 'united-states' && item.kind === 'coin') return false;
+    return true;
+  })
   .sort((a, b) => {
     const ay = a.year ?? 9999;
     const by = b.year ?? 9999;
