@@ -184,27 +184,27 @@ export const COLLECTION_NOTAPHILY: NavGroup = {
           label: 'Departamento del Tesoro',
           labelEn: 'Department of the Treasury',
         },
+        {
+          href: '/coleccion/reserva-federal/',
+          label: 'Reserva Federal',
+          labelEn: 'Federal Reserve',
+        },
+        {
+          href: '/coleccion/certificados-de-pago-militar/',
+          label: 'Certificados de Pago Militar',
+          labelEn: 'Military Payment Certificates',
+        },
+        {
+          href: '/coleccion/food-coupons-usda/',
+          label: 'Cupones de alimentos USDA',
+          labelEn: 'USDA Food Coupons',
+        },
+        {
+          href: '/coleccion/emisiones-promocionales/',
+          label: 'Emisiones promocionales',
+          labelEn: 'Promotional issues',
+        },
       ],
-    },
-    {
-      href: '/coleccion/reserva-federal/',
-      label: 'Reserva Federal (EE. UU.)',
-      labelEn: 'Federal Reserve (U.S.)',
-    },
-    {
-      href: '/coleccion/certificados-de-pago-militar/',
-      label: 'Certificados de Pago Militar',
-      labelEn: 'Military Payment Certificates',
-    },
-    {
-      href: '/coleccion/food-coupons-usda/',
-      label: 'Cupones de alimentos USDA',
-      labelEn: 'USDA Food Coupons',
-    },
-    {
-      href: '/coleccion/emisiones-promocionales/',
-      label: 'Emisiones promocionales (EE. UU.)',
-      labelEn: 'U.S. promotional issues',
     },
     { href: '/coleccion/puerto-rico/', label: 'Puerto Rico', labelEn: 'Puerto Rico' },
     { href: '/coleccion/filipinas/', label: 'Filipinas', labelEn: 'Philippines' },
