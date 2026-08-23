@@ -42,6 +42,18 @@ test('collection hub exposes stable recent and countries anchors', async ({ page
   await expect(page.locator('#countries')).toBeVisible();
 });
 
+test('collection menu no longer includes the Explorar column', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto('/');
+  const collectionPanel = page.locator('#nav-panel-collection');
+  await page.locator('[data-nav-item="collection"]').hover();
+  await expect(collectionPanel).toBeVisible();
+  await expect(collectionPanel.getByText('Explorar', { exact: true })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Catálogo completo' })).toHaveCount(0);
+  await expect(collectionPanel.getByRole('link', { name: 'Colombia' })).toBeVisible();
+  await expect(collectionPanel.getByRole('link', { name: 'Billetes de polímero mundial' })).toBeVisible();
+});
+
 test('desktop collection menu stays open when moving onto a category', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto('/');

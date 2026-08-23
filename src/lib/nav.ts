@@ -80,18 +80,6 @@ export const REPORT_ERROR_LINK: NavLink = {
   labelEn: 'Report an Error',
 };
 
-export const COLLECTION_BROWSE: NavGroup = {
-  id: 'browse',
-  label: 'Explorar',
-  labelEn: 'Browse',
-  links: [
-    { href: '/coleccion/', label: 'Catálogo completo', labelEn: 'Full Catalog', lead: true },
-    { href: '/coleccion/numismatica/', label: 'Monedas', labelEn: 'Coins' },
-    { href: '/coleccion/#recent', label: 'Añadidos recientes', labelEn: 'Recently Added' },
-    { href: '/coleccion/#countries', label: 'Todos los países', labelEn: 'All Countries' },
-  ],
-};
-
 export const COLLECTION_COUNTRIES: NavGroup = {
   id: 'major-countries',
   label: 'Colecciones principales',
@@ -127,7 +115,7 @@ export const COLLECTION_MENU: NavMenu = {
   labelEn: 'Collection',
   description: 'Catálogo global con búsqueda y filtros por país, tipo y material.',
   descriptionEn: 'Global catalog with search and filters by country, type, and material.',
-  groups: [COLLECTION_BROWSE, COLLECTION_COUNTRIES, COLLECTION_SPECIAL],
+  groups: [COLLECTION_COUNTRIES, COLLECTION_SPECIAL],
 };
 
 export const RESOURCES_MENU: NavMenu = {
