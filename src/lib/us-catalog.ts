@@ -197,6 +197,23 @@ export function isCatalogBiography(
   return Boolean(title && US_CATALOG_BIOGRAPHY_TITLES.has(title));
 }
 
+/** Strip “Billete $5 …” so the US hub card shows only the bank. */
+export function obsoleteBankDisplayName(title: string): string {
+  const stripped = title
+    .replace(/^Billetes?\s+\$\d+(?:\s+y\s+\$\d+)?\s+/i, '')
+    .replace(/^Notes?\s+\$\d+(?:\s+(?:and|&|y)\s+\$\d+)?\s+/i, '')
+    .trim();
+  return stripped || title;
+}
+
+export function usCatalogCardTitle(
+  item: Pick<UsCatalogItem, 'path' | 'title'>,
+  visibleTitle: string,
+): string {
+  if (usCatalogGroupFor(item) !== US_BILLETE_OBSOLETO) return visibleTitle;
+  return obsoleteBankDisplayName(visibleTitle);
+}
+
 export function groupUsCatalogItems<T extends UsCatalogItem>(items: T[]): Array<{
   group: UsCatalogGroup;
   id: string;
