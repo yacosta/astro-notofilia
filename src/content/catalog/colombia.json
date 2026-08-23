@@ -78,6 +78,21 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco del Cauca — Un Peso y Cinco Pesos (1888)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de Medellín — Cincuenta Centavos",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-medellin-50-centavos/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "El Banco de Pamplona — Un Peso (1883) y Diez Pesos (1884)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-pamplona-10-pesos-1884/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "República Bolívar de Colombia — Un Peso (1882)",
             "url": "https://notofilia.com/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso"
           },
@@ -324,6 +339,81 @@
         "altEn": "PMG proofs of the Banco de Rio Hacha 5 pesos, 1883, encapsulated obverse and reverse",
         "groupEn": "El Banco de Rio Hacha",
         "groupKickerEn": "Free banking (1883)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso",
+        "title": "El Banco del Cauca",
+        "denomination": "Un Peso",
+        "year": "1888",
+        "image": "/uploads/colombia-banco-del-cauca-1-peso-1888.jpg",
+        "imageWebp": "/uploads/colombia-banco-del-cauca-1-peso-1888.webp",
+        "alt": "Billete de Un Peso de El Banco del Cauca, anverso y reverso, con viñetas alegóricas y retrato, Cali, 1888",
+        "group": "Banca Libre",
+        "groupKicker": "Banca privada regional",
+        "titleEn": "El Banco del Cauca",
+        "altEn": "One Peso banknote of El Banco del Cauca, obverse and reverse, with allegorical vignettes and a portrait, Cali, 1888",
+        "groupEn": "Free Banking",
+        "groupKickerEn": "Regional private banking"
+      },
+      {
+        "href": "/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#cinco-pesos",
+        "title": "El Banco del Cauca",
+        "denomination": "Cinco Pesos",
+        "year": "1888",
+        "image": "/uploads/colombia-banco-del-cauca-5-pesos-1888.jpg",
+        "imageWebp": "/uploads/colombia-banco-del-cauca-5-pesos-1888.webp",
+        "alt": "Billete de Cinco Pesos de El Banco del Cauca, anverso y reverso, con retrato central y escudo del Estado Soberano del Cauca, Cali, 1888",
+        "group": "Banca Libre",
+        "groupKicker": "Banca privada regional",
+        "titleEn": "El Banco del Cauca",
+        "altEn": "Five Pesos banknote of El Banco del Cauca, obverse and reverse, with a central portrait and the coat of arms of the Sovereign State of Cauca, Cali, 1888",
+        "groupEn": "Free Banking",
+        "groupKickerEn": "Regional private banking"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-medellin-50-centavos/",
+        "title": "El Banco de Medellín",
+        "denomination": "Cincuenta Centavos",
+        "year": "188X",
+        "image": "/uploads/colombia-banco-de-medellin-50-centavos.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-medellin-50-centavos.webp",
+        "alt": "Billete de Cincuenta Centavos de El Banco de Medellín, anverso arriba con retrato femenino y viñeta de colmena, reverso abajo con guilloché anaranjado y sello circular rosado",
+        "group": "Banca Libre",
+        "groupKicker": "Banca privada regional",
+        "titleEn": "El Banco de Medellín",
+        "altEn": "Fifty Centavos banknote of El Banco de Medellín, obverse at top with a female portrait and beehive vignette, reverse at bottom with orange guilloche and a pink circular stamp",
+        "groupEn": "Free Banking",
+        "groupKickerEn": "Regional private banking"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso",
+        "title": "El Banco de Pamplona",
+        "denomination": "Un Peso",
+        "year": "1883",
+        "image": "/uploads/colombia-banco-de-pamplona-1-peso-1883.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-pamplona-1-peso-1883.webp",
+        "alt": "Billete de Un Peso de El Banco de Pamplona, anverso arriba con viñeta de busto femenino clásico y firmas de directores, reverso abajo en tinta anaranjada",
+        "group": "Banca Libre",
+        "groupKicker": "Banca privada regional",
+        "titleEn": "El Banco de Pamplona",
+        "altEn": "One Peso banknote of El Banco de Pamplona, obverse at top with a classical female bust and directors' signatures, reverse at bottom in orange ink",
+        "groupEn": "Free Banking",
+        "groupKickerEn": "Regional private banking"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos",
+        "title": "El Banco de Pamplona",
+        "denomination": "Diez Pesos",
+        "year": "1884",
+        "image": "/uploads/colombia-banco-de-pamplona-10-pesos-1884.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-pamplona-10-pesos-1884-640.webp",
+        "alt": "Billete de Diez Pesos de El Banco de Pamplona, anverso arriba con viñeta de oso y firmas de directores, reverso abajo en tinta verde",
+        "group": "Banca Libre",
+        "groupKicker": "Banca privada regional",
+        "titleEn": "El Banco de Pamplona",
+        "altEn": "Ten Pesos banknote of El Banco de Pamplona, obverse at top with a bear vignette and directors' signatures, reverse at bottom in green ink",
+        "groupEn": "Free Banking",
+        "groupKickerEn": "Regional private banking"
       },
       {
         "href": "/coleccion/colombia/republica-bolivar-1-2-pesos-1882/#un-peso",

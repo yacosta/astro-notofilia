@@ -47,7 +47,13 @@ export const COLOMBIA_BANREP_GROUPS = [
   '100000 Pesos',
 ] as const;
 
-const BANCA_LIBRE_SUBGROUPS = ['El Banco Hipotecario', 'El Banco de Rio Hacha'] as const;
+const BANCA_LIBRE_SUBGROUPS = [
+  'El Banco Hipotecario',
+  'El Banco de Rio Hacha',
+  'El Banco del Cauca',
+  'El Banco de Medellín',
+  'El Banco de Pamplona',
+] as const;
 
 export type ColombiaPeriod = {
   section: string;
@@ -68,6 +74,20 @@ const SIGLO_PASADO_FIELDS = {
   sectionKicker: 'Antes del Banco de la República',
   sectionKickerEn: 'Before Banco de la República',
 } as const;
+
+function bancaLibreBank(
+  subgroup: (typeof BANCA_LIBRE_SUBGROUPS)[number],
+): ColombiaPeriod {
+  return {
+    ...SIGLO_PASADO_FIELDS,
+    group: 'Banca Libre',
+    groupEn: 'Free Banking',
+    groupKicker: 'Banca privada regional',
+    groupKickerEn: 'Regional private banking',
+    subgroup,
+    subgroupEn: subgroup,
+  };
+}
 
 const DEUDA_FIELDS = {
   section: COLOMBIA_DEUDA,
@@ -166,26 +186,19 @@ export function colombiaPeriodFor(card: Pick<CatalogCard, 'href' | 'year'>): Col
     };
   }
   if (href.includes('banco-hipotecario')) {
-    return {
-      ...SIGLO_PASADO_FIELDS,
-      group: 'Banca Libre',
-      groupEn: 'Free Banking',
-      groupKicker: 'Banca privada regional',
-      groupKickerEn: 'Regional private banking',
-      subgroup: 'El Banco Hipotecario',
-      subgroupEn: 'El Banco Hipotecario',
-    };
+    return bancaLibreBank('El Banco Hipotecario');
   }
   if (href.includes('banco-de-rio-hacha')) {
-    return {
-      ...SIGLO_PASADO_FIELDS,
-      group: 'Banca Libre',
-      groupEn: 'Free Banking',
-      groupKicker: 'Banca privada regional',
-      groupKickerEn: 'Regional private banking',
-      subgroup: 'El Banco de Rio Hacha',
-      subgroupEn: 'El Banco de Rio Hacha',
-    };
+    return bancaLibreBank('El Banco de Rio Hacha');
+  }
+  if (href.includes('banco-del-cauca')) {
+    return bancaLibreBank('El Banco del Cauca');
+  }
+  if (href.includes('banco-de-medellin')) {
+    return bancaLibreBank('El Banco de Medellín');
+  }
+  if (href.includes('banco-de-pamplona')) {
+    return bancaLibreBank('El Banco de Pamplona');
   }
   if (href.includes('banco-nacional')) {
     return {

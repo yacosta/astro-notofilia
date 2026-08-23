@@ -334,6 +334,51 @@ test('colombia catalog groups banknotes by era, issuer, and denomination', async
     hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
   );
 
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco del Cauca' })).toBeVisible();
+  const cauca = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso"]',
+  );
+  await expect(cauca).toBeVisible();
+  await expect(cauca).toContainText('1888');
+  await expect(cauca).toContainText('Un Peso');
+  const caucaIdx = hrefs.indexOf('/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso');
+  expect(caucaIdx).toBeGreaterThan(rioHachaIdx);
+  expect(caucaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  );
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-del-cauca-1-5-pesos-1888/#cinco-pesos"]',
+    ),
+  ).toBeVisible();
+
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco de Medellín' })).toBeVisible();
+  const medellin = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-medellin-50-centavos/"]',
+  );
+  await expect(medellin).toBeVisible();
+  await expect(medellin).toContainText('Cincuenta Centavos');
+  const medellinIdx = hrefs.indexOf('/coleccion/colombia/banco-de-medellin-50-centavos/');
+  expect(medellinIdx).toBeGreaterThan(caucaIdx);
+
+  await expect(sigloPasado.getByRole('heading', { name: 'El Banco de Pamplona' })).toBeVisible();
+  const pamplona = page.locator(
+    'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso"]',
+  );
+  await expect(pamplona).toBeVisible();
+  await expect(pamplona).toContainText('1883');
+  await expect(pamplona).toContainText('Un Peso');
+  const pamplonaIdx = hrefs.indexOf('/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#un-peso');
+  expect(pamplonaIdx).toBeGreaterThan(medellinIdx);
+  expect(pamplonaIdx).toBeLessThan(
+    hrefs.indexOf('/coleccion/colombia/banco-nacional-25-pesos-1895/') ?? Number.POSITIVE_INFINITY,
+  );
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/coleccion/colombia/banco-de-pamplona-10-pesos-1884/#diez-pesos"]',
+    ),
+  ).toBeVisible();
+
   const twoThousand = page.locator('#catalog-group-billetes-del-banco-de-la-republica-desde-1923-2000-pesos');
   await expect(
     twoThousand.locator('a.catalog-banknote-card[href="/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/"]'),
@@ -575,6 +620,30 @@ test('English Colombia catalog lists the Banco de Rio Hacha proofs', async ({ pa
   await expect(card).toBeVisible();
   await expect(card).toContainText('Five Pesos (proofs)');
   await expect(card).toContainText('1883');
+});
+
+test('English Colombia catalog nests Cauca, Medellín, and Pamplona under Free Banking', async ({
+  page,
+}) => {
+  await page.goto('/en/collection/colombia/');
+  const lastCentury = page.locator('#catalog-era-billetes-del-siglo-pasado');
+  await expect(lastCentury.getByRole('heading', { name: 'Free Banking', exact: true })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco del Cauca' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Medellín' })).toBeVisible();
+  await expect(lastCentury.getByRole('heading', { name: 'El Banco de Pamplona' })).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-del-cauca-1-5-pesos-1888/#un-peso"]',
+    ),
+  ).toBeVisible();
+  await expect(
+    page.locator('a.catalog-banknote-card[href="/en/collection/colombia/banco-de-medellin-50-centavos/"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      'a.catalog-banknote-card[href="/en/collection/colombia/banco-de-pamplona-10-pesos-1884/#un-peso"]',
+    ),
+  ).toBeVisible();
 });
 
 test('coins have a dedicated numismática catalog page', async ({ page }) => {
