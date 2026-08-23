@@ -224,6 +224,8 @@ add(`${site}/`, { changefreq: 'weekly', priority: '1.0', lastmod: today });
 add(`${site}/coleccion/numismatica/`, { changefreq: 'weekly', priority: '0.85' });
 add(`${site}/coleccion/estados-unidos/`, { changefreq: 'weekly', priority: '0.8' });
 add(`${site}/coleccion/espana/`, { changefreq: 'weekly', priority: '0.8' });
+add(`${site}/coleccion/colombia/siglo-pasado/`, { changefreq: 'weekly', priority: '0.8' });
+add(`${site}/coleccion/colombia/banco-de-la-republica/`, { changefreq: 'weekly', priority: '0.8' });
 add(`${site}/nosotros/`, { changefreq: 'monthly', priority: '0.6' });
 // Public editorial / valuation policy (native Astro page).
 add(`${site}/editorial/`, { changefreq: 'monthly', priority: '0.5' });

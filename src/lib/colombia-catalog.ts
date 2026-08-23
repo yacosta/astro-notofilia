@@ -144,6 +144,37 @@ function rankOf(order: readonly string[], name: string | undefined): number {
   return index === -1 ? order.length : index;
 }
 
+/** Banco de la República notes (1923–present), including modern error fichas. */
+export function isColombiaBanRepCatalogPath(href: string): boolean {
+  const path = href.toLowerCase();
+  if (path.includes('banco-de-la-republica')) return true;
+  return (
+    path.includes('2000-pesos-1996-error-mariposa') ||
+    path.includes('2000-pesos-error-mariposa') ||
+    path.includes('2000-pesos-error-corte')
+  );
+}
+
+/** Pre-1923 Colombian paper (independence, states, free banking, foreign issues). */
+export function isColombiaSigloPasadoCatalogPath(href: string): boolean {
+  const path = href.toLowerCase();
+  if (!path.includes('/colombia/')) return false;
+  if (
+    path === '/coleccion/colombia/' ||
+    path === '/en/collection/colombia/' ||
+    path.includes('/colombia/banca-libre/') ||
+    path.includes('/colombia/emisiones-en-el-extranjero/') ||
+    path.includes('/colombia/siglo-pasado/') ||
+    path.includes('/colombia/last-century/') ||
+    path.includes('/colombia/banco-de-la-republica/')
+  ) {
+    return false;
+  }
+  if (path.includes('/perfil-')) return false;
+  if (path.includes('santa-marta') || path.includes('1-4-real')) return false;
+  return !isColombiaBanRepCatalogPath(path);
+}
+
 /** Match BanRep denomination headings from the Spanish hub href. */
 export function banrepDenominationFor(href: string): (typeof COLOMBIA_BANREP_GROUPS)[number] | null {
   const path = href.toLowerCase();

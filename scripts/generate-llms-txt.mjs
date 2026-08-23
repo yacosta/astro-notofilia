@@ -24,6 +24,8 @@ const PUBLIC = path.join(ROOT, 'public');
 const HUB_ORDER = [
   { path: '/coleccion/numismatica/', label: 'Catálogo de Numismática' },
   { path: '/coleccion/colombia/', label: 'Billetes de Colombia' },
+  { path: '/coleccion/colombia/siglo-pasado/', label: 'Siglo Pasado (Colombia)' },
+  { path: '/coleccion/colombia/banco-de-la-republica/', label: 'Banco de la República' },
   { path: '/coleccion/estados-unidos/', label: 'Estados Unidos' },
   { path: '/coleccion/espana/', label: 'España' },
   { path: '/coleccion/colombia/banca-libre/', label: 'Banca libre colombiana' },
@@ -226,6 +228,13 @@ function buildIntro({ stats, blogCount, noticiasCount, logrosCount, glossaryCoun
 
 function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, full }) {
   const byPath = new Map(catalog.map((c) => [c.path, c]));
+  const nativeHubs = new Set([
+    '/coleccion/numismatica/',
+    '/coleccion/estados-unidos/',
+    '/coleccion/espana/',
+    '/coleccion/colombia/siglo-pasado/',
+    '/coleccion/colombia/banco-de-la-republica/',
+  ]);
   const hubs = HUB_ORDER.map((h) => {
     const entry = byPath.get(h.path);
     return {
@@ -233,7 +242,7 @@ function buildCoreSections({ catalog, blog, noticias, logros, glossary, stats, f
       description: entry?.description || h.label,
       title: entry?.title || h.label,
     };
-  }).filter((h) => byPath.has(h.path) || h.path === '/coleccion/numismatica/');
+  }).filter((h) => byPath.has(h.path) || nativeHubs.has(h.path));
 
   const lines = [];
 
