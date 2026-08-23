@@ -88,3 +88,39 @@ test('contact form prefills catalog identifier and URL', async ({ page }) => {
   await expect(page.locator('#cf-message')).toHaveValue(/Ficha: NF.test/);
   await expect(page.locator('#cf-message')).toHaveValue(/URL: \/coleccion\/ejemplo\//);
 });
+
+test('pop art hub lists every note under the title', async ({ page }) => {
+  await page.goto('/coleccion/pop-art/', { waitUntil: 'domcontentloaded' });
+  const heading = page.getByRole('heading', { level: 1, name: 'Pop Art' });
+  const cards = page.locator('.catalog-hub-grid a.catalog-banknote-card');
+  const history = page.getByRole('heading', { name: 'Breve Historia del Pop Art' });
+  await expect(heading).toBeVisible();
+  await expect(cards).toHaveCount(5);
+  await expect(cards.first().locator('.font-display')).toHaveText('Pelé — The King');
+  await expect(cards.first()).not.toContainText('$2.00');
+  const headingBox = await heading.boundingBox();
+  const cardBox = await cards.first().boundingBox();
+  const historyBox = await history.boundingBox();
+  expect(headingBox && cardBox && historyBox).toBeTruthy();
+  expect(cardBox!.y).toBeGreaterThan(headingBox!.y);
+  expect(cardBox!.y).toBeLessThan(historyBox!.y);
+  await expect(page.getByRole('link', { name: /Lionel Messi/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Donald Trump/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Warhol/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Life Is Beautiful/ })).toBeVisible();
+});
+
+test('United States catalog omits the Utrecht gold ducat', async ({ page }) => {
+  await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByRole('heading', { name: 'Catálogo de Estados Unidos' })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Ducado de oro|Utrecht|1761/ })).toHaveCount(0);
+});
+
+test('Colombia hub no longer repeats the free-banking promo block', async ({ page }) => {
+  await page.goto('/coleccion/colombia/', { waitUntil: 'domcontentloaded' });
+  await expect(page.getByText(/Las piezas documentadas se agrupan/)).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Banca Libre Colombiana' })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: /Ver el catálogo de Banca Libre/ })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Emisiones Colombianas en el Extranjero' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'Banca Libre', exact: true })).toBeVisible();
+});

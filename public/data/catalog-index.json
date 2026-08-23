@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-23T00:18:54.436Z",
+  "generatedAt": "2026-08-23T03:03:27.336Z",
   "count": 137,
   "pieceCount": 121,
   "stats": {
     "billetes": 221,
     "monedas": 9,
-    "paises": 35,
+    "paises": 36,
     "fichas": 121,
     "paginas": 153
   },
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 31,
+      "count": 30,
       "slug": "estados-unidos"
     },
     {
@@ -149,6 +149,11 @@
       "name": "Papúa Nueva Guinea",
       "count": 1,
       "slug": "papua-nueva-guinea"
+    },
+    {
+      "name": "Provincias Unidas de los Países Bajos",
+      "count": 1,
+      "slug": "provincias-unidas-de-los-paises-bajos"
     },
     {
       "name": "República Dominicana",
@@ -2417,7 +2422,7 @@
       "image": "/uploads/1761-netherland-ducat-utrecht.png",
       "ogType": "article",
       "role": "piece",
-      "country": "Estados Unidos",
+      "country": "Provincias Unidas de los Países Bajos",
       "issuer": "Ceca provincial de Utrecht",
       "denomination": "1 ducado",
       "catalogRef": "KM-7.4 · Friedberg 285 · Numista N# 323147",
@@ -2427,7 +2432,7 @@
       "year": 1761,
       "material": "metal",
       "kind": "coin",
-      "searchText": "ducado de oro de utrecht, 1761 ducado de oro comercial de 1761 acuñado en utrecht, certificado ngc au details (edge filing). ficha con datos técnicos, leyendas e historia. estados unidos ceca provincial de utrecht 1 ducado km-7.4 · friedberg 285 · numista n# 323147 metal coin ducado oro utrecht 1761 paises bajos provincias unidas km-7.4 friedberg 285 ngc au details edge filing 4685927-012 moneda proclamacion australia caballero de pie"
+      "searchText": "ducado de oro de utrecht, 1761 ducado de oro comercial de 1761 acuñado en utrecht, certificado ngc au details (edge filing). ficha con datos técnicos, leyendas e historia. provincias unidas de los países bajos ceca provincial de utrecht 1 ducado km-7.4 · friedberg 285 · numista n# 323147 metal coin ducado oro utrecht 1761 paises bajos provincias unidas km-7.4 friedberg 285 ngc au details edge filing 4685927-012 moneda proclamacion australia caballero de pie"
     },
     {
       "id": "ecuador--100-sucres-1993",

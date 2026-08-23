@@ -163,6 +163,16 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   const text = String(raw || '').trim();
   const lower = text.toLowerCase();
   if (
+    lower.includes('países bajos') ||
+    lower.includes('paises bajos') ||
+    lower.includes('netherland') ||
+    lower.includes('provincias unidas') ||
+    section.includes('ducado') ||
+    String(catalogPath || '').includes('utrecht')
+  ) {
+    return 'Provincias Unidas de los Países Bajos';
+  }
+  if (
     lower.includes('estados unidos de colombia') ||
     lower.includes('estados unidos de nueva granada') ||
     lower.includes('nueva granada') ||
@@ -181,8 +191,9 @@ export function normalizeCatalogCountry(raw, catalogPath) {
   if (lower.includes('panamá') || lower.includes('panama')) return 'Panamá';
   if (lower.includes('españa')) return 'España';
 
+  if (text) return text;
   if (segs.length >= 2 && !HUB_PATHS.has(catalogPath)) return 'Estados Unidos';
-  return text || 'Otros';
+  return 'Otros';
 }
 
 export function isCoinEntry(catalogPath = '', recordKind = '') {

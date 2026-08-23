@@ -16,9 +16,11 @@ interface Props {
   /** Group headings. Use 3 when this grid sits under an existing page h2. */
   headingLevel?: 2 | 3;
   locale?: Locale;
+  /** Sit inside an existing hub `<main>` without repeating max-width/padding. */
+  inset?: boolean;
 }
 
-const { cards, thinNote = false, labelledBy, headingLevel = 2, locale = 'es' } = Astro.props;
+const { cards, thinNote = false, labelledBy, headingLevel = 2, locale = 'es', inset = false } = Astro.props;
 const isEn = locale === 'en';
 const showThinNote = thinNote && cards.length > 0 && cards.length <= 2;
 const inventoryLabel = cards.length === 1 ? t('onePiece', locale) : `${cards.length} ${t('pieces', locale)}`;
@@ -154,7 +156,7 @@ function headingId(prefix: string, name: string): string {
 {
   cards.length > 0 ? (
     <section
-      class:list={['catalog-hub-grid', 'max-w-[1180px]', 'mx-auto', 'px-[var(--page-gutter,24px)]', 'pb-16', hasSections && 'catalog-hub-grid--eras']}
+      class:list={['catalog-hub-grid', !inset && 'max-w-[1180px]', !inset && 'mx-auto', !inset && 'px-[var(--page-gutter,24px)]', 'pb-16', hasSections && 'catalog-hub-grid--eras']}
       aria-label={labelledBy ? undefined : t('hubCards', locale)}
       data-i18n={labelledBy || isEn ? undefined : true}
       data-i18n-target={labelledBy || isEn ? undefined : 'aria-label'}
