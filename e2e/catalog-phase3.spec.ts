@@ -805,6 +805,30 @@ const CATALOG_HUBS = [
   { es: '/coleccion/reserva-federal/', en: '/en/collection/federal-reserve/' },
 ];
 
+test('ficha body copy fills the cream card instead of a 42rem column', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/');
+  const widths = await page.evaluate(() => {
+    const card = document.querySelector(
+      '.catalog-shell [style*="background:#d8d2cd"], .catalog-shell [style*="background: rgb(216, 210, 205)"]',
+    );
+    const paragraph = card?.querySelector('p');
+    if (!card || !paragraph) return null;
+    const cs = getComputedStyle(card);
+    const content =
+      card.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    return {
+      content,
+      paragraph: paragraph.getBoundingClientRect().width,
+      maxWidth: getComputedStyle(paragraph).maxWidth,
+    };
+  });
+  expect(widths).toBeTruthy();
+  expect(widths!.paragraph).toBeGreaterThan(700);
+  expect(Math.abs(widths!.paragraph - widths!.content)).toBeLessThan(8);
+  expect(widths!.maxWidth === 'none' || widths!.maxWidth === '100%').toBeTruthy();
+});
+
 test('body copy on catalog, landings, and editorial pages uses the new page gutter', async ({
   page,
 }) => {

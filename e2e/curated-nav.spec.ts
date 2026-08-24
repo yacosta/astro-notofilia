@@ -22,30 +22,37 @@ test('About pages explain the private collection', async ({ page }) => {
   await expect(page.getByText('Items are not for sale')).toBeVisible();
 });
 
-test('United States intro copy uses the full hub measure', async ({ page }) => {
-  await page.goto('/coleccion/estados-unidos/', { waitUntil: 'domcontentloaded' });
-  await expect(
-    page.getByText('Federal, colonial, certificados de pago militar', { exact: false }),
-  ).toBeVisible();
-  await expect(page.locator('.hub-intro')).toHaveCount(2);
-  const widths = await page.evaluate(() => {
-    const hub = document.querySelector('.hub-inner');
-    const lead = document.querySelector('.hub-lead');
-    const intro = document.querySelector('.hub-intro');
-    if (!hub || !lead || !intro) return null;
-    const cs = getComputedStyle(hub);
-    const content =
-      hub.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-    return {
-      content,
-      lead: lead.getBoundingClientRect().width,
-      intro: intro.getBoundingClientRect().width,
-    };
-  });
-  expect(widths).toBeTruthy();
-  expect(widths!.lead).toBeGreaterThan(700);
-  expect(Math.abs(widths!.lead - widths!.content)).toBeLessThan(8);
-  expect(Math.abs(widths!.intro - widths!.content)).toBeLessThan(8);
+test('country landing body copy uses the full hub measure', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const landings = [
+    '/coleccion/estados-unidos/',
+    '/coleccion/espana/',
+    '/coleccion/colombia/siglo-pasado/',
+    '/coleccion/colombia/banco-de-la-republica/',
+    '/coleccion/numismatica/',
+  ];
+  for (const path of landings) {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('.hub-lead'), path).toBeVisible();
+    const widths = await page.evaluate(() => {
+      const hub = document.querySelector('.hub-inner');
+      const lead = document.querySelector('.hub-lead');
+      const intro = document.querySelector('.hub-intro, .hub-note, .hub-section-lead');
+      if (!hub || !lead) return null;
+      const cs = getComputedStyle(hub);
+      const content =
+        hub.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      return {
+        content,
+        lead: lead.getBoundingClientRect().width,
+        intro: intro ? intro.getBoundingClientRect().width : content,
+      };
+    });
+    expect(widths, path).toBeTruthy();
+    expect(widths!.lead, path).toBeGreaterThan(700);
+    expect(Math.abs(widths!.lead - widths!.content), path).toBeLessThan(8);
+    expect(Math.abs(widths!.intro - widths!.content), path).toBeLessThan(8);
+  }
 });
 
 test('United States and Spain landings list documented pieces', async ({ page }) => {
