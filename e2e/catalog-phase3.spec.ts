@@ -469,24 +469,28 @@ test('retired Tesorería Victory Series page is not a live document', async ({ p
   ).toHaveCount(0);
 });
 
-test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
+test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 and 5 pesos', async ({ page }) => {
   await page.goto('/coleccion/filipinas/');
   const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(3);
   await expect(cards.nth(0)).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
   await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
   await expect(cards.nth(1)).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
+  await expect(cards.nth(2)).toHaveAttribute('href', '/coleccion/filipinas/5-pesos-victory-series-66/');
+  await expect(cards.nth(2)).toContainText('5 Pesos Victory Series No. 66');
 });
 
-test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
+test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 and 5 pesos', async ({ page }) => {
   await page.goto('/en/collection/philippines/');
   const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(3);
   await expect(cards.nth(0)).toHaveAttribute('href', '/en/collection/philippines/1-peso-victory-series-66/');
   await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
   await expect(cards.nth(1)).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
+  await expect(cards.nth(2)).toHaveAttribute('href', '/en/collection/philippines/5-pesos-victory-series-66/');
+  await expect(cards.nth(2)).toContainText('5 Pesos Victory Series No. 66');
 });
 
 test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
@@ -537,6 +541,36 @@ test('English homepage Logros still features the Santa Marta 1820 cuartillo', as
   const card = section.getByRole('link', { name: /Santa Marta — copper ¼ real, 1820/ });
   await expect(card).toBeVisible();
   await expect(card).toHaveAttribute('href', '/en/collection/colombia/santa-marta-quarter-real-1820/');
+});
+
+test('homepage Logros del Mes features the Philippines Victory Series 66 5 pesos', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Filipinas — 5 pesos Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/filipinas/5-pesos-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Certificado del Tesoro de Filipinas de 5 pesos/,
+  );
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'src',
+    '/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc-card.jpg',
+  );
+});
+
+test('English homepage Logros features the Philippines Victory Series 66 5 pesos', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
+  const card = section.getByRole('link', { name: /Philippines — 5 pesos Victory Series 66/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/philippines/5-pesos-victory-series-66/');
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'alt',
+    /Philippines Treasury Certificate of 5 pesos/,
+  );
 });
 
 test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {

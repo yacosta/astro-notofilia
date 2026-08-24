@@ -114,6 +114,15 @@ export const RECENT_PIECES: RecentPiece[] = [
       'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
   },
   {
+    href: '/coleccion/filipinas/5-pesos-victory-series-66/',
+    title: 'Filipinas — 5 pesos Victory Series 66',
+    titleEn: 'Philippines — 5 pesos Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 96a, serial F00618071. McKinley, Dewey y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 96a, serial F00618071. McKinley, Dewey and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66, anverso y reverso',
+  },
+  {
     href: '/coleccion/filipinas/2-pesos-victory-series-66/',
     title: 'Filipinas — 2 pesos Victory Series 66',
     titleEn: 'Philippines — 2 pesos Victory Series 66',

@@ -52,6 +52,11 @@
             "@type": "CreativeWork",
             "name": "2 Pesos — Victory Series No. 66 (Pick 95a)",
             "url": "https://notofilia.com/coleccion/filipinas/2-pesos-victory-series-66/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "5 Pesos — Victory Series No. 66 (Pick 96a)",
+            "url": "https://notofilia.com/coleccion/filipinas/5-pesos-victory-series-66/"
           }
         ]
       }
@@ -98,6 +103,17 @@
         "alt": "Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, anverso con Rizal y reverso azul con sobresello VICTORY",
         "titleEn": "2 Pesos Victory Series No. 66",
         "altEn": "Philippines Treasury Certificate of 2 pesos, Victory Series No. 66, obverse with Rizal and blue reverse with VICTORY overprint"
+      },
+      {
+        "href": "/coleccion/filipinas/5-pesos-victory-series-66/",
+        "title": "5 Pesos Victory Series No. 66",
+        "denomination": "5 Pesos",
+        "year": "1944",
+        "image": "/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg",
+        "imageWebp": "/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.webp",
+        "alt": "Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66, anverso con McKinley y Dewey y reverso ocre con sobresello VICTORY",
+        "titleEn": "5 Pesos Victory Series No. 66",
+        "altEn": "Philippines Treasury Certificate of 5 pesos, Victory Series No. 66, obverse with McKinley and Dewey and ochre reverse with VICTORY overprint"
       }
     ],
     "eyebrow": "Contexto Histórico",

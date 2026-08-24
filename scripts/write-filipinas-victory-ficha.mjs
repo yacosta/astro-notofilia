@@ -382,6 +382,7 @@ function buildTemplate(lang) {
     ? [
         ['/coleccion/filipinas/', 'Colección de Filipinas'],
         ['/coleccion/filipinas/2-pesos-victory-series-66/', 'Dos Pesos Victory Series No. 66'],
+        ['/coleccion/filipinas/5-pesos-victory-series-66/', '5 Pesos Victory Series No. 66'],
         ['/coleccion/veinte-dolares-hawaii-1934/', '$20 Hawaii, 1934 (sobresello de guerra)'],
         ['/glosario/sobresello/', 'Glosario: sobresello'],
         ['/glosario/pick/', 'Glosario: Pick number'],
@@ -389,6 +390,7 @@ function buildTemplate(lang) {
     : [
         ['/en/collection/philippines/', 'Philippines collection'],
         ['/en/collection/philippines/2-pesos-victory-series-66/', 'Two Pesos Victory Series No. 66'],
+        ['/en/collection/philippines/5-pesos-victory-series-66/', '5 Pesos Victory Series No. 66'],
         ['/en/collection/twenty-dollars-hawaii-1934/', '$20 Hawaii, 1934 (wartime overprint)'],
         ['/en/glossary/overprint/', 'Glossary: overprint'],
         ['/en/glossary/pick-number/', 'Glossary: Pick number'],
@@ -634,6 +636,7 @@ const data = {
     related: [
       { href: '/coleccion/filipinas/', title: 'Catálogo de Billetes de Filipinas' },
       { href: '/coleccion/filipinas/2-pesos-victory-series-66/', title: 'Dos Pesos Victory Series No. 66' },
+      { href: '/coleccion/filipinas/5-pesos-victory-series-66/', title: '5 Pesos Victory Series No. 66' },
       { href: '/coleccion/veinte-dolares-hawaii-1934/', title: '$20 Hawaii, 1934' },
       { href: '/glosario/sobresello/', title: 'Sobresello' },
       { href: '/glosario/pick/', title: 'Pick number' },
