@@ -1,4 +1,5 @@
 ---
+import FeaturePage from './FeaturePage.astro';
 import NewWindowHint from './NewWindowHint.astro';
 import { PRIVACY_CONTACT, PRIVACY_EN_PATH, PRIVACY_ES_PATH, PRIVACY_UPDATED } from '../lib/legal';
 
@@ -18,7 +19,7 @@ const cookieBtn = isEs ? 'Configuración de cookies' : 'Cookie settings';
 const mailto = `mailto:${PRIVACY_CONTACT}`;
 const homeHref = isEs ? '/' : '/en/';
 ---
-<article class="max-w-[840px] mx-auto px-5 pt-16 pb-10">
+<FeaturePage variant="policy">
   <nav aria-label={crumbNav} class="text-[14px] tracking-[0.06em] text-muted mb-6">
     <a class="text-muted" href={homeHref}>Notofilia</a>
     <span aria-hidden="true"> / </span>
@@ -292,4 +293,4 @@ const homeHref = isEs ? '/' : '/en/';
       </>
     )}
   </div>
-</article>
+</FeaturePage>
