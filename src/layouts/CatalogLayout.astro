@@ -152,8 +152,8 @@ const catalogZoomHash = createHash('sha256')
       .catalog-shell[data-catalog-hub="colombia"] main,
       .catalog-record-surface[data-catalog-hub="colombia"] {
         max-width: none !important;
-        padding-left: clamp(56px, 10vw, 128px) !important;
-        padding-right: clamp(56px, 10vw, 128px) !important;
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
       }
       .catalog-shell[data-catalog-hub="colombia"] [style*="max-width:680px"],
       .catalog-shell[data-catalog-hub="colombia"] [style*="max-width: 680px"] {
