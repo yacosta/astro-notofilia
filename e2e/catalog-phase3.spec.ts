@@ -164,6 +164,27 @@ test('catalog fichas outside Colombia also show the scan under the title', async
   }
 });
 
+test('Ampliar zoom chip does not paint a diamond over the specimen photo', async ({ page }) => {
+  const samples = [
+    '/coleccion/veinte-dolares-hawaii-1934/',
+    '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
+    '/coleccion/diez-dolares-1934-distritos/',
+    '/coleccion/un-dolar-sello-rojo-1928/',
+  ];
+  for (const path of samples) {
+    const response = await page.goto(path, { waitUntil: 'domcontentloaded' });
+    expect(response?.ok()).toBeTruthy();
+    await page.addStyleTag({ content: '#cookie-banner{display:none!important;}' });
+    await expect(page.locator('[data-zoom-trigger]').first()).toBeVisible();
+    await expect(page.getByText('Ampliar', { exact: true }).first()).toBeVisible();
+    const diamonds = page.locator('[data-zoom-trigger] span[style*="rotate(45deg)"]');
+    const count = await diamonds.count();
+    for (let i = 0; i < count; i += 1) {
+      await expect(diamonds.nth(i)).toBeHidden();
+    }
+  }
+});
+
 test('Colombia catalog card for 10.000 pesos opens the scan under the title', async ({
   page,
 }) => {
