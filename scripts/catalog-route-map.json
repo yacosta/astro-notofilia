@@ -120,6 +120,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-200-pesos-oro-specimen.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-debora-arango.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html"
   },
