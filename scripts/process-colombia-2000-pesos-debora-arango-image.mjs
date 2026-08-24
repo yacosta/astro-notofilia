@@ -26,6 +26,8 @@ const CREAM = { r: 216, g: 210, b: 205, alpha: 1 };
 const SOURCE_CANDIDATES = process.env.SOURCE
   ? [process.env.SOURCE]
   : [
+      path.join(ROOT, 'public/uploads/Colombia 2000 pesos - Error.png'),
+      path.join(ROOT, 'public/uploads/Colombia 2000 pesos - Error.jpg'),
       path.join(ROOT, 'public/uploads/Colombia - BDR 2000pesos Debora Arango.png'),
       path.join(ROOT, 'public/uploads/Colombia - BDR 2000pesos Debora Arango.jpg'),
       path.join(ROOT, 'public/uploads/Colombia - BDR 2000pesos Debora Arango.jpeg'),
