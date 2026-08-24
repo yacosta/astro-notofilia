@@ -209,6 +209,10 @@ const jsonLd = {
         max-width: 42rem;
         margin: 0 0 28px;
       }
+      .hub[data-country="united-states"] .hub-lead,
+      .hub[data-country="united-states"] .hub-intro {
+        max-width: none;
+      }
       .hub-section {
         margin: 0 0 64px;
         padding-top: 40px;
@@ -337,7 +341,7 @@ const jsonLd = {
   <body>
     <a class="skip-link" href="#main-content">{isEn ? 'Skip to content' : 'Saltar al contenido'}</a>
     <SiteHeader locale={locale} path={copy.path} />
-    <div class="hub">
+    <div class="hub" data-country={countryId}>
       <main id="main-content" class="hub-inner" tabindex="-1">
         <nav class="crumbs" aria-label={isEn ? 'Breadcrumb' : 'Migas de pan'}>
           <a href={hrefFor('/')}>{isEn ? 'Home' : 'Inicio'}</a>
@@ -353,7 +357,7 @@ const jsonLd = {
         <span class="hub-kicker">{copy.kicker}</span>
         <h1>{copy.h1}</h1>
         <p class="hub-lead">{copy.lead}</p>
-        {copy.intro.map((paragraph) => <p>{paragraph}</p>)}
+        {copy.intro.map((paragraph) => <p class="hub-intro">{paragraph}</p>)}
 
         {copy.issuersHeading && copy.issuers?.length ? (
           <section class="hub-section" aria-labelledby="issuers-heading">
