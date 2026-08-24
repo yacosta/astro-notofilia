@@ -3,6 +3,7 @@
  * Public editorial & sourcing policy — valuation standards, corrections, authorship.
  */
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import FeaturePage from '../../components/FeaturePage.astro';
 import { SITE } from '../../lib/site';
 import { CLAIM_KINDS, CLAIM_LABELS, CLAIM_DEFAULT_NOTES } from '../../lib/claims';
 import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../lib/editorial';
@@ -48,7 +49,7 @@ const jsonLd = {
   ogType="website"
   jsonLd={jsonLd}
 >
-  <article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12 pb-4">
+  <FeaturePage>
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
       <a class="text-muted" href="/" data-i18n data-en="Home">Inicio</a> <span aria-hidden="true">/</span>
       <span data-i18n data-en="Editorial policy">Política editorial</span>
@@ -186,5 +187,5 @@ const jsonLd = {
         <a href="/politica-privacidad-cookies/">Política de Privacidad y Cookies</a>.
       </p>
     </div>
-  </article>
+  </FeaturePage>
 </BlogLayout>

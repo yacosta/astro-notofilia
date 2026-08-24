@@ -3,6 +3,7 @@
  * English contact form. Spanish /contacto/ is unchanged.
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import { SITE } from '../../../lib/site';
 
 const title = 'Contact | Notofilia';
@@ -33,7 +34,7 @@ const jsonLd = {
 };
 ---
 <BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
-  <article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12 pb-4" data-pagefind-meta="url:/en/contact/">
+  <FeaturePage data-pagefind-meta="url:/en/contact/">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
       <a class="text-muted" href="/en/">Notofilia</a> <span aria-hidden="true">/</span>
       <span>Contact</span>
@@ -161,7 +162,7 @@ const jsonLd = {
         </form>
       </div>
     </div>
-  </article>
+  </FeaturePage>
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
   <script is:inline>

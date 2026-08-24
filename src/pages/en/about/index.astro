@@ -3,6 +3,7 @@
  * About Notofilia — English. Spanish counterpart: /nosotros/
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import { SITE } from '../../../lib/site';
 import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL } from '../../../lib/editorial';
 import { INVENTORY_VOCABULARY_EN } from '../../../lib/stats';
@@ -41,7 +42,7 @@ const jsonLd = {
 };
 ---
 <BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
-  <article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12 pb-4">
+  <FeaturePage>
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
       <a class="text-muted" href="/en/">Home</a> <span aria-hidden="true">/</span>
       <span>About Notofilia</span>
@@ -150,5 +151,5 @@ const jsonLd = {
         (auction result, asking price, catalog valuation) as the record labels it.
       </p>
     </div>
-  </article>
+  </FeaturePage>
 </BlogLayout>

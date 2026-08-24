@@ -143,6 +143,25 @@
 }
 
 @layer components {
+  /*
+   * Feature / editorial page measure. Keep in sync with FeaturePage.astro.
+   * Horizontal inset is --page-gutter only; do not add a second max-width.
+   */
+  .feature-page {
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+  }
+  .feature-page--page {
+    padding-block: 3rem 1rem;
+  }
+  .feature-page--index {
+    padding-block: 3.5rem 1.5rem;
+  }
+  .feature-page--policy {
+    padding-block: 4rem 2.5rem;
+  }
+
   /* Markdown article body (blog + noticias). */
   .prose-notofilia p {
     margin: 0 0 22px;

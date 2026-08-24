@@ -1,0 +1,34 @@
+---
+/**
+ * Shared body template for feature / editorial pages (about, contact,
+ * editorial policy, privacy, glossary, blog and news).
+ *
+ * Encodes the site-wide measure: no inner max-width, horizontal inset from
+ * `--page-gutter` only. New BlogLayout pages should wrap their body here
+ * instead of repeating max-w / padding utilities.
+ */
+interface Props {
+  as?: 'article' | 'div' | 'section';
+  /** Vertical rhythm. Default matches about / contact / article pages. */
+  variant?: 'page' | 'index' | 'policy';
+  class?: string;
+  id?: string;
+  [key: string]: unknown;
+}
+
+const {
+  as: Tag = 'article',
+  variant = 'page',
+  class: className,
+  id,
+  ...attrs
+} = Astro.props;
+---
+<Tag
+  id={id}
+  class:list={['feature-page', `feature-page--${variant}`, 'max-w-content', className]}
+  data-feature-page
+  {...attrs}
+>
+  <slot />
+</Tag>

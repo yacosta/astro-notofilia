@@ -1,5 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import FeaturePage from '../../components/FeaturePage.astro';
 import { titleTag } from '../../lib/posts';
 import {
   GLOSSARY_DESCRIPTION,
@@ -28,7 +29,7 @@ const jsonLd = glossaryIndexJsonLd(terms);
   path={GLOSSARY_PATH}
   jsonLd={jsonLd}
 >
-  <div id="glossary-index" class="max-w-none mx-auto px-[var(--page-gutter)] pt-14 pb-6">
+  <FeaturePage as="div" variant="index" id="glossary-index">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
       <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/" data-i18n data-en="Home">Inicio</a>
       <span aria-hidden="true"> / </span>
@@ -190,7 +191,7 @@ const jsonLd = glossaryIndexJsonLd(terms);
       Términos marcados como sugeridos complementan el vocabulario ya usado en el catálogo con vocablos
       estándar del coleccionismo internacional.
     </p>
-  </div>
+  </FeaturePage>
 </BlogLayout>
 
 <script src="../../client/glossary-filter.js"></script>

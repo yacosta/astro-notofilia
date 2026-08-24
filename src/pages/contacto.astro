@@ -4,6 +4,7 @@
  * legacy /contacto.dc(.html) 301s here.
  */
 import BlogLayout from '../layouts/BlogLayout.astro';
+import FeaturePage from '../components/FeaturePage.astro';
 import { SITE } from '../lib/site';
 
 const title = 'Contacto | Notofilia';
@@ -34,7 +35,7 @@ const jsonLd = {
 };
 ---
 <BlogLayout title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
-  <article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12 pb-4" data-pagefind-meta="url:/contacto/">
+  <FeaturePage data-pagefind-meta="url:/contacto/">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en="Breadcrumb">
       <a class="text-muted" href="/" data-i18n data-en="Notofilia">Notofilia</a> <span aria-hidden="true">/</span>
       <span data-i18n data-en="Contact">Contacto</span>
@@ -164,7 +165,7 @@ const jsonLd = {
         </form>
       </div>
     </div>
-  </article>
+  </FeaturePage>
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
   <script is:inline>

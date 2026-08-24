@@ -813,9 +813,12 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     { path: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/', selector: '#main-content' },
     { path: '/coleccion/estados-unidos/', selector: '.hub-inner' },
     { path: '/coleccion/numismatica/', selector: '.hub-inner' },
-    { path: '/nosotros/', selector: 'article.max-w-content' },
-    { path: '/noticias/paysandu-primer-encuentro-numismatico/', selector: 'article.max-w-content' },
-    { path: '/glosario/', selector: '#glossary-index' },
+    { path: '/nosotros/', selector: '[data-feature-page]' },
+    { path: '/noticias/paysandu-primer-encuentro-numismatico/', selector: '[data-feature-page]' },
+    { path: '/glosario/', selector: '[data-feature-page]' },
+    { path: '/editorial/', selector: '[data-feature-page]' },
+    { path: '/contacto/', selector: '[data-feature-page]' },
+    { path: '/politica-privacidad-cookies/', selector: '[data-feature-page]' },
     { path: '/buscar/', selector: '.buscar-main' },
   ];
   for (const sample of samples) {

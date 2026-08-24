@@ -4,6 +4,7 @@
  * Canonical URL is /politica-privacidad-cookies/; legacy .dc variants 301 here.
  */
 import BlogLayout from '../layouts/BlogLayout.astro';
+import FeaturePage from '../components/FeaturePage.astro';
 import { SITE } from '../lib/site';
 
 const title = 'Política de Privacidad y Cookies | Notofilia';
@@ -44,7 +45,7 @@ const tableHead = 'text-left px-3 py-2.5 font-semibold';
 const td = 'px-3 py-2.5';
 ---
 <BlogLayout title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
-  <div class="max-w-none mx-auto px-[var(--page-gutter)] pt-16 pb-10" data-privacy-root data-pagefind-meta="url:/politica-privacidad-cookies/">
+  <FeaturePage as="div" variant="policy" data-privacy-root data-pagefind-meta="url:/politica-privacidad-cookies/">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Miga de pan">
       <a class="text-muted" href="/">Notofilia</a>
       <span class="text-muted mx-2" aria-hidden="true">/</span>
@@ -129,5 +130,5 @@ const td = 'px-3 py-2.5';
       <p class="text-[17px] leading-[1.7] m-0">Podemos actualizar esta Política ante cambios legislativos, técnicos o de servicio. Publicaremos cualquier cambio en esta misma página, indicando la fecha de la última actualización.</p>
       <p class="text-[14px] leading-[1.6] text-muted mt-9 mb-0 italic">Nota: este documento es una plantilla informativa general y no constituye asesoramiento jurídico. Se recomienda su revisión por un profesional del derecho especializado en protección de datos.</p>
     </article>
-  </div>
+  </FeaturePage>
 </BlogLayout>

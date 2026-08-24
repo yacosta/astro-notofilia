@@ -3,6 +3,7 @@
  * English editorial & sourcing policy. Spanish /editorial/ is unchanged.
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import { SITE } from '../../../lib/site';
 import { CLAIM_KINDS } from '../../../lib/claims';
 import { EDITORIAL_TEAM, personJsonLd, WIKIPEDIA_NOTAFILIA_URL, WIKIPEDIA_NOTOFILIA_ARCHIVE_URL } from '../../../lib/editorial';
@@ -52,7 +53,7 @@ const jsonLd = {
   ogType="website"
   jsonLd={jsonLd}
 >
-  <article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12 pb-4">
+  <FeaturePage>
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Breadcrumb">
       <a class="text-muted" href="/en/">Home</a> <span aria-hidden="true">/</span>
       <span>Editorial policy</span>
@@ -186,5 +187,5 @@ const jsonLd = {
         <a href="/en/privacy-cookies/">Privacy and Cookie Policy</a>.
       </p>
     </div>
-  </article>
+  </FeaturePage>
 </BlogLayout>
