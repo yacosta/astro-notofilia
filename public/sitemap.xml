@@ -380,6 +380,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-2000-pesos-oro/" />
@@ -1843,6 +1852,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-200-pesos-oro-specimen/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/" />
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/" />
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
