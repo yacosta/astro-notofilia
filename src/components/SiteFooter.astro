@@ -60,12 +60,12 @@ const linkClass =
 <footer
   class:list={[
     isHome
-      ? 'relative z-[1] max-w-content mx-auto pt-[72px] px-6 pb-10'
+      ? 'relative z-[1] max-w-content mx-auto pt-[72px] px-[var(--page-gutter)] pb-10'
       : 'border-t border-line mt-24 pt-14 pb-10',
   ]}
 >
   <nav
-    class:list={['footer-nav', !isHome && 'max-w-content mx-auto px-6']}
+    class:list={['footer-nav', !isHome && 'max-w-content mx-auto px-[var(--page-gutter)]']}
     aria-label={isEn ? 'Footer' : 'Pie de página'}
   >
     <div class="footer-nav__grid">
@@ -84,7 +84,7 @@ const linkClass =
     </div>
   </nav>
 
-  <div class:list={['footer-meta', !isHome && 'max-w-content mx-auto px-6']}>
+  <div class:list={['footer-meta', !isHome && 'max-w-content mx-auto px-[var(--page-gutter)]']}>
     <span class:list={['text-[13px] tracking-[0.18em] uppercase text-muted', isHome && 'font-serif']}>
       {isEn ? 'Copyright 2026 Notofilia. All Rights Reserved.' : 'Copyright 2026 Notofilia. Todos los derechos reservados.'}
     </span>

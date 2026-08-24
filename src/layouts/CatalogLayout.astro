@@ -87,7 +87,6 @@ const cards = COLOMBIA_HUB_PATHS.has(props.path)
       ? popArtHubCards(rawCards)
       : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
-const wideGutterHub = isHub;
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 // English URLs must receive a human English `template` — never wrap Spanish HTML.
 const catalogBody = locale === 'en' ? props.template : withI18nMarkup(props.template);
@@ -145,12 +144,9 @@ const catalogZoomHash = createHash('sha256')
         padding-left: var(--page-gutter) !important;
         padding-right: var(--page-gutter) !important;
       }
-      /* Frozen hub templates still ship max-width:1180px and 24px padding.
-         Override the side inset on every astro-hub (ES and EN). */
-      body[data-wide-gutter-hub] .catalog-record-surface,
-      body[data-wide-gutter-hub] .catalog-shell main {
-        padding-left: clamp(48px, 16vw, 220px) !important;
-        padding-right: clamp(48px, 16vw, 220px) !important;
+      .catalog-record-surface {
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
       }
       /* Require the ficha card’s radius so the 6px “Ampliar” diamond
          (also background:#d8d2cd) does not inherit card padding/shadow. */
@@ -339,7 +335,7 @@ const catalogZoomHash = createHash('sha256')
       }
     </style>
   </head>
-  <body data-wide-gutter-hub={wideGutterHub ? '' : undefined}>
+  <body>
     <a
       href="#main-content"
       class="absolute left-[-9999px] top-0 z-[200] bg-cream text-bg px-4 py-[10px] rounded-br-[6px] font-semibold no-underline focus:left-0"

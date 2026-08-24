@@ -17,7 +17,7 @@ interface Props {
 const { locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 ---
-<section class="relative z-[1] bg-bg px-6 py-16">
+<section class="relative z-[1] bg-bg px-[var(--page-gutter)] py-16">
   <div class="max-w-content mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
     <div class="min-h-[120px]"><!-- Col 1 — reserved --></div>
     <div class="min-h-[120px] flex items-center justify-center">
