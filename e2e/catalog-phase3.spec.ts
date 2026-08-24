@@ -779,26 +779,46 @@ test('coins have a dedicated numismática catalog page', async ({ page }) => {
 });
 
 test('spanish colonial catalog shows grouped coin cards', async ({ page }) => {
-  await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/coleccion/moneda-colonial-espanola/');
   await expect(page.getByRole('heading', { name: 'Catálogo de Moneda Colonial Española' })).toBeVisible();
   await expect(page.locator('.catalog-banknote-card')).toHaveCount(7);
   await expect(page.getByRole('heading', { name: 'Reinado de Felipe V' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Reinado de Carlos III' })).toBeVisible();
+});
 
-  const main = page.locator('#main-content');
-  const padLeft = await main.evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
-  expect(padLeft).toBeGreaterThanOrEqual(200);
+const CATALOG_HUBS = [
+  { es: '/coleccion/billete-obsoleto-estados-unidos/', en: '/en/collection/obsolete-united-states-banknotes/' },
+  { es: '/coleccion/certificados-de-pago-militar/', en: '/en/collection/military-payment-certificates/' },
+  { es: '/coleccion/colombia/banca-libre/', en: '/en/collection/colombia/free-banking/' },
+  { es: '/coleccion/colombia/emisiones-en-el-extranjero/', en: '/en/collection/colombia/issues-printed-abroad/' },
+  { es: '/coleccion/colombia/', en: '/en/collection/colombia/' },
+  { es: '/coleccion/departamento-del-tesoro-de-ee-uu/', en: '/en/collection/us-department-of-the-treasury/' },
+  { es: '/coleccion/ecuador/', en: '/en/collection/ecuador/' },
+  { es: '/coleccion/emisiones-promocionales/', en: '/en/collection/promotional-issues/' },
+  { es: '/coleccion/filipinas/', en: '/en/collection/philippines/' },
+  { es: '/coleccion/food-coupons-usda/', en: '/en/collection/usda-food-coupons/' },
+  { es: '/coleccion/moneda-colonial-espanola/', en: '/en/collection/spanish-colonial-coinage/' },
+  { es: '/coleccion/moneda-colonial/', en: '/en/collection/colonial-paper-money/' },
+  { es: '/coleccion/polimero-mundial/', en: '/en/collection/world-polymer/' },
+  { es: '/coleccion/pop-art/', en: '/en/collection/pop-art/' },
+  { es: '/coleccion/puerto-rico/', en: '/en/collection/puerto-rico/' },
+  { es: '/coleccion/reserva-federal/', en: '/en/collection/federal-reserve/' },
+];
 
-  const gridBox = await page.locator('.catalog-hub-grid').boundingBox();
-  const mainBox = await main.boundingBox();
-  expect(gridBox).toBeTruthy();
-  expect(mainBox).toBeTruthy();
-  expect(gridBox!.x).toBeGreaterThanOrEqual(mainBox!.x + padLeft - 2);
+test('catalog hubs use a wide inset and keep the card grid inside main', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
 
-  await page.goto('/en/collection/spanish-colonial-coinage/');
-  const enPad = await page.locator('#main-content').evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
-  expect(enPad).toBeGreaterThanOrEqual(200);
+  for (const hub of CATALOG_HUBS) {
+    for (const path of [hub.es, hub.en]) {
+      await page.goto(path);
+      const main = page.locator('#main-content');
+      await expect(main, path).toBeVisible();
+      const padLeft = await main.evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
+      expect(padLeft, path).toBeGreaterThanOrEqual(200);
+      await expect(page.locator('#main-content .catalog-hub-grid'), path).toHaveCount(1);
+      await expect(page.locator('body > .catalog-hub-grid'), path).toHaveCount(0);
+    }
+  }
 });
 
 test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ page }) => {
