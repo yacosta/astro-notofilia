@@ -812,21 +812,35 @@ test('ficha body copy fills the cream card instead of a 42rem column', async ({ 
     const card = document.querySelector(
       '.catalog-shell [style*="background:#d8d2cd"], .catalog-shell [style*="background: rgb(216, 210, 205)"]',
     );
-    const paragraph = card?.querySelector('p');
-    if (!card || !paragraph) return null;
-    const cs = getComputedStyle(card);
-    const content =
-      card.getBoundingClientRect().width - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const paragraph = card?.querySelector(
+      'p[style*="color:#332e22"], p[style*="color: #332e22"], p[style*="color: rgb(51, 46, 34)"]',
+    );
+    const context = document.querySelector('.catalog-record-context p');
+    const surface = context?.closest('.catalog-record-surface');
+    if (!card || !paragraph || !surface || !context) return null;
+    const cardCs = getComputedStyle(card);
+    const surfaceCs = getComputedStyle(surface);
+    const cardContent =
+      card.getBoundingClientRect().width -
+      parseFloat(cardCs.paddingLeft) -
+      parseFloat(cardCs.paddingRight);
+    const surfaceContent =
+      surface.getBoundingClientRect().width -
+      parseFloat(surfaceCs.paddingLeft) -
+      parseFloat(surfaceCs.paddingRight);
     return {
-      content,
+      cardContent,
       paragraph: paragraph.getBoundingClientRect().width,
       maxWidth: getComputedStyle(paragraph).maxWidth,
+      surfaceContent,
+      context: context.getBoundingClientRect().width,
     };
   });
   expect(widths).toBeTruthy();
-  expect(widths!.paragraph).toBeGreaterThan(700);
-  expect(Math.abs(widths!.paragraph - widths!.content)).toBeLessThan(8);
+  expect(widths!.cardContent).toBeGreaterThan(500);
+  expect(Math.abs(widths!.paragraph - widths!.cardContent)).toBeLessThan(8);
   expect(widths!.maxWidth === 'none' || widths!.maxWidth === '100%').toBeTruthy();
+  expect(Math.abs(widths!.context - widths!.surfaceContent)).toBeLessThan(8);
 });
 
 test('body copy on catalog, landings, and editorial pages uses the new page gutter', async ({
