@@ -760,6 +760,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | other | `/coleccion/ecuador/` | `/en/collection/ecuador/` | hub/other |
 | banknote | `/coleccion/filipinas/1-peso-victory-series-66/` | `/en/collection/philippines/1-peso-victory-series-66/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/filipinas/2-pesos-victory-series-66/` | `/en/collection/philippines/2-pesos-victory-series-66/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/filipinas/5-pesos-victory-series-66/` | `/en/collection/philippines/5-pesos-victory-series-66/` | catalog IDs stay untranslated in copy |
 | other | `/coleccion/filipinas/` | `/en/collection/philippines/` | hub/other |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/` | `/en/collection/promotional-issues/food-coupon-1-dollar-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/` | `/en/collection/promotional-issues/food-coupon-10-dollars-2000/` | translated |
@@ -769,6 +770,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | other | `/coleccion/emisiones-promocionales/` | `/en/collection/promotional-issues/` | hub/other |
 | other | `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` | hub/other |
 | banknote | `/coleccion/giori-press-test-note/` | `/en/collection/giori-press-test-note/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/giori-test-note-lincoln-memorial/` | `/en/collection/giori-test-note-lincoln-memorial/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/hagerstown-bank-maryland/` | `/en/collection/hagerstown-bank-maryland/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/` | `/en/collection/colonial-paper-money/new-jersey-6-shillings-1776/` | catalog IDs stay untranslated in copy |
 | profile | `/coleccion/moneda-colonial/perfil-alexander-hamilton/` | `/en/collection/colonial-paper-money/profile-alexander-hamilton/` | proper-noun profile: translate `perfil` only |

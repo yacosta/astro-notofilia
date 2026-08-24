@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-24T03:20:18.944Z",
-  "count": 138,
-  "pieceCount": 122,
+  "generatedAt": "2026-08-24T18:22:56.595Z",
+  "count": 140,
+  "pieceCount": 124,
   "stats": {
-    "billetes": 222,
+    "billetes": 224,
     "monedas": 9,
     "paises": 36,
-    "fichas": 122,
-    "paginas": 154
+    "fichas": 124,
+    "paginas": 156
   },
   "countries": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 30,
+      "count": 31,
       "slug": "estados-unidos"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "name": "Filipinas",
-      "count": 2,
+      "count": 3,
       "slug": "filipinas"
     },
     {
@@ -2734,6 +2734,41 @@
       "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
     },
     {
+      "id": "filipinas--5-pesos-victory-series-66",
+      "path": "/coleccion/filipinas/5-pesos-victory-series-66/",
+      "title": "5 Pesos Victory 66, Filipinas (Pick 96a)",
+      "description": "Tesoro de Filipinas, 5 pesos Victory Series No. 66 (1944), Pick 96a: McKinley, Dewey y VICTORY. Colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "mckinley",
+        "dewey",
+        "pick 96a",
+        "pick 119",
+        "osmeña",
+        "cinco pesos"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/5-pesos-victory-series-66/",
+      "image": "/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "5 pesos",
+      "catalogRef": "Pick 96a",
+      "condition": "",
+      "emissionType": "Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "5 pesos victory 66, filipinas (pick 96a) tesoro de filipinas, 5 pesos victory series no. 66 (1944), pick 96a: mckinley, dewey y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 5 pesos pick 96a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate mckinley dewey pick 96a pick 119 osmeña cinco pesos"
+    },
+    {
       "id": "giori-press-test-note",
       "path": "/coleccion/giori-press-test-note/",
       "title": "Nota de Prueba de la Prensa Giori",
@@ -2761,6 +2796,37 @@
       "material": "",
       "kind": "banknote",
       "searchText": "nota de prueba de la prensa giori ficha de catálogo numismático: nota de prueba de la prensa giori, estados unidos, con los retratos de lincoln, washington y grant, sin denominación. estados unidos ninguna — no es un billete de curso legal, sino una plancha de prueba técnica sin número friedberg ni pick; catalogada en la literatura especializada de exonumia como &ldquo;giori press test note&rdquo; banknote giori press test note nota de prueba bureau of engraving and printing american can company notafilia numismática de estados unidos"
+    },
+    {
+      "id": "giori-test-note-lincoln-memorial",
+      "path": "/coleccion/giori-test-note-lincoln-memorial/",
+      "title": "Nota Giori Lincoln Memorial, c. 1970",
+      "description": "Nota de prueba Giori de los años 1970: anverso verde del Lincoln Memorial y reverso en blanco. Sin curso legal. Colección Notofilia.",
+      "keywords": [
+        "giori test note",
+        "lincoln memorial",
+        "nota de prueba",
+        "bureau of engraving and printing",
+        "press test note",
+        "uniface",
+        "notafilia",
+        "numismática de estados unidos"
+      ],
+      "url": "https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/",
+      "image": "/uploads/us-giori-test-note-lincoln-memorial-green-1fa6c8b4.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Ensayo de prensa Giori (sin entidad emisora de curso legal)",
+      "denomination": "Ninguna — no es curso legal",
+      "catalogRef": "Sin Friedberg ni Pick",
+      "condition": "",
+      "emissionType": "Nota de prueba de imprenta ( press test note ), uniface",
+      "dateLabel": "",
+      "year": 1970,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "nota giori lincoln memorial, c. 1970 nota de prueba giori de los años 1970: anverso verde del lincoln memorial y reverso en blanco. sin curso legal. colección notofilia. estados unidos ensayo de prensa giori (sin entidad emisora de curso legal) ninguna — no es curso legal sin friedberg ni pick papel banknote giori test note lincoln memorial nota de prueba bureau of engraving and printing press test note uniface notafilia numismática de estados unidos"
     },
     {
       "id": "hagerstown-bank-maryland",

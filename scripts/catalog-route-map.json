@@ -304,6 +304,10 @@
     "legacyFile": "billete-filipinas-2-pesos-victory-series-66.dc.html"
   },
   {
+    "route": "/coleccion/filipinas/5-pesos-victory-series-66/",
+    "legacyFile": "billete-filipinas-5-pesos-victory-series-66.dc.html"
+  },
+  {
     "route": "/coleccion/emisiones-promocionales/",
     "legacyFile": "catalogo-emisiones-promocionales.dc.html"
   },
@@ -334,6 +338,10 @@
   {
     "route": "/coleccion/giori-press-test-note/",
     "legacyFile": "billete-giori-press-test-note.dc.html"
+  },
+  {
+    "route": "/coleccion/giori-test-note-lincoln-memorial/",
+    "legacyFile": "billete-giori-test-note-lincoln-memorial.dc.html"
   },
   {
     "route": "/coleccion/hagerstown-bank-maryland/",
