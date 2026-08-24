@@ -1,0 +1,295 @@
+---
+import NewWindowHint from './NewWindowHint.astro';
+import { PRIVACY_CONTACT, PRIVACY_EN_PATH, PRIVACY_ES_PATH, PRIVACY_UPDATED } from '../lib/legal';
+
+export interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const isEs = lang === 'es';
+const title = isEs ? 'Política de Privacidad y Cookies' : 'Privacy and Cookie Policy';
+const crumbNav = isEs ? 'Miga de pan' : 'Breadcrumb';
+const langNav = isEs ? 'Idioma' : 'Language';
+const updatedLabel = isEs
+  ? 'Vigente / última actualización: 14 de agosto de 2026'
+  : 'Effective / last updated: August 14, 2026';
+const cookieBtn = isEs ? 'Configuración de cookies' : 'Cookie settings';
+const mailto = `mailto:${PRIVACY_CONTACT}`;
+const homeHref = isEs ? '/' : '/en/';
+---
+<article class="max-w-[840px] mx-auto px-5 pt-16 pb-10">
+  <nav aria-label={crumbNav} class="text-[14px] tracking-[0.06em] text-muted mb-6">
+    <a class="text-muted" href={homeHref}>Notofilia</a>
+    <span aria-hidden="true"> / </span>
+    <span>{title}</span>
+  </nav>
+
+  <div class="flex items-start justify-between gap-5 flex-wrap mb-2.5">
+    <h1 class="font-display font-normal text-[clamp(28px,4vw,42px)] text-cream m-0 leading-[1.12]">
+      {title}
+    </h1>
+    <nav
+      aria-label={langNav}
+      class="flex-shrink-0 flex items-center bg-[rgba(10,10,9,0.35)] border border-line-input rounded-full p-[3px]"
+    >
+      {isEs ? (
+        <span
+          aria-current="page"
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-[18px] rounded-full font-serif font-semibold text-[13px] tracking-[0.08em] bg-[rgba(231,222,201,0.9)] text-bg"
+        >Español</span>
+      ) : (
+        <a
+          href={PRIVACY_ES_PATH}
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-[18px] rounded-full font-serif font-semibold text-[13px] tracking-[0.08em] text-cream no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+        >Español</a>
+      )}
+      {isEs ? (
+        <a
+          href={PRIVACY_EN_PATH}
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-[18px] rounded-full font-serif font-semibold text-[13px] tracking-[0.08em] text-cream no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
+        >English</a>
+      ) : (
+        <span
+          aria-current="page"
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-[18px] rounded-full font-serif font-semibold text-[13px] tracking-[0.08em] bg-[rgba(231,222,201,0.9)] text-bg"
+        >English</span>
+      )}
+    </nav>
+  </div>
+  <p class="text-[16px] text-muted m-0 mb-9">
+    <time datetime={PRIVACY_UPDATED}>{updatedLabel}</time>
+  </p>
+
+  <div class="prose-notofilia text-[17px] leading-[1.7] text-cream-dim">
+    {isEs ? (
+      <>
+        <p>Esta Política de Privacidad y Cookies (la «Política») explica cómo notofilia.com («el Sitio», «nosotros») recopila, utiliza y protege los datos personales de quienes visitan o interactúan con el Sitio, en cumplimiento del Reglamento (UE) 2016/679 (RGPD), la Ley Orgánica 3/2018 (LOPDGDD) y, para usuarios en Colombia, la Ley 1581 de 2012.</p>
+
+        <h2>1. Responsable del tratamiento</h2>
+        <ul>
+          <li><strong>Titular:</strong> Notofilia</li>
+          <li><strong>Domicilio:</strong> 407 Lincoln Rd. Suite 6H PMB 7209, Miami Beach, Florida, 33139, Estados Unidos</li>
+          <li><strong>Correo de contacto:</strong> <a href={mailto}>{PRIVACY_CONTACT}</a></li>
+        </ul>
+
+        <h2>2. Datos que recopilamos y finalidades</h2>
+        <p><strong>Formulario de suscripción:</strong> nombre y correo electrónico, con la finalidad de enviarle novedades del Sitio. El formulario del pie de página se envía a <strong>Mailchimp (Intuit Inc., EE. UU.)</strong> en notofilia.us11.list-manage.com. Al suscribirse, sus datos se transfieren a EE. UU. bajo las salvaguardas contractuales de Mailchimp. El envío abre una página de Mailchimp en una ventana nueva.</p>
+        <p><strong>Analítica:</strong> este sitio no carga Google Analytics 4 ni otros identificadores analíticos desde su propio JavaScript. El aviso de cookies permite aceptar o rechazar cookies no esenciales futuras; si más adelante se añaden herramientas de analítica, no se cargarán hasta que usted preste su consentimiento.</p>
+        <p><strong>Métricas en el borde:</strong> Cloudflare puede procesar métricas de tráfico agregadas en el borde (edge); no las inicializa el JavaScript de primera parte del Sitio.</p>
+        <p><strong>Cookies técnicas de seguridad:</strong> Cloudflare instala cookies estrictamente necesarias (por ejemplo <code>__cf_bm</code>) para la seguridad del Sitio, exentas de consentimiento.</p>
+        <p><strong>Preferencia de consentimiento:</strong> su elección (aceptar o rechazar) se guarda en el almacenamiento local del navegador (<code>notofilia_cookie_consent</code> = accepted|rejected), no como cookie HTTP.</p>
+
+        <h2>3. Base jurídica de cada tratamiento</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Tratamiento</th>
+                <th scope="col">Base jurídica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Envío de newsletter</td><td>Consentimiento (art. 6.1.a RGPD)</td></tr>
+              <tr><td>Cookies analíticas o no esenciales futuras</td><td>Consentimiento (art. 6.1.a RGPD). Hoy no se cargan.</td></tr>
+              <tr><td>Métricas agregadas de Cloudflare en el borde</td><td>No las inicializa el JavaScript de primera parte del Sitio</td></tr>
+              <tr><td>Cookies técnicas de seguridad</td><td>Interés legítimo (art. 6.1.f RGPD)</td></tr>
+              <tr><td>Preferencia de consentimiento (localStorage)</td><td>Interés legítimo / gestión del consentimiento</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Destinatarios y encargados del tratamiento</h2>
+        <p>Sus datos pueden ser tratados por <strong>Mailchimp — Intuit Inc.</strong> (newsletter) y <strong>Cloudflare, Inc.</strong> (alojamiento y seguridad). No cedemos ni vendemos sus datos a terceros con fines comerciales. Google LLC no figura como encargado de analítica porque este código no implementa Google Analytics.</p>
+
+        <h2>5. Transferencias internacionales</h2>
+        <p>Mailchimp/Intuit y Cloudflare están establecidos en Estados Unidos. Las transferencias se amparan en las Cláusulas Contractuales Tipo u otro mecanismo equivalente reconocido (incluido, cuando aplique, el Marco de Privacidad de Datos UE-EE. UU.).</p>
+
+        <h2>6. Plazos de conservación</h2>
+        <ul>
+          <li>Datos de suscriptores del boletín: mientras la suscripción esté activa; se dejan de usar al darse de baja.</li>
+          <li>Elección de consentimiento: en localStorage hasta que usted la borre (datos del sitio o almacenamiento del navegador).</li>
+          <li>Cookies técnicas de seguridad (<code>__cf_bm</code>): hasta unos 30 minutos, según Cloudflare.</li>
+          <li>Registros de Cloudflare: según las políticas de Cloudflare, Inc.</li>
+        </ul>
+
+        <h2>7. Derechos del usuario</h2>
+        <p>Usted tiene derecho a acceder, rectificar, suprimir, oponerse, solicitar la portabilidad, limitar el tratamiento y retirar su consentimiento en cualquier momento, conforme al RGPD, la LOPDGDD y la Ley 1581 de Colombia. Puede ejercerlos escribiendo a <a href={mailto}>{PRIVACY_CONTACT}</a>.</p>
+        <p>
+          Si considera que sus derechos no han sido atendidos, puede reclamar ante la{' '}
+          <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">
+            Agencia Española de Protección de Datos (AEPD)
+            <NewWindowHint lang="es" />
+          </a>
+          , la{' '}
+          <a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer">
+            Superintendencia de Industria y Comercio (SIC)
+            <NewWindowHint lang="es" />
+          </a>
+          {' '}de Colombia, o la autoridad de su país de residencia.
+        </p>
+
+        <h2>8. Política de cookies</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Finalidad</th>
+                <th scope="col">Duración</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>__cf_bm</td>
+                <td>Cloudflare</td>
+                <td>Seguridad, mitigar tráfico malicioso</td>
+                <td>unos 30 min</td>
+                <td>Necesaria</td>
+              </tr>
+              <tr>
+                <td>notofilia_cookie_consent</td>
+                <td>Notofilia (localStorage)</td>
+                <td>Recordar aceptar o rechazar cookies no esenciales</td>
+                <td>Hasta que usted la borre</td>
+                <td>Preferencia (no es cookie HTTP)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Puede retirar o cambiar su consentimiento con el botón siguiente, o borrando los datos de este sitio en el navegador. También puede bloquear cookies desde Chrome, Firefox, Safari o Edge; ello puede afectar cookies técnicas necesarias.</p>
+        <p>
+          <button
+            type="button"
+            data-cookie-settings
+            class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-6 py-3 m-0 font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-bg bg-cream border border-cream rounded-full cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+          >{cookieBtn}</button>
+        </p>
+
+        <h2>9. Baja de la newsletter</h2>
+        <p>Todos los correos incluyen un enlace de «darse de baja» al final del mensaje. Al usarlo, dejará de recibir comunicaciones de forma inmediata.</p>
+
+        <h2>10. Cambios en esta política</h2>
+        <p>Podemos actualizar esta Política ante cambios legislativos, técnicos o de servicio. Publicaremos cualquier cambio en esta misma página, indicando la fecha de la última actualización.</p>
+
+        <p class="italic text-[14px] leading-[1.6] text-muted">Esta página es informativa y no constituye asesoramiento jurídico. Un profesional del derecho especializado en protección de datos debería revisarla.</p>
+      </>
+    ) : (
+      <>
+        <p>This Privacy and Cookie Policy (the “Policy”) explains how notofilia.com (“the Site,” “we”) collects, uses, and protects the personal data of visitors, in compliance with Regulation (EU) 2016/679 (GDPR), Spain’s Organic Law 3/2018 (LOPDGDD), and, for users in Colombia, Law 1581 of 2012.</p>
+
+        <h2>1. Data controller</h2>
+        <ul>
+          <li><strong>Owner:</strong> Notofilia</li>
+          <li><strong>Address:</strong> 407 Lincoln Rd. Suite 6H PMB 7209, Miami Beach, Florida, 33139, United States</li>
+          <li><strong>Contact email:</strong> <a href={mailto}>{PRIVACY_CONTACT}</a></li>
+        </ul>
+
+        <h2>2. Data we collect and purposes</h2>
+        <p><strong>Subscription form:</strong> first name and email, to send Site updates. The footer form posts to <strong>Mailchimp (Intuit Inc., USA)</strong> at notofilia.us11.list-manage.com. By subscribing, your data is transferred to the USA under Mailchimp’s contractual safeguards. Submit opens a Mailchimp page in a new window.</p>
+        <p><strong>Analytics:</strong> this site does not load Google Analytics 4 or other analytics identifiers from its own JavaScript. The cookie notice lets you accept or reject future non-essential cookies; if analytics tools are added later, they will not load until you give consent.</p>
+        <p><strong>Edge metrics:</strong> Cloudflare may process aggregated traffic metrics at the edge; it is not initialized by first-party site JavaScript.</p>
+        <p><strong>Technical security cookies:</strong> Cloudflare places strictly necessary cookies (for example <code>__cf_bm</code>) for Site security, exempt from consent.</p>
+        <p><strong>Consent preference:</strong> your choice (accept or reject) is stored in browser localStorage (<code>notofilia_cookie_consent</code> = accepted|rejected), not as an HTTP cookie.</p>
+
+        <h2>3. Legal basis for each processing activity</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Processing activity</th>
+                <th scope="col">Legal basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Newsletter sending</td><td>Consent (Art. 6(1)(a) GDPR)</td></tr>
+              <tr><td>Future analytics or non-essential cookies</td><td>Consent (Art. 6(1)(a) GDPR). None are loaded today.</td></tr>
+              <tr><td>Cloudflare aggregated edge metrics</td><td>Not initialized by first-party site JavaScript</td></tr>
+              <tr><td>Technical security cookies</td><td>Legitimate interest (Art. 6(1)(f) GDPR)</td></tr>
+              <tr><td>Consent preference (localStorage)</td><td>Legitimate interest / consent management</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Recipients and data processors</h2>
+        <p>Your data may be processed by <strong>Mailchimp — Intuit Inc.</strong> (newsletter) and <strong>Cloudflare, Inc.</strong> (hosting and security). We do not sell or share your data with third parties for commercial purposes. Google LLC is not listed as an analytics processor because this codebase does not implement Google Analytics.</p>
+
+        <h2>5. International data transfers</h2>
+        <p>Mailchimp/Intuit and Cloudflare are established in the United States. Transfers rely on Standard Contractual Clauses or an equivalent recognized mechanism (including, where applicable, the EU-U.S. Data Privacy Framework).</p>
+
+        <h2>6. Data retention periods</h2>
+        <ul>
+          <li>Newsletter subscriber data: while the subscription is active; processing stops when you unsubscribe.</li>
+          <li>Consent choice: in localStorage until you clear it (site data or browser storage).</li>
+          <li>Technical security cookies (<code>__cf_bm</code>): up to about 30 minutes, per Cloudflare.</li>
+          <li>Cloudflare logs: according to the policies of Cloudflare, Inc.</li>
+        </ul>
+
+        <h2>7. User rights</h2>
+        <p>You may access, rectify, erase, object to, request portability of, restrict processing of, and withdraw consent for your data at any time under the GDPR, LOPDGDD, and Colombia’s Law 1581, by writing to <a href={mailto}>{PRIVACY_CONTACT}</a>.</p>
+        <p>
+          If your rights are not adequately addressed, you may file a complaint with the{' '}
+          <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">
+            Spanish Data Protection Agency (AEPD)
+            <NewWindowHint lang="en" />
+          </a>
+          , the{' '}
+          <a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer">
+            Superintendence of Industry and Commerce (SIC)
+            <NewWindowHint lang="en" />
+          </a>
+          {' '}of Colombia, or your country’s data protection authority.
+        </p>
+
+        <h2>8. Cookie policy</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Provider</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>__cf_bm</td>
+                <td>Cloudflare</td>
+                <td>Security, mitigates malicious traffic</td>
+                <td>about 30 min</td>
+                <td>Necessary</td>
+              </tr>
+              <tr>
+                <td>notofilia_cookie_consent</td>
+                <td>Notofilia (localStorage)</td>
+                <td>Remembers accept or reject for non-essential cookies</td>
+                <td>Until you clear it</td>
+                <td>Preference (not an HTTP cookie)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>You can withdraw or change consent with the button below, or by clearing this site’s data in your browser. You can also block cookies via Chrome, Firefox, Safari, or Edge settings; that may affect strictly necessary cookies.</p>
+        <p>
+          <button
+            type="button"
+            data-cookie-settings
+            class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-6 py-3 m-0 font-serif font-semibold text-[14px] tracking-[0.1em] uppercase text-bg bg-cream border border-cream rounded-full cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
+          >{cookieBtn}</button>
+        </p>
+
+        <h2>9. Newsletter unsubscribe</h2>
+        <p>Every email includes an “unsubscribe” link at the bottom. Clicking it stops our communications immediately.</p>
+
+        <h2>10. Changes to this policy</h2>
+        <p>We may update this Policy to reflect legislative, technical, or service changes. Any changes will be published on this same page, indicating the last update date.</p>
+
+        <p class="italic text-[14px] leading-[1.6] text-muted">This page is informational and does not constitute legal advice. Data-protection counsel should review it.</p>
+      </>
+    )}
+  </div>
+</article>
