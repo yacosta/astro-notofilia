@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-23T12:13:53.866Z",
-  "count": 137,
-  "pieceCount": 121,
+  "generatedAt": "2026-08-24T03:20:18.944Z",
+  "count": 138,
+  "pieceCount": 122,
   "stats": {
-    "billetes": 221,
+    "billetes": 222,
     "monedas": 9,
     "paises": 36,
-    "fichas": 121,
-    "paginas": 153
+    "fichas": 122,
+    "paginas": 154
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 47,
+      "count": 48,
       "slug": "colombia"
     },
     {
@@ -1297,6 +1297,36 @@
       "material": "",
       "kind": "specimen",
       "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia doscientos pesos oro espécimen sin circular, con perforaciones de cancelación características y numeración en ceros. specimen banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-de-la-republica-2000-pesos-debora-arango",
+      "path": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/",
+      "title": "2.000 pesos Débora Arango, prueba (P-458)",
+      "description": "Identificación provisional: 2.000 pesos Débora Arango, 19.08.2015, P-458, inacabado, reverso en blanco, series tapadas.",
+      "keywords": [
+        "banco de la república",
+        "2000 pesos",
+        "débora arango",
+        "pick 458",
+        "prueba",
+        "inacabado",
+        "notafilia colombiana"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/",
+      "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco de la República, Bogotá, Colombia",
+      "denomination": "Dos Mil Pesos",
+      "catalogRef": "Pick 458 (tipo; sufijo de este ejemplar no confirmado)",
+      "condition": "",
+      "emissionType": "Identificación provisional de la colección: pliego inacabado o de tipo prueba del Pick 458. Anverso impreso; reverso sin impresión; números de serie bloqueados. No es un billete de circulación emitido ni un specimen rotulado SPECIMEN.",
+      "dateLabel": "",
+      "year": 2000,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "2.000 pesos débora arango, prueba (p-458) identificación provisional: 2.000 pesos débora arango, 19.08.2015, p-458, inacabado, reverso en blanco, series tapadas. colombia el banco de la república, bogotá, colombia dos mil pesos pick 458 (tipo; sufijo de este ejemplar no confirmado) papel banknote banco de la república 2000 pesos débora arango pick 458 prueba inacabado notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2000-pesos-oro",

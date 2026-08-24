@@ -716,6 +716,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/banco-de-la-republica-2-pesos-oro/` | `/en/collection/colombia/banco-de-la-republica-2-pesos-oro/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-200-pesos-oro-specimen/` | issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/` | `/en/collection/colombia/banco-de-la-republica-2000-pesos-oro/` | catalog IDs stay untranslated in copy; issuer name kept |
+| banknote | `/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/` | `/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/` | catalog IDs stay untranslated in copy; artist name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/` | `/en/collection/colombia/banco-de-la-republica-5-pesos-plata-1941/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-50-pesos-oro-specimen/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-500-pesos-oro-specimen/` | issuer name kept |
