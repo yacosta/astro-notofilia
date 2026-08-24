@@ -779,11 +779,26 @@ test('coins have a dedicated numismática catalog page', async ({ page }) => {
 });
 
 test('spanish colonial catalog shows grouped coin cards', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/coleccion/moneda-colonial-espanola/');
   await expect(page.getByRole('heading', { name: 'Catálogo de Moneda Colonial Española' })).toBeVisible();
   await expect(page.locator('.catalog-banknote-card')).toHaveCount(7);
   await expect(page.getByRole('heading', { name: 'Reinado de Felipe V' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Reinado de Carlos III' })).toBeVisible();
+
+  const main = page.locator('#main-content');
+  const padLeft = await main.evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
+  expect(padLeft).toBeGreaterThanOrEqual(200);
+
+  const gridBox = await page.locator('.catalog-hub-grid').boundingBox();
+  const mainBox = await main.boundingBox();
+  expect(gridBox).toBeTruthy();
+  expect(mainBox).toBeTruthy();
+  expect(gridBox!.x).toBeGreaterThanOrEqual(mainBox!.x + padLeft - 2);
+
+  await page.goto('/en/collection/spanish-colonial-coinage/');
+  const enPad = await page.locator('#main-content').evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
+  expect(enPad).toBeGreaterThanOrEqual(200);
 });
 
 test('1895 Banco Nacional 25 pesos is an issued note, not a specimen', async ({ page }) => {
