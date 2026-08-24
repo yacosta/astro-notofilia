@@ -170,6 +170,10 @@ test('Ampliar zoom chip does not paint a diamond over the specimen photo', async
     '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
     '/coleccion/diez-dolares-1934-distritos/',
     '/coleccion/un-dolar-sello-rojo-1928/',
+    '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    '/coleccion/polimero-mundial/nepal-10-rupias-2005/',
+    '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/',
+    '/coleccion/ecuador/100-sucres-1993/',
   ];
   for (const path of samples) {
     const response = await page.goto(path, { waitUntil: 'domcontentloaded' });

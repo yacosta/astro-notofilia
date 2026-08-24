@@ -157,7 +157,9 @@ const catalogZoomHash = createHash('sha256')
         box-shadow: var(--shadow-artifact) !important;
         padding: clamp(40px, 6vw, 80px) !important;
       }
-      [data-zoom-trigger] span[style*="rotate(45deg)"] {
+      /* Cream 6px diamonds sit on every Ampliar/Enlarge chip, not only US notes. */
+      [data-zoom-trigger] span[style*="rotate(45deg)"],
+      .catalog-shell span[style*="rotate(45deg)"][style*="background:#d8d2cd"] {
         display: none !important;
       }
       /* Match country-landing intro measure (42rem) on ficha body copy. */
