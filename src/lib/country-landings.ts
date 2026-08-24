@@ -236,8 +236,9 @@ export const COUNTRY_LANDINGS: Record<
       kicker: 'Colombia',
       lead: 'Papel de banca central colombiana desde 1923 hasta el presente, documentado en la Colección Virtual.',
       intro: [
-        'El Banco de la República se fundó en 1923 y concentró la emisión de billetes que hasta entonces había estado en manos de bancos privados y del Estado. Esta página lista las fichas de esa emisión continua: pesos oro, specimens y errores de impresión.',
-        'No es el catálogo oficial del banco. Es el inventario de los ejemplares documentados aquí. Los billetes anteriores a 1923 están en el catálogo del Siglo Pasado.',
+        'El Banco de la República se fundó en 1923 y concentró la emisión de billetes que hasta entonces había estado en manos de bancos privados y del Estado. Esta página reúne las fichas de esa emisión continua: pesos oro, specimens de trabajo y errores de impresión.',
+        'No es el catálogo oficial del banco ni un censo de todas las series. Es el inventario de los ejemplares fotografiados aquí, con referencias Pick u otras cuando existen. Los billetes anteriores a 1923 están en el catálogo del Siglo Pasado.',
+        'El listado sigue el orden de denominación —del medio peso al de mayor valor— y, dentro de cada valor, la fecha más temprana del ejemplar documentado.',
       ],
       relatedHeading: 'Otras colecciones de Colombia',
       related: [
@@ -254,7 +255,7 @@ export const COUNTRY_LANDINGS: Record<
       ],
       catalogHeading: 'Catálogo del Banco de la República',
       catalogLead:
-        'Todas las fichas de billetes impresos por el Banco de la República desde 1923. El catálogo de Colombia agrupa las mismas piezas por denominación.',
+        'Todas las fichas de billetes impresos por el Banco de la República desde 1923, agrupadas por denominación. El catálogo de Colombia sitúa las mismas piezas en el contexto de las demás eras.',
       catalogFilterHref: '/coleccion/colombia/',
       catalogFilterLabel: 'Abrir el catálogo completo de Colombia',
       countryName: 'Colombia',
@@ -270,8 +271,9 @@ export const COUNTRY_LANDINGS: Record<
       kicker: 'Colombia',
       lead: 'Colombian central-bank paper from 1923 to the present, documented in the Virtual Collection.',
       intro: [
-        'Banco de la República was founded in 1923 and concentrated note issue that had previously belonged to private banks and the State. This page lists records of that continuous issue: pesos oro, specimens, and printing errors.',
-        'This is not the bank’s official catalog. It is the inventory of specimens documented here. Notes from before 1923 are in the Last Century catalog.',
+        'Banco de la República was founded in 1923 and concentrated note issue that had previously belonged to private banks and the State. This page gathers records of that continuous issue: pesos oro, working specimens, and printing errors.',
+        'This is not the bank’s official catalog, nor a census of every series. It is the inventory of specimens photographed here, with Pick or other references when they exist. Notes from before 1923 are in the Last Century catalog.',
+        'The list follows denomination order — from the half peso to the highest value — and, within each value, the earliest documented date of the specimen shown.',
       ],
       relatedHeading: 'Other Colombia collections',
       related: [
@@ -288,7 +290,7 @@ export const COUNTRY_LANDINGS: Record<
       ],
       catalogHeading: 'Banco de la República catalog',
       catalogLead:
-        'Every documented note printed by Banco de la República from 1923. The Colombia catalog groups the same pieces by denomination.',
+        'Every documented note printed by Banco de la República from 1923, grouped by denomination. The Colombia catalog places the same pieces alongside the other eras.',
       catalogFilterHref: '/en/collection/colombia/',
       catalogFilterLabel: 'Open the full Colombia catalog',
       countryName: 'Colombia',

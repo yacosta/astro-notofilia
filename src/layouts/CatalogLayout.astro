@@ -87,6 +87,7 @@ const cards = COLOMBIA_HUB_PATHS.has(props.path)
       ? popArtHubCards(rawCards)
       : rawCards;
 const isHub = record?.render === 'astro-hub' || cards.length > 0;
+const isColombiaHub = COLOMBIA_HUB_PATHS.has(props.path);
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 // English URLs must receive a human English `template` — never wrap Spanish HTML.
 const catalogBody = locale === 'en' ? props.template : withI18nMarkup(props.template);
@@ -147,6 +148,16 @@ const catalogZoomHash = createHash('sha256')
       .catalog-record-surface {
         padding-left: var(--page-gutter) !important;
         padding-right: var(--page-gutter) !important;
+      }
+      .catalog-shell[data-catalog-hub="colombia"] main,
+      .catalog-record-surface[data-catalog-hub="colombia"] {
+        max-width: none !important;
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
+      }
+      .catalog-shell[data-catalog-hub="colombia"] [style*="max-width:680px"],
+      .catalog-shell[data-catalog-hub="colombia"] [style*="max-width: 680px"] {
+        max-width: none !important;
       }
       /* Require the ficha card’s radius so the 6px “Ampliar” diamond
          (also background:#d8d2cd) does not inherit card padding/shadow. */
@@ -347,7 +358,7 @@ const catalogZoomHash = createHash('sha256')
       record ? (
         <CatalogRecordSurface record={record} path={props.path} mode="augment" locale={locale}>
           {hubSplit ? (
-            <div class="catalog-shell">
+            <div class="catalog-shell" data-catalog-hub={isColombiaHub ? 'colombia' : undefined}>
               <Fragment set:html={hubSplit.before} />
               {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} inset />}
               <Fragment set:html={hubSplit.after} />
@@ -360,7 +371,7 @@ const catalogZoomHash = createHash('sha256')
           )}
         </CatalogRecordSurface>
       ) : hubSplit ? (
-        <div class="catalog-shell">
+        <div class="catalog-shell" data-catalog-hub={isColombiaHub ? 'colombia' : undefined}>
           <Fragment set:html={hubSplit.before} />
           {isHub && <CatalogHubGrid cards={cards} thinNote locale={locale} inset />}
           <Fragment set:html={hubSplit.after} />

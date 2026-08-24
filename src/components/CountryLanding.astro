@@ -15,6 +15,8 @@ import { alternateUrl, type Locale } from '../i18n/pairs';
 import { COUNTRY_LANDINGS, type CountryLandingId } from '../lib/country-landings';
 import { groupUsCatalogItems, isCatalogBiography, usCatalogCardTitle } from '../lib/us-catalog';
 import {
+  compareBanrepLandingItems,
+  groupBanrepCatalogItems,
   isColombiaBanRepCatalogPath,
   isColombiaSigloPasadoCatalogPath,
 } from '../lib/colombia-catalog';
@@ -74,12 +76,18 @@ const countryItems = catalogIndex.items
     return true;
   })
   .sort((a, b) => {
+    if (countryId === 'colombia-banrep') return compareBanrepLandingItems(a, b);
     const ay = a.year ?? 9999;
     const by = b.year ?? 9999;
     return ay - by || a.title.localeCompare(b.title, 'es');
   });
 
-const usGroups = countryId === 'united-states' ? groupUsCatalogItems(countryItems) : null;
+const catalogGroups =
+  countryId === 'united-states'
+    ? groupUsCatalogItems(countryItems)
+    : countryId === 'colombia-banrep'
+      ? groupBanrepCatalogItems(countryItems)
+      : null;
 
 const featured = (copy.featuredPaths ?? [])
   .map(
@@ -186,6 +194,10 @@ const jsonLd = {
         margin: 0 auto;
         padding: 64px var(--page-gutter, 48px) 96px;
       }
+      .hub[data-country="colombia-banrep"] .hub-inner {
+        max-width: none;
+        padding: 64px var(--page-gutter, 48px) 96px;
+      }
       .hub h1 {
         font-family: 'Montenegrin Gothic One', 'Montenegrin Gothic One Fallback', Georgia, serif;
         font-weight: 400;
@@ -211,6 +223,12 @@ const jsonLd = {
       }
       .hub[data-country="united-states"] .hub-lead,
       .hub[data-country="united-states"] .hub-intro {
+        max-width: none;
+      }
+      .hub[data-country="colombia-banrep"] .hub-lead,
+      .hub[data-country="colombia-banrep"] .hub-intro,
+      .hub[data-country="colombia-banrep"] .hub-section-lead,
+      .hub[data-country="colombia-banrep"] .hub p {
         max-width: none;
       }
       .hub-section {
@@ -424,8 +442,8 @@ const jsonLd = {
           <p>
             <a class="filter-link" href={copy.catalogFilterHref}>{copy.catalogFilterLabel}</a>
           </p>
-          {usGroups ? (
-            usGroups.map((section) => (
+          {catalogGroups ? (
+            catalogGroups.map((section) => (
               <section
                 class:list={['catalog-group', section.breakBefore && 'catalog-group--break']}
                 id={section.id}
@@ -450,7 +468,11 @@ const jsonLd = {
                             />
                           </picture>
                         )}
-                        <span class="card-title">{usCatalogCardTitle(item, isEn ? (lookupEn(item.title) || item.title) : item.title)}</span>
+                        <span class="card-title">{
+                          countryId === 'united-states'
+                            ? usCatalogCardTitle(item, isEn ? (lookupEn(item.title) || item.title) : item.title)
+                            : (isEn ? (lookupEn(item.title) || item.title) : item.title)
+                        }</span>
                         {item.year ? <span class="card-desc">{item.year}</span> : null}
                       </a>
                     </li>
