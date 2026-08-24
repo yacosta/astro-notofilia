@@ -149,6 +149,12 @@ const catalogZoomHash = createHash('sha256')
       }
       .catalog-shell [style*="max-width:1180px"],
       .catalog-shell [style*="max-width: 1180px"],
+      .catalog-shell [style*="max-width:900px"],
+      .catalog-shell [style*="max-width: 900px"],
+      .catalog-shell [style*="max-width:840px"],
+      .catalog-shell [style*="max-width: 840px"],
+      .catalog-shell [style*="max-width:780px"],
+      .catalog-shell [style*="max-width: 780px"],
       .catalog-shell [style*="max-width:760px"],
       .catalog-shell [style*="max-width: 760px"],
       .catalog-shell [style*="max-width:720px"],
@@ -175,7 +181,19 @@ const catalogZoomHash = createHash('sha256')
         border: 1px solid var(--rule-artifact) !important;
         border-radius: var(--radius-surface) !important;
         box-shadow: var(--shadow-artifact) !important;
-        padding: clamp(40px, 6vw, 80px) !important;
+        /* Vertical rhythm only — extra inline pad was a second ~80px gutter. */
+        padding-block: clamp(40px, 6vw, 80px) !important;
+        padding-inline: 0 !important;
+      }
+      /* Coin/note cream cards: copy uses the page gutter, not a 720 inner column. */
+      .catalog-shell [style*="background:#d8d2cd"][style*="border-radius:3px"] > *,
+      .catalog-shell [style*="background: rgb(216, 210, 205)"][style*="border-radius:3px"] > * {
+        max-width: none !important;
+        width: 100%;
+      }
+      .catalog-shell [style*="background:#d8d2cd"][style*="border-radius:3px"] > [style*="align-items:center"],
+      .catalog-shell [style*="background: rgb(216, 210, 205)"][style*="border-radius:3px"] > [style*="align-items:center"] {
+        align-items: stretch !important;
       }
       /* Cream 6px diamonds sit on every Ampliar/Enlarge chip, not only US notes. */
       [data-zoom-trigger] span[style*="rotate(45deg)"],

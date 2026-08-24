@@ -841,6 +841,44 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
   }
 });
 
+test('coin ficha body copy aligns with the page gutter, not the cream-card inset', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const coins = [
+    '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
+    '/coleccion/ducado-oro-utrecht-1761/',
+    '/en/collection/spanish-colonial-coinage/1-escudo-carlos-iii-1774/',
+    '/en/collection/1761-utrecht-gold-ducat/',
+  ];
+  for (const path of coins) {
+    await page.goto(path);
+    const metrics = await page.evaluate(() => {
+      const main = document.querySelector('#main-content');
+      if (!main) return null;
+      const padMain = parseFloat(getComputedStyle(main).paddingLeft);
+      const body = [...main.querySelectorAll('p')].find((p) => {
+        const style = getComputedStyle(p);
+        return style.textAlign !== 'center' && (p.textContent || '').trim().length > 80;
+      });
+      if (!body) return { padMain, left: null, width: null, maxWidth: null };
+      const rect = body.getBoundingClientRect();
+      return {
+        padMain,
+        left: rect.left,
+        width: rect.width,
+        maxWidth: getComputedStyle(body).maxWidth,
+      };
+    });
+    expect(metrics, path).not.toBeNull();
+    expect(metrics?.padMain, `${path} main pad`).toBeGreaterThanOrEqual(200);
+    expect(metrics?.maxWidth, `${path} body max-width`).toBe('none');
+    expect(metrics?.left, `${path} text left`).toBeGreaterThanOrEqual(200);
+    expect(metrics?.left, `${path} text left`).toBeLessThan(220);
+    expect(metrics?.width, `${path} text width`).toBeGreaterThan(800);
+  }
+});
+
 test('catalog hubs use a wide inset and keep the card grid inside main', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
 
