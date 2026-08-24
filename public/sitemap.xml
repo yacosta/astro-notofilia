@@ -920,6 +920,15 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/giori-test-note-lincoln-memorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/" />
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://notofilia.com/coleccion/hagerstown-bank-maryland/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/hagerstown-bank-maryland/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/hagerstown-bank-maryland/" />
@@ -2356,6 +2365,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/giori-press-test-note/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/giori-press-test-note/" />
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://notofilia.com/en/collection/giori-test-note-lincoln-memorial/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://notofilia.com/en/collection/giori-test-note-lincoln-memorial/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/" />
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -340,6 +340,10 @@
     "legacyFile": "billete-giori-press-test-note.dc.html"
   },
   {
+    "route": "/coleccion/giori-test-note-lincoln-memorial/",
+    "legacyFile": "billete-giori-test-note-lincoln-memorial.dc.html"
+  },
+  {
     "route": "/coleccion/hagerstown-bank-maryland/",
     "legacyFile": "billete-hagerstown-bank-maryland.dc.html"
   },

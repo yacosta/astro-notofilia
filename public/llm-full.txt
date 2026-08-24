@@ -4,7 +4,7 @@
 >
 > Colección privada virtual de billetes y monedas históricas (numismática y notafilia). Sitio en español. Las piezas **no están a la venta**.
 
-Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 223 billetes en 123 fichas, 9 monedas, 36 países, 155 páginas de catálogo.
+Notofilia.com es un catálogo digital y colección privada virtual centrada en papel moneda histórico —especialmente Colombia, Puerto Rico, Ecuador, billete obsoleto de EE. UU., emisiones federales estadounidenses y billetes de polímero— más monedas coloniales españolas en oro y un subconjunto de pop art / exonumia. Inventario vivo: 224 billetes en 124 fichas, 9 monedas, 36 países, 156 páginas de catálogo.
 
 **Qué es:** ficha catalográfica por pieza (anverso/reverso, contexto histórico, rareza, referencias tipo Pick/Friedberg cuando aplica), guías evergreen, noticias curadas, glosario bilingüe y perfiles históricos ligados a emisiones. Una ficha es la entrada de catálogo; un billete es cada ejemplar documentado (una ficha puede reunir varios); una página es la URL indexada.
 
@@ -16,7 +16,7 @@ Notofilia.com es un catálogo digital y colección privada virtual centrada en p
 
 **Markdown para agentes:** si el cliente envía `Accept: text/markdown`, el middleware de Cloudflare Pages puede devolver Markdown en lugar de HTML.
 
-**Inventario (build):** 123 fichas · 223 billetes · 9 monedas · 36 países · 155 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
+**Inventario (build):** 124 fichas · 224 billetes · 9 monedas · 36 países · 156 páginas · 9 guías de blog · 61 noticias · 0 logros del mes · 95 términos del glosario.
 
 Este archivo es la versión completa (`llms-full.txt`): incluye el inventario de catálogo y el texto de las guías/noticias. Para un índice corto use [`llms.txt`](https://notofilia.com/llms.txt).
 
@@ -149,6 +149,7 @@ Cada URL es una ficha de la colección privada (fotos, contexto, rareza). Ningun
 - [5 Pesos Victory 66, Filipinas (Pick 96a)](https://notofilia.com/coleccion/filipinas/5-pesos-victory-series-66/): Tesoro de Filipinas, 5 pesos Victory Series No. 66 (1944), Pick 96a: McKinley, Dewey y VICTORY. Colección Notofilia.
 - [Food Coupons USDA Series 1967 y 2000-B](https://notofilia.com/coleccion/food-coupons-usda/): Catálogo de cupones de alimentos USDA: Serie 1967 (50¢ y $2) y Serie 2000-B ($1, $5 y $10), con contexto histórico del Food Stamp Program.
 - [Nota de Prueba de la Prensa Giori](https://notofilia.com/coleccion/giori-press-test-note/): Ficha de catálogo numismático: nota de prueba de la prensa Giori, Estados Unidos, con los retratos de Lincoln, Washington y Grant, sin denominación.
+- [Nota Giori Lincoln Memorial, c. 1970](https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/): Nota de prueba Giori de los años 1970: anverso verde del Lincoln Memorial y reverso en blanco. Sin curso legal. Colección Notofilia.
 - [Billetes $5 y $10 Hagerstown Bank, Maryland](https://notofilia.com/coleccion/hagerstown-bank-maryland/): Ficha de catálogo numismático: billetes obsoletos de $5 y $10 de The Hagerstown Bank, Maryland, hacia 1850–1860. Haxby MD-240.
 ### Moneda colonial española (oro)
 

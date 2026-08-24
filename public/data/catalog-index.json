@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-24T17:21:41.705Z",
-  "count": 139,
-  "pieceCount": 123,
+  "generatedAt": "2026-08-24T18:22:56.595Z",
+  "count": 140,
+  "pieceCount": 124,
   "stats": {
-    "billetes": 223,
+    "billetes": 224,
     "monedas": 9,
     "paises": 36,
-    "fichas": 123,
-    "paginas": 155
+    "fichas": 124,
+    "paginas": 156
   },
   "countries": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 30,
+      "count": 31,
       "slug": "estados-unidos"
     },
     {
@@ -2796,6 +2796,37 @@
       "material": "",
       "kind": "banknote",
       "searchText": "nota de prueba de la prensa giori ficha de catálogo numismático: nota de prueba de la prensa giori, estados unidos, con los retratos de lincoln, washington y grant, sin denominación. estados unidos ninguna — no es un billete de curso legal, sino una plancha de prueba técnica sin número friedberg ni pick; catalogada en la literatura especializada de exonumia como &ldquo;giori press test note&rdquo; banknote giori press test note nota de prueba bureau of engraving and printing american can company notafilia numismática de estados unidos"
+    },
+    {
+      "id": "giori-test-note-lincoln-memorial",
+      "path": "/coleccion/giori-test-note-lincoln-memorial/",
+      "title": "Nota Giori Lincoln Memorial, c. 1970",
+      "description": "Nota de prueba Giori de los años 1970: anverso verde del Lincoln Memorial y reverso en blanco. Sin curso legal. Colección Notofilia.",
+      "keywords": [
+        "giori test note",
+        "lincoln memorial",
+        "nota de prueba",
+        "bureau of engraving and printing",
+        "press test note",
+        "uniface",
+        "notafilia",
+        "numismática de estados unidos"
+      ],
+      "url": "https://notofilia.com/coleccion/giori-test-note-lincoln-memorial/",
+      "image": "/uploads/us-giori-test-note-lincoln-memorial-green-1fa6c8b4.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Ensayo de prensa Giori (sin entidad emisora de curso legal)",
+      "denomination": "Ninguna — no es curso legal",
+      "catalogRef": "Sin Friedberg ni Pick",
+      "condition": "",
+      "emissionType": "Nota de prueba de imprenta ( press test note ), uniface",
+      "dateLabel": "",
+      "year": 1970,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "nota giori lincoln memorial, c. 1970 nota de prueba giori de los años 1970: anverso verde del lincoln memorial y reverso en blanco. sin curso legal. colección notofilia. estados unidos ensayo de prensa giori (sin entidad emisora de curso legal) ninguna — no es curso legal sin friedberg ni pick papel banknote giori test note lincoln memorial nota de prueba bureau of engraving and printing press test note uniface notafilia numismática de estados unidos"
     },
     {
       "id": "hagerstown-bank-maryland",

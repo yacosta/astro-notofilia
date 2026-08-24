@@ -493,37 +493,57 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 a
   await expect(cards.nth(2)).toContainText('5 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
+test('homepage Logros del Mes features the Philippines Victory Series 66 5 pesos first', async ({
+  page,
+}) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toBeVisible();
-  await expect(first).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
-  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
+  await expect(first).toHaveAttribute('href', '/coleccion/filipinas/5-pesos-victory-series-66/');
+  await expect(first).toContainText('Filipinas — 5 pesos Victory Series 66');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /10 pesos oro del Banco de la República, 20 de julio de 1943/,
+    /Certificado del Tesoro de Filipinas de 5 pesos/,
   );
   await expect(first.getByRole('img')).toHaveAttribute(
     'src',
-    '/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-card.jpg',
+    '/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc-card.jpg',
   );
 });
 
-test('English homepage Logros features the 1943 10 pesos oro first', async ({ page }) => {
+test('English homepage Logros features the Philippines Victory Series 66 5 pesos first', async ({
+  page,
+}) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
-  await expect(first).toHaveAttribute(
-    'href',
-    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
-  );
-  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
+  await expect(first).toHaveAttribute('href', '/en/collection/philippines/5-pesos-victory-series-66/');
+  await expect(first).toContainText('Philippines — 5 pesos Victory Series 66');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Banco de la República 10 pesos oro, 20 July 1943/,
+    /Philippines Treasury Certificate of 5 pesos/,
+  );
+});
+
+test('homepage Logros del Mes still features the 1943 10 pesos oro', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Banco de la República — 10 pesos oro, 1943/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
+});
+
+test('English homepage Logros still features the 1943 10 pesos oro', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Banco de la República — 10 pesos oro, 1943/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute(
+    'href',
+    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
   );
 });
 
@@ -571,6 +591,62 @@ test('English homepage Logros features the Philippines Victory Series 66 5 pesos
     'alt',
     /Philippines Treasury Certificate of 5 pesos/,
   );
+});
+
+test('homepage Logros del Mes features the Giori Lincoln Memorial test note', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Nota Giori — Lincoln Memorial, c\. 1970/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/giori-test-note-lincoln-memorial/');
+  await expect(card.getByRole('img')).toHaveAttribute('alt', /Lincoln Memorial/);
+  await expect(card.getByRole('img')).toHaveAttribute(
+    'src',
+    '/uploads/us-giori-test-note-lincoln-memorial-green-1fa6c8b4-card.jpg',
+  );
+});
+
+test('English homepage Logros features the Giori Lincoln Memorial test note', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /Giori test note — Lincoln Memorial, c\. 1970/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/giori-test-note-lincoln-memorial/');
+  await expect(card.getByRole('img')).toHaveAttribute('alt', /Lincoln Memorial/);
+});
+
+test('Spanish Giori Lincoln Memorial ficha shows the specimen and heading', async ({ page }) => {
+  await page.goto('/coleccion/giori-test-note-lincoln-memorial/');
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Nota de prueba Giori: Lincoln Memorial' }),
+  ).toBeVisible();
+  await expect(page.getByRole('img', { name: /Lincoln Memorial/ }).first()).toBeVisible();
+  await expect(page.getByRole('img', { name: /Lincoln Memorial/ }).first()).toHaveAttribute(
+    'src',
+    '/uploads/us-giori-test-note-lincoln-memorial-green-1fa6c8b4.jpg',
+  );
+});
+
+test('English Giori Lincoln Memorial ficha shows the specimen and heading', async ({ page }) => {
+  await page.goto('/en/collection/giori-test-note-lincoln-memorial/');
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Giori Test Note: Lincoln Memorial' }),
+  ).toBeVisible();
+  await expect(page.getByRole('img', { name: /Lincoln Memorial/ }).first()).toBeVisible();
+});
+
+test('Treasury hub lists the Giori Lincoln Memorial test note', async ({ page }) => {
+  await page.goto('/coleccion/departamento-del-tesoro-de-ee-uu/');
+  const card = page.getByRole('link', { name: /Lincoln Memorial/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/giori-test-note-lincoln-memorial/');
+});
+
+test('English Treasury hub lists the Giori Lincoln Memorial test note', async ({ page }) => {
+  await page.goto('/en/collection/us-department-of-the-treasury/');
+  const card = page.getByRole('link', { name: /Lincoln Memorial/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/en/collection/giori-test-note-lincoln-memorial/');
 });
 
 test('homepage Logros del Mes features the Philippines Victory Series 66 2 pesos', async ({ page }) => {

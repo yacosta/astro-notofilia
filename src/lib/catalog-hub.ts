@@ -102,6 +102,24 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/giori-test-note-lincoln-memorial/',
+    title: 'Nota Giori — Lincoln Memorial, c. 1970',
+    titleEn: 'Giori test note — Lincoln Memorial, c. 1970',
+    description: 'Anverso verde del Lincoln Memorial y reverso en blanco. Prueba de prensa, sin curso legal.',
+    descriptionEn: 'Green Lincoln Memorial obverse and blank reverse. Press trial, not legal tender.',
+    imageBase: 'us-giori-test-note-lincoln-memorial-green-1fa6c8b4',
+    imageAlt: 'Nota de prueba Giori de los años 1970: anverso verde con el Lincoln Memorial y reverso en blanco',
+  },
+  {
+    href: '/coleccion/filipinas/5-pesos-victory-series-66/',
+    title: 'Filipinas — 5 pesos Victory Series 66',
+    titleEn: 'Philippines — 5 pesos Victory Series 66',
+    description: 'Certificado del Tesoro, Pick 96a, serial F00618071. McKinley, Dewey y sobresello VICTORY.',
+    descriptionEn: 'Treasury Certificate, Pick 96a, serial F00618071. McKinley, Dewey and VICTORY overprint.',
+    imageBase: 'philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc',
+    imageAlt: 'Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66, anverso y reverso',
+  },
+  {
     href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
     title: 'Banco de la República — 10 pesos oro, 1943',
     titleEn: 'Banco de la República — 10 pesos oro, 1943',
@@ -112,15 +130,6 @@ export const RECENT_PIECES: RecentPiece[] = [
     imageBase: 'colombia-banco-de-la-republica-10-pesos-oro-1943',
     imageAlt:
       'Billete encapsulado PMG de 10 pesos oro del Banco de la República, 20 de julio de 1943, Pick 389b, anverso y reverso con retrato de Antonio Nariño',
-  },
-  {
-    href: '/coleccion/filipinas/5-pesos-victory-series-66/',
-    title: 'Filipinas — 5 pesos Victory Series 66',
-    titleEn: 'Philippines — 5 pesos Victory Series 66',
-    description: 'Certificado del Tesoro, Pick 96a, serial F00618071. McKinley, Dewey y sobresello VICTORY.',
-    descriptionEn: 'Treasury Certificate, Pick 96a, serial F00618071. McKinley, Dewey and VICTORY overprint.',
-    imageBase: 'philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc',
-    imageAlt: 'Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66, anverso y reverso',
   },
   {
     href: '/coleccion/filipinas/2-pesos-victory-series-66/',
