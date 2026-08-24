@@ -153,6 +153,8 @@ const catalogZoomHash = createHash('sha256')
       .catalog-shell [style*="max-width: 900px"],
       .catalog-shell [style*="max-width:840px"],
       .catalog-shell [style*="max-width: 840px"],
+      .catalog-shell [style*="max-width:800px"],
+      .catalog-shell [style*="max-width: 800px"],
       .catalog-shell [style*="max-width:780px"],
       .catalog-shell [style*="max-width: 780px"],
       .catalog-shell [style*="max-width:760px"],
@@ -161,8 +163,12 @@ const catalogZoomHash = createHash('sha256')
       .catalog-shell [style*="max-width: 720px"],
       .catalog-shell [style*="max-width:680px"],
       .catalog-shell [style*="max-width: 680px"],
+      .catalog-shell [style*="max-width:660px"],
+      .catalog-shell [style*="max-width: 660px"],
       .catalog-shell [style*="max-width:640px"],
-      .catalog-shell [style*="max-width: 640px"] {
+      .catalog-shell [style*="max-width: 640px"],
+      .catalog-shell [style*="max-width:42rem"],
+      .catalog-shell [style*="max-width: 42rem"] {
         max-width: none !important;
       }
       /* Hub/ficha lead copy: ignore leftover inline measure caps. */
@@ -192,7 +198,9 @@ const catalogZoomHash = createHash('sha256')
         width: 100%;
       }
       .catalog-shell [style*="background:#d8d2cd"][style*="border-radius:3px"] > [style*="align-items:center"],
-      .catalog-shell [style*="background: rgb(216, 210, 205)"][style*="border-radius:3px"] > [style*="align-items:center"] {
+      .catalog-shell [style*="background: rgb(216, 210, 205)"][style*="border-radius:3px"] > [style*="align-items:center"],
+      .catalog-shell [style*="background:#d8d2cd"][style*="border-radius:3px"] [style*="flex-direction:column"][style*="align-items:center"],
+      .catalog-shell [style*="background: rgb(216, 210, 205)"][style*="border-radius:3px"] [style*="flex-direction:column"][style*="align-items:center"] {
         align-items: stretch !important;
       }
       /* Cream 6px diamonds sit on every Ampliar/Enlarge chip, not only US notes. */

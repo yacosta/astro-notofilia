@@ -822,6 +822,10 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     { path: '/buscar/', selector: '.buscar-main' },
     { path: '/coleccion/food-coupons-usda/', selector: '#main-content' },
     { path: '/en/collection/usda-food-coupons/', selector: '#main-content' },
+    { path: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
+    { path: '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
+    { path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/', selector: '#main-content' },
+    { path: '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/', selector: '#main-content' },
     { path: '/en/collection/united-states/', selector: '.hub-inner' },
     { path: '/en/collection/world-polymer/', selector: '#main-content, .hub-inner' },
     { path: '/blog/como-empezar-coleccion-billetes/', selector: '[data-feature-page]' },
@@ -838,6 +842,39 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
       const maxW = await lead.evaluate((node) => getComputedStyle(node).maxWidth);
       expect(maxW, `${sample.path} lead max-width`).toBe('none');
     }
+  }
+});
+
+test('banknote ficha body copy starts at the page gutter', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const notes = [
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
+    '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/',
+  ];
+  for (const path of notes) {
+    await page.goto(path);
+    const main = page.locator('#main-content');
+    await expect(main, path).toBeVisible();
+    const metrics = await main.evaluate((node) => {
+      const padLeft = parseFloat(getComputedStyle(node).paddingLeft);
+      const section = node.querySelector('section p');
+      const rect = section?.getBoundingClientRect();
+      const cream = node.querySelector('[style*="background:#d8d2cd"]');
+      const creamPad = cream ? getComputedStyle(cream).paddingLeft : '';
+      return {
+        padLeft,
+        textLeft: rect?.left ?? null,
+        textMaxWidth: section ? getComputedStyle(section).maxWidth : null,
+        creamPad,
+      };
+    });
+    expect(metrics.padLeft, path).toBeGreaterThanOrEqual(200);
+    expect(metrics.creamPad, `${path} cream padding-inline`).toBe('0px');
+    expect(metrics.textMaxWidth, `${path} body max-width`).toBe('none');
+    expect(metrics.textLeft, path).not.toBeNull();
+    expect(Math.abs((metrics.textLeft as number) - metrics.padLeft), `${path} text vs gutter`).toBeLessThan(8);
   }
 });
 
