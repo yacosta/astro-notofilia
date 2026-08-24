@@ -29,6 +29,8 @@ const { record, path, mode = 'augment', locale = 'es' } = Astro.props;
 const isEn = locale === 'en';
 const isPrimary = mode === 'primary';
 const isHub = record.render === 'astro-hub' || Boolean(record.cards?.length);
+const isColombiaHub = path === '/coleccion/colombia/' || path === '/en/collection/colombia/';
+const hubAttr = isColombiaHub ? 'colombia' : undefined;
 const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse);
 const showMedia = isPrimary || hasSeparateFaces;
 /** Legacy templates already carry the spec table beside each scan. */
@@ -41,10 +43,11 @@ const permanentLabel = t('permanentId', locale);
 {
   isPrimary ? (
     <section
-      class="catalog-record-surface max-w-[1180px] mx-auto px-[var(--page-gutter,48px)] pt-10 pb-4"
+      class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-10 pb-4']}
       aria-labelledby="catalog-record-title"
       data-catalog-record={record.id}
       data-catalog-mode="primary"
+      data-catalog-hub={hubAttr}
     >
       <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
 
@@ -85,9 +88,10 @@ const permanentLabel = t('permanentId', locale);
   ) : (
     <>
       <div
-        class="catalog-record-surface max-w-[1180px] mx-auto px-[var(--page-gutter,48px)] pt-8 pb-2"
+        class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-8 pb-2']}
         data-catalog-record={record.id}
         data-catalog-mode="augment"
+        data-catalog-hub={hubAttr}
       >
         <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
         <p class="m-0 mt-4 text-[13px] tracking-[0.1em] uppercase text-muted">
@@ -106,7 +110,8 @@ const permanentLabel = t('permanentId', locale);
       <slot />
 
       <section
-        class="catalog-record-surface max-w-[1180px] mx-auto px-[var(--page-gutter,48px)] pt-4 pb-12 grid gap-12"
+        class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-4 pb-12 grid gap-12']}
+        data-catalog-hub={hubAttr}
       aria-label={isEn ? 'Structured catalog record' : 'Registro estructurado de la ficha'}
       data-i18n={isEn ? undefined : true}
       data-i18n-target={isEn ? undefined : 'aria-label'}
