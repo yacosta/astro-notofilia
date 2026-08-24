@@ -4,6 +4,7 @@
  * Individual news translations are deferred.
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import Cover from '../../../components/Cover.astro';
 import { COLLECTIONS, collectionIndexJsonLdEn } from '../../../lib/collections';
 import { getPublishedPosts } from '../../../lib/posts';
@@ -28,7 +29,7 @@ const jsonLd = collectionIndexJsonLdEn({
 });
 ---
 <BlogLayout locale="en" title={title} description={description} path={path} jsonLd={jsonLd}>
-  <div class="max-w-content mx-auto px-[var(--page-gutter)] pt-14 pb-6">
+  <FeaturePage as="div" variant="index">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
       <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/en/">Home</a>
       <span aria-hidden="true">/</span> <span>News</span>
@@ -36,7 +37,7 @@ const jsonLd = collectionIndexJsonLdEn({
     <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]">
       {meta.headingEn}
     </h1>
-    <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]">
+    <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-none">
       {meta.introEn} Individual articles remain in Spanish until a full English translation is published.
     </p>
 
@@ -80,7 +81,7 @@ const jsonLd = collectionIndexJsonLdEn({
         ))}
       </ul>
     )}
-  </div>
+  </FeaturePage>
 </BlogLayout>
 
 <style>

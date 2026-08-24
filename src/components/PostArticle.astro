@@ -3,6 +3,7 @@
  * Shared article page for a single blog / noticias / logros post.
  */
 import { render, type CollectionEntry } from 'astro:content';
+import FeaturePage from './FeaturePage.astro';
 import Cover from './Cover.astro';
 import Comments from './Comments.astro';
 import ClaimCallout from './ClaimCallout.astro';
@@ -46,7 +47,7 @@ const claimKind = d.claimKind && isClaimKind(d.claimKind) ? d.claimKind : undefi
 const primarySources = d.primarySources ?? [];
 const corrections = d.corrections ?? [];
 ---
-<article class="max-w-content mx-auto px-[var(--page-gutter)] pt-12">
+<FeaturePage>
   <nav class="text-[14px] tracking-[0.06em] text-muted mb-6" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en={UI.crumbs.en}>
     <a class="text-muted" href="/" data-i18n data-en={UI.home.en}>{UI.home.es}</a> <span aria-hidden="true">/</span>
     <a class="text-muted" href={basePath} data-i18n data-en={labelEn}>{label}</a> <span aria-hidden="true">/</span>
@@ -217,7 +218,7 @@ const corrections = d.corrections ?? [];
   {collection === 'noticias' && <Comments slug={post.id} />}
 
   <p class="mt-10"><a class="text-muted" href={basePath}>&larr; <span data-i18n data-en={backLabelEn}>{backLabel}</span></a></p>
-</article>
+</FeaturePage>
 
 <style>
   .cover :global(picture) { display: block; border-radius: 4px; overflow: hidden; }

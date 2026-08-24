@@ -35,8 +35,8 @@ const path = '/en/404/';
       href="#main-content"
     >{t('skip', 'en')}</a>
     <SiteHeader locale="en" path={path} />
-    <main id="main-content" class="min-h-[60vh] flex items-center justify-center text-center p-8" tabindex="-1">
-      <div class="max-w-[40rem]" data-pagefind-ignore>
+    <main id="main-content" class="min-h-[60vh] flex items-center justify-center text-center py-8 px-[var(--page-gutter)]" tabindex="-1">
+      <div class="max-w-none w-full" data-pagefind-ignore>
         <p
           class="font-display text-[clamp(72px,18vw,180px)] leading-[0.9] tracking-[0.04em] text-cream m-0 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
           aria-hidden="true"
@@ -44,7 +44,7 @@ const path = '/en/404/';
         <h1 class="font-display font-normal text-[clamp(22px,4vw,34px)] tracking-[0.02em] mt-2 mb-4 text-cream-dim">
           {t('notFound', 'en')}
         </h1>
-        <p class="text-[clamp(17px,2.4vw,20px)] leading-[1.5] text-muted mx-auto mb-8 max-w-[32rem]">
+        <p class="text-[clamp(17px,2.4vw,20px)] leading-[1.5] text-muted mx-auto mb-8 max-w-none">
           {t('notFoundLead', 'en')}
         </p>
         <div class="flex flex-wrap gap-x-5 gap-y-3 justify-center">

@@ -3,6 +3,7 @@
  * Shared listing page for blog / noticias collections.
  */
 import Cover from './Cover.astro';
+import FeaturePage from './FeaturePage.astro';
 import SourceCredit from './SourceCredit.astro';
 import { COLLECTIONS } from '../lib/collections';
 import { formatDateLongEn, formatDateLongEs, toIsoDate } from '../lib/dates';
@@ -32,7 +33,7 @@ const basePath = `/${collection}/`;
 const meta = COLLECTIONS[collection];
 const label = meta.label;
 ---
-<div class="max-w-content mx-auto px-[var(--page-gutter)] pt-14 pb-6">
+<FeaturePage as="div" variant="index">
   <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Migas de pan" data-i18n data-i18n-target="aria-label" data-en={UI.crumbs.en}>
     <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/" data-i18n data-en={UI.home.en}>{UI.home.es}</a>
     <span aria-hidden="true">/</span> <span data-i18n data-en={meta.labelEn}>{label}</span>
@@ -40,7 +41,7 @@ const label = meta.label;
   <h1 class="font-display font-normal text-[clamp(30px,5vw,46px)] text-cream mt-0 mb-[14px] leading-[1.1]" data-i18n data-en={meta.headingEn}>
     {heading}
   </h1>
-  <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-[60ch]" data-i18n data-en={meta.introEn}>
+  <p class="text-[clamp(18px,2.4vw,22px)] text-cream-dim mt-0 mb-11 max-w-none" data-i18n data-en={meta.introEn}>
     {intro}
   </p>
 
@@ -78,7 +79,7 @@ const label = meta.label;
       ))}
     </ul>
   )}
-</div>
+</FeaturePage>
 
 <style>
   .card :global(picture) { display: block; overflow: hidden; border-radius: 4px; }

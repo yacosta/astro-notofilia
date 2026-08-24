@@ -813,10 +813,23 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     { path: '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/', selector: '#main-content' },
     { path: '/coleccion/estados-unidos/', selector: '.hub-inner' },
     { path: '/coleccion/numismatica/', selector: '.hub-inner' },
-    { path: '/nosotros/', selector: 'article.max-w-content' },
-    { path: '/noticias/paysandu-primer-encuentro-numismatico/', selector: 'article.max-w-content' },
-    { path: '/glosario/', selector: '#glossary-index' },
+    { path: '/nosotros/', selector: '[data-feature-page]' },
+    { path: '/noticias/paysandu-primer-encuentro-numismatico/', selector: '[data-feature-page]' },
+    { path: '/glosario/', selector: '[data-feature-page]' },
+    { path: '/editorial/', selector: '[data-feature-page]' },
+    { path: '/contacto/', selector: '[data-feature-page]' },
+    { path: '/politica-privacidad-cookies/', selector: '[data-feature-page]' },
     { path: '/buscar/', selector: '.buscar-main' },
+    { path: '/coleccion/food-coupons-usda/', selector: '#main-content' },
+    { path: '/en/collection/usda-food-coupons/', selector: '#main-content' },
+    { path: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
+    { path: '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
+    { path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/', selector: '#main-content' },
+    { path: '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/', selector: '#main-content' },
+    { path: '/en/collection/united-states/', selector: '.hub-inner' },
+    { path: '/en/collection/world-polymer/', selector: '#main-content, .hub-inner' },
+    { path: '/blog/como-empezar-coleccion-billetes/', selector: '[data-feature-page]' },
+    { path: '/en/blog/how-to-start-a-banknote-collection/', selector: '[data-feature-page]' },
   ];
   for (const sample of samples) {
     await page.goto(sample.path);
@@ -824,6 +837,82 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     await expect(el, sample.path).toBeVisible();
     const padLeft = await el.evaluate((node) => parseFloat(getComputedStyle(node).paddingLeft));
     expect(padLeft, sample.path).toBeGreaterThanOrEqual(200);
+    const lead = el.locator('p').first();
+    if (await lead.count()) {
+      const maxW = await lead.evaluate((node) => getComputedStyle(node).maxWidth);
+      expect(maxW, `${sample.path} lead max-width`).toBe('none');
+    }
+  }
+});
+
+test('banknote ficha body copy starts at the page gutter', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const notes = [
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
+    '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/',
+  ];
+  for (const path of notes) {
+    await page.goto(path);
+    const main = page.locator('#main-content');
+    await expect(main, path).toBeVisible();
+    const metrics = await main.evaluate((node) => {
+      const padLeft = parseFloat(getComputedStyle(node).paddingLeft);
+      const section = node.querySelector('section p');
+      const rect = section?.getBoundingClientRect();
+      const cream = node.querySelector('[style*="background:#d8d2cd"]');
+      const creamPad = cream ? getComputedStyle(cream).paddingLeft : '';
+      return {
+        padLeft,
+        textLeft: rect?.left ?? null,
+        textMaxWidth: section ? getComputedStyle(section).maxWidth : null,
+        creamPad,
+      };
+    });
+    expect(metrics.padLeft, path).toBeGreaterThanOrEqual(200);
+    expect(metrics.creamPad, `${path} cream padding-inline`).toBe('0px');
+    expect(metrics.textMaxWidth, `${path} body max-width`).toBe('none');
+    expect(metrics.textLeft, path).not.toBeNull();
+    expect(Math.abs((metrics.textLeft as number) - metrics.padLeft), `${path} text vs gutter`).toBeLessThan(8);
+  }
+});
+
+test('coin ficha body copy aligns with the page gutter, not the cream-card inset', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const coins = [
+    '/coleccion/moneda-colonial-espanola/1-escudo-carlos-iii-1774/',
+    '/coleccion/ducado-oro-utrecht-1761/',
+    '/en/collection/spanish-colonial-coinage/1-escudo-carlos-iii-1774/',
+    '/en/collection/1761-utrecht-gold-ducat/',
+  ];
+  for (const path of coins) {
+    await page.goto(path);
+    const metrics = await page.evaluate(() => {
+      const main = document.querySelector('#main-content');
+      if (!main) return null;
+      const padMain = parseFloat(getComputedStyle(main).paddingLeft);
+      const body = [...main.querySelectorAll('p')].find((p) => {
+        const style = getComputedStyle(p);
+        return style.textAlign !== 'center' && (p.textContent || '').trim().length > 80;
+      });
+      if (!body) return { padMain, left: null, width: null, maxWidth: null };
+      const rect = body.getBoundingClientRect();
+      return {
+        padMain,
+        left: rect.left,
+        width: rect.width,
+        maxWidth: getComputedStyle(body).maxWidth,
+      };
+    });
+    expect(metrics, path).not.toBeNull();
+    expect(metrics?.padMain, `${path} main pad`).toBeGreaterThanOrEqual(200);
+    expect(metrics?.maxWidth, `${path} body max-width`).toBe('none');
+    expect(metrics?.left, `${path} text left`).toBeGreaterThanOrEqual(200);
+    expect(metrics?.left, `${path} text left`).toBeLessThan(220);
+    expect(metrics?.width, `${path} text width`).toBeGreaterThan(800);
   }
 });
 

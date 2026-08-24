@@ -190,12 +190,8 @@ const jsonLd = {
         font-family: 'Source Sans 3', 'Source Sans 3 Fallback', system-ui, sans-serif;
       }
       .hub-inner {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 64px var(--page-gutter, 48px) 96px;
-      }
-      .hub[data-country="colombia-banrep"] .hub-inner {
         max-width: none;
+        margin: 0 auto;
         padding: 64px var(--page-gutter, 48px) 96px;
       }
       .hub h1 {
@@ -218,18 +214,8 @@ const jsonLd = {
         font-size: clamp(18px, 1.8vw, 21px);
         line-height: 1.7;
         color: #d8d2cd;
-        max-width: 42rem;
+        max-width: none;
         margin: 0 0 28px;
-      }
-      .hub[data-country="united-states"] .hub-lead,
-      .hub[data-country="united-states"] .hub-intro {
-        max-width: none;
-      }
-      .hub[data-country="colombia-banrep"] .hub-lead,
-      .hub[data-country="colombia-banrep"] .hub-intro,
-      .hub[data-country="colombia-banrep"] .hub-section-lead,
-      .hub[data-country="colombia-banrep"] .hub p {
-        max-width: none;
       }
       .hub-section {
         margin: 0 0 64px;
@@ -249,7 +235,7 @@ const jsonLd = {
         font-size: 18px;
         line-height: 1.65;
         color: #d8d2cd;
-        max-width: 42rem;
+        max-width: none;
       }
       .hub-section-lead { margin: 0 0 28px; }
       .hub p { margin: 0 0 28px; }
@@ -263,7 +249,7 @@ const jsonLd = {
       }
       .issuer-list li {
         margin: 0 0 16px;
-        max-width: 44rem;
+        max-width: none;
       }
       .issuer-list strong {
         display: block;

@@ -1,5 +1,6 @@
 ---
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import { metaDescription, titleTag } from '../../../lib/posts';
 import {
   GLOSSARY_PATH_EN,
@@ -35,7 +36,7 @@ const wikipediaUrl = entry.data.wikipediaUrl;
   path={path}
   jsonLd={jsonLd}
 >
-  <article class="max-w-[900px] mx-auto px-[var(--page-gutter)] pt-14 pb-6">
+  <FeaturePage variant="index">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
       <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/en/">Home</a>
       <span aria-hidden="true"> / </span>
@@ -89,5 +90,5 @@ const wikipediaUrl = entry.data.wikipediaUrl;
         class="inline-flex items-center min-h-11 text-cream underline [text-decoration-color:rgba(231,222,201,0.35)] hover:text-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-[3px]"
       >← Back to the glossary</a>
     </p>
-  </article>
+  </FeaturePage>
 </BlogLayout>

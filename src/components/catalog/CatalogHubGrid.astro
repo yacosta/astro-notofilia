@@ -156,7 +156,7 @@ function headingId(prefix: string, name: string): string {
 {
   cards.length > 0 ? (
     <section
-      class:list={['catalog-hub-grid', !inset && 'max-w-[1180px]', !inset && 'mx-auto', !inset && 'px-[var(--page-gutter,48px)]', 'pb-16', hasSections && 'catalog-hub-grid--eras']}
+      class:list={['catalog-hub-grid', !inset && 'max-w-none', !inset && 'mx-auto', !inset && 'px-[var(--page-gutter,48px)]', 'pb-16', hasSections && 'catalog-hub-grid--eras']}
       aria-label={labelledBy ? undefined : t('hubCards', locale)}
       data-i18n={labelledBy || isEn ? undefined : true}
       data-i18n-target={labelledBy || isEn ? undefined : 'aria-label'}

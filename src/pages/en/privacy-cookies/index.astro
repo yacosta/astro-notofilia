@@ -3,6 +3,7 @@
  * English privacy and cookie policy. Spanish /politica-privacidad-cookies/ is unchanged.
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
+import FeaturePage from '../../../components/FeaturePage.astro';
 import { SITE } from '../../../lib/site';
 
 const title = 'Privacy and Cookie Policy | Notofilia';
@@ -43,7 +44,7 @@ const tableHead = 'text-left px-3 py-2.5 font-semibold';
 const td = 'px-3 py-2.5';
 ---
 <BlogLayout locale="en" title={title} description={description} path={path} ogType="website" jsonLd={jsonLd}>
-  <div class="max-w-[840px] mx-auto px-[var(--page-gutter)] pt-16 pb-10" data-pagefind-meta="url:/en/privacy-cookies/">
+  <FeaturePage as="div" variant="policy" data-pagefind-meta="url:/en/privacy-cookies/">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
       <a class="text-muted" href="/en/">Notofilia</a>
       <span class="text-muted mx-2" aria-hidden="true">/</span>
@@ -128,5 +129,5 @@ const td = 'px-3 py-2.5';
       <p class="text-[17px] leading-[1.7] m-0">We may update this Policy to reflect legislative, technical, or service changes. Any changes will be published on this same page, indicating the last update date.</p>
       <p class="text-[14px] leading-[1.6] text-muted mt-9 mb-0 italic">Note: this document is a general informational template and does not constitute legal advice. Review by a data-protection legal professional is recommended.</p>
     </article>
-  </div>
+  </FeaturePage>
 </BlogLayout>
