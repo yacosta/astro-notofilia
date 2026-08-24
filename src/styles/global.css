@@ -124,7 +124,7 @@
   --rule-artifact: rgba(203, 191, 157, 0.34);
   --shadow-artifact: 0 28px 72px rgba(0, 0, 0, 0.42);
   --radius-surface: 4px;
-  --page-gutter: clamp(48px, 10vw, 128px);
+  --page-gutter: clamp(48px, 16vw, 220px);
 }
 
 /*
