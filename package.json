@@ -13,7 +13,7 @@
     "build": "astro build && node scripts/purge-css.mjs && node scripts/minify-client-runtime.mjs && node scripts/run-pagefind.mjs && node scripts/check-unresolved-mustache.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "check:drift": "node scripts/check-site-drift.mjs",
+    "check:drift": "node scripts/check-site-drift.mjs && node scripts/check-production-html.mjs",
     "check:placeholders": "node scripts/check-placeholders.mjs",
     "check:inventory": "node scripts/check-hardcoded-inventory.mjs",
     "check:citations": "node scripts/check-catalog-citations.mjs",
