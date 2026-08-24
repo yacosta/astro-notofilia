@@ -76,7 +76,7 @@
  */
 @theme {
   /* Layout */
-  --max-width-content: 1180px;
+  --max-width-content: none;
 
   /* Surfaces */
   --color-bg: #0a0a09; /* page background (near-black) */

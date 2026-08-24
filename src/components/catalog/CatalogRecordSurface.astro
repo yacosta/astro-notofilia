@@ -43,7 +43,7 @@ const permanentLabel = t('permanentId', locale);
 {
   isPrimary ? (
     <section
-      class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-10 pb-4']}
+      class="catalog-record-surface max-w-none mx-auto px-[var(--page-gutter,48px)] pt-10 pb-4"
       aria-labelledby="catalog-record-title"
       data-catalog-record={record.id}
       data-catalog-mode="primary"
@@ -51,7 +51,7 @@ const permanentLabel = t('permanentId', locale);
     >
       <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
 
-      <header class="mt-6 mb-8 max-w-[46rem]">
+      <header class="mt-6 mb-8 max-w-none">
         <p class="m-0 mb-3 text-[13px] tracking-[0.14em] uppercase text-muted">
           {[record.country, record.issuer, record.dateOrSeries].filter(Boolean).join(' · ')}
         </p>
@@ -88,7 +88,7 @@ const permanentLabel = t('permanentId', locale);
   ) : (
     <>
       <div
-        class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-8 pb-2']}
+        class="catalog-record-surface max-w-none mx-auto px-[var(--page-gutter,48px)] pt-8 pb-2"
         data-catalog-record={record.id}
         data-catalog-mode="augment"
         data-catalog-hub={hubAttr}
@@ -110,7 +110,7 @@ const permanentLabel = t('permanentId', locale);
       <slot />
 
       <section
-        class:list={['catalog-record-surface', 'mx-auto', isColombiaHub ? 'max-w-none' : 'max-w-[1180px]', isColombiaHub ? undefined : 'px-[var(--page-gutter,48px)]', 'pt-4 pb-12 grid gap-12']}
+        class="catalog-record-surface max-w-none mx-auto px-[var(--page-gutter,48px)] pt-4 pb-12 grid gap-12"
         data-catalog-hub={hubAttr}
       aria-label={isEn ? 'Structured catalog record' : 'Registro estructurado de la ficha'}
       data-i18n={isEn ? undefined : true}

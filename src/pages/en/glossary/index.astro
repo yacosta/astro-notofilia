@@ -26,14 +26,14 @@ const jsonLd = glossaryIndexJsonLdEn(terms);
   path={GLOSSARY_PATH_EN}
   jsonLd={jsonLd}
 >
-  <div id="glossary-index" class="max-w-[900px] mx-auto px-[var(--page-gutter)] pt-14 pb-6">
+  <div id="glossary-index" class="max-w-none mx-auto px-[var(--page-gutter)] pt-14 pb-6">
     <nav class="text-[14px] tracking-[0.06em] text-muted mb-5" aria-label="Breadcrumb">
       <a class="text-muted [text-decoration-color:rgba(183,171,138,0.4)]" href="/en/">Home</a>
       <span aria-hidden="true"> / </span>
       <span>Glossary</span>
     </nav>
 
-    <header class="text-center max-w-[720px] mx-auto mb-10">
+    <header class="text-center max-w-none mx-auto mb-10">
       <p class="m-0 mb-3.5 text-[14px] tracking-[0.22em] uppercase text-muted">
         A resource for collectors
       </p>
@@ -45,7 +45,7 @@ const jsonLd = glossaryIndexJsonLdEn(terms);
       </p>
     </header>
 
-    <div class="max-w-[560px] mx-auto mb-7" data-pagefind-ignore>
+    <div class="max-w-none mx-auto mb-7" data-pagefind-ignore>
       <label
         for="glossary-search"
         class="block text-[13px] tracking-[0.14em] uppercase text-muted mb-2.5 text-center"
