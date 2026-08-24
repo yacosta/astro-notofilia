@@ -272,6 +272,23 @@ test('Colombia Siglo Pasado and Banco de la República catalogs list era notes',
   await expect(page.getByRole('link', { name: /Cartagena/ })).toHaveCount(0);
   await expect(page.getByRole('link', { name: /Banco Hipotecario/ })).toHaveCount(0);
 
+  const banrepCards = page.locator('#catalogo .catalog-grid a');
+  const banrepHrefs = await banrepCards.evaluateAll((els) =>
+    els.map((el) => (el instanceof HTMLAnchorElement ? el.getAttribute('href') : null)),
+  );
+  const halfPeso = '/coleccion/colombia/banco-de-la-republica-medio-peso-oro-specimen/';
+  const onePeso = '/coleccion/colombia/banco-de-la-republica-1-peso-specimen/';
+  const twoPesos = '/coleccion/colombia/banco-de-la-republica-2-pesos-oro/';
+  const fiftyThousand = '/coleccion/colombia/banco-de-la-republica-50000-pesos/';
+  expect(banrepHrefs.indexOf(halfPeso)).toBeGreaterThan(-1);
+  expect(banrepHrefs.indexOf(onePeso)).toBeGreaterThan(banrepHrefs.indexOf(halfPeso));
+  expect(banrepHrefs.indexOf(twoPesos)).toBeGreaterThan(banrepHrefs.indexOf(onePeso));
+  expect(banrepHrefs.at(-1)).toBe(fiftyThousand);
+  await expect(page.getByRole('heading', { level: 3, name: '1/2 Peso', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: '1 Peso', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: '2000 Pesos', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: '50000 Pesos', exact: true })).toBeVisible();
+
   await page.goto('/en/collection/colombia/last-century/', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1, name: 'Last Century' })).toBeVisible();

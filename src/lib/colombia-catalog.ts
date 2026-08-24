@@ -326,3 +326,72 @@ export function compareColombiaCards(
 
   return compareByFirstYear(a, b) || indexA - indexB;
 }
+
+export type BanrepLandingItem = {
+  path: string;
+  title: string;
+  year?: string | number | null;
+};
+
+/** Lowest denomination first, then earliest documented year. */
+export function compareBanrepLandingItems(a: BanrepLandingItem, b: BanrepLandingItem): number {
+  const rankA = rankOf(COLOMBIA_BANREP_GROUPS, banrepDenominationFor(a.path) ?? undefined);
+  const rankB = rankOf(COLOMBIA_BANREP_GROUPS, banrepDenominationFor(b.path) ?? undefined);
+  if (rankA !== rankB) return rankA - rankB;
+  return compareByFirstYear(a, b) || a.title.localeCompare(b.title, 'es');
+}
+
+function banrepDenominationId(group: string): string {
+  return group
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\//g, '-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+/** Denomination sections for /coleccion/colombia/banco-de-la-republica/. */
+export function groupBanrepCatalogItems<T extends BanrepLandingItem>(items: T[]): Array<{
+  group: string;
+  id: string;
+  titleEn: string;
+  breakBefore: boolean;
+  items: T[];
+}> {
+  const buckets = new Map<string, T[]>();
+  for (const group of COLOMBIA_BANREP_GROUPS) buckets.set(group, []);
+  const unmatched: T[] = [];
+
+  for (const item of items) {
+    const denomination = banrepDenominationFor(item.path);
+    if (denomination) buckets.get(denomination)!.push(item);
+    else unmatched.push(item);
+  }
+
+  const sections = COLOMBIA_BANREP_GROUPS.flatMap((group) => {
+    const grouped = [...buckets.get(group)!].sort(compareBanrepLandingItems);
+    if (grouped.length === 0) return [];
+    return [
+      {
+        group,
+        id: `banrep-${banrepDenominationId(group)}`,
+        titleEn: group,
+        breakBefore: false,
+        items: grouped,
+      },
+    ];
+  });
+
+  if (unmatched.length) {
+    sections.push({
+      group: 'Otras piezas',
+      id: 'banrep-otras-piezas',
+      titleEn: 'Other pieces',
+      breakBefore: false,
+      items: [...unmatched].sort(compareBanrepLandingItems),
+    });
+  }
+
+  return sections;
+}
