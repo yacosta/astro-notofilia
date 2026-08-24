@@ -43,7 +43,7 @@ const isEn = locale === 'en';
 ---
 <section
   aria-labelledby={headingId}
-  class:list={['bg-cream-dim py-[72px] px-6', bordered && 'border-t border-ink/12']}
+  class:list={['bg-cream-dim py-[72px] px-[var(--page-gutter)]', bordered && 'border-t border-ink/12']}
 >
   <div class="max-w-content mx-auto">
     <h2 id={headingId} data-i18n={!isEn && headingEn ? true : undefined} data-en={!isEn ? headingEn : undefined} class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-8 text-center">
