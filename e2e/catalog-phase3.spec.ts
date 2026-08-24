@@ -820,6 +820,12 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     { path: '/contacto/', selector: '[data-feature-page]' },
     { path: '/politica-privacidad-cookies/', selector: '[data-feature-page]' },
     { path: '/buscar/', selector: '.buscar-main' },
+    { path: '/coleccion/food-coupons-usda/', selector: '#main-content' },
+    { path: '/en/collection/usda-food-coupons/', selector: '#main-content' },
+    { path: '/en/collection/united-states/', selector: '.hub-inner' },
+    { path: '/en/collection/world-polymer/', selector: '#main-content, .hub-inner' },
+    { path: '/blog/como-empezar-coleccion-billetes/', selector: '[data-feature-page]' },
+    { path: '/en/blog/how-to-start-a-banknote-collection/', selector: '[data-feature-page]' },
   ];
   for (const sample of samples) {
     await page.goto(sample.path);
@@ -827,6 +833,11 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     await expect(el, sample.path).toBeVisible();
     const padLeft = await el.evaluate((node) => parseFloat(getComputedStyle(node).paddingLeft));
     expect(padLeft, sample.path).toBeGreaterThanOrEqual(200);
+    const lead = el.locator('p').first();
+    if (await lead.count()) {
+      const maxW = await lead.evaluate((node) => getComputedStyle(node).maxWidth);
+      expect(maxW, `${sample.path} lead max-width`).toBe('none');
+    }
   }
 });
 
