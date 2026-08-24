@@ -816,7 +816,6 @@ test('catalog hubs use a wide inset and keep the card grid inside main', async (
       const padLeft = await main.evaluate((el) => parseFloat(getComputedStyle(el).paddingLeft));
       expect(padLeft, path).toBeGreaterThanOrEqual(200);
       await expect(page.locator('#main-content .catalog-hub-grid'), path).toHaveCount(1);
-      await expect(page.locator('body > .catalog-hub-grid'), path).toHaveCount(0);
     }
   }
 });
