@@ -369,7 +369,13 @@ export function groupBanrepCatalogItems<T extends BanrepLandingItem>(items: T[])
     else unmatched.push(item);
   }
 
-  const sections = COLOMBIA_BANREP_GROUPS.flatMap((group) => {
+  const sections: Array<{
+    group: string;
+    id: string;
+    titleEn: string;
+    breakBefore: boolean;
+    items: T[];
+  }> = COLOMBIA_BANREP_GROUPS.flatMap((group) => {
     const grouped = [...buckets.get(group)!].sort(compareBanrepLandingItems);
     if (grouped.length === 0) return [];
     return [
