@@ -517,15 +517,23 @@ test('Philippines Victory Series catalog page lists both notes in English', asyn
   );
 });
 
-test('5 pesos Victory Series is table-only, not a live ficha', async ({ page }) => {
+test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ page }) => {
   const es = await page.goto('/coleccion/filipinas/5-pesos-victory-series-66/', {
     waitUntil: 'domcontentloaded',
   });
-  expect(es?.ok()).toBeFalsy();
+  expect(es?.ok()).toBeTruthy();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await expect(page.getByRole('heading', { level: 1, name: 'Cinco Pesos Victory Series No. 66' })).toBeVisible();
+  const img = page.locator('main#main-content img[src="/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg"]');
+  await expect(img).toBeVisible();
+  await expect(img).toHaveAttribute('width', '906');
+  await expect(img).toHaveAttribute('height', '878');
   const en = await page.goto('/en/collection/philippines/5-pesos-victory-series-66/', {
     waitUntil: 'domcontentloaded',
   });
-  expect(en?.ok()).toBeFalsy();
+  expect(en?.ok()).toBeTruthy();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('heading', { level: 1, name: 'Five Pesos Victory Series No. 66' })).toBeVisible();
 });
 
 test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {

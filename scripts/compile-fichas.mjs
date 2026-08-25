@@ -62,6 +62,7 @@ function pictureForUpload(src, alt, { eager = false } = {}) {
   const known = {
     'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg': { w: 1148, h: 1370 },
     'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg': { w: 1024, h: 1284 },
+    'philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg': { w: 906, h: 878 },
   }[file];
   const loading = eager ? 'eager' : 'lazy';
   const fetch = eager ? ' fetchpriority="high"' : '';
