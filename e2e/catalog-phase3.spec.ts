@@ -592,6 +592,8 @@ test('Logros del Mes is a 3-column grid on desktop', async ({ page }) => {
   await page.locator('#logros-heading').scrollIntoViewIfNeeded();
   const cards = page.locator('[data-logros-grid] > li > a');
   await expect(cards).toHaveCount(6);
+  const columns = await page.locator('[data-logros-grid]').evaluate((node) => getComputedStyle(node).gridTemplateColumns);
+  expect(columns.split(' ').length).toBe(3);
   const rowCount = await cards.evaluateAll((nodes) => {
     const tops = nodes.map((node) => Math.round(node.getBoundingClientRect().top));
     return new Set(tops).size;
@@ -621,14 +623,17 @@ test('Logros del Mes stacks all 6 cards on mobile without a snap carousel', asyn
   const cards = page.locator('[data-logros-grid] > li > a');
   await expect(cards).toHaveCount(6);
   await expect(page.locator('[data-logros-grid]')).not.toHaveClass(/overflow-x-auto|snap-x/);
-  const boxes = [];
+  const columns = await page.locator('[data-logros-grid]').evaluate((node) => getComputedStyle(node).gridTemplateColumns);
+  expect(columns.split(' ').length).toBe(1);
+  const documentTops = await cards.evaluateAll((nodes) =>
+    nodes.map((node) => node.getBoundingClientRect().top + window.scrollY),
+  );
+  for (let index = 1; index < documentTops.length; index += 1) {
+    expect(documentTops[index]).toBeGreaterThan(documentTops[index - 1]);
+  }
   for (let index = 0; index < 6; index += 1) {
     await cards.nth(index).scrollIntoViewIfNeeded();
     await expect(cards.nth(index)).toBeInViewport();
-    boxes.push(await cards.nth(index).boundingBox());
-  }
-  for (let index = 1; index < boxes.length; index += 1) {
-    expect(boxes[index - 1] && boxes[index] && boxes[index]!.y > boxes[index - 1]!.y).toBeTruthy();
   }
 });
 
