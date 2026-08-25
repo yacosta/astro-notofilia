@@ -520,7 +520,7 @@ test('Giori Lincoln Memorial test note has ES and EN fichas with the submitted p
     'src',
     '/uploads/magna-giori-lincoln-memorial-rgmb1-0nsu.jpg',
   );
-  await expect(page.getByRole('link', { name: /tres retratos/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'nota Giori de tres retratos', exact: true })).toBeVisible();
 
   await page.goto('/en/collection/giori-press-test-note-lincoln-memorial/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -535,7 +535,7 @@ test('second Débora P-458b proof is a distinct ficha from the first', async ({ 
   await page.goto('/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await expect(page.getByRole('heading', { level: 1, name: 'El Banco de la República' })).toBeVisible();
-  await expect(page.getByText('AA22293893')).toBeVisible();
+  await expect(page.getByText('AA22293893', { exact: false }).first()).toBeVisible();
   await expect(page.getByRole('img').first()).toHaveAttribute(
     'src',
     '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.jpg',
