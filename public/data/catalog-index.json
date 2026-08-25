@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T02:17:35.709Z",
+  "generatedAt": "2026-08-25T13:53:51.806Z",
   "count": 140,
   "pieceCount": 124,
   "stats": {
@@ -7,7 +7,7 @@
     "monedas": 9,
     "paises": 36,
     "fichas": 124,
-    "paginas": 156
+    "paginas": 157
   },
   "countries": [
     {
@@ -351,6 +351,27 @@
       ],
       "url": "https://notofilia.com/coleccion/emisiones-promocionales/",
       "image": "/uploads/ringling-bros-50th-anniversary-baraboo-5-cents.jpg",
+      "ogType": "website",
+      "role": "hub"
+    },
+    {
+      "id": "filipinas--serie-victory-no-66",
+      "path": "/coleccion/filipinas/serie-victory-no-66/",
+      "title": "Serie Victory No. 66 Filipinas (1944)",
+      "description": "Catálogo Victory Series No. 66 de Filipinas (1944): certificados del Tesoro, Pick 94–101, liberación de Leyte y ejemplares de la colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "leyte",
+        "pick 94",
+        "pick 95"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/serie-victory-no-66/",
+      "image": "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg",
       "ogType": "website",
       "role": "hub"
     },
