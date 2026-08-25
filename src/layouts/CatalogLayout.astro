@@ -86,7 +86,8 @@ const cards = COLOMBIA_HUB_PATHS.has(props.path)
     : POP_ART_HUB_PATHS.has(props.path)
       ? popArtHubCards(rawCards)
       : rawCards;
-const isHub = record?.render === 'astro-hub' || cards.length > 0;
+const isPrimary = record?.render === 'primary';
+const isHub = !isPrimary && (record?.render === 'astro-hub' || cards.length > 0);
 const isColombiaHub = COLOMBIA_HUB_PATHS.has(props.path);
 // Phase 3: catalog pages no longer load the custom dc-runtime (`support.js`).
 // English URLs must receive a human English `template` — never wrap Spanish HTML.
@@ -283,6 +284,85 @@ const catalogZoomHash = createHash('sha256')
         outline: 2px solid var(--text-primary) !important;
         outline-offset: 4px !important;
       }
+      .catalog-ficha-md {
+        color: var(--text-secondary);
+        font-size: clamp(17px, 1.35vw, 19px);
+        line-height: 1.7;
+        max-width: 46rem;
+      }
+      .catalog-ficha-md h2,
+      .catalog-ficha-md h3 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        color: var(--text-primary);
+        line-height: 1.2;
+        margin: 2.2em 0 0.7em;
+      }
+      .catalog-ficha-md h2 {
+        font-size: clamp(22px, 3vw, 28px);
+      }
+      .catalog-ficha-md h3 {
+        font-size: clamp(18px, 2.2vw, 22px);
+      }
+      .catalog-ficha-md h2:first-child,
+      .catalog-ficha-md h3:first-child {
+        margin-top: 0;
+      }
+      .catalog-ficha-md p,
+      .catalog-ficha-md ul,
+      .catalog-ficha-md ol,
+      .catalog-ficha-md blockquote,
+      .catalog-ficha-md figure {
+        margin: 0 0 1.15em;
+      }
+      .catalog-ficha-md ul,
+      .catalog-ficha-md ol {
+        padding-left: 1.35em;
+      }
+      .catalog-ficha-md li + li {
+        margin-top: 0.45em;
+      }
+      .catalog-ficha-md a {
+        color: var(--accent-metal);
+        text-decoration: underline;
+        text-decoration-color: rgba(203, 191, 157, 0.42);
+        text-underline-offset: 0.15em;
+      }
+      .catalog-ficha-md a:hover {
+        color: var(--text-primary);
+      }
+      .catalog-ficha-md a:focus-visible {
+        outline: 2px solid var(--text-primary);
+        outline-offset: 4px;
+      }
+      .catalog-ficha-md img,
+      .catalog-ficha-md picture {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .catalog-ficha-md img {
+        height: auto;
+      }
+      .catalog-ficha-md blockquote {
+        margin-inline: 0;
+        padding: 0.85em 1.1em;
+        border-left: 2px solid var(--rule-artifact);
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .catalog-ficha-md .new-window-hint {
+        font-style: italic;
+        font-weight: 400;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .catalog-ficha-md *,
+        .catalog-ficha-md *::before,
+        .catalog-ficha-md *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
       .catalog-record-meta--visually-hidden {
         position: absolute;
         left: -10000px;
@@ -381,7 +461,16 @@ const catalogZoomHash = createHash('sha256')
     >{skipLabel}</a>
     <SiteHeader locale={locale} path={props.path} />
     {
-      record ? (
+      record && isPrimary ? (
+        <CatalogRecordSurface record={record} path={props.path} mode="primary" locale={locale}>
+          {catalogBody ? (
+            <div class="catalog-ficha-md" set:html={catalogBody} />
+          ) : null}
+          {cards.length > 0 && (
+            <CatalogHubGrid cards={cards} thinNote locale={locale} inset />
+          )}
+        </CatalogRecordSurface>
+      ) : record ? (
         <CatalogRecordSurface record={record} path={props.path} mode="augment" locale={locale}>
           {hubSplit ? (
             <div class="catalog-shell" data-catalog-hub={isColombiaHub ? 'colombia' : undefined}>

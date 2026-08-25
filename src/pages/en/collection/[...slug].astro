@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     const en = page.data.i18n?.en;
     if (!en?.path) return [];
     const render = page.data.record?.render ?? 'astro-static';
-    if ((render === 'astro-hub' || render === 'astro-static') && !en.template) {
+    if ((render === 'astro-hub' || render === 'astro-static' || render === 'primary') && !en.template) {
       return [];
     }
     if (!en.path.startsWith(prefix) || !en.path.endsWith('/')) {
@@ -46,6 +46,8 @@ const record: CatalogRecord | undefined = page.data.record
       title: en.recordTitle ?? en.title,
       eyebrow: en.eyebrow ?? page.data.record.eyebrow,
       country: lookupEn(page.data.record.country) ?? page.data.record.country,
+      issuer: lookupEn(page.data.record.issuer) ?? page.data.record.issuer,
+      subtitle: lookupEn(page.data.record.subtitle) ?? page.data.record.subtitle,
       dateOrSeries: en.eyebrow ?? page.data.record.dateOrSeries,
       metadata: page.data.record.metadata
         ? {
@@ -74,11 +76,7 @@ const record: CatalogRecord | undefined = page.data.record
   : undefined;
 
 const hubName = (en.recordTitle ?? en.title).replace(/\s*[|·].*$/, '').trim();
-const isHub = Array.isArray((page.data.jsonLd as { '@graph'?: unknown[] } | undefined)?.['@graph'])
-  ? ((page.data.jsonLd as { '@graph': unknown[] })['@graph'] as { '@type'?: string }[]).some(
-      (node) => node && node['@type'] === 'CollectionPage',
-    )
-  : false;
+const isHub = page.data.record?.render === 'astro-hub';
 const pieceJsonLd = localizeCatalogJsonLdForEn(page.data.jsonLd, {
   esPath: page.data.path,
   enPath: en.path,

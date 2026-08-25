@@ -170,12 +170,12 @@ export function localizeCatalogJsonLdForEn(
       : typeof node['@type'] === 'string'
         ? [node['@type']]
         : [];
-    if (types.includes('CreativeWork')) {
+    if (types.includes('CreativeWork') || types.includes('CollectionPage')) {
       node.name = opts.name;
       node.description = opts.description;
       node.inLanguage = 'en';
       node.url = enAbs;
-      if (opts.creditText) node.creditText = opts.creditText;
+      if (types.includes('CreativeWork') && opts.creditText) node.creditText = opts.creditText;
     }
     if (types.includes('ListItem') && node.item === enAbs) {
       node.name = opts.name;

@@ -469,6 +469,54 @@ test('retired Tesorería Victory Series page is not a live document', async ({ p
   ).toHaveCount(0);
 });
 
+test('Philippines Victory Series catalog page lists both notes in Spanish', async ({ page }) => {
+  const response = await page.goto('/coleccion/filipinas/billetes-victory-series/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await expect(page.locator('main#main-content')).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Catálogo de billetes Victory Series de Filipinas' }),
+  ).toBeVisible();
+  await expect(page.locator('[data-catalog-mode="primary"]')).toBeVisible();
+  await expect(page.locator('.catalog-ficha-md')).toContainText('Pick 94a');
+  await expect(page.locator('.catalog-ficha-md')).toContainText('Pick 95a');
+  const cards = page.locator('.catalog-banknote-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
+  await expect(cards.nth(1)).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
+  await expect(page.getByRole('heading', { name: 'Cómo citar esta ficha' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Reportar un error o aportar información' })).toBeVisible();
+  await expect(page.locator('.catalog-record-meta')).toBeVisible();
+  await expect(page.locator('.catalog-record-meta--visually-hidden')).toHaveCount(0);
+});
+
+test('Philippines Victory Series catalog page lists both notes in English', async ({ page }) => {
+  const response = await page.goto('/en/collection/philippines/victory-series-banknotes/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(response?.ok()).toBeTruthy();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('main#main-content')).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Catalog Philippines Victory Series Banknotes' }),
+  ).toBeVisible();
+  await expect(page.locator('[data-catalog-mode="primary"]')).toBeVisible();
+  const cards = page.locator('.catalog-banknote-card');
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/1-peso-victory-series-66/',
+  );
+  await expect(cards.nth(1)).toHaveAttribute(
+    'href',
+    '/en/collection/philippines/2-pesos-victory-series-66/',
+  );
+  await expect(page.getByRole('heading', { name: 'How to cite this record' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Report an error or add information' })).toBeVisible();
+});
+
 test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
   await page.goto('/coleccion/filipinas/');
   const cards = page.locator('.catalog-banknote-card');

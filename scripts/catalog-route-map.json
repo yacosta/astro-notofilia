@@ -300,6 +300,10 @@
     "legacyFile": "catalogo-filipinas.dc.html"
   },
   {
+    "route": "/coleccion/filipinas/billetes-victory-series/",
+    "legacyFile": "catalogo-filipinas-billetes-victory-series.dc.html"
+  },
+  {
     "route": "/coleccion/filipinas/1-peso-victory-series-66/",
     "legacyFile": "billete-filipinas-1-peso-victory-series-66.dc.html"
   },
