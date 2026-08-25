@@ -482,7 +482,7 @@ test('Philippines Victory Series catalog page lists both notes in Spanish', asyn
   await expect(page.locator('main#main-content .catalog-banknote-card')).toHaveCount(0);
   await expect(page.locator('main#main-content a[href="/coleccion/filipinas/1-peso-victory-series-66/"]')).toBeVisible();
   await expect(page.locator('main#main-content a[href="/coleccion/filipinas/2-pesos-victory-series-66/"]')).toBeVisible();
-  await expect(page.locator('main#main-content a[href="/coleccion/filipinas/5-pesos-victory-series-66/"]')).toHaveCount(0);
+  await expect(page.locator('main#main-content a[href="/coleccion/filipinas/5-pesos-victory-series-66/"]')).toBeVisible();
   await expect(page.locator('main#main-content')).toContainText('Pick 94');
   await expect(page.locator('main#main-content')).toContainText('Pick 95');
   await expect(page.locator('main#main-content')).toContainText('American Period');
@@ -508,6 +508,9 @@ test('Philippines Victory Series catalog page lists both notes in English', asyn
   ).toBeVisible();
   await expect(
     page.locator('main#main-content a[href="/en/collection/philippines/2-pesos-victory-series-66/"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator('main#main-content a[href="/en/collection/philippines/5-pesos-victory-series-66/"]'),
   ).toBeVisible();
   await expect(page.locator('main#main-content')).toContainText('Historical context');
   await expect(page.getByRole('heading', { name: 'How to cite this record' })).toBeVisible();
@@ -536,6 +539,18 @@ test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ pag
   expect(en?.ok()).toBeTruthy();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.getByRole('heading', { level: 1, name: 'Five Pesos Victory Series No. 66' })).toBeVisible();
+});
+
+test('English mixed Spanish series slug is not a separate catalog page', async ({ page }) => {
+  const response = await page.goto('/en/collection/philippines/serie-victory-no-66/', {
+    waitUntil: 'domcontentloaded',
+  });
+  if (response?.ok()) {
+    await expect(page).toHaveURL(/\/en\/collection\/philippines\/$/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Victory Series No. 66' })).toBeVisible();
+  } else {
+    expect(response?.status()).toBe(404);
+  }
 });
 
 test('retired Victory Series child slug is not a live document', async ({ page }) => {
