@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-25T01:43:22.437Z",
-  "count": 139,
-  "pieceCount": 123,
+  "generatedAt": "2026-08-25T02:17:35.709Z",
+  "count": 140,
+  "pieceCount": 124,
   "stats": {
-    "billetes": 223,
+    "billetes": 224,
     "monedas": 9,
     "paises": 36,
-    "fichas": 123,
-    "paginas": 155
+    "fichas": 124,
+    "paginas": 156
   },
   "countries": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 30,
+      "count": 31,
       "slug": "estados-unidos"
     },
     {
@@ -2763,6 +2763,35 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
+    },
+    {
+      "id": "giori-press-test-note-lincoln-memorial-uniface",
+      "path": "/coleccion/giori-press-test-note-lincoln-memorial-uniface/",
+      "title": "Giori Lincoln Memorial, uniface",
+      "description": "Nota de prueba Magna/Giori: Memorial Lincoln en verde, uniface. Rothberg RGMB1/0NSU.",
+      "keywords": [
+        "giori press test note",
+        "magna press",
+        "lincoln memorial",
+        "rothberg rgmb1",
+        "uniface",
+        "nota de prueba"
+      ],
+      "url": "https://notofilia.com/coleccion/giori-press-test-note-lincoln-memorial-uniface/",
+      "image": "/uploads/us-giori-press-test-note-lincoln-memorial-uniface.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Prueba de prensa (BEP / Giori); sin emisor de circulación",
+      "denomination": "Ninguna — nota de prueba, sin curso legal",
+      "catalogRef": "Rothberg RGMB1/0NSU (etiqueta; no Friedberg/Pick)",
+      "condition": "",
+      "emissionType": "Nota de prueba de prensa (press test note), uniface, sin curso legal. Distinta de la nota Giori con retratos cancelados de esta colección.",
+      "dateLabel": "c. 1970s en fichas de casa de subastas y dealers para el tipo Magna/Giori Lincoln Memorial. Fecha leída en este pliego: no hay",
+      "year": 1970,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "giori lincoln memorial, uniface nota de prueba magna/giori: memorial lincoln en verde, uniface. rothberg rgmb1/0nsu. estados unidos prueba de prensa (bep / giori); sin emisor de circulación ninguna — nota de prueba, sin curso legal rothberg rgmb1/0nsu (etiqueta; no friedberg/pick) papel banknote giori press test note magna press lincoln memorial rothberg rgmb1 uniface nota de prueba"
     },
     {
       "id": "giori-press-test-note",
