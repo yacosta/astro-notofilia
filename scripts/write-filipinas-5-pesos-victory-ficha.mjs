@@ -1,6 +1,6 @@
 /**
- * Generator for the Philippines Victory Series 66 2 pesos (Pick 95a) ficha.
- * Usage: node scripts/write-filipinas-2-pesos-victory-ficha.mjs
+ * Generator for the Philippines Victory Series 66 5 pesos (Pick 96a) ficha.
+ * Usage: node scripts/write-filipinas-5-pesos-victory-ficha.mjs
  */
 import { createHash } from 'node:crypto';
 import { existsSync, writeFileSync } from 'node:fs';
@@ -8,16 +8,16 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const SITE = 'https://notofilia.com';
-const ES_PATH = '/coleccion/filipinas/2-pesos-victory-series-66/';
-const EN_PATH = '/en/collection/philippines/2-pesos-victory-series-66/';
-const SLUG = 'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834';
+const ES_PATH = '/coleccion/filipinas/5-pesos-victory-series-66/';
+const EN_PATH = '/en/collection/philippines/5-pesos-victory-series-66/';
+const SLUG = 'philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc';
 const IMG = `/uploads/${SLUG}`;
-const ZOOM_ID = 'filipinas-2-pesos-victory-series-66';
-const OUT = path.join(process.cwd(), 'src/content/catalog/filipinas--2-pesos-victory-series-66.json');
+const ZOOM_ID = 'filipinas-5-pesos-victory-series-66';
+const OUT = path.join(process.cwd(), 'src/content/catalog/filipinas--5-pesos-victory-series-66.json');
 
 const jpgPath = path.join(process.cwd(), `public/uploads/${SLUG}.jpg`);
-let IMG_WIDTH = 1024;
-let IMG_HEIGHT = 1284;
+let IMG_WIDTH = 906;
+let IMG_HEIGHT = 878;
 if (existsSync(jpgPath)) {
   const meta = await sharp(jpgPath).metadata();
   if (meta.width && meta.height) {
@@ -30,9 +30,9 @@ const styles =
   "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }";
 
 const ALT_ES =
-  'Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66, serial F13317943: anverso con retrato de Rizal y sello azul (arriba) y reverso azul con sobresello VICTORY (abajo)';
+  'Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66, serial F00618071: anverso con McKinley, Dewey y sello azul (arriba) y reverso ocre con sobresello VICTORY (abajo)';
 const ALT_EN =
-  'Philippines Treasury Certificate of 2 pesos, Victory Series No. 66, serial F13317943: obverse with Rizal portrait and blue seal (top) and blue reverse with VICTORY overprint (bottom)';
+  'Philippines Treasury Certificate of 5 pesos, Victory Series No. 66, serial F00618071: obverse with McKinley, Dewey and blue seal (top) and ochre reverse with VICTORY overprint (bottom)';
 
 function newTab(isEs) {
   return isEs
@@ -149,43 +149,43 @@ function buildTemplate(lang) {
   const hubHref = isEs ? '/coleccion/filipinas/' : '/en/collection/philippines/';
   const hubLabel = isEs ? '&larr; Catálogo de Filipinas' : '&larr; Philippines catalog';
   const screen = isEs
-    ? 'Filipinas — 2 Pesos Victory Series No. 66'
-    : 'Philippines — 2 Pesos Victory Series No. 66';
+    ? 'Filipinas — 5 Pesos Victory Series No. 66'
+    : 'Philippines — 5 Pesos Victory Series No. 66';
   const eyebrow = isEs
     ? 'Tesorería de Filipinas &middot; Victory Series No. 66 &middot; 1944'
     : 'Treasury of the Philippines &middot; Victory Series No. 66 &middot; 1944';
-  const h1 = isEs ? 'Dos Pesos Victory Series No. 66' : 'Two Pesos Victory Series No. 66';
+  const h1 = isEs ? 'Cinco Pesos Victory Series No. 66' : 'Five Pesos Victory Series No. 66';
   const subtitle = isEs
-    ? 'Certificado del Tesoro &middot; Pick 95a &middot; serial F13317943'
-    : 'Treasury Certificate &middot; Pick 95a &middot; serial F13317943';
+    ? 'Certificado del Tesoro &middot; Pick 96a &middot; serial F00618071'
+    : 'Treasury Certificate &middot; Pick 96a &middot; serial F00618071';
   const alt = isEs ? ALT_ES : ALT_EN;
 
   const rows = isEs
     ? [
         ['País', 'Filipinas (Commonwealth)'],
         ['Entidad Emisora', 'Tesorería de Filipinas (<em>Treasury of the Philippines</em>)'],
-        ['Denominación', '2 pesos (dos pesos)'],
+        ['Denominación', '5 pesos (cinco pesos)'],
         [
           'Tipo de Emisión',
           'Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente',
         ],
         ['Serie', 'Victory Series No. 66 (sin fecha impresa; ND 1944)'],
-        ['Número de Serie', 'F13317943 (tinta azul, repetido)'],
-        ['Firmas', 'S. Osmeña (President) y J. Hernandez (Auditor General), visibles en el ejemplar'],
+        ['Número de Serie', 'F00618071 (tinta azul, repetido)'],
+        ['Firmas', 'S. Osmeña (President) y Jaime Hernandez (Auditor General), visibles en el ejemplar'],
         ['Impresor', 'U.S. Bureau of Engraving and Printing (sin pie de imprenta en el ejemplar)'],
         ['Material', 'Papel'],
         [
           'Dimensiones',
-          'Numista cita 161,9 &times; 67,4 mm.<sup style="font-size:12px;">6</sup> Medición propia: <span style="font-style:italic;">no confirmado</span>',
+          'Numista y numismatics.ph citan 161,9 &times; 67,4 mm.<sup style="font-size:12px;">5,7</sup> Medición propia: <span style="font-style:italic;">no confirmado</span>',
         ],
-        ['Referencia de Catálogo', 'Pick 95a (tipo sin sobresello del Banco Central)'],
+        ['Referencia de Catálogo', 'Pick 96a (tipo sin sobresello del Banco Central)'],
         [
           'Tirada',
-          'Fuentes secundarias que citan entregas BEP: 16.231.272 (2 pesos, Osmeña–Hernandez).<sup style="font-size:12px;">6,7</sup> Informe BEP original: <span style="font-style:italic;">no confirmado</span>',
+          'Fuentes secundarias que citan entregas BEP: 17.355.000 (5 pesos, Osmeña–Hernandez).<sup style="font-size:12px;">5,6,7</sup> Informe BEP original: <span style="font-style:italic;">no confirmado</span>',
         ],
         [
           'Variedades conocidas',
-          'Pick 95a (esta ficha); Pick 95b (Roxas–Guevara, título Treasurer); Pick 95r1/r2 (reposición con estrella); Pick 95s (specimen). Pick 118: mismo tipo con sobresello rojo CENTRAL BANK OF THE PHILIPPINES (1949); Bank Note Museum anota 118[a] Osmeña–Hernandez como no emitido.<sup style="font-size:12px;">4,5</sup>',
+          'Pick 96a (esta ficha); Pick 96r (reposición con estrella); Pick 96s (specimen). No hay firma Roxas en el 5 pesos.<sup style="font-size:12px;">5,6</sup> Pick 119: mismo tipo con sobresello rojo CENTRAL BANK OF THE PHILIPPINES (1949); 119a letra gruesa y 119b letra fina.<sup style="font-size:12px;">4</sup>',
         ],
         [
           'Fechas de circulación',
@@ -193,39 +193,39 @@ function buildTemplate(lang) {
         ],
         [
           'Base de la rareza',
-          'Tipo común de la serie 66 (Pick 95a). El 95b (Roxas) es la firma menos frecuente. El ejemplar no está encapsulado. Población PMG del Pick 95a: <span style="font-style:italic;">no confirmado</span>',
+          'Tipo común de la serie 66 (Pick 96a). El ejemplar no está encapsulado. Población PMG del Pick 96a: <span style="font-style:italic;">no confirmado</span>',
         ],
         [
           'Estado del ejemplar mostrado',
-          'Sin encapsular, anverso y reverso fotografiados sobre fondo blanco; serial F13317943; sello y series azules; sobresello negro VICTORY en el reverso; sin sobresello rojo CENTRAL BANK OF THE PHILIPPINES. Grado numérico: <span style="font-style:italic;">no confirmado</span>',
+          'Sin encapsular, anverso y reverso fotografiados sobre fondo blanco; serial F00618071; sello y series azules; reverso ocre con sobresello negro VICTORY; sin sobresello rojo CENTRAL BANK OF THE PHILIPPINES. Grado numérico: <span style="font-style:italic;">no confirmado</span>',
         ],
-        ['Fecha de última revisión factual', '22 de agosto de 2026', true],
+        ['Fecha de última revisión factual', '24 de agosto de 2026', true],
       ]
     : [
         ['Country', 'Philippines (Commonwealth)'],
         ['Issuing Entity', 'Treasury of the Philippines'],
-        ['Denomination', '2 pesos (two pesos)'],
+        ['Denomination', '5 pesos (five pesos)'],
         [
           'Type of Issue',
           'Treasury Certificate — deposit certificate payable to bearer in silver pesos or in United States legal tender of equivalent value',
         ],
         ['Series', 'Victory Series No. 66 (no printed date; ND 1944)'],
-        ['Serial Number', 'F13317943 (blue ink, repeated)'],
-        ['Signatures', 'S. Osmeña (President) and J. Hernandez (Auditor General), visible on the specimen'],
+        ['Serial Number', 'F00618071 (blue ink, repeated)'],
+        ['Signatures', 'S. Osmeña (President) and Jaime Hernandez (Auditor General), visible on the specimen'],
         ['Printer', 'U.S. Bureau of Engraving and Printing (no imprint on this specimen)'],
         ['Material', 'Paper'],
         [
           'Dimensions',
-          'Numista lists 161.9 &times; 67.4 mm.<sup style="font-size:12px;">6</sup> Own measurement: <span style="font-style:italic;">unconfirmed</span>',
+          'Numista and numismatics.ph list 161.9 &times; 67.4 mm.<sup style="font-size:12px;">5,7</sup> Own measurement: <span style="font-style:italic;">unconfirmed</span>',
         ],
-        ['Catalog Reference', 'Pick 95a (type without the Central Bank overprint)'],
+        ['Catalog Reference', 'Pick 96a (type without the Central Bank overprint)'],
         [
           'Print Run',
-          'Secondary sources citing BEP deliveries: 16,231,272 (2 pesos, Osmeña–Hernandez).<sup style="font-size:12px;">6,7</sup> Original BEP report: <span style="font-style:italic;">unconfirmed</span>',
+          'Secondary sources citing BEP deliveries: 17,355,000 (5 pesos, Osmeña–Hernandez).<sup style="font-size:12px;">5,6,7</sup> Original BEP report: <span style="font-style:italic;">unconfirmed</span>',
         ],
         [
           'Known Varieties',
-          'Pick 95a (this record); Pick 95b (Roxas–Guevara, Treasurer title); Pick 95r1/r2 (star replacement); Pick 95s (specimen). Pick 118: the same type with a red CENTRAL BANK OF THE PHILIPPINES overprint (1949); the Bank Note Museum marks 118[a] Osmeña–Hernandez as not issued.<sup style="font-size:12px;">4,5</sup>',
+          'Pick 96a (this record); Pick 96r (star replacement); Pick 96s (specimen). No Roxas signature on the 5 pesos.<sup style="font-size:12px;">5,6</sup> Pick 119: the same type with a red CENTRAL BANK OF THE PHILIPPINES overprint (1949); 119a thick and 119b thin lettering.<sup style="font-size:12px;">4</sup>',
         ],
         [
           'Circulation Dates',
@@ -233,23 +233,23 @@ function buildTemplate(lang) {
         ],
         [
           'Rarity Basis',
-          'Common type within Series 66 (Pick 95a). Pick 95b (Roxas) is the scarcer signature. This specimen is not encapsulated. PMG population for Pick 95a: <span style="font-style:italic;">unconfirmed</span>',
+          'Common type within Series 66 (Pick 96a). This specimen is not encapsulated. PMG population for Pick 96a: <span style="font-style:italic;">unconfirmed</span>',
         ],
         [
           'Shown Specimen State',
-          'Unencapsulated, obverse and reverse photographed on a white background; serial F13317943; blue seal and serials; black VICTORY overprint on the reverse; no red CENTRAL BANK OF THE PHILIPPINES overprint. Numeric grade: <span style="font-style:italic;">unconfirmed</span>',
+          'Unencapsulated, obverse and reverse photographed on a white background; serial F00618071; blue seal and serials; ochre reverse with black VICTORY overprint; no red CENTRAL BANK OF THE PHILIPPINES overprint. Numeric grade: <span style="font-style:italic;">unconfirmed</span>',
         ],
-        ['Date of Last Factual Review', '22 August 2026', true],
+        ['Date of Last Factual Review', '24 August 2026', true],
       ];
 
   const contextTitle = isEs ? 'Contexto Histórico y de Emisión' : 'Historical and Issue Context';
   const context = isEs
     ? [
         p(
-          `<strong style="color:#1c1a15;">Dos pesos, retrato de Rizal:</strong> el ejemplar es un certificado del Tesoro de <em>dos pesos</em>, con José Rizal a la izquierda. La cláusula promete el pago en pesos plata o en curso legal de Estados Unidos de valor equivalente (el peso de la Commonwealth estaba ligado al dólar 2:1).<sup style="font-size:12px;">2</sup> El valor facial impreso es TWO PESOS.`,
+          `<strong style="color:#1c1a15;">Cinco pesos, McKinley y Dewey:</strong> el ejemplar es un certificado del Tesoro de <em>cinco pesos</em>, con William McKinley a la izquierda y el almirante George Dewey a la derecha. La cláusula promete el pago en pesos plata o en curso legal de Estados Unidos de valor equivalente (el peso de la Commonwealth estaba ligado al dólar 2:1).<sup style="font-size:12px;">2</sup> El valor facial impreso es FIVE PESOS.`,
         ),
         p(
-          `<strong style="color:#1c1a15;">Pick 95a, no Pick 118:</strong> el Standard Catalog y el Bank Note Museum numeran este tipo —Victory Series No. 66 sin el sobresello rojo del Banco Central— como Pick 95a, con el título inferior «Auditor General».<sup style="font-size:12px;">3,4</sup> Pick 95b usa las firmas de Roxas y Guevara y el título «Treasurer». Pick 118 es el mismo diseño con sobresello rojo «CENTRAL BANK OF THE PHILIPPINES» aplicado en 1949 sobre existencias del Pick 95; el Bank Note Museum marca la combinación Osmeña–Hernandez de ese sobresello como no emitida.<sup style="font-size:12px;">5</sup> Este ejemplar no lleva ese sobresello rojo.`,
+          `<strong style="color:#1c1a15;">Pick 96a, no Pick 119:</strong> el Standard Catalog y el Bank Note Museum numeran este tipo —Victory Series No. 66 sin el sobresello rojo del Banco Central— como Pick 96; Numista detalla 96a (circulación), 96r (estrella) y 96s (specimen).<sup style="font-size:12px;">3,5</sup> A diferencia del 2 pesos, no hay firma Roxas en el 5 pesos.<sup style="font-size:12px;">6</sup> Pick 119 es el mismo diseño con sobresello rojo «CENTRAL BANK OF THE PHILIPPINES» aplicado en 1949 sobre existencias del Pick 96 (119a letra gruesa, 119b letra fina).<sup style="font-size:12px;">4</sup> Este ejemplar no lleva ese sobresello rojo.`,
         ),
         p(
           `<strong style="color:#1c1a15;">La liberación de 1944:</strong> el Bangko Sentral ng Pilipinas registra que las fuerzas de liberación estadounidenses llevaron la Victory Series No. 66 en 1944, y que, con la creación del Banco Central en 1949, las denominaciones de esa serie recibieron el sobresello «Central Bank of the Philippines» y siguieron de curso legal hasta el 30 de julio de 1964.<sup style="font-size:12px;">1</sup> En su historia monetaria, el BSP describe esos certificados del Tesoro sobreimpresos con la palabra Victory como el papel usado al recuperar la soberanía.<sup style="font-size:12px;">2</sup>`,
@@ -260,10 +260,10 @@ function buildTemplate(lang) {
       ]
     : [
         p(
-          `<strong style="color:#1c1a15;">Two pesos, Rizal portrait:</strong> the specimen is a Treasury Certificate for <em>two pesos</em>, with José Rizal at left. The clause promises payment in silver pesos or in United States legal tender of equivalent value (the Commonwealth peso was tied to the dollar at 2:1).<sup style="font-size:12px;">2</sup> The printed face value is TWO PESOS.`,
+          `<strong style="color:#1c1a15;">Five pesos, McKinley and Dewey:</strong> the specimen is a Treasury Certificate for <em>five pesos</em>, with William McKinley at left and Admiral George Dewey at right. The clause promises payment in silver pesos or in United States legal tender of equivalent value (the Commonwealth peso was tied to the dollar at 2:1).<sup style="font-size:12px;">2</sup> The printed face value is FIVE PESOS.`,
         ),
         p(
-          `<strong style="color:#1c1a15;">Pick 95a, not Pick 118:</strong> the Standard Catalog and the Bank Note Museum number this type —Victory Series No. 66 without the red Central Bank overprint— as Pick 95a, with the lower title “Auditor General”.<sup style="font-size:12px;">3,4</sup> Pick 95b uses the Roxas and Guevara signatures and the title “Treasurer”. Pick 118 is the same design with a red “CENTRAL BANK OF THE PHILIPPINES” overprint applied in 1949 on remaining Pick 95 stock; the Bank Note Museum marks the Osmeña–Hernandez combination of that overprint as not issued.<sup style="font-size:12px;">5</sup> This specimen does not carry that red overprint.`,
+          `<strong style="color:#1c1a15;">Pick 96a, not Pick 119:</strong> the Standard Catalog and the Bank Note Museum number this type —Victory Series No. 66 without the red Central Bank overprint— as Pick 96; Numista lists 96a (circulation), 96r (star), and 96s (specimen).<sup style="font-size:12px;">3,5</sup> Unlike the 2 pesos, there is no Roxas signature on the 5 pesos.<sup style="font-size:12px;">6</sup> Pick 119 is the same design with a red “CENTRAL BANK OF THE PHILIPPINES” overprint applied in 1949 on remaining Pick 96 stock (119a thick lettering, 119b thin).<sup style="font-size:12px;">4</sup> This specimen does not carry that red overprint.`,
         ),
         p(
           `<strong style="color:#1c1a15;">The 1944 liberation:</strong> Bangko Sentral ng Pilipinas records that American liberation forces brought Victory Series No. 66 in 1944, and that after the Central Bank was created in 1949 the series denominations were overprinted “Central Bank of the Philippines” and remained legal tender until 30 July 1964.<sup style="font-size:12px;">1</sup> In its monetary history the BSP describes those Treasury certificates overprinted with the word Victory as the paper used when sovereignty was recovered.<sup style="font-size:12px;">2</sup>`,
@@ -277,54 +277,54 @@ function buildTemplate(lang) {
   const details = isEs
     ? [
         bullet(
-          `<strong style="color:#1c1a15;">Retrato:</strong> José Rizal a la izquierda, en óvalo con palmas; «VICTORY SERIES NO. 66» en el cuadrante inferior izquierdo.`,
+          `<strong style="color:#1c1a15;">Retratos:</strong> William McKinley a la izquierda y el almirante George Dewey a la derecha, cada uno en un óvalo con su nombre debajo; «VICTORY SERIES NO. 66» a la izquierda del texto central.`,
         ),
         bullet(
           `<strong style="color:#1c1a15;">Encabezado:</strong> «TREASURY CERTIFICATE» y la autorización de la legislatura filipina aprobada por el presidente de Estados Unidos el 13 de junio de 1922.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Cláusula:</strong> «THIS CERTIFIES THAT THERE HAS BEEN DEPOSITED IN THE TREASURY OF THE PHILIPPINES / TWO PESOS / PAYABLE TO THE BEARER ON DEMAND IN SILVER PESOS OR IN LEGAL TENDER CURRENCY OF THE UNITED STATES OF EQUIVALENT VALUE».`,
+          `<strong style="color:#1c1a15;">Cláusula:</strong> «THIS CERTIFIES THAT THERE HAVE BEEN DEPOSITED IN THE TREASURY OF THE PHILIPPINES / FIVE PESOS / PAYABLE TO THE BEARER ON DEMAND IN SILVER PESOS OR IN LEGAL TENDER CURRENCY OF THE UNITED STATES OF EQUIVALENT VALUE».`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Sello:</strong> sello azul de la Commonwealth of the Philippines / United States of America a la derecha.`,
+          `<strong style="color:#1c1a15;">Sello:</strong> sello azul de la Commonwealth of the Philippines / United States of America, superpuesto al retrato de Dewey.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Series:</strong> F13317943 en tinta azul, repetido; «VICTORY» y «SERIES NO. 66» en el cuadrante superior derecho.`,
+          `<strong style="color:#1c1a15;">Series:</strong> F00618071 en tinta azul, repetido; «VICTORY SERIES NO. 66» también en el cuadrante inferior derecho.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Firmas:</strong> S. Osmeña, rotulado President; J. Hernandez, rotulado Auditor General.`,
+          `<strong style="color:#1c1a15;">Firmas:</strong> S. Osmeña, rotulado President; Jaime Hernandez, rotulado Auditor General.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Reverso:</strong> azul con «TWO PESOS» y un 2 grande; sobresello negro «VICTORY» a todo lo ancho. No hay sobresello rojo del Banco Central.`,
+          `<strong style="color:#1c1a15;">Reverso:</strong> ocre / oro con «FIVE PESOS», un 5 grande a cada lado y una V romana arriba; sobresello negro «VICTORY» a todo lo ancho. No hay sobresello rojo del Banco Central.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Colorido:</strong> anverso en negro sobre fondo azul claro, con sello y series azules; reverso azul.`,
+          `<strong style="color:#1c1a15;">Colorido:</strong> anverso en negro sobre papel claro, con sello y series azules; reverso ocre-dorado.`,
         ),
       ]
     : [
         bullet(
-          `<strong style="color:#1c1a15;">Portrait:</strong> José Rizal at left, in an oval with palms; “VICTORY SERIES NO. 66” in the lower-left quadrant.`,
+          `<strong style="color:#1c1a15;">Portraits:</strong> William McKinley at left and Admiral George Dewey at right, each in an oval with the name below; “VICTORY SERIES NO. 66” to the left of the central text.`,
         ),
         bullet(
           `<strong style="color:#1c1a15;">Heading:</strong> “TREASURY CERTIFICATE” and the Philippine legislature authorization approved by the President of the United States on 13 June 1922.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Clause:</strong> “THIS CERTIFIES THAT THERE HAS BEEN DEPOSITED IN THE TREASURY OF THE PHILIPPINES / TWO PESOS / PAYABLE TO THE BEARER ON DEMAND IN SILVER PESOS OR IN LEGAL TENDER CURRENCY OF THE UNITED STATES OF EQUIVALENT VALUE”.`,
+          `<strong style="color:#1c1a15;">Clause:</strong> “THIS CERTIFIES THAT THERE HAVE BEEN DEPOSITED IN THE TREASURY OF THE PHILIPPINES / FIVE PESOS / PAYABLE TO THE BEARER ON DEMAND IN SILVER PESOS OR IN LEGAL TENDER CURRENCY OF THE UNITED STATES OF EQUIVALENT VALUE”.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Seal:</strong> blue Commonwealth of the Philippines / United States of America seal at right.`,
+          `<strong style="color:#1c1a15;">Seal:</strong> blue Commonwealth of the Philippines / United States of America seal, overlapping Dewey’s portrait.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Serials:</strong> F13317943 in blue ink, repeated; “VICTORY” and “SERIES NO. 66” in the upper-right quadrant.`,
+          `<strong style="color:#1c1a15;">Serials:</strong> F00618071 in blue ink, repeated; “VICTORY SERIES NO. 66” also in the lower-right quadrant.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Signatures:</strong> S. Osmeña, titled President; J. Hernandez, titled Auditor General.`,
+          `<strong style="color:#1c1a15;">Signatures:</strong> S. Osmeña, titled President; Jaime Hernandez, titled Auditor General.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Reverse:</strong> blue with “TWO PESOS” and a large 2; black “VICTORY” overprint across the width. No red Central Bank overprint.`,
+          `<strong style="color:#1c1a15;">Reverse:</strong> ochre / gold with “FIVE PESOS”, a large 5 at each side and a Roman V at top; black “VICTORY” overprint across the width. No red Central Bank overprint.`,
         ),
         bullet(
-          `<strong style="color:#1c1a15;">Color:</strong> black face on a light-blue underprint, with blue seal and serials; blue reverse.`,
+          `<strong style="color:#1c1a15;">Color:</strong> black face on light paper, with blue seal and serials; ochre-gold reverse.`,
         ),
       ];
 
@@ -338,19 +338,19 @@ function buildTemplate(lang) {
           `2. ${extLink('https://www.bsp.gov.ph/Pages/CoinsAndNotes/HistoryOfPhilippineMoney/HistoryOfPhilippineMoney.aspx', 'BSP — History of Philippine Money', true)}: el peso de la Commonwealth se ligó al dólar 2:1; al recuperar la soberanía se usaron certificados del Tesoro sobreimpresos con «Victory».`,
         ),
         noteP(
-          `3. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0095.htm', 'Bank Note Museum — Philippines P-95', true)}: 2 pesos, Treasury of the Philippines, series 66 (1944), sobresello VICTORY; 95a = título Auditor General; 95b = Treasurer.`,
+          `3. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0096.htm', 'Bank Note Museum — Philippines P-96', true)}: 5 pesos, Treasury of the Philippines, series 66 (1944), sobresello VICTORY; retratos de McKinley y Dewey.`,
         ),
         noteP(
-          `4. ${extLink('https://www.realbanknotes.com/banknote/27184-Philippines-p95a-2-Pesos-from-1944', 'RealBanknotes / Standard Catalog — Pick 95a', true)}: ND (1944); negro sobre fondo azul; Rizal a la izquierda; VICTORY SERIES NO. 66 dos veces en lugar de fecha; sello azul; firmas Osmeña y J. Hernandez; título Auditor General; reverso azul con VICTORY en negro; impresor USBEP sin pie.`,
+          `4. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0119.htm', 'Bank Note Museum P-119', true)}: ND (1949); sobresello rojo CENTRAL BANK OF THE PHILIPPINES sobre el Pick 96; 119a letra gruesa y 119b letra fina. No es este ejemplar.`,
         ),
         noteP(
-          `5. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0118.htm', 'Bank Note Museum P-118', true)}: ND (1949); sobresello rojo CENTRAL BANK OF THE PHILIPPINES sobre el Pick 95; 118[a] Osmeña–Hernandez no emitido; 118b Roxas–Guevara. No es este ejemplar.`,
+          `5. ${extLink('https://en.numista.com/catalogue/note203362.html', 'Numista — 5 Pesos (Victory)', true)}: 161,9 &times; 67,4 mm; Pick 96a, tirada 17.355.000; también 96r (estrella) y 96s (specimen). Cifras de catálogo secundario.`,
         ),
         noteP(
-          `6. ${extLink('https://en.numista.com/catalogue/note203356.html', 'Numista — 2 Pesos (Victory)', true)}: 161,9 &times; 67,4 mm; Pick 95a, firmas Osmeña y Hernandez, título AUDITOR GENERAL; tirada 16.231.272. Cifras de catálogo secundario.`,
+          `6. ${extLink('https://www.guerrilla-money.com/victory-series/', 'Guerrilla Money — Victory Series', true)}: tabla de entregas BEP; 5 pesos McKinley y Dewey, Osmeña–Hernandez, 17.355.000. Roxas no aparece en el 1, 5 ni 10 pesos. No es un documento BEP de primera mano.`,
         ),
         noteP(
-          `7. ${extLink('https://www.guerrilla-money.com/victory-series/', 'Guerrilla Money — Victory Series', true)}: tabla de entregas BEP; 2 pesos Rizal, Osmeña–Hernandez, 16.231.272. No es un documento BEP de primera mano.`,
+          `7. ${extLink('https://www.numismatics.ph/banknotes/victory-series/5-pesos-osmena-hernandez.html', 'numismatics.ph — 5 Pesos Osmeña–Hernandez', true)}: 161,9 &times; 67,4 mm; 17.355.000; series F00000001–F22500000; curso legal hasta el 30 de julio de 1964 y canje hasta el 30 de julio de 1967. Fuente secundaria.`,
         ),
         noteP(
           `8. ${extLink('https://www.numismatics.ph/banknotes/victory-series/', 'numismatics.ph — Victory Series No. 66', true)}: atribuye al BEP el «66»; desembarco en Leyte el 20 de octubre de 1944; total facial de la serie ₱1.019.544.000. Fuente secundaria.`,
@@ -364,19 +364,19 @@ function buildTemplate(lang) {
           `2. ${extLink('https://www.bsp.gov.ph/Pages/CoinsAndNotes/HistoryOfPhilippineMoney/HistoryOfPhilippineMoney.aspx', 'BSP — History of Philippine Money', false)}: the Commonwealth peso was tied to the dollar at 2:1; after sovereignty was recovered, Treasury certificates overprinted “Victory” were used.`,
         ),
         noteP(
-          `3. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0095.htm', 'Bank Note Museum — Philippines P-95', false)}: 2 pesos, Treasury of the Philippines, series 66 (1944), VICTORY overprint; 95a = Auditor General title; 95b = Treasurer.`,
+          `3. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0096.htm', 'Bank Note Museum — Philippines P-96', false)}: 5 pesos, Treasury of the Philippines, series 66 (1944), VICTORY overprint; portraits of McKinley and Dewey.`,
         ),
         noteP(
-          `4. ${extLink('https://www.realbanknotes.com/banknote/27184-Philippines-p95a-2-Pesos-from-1944', 'RealBanknotes / Standard Catalog — Pick 95a', false)}: ND (1944); black on blue underprint; Rizal at left; VICTORY SERIES NO. 66 twice instead of a date; blue seal; signatures Osmeña and J. Hernandez; Auditor General title; blue reverse with black VICTORY; USBEP printer, no imprint.`,
+          `4. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0119.htm', 'Bank Note Museum P-119', false)}: ND (1949); red CENTRAL BANK OF THE PHILIPPINES overprint on Pick 96; 119a thick lettering and 119b thin. Not this specimen.`,
         ),
         noteP(
-          `5. ${extLink('http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0118.htm', 'Bank Note Museum P-118', false)}: ND (1949); red CENTRAL BANK OF THE PHILIPPINES overprint on Pick 95; 118[a] Osmeña–Hernandez not issued; 118b Roxas–Guevara. Not this specimen.`,
+          `5. ${extLink('https://en.numista.com/catalogue/note203362.html', 'Numista — 5 Pesos (Victory)', false)}: 161.9 &times; 67.4 mm; Pick 96a, print run 17,355,000; also 96r (star) and 96s (specimen). Secondary catalog figures.`,
         ),
         noteP(
-          `6. ${extLink('https://en.numista.com/catalogue/note203356.html', 'Numista — 2 Pesos (Victory)', false)}: 161.9 &times; 67.4 mm; Pick 95a, Osmeña and Hernandez, AUDITOR GENERAL title; print run 16,231,272. Secondary catalog figures.`,
+          `6. ${extLink('https://www.guerrilla-money.com/victory-series/', 'Guerrilla Money — Victory Series', false)}: BEP delivery table; 5 pesos McKinley and Dewey, Osmeña–Hernandez, 17,355,000. Roxas does not appear on the 1, 5, or 10 pesos. Not a first-hand BEP document.`,
         ),
         noteP(
-          `7. ${extLink('https://www.guerrilla-money.com/victory-series/', 'Guerrilla Money — Victory Series', false)}: BEP delivery table; 2 pesos Rizal, Osmeña–Hernandez, 16,231,272. Not a first-hand BEP document.`,
+          `7. ${extLink('https://www.numismatics.ph/banknotes/victory-series/5-pesos-osmena-hernandez.html', 'numismatics.ph — 5 Pesos Osmeña–Hernandez', false)}: 161.9 &times; 67.4 mm; 17,355,000; serials F00000001–F22500000; legal tender until 30 July 1964 and exchange until 30 July 1967. Secondary source.`,
         ),
         noteP(
           `8. ${extLink('https://www.numismatics.ph/banknotes/victory-series/', 'numismatics.ph — Victory Series No. 66', false)}: attributes “66” to the BEP; Leyte landing on 20 October 1944; series face total ₱1,019,544,000. Secondary source.`,
@@ -388,12 +388,14 @@ function buildTemplate(lang) {
     ? [
         ['/coleccion/filipinas/', 'Colección de Filipinas'],
         ['/coleccion/filipinas/1-peso-victory-series-66/', '1 Peso Victory Series No. 66'],
+        ['/coleccion/filipinas/2-pesos-victory-series-66/', '2 Pesos Victory Series No. 66'],
         ['/coleccion/veinte-dolares-hawaii-1934/', '$20 Hawaii, 1934 (sobresello de guerra)'],
         ['/glosario/sobresello/', 'Glosario: sobresello'],
       ]
     : [
         ['/en/collection/philippines/', 'Philippines collection'],
         ['/en/collection/philippines/1-peso-victory-series-66/', '1 Peso Victory Series No. 66'],
+        ['/en/collection/philippines/2-pesos-victory-series-66/', '2 Pesos Victory Series No. 66'],
         ['/en/collection/twenty-dollars-hawaii-1934/', '$20 Hawaii, 1934 (wartime overprint)'],
         ['/en/glossary/overprint/', 'Glossary: overprint'],
       ];
@@ -463,9 +465,9 @@ function buildTemplate(lang) {
 
 const data = {
   path: ES_PATH,
-  title: '2 Pesos Victory 66, Filipinas (Pick 95a) | Notofilia',
+  title: '5 Pesos Victory 66, Filipinas (Pick 96a) | Notofilia',
   description:
-    'Tesoro de Filipinas, 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, sello azul y VICTORY. Colección Notofilia.',
+    'Tesoro de Filipinas, 5 pesos Victory Series No. 66 (1944), Pick 96a: McKinley, Dewey y VICTORY. Colección Notofilia.',
   keywords: [
     'filipinas',
     'philippines',
@@ -473,17 +475,18 @@ const data = {
     'victory note',
     'tesorería de filipinas',
     'treasury certificate',
-    'jose rizal',
-    'pick 95a',
-    'pick 118',
+    'mckinley',
+    'dewey',
+    'pick 96a',
+    'pick 119',
     'osmeña',
-    'dos pesos',
+    'cinco pesos',
   ],
   robots: 'index, follow, max-image-preview:large',
   ogType: 'article',
-  ogTitle: '2 Pesos Victory Series 66 — Filipinas (Pick 95a)',
+  ogTitle: '5 Pesos Victory Series 66 — Filipinas (Pick 96a)',
   ogDescription:
-    'Certificado del Tesoro de 2 pesos, Victory Series No. 66, serial F13317943. Pick 95a, no 118. Colección Notofilia.',
+    'Certificado del Tesoro de 5 pesos, Victory Series No. 66, serial F00618071. Pick 96a, no 119. Colección Notofilia.',
   ogImage: `${IMG}.jpg`,
   jsonLd: {
     '@context': 'https://schema.org',
@@ -496,27 +499,27 @@ const data = {
           {
             '@type': 'ListItem',
             position: 3,
-            name: '2 Pesos Victory Series No. 66',
+            name: '5 Pesos Victory Series No. 66',
             item: `${SITE}${ES_PATH}`,
           },
         ],
       },
       {
         '@type': 'CreativeWork',
-        name: 'Tesorería de Filipinas — Dos Pesos, Victory Series No. 66 (Pick 95a)',
+        name: 'Tesorería de Filipinas — Cinco Pesos, Victory Series No. 66 (Pick 96a)',
         url: `${SITE}${ES_PATH}`,
         image: `${SITE}${IMG}.jpg`,
         description:
-          'Certificado del Tesoro de Filipinas de 2 pesos, Victory Series No. 66 (ND 1944), retrato de José Rizal, serial F13317943. Pick 95a.',
+          'Certificado del Tesoro de Filipinas de 5 pesos, Victory Series No. 66 (ND 1944), retratos de McKinley y Dewey, serial F00618071. Pick 96a.',
         dateCreated: '1944',
         creditText: 'Colección privada de Notofilia.com — no está a la venta',
         inLanguage: 'es',
         isPartOf: { '@id': `${SITE}/coleccion/filipinas/#page` },
-        identifier: 'NF.filipinas.2-pesos-victory-series-66',
+        identifier: 'NF.filipinas.5-pesos-victory-series-66',
         additionalProperty: [
-          { '@type': 'PropertyValue', name: 'Pick', value: '95a' },
+          { '@type': 'PropertyValue', name: 'Pick', value: '96a' },
           { '@type': 'PropertyValue', name: 'Serie', value: 'Victory Series No. 66' },
-          { '@type': 'PropertyValue', name: 'Número de serie', value: 'F13317943' },
+          { '@type': 'PropertyValue', name: 'Número de serie', value: 'F00618071' },
           { '@type': 'PropertyValue', name: 'Impresor', value: 'U.S. Bureau of Engraving and Printing' },
         ],
       },
@@ -526,17 +529,17 @@ const data = {
   template: buildTemplate('es'),
   logic: '',
   record: {
-    id: 'NF.filipinas.2-pesos-victory-series-66',
+    id: 'NF.filipinas.5-pesos-victory-series-66',
     kind: 'banknote',
-    title: 'Dos Pesos Victory Series No. 66',
-    subtitle: 'Certificado del Tesoro · Pick 95a · serial F13317943',
+    title: 'Cinco Pesos Victory Series No. 66',
+    subtitle: 'Certificado del Tesoro · Pick 96a · serial F00618071',
     dateOrSeries: 'Victory Series No. 66, ND 1944',
     country: 'Filipinas',
     issuer: 'Tesorería de Filipinas (Treasury of the Philippines)',
     breadcrumb: [
       { name: 'Notofilia', href: '/' },
       { name: 'Filipinas', href: '/coleccion/filipinas/' },
-      { name: '2 Pesos Victory Series No. 66' },
+      { name: '5 Pesos Victory Series No. 66' },
     ],
     images: {
       stacked: {
@@ -550,47 +553,47 @@ const data = {
       defaultView: 'stacked',
     },
     metadata: {
-      denomination: '2 pesos',
+      denomination: '5 pesos',
       currency: 'Peso filipino (Commonwealth)',
       issuer: 'Tesorería de Filipinas (Treasury of the Philippines)',
       printer: 'U.S. Bureau of Engraving and Printing (sin pie de imprenta)',
       issueDate: 'ND (1944); Victory Series No. 66',
       series: 'Victory Series No. 66',
-      serialNumber: 'F13317943',
-      catalogNumber: 'Pick 95a',
+      serialNumber: 'F00618071',
+      catalogNumber: 'Pick 96a',
       material: 'Papel',
       dimensions: 'Numista: 161,9 × 67,4 mm. Medición propia: no confirmado',
       condition: 'Sin encapsular; grado numérico no confirmado',
       status: 'circulated',
       printRun:
-        'Fuentes secundarias que citan entregas BEP: 16.231.272 (2 pesos, Osmeña–Hernandez). Informe BEP original: no confirmado',
+        'Fuentes secundarias que citan entregas BEP: 17.355.000 (5 pesos, Osmeña–Hernandez). Informe BEP original: no confirmado',
       knownVarieties:
-        'Pick 95a (esta ficha); Pick 95b (Roxas–Guevara, Treasurer); Pick 95r1/r2 (estrella); Pick 95s (specimen). Pick 118: mismo tipo con sobresello rojo CBP (1949). Otras: no confirmado',
+        'Pick 96a (esta ficha); Pick 96r (estrella); Pick 96s (specimen). Sin firma Roxas. Pick 119: mismo tipo con sobresello rojo CBP (1949). Otras: no confirmado',
       circulationDates:
         'Leyte, 20 octubre 1944 (BSP). Tipo sin sobresello CBP: 1944–1949. Serie Victory con sobresello CBP de curso legal hasta 30 julio 1964 (BSP).',
       rarityBasis:
-        'Tipo común de la serie 66 (Pick 95a). Ejemplar no encapsulado. Población PMG del Pick 95a: no confirmado',
+        'Tipo común de la serie 66 (Pick 96a). Ejemplar no encapsulado. Población PMG del Pick 96a: no confirmado',
       shownSpecimenState:
-        'Sin encapsular, anverso y reverso sobre fondo blanco; serial F13317943; sello y series azules; sobresello negro VICTORY; sin sobresello rojo CBP. Grado numérico: no confirmado',
-      factualReviewDate: '2026-08-22',
+        'Sin encapsular, anverso y reverso sobre fondo blanco; serial F00618071; sello y series azules; reverso ocre con sobresello negro VICTORY; sin sobresello rojo CBP. Grado numérico: no confirmado',
+      factualReviewDate: '2026-08-24',
     },
     render: 'astro-static',
     eyebrow: 'Tesorería de Filipinas · Victory Series No. 66 · 1944',
     resourced: true,
     context: {
       historical:
-        'Las fuerzas de liberación llevaron la Victory Series No. 66 en 1944 (BSP). Este ejemplar es el tipo de tesorería sin el sobresello rojo del Banco Central de 1949 (Pick 95a, no Pick 118).',
+        'Las fuerzas de liberación llevaron la Victory Series No. 66 en 1944 (BSP). Este ejemplar es el tipo de tesorería sin el sobresello rojo del Banco Central de 1949 (Pick 96a, no Pick 119).',
       design:
-        'Anverso en negro sobre fondo azul con Rizal a la izquierda, sello azul de la Commonwealth y series azules F13317943. Reverso azul con sobresello negro VICTORY. Impresor USBEP, sin pie.',
+        'Anverso en negro con McKinley a la izquierda y Dewey a la derecha, sello azul de la Commonwealth y series azules F00618071. Reverso ocre con sobresello negro VICTORY. Impresor USBEP, sin pie.',
       varieties:
-        'Pick 95a (esta ficha), 95b, 95r1/r2, 95s. Pick 118 es el mismo tipo con sobresello rojo CBP de 1949; 118[a] Osmeña–Hernandez no emitido según Bank Note Museum.',
+        'Pick 96a (esta ficha), 96r, 96s. No hay firma Roxas en el 5 pesos. Pick 119 es el mismo tipo con sobresello rojo CBP de 1949 (119a gruesa / 119b fina).',
       population: 'no confirmado',
     },
     sources: [
       {
         kind: 'specimen',
-        label: 'Examen del ejemplar de la colección Notofilia (serial F13317943)',
-        note: 'Anverso y reverso sobre fondo blanco; sello y series azules; Victory Series No. 66; firmas Osmeña / Auditor General; sobresello negro VICTORY; sin sobresello rojo CBP',
+        label: 'Examen del ejemplar de la colección Notofilia (serial F00618071)',
+        note: 'Anverso y reverso sobre fondo blanco; sello y series azules; Victory Series No. 66; firmas Osmeña / Auditor General; reverso ocre con sobresello negro VICTORY; sin sobresello rojo CBP',
       },
       {
         kind: 'central_bank',
@@ -606,27 +609,33 @@ const data = {
       },
       {
         kind: 'catalog',
-        label: 'Bank Note Museum — Philippines P-95',
-        url: 'http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0095.htm',
-        note: '2 pesos, Treasury of the Philippines, series 66 (1944), sobresello VICTORY; 95a Auditor General',
+        label: 'Bank Note Museum — Philippines P-96',
+        url: 'http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0096.htm',
+        note: '5 pesos, Treasury of the Philippines, series 66 (1944), sobresello VICTORY; McKinley y Dewey',
       },
       {
         kind: 'catalog',
-        label: 'RealBanknotes / Standard Catalog of World Paper Money — Pick 95a',
-        url: 'https://www.realbanknotes.com/banknote/27184-Philippines-p95a-2-Pesos-from-1944',
-        note: 'ND 1944; Rizal; sello azul; Osmeña y J. Hernandez; Auditor General; USBEP sin pie',
-      },
-      {
-        kind: 'catalog',
-        label: 'Bank Note Museum — Pick 118 (tipo distinto)',
-        url: 'http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0118.htm',
-        note: 'Sobresello rojo CBP sobre Pick 95; 118[a] no emitido; no es este ejemplar',
+        label: 'Bank Note Museum — Pick 119 (tipo distinto)',
+        url: 'http://www.banknote.ws/COLLECTION/countries/ASI/PIL/PIL0119.htm',
+        note: 'Sobresello rojo CBP sobre Pick 96; 119a letra gruesa, 119b letra fina; no es este ejemplar',
       },
       {
         kind: 'secondary',
-        label: 'Numista — 2 Pesos (Victory), N#203356',
-        url: 'https://en.numista.com/catalogue/note203356.html',
-        note: '161,9 × 67,4 mm; Pick 95a; tirada 16.231.272 citada',
+        label: 'Numista — 5 Pesos (Victory), N#203362',
+        url: 'https://en.numista.com/catalogue/note203362.html',
+        note: '161,9 × 67,4 mm; Pick 96a; tirada 17.355.000 citada; 96r y 96s',
+      },
+      {
+        kind: 'secondary',
+        label: 'Guerrilla Money — Victory Series',
+        url: 'https://www.guerrilla-money.com/victory-series/',
+        note: 'Entregas BEP 17.355.000; Roxas no aparece en el 5 pesos',
+      },
+      {
+        kind: 'secondary',
+        label: 'numismatics.ph — 5 Pesos Osmeña–Hernandez Victory Series',
+        url: 'https://www.numismatics.ph/banknotes/victory-series/5-pesos-osmena-hernandez.html',
+        note: '161,9 × 67,4 mm; 17.355.000; series F00000001–F22500000',
       },
       {
         kind: 'secondary',
@@ -638,23 +647,24 @@ const data = {
     related: [
       { href: '/coleccion/filipinas/', title: 'Catálogo de Billetes de Filipinas' },
       { href: '/coleccion/filipinas/1-peso-victory-series-66/', title: '1 Peso Victory Series No. 66' },
+      { href: '/coleccion/filipinas/2-pesos-victory-series-66/', title: '2 Pesos Victory Series No. 66' },
       { href: '/coleccion/veinte-dolares-hawaii-1934/', title: '$20 Hawaii, 1934' },
       { href: '/glosario/sobresello/', title: 'Sobresello' },
     ],
   },
-  legacyFile: 'billete-filipinas-2-pesos-victory-series-66.dc.html',
-  sourceHash: createHash('sha1').update('filipinas-2-pesos-victory-series-66-v1').digest('hex').slice(0, 16),
+  legacyFile: 'billete-filipinas-5-pesos-victory-series-66.dc.html',
+  sourceHash: createHash('sha1').update('filipinas-5-pesos-victory-series-66-v1').digest('hex').slice(0, 16),
   i18n: {
     en: {
       path: EN_PATH,
-      title: '2 Pesos Victory 66, Philippines (Pick 95a) | Notofilia',
+      title: '5 Pesos Victory 66, Philippines (Pick 96a) | Notofilia',
       description:
-        'Philippine Treasury 2 pesos Victory Series No. 66 (1944), Pick 95a: Rizal, blue seal, VICTORY. Notofilia.',
-      ogTitle: '2 Pesos Victory Series 66 — Philippines (Pick 95a)',
+        'Philippine Treasury 5 pesos Victory Series No. 66 (1944), Pick 96a: McKinley, Dewey, VICTORY. Notofilia.',
+      ogTitle: '5 Pesos Victory Series 66 — Philippines (Pick 96a)',
       ogDescription:
-        'Treasury Certificate of 2 pesos, Victory Series No. 66, serial F13317943. Pick 95a, not 118. Notofilia collection.',
+        'Treasury Certificate of 5 pesos, Victory Series No. 66, serial F00618071. Pick 96a, not 119. Notofilia collection.',
       template: buildTemplate('en'),
-      recordTitle: 'Two Pesos Victory Series No. 66',
+      recordTitle: 'Five Pesos Victory Series No. 66',
       eyebrow: 'Treasury of the Philippines · Victory Series No. 66 · 1944',
     },
   },

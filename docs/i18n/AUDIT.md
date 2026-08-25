@@ -761,7 +761,8 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | other | `/coleccion/ecuador/` | `/en/collection/ecuador/` | hub/other |
 | banknote | `/coleccion/filipinas/1-peso-victory-series-66/` | `/en/collection/philippines/1-peso-victory-series-66/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/filipinas/2-pesos-victory-series-66/` | `/en/collection/philippines/2-pesos-victory-series-66/` | catalog IDs stay untranslated in copy |
-| other | `/coleccion/filipinas/` | `/en/collection/philippines/` | hub/other |
+| banknote | `/coleccion/filipinas/5-pesos-victory-series-66/` | `/en/collection/philippines/5-pesos-victory-series-66/` | catalog IDs stay untranslated in copy |
+| other | `/coleccion/filipinas/` | `/en/collection/philippines/` | country hub is the Victory Series No. 66 catalog; series name stays untranslated in copy |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-1-dolar-2000/` | `/en/collection/promotional-issues/food-coupon-1-dollar-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-10-dolares-2000/` | `/en/collection/promotional-issues/food-coupon-10-dollars-2000/` | translated |
 | banknote | `/coleccion/emisiones-promocionales/food-coupon-2-dolares-1967/` | `/en/collection/promotional-issues/food-coupon-2-dollars-1967/` | translated |

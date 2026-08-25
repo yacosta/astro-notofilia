@@ -32,7 +32,9 @@ const isHub = record.render === 'astro-hub' || Boolean(record.cards?.length);
 const isColombiaHub = path === '/coleccion/colombia/' || path === '/en/collection/colombia/';
 const hubAttr = isColombiaHub ? 'colombia' : undefined;
 const hasSeparateFaces = Boolean(record.images?.front || record.images?.reverse);
-const showMedia = isPrimary || hasSeparateFaces;
+const showMedia =
+  Boolean(record.images?.front || record.images?.reverse || record.images?.stacked) &&
+  (isPrimary || hasSeparateFaces);
 /** Legacy templates already carry the spec table beside each scan. */
 const hideDuplicateMeta = !isPrimary;
 const isPiece = record.kind === 'coin' || record.kind === 'banknote';
@@ -42,12 +44,15 @@ const permanentLabel = t('permanentId', locale);
 ---
 {
   isPrimary ? (
-    <section
-      class="catalog-record-surface max-w-none mx-auto px-[var(--page-gutter,48px)] pt-10 pb-4"
+    <main
+      id="main-content"
+      tabindex="-1"
+      class="catalog-record-surface max-w-none mx-auto px-[var(--page-gutter,48px)] pt-10 pb-12"
       aria-labelledby="catalog-record-title"
       data-catalog-record={record.id}
       data-catalog-mode="primary"
       data-catalog-hub={hubAttr}
+      data-pagefind-meta={`url:${path}`}
     >
       <CatalogBreadcrumb crumbs={record.breadcrumb} locale={locale} />
 
@@ -61,12 +66,12 @@ const permanentLabel = t('permanentId', locale);
           data-i18n={!isEn && lookupEn(record.title) ? true : undefined}
           data-en={!isEn ? lookupEn(record.title) : undefined}
         >
-          {record.title}
+          {isEn ? (lookupEn(record.title) ?? record.title) : record.title}
         </h1>
         {
           record.subtitle && (
             <p class="m-0 italic text-[clamp(18px,2.2vw,22px)] leading-[1.45] text-cream-dim" data-i18n={!isEn && lookupEn(record.subtitle) ? true : undefined} data-en={!isEn ? lookupEn(record.subtitle) : undefined}>
-              {record.subtitle}
+              {isEn ? (lookupEn(record.subtitle) ?? record.subtitle) : record.subtitle}
             </p>
           )
         }
@@ -79,12 +84,12 @@ const permanentLabel = t('permanentId', locale);
       <div class="grid gap-12">
         {showMedia && <CatalogMedia record={record} />}
         <CatalogMetadata record={record} visuallyHidden={hideDuplicateMeta} locale={locale} />
-        <CatalogContext record={record} locale={locale} />
+        <slot />
         <CatalogRelated record={record} locale={locale} />
         <CatalogCitation record={record} path={path} locale={locale} />
         <CatalogFeedback record={record} path={path} locale={locale} />
       </div>
-    </section>
+    </main>
   ) : (
     <>
       <div
