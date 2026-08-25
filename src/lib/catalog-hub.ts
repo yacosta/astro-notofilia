@@ -102,6 +102,18 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    title: 'Banco de la República — 2.000 pesos Débora Arango, prueba P-458b',
+    titleEn: 'Banco de la República — 2,000-peso Débora Arango P-458b proof',
+    description:
+      'Prueba de impresión progresiva o parcial del 2.000 pesos (2.08.2016): anverso incompleto, reverso en blanco, series tapadas.',
+    descriptionEn:
+      'Progressive or partial printing proof of the 2,000-peso note (2.08.2016): incomplete face, blank reverse, blocked serials.',
+    imageBase: 'colombia-banco-de-la-republica-2000-pesos-debora-arango',
+    imageAlt:
+      'Prueba de impresión progresiva del 2.000 pesos del Banco de la República con Débora Arango (P-458b): anverso parcial y reverso en blanco',
+  },
+  {
     href: '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
     title: 'Banco de la República — 10 pesos oro, 1943',
     titleEn: 'Banco de la República — 10 pesos oro, 1943',
