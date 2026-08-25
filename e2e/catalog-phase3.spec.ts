@@ -524,7 +524,11 @@ test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ pag
   expect(es?.ok()).toBeTruthy();
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await expect(page.getByRole('heading', { level: 1, name: 'Cinco Pesos Victory Series No. 66' })).toBeVisible();
-  const img = page.locator('main#main-content img[src="/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg"]');
+  const img = page
+    .locator(
+      'main#main-content img[src="/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg"]',
+    )
+    .first();
   await expect(img).toBeVisible();
   await expect(img).toHaveAttribute('width', '906');
   await expect(img).toHaveAttribute('height', '878');
