@@ -248,6 +248,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "El Banco de la República — Dos Mil Pesos — Débora Arango (prueba anverso P-458b / 2.08.2016)",
+            "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "El Banco de la República — Cinco Mil Pesos Oro (Specimen, 1986–presente)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-5000-pesos-oro-specimen/"
           },
@@ -987,6 +992,21 @@
         "groupKicker": "Banca centralizada (desde 1923)",
         "titleEn": "El Banco de la República",
         "altEn": "Progressive printing proof of the Banco de la República 2,000-peso Débora Arango note (P-458b): partial face and unprinted back",
+        "groupEn": "El Banco de la República",
+        "groupKickerEn": "Central banking (from 1923)"
+      },
+      {
+        "href": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/",
+        "title": "El Banco de la República",
+        "denomination": "Dos Mil Pesos — Débora Arango (prueba anverso P-458b)",
+        "year": "2.08.2016",
+        "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso.jpg",
+        "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso.webp",
+        "alt": "Prueba de impresión progresiva del 2.000 pesos del Banco de la República con Débora Arango (P-458b): anverso incompleto y reverso de Caño Cristales impreso",
+        "group": "El Banco de la República",
+        "groupKicker": "Banca centralizada (desde 1923)",
+        "titleEn": "El Banco de la República",
+        "altEn": "Progressive printing proof of the Banco de la República 2,000-peso Débora Arango note (P-458b): incomplete face and printed Caño Cristales reverse",
         "groupEn": "El Banco de la República",
         "groupKickerEn": "Central banking (from 1923)"
       },
