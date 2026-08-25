@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-25T13:53:51.806Z",
-  "count": 140,
-  "pieceCount": 124,
+  "generatedAt": "2026-08-25T15:10:12.828Z",
+  "count": 141,
+  "pieceCount": 125,
   "stats": {
-    "billetes": 224,
+    "billetes": 225,
     "monedas": 9,
     "paises": 36,
-    "fichas": 124,
-    "paginas": 157
+    "fichas": 125,
+    "paginas": 158
   },
   "countries": [
     {
@@ -32,7 +32,7 @@
     },
     {
       "name": "Filipinas",
-      "count": 2,
+      "count": 3,
       "slug": "filipinas"
     },
     {
@@ -2784,6 +2784,41 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
+    },
+    {
+      "id": "filipinas--5-pesos-victory-series-66",
+      "path": "/coleccion/filipinas/5-pesos-victory-series-66/",
+      "title": "5 Pesos Victory 66, Filipinas (Pick 96a)",
+      "description": "Tesoro de Filipinas, 5 pesos Victory Series No. 66 (1944), Pick 96a: McKinley, Dewey y VICTORY. Colección Notofilia.",
+      "keywords": [
+        "filipinas",
+        "philippines",
+        "victory series 66",
+        "victory note",
+        "tesorería de filipinas",
+        "treasury certificate",
+        "mckinley",
+        "dewey",
+        "pick 96a",
+        "pick 119",
+        "osmeña",
+        "cinco pesos"
+      ],
+      "url": "https://notofilia.com/coleccion/filipinas/5-pesos-victory-series-66/",
+      "image": "/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Filipinas",
+      "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
+      "denomination": "5 pesos",
+      "catalogRef": "Pick 96a",
+      "condition": "",
+      "emissionType": "Treasury Certificate — certificado de depósito pagadero al portador en pesos plata o en curso legal de Estados Unidos de valor equivalente",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "5 pesos victory 66, filipinas (pick 96a) tesoro de filipinas, 5 pesos victory series no. 66 (1944), pick 96a: mckinley, dewey y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 5 pesos pick 96a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate mckinley dewey pick 96a pick 119 osmeña cinco pesos"
     },
     {
       "id": "giori-press-test-note-lincoln-memorial-uniface",
