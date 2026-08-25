@@ -259,7 +259,7 @@ def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
             else "Victory Series No. 66 notes without the red Central Bank overprint, photographed and described in the Notofilia records.",
             last=True,
         ).replace('margin:0;', "margin:0 0 28px;"),
-        '      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; max-width:920px;">',
+        '      <div class="catalog-hub-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; max-width:920px;">',
         "        "
         + card(
             href=href1,
