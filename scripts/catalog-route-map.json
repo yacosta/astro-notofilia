@@ -124,6 +124,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-debora-arango.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html"
   },

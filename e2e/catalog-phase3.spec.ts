@@ -489,7 +489,7 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the Débora Arango P-458b proof first', async ({ page }) => {
+test('homepage Logros del Mes features the Débora Arango P-458b face proof first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
@@ -497,29 +497,29 @@ test('homepage Logros del Mes features the Débora Arango P-458b proof first', a
   await expect(first).toBeVisible();
   await expect(first).toHaveAttribute(
     'href',
-    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/',
   );
-  await expect(first).toContainText('Banco de la República — 2.000 pesos Débora Arango, prueba P-458b');
+  await expect(first).toContainText('Banco de la República — 2.000 pesos Débora Arango, prueba anverso P-458b');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
     /Débora Arango \(P-458b\)/,
   );
   await expect(first.getByRole('img')).toHaveAttribute(
     'src',
-    '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-card.jpg',
+    '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso-card.jpg',
   );
 });
 
-test('English homepage Logros features the Débora Arango P-458b proof first', async ({ page }) => {
+test('English homepage Logros features the Débora Arango P-458b face proof first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toHaveAttribute(
     'href',
-    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/',
   );
-  await expect(first).toContainText('Banco de la República — 2,000-peso Débora Arango P-458b proof');
+  await expect(first).toContainText('Banco de la República — 2,000-peso Débora Arango P-458b face proof');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
     /Débora Arango note \(P-458b\)/,
@@ -835,6 +835,8 @@ test('body copy on catalog, landings, and editorial pages uses the new page gutt
     { path: '/en/collection/usda-food-coupons/', selector: '#main-content' },
     { path: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
     { path: '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/', selector: '#main-content' },
+    { path: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/', selector: '#main-content' },
+    { path: '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/', selector: '#main-content' },
     { path: '/coleccion/reserva-federal/cien-dolares-1990-cleveland/', selector: '#main-content' },
     { path: '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/', selector: '#main-content' },
     { path: '/en/collection/united-states/', selector: '.hub-inner' },
@@ -861,6 +863,8 @@ test('banknote ficha body copy starts at the page gutter', async ({ page }) => {
   const notes = [
     '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
     '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/',
+    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/',
     '/coleccion/reserva-federal/cien-dolares-1990-cleveland/',
     '/en/collection/federal-reserve/one-hundred-dollars-1990-cleveland/',
   ];
