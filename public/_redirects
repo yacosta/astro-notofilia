@@ -5,7 +5,7 @@
 /noticias/dinosaurios-mexicanos-coleccion-casa-moneda/  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
 /noticias/dinosaurios-mexicanos-coleccion-casa-moneda  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
 # Logros del Mes lives on the homepage strip, not a separate index.
-# Land on the cream band so both monthly notes are in view (hero is 100vh).
+# Land on the cream band (hero is 100vh) so the last-six grid is in view.
 /logros/  /#logros-heading  301
 /logros  /#logros-heading  301
 /en/milestones/  /en/#logros-heading  301

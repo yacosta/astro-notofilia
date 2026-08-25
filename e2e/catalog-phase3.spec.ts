@@ -489,11 +489,29 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
+const LOGROS_NEWEST_ES = [
+  '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+  '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  '/coleccion/colombia/santa-marta-1-4-real-1820/',
+  '/coleccion/filipinas/2-pesos-victory-series-66/',
+  '/coleccion/filipinas/1-peso-victory-series-66/',
+  '/coleccion/polimero-mundial/china-100-yuan-2000/',
+] as const;
+
+const LOGROS_NEWEST_EN = [
+  '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+  '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  '/en/collection/colombia/santa-marta-quarter-real-1820/',
+  '/en/collection/philippines/2-pesos-victory-series-66/',
+  '/en/collection/philippines/1-peso-victory-series-66/',
+  '/en/collection/world-polymer/china-100-yuan-2000/',
+] as const;
+
 test('homepage Logros del Mes features the Débora Arango P-458b proof first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const first = section.locator('[data-logros-lead] > li > a').first();
+  const first = section.locator('[data-logros-grid] > li > a').first();
   await expect(first).toBeVisible();
   await expect(first).toHaveAttribute(
     'href',
@@ -514,7 +532,7 @@ test('English homepage Logros features the Débora Arango P-458b proof first', a
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
-  const first = section.locator('[data-logros-lead] > li > a').first();
+  const first = section.locator('[data-logros-grid] > li > a').first();
   await expect(first).toHaveAttribute(
     'href',
     '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
@@ -529,7 +547,7 @@ test('English homepage Logros features the Débora Arango P-458b proof first', a
 test('homepage Logros del Mes still features the 1943 10 pesos oro', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
-  const card = section.locator('[data-logros-lead]').getByRole('link', { name: /10 pesos oro, 1943/ });
+  const card = section.locator('[data-logros-grid]').getByRole('link', { name: /10 pesos oro, 1943/ });
   await expect(card).toBeVisible();
   await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
 });
@@ -537,7 +555,7 @@ test('homepage Logros del Mes still features the 1943 10 pesos oro', async ({ pa
 test('English homepage Logros still features the 1943 10 pesos oro', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
-  const card = section.locator('[data-logros-lead]').getByRole('link', { name: /10 pesos oro, 1943/ });
+  const card = section.locator('[data-logros-grid]').getByRole('link', { name: /10 pesos oro, 1943/ });
   await expect(card).toBeVisible();
   await expect(card).toHaveAttribute(
     'href',
@@ -545,41 +563,73 @@ test('English homepage Logros still features the 1943 10 pesos oro', async ({ pa
   );
 });
 
-test('Logros del Mes lead pair keeps both monthly notes in document flow', async ({ page }) => {
+test('Logros del Mes shows the 6 newest notes newest first', async ({ page }) => {
   await page.goto('/');
-  const lead = page.locator('[data-logros-lead] > li > a');
-  await expect(lead).toHaveCount(2);
-  await expect(lead.nth(0)).toHaveAttribute(
-    'href',
-    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
-  );
-  await expect(lead.nth(1)).toHaveAttribute(
-    'href',
-    '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
-  );
-  await expect(page.locator('[data-logros-lead]')).not.toHaveClass(/overflow-x-auto/);
+  const cards = page.locator('[data-logros-grid] > li > a');
+  await expect(cards).toHaveCount(6);
+  for (const [index, href] of LOGROS_NEWEST_ES.entries()) {
+    await expect(cards.nth(index)).toHaveAttribute('href', href);
+  }
+  await expect(page.locator('[data-logros-grid]')).not.toHaveClass(/overflow-x-auto|snap-x/);
+  await expect(page.getByText('Este mes')).toHaveCount(0);
+  await expect(page.getByText('También recientes')).toHaveCount(0);
 });
 
-test('both Logros lead cards are in the desktop viewport after scrolling to the strip', async ({ page }) => {
+test('English homepage Logros shows the 6 newest notes newest first', async ({ page }) => {
+  await page.goto('/en/');
+  const cards = page.locator('[data-logros-grid] > li > a');
+  await expect(cards).toHaveCount(6);
+  for (const [index, href] of LOGROS_NEWEST_EN.entries()) {
+    await expect(cards.nth(index)).toHaveAttribute('href', href);
+  }
+  await expect(page.getByText('This month')).toHaveCount(0);
+  await expect(page.getByText('Also recently added')).toHaveCount(0);
+});
+
+test('Logros del Mes is a 3-column grid on desktop', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto('/');
   await page.locator('#logros-heading').scrollIntoViewIfNeeded();
-  const lead = page.locator('[data-logros-lead] > li > a');
-  await expect(lead.nth(0)).toBeInViewport();
-  await expect(lead.nth(1)).toBeInViewport();
+  const cards = page.locator('[data-logros-grid] > li > a');
+  await expect(cards).toHaveCount(6);
+  const rowCount = await cards.evaluateAll((nodes) => {
+    const tops = nodes.map((node) => Math.round(node.getBoundingClientRect().top));
+    return new Set(tops).size;
+  });
+  expect(rowCount).toBe(2);
+  const firstRow = await cards.evaluateAll((nodes) => {
+    const top = Math.round(nodes[0].getBoundingClientRect().top);
+    return nodes
+      .map((node, index) => ({
+        index,
+        left: node.getBoundingClientRect().left,
+        top: Math.round(node.getBoundingClientRect().top),
+      }))
+      .filter((item) => item.top === top)
+      .sort((a, b) => a.left - b.left)
+      .map((item) => item.index);
+  });
+  expect(firstRow).toEqual([0, 1, 2]);
+  await expect(cards.nth(0)).toBeInViewport();
+  await expect(cards.nth(1)).toBeInViewport();
+  await expect(cards.nth(2)).toBeInViewport();
 });
 
-test('both Logros lead cards stay in document flow on a mobile viewport', async ({ page }) => {
+test('Logros del Mes stacks all 6 cards on mobile without a snap carousel', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
-  const lead = page.locator('[data-logros-lead] > li > a');
-  await lead.nth(0).scrollIntoViewIfNeeded();
-  await expect(lead.nth(0)).toBeInViewport();
-  await lead.nth(1).scrollIntoViewIfNeeded();
-  await expect(lead.nth(1)).toBeInViewport();
-  const firstBox = await lead.nth(0).boundingBox();
-  const secondBox = await lead.nth(1).boundingBox();
-  expect(firstBox && secondBox && secondBox.y > firstBox.y).toBeTruthy();
+  const cards = page.locator('[data-logros-grid] > li > a');
+  await expect(cards).toHaveCount(6);
+  await expect(page.locator('[data-logros-grid]')).not.toHaveClass(/overflow-x-auto|snap-x/);
+  const boxes = [];
+  for (let index = 0; index < 6; index += 1) {
+    await cards.nth(index).scrollIntoViewIfNeeded();
+    await expect(cards.nth(index)).toBeInViewport();
+    boxes.push(await cards.nth(index).boundingBox());
+  }
+  for (let index = 1; index < boxes.length; index += 1) {
+    expect(boxes[index - 1] && boxes[index] && boxes[index]!.y > boxes[index - 1]!.y).toBeTruthy();
+  }
 });
 
 test('homepage Logros del Mes still features the Santa Marta 1820 cuartillo', async ({ page }) => {
@@ -661,24 +711,12 @@ test('English homepage Logros still features the China 2000 polymer 100 yuan', a
   await expect(card).toHaveAttribute('href', '/en/collection/world-polymer/china-100-yuan-2000/');
 });
 
-test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
+test('homepage Logros del Mes does not show older-than-last-six highlights', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
-  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Banco de Rio Hacha — 5 pesos, 1883/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/');
-  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco de Rio Hacha/);
-});
-
-test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async ({ page }) => {
-  await page.goto('/');
-  const section = page.locator('section[aria-labelledby="logros-heading"]');
-  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Banco Hipotecario — 5 pesos, 1881/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
-  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco Hipotecario/);
+  await expect(section.getByRole('link', { name: /Banco de Rio Hacha — 5 pesos, 1883/ })).toHaveCount(0);
+  await expect(section.getByRole('link', { name: /Banco Hipotecario — 5 pesos, 1881/ })).toHaveCount(0);
+  await expect(section.getByRole('link', { name: /MPC Serie 692 — Veinte Dólares/ })).toHaveCount(0);
 });
 
 test('Nueva Granada 1861 ficha shows landscape side-by-side banknote photo', async ({ page }) => {
@@ -735,14 +773,6 @@ test('English MPC Series 692 $20 ficha shows stacked landscape photo', async ({ 
   await expect(page.getByText('Obverse (top) and reverse (bottom) — Notofilia.com Collection')).toBeVisible();
 });
 
-test('homepage Logros del Mes features the MPC Serie 692 $20', async ({ page }) => {
-  await page.goto('/');
-  const section = page.locator('section[aria-labelledby="logros-heading"]');
-  const card = section.getByRole('link', { name: /MPC Serie 692 — Veinte Dólares/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/');
-  await expect(card.getByRole('img')).toHaveAttribute('src', '/uploads/mpc-series-692-20-dollars-3f285359-card.jpg');
-});
 
 test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
   await page.goto('/en/collection/colombia/');
