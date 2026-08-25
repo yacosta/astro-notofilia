@@ -14,6 +14,7 @@ EN_PATH = "/en/collection/philippines/"
 OUT = ROOT / "src/content/catalog/filipinas.json"
 IMG1 = "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39"
 IMG2 = "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834"
+IMG5 = "/uploads/philippines-treasury-certificate-5-pesos-victory-series-66-ce93f0dc"
 
 
 def dims(rel: str) -> tuple[int, int]:
@@ -146,12 +147,13 @@ def table(es: bool) -> str:
     )
 
 
-def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
+def build(lang: str, d1: tuple[int, int], d2: tuple[int, int], d5: tuple[int, int]) -> str:
     es = lang == "es"
     page = ES_PATH if es else EN_PATH
     h1 = "Serie Victory No. 66" if es else "Victory Series No. 66"
     href1 = "/coleccion/filipinas/1-peso-victory-series-66/" if es else "/en/collection/philippines/1-peso-victory-series-66/"
     href2 = "/coleccion/filipinas/2-pesos-victory-series-66/" if es else "/en/collection/philippines/2-pesos-victory-series-66/"
+    href5 = "/coleccion/filipinas/5-pesos-victory-series-66/" if es else "/en/collection/philippines/5-pesos-victory-series-66/"
     alt1 = (
         "1 Peso Victory Series No. 66: anverso con Apolinario Mabini (arriba) y reverso naranja con sobresello VICTORY (abajo)"
         if es
@@ -161,6 +163,11 @@ def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
         "2 Pesos Victory Series No. 66: anverso con José Rizal (arriba) y reverso azul con sobresello VICTORY (abajo)"
         if es
         else "2 Pesos Victory Series No. 66: obverse with José Rizal (top) and blue reverse with VICTORY overprint (bottom)"
+    )
+    alt5 = (
+        "5 Pesos Victory Series No. 66: anverso con McKinley y Dewey (arriba) y reverso amarillo con sobresello VICTORY (abajo)"
+        if es
+        else "5 Pesos Victory Series No. 66: obverse with McKinley and Dewey (top) and yellow reverse with VICTORY overprint (bottom)"
     )
     screen = "Serie Victory No. 66 — Filipinas" if es else "Victory Series No. 66 — Philippines"
     eyebrow = "Filipinas · Commonwealth" if es else "Philippines · Commonwealth"
@@ -259,7 +266,7 @@ def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
             else "Victory Series No. 66 notes without the red Central Bank overprint, photographed and described in the Notofilia records.",
             last=True,
         ).replace('margin:0;', "margin:0 0 28px;"),
-        '      <div class="catalog-hub-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; max-width:920px;">',
+        '      <div class="catalog-hub-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:32px;">',
         "        "
         + card(
             href=href1,
@@ -282,6 +289,18 @@ def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
             kicker="Pick 95a · 1944",
             title="2 Pesos",
             detail="José Rizal · Osmeña / Hernandez (Auditor General) · serial F13317943",
+            eager=False,
+        ),
+        "        "
+        + card(
+            href=href5,
+            src=IMG5,
+            alt=alt5,
+            w=d5[0],
+            h=d5[1],
+            kicker="Pick 96a · 1944",
+            title="5 Pesos",
+            detail="McKinley / Dewey · Osmeña / Hernandez · serial F00618071",
             eager=False,
         ),
         "      </div>",
@@ -342,8 +361,9 @@ def build(lang: str, d1: tuple[int, int], d2: tuple[int, int]) -> str:
 def main() -> None:
     d1 = dims(IMG1)
     d2 = dims(IMG2)
-    es_html = build("es", d1, d2)
-    en_html = build("en", d1, d2)
+    d5 = dims(IMG5)
+    es_html = build("es", d1, d2, d5)
+    en_html = build("en", d1, d2, d5)
     payload = {
         "path": ES_PATH,
         "title": "Serie Victory No. 66 Filipinas (1944) | Notofilia",
@@ -364,7 +384,7 @@ def main() -> None:
         "robots": "index, follow, max-image-preview:large",
         "ogType": "website",
         "ogTitle": "Serie Victory No. 66 — Filipinas (1944)",
-        "ogDescription": "Certificados del Tesoro Victory Series No. 66: Pick 94–101, Leyte 1944 y ejemplares de 1 y 2 pesos.",
+        "ogDescription": "Certificados del Tesoro Victory Series No. 66: Pick 94–101, Leyte 1944 y ejemplares de 1, 2 y 5 pesos.",
         "ogImage": f"{IMG1}.jpg",
         "jsonLd": {
             "@context": "https://schema.org",
@@ -432,7 +452,7 @@ def main() -> None:
                 "knownVarieties": "Sin sobresello CBP (esta página) y con sobresello rojo CENTRAL BANK OF THE PHILIPPINES (1949). Firmas Osmeña–Hernandez, Osmeña–Guevara, Roxas–Guevara.",
                 "circulationDates": "Leyte, 20 octubre 1944. Tipo sin CBP: 1944–1949. Con sobresello CBP de curso legal hasta 30 julio 1964 (BSP).",
                 "rarityBasis": "Serie de liberación; 1 y 2 pesos son los tipos más comunes. Población PMG: no confirmado",
-                "shownSpecimenState": "En la colección: 1 peso Pick 94a serial F70618009 y 2 pesos Pick 95a serial F13317943, ambos sin sobresello rojo CBP. Grado numérico: no confirmado",
+                "shownSpecimenState": "En la colección: 1 peso Pick 94a serial F70618009, 2 pesos Pick 95a serial F13317943 y 5 pesos Pick 96a serial F00618071, todos sin sobresello rojo CBP. Grado numérico: no confirmado",
                 "factualReviewDate": "2026-08-25",
             },
             "render": "astro-static",
@@ -453,7 +473,7 @@ def main() -> None:
                 "title": "Victory Series No. 66 Philippines (1944) | Notofilia",
                 "description": "Philippines Victory Series No. 66 catalog (1944): Treasury Certificates, Pick 94–101, Leyte landing, and Notofilia specimens.",
                 "ogTitle": "Victory Series No. 66 — Philippines (1944)",
-                "ogDescription": "Victory Series No. 66 Treasury Certificates: Pick 94–101, Leyte 1944, and 1- and 2-peso specimens.",
+                "ogDescription": "Victory Series No. 66 Treasury Certificates: Pick 94–101, Leyte 1944, and 1-, 2-, and 5-peso specimens.",
                 "recordTitle": "Victory Series No. 66",
                 "eyebrow": "Philippines · Commonwealth",
                 "template": en_html,
@@ -461,7 +481,7 @@ def main() -> None:
         },
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
-    print(f"wrote {OUT.relative_to(ROOT)} 1p={d1} 2p={d2}")
+    print(f"wrote {OUT.relative_to(ROOT)} 1p={d1} 2p={d2} 5p={d5}")
 
 
 if __name__ == "__main__":
