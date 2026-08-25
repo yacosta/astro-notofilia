@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-25T00:37:33.687Z",
-  "count": 138,
-  "pieceCount": 122,
+  "generatedAt": "2026-08-25T01:17:30.463Z",
+  "count": 140,
+  "pieceCount": 124,
   "stats": {
-    "billetes": 222,
+    "billetes": 224,
     "monedas": 9,
     "paises": 36,
-    "fichas": 122,
-    "paginas": 154
+    "fichas": 124,
+    "paginas": 156
   },
   "countries": [
     {
       "name": "Colombia",
-      "count": 48,
+      "count": 49,
       "slug": "colombia"
     },
     {
       "name": "Estados Unidos",
-      "count": 30,
+      "count": 31,
       "slug": "estados-unidos"
     },
     {
@@ -1297,6 +1297,36 @@
       "material": "",
       "kind": "specimen",
       "searchText": "doscientos pesos oro specimen, banco de la ficha de catálogo numismático: especímenes de doscientos pesos oro (1982, bolívar) y (1983, 1992, mutis) de el banco de la república, colombia. colombia doscientos pesos oro espécimen sin circular, con perforaciones de cancelación características y numeración en ceros. specimen banco de la república doscientos pesos oro specimen muestra sin valor simón bolívar billete josé celestino mutis billete claustro rosario bogotá notafilia colombiana numismática colombiana"
+    },
+    {
+      "id": "colombia--banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato",
+      "path": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/",
+      "title": "2.000 pesos Débora, prueba sin retrato",
+      "description": "Prueba P-458b: anverso sin retrato, reverso Caño Cristales, series AA disparejas. 2.08.2016. Colección Notofilia.",
+      "keywords": [
+        "banco de la república",
+        "2000 pesos",
+        "débora arango",
+        "pick 458b",
+        "prueba progresiva",
+        "sin retrato",
+        "notafilia colombiana"
+      ],
+      "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/",
+      "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Colombia",
+      "issuer": "El Banco de la República, Bogotá, Colombia",
+      "denomination": "Dos Mil Pesos",
+      "catalogRef": "Pick 458b",
+      "condition": "",
+      "emissionType": "Prueba de impresión progresiva o parcial del Pick 458b. Anverso sin la capa intaglio del retrato (silueta en blanco); reverso de Caño Cristales impreso; series AA22293893 (arriba izquierda) y AA26293893 (abajo derecha), disparejas. No es un billete de circulación emitido ni un specimen rotulado SPECIMEN. Distinto de la otra prueba P-458b de esta colección (retrato impreso, reverso en blanco, series tapadas).",
+      "dateLabel": "",
+      "year": 2000,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "2.000 pesos débora, prueba sin retrato prueba p-458b: anverso sin retrato, reverso caño cristales, series aa disparejas. 2.08.2016. colección notofilia. colombia el banco de la república, bogotá, colombia dos mil pesos pick 458b papel banknote banco de la república 2000 pesos débora arango pick 458b prueba progresiva sin retrato notafilia colombiana"
     },
     {
       "id": "colombia--banco-de-la-republica-2000-pesos-debora-arango",
@@ -2732,6 +2762,35 @@
       "material": "papel",
       "kind": "banknote",
       "searchText": "2 pesos victory 66, filipinas (pick 95a) tesoro de filipinas, 2 pesos victory series no. 66 (1944), pick 95a: rizal, sello azul y victory. colección notofilia. filipinas tesorería de filipinas (treasury of the philippines) 2 pesos pick 95a papel banknote filipinas philippines victory series 66 victory note tesorería de filipinas treasury certificate jose rizal pick 95a pick 118 osmeña dos pesos"
+    },
+    {
+      "id": "giori-press-test-note-lincoln-memorial",
+      "path": "/coleccion/giori-press-test-note-lincoln-memorial/",
+      "title": "Giori Lincoln Memorial, verde uniface",
+      "description": "Nota de prueba Magna/Giori: reverso Lincoln Memorial en verde hierba, uniface. Rothberg RGMB1/0NSU. Colección Notofilia.",
+      "keywords": [
+        "giori press test note",
+        "lincoln memorial",
+        "magna press",
+        "rothberg rgmb1",
+        "nota de prueba",
+        "bureau of engraving and printing"
+      ],
+      "url": "https://notofilia.com/coleccion/giori-press-test-note-lincoln-memorial/",
+      "image": "/uploads/magna-giori-lincoln-memorial-rgmb1-0nsu.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Bureau of Engraving and Printing (ensayo; no emisión)",
+      "denomination": "Ninguna — no es curso legal",
+      "catalogRef": "Rothberg RGMB1/0NSU; sin Friedberg ni Pick",
+      "condition": "",
+      "emissionType": "Nota de prueba de imprenta ( press test note ), uniface",
+      "dateLabel": "",
+      "year": null,
+      "material": "papel",
+      "kind": "banknote",
+      "searchText": "giori lincoln memorial, verde uniface nota de prueba magna/giori: reverso lincoln memorial en verde hierba, uniface. rothberg rgmb1/0nsu. colección notofilia. estados unidos bureau of engraving and printing (ensayo; no emisión) ninguna — no es curso legal rothberg rgmb1/0nsu; sin friedberg ni pick papel banknote giori press test note lincoln memorial magna press rothberg rgmb1 nota de prueba bureau of engraving and printing"
     },
     {
       "id": "giori-press-test-note",

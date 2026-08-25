@@ -510,6 +510,68 @@ test('homepage Logros del Mes features the Débora Arango P-458b proof first', a
   );
 });
 
+test('Giori Lincoln Memorial test note has ES and EN fichas with the submitted photo', async ({
+  page,
+}) => {
+  await page.goto('/coleccion/giori-press-test-note-lincoln-memorial/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await expect(page.getByRole('heading', { level: 1, name: 'Nota de prueba Giori: Lincoln Memorial' })).toBeVisible();
+  await expect(page.getByRole('img').first()).toHaveAttribute(
+    'src',
+    '/uploads/magna-giori-lincoln-memorial-rgmb1-0nsu.jpg',
+  );
+  await expect(page.getByRole('link', { name: 'nota Giori de tres retratos', exact: true })).toBeVisible();
+
+  await page.goto('/en/collection/giori-press-test-note-lincoln-memorial/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('heading', { level: 1, name: 'Giori test note: Lincoln Memorial' })).toBeVisible();
+  await expect(page.getByRole('img').first()).toHaveAttribute(
+    'src',
+    '/uploads/magna-giori-lincoln-memorial-rgmb1-0nsu.jpg',
+  );
+});
+
+test('second Débora P-458b proof is a distinct ficha from the first', async ({ page }) => {
+  await page.goto('/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await expect(page.getByRole('heading', { level: 1, name: 'El Banco de la República' })).toBeVisible();
+  await expect(page.getByText('AA22293893', { exact: false }).first()).toBeVisible();
+  await expect(page.getByRole('img').first()).toHaveAttribute(
+    'src',
+    '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.jpg',
+  );
+  await expect(
+    page.getByRole('link', { name: /otra prueba P-458b/i }).first(),
+  ).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/');
+
+  await page.goto('/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-without-portrait/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('img').first()).toHaveAttribute(
+    'src',
+    '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.jpg',
+  );
+});
+
+test('Colombia hub lists both Débora P-458b proofs', async ({ page }) => {
+  await page.goto('/coleccion/colombia/');
+  await expect(
+    page.locator('a[href="/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator(
+      'a[href="/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/"]',
+    ),
+  ).toBeVisible();
+});
+
+test('Treasury hub lists both Giori test notes', async ({ page }) => {
+  await page.goto('/coleccion/departamento-del-tesoro-de-ee-uu/');
+  await expect(page.locator('a[href="/coleccion/giori-press-test-note/"]')).toBeVisible();
+  await expect(
+    page.locator('a[href="/coleccion/giori-press-test-note-lincoln-memorial/"]'),
+  ).toBeVisible();
+});
+
 test('English homepage Logros features the Débora Arango P-458b proof first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
