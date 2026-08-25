@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit src/content/catalog/filipinas--serie-victory-no-66.json from the author HTML hub."""
+"""Emit src/content/catalog/filipinas.json — Victory Series catalog at the country hub URL."""
 from __future__ import annotations
 
 import hashlib
@@ -9,9 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://notofilia.com"
-ES_PATH = "/coleccion/filipinas/serie-victory-no-66/"
-EN_PATH = "/en/collection/philippines/victory-series-no-66/"
-OUT = ROOT / "src/content/catalog/filipinas--serie-victory-no-66.json"
+ES_PATH = "/coleccion/filipinas/"
+EN_PATH = "/en/collection/philippines/"
+OUT = ROOT / "src/content/catalog/filipinas.json"
 IMG1 = "/uploads/philippines-treasury-certificate-1-peso-victory-series-66-5c220d39"
 IMG2 = "/uploads/philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834"
 
@@ -349,6 +349,8 @@ def main() -> None:
         "title": "Serie Victory No. 66 Filipinas (1944) | Notofilia",
         "description": "Catálogo Victory Series No. 66 de Filipinas (1944): certificados del Tesoro, Pick 94–101, liberación de Leyte y ejemplares de la colección Notofilia.",
         "keywords": [
+            "billetes de filipinas",
+            "philippines banknotes",
             "filipinas",
             "philippines",
             "victory series 66",
@@ -371,8 +373,7 @@ def main() -> None:
                     "@type": "BreadcrumbList",
                     "itemListElement": [
                         {"@type": "ListItem", "position": 1, "name": "Notofilia", "item": f"{SITE}/"},
-                        {"@type": "ListItem", "position": 2, "name": "Filipinas", "item": f"{SITE}/coleccion/filipinas/"},
-                        {"@type": "ListItem", "position": 3, "name": "Serie Victory No. 66", "item": f"{SITE}{ES_PATH}"},
+                        {"@type": "ListItem", "position": 2, "name": "Filipinas", "item": f"{SITE}{ES_PATH}"},
                     ],
                 },
                 {
@@ -382,7 +383,6 @@ def main() -> None:
                     "url": f"{SITE}{ES_PATH}",
                     "description": "Certificados del Tesoro de Filipinas Victory Series No. 66 (1944) de la colección Notofilia.",
                     "inLanguage": "es",
-                    "isPartOf": {"@id": f"{SITE}/coleccion/filipinas/#page"},
                     "hasPart": [
                         {
                             "@type": "CreativeWork",
@@ -394,6 +394,11 @@ def main() -> None:
                             "name": "2 Pesos — Victory Series No. 66 (Pick 95a)",
                             "url": f"{SITE}/coleccion/filipinas/2-pesos-victory-series-66/",
                         },
+                        {
+                            "@type": "CreativeWork",
+                            "name": "5 Pesos — Victory Series No. 66 (Pick 96)",
+                            "url": f"{SITE}/coleccion/filipinas/5-pesos-victory-series-66/",
+                        },
                     ],
                 },
             ],
@@ -402,7 +407,7 @@ def main() -> None:
         "template": es_html,
         "logic": "",
         "record": {
-            "id": "NF.filipinas.serie-victory-no-66",
+            "id": "NF.filipinas",
             "kind": "other",
             "title": "Serie Victory No. 66",
             "subtitle": "Certificados del Tesoro · 1944 · Pick 94–101",
@@ -411,8 +416,7 @@ def main() -> None:
             "issuer": "Tesorería de Filipinas (Treasury of the Philippines)",
             "breadcrumb": [
                 {"name": "Notofilia", "href": "/"},
-                {"name": "Filipinas", "href": "/coleccion/filipinas/"},
-                {"name": "Serie Victory No. 66"},
+                {"name": "Filipinas"},
             ],
             "metadata": {
                 "denomination": "1, 2, 5, 10, 20, 50, 100 y 500 pesos",
@@ -434,14 +438,14 @@ def main() -> None:
             "render": "astro-static",
             "eyebrow": "Filipinas · Commonwealth",
             "related": [
-                {"href": "/coleccion/filipinas/", "title": "Catálogo de Billetes de Filipinas"},
                 {"href": "/coleccion/filipinas/1-peso-victory-series-66/", "title": "1 Peso Victory Series No. 66"},
                 {"href": "/coleccion/filipinas/2-pesos-victory-series-66/", "title": "2 Pesos Victory Series No. 66"},
+                {"href": "/coleccion/filipinas/5-pesos-victory-series-66/", "title": "5 Pesos Victory Series No. 66"},
                 {"href": "/coleccion/veinte-dolares-hawaii-1934/", "title": "$20 Hawaii, 1934"},
                 {"href": "/glosario/sobresello/", "title": "Sobresello"},
             ],
         },
-        "legacyFile": "catalogo-filipinas-serie-victory-no-66.dc.html",
+        "legacyFile": "catalogo-filipinas.dc.html",
         "sourceHash": hashlib.sha256(es_html.encode()).hexdigest()[:16],
         "i18n": {
             "en": {

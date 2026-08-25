@@ -387,14 +387,12 @@ function buildTemplate(lang) {
   const related = isEs
     ? [
         ['/coleccion/filipinas/', 'Colección de Filipinas'],
-        ['/coleccion/filipinas/serie-victory-no-66/', 'Serie Victory No. 66'],
         ['/coleccion/filipinas/1-peso-victory-series-66/', '1 Peso Victory Series No. 66'],
         ['/coleccion/veinte-dolares-hawaii-1934/', '$20 Hawaii, 1934 (sobresello de guerra)'],
         ['/glosario/sobresello/', 'Glosario: sobresello'],
       ]
     : [
         ['/en/collection/philippines/', 'Philippines collection'],
-        ['/en/collection/philippines/victory-series-no-66/', 'Victory Series No. 66'],
         ['/en/collection/philippines/1-peso-victory-series-66/', '1 Peso Victory Series No. 66'],
         ['/en/collection/twenty-dollars-hawaii-1934/', '$20 Hawaii, 1934 (wartime overprint)'],
         ['/en/glossary/overprint/', 'Glossary: overprint'],
@@ -639,7 +637,6 @@ const data = {
     ],
     related: [
       { href: '/coleccion/filipinas/', title: 'Catálogo de Billetes de Filipinas' },
-      { href: '/coleccion/filipinas/serie-victory-no-66/', title: 'Serie Victory No. 66' },
       { href: '/coleccion/filipinas/1-peso-victory-series-66/', title: '1 Peso Victory Series No. 66' },
       { href: '/coleccion/veinte-dolares-hawaii-1934/', title: '$20 Hawaii, 1934' },
       { href: '/glosario/sobresello/', title: 'Sobresello' },

@@ -470,7 +470,7 @@ test('retired Tesorería Victory Series page is not a live document', async ({ p
 });
 
 test('Philippines Victory Series catalog page lists both notes in Spanish', async ({ page }) => {
-  const response = await page.goto('/coleccion/filipinas/serie-victory-no-66/', {
+  const response = await page.goto('/coleccion/filipinas/', {
     waitUntil: 'domcontentloaded',
   });
   expect(response?.ok()).toBeTruthy();
@@ -489,12 +489,12 @@ test('Philippines Victory Series catalog page lists both notes in Spanish', asyn
   await expect(page.getByRole('heading', { name: 'Cómo citar esta ficha' })).toBeVisible();
   await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
     'href',
-    'https://notofilia.com/en/collection/philippines/victory-series-no-66/',
+    'https://notofilia.com/en/collection/philippines/',
   );
 });
 
 test('Philippines Victory Series catalog page lists both notes in English', async ({ page }) => {
-  const response = await page.goto('/en/collection/philippines/victory-series-no-66/', {
+  const response = await page.goto('/en/collection/philippines/', {
     waitUntil: 'domcontentloaded',
   });
   expect(response?.ok()).toBeTruthy();
@@ -513,7 +513,7 @@ test('Philippines Victory Series catalog page lists both notes in English', asyn
   await expect(page.getByRole('heading', { name: 'How to cite this record' })).toBeVisible();
   await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute(
     'href',
-    'https://notofilia.com/coleccion/filipinas/serie-victory-no-66/',
+    'https://notofilia.com/coleccion/filipinas/',
   );
 });
 
@@ -538,24 +538,15 @@ test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ pag
   await expect(page.getByRole('heading', { level: 1, name: 'Five Pesos Victory Series No. 66' })).toBeVisible();
 });
 
-test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
-  await page.goto('/coleccion/filipinas/');
-  const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
-  await expect(cards.nth(0)).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
-  await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
-  await expect(cards.nth(1)).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
-  await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
-});
-
-test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {
-  await page.goto('/en/collection/philippines/');
-  const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
-  await expect(cards.nth(0)).toHaveAttribute('href', '/en/collection/philippines/1-peso-victory-series-66/');
-  await expect(cards.nth(0)).toContainText('1 Peso Victory Series No. 66');
-  await expect(cards.nth(1)).toHaveAttribute('href', '/en/collection/philippines/2-pesos-victory-series-66/');
-  await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
+test('retired Victory Series child slug is not a live document', async ({ page }) => {
+  const es = await page.goto('/coleccion/filipinas/serie-victory-no-66/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(es?.ok()).toBeFalsy();
+  const en = await page.goto('/en/collection/philippines/victory-series-no-66/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(en?.ok()).toBeFalsy();
 });
 
 test('homepage Logros del Mes shows two rows of four cards on desktop', async ({ page }) => {
