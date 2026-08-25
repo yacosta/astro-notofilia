@@ -489,6 +489,17 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
+test('homepage Logros del Mes shows four cards per row on desktop', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/');
+  const cards = page.locator('section[aria-labelledby="logros-heading"] ul > li');
+  await expect(cards).toHaveCount(15);
+  const tops = await cards.evaluateAll((nodes) => nodes.map((node) => node.getBoundingClientRect().top));
+  expect(new Set(tops.slice(0, 4)).size, 'first four cards share one row').toBe(1);
+  expect(tops[4], 'fifth card wraps to the next row').toBeGreaterThan(tops[0] + 40);
+  expect(new Set(tops.slice(4, 8)).size, 'second row also has four cards').toBe(1);
+});
+
 test('homepage Logros del Mes features the Giori Lincoln Memorial uniface first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
