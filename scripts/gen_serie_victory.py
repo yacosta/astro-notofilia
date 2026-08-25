@@ -52,12 +52,13 @@ def diamond(text: str, last: bool = False) -> str:
 
 def card(*, href: str, src: str, alt: str, w: int, h: int, kicker: str, title: str, detail: str, eager: bool) -> str:
     loading = 'loading="eager" fetchpriority="high"' if eager else 'loading="lazy"'
+    # Shared 4:5 well so 1p/2p/5p cards stay the same outer size despite scan aspect.
     return (
         f'<a href="{href}" style="display:block; text-decoration:none; background:#141412; border:1px solid rgba(231,222,201,0.18); border-radius:2px; overflow:hidden;">'
-        '<div style="background:#0a0a09; display:flex; align-items:center; justify-content:center; padding:16px 12px 8px;">'
-        "<picture>"
+        '<div class="catalog-hub-specimen-well" style="background:#0a0a09; position:relative; aspect-ratio:4/5; width:100%; box-sizing:border-box;">'
+        '<picture style="position:absolute; inset:16px 12px; display:flex; align-items:center; justify-content:center;">'
         f'<source srcset="{src}-640.webp 640w, {src}.webp {w}w" sizes="(max-width: 640px) 100vw, 450px" type="image/webp" />'
-        f'<img src="{src}.jpg" alt="{alt}" width="{w}" height="{h}" {loading} decoding="async" style="width:100%; height:auto; max-height:520px; object-fit:contain; display:block;" />'
+        f'<img src="{src}.jpg" alt="{alt}" width="{w}" height="{h}" {loading} decoding="async" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;" />'
         "</picture></div>"
         '<div style="padding:14px 20px 22px;">'
         f'<span style="display:block; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#b7ab8a; margin-bottom:6px;">{kicker}</span>'

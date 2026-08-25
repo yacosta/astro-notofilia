@@ -520,6 +520,29 @@ test('Philippines Victory Series catalog page lists both notes in English', asyn
   );
 });
 
+test('Victory hub specimen wells share the same 4:5 frame', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/coleccion/filipinas/', { waitUntil: 'domcontentloaded' });
+  const wells = page.locator('#main-content .catalog-hub-grid .catalog-hub-specimen-well');
+  await expect(wells).toHaveCount(3);
+  const boxes = await wells.evaluateAll((els) =>
+    els.map((el) => {
+      const r = el.getBoundingClientRect();
+      return { w: r.width, h: r.height, ratio: r.width / r.height };
+    }),
+  );
+  expect(boxes[0].w).toBeGreaterThan(200);
+  for (const box of boxes) {
+    expect(Math.abs(box.w - boxes[0].w)).toBeLessThan(2);
+    expect(Math.abs(box.h - boxes[0].h)).toBeLessThan(2);
+    expect(box.ratio).toBeGreaterThan(0.78);
+    expect(box.ratio).toBeLessThan(0.82);
+  }
+  for (const img of await page.locator('#main-content .catalog-hub-grid img').all()) {
+    await expect(img).toHaveCSS('object-fit', 'contain');
+  }
+});
+
 test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ page }) => {
   const es = await page.goto('/coleccion/filipinas/5-pesos-victory-series-66/', {
     waitUntil: 'domcontentloaded',
