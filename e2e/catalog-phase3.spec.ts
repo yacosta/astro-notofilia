@@ -470,51 +470,62 @@ test('retired Tesorería Victory Series page is not a live document', async ({ p
 });
 
 test('Philippines Victory Series catalog page lists both notes in Spanish', async ({ page }) => {
-  const response = await page.goto('/coleccion/filipinas/billetes-victory-series/', {
+  const response = await page.goto('/coleccion/filipinas/serie-victory-no-66/', {
     waitUntil: 'domcontentloaded',
   });
   expect(response?.ok()).toBeTruthy();
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await expect(page.locator('main#main-content')).toBeVisible();
-  await expect(
-    page.getByRole('heading', { level: 1, name: 'Catálogo de billetes Victory Series de Filipinas' }),
-  ).toBeVisible();
-  await expect(page.locator('[data-catalog-mode="primary"]')).toBeVisible();
-  await expect(page.locator('.catalog-ficha-md')).toContainText('Pick 94a');
-  await expect(page.locator('.catalog-ficha-md')).toContainText('Pick 95a');
-  const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
-  await expect(cards.nth(0)).toHaveAttribute('href', '/coleccion/filipinas/1-peso-victory-series-66/');
-  await expect(cards.nth(1)).toHaveAttribute('href', '/coleccion/filipinas/2-pesos-victory-series-66/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Serie Victory No. 66' })).toBeVisible();
+  await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.locator('[data-catalog-mode="primary"]')).toHaveCount(0);
+  await expect(page.locator('main#main-content .catalog-banknote-card')).toHaveCount(0);
+  await expect(page.locator('main#main-content a[href="/coleccion/filipinas/1-peso-victory-series-66/"]')).toBeVisible();
+  await expect(page.locator('main#main-content a[href="/coleccion/filipinas/2-pesos-victory-series-66/"]')).toBeVisible();
+  await expect(page.locator('main#main-content a[href="/coleccion/filipinas/5-pesos-victory-series-66/"]')).toHaveCount(0);
+  await expect(page.locator('main#main-content')).toContainText('Pick 94');
+  await expect(page.locator('main#main-content')).toContainText('Pick 95');
+  await expect(page.locator('main#main-content')).toContainText('American Period');
   await expect(page.getByRole('heading', { name: 'Cómo citar esta ficha' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Reportar un error o aportar información' })).toBeVisible();
-  await expect(page.locator('.catalog-record-meta')).toBeVisible();
-  await expect(page.locator('.catalog-record-meta--visually-hidden')).toHaveCount(0);
+  await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/en/collection/philippines/victory-series-no-66/',
+  );
 });
 
 test('Philippines Victory Series catalog page lists both notes in English', async ({ page }) => {
-  const response = await page.goto('/en/collection/philippines/victory-series-banknotes/', {
+  const response = await page.goto('/en/collection/philippines/victory-series-no-66/', {
     waitUntil: 'domcontentloaded',
   });
   expect(response?.ok()).toBeTruthy();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(page.locator('main#main-content')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Victory Series No. 66' })).toBeVisible();
+  await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.locator('[data-catalog-mode="primary"]')).toHaveCount(0);
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Catalog Philippines Victory Series Banknotes' }),
+    page.locator('main#main-content a[href="/en/collection/philippines/1-peso-victory-series-66/"]'),
   ).toBeVisible();
-  await expect(page.locator('[data-catalog-mode="primary"]')).toBeVisible();
-  const cards = page.locator('.catalog-banknote-card');
-  await expect(cards).toHaveCount(2);
-  await expect(cards.nth(0)).toHaveAttribute(
-    'href',
-    '/en/collection/philippines/1-peso-victory-series-66/',
-  );
-  await expect(cards.nth(1)).toHaveAttribute(
-    'href',
-    '/en/collection/philippines/2-pesos-victory-series-66/',
-  );
+  await expect(
+    page.locator('main#main-content a[href="/en/collection/philippines/2-pesos-victory-series-66/"]'),
+  ).toBeVisible();
+  await expect(page.locator('main#main-content')).toContainText('Historical context');
   await expect(page.getByRole('heading', { name: 'How to cite this record' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Report an error or add information' })).toBeVisible();
+  await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveAttribute(
+    'href',
+    'https://notofilia.com/coleccion/filipinas/serie-victory-no-66/',
+  );
+});
+
+test('5 pesos Victory Series is table-only, not a live ficha', async ({ page }) => {
+  const es = await page.goto('/coleccion/filipinas/5-pesos-victory-series-66/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(es?.ok()).toBeFalsy();
+  const en = await page.goto('/en/collection/philippines/5-pesos-victory-series-66/', {
+    waitUntil: 'domcontentloaded',
+  });
+  expect(en?.ok()).toBeFalsy();
 });
 
 test('Filipinas catalog lists the 1 peso Victory note ahead of the 2 pesos', async ({ page }) => {

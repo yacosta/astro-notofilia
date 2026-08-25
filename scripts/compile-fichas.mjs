@@ -61,7 +61,7 @@ function pictureForUpload(src, alt, { eager = false } = {}) {
     : '';
   const known = {
     'philippines-treasury-certificate-1-peso-victory-series-66-5c220d39.jpg': { w: 1148, h: 1370 },
-    'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg': { w: 1024, h: 1536 },
+    'philippines-treasury-certificate-2-pesos-victory-series-66-cc5b2834.jpg': { w: 1024, h: 1284 },
   }[file];
   const loading = eager ? 'eager' : 'lazy';
   const fetch = eager ? ' fetchpriority="high"' : '';
@@ -482,12 +482,6 @@ function compileOne(esPath) {
 }
 
 async function main() {
-  try {
-    yaml = (await import('js-yaml')).default;
-  } catch {
-    console.error('compile-fichas requires js-yaml. Install with: npm i -D js-yaml');
-    process.exit(1);
-  }
   if (!existsSync(FICHAS)) {
     console.log('compile-fichas: no src/content/fichas/ directory');
     return;
@@ -498,6 +492,12 @@ async function main() {
   if (files.length === 0) {
     console.log('compile-fichas: no markdown fichas');
     return;
+  }
+  try {
+    yaml = (await import('js-yaml')).default;
+  } catch {
+    console.error('compile-fichas requires js-yaml. Install with: npm i -D js-yaml');
+    process.exit(1);
   }
   const written = files.map((file) => compileOne(join(FICHAS, file)));
   console.log(`compile-fichas: wrote ${written.length} catalog JSON file(s)`);
