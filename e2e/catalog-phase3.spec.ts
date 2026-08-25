@@ -493,7 +493,7 @@ test('homepage Logros del Mes features the Débora Arango P-458b proof first', a
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const first = section.locator('ul > li > a').first();
+  const first = section.locator('[data-logros-lead] > li > a').first();
   await expect(first).toBeVisible();
   await expect(first).toHaveAttribute(
     'href',
@@ -514,7 +514,7 @@ test('English homepage Logros features the Débora Arango P-458b proof first', a
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
-  const first = section.locator('ul > li > a').first();
+  const first = section.locator('[data-logros-lead] > li > a').first();
   await expect(first).toHaveAttribute(
     'href',
     '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
@@ -529,9 +529,57 @@ test('English homepage Logros features the Débora Arango P-458b proof first', a
 test('homepage Logros del Mes still features the 1943 10 pesos oro', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
-  const card = section.getByRole('link', { name: /10 pesos oro, 1943/ });
+  const card = section.locator('[data-logros-lead]').getByRole('link', { name: /10 pesos oro, 1943/ });
   await expect(card).toBeVisible();
   await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
+});
+
+test('English homepage Logros still features the 1943 10 pesos oro', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.locator('[data-logros-lead]').getByRole('link', { name: /10 pesos oro, 1943/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute(
+    'href',
+    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  );
+});
+
+test('Logros del Mes lead pair keeps both monthly notes in document flow', async ({ page }) => {
+  await page.goto('/');
+  const lead = page.locator('[data-logros-lead] > li > a');
+  await expect(lead).toHaveCount(2);
+  await expect(lead.nth(0)).toHaveAttribute(
+    'href',
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+  );
+  await expect(lead.nth(1)).toHaveAttribute(
+    'href',
+    '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+  );
+  await expect(page.locator('[data-logros-lead]')).not.toHaveClass(/overflow-x-auto/);
+});
+
+test('both Logros lead cards are in the desktop viewport after scrolling to the strip', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto('/');
+  await page.locator('#logros-heading').scrollIntoViewIfNeeded();
+  const lead = page.locator('[data-logros-lead] > li > a');
+  await expect(lead.nth(0)).toBeInViewport();
+  await expect(lead.nth(1)).toBeInViewport();
+});
+
+test('both Logros lead cards stay in document flow on a mobile viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  const lead = page.locator('[data-logros-lead] > li > a');
+  await lead.nth(0).scrollIntoViewIfNeeded();
+  await expect(lead.nth(0)).toBeInViewport();
+  await lead.nth(1).scrollIntoViewIfNeeded();
+  await expect(lead.nth(1)).toBeInViewport();
+  const firstBox = await lead.nth(0).boundingBox();
+  const secondBox = await lead.nth(1).boundingBox();
+  expect(firstBox && secondBox && secondBox.y > firstBox.y).toBeTruthy();
 });
 
 test('homepage Logros del Mes still features the Santa Marta 1820 cuartillo', async ({ page }) => {
