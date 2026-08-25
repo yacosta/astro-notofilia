@@ -555,7 +555,7 @@ test('5 pesos Victory Series ficha shows the cropped stacked scan', async ({ pag
   );
   await expect(img).toBeVisible();
   await expect(img).toHaveAttribute('width', '906');
-  await expect(img).toHaveAttribute('height', '878');
+  await expect(img).toHaveAttribute('height', '1133');
   const en = await page.goto('/en/collection/philippines/5-pesos-victory-series-66/', {
     waitUntil: 'domcontentloaded',
   });
