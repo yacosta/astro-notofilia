@@ -4,7 +4,6 @@
  * Canonical URL is /politica-privacidad-cookies/; legacy .dc variants 301 here.
  */
 import BlogLayout from '../layouts/BlogLayout.astro';
-import FeaturePage from '../components/FeaturePage.astro';
 import PrivacyPolicyBody from '../components/PrivacyPolicyBody.astro';
 import { PRIVACY_ES_PATH, privacyJsonLd } from '../lib/legal';
 
@@ -19,7 +18,5 @@ const description =
   ogType="website"
   jsonLd={privacyJsonLd('es')}
 >
-  <FeaturePage as="div" variant="policy" data-privacy-root data-pagefind-meta="url:/politica-privacidad-cookies/">
-    <PrivacyPolicyBody lang="es" />
-  </FeaturePage>
+  <PrivacyPolicyBody lang="es" />
 </BlogLayout>

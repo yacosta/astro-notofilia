@@ -19,7 +19,11 @@ const cookieBtn = isEs ? 'Configuración de cookies' : 'Cookie settings';
 const mailto = `mailto:${PRIVACY_CONTACT}`;
 const homeHref = isEs ? '/' : '/en/';
 ---
-<FeaturePage variant="policy">
+<FeaturePage
+  variant="policy"
+  data-privacy-root
+  data-pagefind-meta={isEs ? 'url:/politica-privacidad-cookies/' : 'url:/en/privacy-cookies/'}
+>
   <nav aria-label={crumbNav} class="text-[14px] tracking-[0.06em] text-muted mb-6">
     <a class="text-muted" href={homeHref}>Notofilia</a>
     <span aria-hidden="true"> / </span>

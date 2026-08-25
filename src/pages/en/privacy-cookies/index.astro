@@ -3,7 +3,6 @@
  * English privacy and cookie policy. Spanish /politica-privacidad-cookies/ is unchanged.
  */
 import BlogLayout from '../../../layouts/BlogLayout.astro';
-import FeaturePage from '../../../components/FeaturePage.astro';
 import PrivacyPolicyBody from '../../../components/PrivacyPolicyBody.astro';
 import { PRIVACY_EN_PATH, privacyJsonLd } from '../../../lib/legal';
 
@@ -19,7 +18,5 @@ const description =
   ogType="website"
   jsonLd={privacyJsonLd('en')}
 >
-  <FeaturePage as="div" variant="policy" data-privacy-root data-pagefind-meta="url:/en/privacy-cookies/">
-    <PrivacyPolicyBody lang="en" />
-  </FeaturePage>
+  <PrivacyPolicyBody lang="en" />
 </BlogLayout>
