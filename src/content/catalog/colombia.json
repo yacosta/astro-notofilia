@@ -243,7 +243,7 @@
           },
           {
             "@type": "CreativeWork",
-            "name": "El Banco de la República — Dos Mil Pesos — Débora Arango (prueba / 19.08.2015)",
+            "name": "El Banco de la República — Dos Mil Pesos — Débora Arango (prueba P-458b / 2.08.2016)",
             "url": "https://notofilia.com/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/"
           },
           {
@@ -978,15 +978,15 @@
       {
         "href": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/",
         "title": "El Banco de la República",
-        "denomination": "Dos Mil Pesos — Débora Arango (prueba)",
-        "year": "19.08.2015",
+        "denomination": "Dos Mil Pesos — Débora Arango (prueba P-458b)",
+        "year": "2.08.2016",
         "image": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango.jpg",
         "imageWebp": "/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango.webp",
-        "alt": "Prueba o pliego inacabado de 2.000 pesos del Banco de la República con Débora Arango, anverso impreso y reverso en blanco, en funda",
+        "alt": "Prueba de impresión progresiva del 2.000 pesos del Banco de la República con Débora Arango (P-458b): anverso parcial y reverso en blanco",
         "group": "El Banco de la República",
         "groupKicker": "Banca centralizada (desde 1923)",
         "titleEn": "El Banco de la República",
-        "altEn": "Unfinished or proof-type Banco de la República 2,000-peso Débora Arango sheet, printed face and unprinted back, in a sleeve",
+        "altEn": "Progressive printing proof of the Banco de la República 2,000-peso Débora Arango note (P-458b): partial face and unprinted back",
         "groupEn": "El Banco de la República",
         "groupKickerEn": "Central banking (from 1923)"
       },

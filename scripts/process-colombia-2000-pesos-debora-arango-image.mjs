@@ -1,6 +1,6 @@
 /**
  * Encode catalog hero + responsive variants for the Banco de la República
- * 2.000 pesos Débora Arango note (stacked obverse/reverse in a collector sleeve).
+ * 2.000 pesos Débora Arango P-458b progressive proof (stacked obverse/reverse).
  *
  * Compress/format only — no cropping, compositing, recoloring, or substitution.
  * See .cursor/skills/catalog-submitted-images/SKILL.md
