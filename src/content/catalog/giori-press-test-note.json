@@ -93,7 +93,13 @@
       "catalogNumber": "Sin número Friedberg ni Pick; catalogada en la literatura especializada de exonumia como &ldquo;Giori Press Test Note&rdquo;"
     },
     "render": "astro-static",
-    "eyebrow": "Nota de Prueba de Imprenta · Estados Unidos · c. 1970"
+    "eyebrow": "Nota de Prueba de Imprenta · Estados Unidos · c. 1970",
+    "related": [
+      {
+        "href": "/coleccion/giori-press-test-note-lincoln-memorial-uniface/",
+        "title": "Nota Giori — Memorial Lincoln, uniface (RGMB1/0NSU)"
+      }
+    ]
   },
   "legacyFile": "billete-giori-press-test-note.dc.html",
   "sourceHash": "9e660d1ef4a5e96a",

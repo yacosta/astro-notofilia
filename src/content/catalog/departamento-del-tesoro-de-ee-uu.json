@@ -64,6 +64,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "Nota de prueba Giori — Memorial Lincoln, uniface (RGMB1/0NSU)",
+            "url": "https://notofilia.com/coleccion/giori-press-test-note-lincoln-memorial-uniface/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "United States Note $100 — Sello Rojo, Serie de 1966",
             "url": "https://notofilia.com/coleccion/cien-dolares-sello-rojo-1966/"
           }
@@ -123,6 +128,17 @@
         "imageWebp": "/uploads/us-giori-press-test-note-640.webp",
         "alt": "Nota de prueba de la prensa Giori con los retratos de Lincoln, Washington y Grant, anverso y reverso",
         "altEn": "Nota de prueba de la prensa Giori con los retratos de Lincoln, Washington y Grant, obverse and reverse"
+      },
+      {
+        "href": "/coleccion/giori-press-test-note-lincoln-memorial-uniface/",
+        "title": "Nota de prueba Giori — Memorial Lincoln",
+        "denomination": "Uniface · RGMB1/0NSU",
+        "year": "c. 1970s",
+        "image": "/uploads/us-giori-press-test-note-lincoln-memorial-uniface.jpg",
+        "imageWebp": "/uploads/us-giori-press-test-note-lincoln-memorial-uniface-640.webp",
+        "alt": "Nota de prueba Magna/Giori uniface: Memorial Lincoln en verde hierba arriba; reverso en blanco abajo",
+        "altEn": "Magna/Giori uniface test note: grass-green Lincoln Memorial at top; blank reverse below",
+        "titleEn": "Giori test note — Lincoln Memorial"
       },
       {
         "href": "/coleccion/cien-dolares-sello-rojo-1966/",

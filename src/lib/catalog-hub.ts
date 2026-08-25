@@ -102,6 +102,18 @@ export const FEATURED_ENTRIES: FeaturedEntry[] = [
 /** Recently highlighted pieces (shared with homepage Logros strip). */
 export const RECENT_PIECES: RecentPiece[] = [
   {
+    href: '/coleccion/giori-press-test-note-lincoln-memorial-uniface/',
+    title: 'Giori — Memorial Lincoln, uniface, RGMB1/0NSU',
+    titleEn: 'Giori — Lincoln Memorial uniface, RGMB1/0NSU',
+    description:
+      'Nota de prueba Magna/Giori (c. 1970s): Memorial Lincoln en verde hierba, reverso en blanco.',
+    descriptionEn:
+      'Magna/Giori press test note (c. 1970s): grass-green Lincoln Memorial, blank reverse.',
+    imageBase: 'us-giori-press-test-note-lincoln-memorial-uniface',
+    imageAlt:
+      'Nota de prueba Magna/Giori uniface: Memorial Lincoln en verde hierba arriba; reverso en blanco abajo',
+  },
+  {
     href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-prueba-anverso/',
     title: 'Banco de la República — 2.000 pesos Débora Arango, prueba anverso P-458b',
     titleEn: 'Banco de la República — 2,000-peso Débora Arango P-458b face proof',
