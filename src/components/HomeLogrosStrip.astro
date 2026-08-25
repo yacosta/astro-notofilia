@@ -193,6 +193,10 @@ const highlights = [
     imageAltEn: 'Obverse and reverse of the Series 692 twenty-dollar MPC with Chief Ouray',
   },
 ] as const;
+
+/** Desktop grid is 4-up; the homepage strip shows two rows only. */
+const LOGROS_VISIBLE = 8;
+const visibleHighlights = highlights.slice(0, LOGROS_VISIBLE);
 ---
 <section
   aria-labelledby="logros-heading"
@@ -215,7 +219,7 @@ const highlights = [
       {isEn ? 'Recent pieces and catalogs added to the Virtual Collection.' : 'Piezas y catálogos recientes incorporados a la Colección Virtual.'}
     </p>
     <ul class="list-none m-0 mb-8 p-0 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-4 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
-      {highlights.map((item) => (
+      {visibleHighlights.map((item) => (
         <li class="logros-card w-[85%] shrink-0 snap-center md:w-auto md:shrink">
           <a
             href={featuredHref(item.href)}

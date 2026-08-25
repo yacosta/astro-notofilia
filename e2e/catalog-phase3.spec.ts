@@ -489,11 +489,11 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes shows four cards per row on desktop', async ({ page }) => {
+test('homepage Logros del Mes shows two rows of four cards on desktop', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/');
   const cards = page.locator('section[aria-labelledby="logros-heading"] ul > li');
-  await expect(cards).toHaveCount(15);
+  await expect(cards).toHaveCount(8);
   const tops = await cards.evaluateAll((nodes) => nodes.map((node) => node.getBoundingClientRect().top));
   expect(new Set(tops.slice(0, 4)).size, 'first four cards share one row').toBe(1);
   expect(tops[4], 'fifth card wraps to the next row').toBeGreaterThan(tops[0] + 40);
@@ -624,24 +624,13 @@ test('English homepage Logros still features the China 2000 polymer 100 yuan', a
   await expect(card).toHaveAttribute('href', '/en/collection/world-polymer/china-100-yuan-2000/');
 });
 
-test('homepage Logros del Mes features the Banco de Rio Hacha 1883 proofs', async ({ page }) => {
+test('homepage Logros del Mes omits cards beyond the first two rows', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Banco de Rio Hacha — 5 pesos, 1883/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-rio-hacha-5-pesos-1883/');
-  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco de Rio Hacha/);
-});
-
-test('homepage Logros del Mes features the Banco Hipotecario 1881 proofs', async ({ page }) => {
-  await page.goto('/');
-  const section = page.locator('section[aria-labelledby="logros-heading"]');
-  await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
-  const card = section.getByRole('link', { name: /Banco Hipotecario — 5 pesos, 1881/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-hipotecario-5-pesos-1881/');
-  await expect(card.getByRole('img')).toHaveAttribute('alt', /Banco Hipotecario/);
+  await expect(section.getByRole('link', { name: /Banco de Rio Hacha — 5 pesos, 1883/ })).toHaveCount(0);
+  await expect(section.getByRole('link', { name: /Banco Hipotecario — 5 pesos, 1881/ })).toHaveCount(0);
+  await expect(section.getByRole('link', { name: /MPC Serie 692 — Veinte Dólares/ })).toHaveCount(0);
 });
 
 test('Nueva Granada 1861 ficha shows landscape side-by-side banknote photo', async ({ page }) => {
@@ -696,15 +685,6 @@ test('English MPC Series 692 $20 ficha shows stacked landscape photo', async ({ 
   await expect(img).toHaveAttribute('height', '1024');
   await expect(img).toHaveAttribute('alt', /at top.*at bottom/);
   await expect(page.getByText('Obverse (top) and reverse (bottom) — Notofilia.com Collection')).toBeVisible();
-});
-
-test('homepage Logros del Mes features the MPC Serie 692 $20', async ({ page }) => {
-  await page.goto('/');
-  const section = page.locator('section[aria-labelledby="logros-heading"]');
-  const card = section.getByRole('link', { name: /MPC Serie 692 — Veinte Dólares/ });
-  await expect(card).toBeVisible();
-  await expect(card).toHaveAttribute('href', '/coleccion/certificados-de-pago-militar/20-dolares-serie-692/');
-  await expect(card.getByRole('img')).toHaveAttribute('src', '/uploads/mpc-series-692-20-dollars-3f285359-card.jpg');
 });
 
 test('English Colombia catalog lists the Banco Hipotecario proofs', async ({ page }) => {
