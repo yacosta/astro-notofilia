@@ -124,6 +124,10 @@
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-debora-arango.dc.html"
   },
   {
+    "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/",
+    "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.dc.html"
+  },
+  {
     "route": "/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/",
     "legacyFile": "billete-colombia-banco-de-la-republica-2000-pesos-oro.dc.html"
   },
@@ -334,6 +338,10 @@
   {
     "route": "/coleccion/giori-press-test-note/",
     "legacyFile": "billete-giori-press-test-note.dc.html"
+  },
+  {
+    "route": "/coleccion/giori-press-test-note-lincoln-memorial/",
+    "legacyFile": "billete-giori-press-test-note-lincoln-memorial.dc.html"
   },
   {
     "route": "/coleccion/hagerstown-bank-maryland/",

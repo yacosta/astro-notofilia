@@ -717,6 +717,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | banknote | `/coleccion/colombia/banco-de-la-republica-200-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-200-pesos-oro-specimen/` | issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/` | `/en/collection/colombia/banco-de-la-republica-2000-pesos-oro/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/` | `/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/` | catalog IDs stay untranslated in copy; artist name kept; P-458b progressive proof |
+| banknote | `/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/` | `/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-without-portrait/` | catalog IDs stay untranslated; second P-458b proof (no portrait) |
 | banknote | `/coleccion/colombia/banco-de-la-republica-5-pesos-plata-1941/` | `/en/collection/colombia/banco-de-la-republica-5-pesos-plata-1941/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-50-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-50-pesos-oro-specimen/` | catalog IDs stay untranslated in copy; issuer name kept |
 | banknote | `/coleccion/colombia/banco-de-la-republica-500-pesos-oro-specimen/` | `/en/collection/colombia/banco-de-la-republica-500-pesos-oro-specimen/` | issuer name kept |
@@ -769,6 +770,7 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 | other | `/coleccion/emisiones-promocionales/` | `/en/collection/promotional-issues/` | hub/other |
 | other | `/coleccion/food-coupons-usda/` | `/en/collection/usda-food-coupons/` | hub/other |
 | banknote | `/coleccion/giori-press-test-note/` | `/en/collection/giori-press-test-note/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/giori-press-test-note-lincoln-memorial/` | `/en/collection/giori-press-test-note-lincoln-memorial/` | catalog IDs stay untranslated; RGMB1/0NSU |
 | banknote | `/coleccion/hagerstown-bank-maryland/` | `/en/collection/hagerstown-bank-maryland/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/moneda-colonial/nueva-jersey-6-chelines-1776/` | `/en/collection/colonial-paper-money/new-jersey-6-shillings-1776/` | catalog IDs stay untranslated in copy |
 | profile | `/coleccion/moneda-colonial/perfil-alexander-hamilton/` | `/en/collection/colonial-paper-money/profile-alexander-hamilton/` | proper-noun profile: translate `perfil` only |

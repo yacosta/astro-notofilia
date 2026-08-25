@@ -1,11 +1,10 @@
 /**
- * Generator for the Banco de la República 2.000 pesos Débora Arango ficha
- * (Pick 458b; progressive / partial printing proof, type date 2.08.2016).
+ * Generator for the SECOND Banco de la República 2.000 pesos Débora Arango
+ * P-458b progressive proof (face without portrait intaglio; printed reverse;
+ * mismatched AA serials). Distinct from
+ * /coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/
  *
- * Usage: node scripts/write-colombia-2000-pesos-debora-arango-ficha.mjs
- *
- * Image dimensions come from the user-submitted stacked photo
- * (scripts/process-colombia-2000-pesos-debora-arango-image.mjs).
+ * Usage: node scripts/write-colombia-2000-pesos-debora-arango-p458b-sin-retrato-ficha.mjs
  */
 import { createHash } from 'node:crypto';
 import { existsSync, writeFileSync } from 'node:fs';
@@ -13,22 +12,24 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const SITE = 'https://notofilia.com';
-const ES_PATH = '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/';
-const EN_PATH = '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/';
-const IMG = '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango';
-const ZOOM_ID = 'colombia-banco-de-la-republica-2000-pesos-debora-arango';
+const ES_PATH = '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/';
+const EN_PATH = '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-without-portrait/';
+const IMG = '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato';
+const ZOOM_ID = 'colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato';
 const OUT = path.join(
   process.cwd(),
-  'src/content/catalog/colombia--banco-de-la-republica-2000-pesos-debora-arango.json',
+  'src/content/catalog/colombia--banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.json',
 );
 
 const SOURCE_CANDIDATES = [
-  path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango.png'),
-  path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango.jpg'),
-  path.join(process.cwd(), 'public/uploads/Colombia - BDR 2000pesos Debora Arango.png'),
-  path.join(process.cwd(), 'public/uploads/Colombia - BDR 2000pesos Debora Arango.jpg'),
-  path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-source.png'),
-  path.join(process.cwd(), 'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-source.jpg'),
+  path.join(
+    process.cwd(),
+    'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.png',
+  ),
+  path.join(
+    process.cwd(),
+    'public/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.jpg',
+  ),
 ];
 
 let IMG_WIDTH = 1400;
@@ -52,9 +53,9 @@ const styles =
   "body { margin: 0; }\n    a { color: #6b521f; text-decoration: underline; text-decoration-color: rgba(138,109,59,0.35); }\n    a:hover { color: #5c4826; }\n    ::selection { background: rgba(138,109,59,0.25); }";
 
 const ALT_ES =
-  'Prueba de impresión progresiva o parcial del 2.000 pesos del Banco de la República con Débora Arango (P-458b): anverso parcial arriba; reverso sin impresión abajo, con hilo BRC a través del papel y series tapadas';
+  'Prueba de impresión progresiva del 2.000 pesos Débora Arango (P-458b): anverso sin retrato intaglio, con series AA22293893 y AA26293893 disparejas; reverso de Caño Cristales impreso abajo';
 const ALT_EN =
-  'Progressive or partial printing proof of the Banco de la República 2,000-peso note with Débora Arango (P-458b): partial face at top; unprinted back below, with the BRC thread showing through the paper and serials blocked';
+  'Progressive printing proof of the Débora Arango 2,000-peso note (P-458b): face without intaglio portrait, mismatched serials AA22293893 and AA26293893; printed Caño Cristales reverse below';
 
 function newTab(isEs) {
   return isEs
@@ -75,8 +76,8 @@ function pictureBlock(lang, alt) {
   const enlargeAria = lang === 'es' ? 'Ampliar imagen del billete' : 'Enlarge image of the banknote';
   const caption =
     lang === 'es'
-      ? 'Anverso parcial (arriba) y reverso sin impresión (abajo) — Colección de Notofilia.com'
-      : 'Partial face (top) and unprinted reverse (bottom) — Notofilia.com Collection';
+      ? 'Anverso sin retrato (arriba) y reverso de Caño Cristales (abajo) — Colección de Notofilia.com'
+      : 'Face without portrait (top) and Caño Cristales reverse (bottom) — Notofilia.com Collection';
   return `<button
             data-zoom-trigger="${ZOOM_ID}"
             aria-label="${enlargeAria}"
@@ -167,14 +168,14 @@ function buildTemplate(lang) {
   const backHref = isEs ? '/coleccion/colombia/' : '/en/collection/colombia/';
   const backLabel = isEs ? 'Catálogo de Colombia' : 'Colombia catalog';
   const screen = isEs
-    ? 'Banco de la República — Dos Mil Pesos, prueba progresiva (Débora Arango, P-458b)'
-    : 'Banco de la República — Two Thousand Pesos, progressive proof (Débora Arango, P-458b)';
+    ? 'Banco de la República — Dos Mil Pesos, prueba sin retrato (Débora Arango, P-458b)'
+    : 'Banco de la República — Two Thousand Pesos, proof without portrait (Débora Arango, P-458b)';
   const eyebrow = isEs
     ? 'Prueba de impresión progresiva / parcial &middot; Bogotá, Colombia &middot; 2.08.2016'
     : 'Progressive / partial printing proof &middot; Bogotá, Colombia &middot; 2.08.2016';
   const subtitle = isEs
-    ? 'Dos Mil Pesos &middot; Débora Arango Pérez &middot; P-458b &middot; anverso parcial, reverso en blanco'
-    : 'Two Thousand Pesos &middot; Débora Arango Pérez &middot; P-458b &middot; partial face, reverse unprinted';
+    ? 'Dos Mil Pesos &middot; Débora Arango Pérez &middot; P-458b &middot; anverso sin retrato'
+    : 'Two Thousand Pesos &middot; Débora Arango Pérez &middot; P-458b &middot; face without portrait';
   const alt = isEs ? ALT_ES : ALT_EN;
   const tab = newTab(isEs);
   const unconfirmed = isEs
@@ -186,6 +187,9 @@ function buildTemplate(lang) {
   const errorHref = isEs
     ? '/coleccion/colombia/2000-pesos-error-mariposa/'
     : '/en/collection/colombia/2000-pesos-butterfly-error/';
+  const firstHref = isEs
+    ? '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/'
+    : '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/';
   const blogHref = isEs ? '/blog/personajes-billetes-colombia/' : '/en/blog/figures-on-colombia-banknotes/';
   const colombiaHref = isEs ? '/coleccion/colombia/' : '/en/collection/colombia/';
 
@@ -206,23 +210,25 @@ function buildTemplate(lang) {
         ['Denominación', 'Dos Mil Pesos'],
         [
           'Tipo de Emisión',
-          'Prueba de impresión progresiva o parcial del Pick 458b. Anverso con capas incompletas (azul y negro; sin el colorido pleno del tipo emitido); reverso sin impresión; números de serie tapados. No es un billete de circulación emitido ni un specimen rotulado SPECIMEN.',
+          'Prueba de impresión progresiva o parcial del Pick 458b. Anverso sin la capa intaglio del retrato (silueta en blanco); reverso de Caño Cristales impreso; series AA22293893 (arriba izquierda) y AA26293893 (abajo derecha), disparejas. No es un billete de circulación emitido ni un specimen rotulado SPECIMEN. Distinto de la <a href="' +
+            firstHref +
+            '">otra prueba P-458b</a> de esta colección (retrato impreso, reverso en blanco, series tapadas).',
         ],
         ['Material', 'Papel de algodón 100 % (sustrato del tipo BanRep)'],
-        ['Impresor', 'Imprenta de Billetes — Banco de la República'],
+        ['Impresor', 'Imprenta de Billetes — Banco de la República (leído en el reverso)'],
         [
           'Fecha de edición',
-          '2 de agosto de 2016: fecha de edición del tipo P-458b (series AE y AF) en la Circular DTE-201 Asunto 52.<sup style="font-size:12px;">4</sup> En este ejemplar el reverso no está impreso, así que esa fecha no se lee en el pliego; se usa como fecha de catálogo del tipo P-458b. La 1.ª edición impresa del tipo (P-458a) es el 19 de agosto de 2015.',
+          '2 de agosto de 2016: leída en el reverso («2 DE AGOSTO DE 2016»). Coincide con la fecha de edición del tipo P-458b (series AE y AF) en la Circular DTE-201 Asunto 52.<sup style="font-size:12px;">4</sup> La 1.ª edición impresa del tipo (P-458a) es el 19 de agosto de 2015.',
         ],
         [
           'Serie / Número',
-          'Tapados (barras negras en las zonas de serie). No se transcribe un serial. No se interpretan como un efecto de la foto. El tipo P-458b emitido lleva series AE y AF.<sup style="font-size:12px;">4</sup>',
+          'AA22293893 (arriba izquierda) y AA26293893 (abajo derecha): no coinciden (tercer y cuarto dígitos 22 frente a 26). El tipo P-458b emitido lleva series AE y AF; la circular lista AA–CC como ediciones posteriores.<sup style="font-size:12px;">4</sup> Identificación P-458b: por la fecha del reverso y el archivo del usuario, con esta salvedad del prefijo AA.',
         ],
         [
           'Firmas',
-          'Cargos leídos en el ejemplar: Gerente General y Gerente Ejecutivo. Nombres de <em>esta</em> pieza: ' +
+          'No se leen cargos ni firmas en el anverso de esta foto (la capa intaglio del retrato y del texto inferior no está impresa). Nombres: ' +
             unconfirmed +
-            '. La 1.ª edición (19.08.2015) lleva, en fuentes del Emisor, a José Darío Uribe Escobar y José Tolosa Buitrago; la circular no nombra otras firmas para la edición del 2.08.2016. No se atribuyen aquí a este pliego.<sup style="font-size:12px;">2,4</sup>',
+            '.',
         ],
         [
           'Dimensiones',
@@ -241,9 +247,9 @@ function buildTemplate(lang) {
         ['Tirada', unconfirmed],
         [
           'Variedades conocidas',
-          'Circular DTE-201 Asunto 52: edición 2.08.2016 series AE (circulación desde el 16.02.2018) y AF (desde el 5.06.2018), y ediciones posteriores AA–CC.<sup style="font-size:12px;">4</sup> Este ejemplar: prueba progresiva / parcial (anverso incompleto, reverso en blanco). Serie prefijo de este pliego: ' +
-            unconfirmed +
-            '.',
+          'Circular DTE-201 Asunto 52: edición 2.08.2016 series AE y AF, y ediciones posteriores AA–CC.<sup style="font-size:12px;">4</sup> Este ejemplar: prueba progresiva / parcial (anverso sin retrato, reverso impreso, series AA disparejas). Distinto de la <a href="' +
+            firstHref +
+            '">prueba con retrato y reverso en blanco</a> de esta colección.',
         ],
         [
           'Fechas de circulación',
@@ -251,13 +257,13 @@ function buildTemplate(lang) {
         ],
         [
           'Base de la rareza',
-          'Prueba de impresión progresiva o parcial del tipo P-458b (anverso incompleto, reverso en blanco, series tapadas). Tirada y confirmación de archivo BanRep: ' +
+          'Prueba de impresión progresiva o parcial del tipo P-458b (anverso sin retrato, reverso de Caño Cristales, series AA disparejas). Tirada y confirmación de archivo BanRep: ' +
             unconfirmed +
             '. El tipo emitido es corriente. Población NGC/PCGS: no aplica (no encapsulado).',
         ],
         [
           'Estado del ejemplar mostrado',
-          'Sin encapsular. Anverso con impresión parcial y legible. Reverso sin impresión de paisaje: se ve el hilo BRC y el anverso al trasluz. Series tapadas. Identificación: prueba progresiva / parcial del P-458b.',
+          'Sin encapsular. Anverso con fondo de color y figura lineal, sin retrato intaglio. Reverso de Caño Cristales impreso; fecha 2.08.2016 y pie de Imprenta de Billetes. Series AA22293893 / AA26293893 disparejas.',
         ],
         ['Fecha de última revisión factual', '25 de agosto de 2026', true],
       ]
@@ -267,23 +273,25 @@ function buildTemplate(lang) {
         ['Denomination', 'Two Thousand Pesos'],
         [
           'Type of Issue',
-          'Progressive or partial printing proof of Pick 458b. Face with incomplete colour layers (blue and black; not the full issued palette); reverse unprinted; serial numbers blocked. Not an issued circulating note and not a SPECIMEN-overprinted official specimen.',
+          'Progressive or partial printing proof of Pick 458b. Face without the intaglio portrait layer (white silhouette); printed Caño Cristales reverse; serials AA22293893 (upper left) and AA26293893 (lower right), which do not match. Not an issued circulating note and not a SPECIMEN-overprinted official specimen. Distinct from the <a href="' +
+            firstHref +
+            '">other P-458b proof</a> in this collection (printed portrait, blank reverse, blocked serials).',
         ],
         ['Material', '100% cotton paper (BanRep type substrate)'],
-        ['Printer', 'Banknote Printing Works — Banco de la República'],
+        ['Printer', 'Banknote Printing Works — Banco de la República (read on the reverse)'],
         [
           'Edition date',
-          '2 August 2016: edition date of type P-458b (series AE and AF) in Circular DTE-201 Subject 52.<sup style="font-size:12px;">4</sup> The reverse of this piece is unprinted, so that date is not read on the sheet; it is the catalogue date of type P-458b. The type’s first printed edition (P-458a) is 19 August 2015.',
+          '2 August 2016: read on the reverse (“2 DE AGOSTO DE 2016”). Matches the P-458b edition date (series AE and AF) in Circular DTE-201 Subject 52.<sup style="font-size:12px;">4</sup> The type’s first printed edition (P-458a) is 19 August 2015.',
         ],
         [
           'Series / Number',
-          'Blocked (black bars in the serial areas). No serial is transcribed. Not treated as a photograph artifact. Issued P-458b notes carry series AE and AF.<sup style="font-size:12px;">4</sup>',
+          'AA22293893 (upper left) and AA26293893 (lower right): they do not match (third and fourth digits 22 vs 26). Issued P-458b notes carry series AE and AF; the circular lists AA–CC as later editions.<sup style="font-size:12px;">4</sup> P-458b identification: from the reverse date and the user’s file, with this AA-prefix caveat.',
         ],
         [
           'Signatures',
-          'Offices read on this specimen: General Manager and Executive Manager. Names on <em>this</em> piece: ' +
+          'No offices or signatures are readable on the face in this photo (the intaglio portrait and lower text layer is not printed). Names: ' +
             unconfirmed +
-            '. The first edition (19.08.2015), per the issuer, carries José Darío Uribe Escobar and José Tolosa Buitrago; the circular does not name other signers for the 2.08.2016 edition. Those names are not assigned to this sheet.<sup style="font-size:12px;">2,4</sup>',
+            '.',
         ],
         [
           'Dimensions',
@@ -302,9 +310,9 @@ function buildTemplate(lang) {
         ['Print run', unconfirmed],
         [
           'Known varieties',
-          'Circular DTE-201 Subject 52: 2.08.2016 edition series AE (in circulation from 16.02.2018) and AF (from 5.06.2018), plus later AA–CC editions.<sup style="font-size:12px;">4</sup> This piece: progressive / partial proof (incomplete face, blank reverse). Prefix on this sheet: ' +
-            unconfirmed +
-            '.',
+          'Circular DTE-201 Subject 52: 2.08.2016 edition series AE and AF, plus later AA–CC editions.<sup style="font-size:12px;">4</sup> This piece: progressive / partial proof (face without portrait, printed reverse, mismatched AA serials). Distinct from the <a href="' +
+            firstHref +
+            '">proof with portrait and blank reverse</a> in this collection.',
         ],
         [
           'Circulation dates',
@@ -312,13 +320,13 @@ function buildTemplate(lang) {
         ],
         [
           'Basis of rarity',
-          'Progressive or partial printing proof of type P-458b (incomplete face, blank reverse, serials blocked). Print run and BanRep archive confirmation: ' +
+          'Progressive or partial printing proof of type P-458b (face without portrait, Caño Cristales reverse, mismatched AA serials). Print run and BanRep archive confirmation: ' +
             unconfirmed +
             '. The issued type is common. NGC/PCGS population: not applicable (not slabbed).',
         ],
         [
           'State of the specimen shown',
-          'Unslabbed. Face with partial printing and readable. Reverse without landscape printing: BRC thread and show-through of the face. Serials blocked. Identification: progressive / partial proof of P-458b.',
+          'Unslabbed. Face with colour underprint and a line figure, no intaglio portrait. Printed Caño Cristales reverse; date 2.08.2016 and Imprenta de Billetes imprint. Serials AA22293893 / AA26293893 do not match.',
         ],
         ['Date of last factual review', '25 August 2026', true],
       ];
@@ -330,25 +338,25 @@ function buildTemplate(lang) {
   const context = isEs
     ? [
         sectionP(
-          `<strong style="color:#1c1a15;">Identificación:</strong> Colombia — Banco de la República — 2.000 pesos — 2.08.2016 — Débora Arango — P-458b — prueba de impresión progresiva o parcial: anverso con capas incompletas / reverso sin impresión, series tapadas. El 2.08.2016 es la fecha de edición del tipo P-458b en la circular del Emisor, no una fecha leída en el reverso de esta pieza.<sup style="font-size:12px;">4,5,6</sup>`,
+          `<strong style="color:#1c1a15;">Identificación:</strong> Colombia — Banco de la República — 2.000 pesos — 2.08.2016 — Débora Arango — P-458b — prueba de impresión progresiva o parcial: anverso sin retrato intaglio / reverso de Caño Cristales impreso / series AA22293893 y AA26293893 disparejas. El 2.08.2016 se lee en este reverso.<sup style="font-size:12px;">4,5,6</sup> Distinto de la <a href="${firstHref}">prueba con retrato y reverso en blanco</a>.`,
         ),
         sectionP(
-          `<strong style="color:#1c1a15;">El tipo emitido:</strong> BanRep puso el 2.000 pesos de Débora Arango en circulación el 29 de noviembre de 2016 (1.ª edición, 19.08.2015 / P-458a). El reverso de tipo es Caño Cristales.<sup style="font-size:12px;">1,2,4</sup> La edición del 2.08.2016 (series AE y AF) entra a circular en 2018.<sup style="font-size:12px;">4</sup> Este ejemplar no se cataloga como un billete emitido de esa circulación.`,
+          `<strong style="color:#1c1a15;">El tipo emitido:</strong> BanRep puso el 2.000 pesos de Débora Arango en circulación el 29 de noviembre de 2016 (1.ª edición, 19.08.2015 / P-458a). El reverso de tipo es Caño Cristales.<sup style="font-size:12px;">1,2,4</sup> La edición del 2.08.2016 (series AE y AF) entra a circular en 2018; la circular lista AA–CC como ediciones posteriores.<sup style="font-size:12px;">4</sup> Este ejemplar no se cataloga como un billete emitido.`,
         ),
         sectionP(
-          `<strong style="color:#1c1a15;">No confundir:</strong> no es el <a href="${oroHref}">2.000 pesos oro</a>, ni el <a href="${errorHref}">error de la mariposa (Santander)</a>, ni un specimen con sobrecarga SPECIMEN. Más contexto en el <a href="${blogHref}">blog de personajes</a> y el <a href="${colombiaHref}">catálogo Colombia</a>.`,
+          `<strong style="color:#1c1a15;">No confundir:</strong> no es el <a href="${oroHref}">2.000 pesos oro</a>, ni el <a href="${errorHref}">error de la mariposa (Santander)</a>, ni un specimen con sobrecarga SPECIMEN, ni la <a href="${firstHref}">otra prueba P-458b</a> (retrato impreso, reverso en blanco). Más contexto en el <a href="${blogHref}">blog de personajes</a> y el <a href="${colombiaHref}">catálogo Colombia</a>.`,
           true,
         ),
       ]
     : [
         sectionP(
-          `<strong style="color:#1c1a15;">Identification:</strong> Colombia — Banco de la República — 2,000 pesos — 2.08.2016 — Débora Arango — P-458b — progressive or partial printing proof: incomplete face layers / reverse unprinted, serial numbers blocked. 2.08.2016 is the P-458b edition date in the issuer’s circular, not a date read on this sheet’s reverse.<sup style="font-size:12px;">4,5,6</sup>`,
+          `<strong style="color:#1c1a15;">Identification:</strong> Colombia — Banco de la República — 2,000 pesos — 2.08.2016 — Débora Arango — P-458b — progressive or partial printing proof: face without intaglio portrait / printed Caño Cristales reverse / mismatched serials AA22293893 and AA26293893. 2.08.2016 is read on this reverse.<sup style="font-size:12px;">4,5,6</sup> Distinct from the <a href="${firstHref}">proof with portrait and blank reverse</a>.`,
         ),
         sectionP(
-          `<strong style="color:#1c1a15;">The issued type:</strong> BanRep put the Débora Arango 2,000-peso note into circulation on 29 November 2016 (first edition, 19.08.2015 / P-458a). The type reverse is Caño Cristales.<sup style="font-size:12px;">1,2,4</sup> The 2.08.2016 edition (series AE and AF) entered circulation in 2018.<sup style="font-size:12px;">4</sup> This piece is not catalogued as an issued circulating note of that release.`,
+          `<strong style="color:#1c1a15;">The issued type:</strong> BanRep put the Débora Arango 2,000-peso note into circulation on 29 November 2016 (first edition, 19.08.2015 / P-458a). The type reverse is Caño Cristales.<sup style="font-size:12px;">1,2,4</sup> The 2.08.2016 edition (series AE and AF) entered circulation in 2018; the circular lists AA–CC as later editions.<sup style="font-size:12px;">4</sup> This piece is not catalogued as an issued circulating note.`,
         ),
         sectionP(
-          `<strong style="color:#1c1a15;">Not to be confused with:</strong> the <a href="${oroHref}">2,000 pesos oro</a>, the <a href="${errorHref}">Santander butterfly error</a>, or a SPECIMEN-overprinted official specimen. More context in the <a href="${blogHref}">figures post</a> and the <a href="${colombiaHref}">Colombia catalog</a>.`,
+          `<strong style="color:#1c1a15;">Not to be confused with:</strong> the <a href="${oroHref}">2,000 pesos oro</a>, the <a href="${errorHref}">Santander butterfly error</a>, a SPECIMEN-overprinted official specimen, or the <a href="${firstHref}">other P-458b proof</a> (printed portrait, blank reverse). More context in the <a href="${blogHref}">figures post</a> and the <a href="${colombiaHref}">Colombia catalog</a>.`,
           true,
         ),
       ];
@@ -356,48 +364,42 @@ function buildTemplate(lang) {
   const details = isEs
     ? [
         bullet(
-          '<strong style="color:#1c1a15;">Texto principal:</strong> «2 MIL PESOS» / «DOS MIL PESOS»; emisor «BANCO DE LA REPÚBLICA COLOMBIA»; leyenda «ARTISTA 1907–2005» junto al retrato.',
+          '<strong style="color:#1c1a15;">Anverso incompleto:</strong> silueta en blanco donde iría el retrato intaglio de Débora Arango. Se ven fondo azul-rosa-naranja, dos hojas naranja, un ave y la palabra «LECHUZA», y una figura lineal a la derecha.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Retrato y figura:</strong> Débora Arango a la derecha (retrato) y de pie al centro, traje estampado, manos entrelazadas.',
+          '<strong style="color:#1c1a15;">Series disparejas:</strong> AA22293893 arriba a la izquierda y AA26293893 abajo a la derecha (22 frente a 26 en el tercer y cuarto dígito).',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Elemento ópticamente variable:</strong> flor / árbol de leche en cobre-oro a la izquierda de la figura, según el tipo del Emisor.',
+          '<strong style="color:#1c1a15;">Reverso impreso:</strong> paisaje de Caño Cristales / Serranía de la Macarena; aves; «2 MIL PESOS» / «DOS MIL PESOS»; sello del Banco de la República.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Tacto:</strong> marcas diagonales en los extremos y 2 en braille en el tipo; visibles en los bordes de esta foto.',
+          '<strong style="color:#1c1a15;">Fecha e impresor:</strong> «2 DE AGOSTO DE 2016» e «IMPRENTA DE BILLETES — BANCO DE LA REPÚBLICA» en el margen derecho del reverso.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Firmas:</strong> rotuladas «GERENTE GENERAL» y «GERENTE EJECUTIVO». Nombres: no confirmado.',
+          '<strong style="color:#1c1a15;">Hilo:</strong> hilo BRC vertical a la izquierda del centro en el reverso.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Reverso:</strong> sin impresión del paisaje de Caño Cristales. Se ve el hilo BRC con aves y, al trasluz, el anverso.',
-        ),
-        bullet(
-          '<strong style="color:#1c1a15;">Series:</strong> tapadas con barras negras. Presentación: anverso y reverso apilados, sin encapsulado.',
+          '<strong style="color:#1c1a15;">Presentación:</strong> anverso y reverso apilados, sin encapsulado.',
         ),
       ]
     : [
         bullet(
-          '<strong style="color:#1c1a15;">Main text:</strong> “2 MIL PESOS” / “DOS MIL PESOS”; issuer “BANCO DE LA REPÚBLICA COLOMBIA”; legend “ARTISTA 1907–2005” beside the portrait.',
+          '<strong style="color:#1c1a15;">Incomplete face:</strong> a white silhouette where Débora Arango’s intaglio portrait would sit. Blue-pink-orange underprint, two orange leaves, a bird and the word “LECHUZA,” and a line figure at right.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Portrait and figure:</strong> Débora Arango at right (portrait) and standing at centre in a patterned suit, hands clasped.',
+          '<strong style="color:#1c1a15;">Mismatched serials:</strong> AA22293893 at upper left and AA26293893 at lower right (22 vs 26 in the third and fourth digits).',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Optically variable device:</strong> milk-tree / flower in copper-gold to the left of the figure, per the issuer’s type.',
+          '<strong style="color:#1c1a15;">Printed reverse:</strong> Caño Cristales / Serranía de la Macarena landscape; birds; “2 MIL PESOS” / “DOS MIL PESOS”; Banco de la República seal.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Tactile marks:</strong> diagonal marks at the ends and a braille 2 on the type; edge marks are visible in this photo.',
+          '<strong style="color:#1c1a15;">Date and printer:</strong> “2 DE AGOSTO DE 2016” and “IMPRENTA DE BILLETES — BANCO DE LA REPÚBLICA” on the right edge of the reverse.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Signatures:</strong> labelled “GERENTE GENERAL” and “GERENTE EJECUTIVO.” Names: unconfirmed.',
+          '<strong style="color:#1c1a15;">Thread:</strong> vertical BRC thread left of centre on the reverse.',
         ),
         bullet(
-          '<strong style="color:#1c1a15;">Reverse:</strong> no Caño Cristales landscape printing. The BRC thread with birds is visible, and the face shows through.',
-        ),
-        bullet(
-          '<strong style="color:#1c1a15;">Serials:</strong> blocked with black bars. Presentation: stacked face and reverse, not slabbed.',
+          '<strong style="color:#1c1a15;">Presentation:</strong> stacked face and reverse, not slabbed.',
         ),
       ];
 
@@ -499,23 +501,23 @@ function buildTemplate(lang) {
 
 const data = {
   path: ES_PATH,
-  title: '2.000 pesos Débora Arango, prueba P-458b | Notofilia',
+  title: '2.000 pesos Débora, prueba sin retrato | Notofilia',
   description:
-    'Prueba de impresión progresiva: 2.000 pesos Débora Arango, 2.08.2016, P-458b. Anverso parcial, reverso en blanco.',
+    'Prueba P-458b: anverso sin retrato, reverso Caño Cristales, series AA disparejas. 2.08.2016. Colección Notofilia.',
   keywords: [
     'banco de la república',
     '2000 pesos',
     'débora arango',
     'pick 458b',
     'prueba progresiva',
-    'impresión parcial',
+    'sin retrato',
     'notafilia colombiana',
   ],
   robots: 'index, follow, max-image-preview:large',
   ogType: 'article',
-  ogTitle: '2.000 pesos Débora Arango — prueba P-458b',
+  ogTitle: '2.000 pesos Débora — prueba sin retrato',
   ogDescription:
-    'Prueba de impresión progresiva o parcial: anverso incompleto, reverso en blanco, series tapadas. Tipo 2.08.2016.',
+    'Prueba P-458b: anverso sin retrato, reverso Caño Cristales, series AA22293893 / AA26293893. Tipo 2.08.2016.',
   ogImage: `${IMG}.jpg`,
   jsonLd: {
     '@context': 'https://schema.org',
@@ -528,27 +530,28 @@ const data = {
           {
             '@type': 'ListItem',
             position: 3,
-            name: 'El Banco de la República — Dos Mil Pesos, prueba P-458b (Débora Arango)',
+            name: 'El Banco de la República — Dos Mil Pesos, prueba P-458b sin retrato (Débora Arango)',
             item: `${SITE}${ES_PATH}`,
           },
         ],
       },
       {
         '@type': 'CreativeWork',
-        name: 'El Banco de la República — Dos Mil Pesos, prueba progresiva (Débora Arango Pérez, P-458b)',
+        name: 'El Banco de la República — Dos Mil Pesos, prueba sin retrato (Débora Arango Pérez, P-458b)',
         url: `${SITE}${ES_PATH}`,
         image: `${SITE}${IMG}.jpg`,
         description:
-          'Prueba de impresión progresiva o parcial del 2.000 pesos Débora Arango (P-458b). Anverso parcial, reverso sin imprimir, series tapadas. Fecha de tipo 2.08.2016.',
+          'Prueba de impresión progresiva del 2.000 pesos Débora Arango (P-458b). Anverso sin retrato, reverso de Caño Cristales, series AA disparejas. Fecha 2.08.2016 leída en el reverso.',
         dateCreated: '2016-08-02',
         creditText: 'Colección privada de Notofilia.com — no está a la venta',
         inLanguage: 'es',
         isPartOf: { '@id': `${SITE}/coleccion/colombia/#page` },
-        identifier: 'NF.colombia.banco-de-la-republica-2000-pesos-debora-arango',
+        identifier: 'NF.colombia.banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato',
         additionalProperty: [
           { '@type': 'PropertyValue', name: 'Pick', value: '458b' },
           { '@type': 'PropertyValue', name: 'Impresor', value: 'Imprenta de Billetes — Banco de la República' },
-          { '@type': 'PropertyValue', name: 'Estado', value: 'Prueba de impresión progresiva / parcial; no encapsulado' },
+          { '@type': 'PropertyValue', name: 'Estado', value: 'Prueba progresiva: anverso sin retrato; no encapsulado' },
+          { '@type': 'PropertyValue', name: 'Series', value: 'AA22293893 / AA26293893' },
         ],
       },
     ],
@@ -557,17 +560,17 @@ const data = {
   template: buildTemplate('es'),
   logic: '',
   record: {
-    id: 'NF.colombia.banco-de-la-republica-2000-pesos-debora-arango',
+    id: 'NF.colombia.banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato',
     kind: 'banknote',
     title: 'El Banco de la República',
-    subtitle: 'Dos Mil Pesos · Débora Arango Pérez · P-458b · prueba progresiva / parcial',
-    dateOrSeries: '2.08.2016 (fecha de tipo P-458b)',
+    subtitle: 'Dos Mil Pesos · Débora Arango Pérez · P-458b · anverso sin retrato',
+    dateOrSeries: '2.08.2016 (leída en el reverso)',
     country: 'Colombia',
     issuer: 'El Banco de la República, Bogotá, Colombia',
     breadcrumb: [
       { name: 'Notofilia', href: '/' },
       { name: 'Colombia', href: '/coleccion/colombia/' },
-      { name: 'El Banco de la República — Dos Mil Pesos, prueba P-458b (Débora Arango)' },
+      { name: 'El Banco de la República — Dos Mil Pesos, prueba P-458b sin retrato (Débora Arango)' },
     ],
     images: {
       stacked: {
@@ -584,26 +587,26 @@ const data = {
       denomination: 'Dos Mil Pesos',
       currency: 'Peso colombiano',
       issuer: 'El Banco de la República, Bogotá, Colombia',
-      printer: 'Imprenta de Billetes — Banco de la República',
-      issueDate: '2.08.2016 (fecha de edición del tipo P-458b; no leída en este pliego)',
-      series: 'tapada (barras negras; no se transcribe). Tipo emitido P-458b: AE y AF',
-      serialNumber: 'tapado (no se interpreta como artefacto de foto)',
-      signatures: 'Cargos: Gerente General y Gerente Ejecutivo. Nombres de este ejemplar: no confirmado',
+      printer: 'Imprenta de Billetes — Banco de la República (leído en el reverso)',
+      issueDate: '2.08.2016 (leída en el reverso; fecha de tipo P-458b)',
+      series: 'AA (circular: AA–CC son ediciones posteriores; P-458b emitido: AE y AF)',
+      serialNumber: 'AA22293893 (SI) y AA26293893 (ID); no coinciden',
+      signatures: 'No se leen en esta foto. Nombres: no confirmado',
       catalogNumber: 'Pick 458b',
       material: 'Papel de algodón 100 %',
       dimensions: '128 × 66 mm (BanRep); medición de este ejemplar: no confirmado',
       watermark: 'Tipo: retrato de Débora Arango y cifra 2; visibilidad en esta foto: no confirmado',
-      condition: 'Prueba de impresión progresiva / parcial; no encapsulado',
+      condition: 'Prueba progresiva: anverso sin retrato; no encapsulado',
       status: 'proof',
       printRun: 'no confirmado. BanRep no publica tirada del tipo emitido ni de material de prueba.',
       knownVarieties:
-        'Este pliego: anverso parcial / reverso sin imprimir, series tapadas. Del tipo emitido P-458b: series AE y AF (2.08.2016). P-458a = 19.08.2015. Ediciones posteriores AA–CC en la circular.',
+        'Este pliego: anverso sin retrato / reverso de Caño Cristales / series AA disparejas. Distinto de la otra prueba P-458b (retrato, reverso en blanco, series tapadas). Del tipo emitido P-458b: series AE y AF (2.08.2016). P-458a = 19.08.2015. Ediciones posteriores AA–CC en la circular.',
       circulationDates:
         'Este pliego no circuló. El tipo emitido entra el 29 de noviembre de 2016 (P-458a, 19.08.2015). P-458b (2.08.2016) circula desde el 16.02.2018 (AE) y el 5.06.2018 (AF).',
       rarityBasis:
-        'Prueba de impresión progresiva o parcial del P-458b. No hay cifra de BanRep ni archivo público que confirme origen o cantidad. El tipo emitido es corriente. Población NGC/PCGS: no aplica.',
+        'Prueba de impresión progresiva o parcial del P-458b (anverso sin retrato, reverso impreso, series AA disparejas). No hay cifra de BanRep ni archivo público que confirme origen o cantidad. El tipo emitido es corriente. Población NGC/PCGS: no aplica.',
       shownSpecimenState:
-        'Sin encapsular. Anverso con impresión parcial y legible. Reverso sin impresión de paisaje: hilo BRC y anverso al trasluz. Series tapadas de fábrica o de control. Identificación: prueba progresiva / parcial del P-458b. Grado numérico: no confirmado.',
+        'Sin encapsular. Anverso con fondo de color y figura lineal, sin retrato intaglio. Reverso de Caño Cristales impreso; fecha 2.08.2016 y pie de Imprenta de Billetes. Series AA22293893 / AA26293893 disparejas. Grado numérico: no confirmado.',
       factualReviewDate: '2026-08-25',
     },
     render: 'astro-static',
@@ -611,23 +614,23 @@ const data = {
     resourced: true,
     context: {
       historical:
-        'Prueba de impresión progresiva o parcial del P-458b (Débora Arango), 2.08.2016 como fecha de tipo. Anverso parcial; reverso sin imprimir; series tapadas. No es un billete emitido en circulación ni un specimen con sobrecarga SPECIMEN. El tipo emitido circula desde el 29 de noviembre de 2016; la edición P-458b, desde 2018.',
+        'Prueba de impresión progresiva o parcial del P-458b (Débora Arango). Fecha 2.08.2016 leída en el reverso. Anverso sin retrato intaglio; reverso de Caño Cristales; series AA22293893 / AA26293893 disparejas. Distinta de la otra prueba P-458b de esta colección. No es un billete emitido ni un specimen SPECIMEN.',
       design:
-        'Anverso: retrato y figura de Débora Arango, 2 MIL PESOS / DOS MIL PESOS, árbol de leche OVI, marcas táctiles; colorido incompleto frente al tipo emitido. Reverso de tipo (no impreso en esta pieza): Caño Cristales, aves, cita de Débora en plural (MAMM, 2008). En esta foto se lee el hilo BRC al trasluz.',
+        'Anverso: fondo de color, silueta del retrato, LECHUZA, figura lineal, series AA disparejas. Reverso: Caño Cristales, aves, 2 DE AGOSTO DE 2016, Imprenta de Billetes, hilo BRC.',
       varieties:
-        'Pick 458b (2.08.2016). Este pliego: anverso parcial, series tapadas. Circular DTE-201 Asunto 52: series AE y AF de esa edición; P-458a = 19.08.2015. Prefijo de este pliego: no confirmado.',
+        'Pick 458b (2.08.2016). Este pliego: anverso sin retrato, reverso impreso, series AA. Distinto de la prueba con retrato y reverso en blanco. Circular: AE y AF de esa edición; AA–CC posteriores; P-458a = 19.08.2015.',
       population: 'no confirmado',
     },
     sources: [
       {
         kind: 'specimen',
         label: 'Examen del ejemplar de la colección Notofilia (anverso y reverso apilados)',
-        note: 'Prueba progresiva / parcial: anverso con capas incompletas, reverso sin imprimir, series tapadas (no artefacto de foto). Cargos Gerente General y Gerente Ejecutivo. Hilo BRC al trasluz. No es specimen rotulado SPECIMEN ni billete emitido.',
+        note: 'Prueba progresiva / parcial: anverso sin retrato intaglio, reverso de Caño Cristales, series AA22293893 / AA26293893 disparejas. Fecha 2.08.2016 e Imprenta de Billetes leídas en el reverso. No es specimen SPECIMEN ni billete emitido.',
       },
       {
         kind: 'printer',
         label: 'Imprenta de Billetes — Banco de la República',
-        note: 'Impresor oficial del tipo, según micrositio y plegable del Emisor; pie de imprenta del reverso no se lee en esta foto',
+        note: 'Impresor oficial del tipo; pie de imprenta leído en el reverso de este ejemplar',
       },
       {
         kind: 'central_bank',
@@ -667,24 +670,24 @@ const data = {
       },
     ],
     related: [
-      { href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato/', title: 'Otra prueba P-458b (anverso sin retrato)' },
+      { href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/', title: 'Otra prueba P-458b (retrato / reverso en blanco)' },
       { href: '/coleccion/colombia/', title: 'Catálogo de Colombia' },
       { href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-oro/', title: 'Dos Mil Pesos Oro' },
       { href: '/coleccion/colombia/2000-pesos-error-mariposa/', title: 'Error de la mariposa (Santander)' },
       { href: '/blog/personajes-billetes-colombia/', title: 'Personajes en los billetes de Colombia' },
     ],
   },
-  legacyFile: 'billete-colombia-banco-de-la-republica-2000-pesos-debora-arango.dc.html',
-  sourceHash: createHash('sha1').update('banco-de-la-republica-2000-pesos-debora-arango-v3-p458b-progressive').digest('hex').slice(0, 16),
+  legacyFile: 'billete-colombia-banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato.dc.html',
+  sourceHash: createHash('sha1').update('banco-de-la-republica-2000-pesos-debora-arango-p458b-sin-retrato-v1').digest('hex').slice(0, 16),
   i18n: {
     en: {
       path: EN_PATH,
-      title: '2,000-peso Débora Arango P-458b proof | Notofilia',
+      title: 'Débora 2,000-peso proof, no portrait | Notofilia',
       description:
-        'Progressive printing proof of Colombia 2,000-peso Débora Arango, 2 Aug 2016, P-458b. Partial face, blank reverse.',
-      ogTitle: '2,000-peso Débora Arango — P-458b proof',
+        'P-458b progressive proof: face without portrait, Caño Cristales reverse, mismatched AA serials. 2 Aug 2016.',
+      ogTitle: 'Débora 2,000-peso proof, no portrait',
       ogDescription:
-        'Progressive or partial printing proof: incomplete face, unprinted reverse, blocked serials. Type date 2.08.2016.',
+        'P-458b progressive proof: face without portrait, Caño Cristales reverse, serials AA22293893 / AA26293893.',
       template: buildTemplate('en'),
       recordTitle: 'El Banco de la República',
       eyebrow: 'Progressive / partial printing proof · Bogotá, Colombia · 2.08.2016',
