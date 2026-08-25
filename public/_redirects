@@ -4,9 +4,12 @@
 # Duplicate noticia (same story as Banxico/Heraldo) → keep one canonical piece
 /noticias/dinosaurios-mexicanos-coleccion-casa-moneda/  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
 /noticias/dinosaurios-mexicanos-coleccion-casa-moneda  /noticias/banxico-medallas-dinosaurios-casa-moneda/  301
-# Logros del Mes lives on the homepage strip, not a separate index
-/logros/  /  301
-/logros  /  301
+# Logros del Mes lives on the homepage strip, not a separate index.
+# Land on the cream band (hero is 100vh) so the last-six grid is in view.
+/logros/  /#logros-heading  301
+/logros  /#logros-heading  301
+/en/milestones/  /en/#logros-heading  301
+/en/milestones  /en/#logros-heading  301
 # Global catalog hub retired — country hubs and fichas stay
 /coleccion  /  301
 /coleccion/  /  301

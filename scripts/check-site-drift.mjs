@@ -120,9 +120,10 @@ for (const route of sitemap) {
 }
 
 for (const rule of redirects) {
-  const targetPath = normalizePath(rule.to);
+  // Hash/query on an indexed page (e.g. /#logros-heading) still lands on that page.
+  const targetPath = normalizePath((rule.to.split('#')[0] || '/').split('?')[0] || '/');
   // Page redirects must land on indexed HTML routes. Asset/sitemap endpoints are allowed.
-  const targetIsPage = !/\.(xml|txt|json|js|css|png|jpe?g|webp|svg|ico|woff2?|ttf|map)$/i.test(rule.to.split('?')[0]);
+  const targetIsPage = !/\.(xml|txt|json|js|css|png|jpe?g|webp|svg|ico|woff2?|ttf|map)$/i.test(rule.to.split('#')[0].split('?')[0]);
   if (rule.status === '301' && targetIsPage && !sitemap.has(targetPath)) {
     fail(`${rule.from} redirects to non-sitemap URL ${targetPath}`);
   }

@@ -1,7 +1,8 @@
 ---
 /**
- * Homepage cream-band for Logros del Mes — featured Colección Virtual pieces.
- * Cards are interaction containers (link + image), matching HomePostStrip rhythm.
+ * Homepage cream-band for Logros del Mes — the 6 newest Colección Virtual
+ * highlights, newest first. One card per grid cell: stacked on small screens,
+ * three columns from tablet up (3 × 2). Cards match HomePostStrip rhythm.
  */
 import type { Locale } from '../lib/ui-i18n';
 import { alternateUrl } from '../i18n/pairs';
@@ -21,6 +22,7 @@ function featuredHref(href: string): string {
   return `${resolved}${hash}`;
 }
 
+/** Newest-first highlight list. The strip renders only the first six. */
 const highlights = [
   {
     href: '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
@@ -165,17 +167,21 @@ const highlights = [
     imageAltEn: 'Obverse and reverse of the Series 692 twenty-dollar MPC with Chief Ouray',
   },
 ] as const;
+
+const NEWEST_COUNT = 6;
+const newest = highlights.slice(0, NEWEST_COUNT);
 ---
 <section
+  id="logros"
   aria-labelledby="logros-heading"
-  class="bg-cream-dim py-[72px] px-[var(--page-gutter)] border-t border-ink/12"
+  class="bg-cream-dim py-[72px] px-[var(--page-gutter)] border-t border-ink/12 scroll-mt-[90px]"
 >
   <div class="max-w-content mx-auto">
     <h2
       id="logros-heading"
       data-i18n={isEn ? undefined : true}
       data-en={isEn ? undefined : 'Monthly Milestones — Virtual Collection'}
-      class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-3 text-center"
+      class="font-display font-normal text-[clamp(24px,3vw,32px)] text-panel mt-0 mb-3 text-center scroll-mt-[90px]"
     >
       {isEn ? 'Monthly Milestones — Virtual Collection' : 'Logros del Mes — Colección Virtual'}
     </h2>
@@ -186,9 +192,12 @@ const highlights = [
     >
       {isEn ? 'Recent pieces and catalogs added to the Virtual Collection.' : 'Piezas y catálogos recientes incorporados a la Colección Virtual.'}
     </p>
-    <ul class="list-none m-0 mb-8 p-0 flex gap-4 overflow-x-auto snap-x snap-mandatory px-1 md:grid md:grid-cols-2 md:gap-7 md:overflow-visible md:snap-none md:px-0 [scrollbar-width:thin]">
-      {highlights.map((item) => (
-        <li class="logros-card w-[85%] shrink-0 snap-center md:w-auto md:shrink">
+    <ul
+      data-logros-grid
+      class="list-none m-0 mb-8 p-0 grid grid-cols-1 gap-7 min-[640px]:grid-cols-2 min-[768px]:grid-cols-3"
+    >
+      {newest.map((item) => (
+        <li class="logros-card">
           <a
             href={featuredHref(item.href)}
             class="group block no-underline text-inherit h-full min-h-[44px] border-t-2 border-panel pt-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-panel focus-visible:outline-offset-[3px]"
@@ -197,7 +206,7 @@ const highlights = [
               <source
                 type="image/webp"
                 srcset={`/uploads/${item.imageBase}-card.webp 440w, /uploads/${item.imageBase}-card-2x.webp 660w`}
-                sizes="(max-width: 767px) 85vw, 360px"
+                sizes="(max-width: 639px) 92vw, (max-width: 767px) 44vw, 30vw"
               />
               <img
                 src={`/uploads/${item.imageBase}-card.jpg`}
@@ -206,19 +215,7 @@ const highlights = [
                 decoding="async"
                 width="440"
                 height="280"
-                class:list={[
-                  'block w-full h-[180px] rounded-[3px] mb-3',
-                  item.href.includes('banco-hipotecario') ||
-                  item.href.includes('banco-de-rio-hacha') ||
-                  item.href.includes('20-dolares-serie-692') ||
-                  item.href.includes('victory-series-66') ||
-                  item.href.includes('china-100-yuan-2000') ||
-                  item.href.includes('santa-marta-1-4-real-1820') ||
-                  item.href.includes('10-pesos-oro-1943') ||
-                  item.href.includes('2000-pesos-debora-arango')
-                    ? 'object-contain bg-[#d8d2cd]'
-                    : 'object-cover',
-                ]}
+                class="block w-full h-[210px] rounded-[3px] mb-3 object-contain bg-[#f2ede2]"
               />
             </picture>
             <h3 class="font-display font-normal text-[clamp(17.6px,1.1rem+0.3vw,22px)] tracking-[0.02em] text-panel mt-0 mb-1.5 text-balance break-words group-hover:text-ink" data-i18n={isEn ? undefined : true} data-en={isEn ? undefined : item.titleEn}>
@@ -248,7 +245,13 @@ const highlights = [
 </section>
 
 <style>
-  .logros-card :global(picture) { display: block; overflow: hidden; border-radius: 3px; }
+  .logros-card :global(picture) {
+    display: block;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #f2ede2;
+    box-shadow: inset 0 0 0 1px rgba(51, 46, 34, 0.12);
+  }
   .logros-card :global(img) { transition: transform 0.4s ease; }
   .logros-card:hover :global(img) { transform: scale(1.03); }
   @media (prefers-reduced-motion: reduce) {
