@@ -489,38 +489,49 @@ test('English Philippines catalog lists the 1 peso Victory note ahead of the 2 p
   await expect(cards.nth(1)).toContainText('2 Pesos Victory Series No. 66');
 });
 
-test('homepage Logros del Mes features the 1943 10 pesos oro first', async ({ page }) => {
+test('homepage Logros del Mes features the Débora Arango P-458b proof first', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Logros del Mes — Colección Virtual' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toBeVisible();
-  await expect(first).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
-  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
+  await expect(first).toHaveAttribute(
+    'href',
+    '/coleccion/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
+  );
+  await expect(first).toContainText('Banco de la República — 2.000 pesos Débora Arango, prueba P-458b');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /10 pesos oro del Banco de la República, 20 de julio de 1943/,
+    /Débora Arango \(P-458b\)/,
   );
   await expect(first.getByRole('img')).toHaveAttribute(
     'src',
-    '/uploads/colombia-banco-de-la-republica-10-pesos-oro-1943-card.jpg',
+    '/uploads/colombia-banco-de-la-republica-2000-pesos-debora-arango-card.jpg',
   );
 });
 
-test('English homepage Logros features the 1943 10 pesos oro first', async ({ page }) => {
+test('English homepage Logros features the Débora Arango P-458b proof first', async ({ page }) => {
   await page.goto('/en/');
   const section = page.locator('section[aria-labelledby="logros-heading"]');
   await expect(section.getByRole('heading', { name: 'Monthly Milestones — Virtual Collection' })).toBeVisible();
   const first = section.locator('ul > li > a').first();
   await expect(first).toHaveAttribute(
     'href',
-    '/en/collection/colombia/banco-de-la-republica-10-pesos-oro-1943/',
+    '/en/collection/colombia/banco-de-la-republica-2000-pesos-debora-arango/',
   );
-  await expect(first).toContainText('Banco de la República — 10 pesos oro, 1943');
+  await expect(first).toContainText('Banco de la República — 2,000-peso Débora Arango P-458b proof');
   await expect(first.getByRole('img')).toHaveAttribute(
     'alt',
-    /Banco de la República 10 pesos oro, 20 July 1943/,
+    /Débora Arango note \(P-458b\)/,
   );
+});
+
+test('homepage Logros del Mes still features the 1943 10 pesos oro', async ({ page }) => {
+  await page.goto('/');
+  const section = page.locator('section[aria-labelledby="logros-heading"]');
+  const card = section.getByRole('link', { name: /10 pesos oro, 1943/ });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute('href', '/coleccion/colombia/banco-de-la-republica-10-pesos-oro-1943/');
 });
 
 test('homepage Logros del Mes still features the Santa Marta 1820 cuartillo', async ({ page }) => {
