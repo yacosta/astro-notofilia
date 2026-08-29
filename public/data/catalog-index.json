@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-25T15:43:35.377Z",
-  "count": 141,
-  "pieceCount": 125,
+  "generatedAt": "2026-08-29T19:03:58.704Z",
+  "count": 142,
+  "pieceCount": 126,
   "stats": {
-    "billetes": 225,
+    "billetes": 226,
     "monedas": 9,
     "paises": 36,
-    "fichas": 125,
-    "paginas": 157
+    "fichas": 126,
+    "paginas": 158
   },
   "countries": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Estados Unidos",
-      "count": 31,
+      "count": 32,
       "slug": "estados-unidos"
     },
     {
@@ -584,6 +584,34 @@
       "material": "",
       "kind": "banknote",
       "searchText": "certificado de oro $10 de 1928 ficha de catálogo numismático: certificado de oro de $10, serie de 1928, departamento del tesoro de ee. uu. referencia friedberg fr-2400. estados unidos departamento del tesoro de los estados unidos ( united states treasury $10.00 (diez dólares) friedberg fr-2400 banknote certificado de oro gold certificate friedberg fr-2400 notafilia numismática billete de diez dólares tesoro de estados unidos"
+    },
+    {
+      "id": "certificado-de-plata-1-dolar-1957b",
+      "path": "/coleccion/certificado-de-plata-1-dolar-1957b/",
+      "title": "Certificado de plata $1 1957B",
+      "description": "Ficha del $1 Silver Certificate Serie 1957B (Fr. 1621), sello azul Granahan-Dillon. Colección Notofilia.",
+      "keywords": [
+        "certificado de plata",
+        "silver certificate",
+        "1957B",
+        "Fr. 1621",
+        "sello azul"
+      ],
+      "url": "https://notofilia.com/coleccion/certificado-de-plata-1-dolar-1957b/",
+      "image": "/uploads/us-silver-certificate-1-dollar-1957b-obverse-25d8cbcd.jpg",
+      "ogType": "article",
+      "role": "piece",
+      "country": "Estados Unidos",
+      "issuer": "Departamento del Tesoro de los Estados Unidos",
+      "denomination": "$1.00 (un dólar)",
+      "catalogRef": "Friedberg Fr. 1621",
+      "condition": "",
+      "emissionType": "",
+      "dateLabel": "",
+      "year": 1957,
+      "material": "",
+      "kind": "banknote",
+      "searchText": "certificado de plata $1 1957b ficha del $1 silver certificate serie 1957b (fr. 1621), sello azul granahan-dillon. colección notofilia. estados unidos departamento del tesoro de los estados unidos $1.00 (un dólar) friedberg fr. 1621 banknote certificado de plata silver certificate 1957b fr. 1621 sello azul"
     },
     {
       "id": "certificados-de-pago-militar--1-dolar-serie-681",
