@@ -2,11 +2,11 @@ name: Purge Cloudflare cache
 
 on:
   workflow_dispatch:
+  # Every production Pages deploy is triggered by a push to main. Edge cache
+  # must be purged after those deploys so new catalog URLs are not stuck as
+  # cached 404s (Cloudflare can HIT a negative cache on the custom domain).
   push:
     branches: [main]
-    paths:
-      - '.github/workflows/purge-cache.yml'
-      - 'scripts/purge-cf-cache.mjs'
 
 permissions:
   contents: read
@@ -20,6 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Wait for Cloudflare Pages production deploy
+        run: |
+          # Git-connected Pages starts in parallel with this workflow. New
+          # catalog paths can 404 at the origin until that build is live;
+          # purging too early re-caches the 404 on the custom domain.
+          sleep 180
       - name: Check out repository
         uses: actions/checkout@v5
 
