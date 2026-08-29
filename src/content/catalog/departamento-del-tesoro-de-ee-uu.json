@@ -54,6 +54,11 @@
           },
           {
             "@type": "CreativeWork",
+            "name": "Certificado de Plata $1 — Serie 1957B",
+            "url": "https://notofilia.com/coleccion/certificado-de-plata-1-dolar-1957b/"
+          },
+          {
+            "@type": "CreativeWork",
             "name": "United States Note $1 — Sello Rojo, Serie de 1928",
             "url": "https://notofilia.com/coleccion/un-dolar-sello-rojo-1928/"
           },
@@ -107,6 +112,17 @@
         "alt": "Certificado de oro de diez dólares de Estados Unidos, serie de 1928, anverso y reverso",
         "altEn": "Certificado de oro de ten dollars de United States, serie de 1928, obverse and reverse",
         "titleEn": "Gold Certificate"
+      },
+      {
+        "href": "/coleccion/certificado-de-plata-1-dolar-1957b/",
+        "title": "Certificado de Plata",
+        "denomination": "$1.00",
+        "year": "1957B",
+        "image": "/uploads/us-silver-certificate-1-dollar-1957b-obverse-25d8cbcd.jpg",
+        "imageWebp": "/uploads/us-silver-certificate-1-dollar-1957b-obverse-25d8cbcd.webp",
+        "alt": "Certificado de plata de un dólar de Estados Unidos, Serie 1957B, anverso con sello azul",
+        "altEn": "United States $1 silver certificate, Series 1957B, obverse with blue seal",
+        "titleEn": "Silver Certificate"
       },
       {
         "href": "/coleccion/un-dolar-sello-rojo-1928/",

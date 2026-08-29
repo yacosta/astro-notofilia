@@ -16,7 +16,7 @@
 |---|---|---|
 | Built HTML routes | **316** | Includes `/404` and `/buscar/` |
 | Sitemap URLs (`public/sitemap.xml`) | **314** | Omits `/404` and `/buscar/` (noindex) |
-| Catalog collection JSON | **144** | `src/content/catalog/*.json` |
+| Catalog collection JSON | **145** | `src/content/catalog/*.json` |
 | Noticias (published) | **55** | `draft` none |
 | Blog (published) | **9** | |
 | Logros (published) | **0** | `placeholder.md` is `draft: true` |
@@ -49,7 +49,7 @@ There is **no** `src/pages/en/` tree today. All public HTML is Spanish-root.
 | `src/pages/glosario/[slug].astro` | `/glosario/<id>/` × 95 | Collection `glosario`; `params.slug = entry.id` (filename) | yes |
 | `src/pages/coleccion/index.astro` | `/coleccion/` | Hardcoded hub + `public/data/catalog-index.json` + `catalog-hub.ts` | yes |
 | `src/pages/coleccion/numismatica/index.astro` | `/coleccion/numismatica/` | Hardcoded hub + coin catalog helpers (`coins-catalog.ts`) | yes |
-| `src/pages/coleccion/[...slug].astro` | `/coleccion/<rest>/` × 144 | Collection `catalog`; slug = `page.data.path` minus `/coleccion/` prefix | yes (from JSON `path`) |
+| `src/pages/coleccion/[...slug].astro` | `/coleccion/<rest>/` × 145 | Collection `catalog`; slug = `page.data.path` minus `/coleccion/` prefix | yes (from JSON `path`) |
 | `src/pages/buscar/index.astro` | `/buscar/` | Hardcoded Pagefind UI | **no** (intentional noindex) |
 | `src/pages/[section]/index.astro` | `/blog/`, `/noticias/` | Collections via `COLLECTIONS`; **logros index excluded** | yes |
 | `src/pages/[section]/[...slug].astro` | `/blog/<id>/` × 9, `/noticias/<id>/` × 55, `/logros/<id>/` if published | Markdown collections; `params.slug = post.id` | yes (drafts skipped) |
@@ -72,7 +72,7 @@ There is **no** `src/pages/en/` tree today. All public HTML is Spanish-root.
 
 Catalog JSON `path` is constrained: `z.string().startsWith('/coleccion/').endsWith('/')`.
 
-Catalog kinds in the 144 records: **106 banknote**, **16 profile**, **15 other** (hubs), **7 coin**.
+Catalog kinds in the 145 records: **107 banknote**, **16 profile**, **15 other** (hubs), **7 coin**.
 
 ### 1.3 Editorial slugs (complete)
 
@@ -84,7 +84,7 @@ Catalog kinds in the 144 records: **106 banknote**, **16 profile**, **15 other**
 
 **Glossary (95):** see Appendix E (filename = public slug).
 
-**Catalog (144):** see Appendix A. Filename is **not** the URL (e.g. `colombia.json` → `/coleccion/colombia/`; `state-bank-new-brunswick--1-dolar.json` → `/coleccion/state-bank-new-brunswick/1-dolar/`).
+**Catalog (145):** see Appendix A. Filename is **not** the URL (e.g. `colombia.json` → `/coleccion/colombia/`; `state-bank-new-brunswick--1-dolar.json` → `/coleccion/state-bank-new-brunswick/1-dolar/`).
 
 ### 1.4 Catalog hub paths (`src/lib/catalog-inventory.mjs` `HUB_PATHS`)
 
@@ -674,19 +674,20 @@ Site previously shipped unrendered Mustache to Googlebot. Current guards:
 
 ## Appendix index
 
-- **A** — 144 catalog ES→EN paths  
+- **A** — 145 catalog ES→EN paths  
 - **B** — 55 noticias slugs  
 - **C** — 9 blog slugs  
 - **D** — logros (draft)  
 - **E** — 95 glossary term mappings  
 
 ---
-### A. Catalog paths (144) — ES URL → proposed EN URL
+### A. Catalog paths (145) — ES URL → proposed EN URL
 | Kind | ES path | Proposed EN path | Keep / notes |
 |---|---|---|---|
 | banknote | `/coleccion/adrian-insurance-michigan/2-dolares/` | `/en/collection/adrian-insurance-michigan/2-dollars/` | catalog IDs stay untranslated in copy |
 | other | `/coleccion/billete-obsoleto-estados-unidos/` | `/en/collection/obsolete-united-states-banknotes/` | hub/other |
 | banknote | `/coleccion/certificado-de-oro-10-dolares-1928/` | `/en/collection/gold-certificate-10-dollars-1928/` | catalog IDs stay untranslated in copy |
+| banknote | `/coleccion/certificado-de-plata-1-dolar-1957b/` | `/en/collection/silver-certificate-1-dollar-1957b/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/certificados-de-pago-militar/1-dolar-serie-681/` | `/en/collection/military-payment-certificates/1-dollar-series-681/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/certificados-de-pago-militar/10-dolares-serie-641/` | `/en/collection/military-payment-certificates/10-dollars-series-641/` | catalog IDs stay untranslated in copy |
 | banknote | `/coleccion/certificados-de-pago-militar/20-dolares-serie-692/` | `/en/collection/military-payment-certificates/20-dollars-series-692/` | catalog IDs stay untranslated in copy |

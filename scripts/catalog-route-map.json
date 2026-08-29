@@ -12,6 +12,10 @@
     "legacyFile": "billete-certificado-de-oro-10-dolares-1928.dc.html"
   },
   {
+    "route": "/coleccion/certificado-de-plata-1-dolar-1957b/",
+    "legacyFile": "billete-certificado-de-plata-1-dolar-1957b.dc.html"
+  },
+  {
     "route": "/coleccion/certificados-de-pago-militar/",
     "legacyFile": "catalogo-certificados-de-pago-militar.dc.html"
   },
