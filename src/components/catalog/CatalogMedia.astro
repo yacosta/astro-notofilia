@@ -26,7 +26,7 @@ if (images?.front) {
     label: UI.obverse.es,
     labelEn: UI.obverse.en,
     image: images.front,
-    altEn: lookupEn(images.front.alt),
+    altEn: images.front.altEn ?? lookupEn(images.front.alt),
   });
 }
 if (images?.reverse) {
@@ -35,7 +35,7 @@ if (images?.reverse) {
     label: UI.reverse.es,
     labelEn: UI.reverse.en,
     image: images.reverse,
-    altEn: lookupEn(images.reverse.alt),
+    altEn: images.reverse.altEn ?? lookupEn(images.reverse.alt),
   });
 }
 if (images?.stacked) {
@@ -44,7 +44,7 @@ if (images?.stacked) {
     label: UI.stacked.es,
     labelEn: UI.stacked.en,
     image: images.stacked,
-    altEn: lookupEn(images.stacked.alt),
+    altEn: images.stacked.altEn ?? lookupEn(images.stacked.alt),
   });
 }
 
@@ -113,7 +113,7 @@ const viewsJson = JSON.stringify(views);
               alt={initial.image.alt}
               data-i18n
               data-i18n-target="alt"
-              data-en={lookupEn(initial.image.alt)}
+              data-en={initial.altEn}
               width={initial.image.width}
               height={initial.image.height}
               loading="eager"
@@ -125,7 +125,7 @@ const viewsJson = JSON.stringify(views);
             {UI.enlarge.es}
           </span>
         </button>
-        <figcaption class="mt-3 text-[14px] text-muted" data-catalog-caption data-i18n={lookupEn(initial.image.alt) ? true : undefined} data-en={lookupEn(initial.image.alt)}>
+        <figcaption class="mt-3 text-[14px] text-muted" data-catalog-caption data-i18n={initial.altEn ? true : undefined} data-en={initial.altEn}>
           {initial.image.alt}
         </figcaption>
       </figure>

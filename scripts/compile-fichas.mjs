@@ -272,6 +272,53 @@ function asRelated(list) {
     .filter(Boolean);
 }
 
+function catalogImage(src, alt, altEn) {
+  if (!src || !alt) return undefined;
+  const file = basename(src);
+  const stem = file.replace(/\.(jpe?g|png|webp)$/i, '');
+  const jpg = src.startsWith('/') ? src : `/uploads/${file}`;
+  const webpPath = join(UPLOADS, `${stem}.webp`);
+  const image = { src: jpg, alt: String(alt) };
+  if (existsSync(webpPath)) image.srcWebp = `/uploads/${stem}.webp`;
+  if (altEn) image.altEn = String(altEn);
+  const known = {
+    'us-silver-certificate-1-dollar-1957b-obverse-25d8cbcd.jpg': { w: 1440, h: 960 },
+    'us-silver-certificate-1-dollar-1957b-reverse-65a54d08.jpg': { w: 1440, h: 960 },
+  }[file];
+  if (known) {
+    image.width = known.w;
+    image.height = known.h;
+  }
+  return image;
+}
+
+function recordImages(data, enData) {
+  const imgs = data.imagenes || {};
+  const enImgs = enData?.imagenes || {};
+  const front = catalogImage(
+    imgs.anverso || imgs.front,
+    imgs.alt_anverso || imgs.alt_front || data.alt_anverso,
+    imgs.alt_anverso_en || enImgs.alt_anverso || data.alt_anverso_en,
+  );
+  const reverse = catalogImage(
+    imgs.reverso || imgs.reverse,
+    imgs.alt_reverso || imgs.alt_reverse || data.alt_reverso,
+    imgs.alt_reverso_en || enImgs.alt_reverso || data.alt_reverso_en,
+  );
+  const stacked = catalogImage(
+    imgs.stacked,
+    imgs.alt_stacked || data.alt_stacked,
+    imgs.alt_stacked_en || data.alt_stacked_en,
+  );
+  if (!front && !reverse && !stacked) return undefined;
+  const images = {};
+  if (front) images.front = front;
+  if (reverse) images.reverse = reverse;
+  if (stacked) images.stacked = stacked;
+  images.defaultView = data.vista_inicial || (front ? 'front' : reverse ? 'reverse' : 'stacked');
+  return images;
+}
+
 function asSources(list) {
   if (!Array.isArray(list)) return [];
   return list
@@ -341,6 +388,7 @@ function compileOne(esPath) {
   const cards = Array.isArray(es.data.cards) ? es.data.cards : [];
   const related = asRelated(es.data.related || es.data.piezas_relacionadas);
   const sources = asSources(es.data.fuentes);
+  const images = recordImages(es.data, en?.data);
   const country = es.data.pais;
   const issuer = es.data.entidad_emisora;
   const honesty = {
@@ -448,6 +496,7 @@ function compileOne(esPath) {
       country,
       issuer,
       breadcrumb: crumbs,
+      ...(images ? { images } : {}),
       metadata,
       sources,
       resourced: Boolean(es.data.resourced),
@@ -495,7 +544,8 @@ async function main() {
     return;
   }
   try {
-    yaml = (await import('js-yaml')).default;
+    const mod = await import('js-yaml');
+    yaml = mod.default ?? mod;
   } catch {
     console.error('compile-fichas requires js-yaml. Install with: npm i -D js-yaml');
     process.exit(1);
