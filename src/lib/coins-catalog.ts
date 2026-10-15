@@ -27,11 +27,13 @@ const REIGN_ORDER = [
   'Reinado de Carlos III',
   'Reinado de Carlos IV',
   'Reinado de Fernando VII',
+  'Estados Unidos',
 ] as const;
 
 const COLONIAL_KICKER = 'Virreinato de la Nueva Granada · Ceca de Santa Fe de Bogotá';
 const NETHERLANDS_KICKER = 'República Neerlandesa · Ceca provincial de Utrecht';
 const SANTA_MARTA_KICKER = 'Nueva Granada · Guerra de Independencia · Cobre de necesidad';
+const US_KICKER = 'Estados Unidos · Dólar Morgan · Ceca de Carson City';
 
 type CatalogIndex = {
   items: Array<{
@@ -58,6 +60,17 @@ type HubFile = {
 export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[number] {
   const blob = `${title} ${href}`.toLowerCase();
   if (
+    blob.includes('morgan') ||
+    blob.includes('1893-cc') ||
+    blob.includes('estados-unidos') ||
+    blob.includes('united-states') ||
+    blob.includes('carson') ||
+    blob.includes('dólar morgan') ||
+    blob.includes('dolar morgan')
+  ) {
+    return 'Estados Unidos';
+  }
+  if (
     blob.includes('santa-marta') ||
     blob.includes('santa marta') ||
     blob.includes('cuartillo')
@@ -83,6 +96,7 @@ export function coinReignFor(title: string, href = ''): (typeof REIGN_ORDER)[num
 function kickerForGroup(group: string): string {
   if (group === 'Provincias Unidas de los Países Bajos') return NETHERLANDS_KICKER;
   if (group === 'Plaza realista de Santa Marta') return SANTA_MARTA_KICKER;
+  if (group === 'Estados Unidos') return US_KICKER;
   return COLONIAL_KICKER;
 }
 
