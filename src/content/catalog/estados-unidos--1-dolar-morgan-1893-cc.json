@@ -1,1 +1,175 @@
-PLACEHOLDER
+{
+  "path": "/coleccion/estados-unidos/1-dolar-morgan-1893-cc/",
+  "title": "1 Dólar Morgan 1893-CC — Carson City | Notofilia",
+  "description": "Dólar de plata Morgan de 1893 acuñado en la ceca de Carson City (CC). Último año de producción de monedas en Carson City. KM#110, PCGS#7222. Colección privada Notofilia.",
+  "keywords": [
+    "Morgan dollar",
+    "1893-CC",
+    "Carson City",
+    "dólar de plata",
+    "KM 110",
+    "PCGS 7222",
+    "George T. Morgan",
+    "moneda Estados Unidos",
+    "numismática",
+    "ceca Carson City"
+  ],
+  "robots": "index, follow, max-image-preview:large",
+  "ogType": "article",
+  "ogTitle": "1 Dólar Morgan 1893-CC — Carson City",
+  "ogDescription": "Último dólar Morgan acuñado en la ceca de Carson City. Tirada de 677.000 piezas. KM#110 · PCGS#7222.",
+  "ogImage": "/uploads/usa-1893-cc-morgan-dollar-card.jpg",
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Notofilia",
+            "item": "https://notofilia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Colección",
+            "item": "https://notofilia.com/coleccion/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Numismática",
+            "item": "https://notofilia.com/coleccion/numismatica/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Estados Unidos",
+            "item": "https://notofilia.com/coleccion/estados-unidos/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "1 Dólar Morgan 1893-CC",
+            "item": "https://notofilia.com/coleccion/estados-unidos/1-dolar-morgan-1893-cc/"
+          }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Estados Unidos — 1 Dólar Morgan 1893-CC",
+        "url": "https://notofilia.com/coleccion/estados-unidos/1-dolar-morgan-1893-cc/",
+        "image": "https://notofilia.com/uploads/usa-1893-cc-morgan-dollar-set.png",
+        "description": "Dólar de plata Morgan de 1893 de la ceca de Carson City, último año de acuñación de monedas en esa ceca.",
+        "dateCreated": "1893",
+        "creditText": "Colección privada de Notofilia.com — no está a la venta",
+        "inLanguage": "es"
+      }
+    ]
+  },
+  "record": {
+    "id": "NF.estados-unidos.1-dolar-morgan-1893-cc",
+    "kind": "coin",
+    "title": "1 Dólar Morgan — 1893-CC",
+    "subtitle": "Carson City · Plata · Marca CC",
+    "dateOrSeries": "1893",
+    "country": "Estados Unidos",
+    "issuer": "Ceca de Carson City (CC)",
+    "breadcrumb": [
+      {
+        "name": "Notofilia",
+        "href": "/"
+      },
+      {
+        "name": "Colección",
+        "href": "/coleccion/"
+      },
+      {
+        "name": "Numismática",
+        "href": "/coleccion/numismatica/"
+      },
+      {
+        "name": "Estados Unidos",
+        "href": "/coleccion/estados-unidos/"
+      },
+      {
+        "name": "1 Dólar Morgan 1893-CC"
+      }
+    ],
+    "images": {
+      "stacked": {
+        "src": "/uploads/usa-1893-cc-morgan-dollar-set.png",
+        "srcWebp": "/uploads/usa-1893-cc-morgan-dollar-set.webp",
+        "alt": "Dólar Morgan de 1893-CC, anverso y reverso, marca de ceca CC visible bajo la corona",
+        "width": 1672,
+        "height": 941,
+        "altEn": "1893-CC Morgan silver dollar, obverse and reverse, CC mintmark visible below the wreath"
+      },
+      "defaultView": "stacked"
+    },
+    "metadata": {
+      "denomination": "1 dólar",
+      "issueDate": "1893",
+      "catalogNumber": "KM#110 · PCGS#7222",
+      "composition": "90 % plata, 10 % cobre",
+      "weight": "26,73 g",
+      "diameter": "38,10 mm",
+      "edge": "Estriado",
+      "mint": "Carson City, Nevada (marca CC bajo la corona del reverso)",
+      "material": "Plata",
+      "currency": "Dólar estadounidense",
+      "issuer": "Ceca de Carson City",
+      "status": "circulated",
+      "printRun": "677.000",
+      "shownSpecimenState": "Marcas de contacto visibles en la mejilla y el cuello de la Libertad. Grado numérico, limpieza, variedad VAM y designación Proof/PL no determinados. Sin certificación ni procedencia de subasta."
+    },
+    "context": {
+      "historical": "1893 fue el último año de producción de monedas en la ceca de Carson City. Establecida para servir a la región minera del Comstock en Nevada, la ceca comenzó a acuñar en 1870. La acuñación terminó en 1893; posteriormente funcionó como oficina de ensayo. El edificio alberga hoy el Nevada State Museum.",
+      "design": "Anverso: Libertad mirando a la izquierda, con LIBERTY en la diadema, E PLURIBUS UNUM, trece estrellas y la fecha. Reverso: águila con flechas y rama de olivo, rodeada de corona, UNITED STATES OF AMERICA, In God we trust y ONE DOLLAR."
+    },
+    "sources": [
+      {
+        "label": "PCGS CoinFacts — 1893-CC $1 (Regular Strike)",
+        "url": "https://www.pcgs.com/coinfacts/coin/7222",
+        "note": "Referencia principal: tirada, especificaciones y estimaciones de supervivencia",
+        "kind": "catalog"
+      },
+      {
+        "label": "Krause–Mishler KM#110",
+        "note": "Standard Catalog of World Coins"
+      },
+      {
+        "label": "Numista",
+        "url": "https://en.numista.com/catalogue/pieces142.html",
+        "note": "Referencia de tipo Morgan dollar"
+      },
+      {
+        "label": "U.S. Mint",
+        "note": "Historia de la ceca de Carson City"
+      }
+    ],
+    "related": [
+      {
+        "href": "/coleccion/numismatica/",
+        "title": "Catálogo de Numismática"
+      }
+    ],
+    "previous": {
+      "href": "/coleccion/numismatica/",
+      "title": "Índice de Numismática"
+    },
+    "render": "astro-static",
+    "eyebrow": "Estados Unidos · Dólar Morgan · Ceca de Carson City · 1893"
+  },
+  "i18n": {
+    "en": {
+      "path": "/en/collection/united-states/1-dollar-morgan-1893-cc/",
+      "title": "1893-CC Morgan Silver Dollar — Carson City | Notofilia",
+      "description": "1893 Morgan silver dollar struck at the Carson City Mint (CC). Final year of coin production at Carson City. KM#110, PCGS#7222. Private Notofilia collection.",
+      "ogTitle": "1893-CC Morgan Silver Dollar — Carson City",
+      "ogDescription": "Last Morgan dollar struck at the Carson City Mint. Mintage of 677,000. KM#110 · PCGS#7222."
+    }
+  }
+}
