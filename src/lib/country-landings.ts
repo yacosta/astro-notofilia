@@ -48,6 +48,7 @@ export const COUNTRY_LANDINGS: Record<
       intro: [
         'La colección de Estados Unidos es la segunda más amplia de Notofilia después de Colombia. Reúne papel colonial de las trece colonias, broken banknotes anteriores a la banca nacional, certificados del Tesoro y de la Reserva Federal, scrip militar (MPC) y piezas promocionales o de ensayo.',
         'No es un catálogo completo de la notafilia estadounidense: es el inventario de los ejemplares documentados aquí, con fotografías del espécimen y referencias Friedberg, Haxby, Schwan o Pick cuando existen.',
+        'En el papel federal de tamaño pequeño (Serie 1928 en adelante), las fichas citan rangos de serie, sellos de color y cronología de diseño a partir de USPaperMoney.info, además de las fuentes oficiales del BEP y del Tesoro.',
       ],
       catalogHeading: 'Catálogo de Estados Unidos',
       catalogLead: 'Todas las fichas documentadas con país Estados Unidos. El explorador global permite combinar más filtros.',
@@ -67,6 +68,7 @@ export const COUNTRY_LANDINGS: Record<
       intro: [
         'The United States holding is Notofilia’s second-largest country collection after Colombia. It brings together colonial paper of the thirteen colonies, broken banknotes from before national banking, Treasury and Federal Reserve certificates, military payment certificates, and promotional or test pieces.',
         'This is not a complete U.S. notaphily catalog. It is the inventory of specimens documented here, with photographs of the piece shown and Friedberg, Haxby, Schwan, or Pick references when they exist.',
+        'On small-size federal paper (Series 1928 onward), the records cite serial ranges, seal colors, and design chronology from USPaperMoney.info, alongside official BEP and Treasury sources.',
       ],
       catalogHeading: 'United States catalog',
       catalogLead: 'Every documented record with country United States. The global browser can combine additional filters.',
